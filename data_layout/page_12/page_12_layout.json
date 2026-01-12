@@ -1,0 +1,839 @@
+[
+  {
+    "type": "text",
+    "bbox": [
+      108.0,
+      74.33230590820312,
+      505.74346923828125,
+      117.09707641601562
+    ],
+    "content": "[27] Karthik Valmeekam, Sarath Sreedharan, Matthew Marquez, Alberto Olmo, and SubbaraoKambhampati. On the planning abilities of large language models (a critical investigationwith a proposed benchmark). arXiv, 2023. URL https://arxiv.org/abs/2302.06706.arXiv:2302.06706.",
+    "spans": [
+      {
+        "text": "[27]",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          74.40748596191406,
+          124.59768676757812,
+          84.37008666992188
+        ]
+      },
+      {
+        "text": " Karthik Valmeekam, Sarath Sreedharan, Matthew Marquez, Alberto Olmo, and Subbarao",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          124.59768676757812,
+          74.33230590820312,
+          504.0027770996094,
+          84.39403533935547
+        ]
+      },
+      {
+        "text": "Kambhampati. On the planning abilities of large language models (a critical investigation",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          129.57899475097656,
+          85.24130249023438,
+          504.00274658203125,
+          95.30303192138672
+        ]
+      },
+      {
+        "text": "with a proposed benchmark).",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          129.22000122070312,
+          96.15029907226562,
+          249.6074981689453,
+          106.21202850341797
+        ]
+      },
+      {
+        "text": " arXiv",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 10.061732292175293,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          249.6074981689453,
+          95.97207641601562,
+          277.9184265136719,
+          106.03380584716797
+        ]
+      },
+      {
+        "text": ", 2023. URL",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          277.9184265136719,
+          96.15029907226562,
+          332.711181640625,
+          106.21202850341797
+        ]
+      },
+      {
+        "text": " https://arxiv.org/abs/2302.06706",
+        "font_name": "SFTT1000",
+        "font_size": 9.962599754333496,
+        "font_flags": 12,
+        "color": 0,
+        "bbox": [
+          332.711181640625,
+          96.47350311279297,
+          503.2331237792969,
+          106.43610382080078
+        ]
+      },
+      {
+        "text": ".",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          503.2030029296875,
+          96.15029907226562,
+          505.74346923828125,
+          106.21202850341797
+        ]
+      },
+      {
+        "text": "arXiv:2302.06706.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          129.57899475097656,
+          107.13447570800781,
+          204.59730529785156,
+          117.09707641601562
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      107.99999237060547,
+      125.93826293945312,
+      506.62225341796875,
+      168.9511260986328
+    ],
+    "content": "[28] Parshin Shojaee, Iman Mirzadeh, Keivan Alizadeh, Maxwell Horton, Samy Bengio, andMehrdad Farajtabar.The illusion of thinking: Understanding the strengths and limita-tions of reasoning models via the lens of problem complexity. arXiv, 2025. URL https://arxiv.org/abs/2506.06941. arXiv:2506.06941.",
+    "spans": [
+      {
+        "text": "[28]",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.99999237060547,
+          126.01350402832031,
+          124.5976791381836,
+          135.97610473632812
+        ]
+      },
+      {
+        "text": " Parshin Shojaee, Iman Mirzadeh, Keivan Alizadeh, Maxwell Horton, Samy Bengio, and",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          124.5976791381836,
+          125.93826293945312,
+          504.002685546875,
+          136.00006103515625
+        ]
+      },
+      {
+        "text": "Mehrdad Farajtabar.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          129.57899475097656,
+          136.84732055664062,
+          213.8817138671875,
+          146.9090576171875
+        ]
+      },
+      {
+        "text": "The illusion of thinking: Understanding the strengths and limita-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          224.1451873779297,
+          136.84732055664062,
+          505.64898681640625,
+          146.9090576171875
+        ]
+      },
+      {
+        "text": "tions of reasoning models via the lens of problem complexity.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          129.57899475097656,
+          147.75631713867188,
+          387.5885314941406,
+          157.81805419921875
+        ]
+      },
+      {
+        "text": " arXiv",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 10.061732292175293,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          387.5885314941406,
+          147.57809448242188,
+          416.4075622558594,
+          157.63983154296875
+        ]
+      },
+      {
+        "text": ", 2025. URL",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          416.4075622558594,
+          147.75631713867188,
+          471.9217834472656,
+          157.81805419921875
+        ]
+      },
+      {
+        "text": " https:",
+        "font_name": "SFTT1000",
+        "font_size": 9.962599754333496,
+        "font_flags": 12,
+        "color": 0,
+        "bbox": [
+          471.9217834472656,
+          148.07952880859375,
+          506.62225341796875,
+          158.04212951660156
+        ]
+      },
+      {
+        "text": "//arxiv.org/abs/2506.06941",
+        "font_name": "SFTT1000",
+        "font_size": 9.962599754333496,
+        "font_flags": 12,
+        "color": 0,
+        "bbox": [
+          129.05599975585938,
+          158.988525390625,
+          265.03546142578125,
+          168.9511260986328
+        ]
+      },
+      {
+        "text": ". arXiv:2506.06941.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          265.03546142578125,
+          158.74049377441406,
+          346.1309814453125,
+          168.70309448242188
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      108.0,
+      177.36709594726562,
+      504.0027160644531,
+      198.49209594726562
+    ],
+    "content": "[29] Stuart Russell and Peter Norvig. Artificial Intelligence: A Modern Approach. Pearson, 4thedition, 2020.",
+    "spans": [
+      {
+        "text": "[29]",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          177.62049865722656,
+          124.59768676757812,
+          187.58309936523438
+        ]
+      },
+      {
+        "text": " Stuart Russell and Peter Norvig.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          124.59768676757812,
+          177.54531860351562,
+          262.46551513671875,
+          187.6070556640625
+        ]
+      },
+      {
+        "text": " Artificial Intelligence: A Modern Approach",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 10.061732292175293,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          262.46551513671875,
+          177.36709594726562,
+          445.6329650878906,
+          187.4288330078125
+        ]
+      },
+      {
+        "text": ". Pearson, 4th",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          445.6329650878906,
+          177.54531860351562,
+          504.0027160644531,
+          187.6070556640625
+        ]
+      },
+      {
+        "text": "edition, 2020.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          129.57899475097656,
+          188.5294952392578,
+          184.65220642089844,
+          198.49209594726562
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      107.99999237060547,
+      207.3520050048828,
+      507.675537109375,
+      250.34608459472656
+    ],
+    "content": "[30] Alexander Reinefeld. Complete solution of the eight-puzzle and the benefit of node orderingin IDA*. In Proceedings of the 13th International Joint Conference on Artificial Intelligence(IJCAI-93), pages 248–253, Chambéry, France, 1993. Morgan Kaufmann. URL https://www.ijcai.org/Proceedings/93-1/Papers/035.pdf.",
+    "spans": [
+      {
+        "text": "[30]",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.99999237060547,
+          207.4085235595703,
+          124.5976791381836,
+          217.37112426757812
+        ]
+      },
+      {
+        "text": " Alexander Reinefeld. Complete solution of the eight-puzzle and the benefit of node ordering",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.037040710449219,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          124.5976791381836,
+          207.3520050048828,
+          503.99786376953125,
+          217.3891143798828
+        ]
+      },
+      {
+        "text": "in IDA*. In",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.041984558105469,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          129.57899475097656,
+          218.2572479248047,
+          177.15240478515625,
+          228.2992401123047
+        ]
+      },
+      {
+        "text": " Proceedings of the 13th International Joint Conference on Artificial Intelligence",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 10.041984558105469,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          177.15240478515625,
+          218.07937622070312,
+          504.0019836425781,
+          228.12136840820312
+        ]
+      },
+      {
+        "text": "(IJCAI-93)",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.882577896118164,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          128.91099548339844,
+          229.11209106445312,
+          171.91761779785156,
+          238.9946746826172
+        ]
+      },
+      {
+        "text": ", pages 248–253, Chambéry, France, 1993. Morgan Kaufmann. URL",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.882577896118164,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          171.91761779785156,
+          229.28713989257812,
+          442.43719482421875,
+          239.1697235107422
+        ]
+      },
+      {
+        "text": " https://www.",
+        "font_name": "SFTT1000",
+        "font_size": 9.962599754333496,
+        "font_flags": 12,
+        "color": 0,
+        "bbox": [
+          442.43719482421875,
+          229.4744873046875,
+          507.675537109375,
+          239.4370880126953
+        ]
+      },
+      {
+        "text": "ijcai.org/Proceedings/93-1/Papers/035.pdf",
+        "font_name": "SFTT1000",
+        "font_size": 9.962599754333496,
+        "font_flags": 12,
+        "color": 0,
+        "bbox": [
+          129.57901000976562,
+          240.38348388671875,
+          344.51226806640625,
+          250.34608459472656
+        ]
+      },
+      {
+        "text": ".",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          344.51226806640625,
+          240.1354522705078,
+          347.0029296875,
+          250.09805297851562
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      108.00000762939453,
+      259.01446533203125,
+      507.6842346191406,
+      291.0430908203125
+    ],
+    "content": "[31] Takeshi Kojima, Shixiang Shane Gu, Machel Reid, Yutaka Matsuo, and Yusuke Iwasawa. Largelanguage models are zero-shot reasoners. arXiv, 2022. URL https://arxiv.org/abs/2205.11916. arXiv:2205.11916.",
+    "spans": [
+      {
+        "text": "[31]",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.00000762939453,
+          259.01446533203125,
+          124.59769439697266,
+          268.9770812988281
+        ]
+      },
+      {
+        "text": " Takeshi Kojima, Shixiang Shane Gu, Machel Reid, Yutaka Matsuo, and Yusuke Iwasawa. Large",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.862470626831055,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          124.59769439697266,
+          259.0904235839844,
+          504.0035400390625,
+          268.952880859375
+        ]
+      },
+      {
+        "text": "language models are zero-shot reasoners.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.862470626831055,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          129.57899475097656,
+          269.9994201660156,
+          289.8150634765625,
+          279.86187744140625
+        ]
+      },
+      {
+        "text": " arXiv",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.862470626831055,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          289.8150634765625,
+          269.82470703125,
+          314.70184326171875,
+          279.68719482421875
+        ]
+      },
+      {
+        "text": ", 2022. URL",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.862470626831055,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          314.70184326171875,
+          269.9994201660156,
+          364.1629638671875,
+          279.86187744140625
+        ]
+      },
+      {
+        "text": " https://arxiv.org/abs/2205.",
+        "font_name": "SFTT1000",
+        "font_size": 9.962599754333496,
+        "font_flags": 12,
+        "color": 0,
+        "bbox": [
+          364.1629638671875,
+          270.1715087890625,
+          507.6842346191406,
+          280.13409423828125
+        ]
+      },
+      {
+        "text": "11916",
+        "font_name": "SFTT1000",
+        "font_size": 9.962599754333496,
+        "font_flags": 12,
+        "color": 0,
+        "bbox": [
+          129.3179931640625,
+          281.08050537109375,
+          155.4698028564453,
+          291.0430908203125
+        ]
+      },
+      {
+        "text": ". arXiv:2205.11916.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          155.4698028564453,
+          280.83245849609375,
+          236.56529235839844,
+          290.7950744628906
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      107.99999237060547,
+      299.71246337890625,
+      505.6518859863281,
+      353.55908203125
+    ],
+    "content": "[32] Aman Madaan, Niket Tandon, Prakhar Gupta, Skyler Hallinan, Luyu Gao, Sarah Wiegreffe, UriAlon, Nouha Dziri, Shrimai Prabhumoye, Yiming Yang, Shashank Gupta, Bodhisattwa PrasadMajumder, Katherine Hermann, Sean Welleck, Amir Yazdanbakhsh, and Peter Clark. SELF-REFINE: Iterative refinement with self-feedback. arXiv, 2023. URL https://arxiv.org/abs/2303.17651. arXiv:2303.17651.",
+    "spans": [
+      {
+        "text": "[32]",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.99999237060547,
+          299.71246337890625,
+          124.5976791381836,
+          309.6750793457031
+        ]
+      },
+      {
+        "text": " Aman Madaan, Niket Tandon, Prakhar Gupta, Skyler Hallinan, Luyu Gao, Sarah Wiegreffe, Uri",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.862470626831055,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          124.5976791381836,
+          299.7884216308594,
+          504.00341796875,
+          309.65087890625
+        ]
+      },
+      {
+        "text": "Alon, Nouha Dziri, Shrimai Prabhumoye, Yiming Yang, Shashank Gupta, Bodhisattwa Prasad",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.952631950378418,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          129.22000122070312,
+          310.6290283203125,
+          503.9994812011719,
+          320.5816650390625
+        ]
+      },
+      {
+        "text": "Majumder, Katherine Hermann, Sean Welleck, Amir Yazdanbakhsh, and Peter Clark. SELF-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.051863670349121,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          129.57899475097656,
+          321.4627685546875,
+          505.6518859863281,
+          331.5146484375
+        ]
+      },
+      {
+        "text": "REFINE: Iterative refinement with self-feedback.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          129.57899475097656,
+          332.3642883300781,
+          330.2756652832031,
+          342.426025390625
+        ]
+      },
+      {
+        "text": " arXiv",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 10.061732292175293,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          330.2756652832031,
+          332.1860656738281,
+          356.5135803222656,
+          342.247802734375
+        ]
+      },
+      {
+        "text": ", 2023. URL",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          356.5135803222656,
+          332.3642883300781,
+          408.4101867675781,
+          342.426025390625
+        ]
+      },
+      {
+        "text": " https://arxiv.org/",
+        "font_name": "SFTT1000",
+        "font_size": 9.962599754333496,
+        "font_flags": 12,
+        "color": 0,
+        "bbox": [
+          408.4101867675781,
+          332.6875,
+          505.06878662109375,
+          342.65008544921875
+        ]
+      },
+      {
+        "text": "abs/2303.17651",
+        "font_name": "SFTT1000",
+        "font_size": 9.962599754333496,
+        "font_flags": 12,
+        "color": 0,
+        "bbox": [
+          129.57901000976562,
+          343.59649658203125,
+          202.8040771484375,
+          353.55908203125
+        ]
+      },
+      {
+        "text": ". arXiv:2303.17651.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          202.8040771484375,
+          343.34844970703125,
+          283.89959716796875,
+          353.3110656738281
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      108.00000762939453,
+      362.15228271484375,
+      505.7401123046875,
+      383.09906005859375
+    ],
+    "content": "[33] OpenAI. Introducing GPT-5. https://openai.com/index/introducing-gpt-5/, 2025.Product page; accessed 2025-10-18.",
+    "spans": [
+      {
+        "text": "[33]",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.00000762939453,
+          362.2274475097656,
+          124.59769439697266,
+          372.1900634765625
+        ]
+      },
+      {
+        "text": " OpenAI. Introducing GPT-5.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          124.59769439697266,
+          362.15228271484375,
+          248.00526428222656,
+          372.2140197753906
+        ]
+      },
+      {
+        "text": " https://openai.com/index/introducing-gpt-5/",
+        "font_name": "SFTT1000",
+        "font_size": 9.962599754333496,
+        "font_flags": 12,
+        "color": 0,
+        "bbox": [
+          248.00526428222656,
+          362.4754943847656,
+          477.7785339355469,
+          372.4380798339844
+        ]
+      },
+      {
+        "text": ", 2025.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          477.7340087890625,
+          362.15228271484375,
+          505.7401123046875,
+          372.2140197753906
+        ]
+      },
+      {
+        "text": "Product page; accessed 2025-10-18.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          129.57899475097656,
+          373.1364440917969,
+          273.4488830566406,
+          383.09906005859375
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      301.01898193359375,
+      742.3324584960938,
+      310.9815673828125,
+      752.2950439453125
+    ],
+    "content": "13",
+    "spans": [
+      {
+        "text": "13",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          301.01898193359375,
+          742.3324584960938,
+          310.9815673828125,
+          752.2950439453125
+        ]
+      }
+    ]
+  }
+]
