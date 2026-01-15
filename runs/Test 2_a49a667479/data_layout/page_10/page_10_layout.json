@@ -1,0 +1,2253 @@
+[
+  {
+    "type": "text",
+    "bbox": [
+      58.5,
+      79.9141616821289,
+      553.5013427734375,
+      113.11518096923828
+    ],
+    "content": "Supplementary Material – RAVEN: Erasing Invisible Watermarks via Novel ViewSynthesis",
+    "spans": [
+      {
+        "text": "Supplementary Material –",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 14.346199989318848,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          58.5,
+          80.83599853515625,
+          220.196044921875,
+          95.18219757080078
+        ]
+      },
+      {
+        "text": " RAVEN",
+        "font_name": "NimbusMonL-Bold",
+        "font_size": 14.346199989318848,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          220.196044921875,
+          79.9141616821289,
+          266.7781982421875,
+          94.26036071777344
+        ]
+      },
+      {
+        "text": ": Erasing Invisible Watermarks via Novel View",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 14.346199989318848,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          266.7781982421875,
+          80.83599853515625,
+          553.5013427734375,
+          95.18219757080078
+        ]
+      },
+      {
+        "text": "Synthesis",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 14.346199989318848,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          277.3009948730469,
+          98.76898193359375,
+          334.7001647949219,
+          113.11518096923828
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      58.5,
+      142.0054473876953,
+      294.7531433105469,
+      369.7823791503906
+    ],
+    "content": "This supplementary material provides additional exper-imental evidence to support the effectiveness and robust-ness of RAVEN for invisible watermark removal. We ex-tend our evaluation by presenting comprehensive quanti-tative results on the DiffusionDB dataset [36], coveringa wide range of watermarking schemes and attack strate-gies, and analyzing verification performance in terms ofTPR@1%FPR and Bit Accuracy. We also include qual-itative comparisons across challenging visual scenariosto illustrate how different watermark removal methods im-pact perceptual quality, structural consistency, and texturepreservation.In addition to effectiveness, we report thecomputational efficiency of RAVEN, highlighting its prac-tical advantage over other strong baselines. Overall, thesesupplementary results further demonstrate RAVEN’s abilityto achieve strong watermark suppression while maintaininghigh visual fidelity and semantic coherence, complementingthe findings reported in the main paper.7. Quantitative Results on DiffusionDB",
+    "spans": [
+      {
+        "text": "This supplementary material provides additional exper-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          70.45500183105469,
+          142.0054473876953,
+          294.7529602050781,
+          151.96804809570312
+        ]
+      },
+      {
+        "text": "imental evidence to support the effectiveness and robust-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          153.96046447753906,
+          294.7530822753906,
+          163.92306518554688
+        ]
+      },
+      {
+        "text": "ness of",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          165.9154815673828,
+          87.6406021118164,
+          175.87808227539062
+        ]
+      },
+      {
+        "text": " RAVEN",
+        "font_name": "NimbusMonL-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          87.6406021118164,
+          165.40542602539062,
+          121.22453308105469,
+          175.36802673339844
+        ]
+      },
+      {
+        "text": " for invisible watermark removal. We ex-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          121.22453308105469,
+          165.9154815673828,
+          294.7531433105469,
+          175.87808227539062
+        ]
+      },
+      {
+        "text": "tend our evaluation by presenting",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          177.87049865722656,
+          194.120849609375,
+          187.83309936523438
+        ]
+      },
+      {
+        "text": " comprehensive quanti-",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          194.120849609375,
+          177.779541015625,
+          294.7530822753906,
+          187.7421417236328
+        ]
+      },
+      {
+        "text": "tative results on the DiffusionDB dataset",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          58.5,
+          189.73553466796875,
+          234.21034240722656,
+          199.69813537597656
+        ]
+      },
+      {
+        "text": " [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          234.21034240722656,
+          189.8264923095703,
+          240.86537170410156,
+          199.78909301757812
+        ]
+      },
+      {
+        "text": "36",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 6592255,
+        "bbox": [
+          240.86537170410156,
+          189.8264923095703,
+          250.8279571533203,
+          199.78909301757812
+        ]
+      },
+      {
+        "text": "], covering",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          250.8279571533203,
+          189.8264923095703,
+          294.7530212402344,
+          199.78909301757812
+        ]
+      },
+      {
+        "text": "a wide range of watermarking schemes and attack strate-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          201.78150939941406,
+          294.7531433105469,
+          211.74411010742188
+        ]
+      },
+      {
+        "text": "gies, and analyzing verification performance in terms of",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          213.7365264892578,
+          294.7530517578125,
+          223.69912719726562
+        ]
+      },
+      {
+        "text": "TPR@1%FPR and Bit Accuracy. We also include",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          225.69154357910156,
+          268.6909484863281,
+          235.65414428710938
+        ]
+      },
+      {
+        "text": " qual-",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          268.6909484863281,
+          225.6005859375,
+          294.75311279296875,
+          235.5631866455078
+        ]
+      },
+      {
+        "text": "itative comparisons across challenging visual scenarios",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          58.5,
+          237.55560302734375,
+          294.7530822753906,
+          247.51820373535156
+        ]
+      },
+      {
+        "text": "to illustrate how different watermark removal methods im-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          249.60157775878906,
+          294.7530822753906,
+          259.5641784667969
+        ]
+      },
+      {
+        "text": "pact perceptual quality, structural consistency, and texture",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          261.55755615234375,
+          294.7530822753906,
+          271.5201721191406
+        ]
+      },
+      {
+        "text": "preservation.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          273.5125427246094,
+          109.98670196533203,
+          283.47515869140625
+        ]
+      },
+      {
+        "text": "In addition to effectiveness, we report the",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          118.45491027832031,
+          273.5125427246094,
+          294.7530517578125,
+          283.47515869140625
+        ]
+      },
+      {
+        "text": "computational efficiency",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          58.5,
+          285.3765869140625,
+          162.3999481201172,
+          295.33917236328125
+        ]
+      },
+      {
+        "text": " of",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          162.3999481201172,
+          285.467529296875,
+          173.30899047851562,
+          295.4301452636719
+        ]
+      },
+      {
+        "text": " RAVEN",
+        "font_name": "NimbusMonL-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          173.30899047851562,
+          284.9574890136719,
+          205.81692504882812,
+          294.92010498046875
+        ]
+      },
+      {
+        "text": ", highlighting its prac-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          205.81692504882812,
+          285.467529296875,
+          294.7530212402344,
+          295.4301452636719
+        ]
+      },
+      {
+        "text": "tical advantage over other strong baselines. Overall, these",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          297.4225158691406,
+          294.75311279296875,
+          307.3851318359375
+        ]
+      },
+      {
+        "text": "supplementary results further demonstrate",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          309.37750244140625,
+          227.24655151367188,
+          319.3401184082031
+        ]
+      },
+      {
+        "text": " RAVEN",
+        "font_name": "NimbusMonL-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          227.24655151367188,
+          308.8674621582031,
+          259.8840026855469,
+          318.830078125
+        ]
+      },
+      {
+        "text": "’s ability",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          259.8840026855469,
+          309.37750244140625,
+          294.7530517578125,
+          319.3401184082031
+        ]
+      },
+      {
+        "text": "to achieve strong watermark suppression while maintaining",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          321.33349609375,
+          294.7530212402344,
+          331.2961120605469
+        ]
+      },
+      {
+        "text": "high visual fidelity and semantic coherence, complementing",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          333.2884826660156,
+          294.7530517578125,
+          343.2510986328125
+        ]
+      },
+      {
+        "text": "the findings reported in the main paper.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          345.24346923828125,
+          214.8430633544922,
+          355.2060852050781
+        ]
+      },
+      {
+        "text": "7. Quantitative Results on DiffusionDB",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 11.9552001953125,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          58.5,
+          357.8271789550781,
+          257.1954345703125,
+          369.7823791503906
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      58.5,
+      378.6324768066406,
+      294.7531433105469,
+      532.0579223632812
+    ],
+    "content": "Table 6 reports watermark removal performance on the Dif-fusionDB dataset [36], a large and diverse collection of real-world text-to-image prompts. We evaluate RAVEN on 1,001randomly sampled prompts using the same protocol as themain paper, generating images at 512×512 resolution withStable Diffusion v2-1, CFG scale 7.5, and 50 DDIM steps.The evaluation spans the same 15 watermarking schemes,including both semantic in-generation and post-hoc bit-stream methods, and compares RAVEN against 14 baselineattacks covering classical signal processing, regeneration-based approaches, and advanced learned methods such asCtrlGen+ [25] and UnMarker [21], ensuring a fair and con-sistent comparison across all paradigms.",
+    "spans": [
+      {
+        "text": "Table",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          378.6324768066406,
+          80.38783264160156,
+          388.5950927734375
+        ]
+      },
+      {
+        "text": " 6",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          80.38783264160156,
+          378.6324768066406,
+          87.60075378417969,
+          388.5950927734375
+        ]
+      },
+      {
+        "text": " reports watermark removal performance on the Dif-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          87.60075378417969,
+          378.6324768066406,
+          294.7530822753906,
+          388.5950927734375
+        ]
+      },
+      {
+        "text": "fusionDB dataset [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          390.5884704589844,
+          132.20330810546875,
+          400.55108642578125
+        ]
+      },
+      {
+        "text": "36",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 6592255,
+        "bbox": [
+          132.20330810546875,
+          390.5884704589844,
+          142.1658935546875,
+          400.55108642578125
+        ]
+      },
+      {
+        "text": "], a large and diverse collection of real-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          142.1658935546875,
+          390.5884704589844,
+          294.7530822753906,
+          400.55108642578125
+        ]
+      },
+      {
+        "text": "world text-to-image prompts. We evaluate",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          402.54345703125,
+          225.77206420898438,
+          412.5060729980469
+        ]
+      },
+      {
+        "text": " RAVEN",
+        "font_name": "NimbusMonL-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          225.77206420898438,
+          402.0334167480469,
+          257.8914794921875,
+          411.99603271484375
+        ]
+      },
+      {
+        "text": " on 1,001",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          257.8914794921875,
+          402.54345703125,
+          294.7530517578125,
+          412.5060729980469
+        ]
+      },
+      {
+        "text": "randomly sampled prompts using the same protocol as the",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          414.4984436035156,
+          294.7530822753906,
+          424.4610595703125
+        ]
+      },
+      {
+        "text": "main paper, generating images at 512",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          426.45343017578125,
+          208.95518493652344,
+          436.4160461425781
+        ]
+      },
+      {
+        "text": "×",
+        "font_name": "CMSY10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          208.96514892578125,
+          426.0937805175781,
+          216.71604919433594,
+          436.0563659667969
+        ]
+      },
+      {
+        "text": "512 resolution with",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          216.70608520507812,
+          426.45343017578125,
+          294.7530212402344,
+          436.4160461425781
+        ]
+      },
+      {
+        "text": "Stable Diffusion v2-1, CFG scale 7.5, and 50 DDIM steps.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          438.4084167480469,
+          294.7530517578125,
+          448.37103271484375
+        ]
+      },
+      {
+        "text": "The evaluation spans the same 15 watermarking schemes,",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          450.3644104003906,
+          294.7531433105469,
+          460.3270263671875
+        ]
+      },
+      {
+        "text": "including both semantic in-generation and post-hoc bit-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          462.31939697265625,
+          294.7530517578125,
+          472.2820129394531
+        ]
+      },
+      {
+        "text": "stream methods, and compares",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          474.2743835449219,
+          182.58416748046875,
+          484.23699951171875
+        ]
+      },
+      {
+        "text": " RAVEN",
+        "font_name": "NimbusMonL-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          182.58416748046875,
+          473.76434326171875,
+          215.35113525390625,
+          483.7269592285156
+        ]
+      },
+      {
+        "text": " against 14 baseline",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          215.35113525390625,
+          474.2743835449219,
+          294.7530517578125,
+          484.23699951171875
+        ]
+      },
+      {
+        "text": "attacks covering classical signal processing, regeneration-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          486.2293701171875,
+          294.7530822753906,
+          496.1919860839844
+        ]
+      },
+      {
+        "text": "based approaches, and advanced learned methods such as",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          498.1843566894531,
+          294.7530822753906,
+          508.14697265625
+        ]
+      },
+      {
+        "text": "CtrlGen+ [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          510.13934326171875,
+          102.03655242919922,
+          520.1019287109375
+        ]
+      },
+      {
+        "text": "25",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 6592255,
+        "bbox": [
+          102.03655242919922,
+          510.13934326171875,
+          111.99915313720703,
+          520.1019287109375
+        ]
+      },
+      {
+        "text": "] and UnMarker [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          111.99915313720703,
+          510.13934326171875,
+          181.9166717529297,
+          520.1019287109375
+        ]
+      },
+      {
+        "text": "21",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 6592255,
+        "bbox": [
+          181.9166717529297,
+          510.13934326171875,
+          191.87925720214844,
+          520.1019287109375
+        ]
+      },
+      {
+        "text": "], ensuring a fair and con-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          191.87925720214844,
+          510.13934326171875,
+          294.7530517578125,
+          520.1019287109375
+        ]
+      },
+      {
+        "text": "sistent comparison across all paradigms.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          522.0953369140625,
+          219.2664794921875,
+          532.0579223632812
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      58.5,
+      541.9336547851562,
+      139.8260040283203,
+      552.892578125
+    ],
+    "content": "7.1. Key Findings",
+    "spans": [
+      {
+        "text": "7.1. Key Findings",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 10.958900451660156,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          58.5,
+          541.9336547851562,
+          139.8260040283203,
+          552.892578125
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      58.5,
+      559.9822998046875,
+      294.75311279296875,
+      713.4069213867188
+    ],
+    "content": "Results on DiffusionDB [36] reinforce the trends observedin the main paper, with RAVEN achieving the lowest averageTPR@1%FPR of 0.029 for semantic watermarking, sub-stantially outperforming the strongest baseline, UnMarker,and demonstrating consistently superior suppression acrossall six methods, with particularly notable gains for challeng-ing schemes such as RingID and ROBIN. For bitstream-based watermarking, RAVEN attains an average bit accu-racy of 0.531, close to the ideal randomization range andcomparable to UnMarker, while preserving noticeably bet-ter perceptual quality. Performance remains highly stableacross datasets, with semantic TPR and bit accuracy vary-ing by less than 0.005 between DiffusionDB [36], MS-",
+    "spans": [
+      {
+        "text": "Results on DiffusionDB [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          559.9822998046875,
+          161.5830078125,
+          569.9448852539062
+        ]
+      },
+      {
+        "text": "36",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 6592255,
+        "bbox": [
+          161.5830078125,
+          559.9822998046875,
+          171.54559326171875,
+          569.9448852539062
+        ]
+      },
+      {
+        "text": "] reinforce the trends observed",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          171.54559326171875,
+          559.9822998046875,
+          294.7530822753906,
+          569.9448852539062
+        ]
+      },
+      {
+        "text": "in the main paper, with",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          571.9373168945312,
+          148.13348388671875,
+          581.89990234375
+        ]
+      },
+      {
+        "text": " RAVEN",
+        "font_name": "NimbusMonL-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          148.13348388671875,
+          571.4273071289062,
+          179.96395874023438,
+          581.389892578125
+        ]
+      },
+      {
+        "text": " achieving the lowest average",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          179.96395874023438,
+          571.9373168945312,
+          294.7530212402344,
+          581.89990234375
+        ]
+      },
+      {
+        "text": "TPR@1%FPR of",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          583.892333984375,
+          129.3739471435547,
+          593.8549194335938
+        ]
+      },
+      {
+        "text": " 0.029",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          129.3739471435547,
+          583.8013916015625,
+          155.91427612304688,
+          593.7639770507812
+        ]
+      },
+      {
+        "text": " for semantic watermarking, sub-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          155.91427612304688,
+          583.892333984375,
+          294.7530822753906,
+          593.8549194335938
+        ]
+      },
+      {
+        "text": "stantially outperforming the strongest baseline, UnMarker,",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          595.8483276367188,
+          294.7530822753906,
+          605.8109130859375
+        ]
+      },
+      {
+        "text": "and demonstrating consistently superior suppression across",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          607.8033447265625,
+          294.75311279296875,
+          617.7659301757812
+        ]
+      },
+      {
+        "text": "all six methods, with particularly notable gains for challeng-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          619.75830078125,
+          294.7530517578125,
+          629.7208862304688
+        ]
+      },
+      {
+        "text": "ing schemes such as RingID and ROBIN. For bitstream-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          631.7133178710938,
+          294.7530517578125,
+          641.6759033203125
+        ]
+      },
+      {
+        "text": "based watermarking,",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          643.6683349609375,
+          142.8333740234375,
+          653.6309204101562
+        ]
+      },
+      {
+        "text": " RAVEN",
+        "font_name": "NimbusMonL-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          142.8333740234375,
+          643.1583251953125,
+          177.00506591796875,
+          653.1209106445312
+        ]
+      },
+      {
+        "text": " attains an average bit accu-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          177.00506591796875,
+          643.6683349609375,
+          294.7530517578125,
+          653.6309204101562
+        ]
+      },
+      {
+        "text": "racy of",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          655.6233520507812,
+          87.34172821044922,
+          665.5859375
+        ]
+      },
+      {
+        "text": " 0.531",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          87.34172821044922,
+          655.5324096679688,
+          113.31422424316406,
+          665.4949951171875
+        ]
+      },
+      {
+        "text": ", close to the ideal randomization range and",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          113.31422424316406,
+          655.6233520507812,
+          294.75311279296875,
+          665.5859375
+        ]
+      },
+      {
+        "text": "comparable to UnMarker, while preserving noticeably bet-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          667.579345703125,
+          294.7530822753906,
+          677.5419311523438
+        ]
+      },
+      {
+        "text": "ter perceptual quality. Performance remains highly stable",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          679.5343627929688,
+          294.75311279296875,
+          689.4969482421875
+        ]
+      },
+      {
+        "text": "across datasets, with semantic TPR and bit accuracy vary-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          691.4893188476562,
+          294.75311279296875,
+          701.451904296875
+        ]
+      },
+      {
+        "text": "ing by less than 0.005 between DiffusionDB [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          703.4443359375,
+          256.1479797363281,
+          713.4069213867188
+        ]
+      },
+      {
+        "text": "36",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 6592255,
+        "bbox": [
+          256.1479797363281,
+          703.4443359375,
+          266.1105651855469,
+          713.4069213867188
+        ]
+      },
+      {
+        "text": "], MS-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          266.1105651855469,
+          703.4443359375,
+          294.7530517578125,
+          713.4069213867188
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      317.25,
+      141.49526977539062,
+      553.5031127929688,
+      187.83395385742188
+    ],
+    "content": "COCO [24], and SD-Prompts [33], confirming that RAVENleverages fundamental properties of diffusion latent repre-sentations and watermark embedding mechanisms ratherthan dataset-specific prompt characteristics.",
+    "spans": [
+      {
+        "text": "COCO [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          142.0053253173828,
+          350.8338928222656,
+          151.96792602539062
+        ]
+      },
+      {
+        "text": "24",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 6592255,
+        "bbox": [
+          350.8338928222656,
+          142.0053253173828,
+          360.7964782714844,
+          151.96792602539062
+        ]
+      },
+      {
+        "text": "], and SD-Prompts [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          360.7964782714844,
+          142.0053253173828,
+          441.37396240234375,
+          151.96792602539062
+        ]
+      },
+      {
+        "text": "33",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 6592255,
+        "bbox": [
+          441.37396240234375,
+          142.0053253173828,
+          451.3365478515625,
+          151.96792602539062
+        ]
+      },
+      {
+        "text": "], confirming that",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          451.3365478515625,
+          142.0053253173828,
+          521.0249633789062,
+          151.96792602539062
+        ]
+      },
+      {
+        "text": " RAVEN",
+        "font_name": "NimbusMonL-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          521.0249633789062,
+          141.49526977539062,
+          553.5029296875,
+          151.45787048339844
+        ]
+      },
+      {
+        "text": "leverages fundamental properties of diffusion latent repre-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          153.96034240722656,
+          553.5031127929688,
+          163.92294311523438
+        ]
+      },
+      {
+        "text": "sentations and watermark embedding mechanisms rather",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          165.9153594970703,
+          553.5031127929688,
+          175.87796020507812
+        ]
+      },
+      {
+        "text": "than dataset-specific prompt characteristics.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          177.87135314941406,
+          491.5556335449219,
+          187.83395385742188
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      317.25,
+      200.1610107421875,
+      483.7381591796875,
+      212.1162109375
+    ],
+    "content": "8. Additional Qualitative Results",
+    "spans": [
+      {
+        "text": "8. Additional Qualitative Results",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 11.9552001953125,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          317.25,
+          200.1610107421875,
+          483.7381591796875,
+          212.1162109375
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      317.25,
+      220.71034240722656,
+      553.5032348632812,
+      481.7317810058594
+    ],
+    "content": "Figures 6-7 present qualitative comparisons of watermarkremoval methods across diverse visual scenes, highlight-ing clear differences in perceptual quality and structuralpreservation. VAE-B [3] consistently introduces excessivesmoothing that suppresses fine details and weakens tex-ture sharpness, while Regen [47] generates visible high-frequency artifacts due to the aggressive noise injection re-quired for watermark removal. Rinse often leads to unnat-ural color shifts and reduced photorealism as a result ofrepeated regeneration passes. UnMarker [21] suppresseswatermark signals more effectively than conventional pri-ors but leaves residual noise patterns and minor structuralinconsistencies. Notably, as evident in the Figure 8, Ctrl-Gen+ [25] significantly alters the underlying scene layout,introducing new architectural or geometric elements andgenerating alternative structures that deviate from the origi-nal semantic configuration rather than preserving it. In con-trast, RAVEN maintains faithful scene geometry, consistentstructure, and natural texture distribution while successfullyeliminating watermark traces, resulting in visually coherentand photorealistic outputs that closely align with the origi-nal watermarked content.",
+    "spans": [
+      {
+        "text": "Figures",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          220.71034240722656,
+          347.1377868652344,
+          230.67294311523438
+        ]
+      },
+      {
+        "text": " 6",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          347.1377868652344,
+          220.71034240722656,
+          355.6956481933594,
+          230.67294311523438
+        ]
+      },
+      {
+        "text": "-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          355.6956481933594,
+          220.71034240722656,
+          359.01318359375,
+          230.67294311523438
+        ]
+      },
+      {
+        "text": "7",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          359.01318359375,
+          220.71034240722656,
+          363.9944763183594,
+          230.67294311523438
+        ]
+      },
+      {
+        "text": " present qualitative comparisons of watermark",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          363.9944763183594,
+          220.71034240722656,
+          553.5031127929688,
+          230.67294311523438
+        ]
+      },
+      {
+        "text": "removal methods across diverse visual scenes, highlight-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          232.6653594970703,
+          553.5032348632812,
+          242.62796020507812
+        ]
+      },
+      {
+        "text": "ing clear differences in perceptual quality and structural",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          244.62037658691406,
+          553.5030517578125,
+          254.58297729492188
+        ]
+      },
+      {
+        "text": "preservation. VAE-B [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          256.57635498046875,
+          409.1649169921875,
+          266.5389709472656
+        ]
+      },
+      {
+        "text": "3",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 6592255,
+        "bbox": [
+          409.1649169921875,
+          256.57635498046875,
+          414.1462097167969,
+          266.5389709472656
+        ]
+      },
+      {
+        "text": "] consistently introduces excessive",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          414.1462097167969,
+          256.57635498046875,
+          553.5029907226562,
+          266.5389709472656
+        ]
+      },
+      {
+        "text": "smoothing that suppresses fine details and weakens tex-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          268.5313720703125,
+          553.5031127929688,
+          278.4939880371094
+        ]
+      },
+      {
+        "text": "ture sharpness, while Regen [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          280.4863586425781,
+          442.21087646484375,
+          290.448974609375
+        ]
+      },
+      {
+        "text": "47",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 6592255,
+        "bbox": [
+          442.21087646484375,
+          280.4863586425781,
+          452.1734619140625,
+          290.448974609375
+        ]
+      },
+      {
+        "text": "] generates visible high-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          452.1734619140625,
+          280.4863586425781,
+          553.5031127929688,
+          290.448974609375
+        ]
+      },
+      {
+        "text": "frequency artifacts due to the aggressive noise injection re-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          292.44134521484375,
+          553.5031127929688,
+          302.4039611816406
+        ]
+      },
+      {
+        "text": "quired for watermark removal. Rinse often leads to unnat-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          304.3963317871094,
+          553.5031127929688,
+          314.35894775390625
+        ]
+      },
+      {
+        "text": "ural color shifts and reduced photorealism as a result of",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          316.351318359375,
+          553.5029296875,
+          326.3139343261719
+        ]
+      },
+      {
+        "text": "repeated regeneration passes. UnMarker [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          328.30731201171875,
+          493.50823974609375,
+          338.2699279785156
+        ]
+      },
+      {
+        "text": "21",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 6592255,
+        "bbox": [
+          493.50823974609375,
+          328.30731201171875,
+          503.4708251953125,
+          338.2699279785156
+        ]
+      },
+      {
+        "text": "] suppresses",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          503.4708251953125,
+          328.30731201171875,
+          553.5029907226562,
+          338.2699279785156
+        ]
+      },
+      {
+        "text": "watermark signals more effectively than conventional pri-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          340.2622985839844,
+          553.5031127929688,
+          350.22491455078125
+        ]
+      },
+      {
+        "text": "ors but leaves residual noise patterns and minor structural",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          352.21728515625,
+          553.5030517578125,
+          362.1799011230469
+        ]
+      },
+      {
+        "text": "inconsistencies. Notably, as evident in the Figure",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          364.1722717285156,
+          520.218017578125,
+          374.1348876953125
+        ]
+      },
+      {
+        "text": " 8",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          520.218017578125,
+          364.1722717285156,
+          528.5866088867188,
+          374.1348876953125
+        ]
+      },
+      {
+        "text": ", Ctrl-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          528.5866088867188,
+          364.1722717285156,
+          553.5031127929688,
+          374.1348876953125
+        ]
+      },
+      {
+        "text": "Gen+ [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          376.12725830078125,
+          345.8924560546875,
+          386.0898742675781
+        ]
+      },
+      {
+        "text": "25",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 6592255,
+        "bbox": [
+          345.8924560546875,
+          376.12725830078125,
+          355.85504150390625,
+          386.0898742675781
+        ]
+      },
+      {
+        "text": "] significantly alters the underlying scene layout,",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          355.85504150390625,
+          376.12725830078125,
+          553.5029907226562,
+          386.0898742675781
+        ]
+      },
+      {
+        "text": "introducing new architectural or geometric elements and",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          388.0822448730469,
+          553.5030517578125,
+          398.04486083984375
+        ]
+      },
+      {
+        "text": "generating alternative structures that deviate from the origi-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          400.0382385253906,
+          553.5030517578125,
+          410.0008544921875
+        ]
+      },
+      {
+        "text": "nal semantic configuration rather than preserving it. In con-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          411.99322509765625,
+          553.5031127929688,
+          421.9558410644531
+        ]
+      },
+      {
+        "text": "trast,",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          423.9482116699219,
+          336.896240234375,
+          433.91082763671875
+        ]
+      },
+      {
+        "text": " RAVEN",
+        "font_name": "NimbusMonL-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          336.896240234375,
+          423.43817138671875,
+          369.7230529785156,
+          433.4007873535156
+        ]
+      },
+      {
+        "text": " maintains faithful scene geometry, consistent",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          369.7230529785156,
+          423.9482116699219,
+          553.5030517578125,
+          433.91082763671875
+        ]
+      },
+      {
+        "text": "structure, and natural texture distribution while successfully",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          435.9031982421875,
+          553.5028686523438,
+          445.8658142089844
+        ]
+      },
+      {
+        "text": "eliminating watermark traces, resulting in visually coherent",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          447.8581848144531,
+          553.5030517578125,
+          457.82080078125
+        ]
+      },
+      {
+        "text": "and photorealistic outputs that closely align with the origi-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          459.81317138671875,
+          553.5029296875,
+          469.7757873535156
+        ]
+      },
+      {
+        "text": "nal watermarked content.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          471.7691650390625,
+          418.0316162109375,
+          481.7317810058594
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      317.25,
+      494.0588684082031,
+      459.7201232910156,
+      506.0140686035156
+    ],
+    "content": "9. Computational Efficiency",
+    "spans": [
+      {
+        "text": "9. Computational Efficiency",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 11.9552001953125,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          317.25,
+          494.0588684082031,
+          459.7201232910156,
+          506.0140686035156
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      317.25,
+      514.608154296875,
+      553.503173828125,
+      703.8987426757812
+    ],
+    "content": "Among advanced methods that achieve strong watermarksuppression, RAVEN offers a favorable balance between ef-fectiveness and efficiency. UnMarker [21] requires approx-imately 5 minutes per image on an NVIDIA A100 GPU dueto its iterative optimization process, while CtrlGen+[25] re-quires multi-GPU training infrastructure with 8 NVIDIAA100 GPUs to achieve its reported performance. In con-trast, RAVEN operates in a zero-shot manner without addi-tional training and processes each image in approximately6 seconds on an A100 40GB GPU. This efficiency is en-abled by leveraging frozen pretrained diffusion models withlightweight attention modifications, avoiding costly per-image optimization or large-scale training requirements.While signal processing attacks are faster, their limited ef-fectiveness against modern watermarking schemes makesthem less relevant in practical scenarios.",
+    "spans": [
+      {
+        "text": "Among advanced methods that achieve strong watermark",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          514.608154296875,
+          553.503173828125,
+          524.5707397460938
+        ]
+      },
+      {
+        "text": "suppression,",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          526.5631103515625,
+          366.7840270996094,
+          536.5256958007812
+        ]
+      },
+      {
+        "text": " RAVEN",
+        "font_name": "NimbusMonL-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          366.7840270996094,
+          526.0531005859375,
+          399.1924133300781,
+          536.0156860351562
+        ]
+      },
+      {
+        "text": " offers a favorable balance between ef-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          399.1924133300781,
+          526.5631103515625,
+          553.5031127929688,
+          536.5256958007812
+        ]
+      },
+      {
+        "text": "fectiveness and efficiency. UnMarker [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          538.5181274414062,
+          471.9989929199219,
+          548.480712890625
+        ]
+      },
+      {
+        "text": "21",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 6592255,
+        "bbox": [
+          471.9989929199219,
+          538.5181274414062,
+          481.9615783691406,
+          548.480712890625
+        ]
+      },
+      {
+        "text": "] requires approx-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          481.9615783691406,
+          538.5181274414062,
+          553.5030517578125,
+          548.480712890625
+        ]
+      },
+      {
+        "text": "imately 5 minutes per image on an NVIDIA A100 GPU due",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          550.47412109375,
+          553.5029907226562,
+          560.4367065429688
+        ]
+      },
+      {
+        "text": "to its iterative optimization process, while CtrlGen+[",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          562.4291381835938,
+          526.793212890625,
+          572.3917236328125
+        ]
+      },
+      {
+        "text": "25",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 6592255,
+        "bbox": [
+          526.793212890625,
+          562.4291381835938,
+          536.755859375,
+          572.3917236328125
+        ]
+      },
+      {
+        "text": "] re-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          536.755859375,
+          562.4291381835938,
+          553.5030517578125,
+          572.3917236328125
+        ]
+      },
+      {
+        "text": "quires multi-GPU training infrastructure with 8 NVIDIA",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          574.3841552734375,
+          553.5029296875,
+          584.3467407226562
+        ]
+      },
+      {
+        "text": "A100 GPUs to achieve its reported performance. In con-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          586.339111328125,
+          553.503173828125,
+          596.3016967773438
+        ]
+      },
+      {
+        "text": "trast,",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          598.2941284179688,
+          336.896240234375,
+          608.2567138671875
+        ]
+      },
+      {
+        "text": " RAVEN",
+        "font_name": "NimbusMonL-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          336.896240234375,
+          597.7841186523438,
+          369.8127136230469,
+          607.7467041015625
+        ]
+      },
+      {
+        "text": " operates in a zero-shot manner without addi-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          369.8127136230469,
+          598.2941284179688,
+          553.503173828125,
+          608.2567138671875
+        ]
+      },
+      {
+        "text": "tional training and processes each image in approximately",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          610.2491455078125,
+          553.5030517578125,
+          620.2117309570312
+        ]
+      },
+      {
+        "text": "6 seconds on an A100 40GB GPU. This efficiency is en-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          622.2051391601562,
+          553.503173828125,
+          632.167724609375
+        ]
+      },
+      {
+        "text": "abled by leveraging frozen pretrained diffusion models with",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          634.16015625,
+          553.5029907226562,
+          644.1227416992188
+        ]
+      },
+      {
+        "text": "lightweight attention modifications, avoiding costly per-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          646.1151123046875,
+          553.5029296875,
+          656.0776977539062
+        ]
+      },
+      {
+        "text": "image optimization or large-scale training requirements.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          658.0701293945312,
+          553.5029907226562,
+          668.03271484375
+        ]
+      },
+      {
+        "text": "While signal processing attacks are faster, their limited ef-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          670.025146484375,
+          553.5030517578125,
+          679.9877319335938
+        ]
+      },
+      {
+        "text": "fectiveness against modern watermarking schemes makes",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          681.9801635742188,
+          553.5030517578125,
+          691.9427490234375
+        ]
+      },
+      {
+        "text": "them less relevant in practical scenarios.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          693.9361572265625,
+          477.77740478515625,
+          703.8987426757812
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      301.0190124511719,
+      733.3321533203125,
+      310.9815979003906,
+      743.2947387695312
+    ],
+    "content": "11",
+    "spans": [
+      {
+        "text": "11",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          301.0190124511719,
+          733.3321533203125,
+          310.9815979003906,
+          743.2947387695312
+        ]
+      }
+    ]
+  }
+]

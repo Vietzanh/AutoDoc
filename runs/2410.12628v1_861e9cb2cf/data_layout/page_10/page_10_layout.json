@@ -1,0 +1,1334 @@
+[
+  {
+    "type": "text",
+    "bbox": [
+      108.0,
+      84.26844787597656,
+      504.0032958984375,
+      116.14901733398438
+    ],
+    "content": "Patrick Lewis, Ethan Perez, Aleksandra Piktus, Fabio Petroni, Vladimir Karpukhin, Naman Goyal,Heinrich K¨uttler, Mike Lewis, Wen-tau Yih, Tim Rockt¨aschel, et al. Retrieval-augmented gener-ation for knowledge-intensive nlp tasks. In NIPS, 2020.",
+    "spans": [
+      {
+        "text": "Patrick Lewis, Ethan Perez, Aleksandra Piktus, Fabio Petroni, Vladimir Karpukhin, Naman Goyal,",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          84.26844787597656,
+          504.0032958984375,
+          94.23104858398438
+        ]
+      },
+      {
+        "text": "Heinrich K¨uttler, Mike Lewis, Wen-tau Yih, Tim Rockt¨aschel, et al. Retrieval-augmented gener-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.96299743652344,
+          95.17744445800781,
+          503.99566650390625,
+          105.19003295898438
+        ]
+      },
+      {
+        "text": "ation for knowledge-intensive nlp tasks. In",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.96299743652344,
+          106.18641662597656,
+          288.86138916015625,
+          116.14901733398438
+        ]
+      },
+      {
+        "text": " NIPS",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          288.86138916015625,
+          106.00994873046875,
+          312.3820495605469,
+          115.97254943847656
+        ]
+      },
+      {
+        "text": ", 2020.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          312.38201904296875,
+          106.18641662597656,
+          339.7791748046875,
+          116.14901733398438
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      108.00001525878906,
+      124.58540344238281,
+      504.00323486328125,
+      145.50698852539062
+    ],
+    "content": "Jianan Li, Jimei Yang, Jianming Zhang, Chang Liu, Christina Wang, and Tingfa Xu. Attribute-conditioned layout GAN for automatic graphic design. IEEE Trans. Vis. Comput. Graph., 2021.",
+    "spans": [
+      {
+        "text": "Jianan Li, Jimei Yang, Jianming Zhang, Chang Liu, Christina Wang, and Tingfa Xu. Attribute-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.00001525878906,
+          124.58540344238281,
+          504.00323486328125,
+          134.54800415039062
+        ]
+      },
+      {
+        "text": "conditioned layout GAN for automatic graphic design.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.9630126953125,
+          135.5443878173828,
+          335.7254638671875,
+          145.50698852539062
+        ]
+      },
+      {
+        "text": " IEEE Trans. Vis. Comput. Graph.",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          335.7254638671875,
+          135.367919921875,
+          472.780029296875,
+          145.3305206298828
+        ]
+      },
+      {
+        "text": ", 2021.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          472.779052734375,
+          135.5443878173828,
+          500.17620849609375,
+          145.50698852539062
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      108.00006103515625,
+      153.9444122314453,
+      504.0032958984375,
+      174.86599731445312
+    ],
+    "content": "Junlong Li, Yiheng Xu, Tengchao Lv, Lei Cui, Cha Zhang, and Furu Wei. Dit: Self-supervisedpre-training for document image transformer. In ACM Multimedia, 2022.",
+    "spans": [
+      {
+        "text": "Junlong Li, Yiheng Xu, Tengchao Lv, Lei Cui, Cha Zhang, and Furu Wei. Dit: Self-supervised",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.00006103515625,
+          153.9444122314453,
+          504.0032958984375,
+          163.90701293945312
+        ]
+      },
+      {
+        "text": "pre-training for document image transformer. In",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.96305847167969,
+          164.9033966064453,
+          310.5201721191406,
+          174.86599731445312
+        ]
+      },
+      {
+        "text": " ACM Multimedia",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          310.5201721191406,
+          164.7269287109375,
+          382.1694030761719,
+          174.6895294189453
+        ]
+      },
+      {
+        "text": ", 2022.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          382.1690673828125,
+          164.9033966064453,
+          409.56622314453125,
+          174.86599731445312
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      108.00006103515625,
+      183.30238342285156,
+      504.003662109375,
+      215.18295288085938
+    ],
+    "content": "Kai Li, Curtis Wigington, Chris Tensmeyer, Handong Zhao, Nikolaos Barmpalios, Vlad I. Morariu,Varun Manjunatha, Tong Sun, and Yun Fu. Cross-domain document object detection: Benchmarksuite and method. In CVPR, 2020a.",
+    "spans": [
+      {
+        "text": "Kai Li, Curtis Wigington, Chris Tensmeyer, Handong Zhao, Nikolaos Barmpalios, Vlad I. Morariu,",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.00006103515625,
+          183.30238342285156,
+          504.0032958984375,
+          193.26498413085938
+        ]
+      },
+      {
+        "text": "Varun Manjunatha, Tong Sun, and Yun Fu. Cross-domain document object detection: Benchmark",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.96305847167969,
+          194.26136779785156,
+          504.003662109375,
+          204.22396850585938
+        ]
+      },
+      {
+        "text": "suite and method. In",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.96305847167969,
+          205.22035217285156,
+          200.41351318359375,
+          215.18295288085938
+        ]
+      },
+      {
+        "text": " CVPR",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          200.41351318359375,
+          205.04388427734375,
+          227.80953979492188,
+          215.00648498535156
+        ]
+      },
+      {
+        "text": ", 2020a.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          227.81005859375,
+          205.22035217285156,
+          259.6305847167969,
+          215.18295288085938
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      108.00006103515625,
+      223.6193389892578,
+      504.0032958984375,
+      244.54092407226562
+    ],
+    "content": "Minghao Li, Yiheng Xu, Lei Cui, Shaohan Huang, Furu Wei, Zhoujun Li, and Ming Zhou. Docbank:A benchmark dataset for document layout analysis. In COLING, 2020b.",
+    "spans": [
+      {
+        "text": "Minghao Li, Yiheng Xu, Lei Cui, Shaohan Huang, Furu Wei, Zhoujun Li, and Ming Zhou. Docbank:",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.00006103515625,
+          223.6193389892578,
+          504.0032958984375,
+          233.58193969726562
+        ]
+      },
+      {
+        "text": "A benchmark dataset for document layout analysis. In",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.96305847167969,
+          234.5783233642578,
+          334.3208312988281,
+          244.54092407226562
+        ]
+      },
+      {
+        "text": " COLING",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          334.3208312988281,
+          234.40185546875,
+          373.3428955078125,
+          244.3644561767578
+        ]
+      },
+      {
+        "text": ", 2020b.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          373.3430480957031,
+          234.5783233642578,
+          405.72149658203125,
+          244.54092407226562
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      108.00006103515625,
+      252.97731018066406,
+      504.0032958984375,
+      273.8988952636719
+    ],
+    "content": "Tsung-Yi Lin, Michael Maire, Serge Belongie, and et al. Microsoft coco: Common objects incontext. In ECCV, 2014.",
+    "spans": [
+      {
+        "text": "Tsung-Yi Lin, Michael Maire, Serge Belongie, and et al. Microsoft coco: Common objects in",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.00006103515625,
+          252.97731018066406,
+          504.0032958984375,
+          262.9399108886719
+        ]
+      },
+      {
+        "text": "context. In",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.96305847167969,
+          263.936279296875,
+          161.51953125,
+          273.8988952636719
+        ]
+      },
+      {
+        "text": " ECCV",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          161.51953125,
+          263.75982666015625,
+          189.4744415283203,
+          273.722412109375
+        ]
+      },
+      {
+        "text": ", 2014.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          189.47406005859375,
+          263.936279296875,
+          216.8711700439453,
+          273.8988952636719
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      108.00006103515625,
+      282.3362731933594,
+      504.0034484863281,
+      303.25689697265625
+    ],
+    "content": "Birgit Pfitzmann, Christoph Auer, Michele Dolfi, Ahmed S. Nassar, and Peter W. J. Staar. Doclaynet:A large human-annotated dataset for document-layout segmentation. In KDD, 2022.",
+    "spans": [
+      {
+        "text": "Birgit Pfitzmann, Christoph Auer, Michele Dolfi, Ahmed S. Nassar, and Peter W. J. Staar. Doclaynet:",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.00006103515625,
+          282.3362731933594,
+          504.0034484863281,
+          292.29888916015625
+        ]
+      },
+      {
+        "text": "A large human-annotated dataset for document-layout segmentation. In",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.96305847167969,
+          293.2942810058594,
+          403.162353515625,
+          303.25689697265625
+        ]
+      },
+      {
+        "text": " KDD",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          403.162353515625,
+          293.1178283691406,
+          426.6820983886719,
+          303.0804138183594
+        ]
+      },
+      {
+        "text": ", 2022.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          426.68206787109375,
+          293.2942810058594,
+          454.0792236328125,
+          303.25689697265625
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      108.00006103515625,
+      311.69427490234375,
+      504.00341796875,
+      343.5748596191406
+    ],
+    "content": "Ori Ram, Yoav Levine, Itay Dalmedigos, Dor Muhlgay, Amnon Shashua, Kevin Leyton-Brown, andYoav Shoham. In-context retrieval-augmented language models. Transactions of the Associationfor Computational Linguistics, 11:1316–1331, 2023.",
+    "spans": [
+      {
+        "text": "Ori Ram, Yoav Levine, Itay Dalmedigos, Dor Muhlgay, Amnon Shashua, Kevin Leyton-Brown, and",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.00006103515625,
+          311.69427490234375,
+          504.00335693359375,
+          321.6568908691406
+        ]
+      },
+      {
+        "text": "Yoav Shoham. In-context retrieval-augmented language models.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.96305847167969,
+          322.65325927734375,
+          374.96820068359375,
+          332.6158752441406
+        ]
+      },
+      {
+        "text": " Transactions of the Association",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          374.96820068359375,
+          322.476806640625,
+          504.00341796875,
+          332.43939208984375
+        ]
+      },
+      {
+        "text": "for Computational Linguistics",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          117.96307373046875,
+          333.435791015625,
+          238.09207153320312,
+          343.39837646484375
+        ]
+      },
+      {
+        "text": ", 11:1316–1331, 2023.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          238.091064453125,
+          333.61224365234375,
+          328.0333557128906,
+          343.5748596191406
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      108.00006103515625,
+      352.01123046875,
+      504.0033264160156,
+      372.9328308105469
+    ],
+    "content": "Shaoqing Ren, Kaiming He, Ross Girshick, and Jian Sun. Faster r-cnn: Towards real-time objectdetection with region proposal networks. NIPS, 2015.",
+    "spans": [
+      {
+        "text": "Shaoqing Ren, Kaiming He, Ross Girshick, and Jian Sun. Faster r-cnn: Towards real-time object",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.00006103515625,
+          352.01123046875,
+          504.0033264160156,
+          361.9738464355469
+        ]
+      },
+      {
+        "text": "detection with region proposal networks.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.96305847167969,
+          362.97021484375,
+          280.692138671875,
+          372.9328308105469
+        ]
+      },
+      {
+        "text": " NIPS",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          280.692138671875,
+          362.79376220703125,
+          305.3080749511719,
+          372.75634765625
+        ]
+      },
+      {
+        "text": ", 2015.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          305.30804443359375,
+          362.97021484375,
+          332.7052001953125,
+          372.9328308105469
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      108.00004577636719,
+      381.36920166015625,
+      504.00323486328125,
+      402.2908020019531
+    ],
+    "content": "Ao Wang, Hui Chen, Lihao Liu, Kai Chen, Zijia Lin, Jungong Han, and Guiguang Ding. Yolov10:Real-time end-to-end object detection. arXiv, 2024a.",
+    "spans": [
+      {
+        "text": "Ao Wang, Hui Chen, Lihao Liu, Kai Chen, Zijia Lin, Jungong Han, and Guiguang Ding. Yolov10:",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.00004577636719,
+          381.36920166015625,
+          504.00323486328125,
+          391.3318176269531
+        ]
+      },
+      {
+        "text": "Real-time end-to-end object detection.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.96304321289062,
+          392.32818603515625,
+          271.24761962890625,
+          402.2908020019531
+        ]
+      },
+      {
+        "text": " arXiv",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          271.24761962890625,
+          392.1517333984375,
+          296.9699401855469,
+          402.11431884765625
+        ]
+      },
+      {
+        "text": ", 2024a.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          296.9690246582031,
+          392.32818603515625,
+          328.7895812988281,
+          402.2908020019531
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      108.00003051757812,
+      410.7271728515625,
+      504.0036315917969,
+      453.5667419433594
+    ],
+    "content": "Bin Wang, Chao Xu, Xiaomeng Zhao, Linke Ouyang, Fan Wu, Zhiyuan Zhao, Rui Xu, Kaiwen Liu,Yuan Qu, Fukai Shang, Bo Zhang, Liqun Wei, Zhihao Sui, Wei Li, Botian Shi, Yu Qiao, DahuaLin, and Conghui He. Mineru: An open-source solution for precise document content extraction,2024b. URL https://arxiv.org/abs/2409.18839.",
+    "spans": [
+      {
+        "text": "Bin Wang, Chao Xu, Xiaomeng Zhao, Linke Ouyang, Fan Wu, Zhiyuan Zhao, Rui Xu, Kaiwen Liu,",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.00003051757812,
+          410.7271728515625,
+          504.0033264160156,
+          420.6897888183594
+        ]
+      },
+      {
+        "text": "Yuan Qu, Fukai Shang, Bo Zhang, Liqun Wei, Zhihao Sui, Wei Li, Botian Shi, Yu Qiao, Dahua",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.96302795410156,
+          421.6861572265625,
+          504.0036315917969,
+          431.6487731933594
+        ]
+      },
+      {
+        "text": "Lin, and Conghui He. Mineru: An open-source solution for precise document content extraction,",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.96302795410156,
+          432.6451416015625,
+          504.0035400390625,
+          442.6077575683594
+        ]
+      },
+      {
+        "text": "2024b. URL",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.96302795410156,
+          443.6041259765625,
+          168.8718719482422,
+          453.5667419433594
+        ]
+      },
+      {
+        "text": " https://arxiv.org/abs/2409.18839",
+        "font_name": "NimbusMonL-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          168.8718719482422,
+          443.0940856933594,
+          362.64404296875,
+          453.05670166015625
+        ]
+      },
+      {
+        "text": ".",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          362.64501953125,
+          443.6041259765625,
+          365.13568115234375,
+          453.5667419433594
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      108.00001525878906,
+      462.00311279296875,
+      504.0033264160156,
+      493.8836975097656
+    ],
+    "content": "Chien-Yao Wang, Hong-Yuan Mark Liao, Yueh-Hua Wu, Ping-Yang Chen, Jun-Wei Hsieh, and I-Hau Yeh. Cspnet: A new backbone that can enhance learning capability of CNN. In CVPRWorkshops, 2020.",
+    "spans": [
+      {
+        "text": "Chien-Yao Wang, Hong-Yuan Mark Liao, Yueh-Hua Wu, Ping-Yang Chen, Jun-Wei Hsieh, and I-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.00001525878906,
+          462.00311279296875,
+          504.0033264160156,
+          471.9657287597656
+        ]
+      },
+      {
+        "text": "Hau Yeh. Cspnet: A new backbone that can enhance learning capability of CNN. In",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.9630126953125,
+          472.96209716796875,
+          475.41094970703125,
+          482.9247131347656
+        ]
+      },
+      {
+        "text": " CVPR",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          475.41094970703125,
+          472.78564453125,
+          504.00054931640625,
+          482.74822998046875
+        ]
+      },
+      {
+        "text": "Workshops",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          117.9630126953125,
+          483.74462890625,
+          161.32025146484375,
+          493.70721435546875
+        ]
+      },
+      {
+        "text": ", 2020.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          161.32000732421875,
+          483.92108154296875,
+          188.7171173095703,
+          493.8836975097656
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      108.00000762939453,
+      502.3210754394531,
+      504.00335693359375,
+      523.2416381835938
+    ],
+    "content": "Yuxin Wu, Alexander Kirillov, Francisco Massa, Wan-Yen Lo, and Ross Girshick. Detectron2.https://github.com/facebookresearch/detectron2, 2019.",
+    "spans": [
+      {
+        "text": "Yuxin Wu, Alexander Kirillov, Francisco Massa, Wan-Yen Lo, and Ross Girshick. Detectron2.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.00000762939453,
+          502.3210754394531,
+          504.00335693359375,
+          512.28369140625
+        ]
+      },
+      {
+        "text": "https://github.com/facebookresearch/detectron2",
+        "font_name": "NimbusMonL-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.96300506591797,
+          512.76904296875,
+          392.93084716796875,
+          522.7316284179688
+        ]
+      },
+      {
+        "text": ", 2019.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          392.9320068359375,
+          513.279052734375,
+          420.32916259765625,
+          523.2416381835938
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      108.0,
+      531.6790771484375,
+      504.003173828125,
+      563.5596313476562
+    ],
+    "content": "Yang Xu, Yiheng Xu, Tengchao Lv, Lei Cui, Furu Wei, Guoxin Wang, Yijuan Lu, Dinei A. F.Florˆencio, Cha Zhang, Wanxiang Che, Min Zhang, and Lidong Zhou. Layoutlmv2: Multi-modalpre-training for visually-rich document understanding. In ACL, 2021.",
+    "spans": [
+      {
+        "text": "Yang Xu, Yiheng Xu, Tengchao Lv, Lei Cui, Furu Wei, Guoxin Wang, Yijuan Lu, Dinei A. F.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          531.6790771484375,
+          504.003173828125,
+          541.6416625976562
+        ]
+      },
+      {
+        "text": "Florˆencio, Cha Zhang, Wanxiang Che, Min Zhang, and Lidong Zhou. Layoutlmv2: Multi-modal",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.96299743652344,
+          542.5880737304688,
+          504.0029296875,
+          552.6006469726562
+        ]
+      },
+      {
+        "text": "pre-training for visually-rich document understanding. In",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.96300506591797,
+          553.5970458984375,
+          347.0529479980469,
+          563.5596313476562
+        ]
+      },
+      {
+        "text": " ACL",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          347.0529479980469,
+          553.4205932617188,
+          367.5145263671875,
+          563.3831787109375
+        ]
+      },
+      {
+        "text": ", 2021.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          367.5149841308594,
+          553.5970458984375,
+          394.9121398925781,
+          563.5596313476562
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      107.99996948242188,
+      571.99609375,
+      504.00323486328125,
+      592.9176635742188
+    ],
+    "content": "Yiheng Xu, Minghao Li, Lei Cui, Shaohan Huang, Furu Wei, and Ming Zhou. Layoutlm: Pre-training of text and layout for document image understanding. In KDD, 2020.",
+    "spans": [
+      {
+        "text": "Yiheng Xu, Minghao Li, Lei Cui, Shaohan Huang, Furu Wei, and Ming Zhou. Layoutlm: Pre-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.99996948242188,
+          571.99609375,
+          504.00323486328125,
+          581.9586791992188
+        ]
+      },
+      {
+        "text": "training of text and layout for document image understanding. In",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.96296691894531,
+          582.955078125,
+          377.3491516113281,
+          592.9176635742188
+        ]
+      },
+      {
+        "text": " KDD",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          377.3491516113281,
+          582.7786254882812,
+          400.8689880371094,
+          592.7412109375
+        ]
+      },
+      {
+        "text": ", 2020.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          400.86895751953125,
+          582.955078125,
+          428.26611328125,
+          592.9176635742188
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      107.99996948242188,
+      601.3540649414062,
+      504.0035705566406,
+      633.2346801757812
+    ],
+    "content": "Xiao Yang, Ersin Yumer, Paul Asente, Mike Kraley, Daniel Kifer, and C Lee Giles. Learning toextract semantic structure from documents using multimodal fully convolutional neural networks.In CVPR, 2017.",
+    "spans": [
+      {
+        "text": "Xiao Yang, Ersin Yumer, Paul Asente, Mike Kraley, Daniel Kifer, and C Lee Giles. Learning to",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.99996948242188,
+          601.3540649414062,
+          504.00323486328125,
+          611.316650390625
+        ]
+      },
+      {
+        "text": "extract semantic structure from documents using multimodal fully convolutional neural networks.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.96296691894531,
+          612.3131103515625,
+          504.0035705566406,
+          622.2756958007812
+        ]
+      },
+      {
+        "text": "In",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.96296691894531,
+          623.2720947265625,
+          126.26181030273438,
+          633.2346801757812
+        ]
+      },
+      {
+        "text": " CVPR",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          126.26181030273438,
+          623.0956420898438,
+          153.658447265625,
+          633.0582275390625
+        ]
+      },
+      {
+        "text": ", 2017.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          153.65896606445312,
+          623.2720947265625,
+          181.0560760498047,
+          633.2346801757812
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      107.99996948242188,
+      641.6710815429688,
+      504.0035095214844,
+      673.5516967773438
+    ],
+    "content": "Hao Zhang, Feng Li, Shilong Liu, Lei Zhang, Hang Su, Jun Zhu, Lionel M. Ni, and Heung-YeungShum. DINO: DETR with improved denoising anchor boxes for end-to-end object detection. InICLR, 2023a.",
+    "spans": [
+      {
+        "text": "Hao Zhang, Feng Li, Shilong Liu, Lei Zhang, Hang Su, Jun Zhu, Lionel M. Ni, and Heung-Yeung",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.99996948242188,
+          641.6710815429688,
+          504.0032043457031,
+          651.6336669921875
+        ]
+      },
+      {
+        "text": "Shum. DINO: DETR with improved denoising anchor boxes for end-to-end object detection. In",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.96296691894531,
+          652.6300659179688,
+          504.0035095214844,
+          662.5926513671875
+        ]
+      },
+      {
+        "text": "ICLR",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          117.96296691894531,
+          663.4126586914062,
+          139.55191040039062,
+          673.375244140625
+        ]
+      },
+      {
+        "text": ", 2023a.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          139.55197143554688,
+          663.589111328125,
+          171.3724822998047,
+          673.5516967773438
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      107.99996948242188,
+      681.9880981445312,
+      504.00323486328125,
+      702.90966796875
+    ],
+    "content": "Junyi Zhang, Jiaqi Guo, Shizhao Sun, Jian-Guang Lou, and Dongmei Zhang. Layoutdiffusion:Improving graphic layout generation by discrete diffusion probabilistic models. In ICCV, 2023b.",
+    "spans": [
+      {
+        "text": "Junyi Zhang, Jiaqi Guo, Shizhao Sun, Jian-Guang Lou, and Dongmei Zhang. Layoutdiffusion:",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.99996948242188,
+          681.9880981445312,
+          504.00323486328125,
+          691.95068359375
+        ]
+      },
+      {
+        "text": "Improving graphic layout generation by discrete diffusion probabilistic models. In",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.96296691894531,
+          692.9470825195312,
+          446.28033447265625,
+          702.90966796875
+        ]
+      },
+      {
+        "text": " ICCV",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          446.28033447265625,
+          692.7706298828125,
+          471.4637756347656,
+          702.7332153320312
+        ]
+      },
+      {
+        "text": ", 2023b.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          471.4629821777344,
+          692.9470825195312,
+          503.8414306640625,
+          702.90966796875
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      107.99996948242188,
+      711.3471069335938,
+      504.0032043457031,
+      732.2686767578125
+    ],
+    "content": "Xu Zhong, Jianbin Tang, and Antonio Jimeno-Yepes. Publaynet: Largest dataset ever for documentlayout analysis. In ICDAR, 2019.",
+    "spans": [
+      {
+        "text": "Xu Zhong, Jianbin Tang, and Antonio Jimeno-Yepes. Publaynet: Largest dataset ever for document",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.99996948242188,
+          711.3471069335938,
+          504.0032043457031,
+          721.3096923828125
+        ]
+      },
+      {
+        "text": "layout analysis. In",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.96296691894531,
+          722.3060913085938,
+          191.83563232421875,
+          732.2686767578125
+        ]
+      },
+      {
+        "text": " ICDAR",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          191.83563232421875,
+          722.129638671875,
+          223.30615234375,
+          732.0922241210938
+        ]
+      },
+      {
+        "text": ", 2019.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          223.3069610595703,
+          722.3060913085938,
+          250.70407104492188,
+          732.2686767578125
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      301.0189514160156,
+      752.194091796875,
+      310.9815368652344,
+      762.1566772460938
+    ],
+    "content": "11",
+    "spans": [
+      {
+        "text": "11",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          301.0189514160156,
+          752.194091796875,
+          310.9815368652344,
+          762.1566772460938
+        ]
+      }
+    ]
+  }
+]

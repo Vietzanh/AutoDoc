@@ -1,0 +1,1381 @@
+[
+  {
+    "type": "text",
+    "bbox": [
+      108.0,
+      74.33230590820312,
+      503.9975280761719,
+      95.27908325195312
+    ],
+    "content": "as self-critique. Notably, even with guidance on how models should approach the problem, thesemethods still rely on the models’ own capabilities to complete the task.",
+    "spans": [
+      {
+        "text": "as self-critique. Notably, even with guidance on how models should approach the problem, these",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          74.33230590820312,
+          503.9975280761719,
+          84.39403533935547
+        ]
+      },
+      {
+        "text": "methods still rely on the models’ own capabilities to complete the task.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          85.31648254394531,
+          391.1171569824219,
+          95.27908325195312
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      108.0,
+      101.75375366210938,
+      504.1725158691406,
+      177.12210083007812
+    ],
+    "content": "However, other work has offloaded some of the burden from the models when solving problems. Forexample, some works improve LLM performance by using tools such as code interpreters, whichoffload part of the computation to a separate program [17, 18]. Additional work improves modelperformance by enabling models to access the internet and consult resources such as Wikipedia[19, 20]. With these extra tools, the models often outperform prompt-only methods. However, theirperformance can no longer be attributed solely to the models themselves, as it now depends onexternal information and computation.",
+    "spans": [
+      {
+        "text": "However, other work has offloaded some of the burden from the models when solving problems. For",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.89763069152832,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          101.75375366210938,
+          504.16510009765625,
+          111.65138244628906
+        ]
+      },
+      {
+        "text": "example, some works improve LLM performance by using tools such as code interpreters, which",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          112.53829956054688,
+          503.9975280761719,
+          122.60002899169922
+        ]
+      },
+      {
+        "text": "offload part of the computation to a separate program [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          123.44729614257812,
+          333.0038757324219,
+          133.509033203125
+        ]
+      },
+      {
+        "text": "17",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          333.00799560546875,
+          123.52247619628906,
+          342.9705810546875,
+          133.48507690429688
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          342.9700012207031,
+          123.44729614257812,
+          345.5104675292969,
+          133.509033203125
+        ]
+      },
+      {
+        "text": " 18",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          345.5104675292969,
+          123.52247619628906,
+          358.3025817871094,
+          133.48507690429688
+        ]
+      },
+      {
+        "text": "]. Additional work improves model",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          358.302001953125,
+          123.44729614257812,
+          504.00262451171875,
+          133.509033203125
+        ]
+      },
+      {
+        "text": "performance by enabling models to access the internet and consult resources such as Wikipedia",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          134.35726928710938,
+          503.9975280761719,
+          144.41900634765625
+        ]
+      },
+      {
+        "text": "[",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.977532386779785,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          145.3301239013672,
+          111.32749938964844,
+          155.30764770507812
+        ]
+      },
+      {
+        "text": "19",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          111.3270034790039,
+          145.34144592285156,
+          121.28960418701172,
+          155.30404663085938
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.977532386779785,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          121.29000091552734,
+          145.3301239013672,
+          123.78812408447266,
+          155.30764770507812
+        ]
+      },
+      {
+        "text": " 20",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          123.78812408447266,
+          145.34144592285156,
+          136.2285919189453,
+          155.30404663085938
+        ]
+      },
+      {
+        "text": "]. With these extra tools, the models often outperform prompt-only methods. However, their",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.977532386779785,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          136.22900390625,
+          145.3301239013672,
+          504.1725158691406,
+          155.30764770507812
+        ]
+      },
+      {
+        "text": "performance can no longer be attributed solely to the models themselves, as it now depends on",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          156.17532348632812,
+          503.99737548828125,
+          166.237060546875
+        ]
+      },
+      {
+        "text": "external information and computation.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          167.1595001220703,
+          261.14508056640625,
+          177.12210083007812
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      108.0,
+      192.16552734375,
+      216.39305114746094,
+      202.1281280517578
+    ],
+    "content": "2.2Evaluation Methods",
+    "spans": [
+      {
+        "text": "2.2",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          108.0,
+          192.16552734375,
+          120.4532470703125,
+          202.1281280517578
+        ]
+      },
+      {
+        "text": "Evaluation Methods",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          130.4158477783203,
+          192.16552734375,
+          216.39305114746094,
+          202.1281280517578
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      108.0,
+      212.41232299804688,
+      505.7444763183594,
+      298.8140869140625
+    ],
+    "content": "LLM progress is often measured based on benchmark performance, such as AIME [21, 4], SWE-bench [5], or others [22–24], highlighting their proficiency in mathematics, writing code, or othercomplex tasks. These benchmarks often rely on arithmetic or knowledge-based questions, wheresuccess is determined by recalling facts or using similar examples from the training data to solve theproblems presented. However, many studies have examined the possibility of data contamination[4, 25, 26], raising concerns about the validity of the improvements we observe across models.Furthermore, these tasks offer less insight into the models’ planning abilities because they rarelyrequire a long-term strategy.",
+    "spans": [
+      {
+        "text": "LLM progress is often measured based on benchmark performance, such as AIME [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          212.41232299804688,
+          451.9180603027344,
+          222.47406005859375
+        ]
+      },
+      {
+        "text": "21",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          451.91900634765625,
+          212.4875030517578,
+          461.881591796875,
+          222.45010375976562
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          461.8810119628906,
+          212.41232299804688,
+          464.4214782714844,
+          222.47406005859375
+        ]
+      },
+      {
+        "text": " 4",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          464.4214782714844,
+          212.4875030517578,
+          472.12030029296875,
+          222.45010375976562
+        ]
+      },
+      {
+        "text": "], SWE-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          472.1199951171875,
+          212.41232299804688,
+          505.6541442871094,
+          222.47406005859375
+        ]
+      },
+      {
+        "text": "bench [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          223.32131958007812,
+          138.25184631347656,
+          233.383056640625
+        ]
+      },
+      {
+        "text": "5",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          138.2469940185547,
+          223.39649963378906,
+          143.22828674316406,
+          233.35910034179688
+        ]
+      },
+      {
+        "text": "], or others [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          143.22900390625,
+          223.32131958007812,
+          193.6521453857422,
+          233.383056640625
+        ]
+      },
+      {
+        "text": "22",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          193.65499877929688,
+          223.39649963378906,
+          203.61758422851562,
+          233.35910034179688
+        ]
+      },
+      {
+        "text": "–",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          203.61700439453125,
+          223.32131958007812,
+          208.69793701171875,
+          233.383056640625
+        ]
+      },
+      {
+        "text": "24",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          208.697998046875,
+          223.39649963378906,
+          218.66058349609375,
+          233.35910034179688
+        ]
+      },
+      {
+        "text": "], highlighting their proficiency in mathematics, writing code, or other",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          218.66099548339844,
+          223.32131958007812,
+          504.1685791015625,
+          233.383056640625
+        ]
+      },
+      {
+        "text": "complex tasks. These benchmarks often rely on arithmetic or knowledge-based questions, where",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          234.23031616210938,
+          503.9974365234375,
+          244.29205322265625
+        ]
+      },
+      {
+        "text": "success is determined by recalling facts or using similar examples from the training data to solve the",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.9126615524292,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          245.2523651123047,
+          503.99853515625,
+          255.16502380371094
+        ]
+      },
+      {
+        "text": "problems presented. However, many studies have examined the possibility of data contamination",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          256.0492858886719,
+          503.997314453125,
+          266.11102294921875
+        ]
+      },
+      {
+        "text": "[",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          266.9582824707031,
+          111.38389587402344,
+          277.02001953125
+        ]
+      },
+      {
+        "text": "4",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          111.38400268554688,
+          267.033447265625,
+          116.36530303955078,
+          276.9960632324219
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          116.36499786376953,
+          266.9582824707031,
+          118.90546417236328,
+          277.02001953125
+        ]
+      },
+      {
+        "text": " 25",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          118.90546417236328,
+          267.033447265625,
+          132.3885955810547,
+          276.9960632324219
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          132.38900756835938,
+          266.9582824707031,
+          134.92947387695312,
+          277.02001953125
+        ]
+      },
+      {
+        "text": " 26",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          134.92947387695312,
+          267.033447265625,
+          148.41258239746094,
+          276.9960632324219
+        ]
+      },
+      {
+        "text": "], raising concerns about the validity of the improvements we observe across models.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          148.41299438476562,
+          266.9582824707031,
+          505.7444763183594,
+          277.02001953125
+        ]
+      },
+      {
+        "text": "Furthermore, these tasks offer less insight into the models’ planning abilities because they rarely",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          277.8672790527344,
+          504.3528747558594,
+          287.92901611328125
+        ]
+      },
+      {
+        "text": "require a long-term strategy.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          288.8514709472656,
+          220.63717651367188,
+          298.8140869140625
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      107.53199768066406,
+      305.28875732421875,
+      504.0035400390625,
+      391.5660705566406
+    ],
+    "content": "Work that focuses on LLM planning often reports low success rates and provides high-level analysesof why models fail—for example, prompt-sensitive pattern-matching and the need for planner-basedrepair [27]. Other recent evaluations include cost/efficiency comparisons with some failure-modebreakdowns [6, 28], but they do not typically emphasize fine-grained analyses of how failuresunfold. Furthermore, few studies examine variable levels of feedback, and we are aware of nonethat systematically combine modern prompting techniques with feedback on a planning task like the8-puzzle to analyze how these factors modulate performance and failure types, leaving the effects ofprompting and feedback on such tasks under-examined.",
+    "spans": [
+      {
+        "text": "Work that focuses on LLM planning often reports low success rates and provides high-level analyses",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.89763069152832,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.53199768066406,
+          305.28875732421875,
+          504.00201416015625,
+          315.1864013671875
+        ]
+      },
+      {
+        "text": "of why models fail—for example, prompt-sensitive pattern-matching and the need for planner-based",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.9126615524292,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          316.18634033203125,
+          503.99835205078125,
+          326.0990295410156
+        ]
+      },
+      {
+        "text": "repair [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          326.9833068847656,
+          137.71324157714844,
+          337.0450439453125
+        ]
+      },
+      {
+        "text": "27",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          137.71600341796875,
+          327.0584716796875,
+          147.6785888671875,
+          337.0210876464844
+        ]
+      },
+      {
+        "text": "]. Other recent evaluations include cost/efficiency comparisons with some failure-mode",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          147.67799377441406,
+          326.9833068847656,
+          504.0035400390625,
+          337.0450439453125
+        ]
+      },
+      {
+        "text": "breakdowns [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          337.8923034667969,
+          163.98165893554688,
+          347.95404052734375
+        ]
+      },
+      {
+        "text": "6",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          163.9810028076172,
+          337.96746826171875,
+          168.96229553222656,
+          347.9300842285156
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          168.96200561523438,
+          337.8923034667969,
+          171.50247192382812,
+          347.95404052734375
+        ]
+      },
+      {
+        "text": " 28",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          171.50247192382812,
+          337.96746826171875,
+          185.20957946777344,
+          347.9300842285156
+        ]
+      },
+      {
+        "text": "], but they do not typically emphasize fine-grained analyses of how failures",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          185.2100067138672,
+          337.8923034667969,
+          503.9977111816406,
+          347.95404052734375
+        ]
+      },
+      {
+        "text": "unfold. Furthermore, few studies examine variable levels of feedback, and we are aware of none",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          348.8013000488281,
+          503.997314453125,
+          358.863037109375
+        ]
+      },
+      {
+        "text": "that systematically combine modern prompting techniques with feedback on a planning task like the",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.9176664352417,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          359.8195495605469,
+          504.00347900390625,
+          369.7372131347656
+        ]
+      },
+      {
+        "text": "8-puzzle to analyze how these factors modulate performance and failure types, leaving the effects of",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.92266845703125,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          370.7247619628906,
+          503.99749755859375,
+          380.6474304199219
+        ]
+      },
+      {
+        "text": "prompting and feedback on such tasks under-examined.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          381.60345458984375,
+          329.82720947265625,
+          391.5660705566406
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      108.0,
+      409.0161437988281,
+      170.4300537109375,
+      420.9713439941406
+    ],
+    "content": "3Methods",
+    "spans": [
+      {
+        "text": "3",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 11.9552001953125,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          108.0,
+          409.0161437988281,
+          113.97760009765625,
+          420.9713439941406
+        ]
+      },
+      {
+        "text": "Methods",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 11.9552001953125,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          125.93280029296875,
+          409.0161437988281,
+          170.4300537109375,
+          420.9713439941406
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      108.0,
+      434.0425109863281,
+      165.83290100097656,
+      444.0050964355469
+    ],
+    "content": "3.18-puzzle",
+    "spans": [
+      {
+        "text": "3.1",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          108.0,
+          434.0425109863281,
+          120.4532470703125,
+          444.0050964355469
+        ]
+      },
+      {
+        "text": "8-puzzle",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          130.4158477783203,
+          434.0425109863281,
+          165.83290100097656,
+          444.0050964355469
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      107.69100189208984,
+      454.2882995605469,
+      504.35345458984375,
+      562.508056640625
+    ],
+    "content": "The 8-puzzle is a simple and widely used search problem in AI [29, 30]. The puzzle consists of a3-by-3 grid with eight numbered, sliding tiles (1–8) and a single blank space (represented as 0). Tilesdirectly adjacent to the space can slide into it to change the board configuration. From a randomstarting configuration, the goal is to slide tiles until the board reads 1–8 from left to right, top tobottom, with the blank in the bottom-right corner. The 8-puzzle is particularly well-suited to ourinvestigation because it is a well-studied problem in AI [29], it provides a controllable and predictableenvironment in which the model must track the board state and obey strict rules, and it demandsnon-trivial long-term planning because solutions are unlikely to be found through local or randomactions alone. Thus, it combines state tracking and planning in a single, compact domain, with easilyverifiable solutions and unambiguous instructions.",
+    "spans": [
+      {
+        "text": "The 8-puzzle is a simple and widely used search problem in AI [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.69100189208984,
+          454.2882995605469,
+          371.3708801269531,
+          464.35003662109375
+        ]
+      },
+      {
+        "text": "29",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          371.37200927734375,
+          454.36346435546875,
+          381.3345947265625,
+          464.3260803222656
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          381.3349914550781,
+          454.2882995605469,
+          383.8754577636719,
+          464.35003662109375
+        ]
+      },
+      {
+        "text": " 30",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          383.8754577636719,
+          454.36346435546875,
+          396.4805908203125,
+          464.3260803222656
+        ]
+      },
+      {
+        "text": "]. The puzzle consists of a",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          396.4800109863281,
+          454.2882995605469,
+          504.0027160644531,
+          464.35003662109375
+        ]
+      },
+      {
+        "text": "3-by-3 grid with eight numbered, sliding tiles (1–8) and a single blank space (represented as 0). Tiles",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.862470626831055,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          465.34942626953125,
+          504.00152587890625,
+          475.2118835449219
+        ]
+      },
+      {
+        "text": "directly adjacent to the space can slide into it to change the board configuration. From a random",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          476.1072998046875,
+          503.9972839355469,
+          486.1690368652344
+        ]
+      },
+      {
+        "text": "starting configuration, the goal is to slide tiles until the board reads 1–8 from left to right, top to",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          487.01629638671875,
+          503.99725341796875,
+          497.0780334472656
+        ]
+      },
+      {
+        "text": "bottom, with the blank in the bottom-right corner. The 8-puzzle is particularly well-suited to our",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          497.92529296875,
+          504.1701354980469,
+          507.9870300292969
+        ]
+      },
+      {
+        "text": "investigation because it is a well-studied problem in AI [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.862470626831055,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          508.9853820800781,
+          327.3630065917969,
+          518.8478393554688
+        ]
+      },
+      {
+        "text": "29",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          327.3609924316406,
+          508.909423828125,
+          337.3235778808594,
+          518.8720092773438
+        ]
+      },
+      {
+        "text": "], it provides a controllable and predictable",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.862470626831055,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          337.322998046875,
+          508.9853820800781,
+          504.0029602050781,
+          518.8478393554688
+        ]
+      },
+      {
+        "text": "environment in which the model must track the board state and obey strict rules, and it demands",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          519.7432861328125,
+          503.99737548828125,
+          529.8050537109375
+        ]
+      },
+      {
+        "text": "non-trivial long-term planning because solutions are unlikely to be found through local or random",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.046924591064453,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          530.6635131835938,
+          503.9975280761719,
+          540.71044921875
+        ]
+      },
+      {
+        "text": "actions alone. Thus, it combines state tracking and planning in a single, compact domain, with easily",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.882577896118164,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          541.6972045898438,
+          504.35345458984375,
+          551.5797729492188
+        ]
+      },
+      {
+        "text": "verifiable solutions and unambiguous instructions.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.7509994506836,
+          552.5454711914062,
+          308.2382507324219,
+          562.508056640625
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      107.25299835205078,
+      568.8592529296875,
+      504.3529357910156,
+      666.1700439453125
+    ],
+    "content": "The problem space consists of 181,440 unique solvable configurations, with the shortest optimalsolution requiring zero moves and the longest optimal solution requiring 31 moves [30]. To ensurefair representation of puzzles with varying difficulty, we divided them into difficulty bins based ontheir optimal solution lengths. Each bin represents roughly 20% of the solvable puzzles and contains10 sampled puzzles (see Fig. 3 for the bin definition). We generated the puzzles for each bin bycreating a flattened list of integers from 0 to 8, shuffling them with Python’s random.shuffle, andreshaping them into 3-by-3 arrays. For each bin, we repeatedly sampled random boards and used onlythose that were solvable according to the standard parity test. Given the large number of possiblepuzzles and their random generation, we minimize the likelihood of data contamination.",
+    "spans": [
+      {
+        "text": "The problem space consists of 181,440 unique solvable configurations, with the shortest optimal",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.69100189208984,
+          568.8592529296875,
+          504.0033264160156,
+          578.9210205078125
+        ]
+      },
+      {
+        "text": "solution requiring zero moves and the longest optimal solution requiring 31 moves [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.012289047241211,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          579.8057861328125,
+          445.9197998046875,
+          589.8180541992188
+        ]
+      },
+      {
+        "text": "30",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          445.9219970703125,
+          579.8434448242188,
+          455.88458251953125,
+          589.8060302734375
+        ]
+      },
+      {
+        "text": "]. To ensure",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.012289047241211,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          455.885009765625,
+          579.8057861328125,
+          504.0024719238281,
+          589.8180541992188
+        ]
+      },
+      {
+        "text": "fair representation of puzzles with varying difficulty, we divided them into difficulty bins based on",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.02714729309082,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          590.7034912109375,
+          504.0042419433594,
+          600.7306518554688
+        ]
+      },
+      {
+        "text": "their optimal solution lengths. Each bin represents roughly 20% of the solvable puzzles and contains",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.89763069152832,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          601.710693359375,
+          503.9979248046875,
+          611.6083374023438
+        ]
+      },
+      {
+        "text": "10 sampled puzzles (see Fig. 3 for the bin definition). We generated the puzzles for each bin by",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.25299835205078,
+          612.4952392578125,
+          504.3478698730469,
+          622.5570068359375
+        ]
+      },
+      {
+        "text": "creating a flattened list of integers from 0 to 8, shuffling them with Python’s",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.937662124633789,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          623.4984130859375,
+          409.0116882324219,
+          633.4360961914062
+        ]
+      },
+      {
+        "text": " random.shuffle",
+        "font_name": "SFTT1000",
+        "font_size": 9.962599754333496,
+        "font_flags": 12,
+        "color": 0,
+        "bbox": [
+          409.0116882324219,
+          623.7275390625,
+          484.7322692871094,
+          633.6901245117188
+        ]
+      },
+      {
+        "text": ", and",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.937662124633789,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          484.7149963378906,
+          623.4984130859375,
+          503.995361328125,
+          633.4360961914062
+        ]
+      },
+      {
+        "text": "reshaping them into 3-by-3 arrays. For each bin, we repeatedly sampled random boards and used only",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.862470626831055,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          634.46435546875,
+          504.3529357910156,
+          644.3268432617188
+        ]
+      },
+      {
+        "text": "those that were solvable according to the standard parity test. Given the large number of possible",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          645.2222900390625,
+          503.9974060058594,
+          655.2840576171875
+        ]
+      },
+      {
+        "text": "puzzles and their random generation, we minimize the likelihood of data contamination.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          656.2074584960938,
+          459.0321350097656,
+          666.1700439453125
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      108.0,
+      681.2135009765625,
+      161.4095001220703,
+      691.1760864257812
+    ],
+    "content": "3.2Models",
+    "spans": [
+      {
+        "text": "3.2",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          108.0,
+          681.2135009765625,
+          120.4532470703125,
+          691.1760864257812
+        ]
+      },
+      {
+        "text": "Models",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          130.4158477783203,
+          681.2135009765625,
+          161.4095001220703,
+          691.1760864257812
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      107.53199768066406,
+      701.6076049804688,
+      503.99755859375,
+      722.4310302734375
+    ],
+    "content": "We tested four models in our experiments: GPT-5-Thinking, Gemini-2.5-Pro, GPT-5-mini and Llama3.1 8B-Instruct. To ensure uniformity and fairness between models, we used the same parameters",
+    "spans": [
+      {
+        "text": "We tested four models in our experiments: GPT-5-Thinking, Gemini-2.5-Pro, GPT-5-mini and Llama",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.867501258850098,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.53199768066406,
+          701.6076049804688,
+          503.9962463378906,
+          711.47509765625
+        ]
+      },
+      {
+        "text": "3.1 8B-Instruct. To ensure uniformity and fairness between models, we used the same parameters",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          712.3692626953125,
+          503.99755859375,
+          722.4310302734375
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      303.5090026855469,
+      742.3324584960938,
+      308.49029541015625,
+      752.2950439453125
+    ],
+    "content": "3",
+    "spans": [
+      {
+        "text": "3",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          303.5090026855469,
+          742.3324584960938,
+          308.49029541015625,
+          752.2950439453125
+        ]
+      }
+    ]
+  }
+]

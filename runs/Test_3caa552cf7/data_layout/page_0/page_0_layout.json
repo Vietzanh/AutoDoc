@@ -1,0 +1,993 @@
+[
+  {
+    "type": "text",
+    "bbox": [
+      112.38800048828125,
+      99.8338394165039,
+      499.6141662597656,
+      136.97422790527344
+    ],
+    "content": "On the Limits of Innate Planning in Large LanguageModels",
+    "spans": [
+      {
+        "text": "On the Limits of Innate Planning in Large Language",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 17.21540069580078,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          112.38800048828125,
+          99.8338394165039,
+          499.6141662597656,
+          117.04924011230469
+        ]
+      },
+      {
+        "text": "Models",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 17.21540069580078,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          279.22198486328125,
+          119.75882720947266,
+          332.77911376953125,
+          136.97422790527344
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      172.91000366210938,
+      177.7974853515625,
+      268.8498229980469,
+      209.9180450439453
+    ],
+    "content": "Charles SchepanowskiWestern Universitycschepan@uwo.ca",
+    "spans": [
+      {
+        "text": "Charles Schepanowski",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          172.91000366210938,
+          177.7974853515625,
+          268.8498229980469,
+          187.7600860595703
+        ]
+      },
+      {
+        "text": "Western University",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          182.60400390625,
+          188.7974395751953,
+          259.1566467285156,
+          198.76004028320312
+        ]
+      },
+      {
+        "text": "cschepan@uwo.ca",
+        "font_name": "SFTT1000",
+        "font_size": 9.962599754333496,
+        "font_flags": 12,
+        "color": 0,
+        "bbox": [
+          181.6610107421875,
+          199.9554443359375,
+          260.116455078125,
+          209.9180450439453
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      339.7370300292969,
+      177.7974853515625,
+      439.11419677734375,
+      209.9180450439453
+    ],
+    "content": "Charles LingWestern Universitycharles.ling@uwo.ca",
+    "spans": [
+      {
+        "text": "Charles Ling",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          361.5980224609375,
+          177.7974853515625,
+          417.22918701171875,
+          187.7600860595703
+        ]
+      },
+      {
+        "text": "Western University",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          351.13702392578125,
+          188.7974395751953,
+          427.6896057128906,
+          198.76004028320312
+        ]
+      },
+      {
+        "text": "charles.ling@uwo.ca",
+        "font_name": "SFTT1000",
+        "font_size": 9.962599754333496,
+        "font_flags": 12,
+        "color": 0,
+        "bbox": [
+          339.7370300292969,
+          199.9554443359375,
+          439.11419677734375,
+          209.9180450439453
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      283.7580261230469,
+      239.26812744140625,
+      328.2433166503906,
+      251.22332763671875
+    ],
+    "content": "Abstract",
+    "spans": [
+      {
+        "text": "Abstract",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 11.9552001953125,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          283.7580261230469,
+          239.26812744140625,
+          328.2433166503906,
+          251.22332763671875
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      143.61599731445312,
+      264.10333251953125,
+      469.3805847167969,
+      448.6410827636719
+    ],
+    "content": "Large language models (LLMs) achieve impressive results on many benchmarks,yet their capacity for planning and stateful reasoning remains unclear. We studythese abilities directly, without code execution or other tools, using the 8-puzzle: aclassic task that requires state tracking and goal-directed planning while allowingprecise, step-by-step evaluation. Four models are tested under common promptingconditions (Zero-Shot, Chain-of-Thought, Algorithm-of-Thought) and with tieredcorrective feedback. Feedback improves success rates for some model–promptcombinations, but many successful runs are long, computationally expensive, andindirect. We then examine the models with an external move validator that providesonly valid moves. Despite this level of assistance, none of the models solve anypuzzles in this setting. Qualitative analysis reveals two dominant deficits across allmodels: (1) brittle internal state representations, leading to frequent invalid moves,and (2) weak heuristic planning, with models entering loops or selecting actionsthat do not reduce the distance to the goal state. These findings indicate that, in theabsence of external tools such as code interpreters, current LLMs have substantiallimitations in planning and that further progress may require mechanisms formaintaining explicit state and performing structured search.",
+    "spans": [
+      {
+        "text": "Large language models (LLMs) achieve impressive results on many benchmarks,",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.002370834350586,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          143.86599731445312,
+          264.10333251953125,
+          469.3769226074219,
+          274.105712890625
+        ]
+      },
+      {
+        "text": "yet their capacity for planning and stateful reasoning remains unclear. We study",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          143.61599731445312,
+          274.96728515625,
+          468.48052978515625,
+          285.0290222167969
+        ]
+      },
+      {
+        "text": "these abilities directly, without code execution or other tools, using the 8-puzzle: a",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.89261531829834,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          143.86599731445312,
+          286.0045471191406,
+          468.13739013671875,
+          295.89715576171875
+        ]
+      },
+      {
+        "text": "classic task that requires state tracking and goal-directed planning while allowing",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.96757984161377,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          143.86599731445312,
+          296.856689453125,
+          468.1335754394531,
+          306.8242492675781
+        ]
+      },
+      {
+        "text": "precise, step-by-step evaluation. Four models are tested under common prompting",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.902643203735352,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          143.86599731445312,
+          307.81494140625,
+          468.1351318359375,
+          317.71759033203125
+        ]
+      },
+      {
+        "text": "conditions (Zero-Shot, Chain-of-Thought, Algorithm-of-Thought) and with tiered",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.937662124633789,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          143.86599731445312,
+          318.6973876953125,
+          468.1332092285156,
+          328.6350402832031
+        ]
+      },
+      {
+        "text": "corrective feedback. Feedback improves success rates for some model–prompt",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          143.86599731445312,
+          329.5133056640625,
+          468.130859375,
+          339.5750427246094
+        ]
+      },
+      {
+        "text": "combinations, but many successful runs are long, computationally expensive, and",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.95761775970459,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          143.86599731445312,
+          340.5012512207031,
+          468.133056640625,
+          350.4588623046875
+        ]
+      },
+      {
+        "text": "indirect. We then examine the models with an external move validator that provides",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.862470626831055,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          143.86599731445312,
+          351.482421875,
+          468.13616943359375,
+          361.3448791503906
+        ]
+      },
+      {
+        "text": "only valid moves. Despite this level of assistance, none of the models solve any",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          143.86599731445312,
+          362.24029541015625,
+          468.486572265625,
+          372.3020324707031
+        ]
+      },
+      {
+        "text": "puzzles in this setting. Qualitative analysis reveals two dominant deficits across all",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.882577896118164,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          143.86599731445312,
+          373.28515625,
+          468.1364440917969,
+          383.167724609375
+        ]
+      },
+      {
+        "text": "models: (1) brittle internal state representations, leading to frequent invalid moves,",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.89763069152832,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          143.86599731445312,
+          384.1827392578125,
+          469.3805847167969,
+          394.08038330078125
+        ]
+      },
+      {
+        "text": "and (2) weak heuristic planning, with models entering loops or selecting actions",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.056798934936523,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          143.86599731445312,
+          394.97100830078125,
+          468.13812255859375,
+          405.02783203125
+        ]
+      },
+      {
+        "text": "that do not reduce the distance to the goal state. These findings indicate that, in the",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.872529029846191,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          143.86599731445312,
+          406.019775390625,
+          468.1328125,
+          415.8923034667969
+        ]
+      },
+      {
+        "text": "absence of external tools such as code interpreters, current LLMs have substantial",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.932666778564453,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          143.86599731445312,
+          416.8831481933594,
+          468.13409423828125,
+          426.8158264160156
+        ]
+      },
+      {
+        "text": "limitations in planning and that further progress may require mechanisms for",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          143.86599731445312,
+          427.6943054199219,
+          468.3037414550781,
+          437.75604248046875
+        ]
+      },
+      {
+        "text": "maintaining explicit state and performing structured search.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          143.86599731445312,
+          438.678466796875,
+          381.394287109375,
+          448.6410827636719
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      108.0,
+      469.9341735839844,
+      190.8136749267578,
+      481.8893737792969
+    ],
+    "content": "1Introduction",
+    "spans": [
+      {
+        "text": "1",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 11.9552001953125,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          108.0,
+          469.9341735839844,
+          113.97760009765625,
+          481.8893737792969
+        ]
+      },
+      {
+        "text": "Introduction",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 11.9552001953125,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          125.93280029296875,
+          469.9341735839844,
+          190.8136749267578,
+          481.8893737792969
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      107.53199768066406,
+      494.5657653808594,
+      505.747314453125,
+      569.9530639648438
+    ],
+    "content": "In recent years, Large Language Models (LLMs) have demonstrated state-of-the-art performance onan expanding range of tasks. Successive models exhibit increasingly sophisticated capabilities [1, 2],yet their evaluation still centers largely on mathematics and code generation benchmarks [3–5]. Thisnarrow focus leaves the dynamic, multi-step processes of reasoning and planning under-examined.When these abilities are studied directly, progress is often far less convincing than in other domains[6–8]. These limitations hinder the deployment of LLMs in complex, real-world applications thatdemand robust planning and state tracking, such as autonomous agents [9].",
+    "spans": [
+      {
+        "text": "In recent years, Large Language Models (LLMs) have demonstrated state-of-the-art performance on",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.92266845703125,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          494.5657653808594,
+          503.9975891113281,
+          504.4884338378906
+        ]
+      },
+      {
+        "text": "an expanding range of tasks. Successive models exhibit increasingly sophisticated capabilities [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.90765380859375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          505.48712158203125,
+          484.601806640625,
+          515.394775390625
+        ]
+      },
+      {
+        "text": "1",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          484.5989990234375,
+          505.4454345703125,
+          489.5802917480469,
+          515.4080200195312
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.90765380859375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          489.58099365234375,
+          505.48712158203125,
+          492.04425048828125,
+          515.394775390625
+        ]
+      },
+      {
+        "text": " 2",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          492.04425048828125,
+          505.4454345703125,
+          499.50128173828125,
+          515.4080200195312
+        ]
+      },
+      {
+        "text": "],",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.90765380859375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          499.5010070800781,
+          505.48712158203125,
+          505.2453308105469,
+          515.394775390625
+        ]
+      },
+      {
+        "text": "yet their evaluation still centers largely on mathematics and code generation benchmarks [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.902643203735352,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.7509994506836,
+          516.3999633789062,
+          462.78961181640625,
+          526.3026123046875
+        ]
+      },
+      {
+        "text": "3",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          462.78900146484375,
+          516.3544921875,
+          467.7702941894531,
+          526.3170776367188
+        ]
+      },
+      {
+        "text": "–",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.902643203735352,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          467.7699890136719,
+          516.3999633789062,
+          472.6915283203125,
+          526.3026123046875
+        ]
+      },
+      {
+        "text": "5",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          472.6910095214844,
+          516.3544921875,
+          477.67230224609375,
+          526.3170776367188
+        ]
+      },
+      {
+        "text": "]. This",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.902643203735352,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          477.6730041503906,
+          516.3999633789062,
+          504.003173828125,
+          526.3026123046875
+        ]
+      },
+      {
+        "text": "narrow focus leaves the dynamic, multi-step processes of reasoning and planning under-examined.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.037040710449219,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          527.2069702148438,
+          505.747314453125,
+          537.2440185546875
+        ]
+      },
+      {
+        "text": "When these abilities are studied directly, progress is often far less convincing than in other domains",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.96757984161377,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.53199768066406,
+          538.168701171875,
+          504.0008544921875,
+          548.1362915039062
+        ]
+      },
+      {
+        "text": "[",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          549.0062255859375,
+          111.38389587402344,
+          559.0679931640625
+        ]
+      },
+      {
+        "text": "6",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          111.38400268554688,
+          549.0814208984375,
+          116.36530303955078,
+          559.0440063476562
+        ]
+      },
+      {
+        "text": "–",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          116.36499786376953,
+          549.0062255859375,
+          121.4459228515625,
+          559.0679931640625
+        ]
+      },
+      {
+        "text": "8",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          121.44599914550781,
+          549.0814208984375,
+          126.42729949951172,
+          559.0440063476562
+        ]
+      },
+      {
+        "text": "]. These limitations hinder the deployment of LLMs in complex, real-world applications that",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          126.427001953125,
+          549.0062255859375,
+          504.0009460449219,
+          559.0679931640625
+        ]
+      },
+      {
+        "text": "demand robust planning and state tracking, such as autonomous agents [9].",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          559.990478515625,
+          406.6388854980469,
+          569.9530639648438
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      107.64099884033203,
+      576.4363403320312,
+      504.34326171875,
+      662.7050170898438
+    ],
+    "content": "Although LLMs can often solve such problems by writing or calling basic search code, our goal hereis to isolate their intrinsic planning and state-tracking abilities without such tools. We therefore aska concrete question: how well can LLMs plan and reason over an evolving state when they cannotrely on code execution or other external tools? To answer this, we use the standard 8-puzzle and askmodels to solve random configurations of the game. The 8-puzzle requires models to maintain anaccurate representation of the board, obey strict move validity constraints, and choose moves thateventually reach a goal state. We measure not only whether a puzzle is solved but also how and whyruns terminate when they fail, to understand the limits of model performance on this type of task.",
+    "spans": [
+      {
+        "text": "Although LLMs can often solve such problems by writing or calling basic search code, our goal here",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.887598037719727,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.64099884033203,
+          576.4363403320312,
+          504.00469970703125,
+          586.323974609375
+        ]
+      },
+      {
+        "text": "is to isolate their intrinsic planning and state-tracking abilities without such tools. We therefore ask",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.982504844665527,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          587.2733764648438,
+          504.2469482421875,
+          597.255859375
+        ]
+      },
+      {
+        "text": "a concrete question: how well can LLMs plan and reason over an evolving state when they cannot",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.046924591064453,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          598.1334838867188,
+          503.9976501464844,
+          608.180419921875
+        ]
+      },
+      {
+        "text": "rely on code execution or other external tools? To answer this, we use the standard 8-puzzle and ask",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.932666778564453,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          609.129150390625,
+          504.251708984375,
+          619.0618286132812
+        ]
+      },
+      {
+        "text": "models to solve random configurations of the game. The 8-puzzle requires models to maintain an",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          619.9402465820312,
+          503.9975280761719,
+          630.0020141601562
+        ]
+      },
+      {
+        "text": "accurate representation of the board, obey strict move validity constraints, and choose moves that",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          630.8492431640625,
+          503.9974060058594,
+          640.9110107421875
+        ]
+      },
+      {
+        "text": "eventually reach a goal state. We measure not only whether a puzzle is solved but also how and why",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.92266845703125,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          641.86376953125,
+          504.34326171875,
+          651.7864379882812
+        ]
+      },
+      {
+        "text": "runs terminate when they fail, to understand the limits of model performance on this type of task.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          652.742431640625,
+          495.1365966796875,
+          662.7050170898438
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      107.53199768066406,
+      669.1921997070312,
+      504.17156982421875,
+      722.7107543945312
+    ],
+    "content": "We investigate the performance of four models—GPT-5-Thinking, Gemini-2.5-Pro, GPT-5-mini, andLlama 3.1 8B-Instruct—on 8-puzzle instances with varying optimal solution lengths, using threecommon prompting strategies: Zero-Shot, Chain-of-Thought [10, 11], and Algorithm-of-Thought[12]. Under each prompting strategy, each model receives a single attempt per puzzle. We then furtherassist the models on puzzles they initially fail to solve by allowing three additional attempts per level",
+    "spans": [
+      {
+        "text": "We investigate the performance of four models—GPT-5-Thinking, Gemini-2.5-Pro, GPT-5-mini, and",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.882577896118164,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.53199768066406,
+          669.1921997070312,
+          504.0029296875,
+          679.0747680664062
+        ]
+      },
+      {
+        "text": "Llama 3.1 8B-Instruct—on 8-puzzle instances with varying optimal solution lengths, using three",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          679.9652709960938,
+          503.99725341796875,
+          690.0270385742188
+        ]
+      },
+      {
+        "text": "common prompting strategies: Zero-Shot, Chain-of-Thought [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          690.874267578125,
+          361.324951171875,
+          700.93603515625
+        ]
+      },
+      {
+        "text": "10",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          361.3280029296875,
+          690.949462890625,
+          371.29058837890625,
+          700.9120483398438
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          371.2909851074219,
+          690.874267578125,
+          373.8314514160156,
+          700.93603515625
+        ]
+      },
+      {
+        "text": " 11",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          373.8314514160156,
+          690.949462890625,
+          386.32159423828125,
+          700.9120483398438
+        ]
+      },
+      {
+        "text": "], and Algorithm-of-Thought",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          386.3219909667969,
+          690.874267578125,
+          503.996337890625,
+          700.93603515625
+        ]
+      },
+      {
+        "text": "[",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.862470626831055,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          701.9343872070312,
+          111.2511978149414,
+          711.796875
+        ]
+      },
+      {
+        "text": "12",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          111.2509994506836,
+          701.8584594726562,
+          121.2136001586914,
+          711.821044921875
+        ]
+      },
+      {
+        "text": "]. Under each prompting strategy, each model receives a single attempt per puzzle. We then further",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.862470626831055,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          121.21399688720703,
+          701.9343872070312,
+          504.17156982421875,
+          711.796875
+        ]
+      },
+      {
+        "text": "assist the models on puzzles they initially fail to solve by allowing three additional attempts per level",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.882577896118164,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          712.8281860351562,
+          504.0005187988281,
+          722.7107543945312
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      10.940000534057617,
+      222.68994140625,
+      37.619998931884766,
+      569.3099975585938
+    ],
+    "content": "arXiv:2511.21591v1  [cs.AI]  26 Nov 2025",
+    "spans": [
+      {
+        "text": "arXiv:2511.21591v1  [cs.AI]  26 Nov 2025",
+        "font_name": "Times-Roman",
+        "font_size": 20.0,
+        "font_flags": 4,
+        "color": 8421504,
+        "bbox": [
+          10.940000534057617,
+          222.68994140625,
+          37.619998931884766,
+          569.3099975585938
+        ]
+      }
+    ]
+  }
+]

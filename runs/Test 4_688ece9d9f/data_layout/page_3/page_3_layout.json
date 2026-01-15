@@ -1,0 +1,1661 @@
+[
+  {
+    "type": "text",
+    "bbox": [
+      34.01599884033203,
+      11.27492904663086,
+      118.75743865966797,
+      20.241329193115234
+    ],
+    "content": "4S. Tewes et al.",
+    "spans": [
+      {
+        "text": "4",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          11.27492904663086,
+          38.49919891357422,
+          20.241329193115234
+        ]
+      },
+      {
+        "text": "S. Tewes et al.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          67.06614685058594,
+          11.27492904663086,
+          118.75743865966797,
+          20.241329193115234
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      34.01599884033203,
+      44.79139709472656,
+      379.8377990722656,
+      102.57504272460938
+    ],
+    "content": "Table 1: Cross-domain evaluation of Faster R-CNN [31] on DocLayNet [30]. The modelis trained in a single-category setting and tested on the validation set’s unseen cate-gories. The table reports mAP-50 for Scientific Articles (Sci.), Financial Reports (Fin.),Manuals (Man.), and Laws & Regulations (Laws). Red values representing the relativeperformance drop from the trained category.",
+    "spans": [
+      {
+        "text": "Table 1: Cross-domain evaluation of Faster R-CNN [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          44.79139709472656,
+          240.93917846679688,
+          54.75399398803711
+        ]
+      },
+      {
+        "text": "31",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 33023,
+        "bbox": [
+          240.93917846679688,
+          44.79139709472656,
+          250.90176391601562,
+          54.75399398803711
+        ]
+      },
+      {
+        "text": "] on DocLayNet [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          250.90176391601562,
+          44.79139709472656,
+          319.7931213378906,
+          54.75399398803711
+        ]
+      },
+      {
+        "text": "30",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 33023,
+        "bbox": [
+          319.7931213378906,
+          44.79139709472656,
+          329.7557067871094,
+          54.75399398803711
+        ]
+      },
+      {
+        "text": "]. The model",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          329.7557067871094,
+          44.79139709472656,
+          379.8377380371094,
+          54.75399398803711
+        ]
+      },
+      {
+        "text": "is trained in a single-category setting and tested on the validation set’s unseen cate-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          56.74641418457031,
+          379.83770751953125,
+          66.70901489257812
+        ]
+      },
+      {
+        "text": "gories. The table reports mAP-50 for Scientific Articles (Sci.), Financial Reports (Fin.),",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          68.70143127441406,
+          379.8377990722656,
+          78.66403198242188
+        ]
+      },
+      {
+        "text": "Manuals (Man.), and Laws & Regulations (Laws). Red values representing the relative",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          80.65644836425781,
+          379.83770751953125,
+          90.61904907226562
+        ]
+      },
+      {
+        "text": "performance drop from the trained category.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          92.61244201660156,
+          210.27430725097656,
+          102.57504272460938
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      45.133609771728516,
+      109.18885040283203,
+      353.03509521484375,
+      125.9592056274414
+    ],
+    "content": "SourceTargetSci.Fin.Man.Laws",
+    "spans": [
+      {
+        "text": "Source",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 8.247833251953125,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          45.133609771728516,
+          117.71137237548828,
+          69.26677703857422,
+          125.9592056274414
+        ]
+      },
+      {
+        "text": "Target",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 8.247833251953125,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          71.64214324951172,
+          109.18885040283203,
+          94.62060546875,
+          117.43668365478516
+        ]
+      },
+      {
+        "text": "Sci.",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 8.247833251953125,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          130.49200439453125,
+          113.09278106689453,
+          143.09469604492188,
+          121.34061431884766
+        ]
+      },
+      {
+        "text": "Fin.",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 8.247833251953125,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          198.7510986328125,
+          113.09278106689453,
+          212.73117065429688,
+          121.34061431884766
+        ]
+      },
+      {
+        "text": "Man.",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 8.247833251953125,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          265.4183349609375,
+          113.09278106689453,
+          283.9759521484375,
+          121.34061431884766
+        ]
+      },
+      {
+        "text": "Laws",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 8.247833251953125,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          334.24652099609375,
+          113.09278106689453,
+          353.03509521484375,
+          121.34061431884766
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      60.48332214355469,
+      134.4077606201172,
+      370.78887939453125,
+      179.02120971679688
+    ],
+    "content": "Sci.84.3218.72 (-65.60%)36.77 (-47.55%)42.24 (-42.08%)Fin.38.74 (-14.58%)53.3245.93 (-7.39%)43.69 (-9.63%)Man.21.59 (-39.92%)22.34 (-39.17%)61.5146.99 (-14.52%)Laws31.91 (-39.59%)22.08 (-49.42%)49.33 (-22.17%)71.50",
+    "spans": [
+      {
+        "text": "Sci.",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 8.247833251953125,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          63.57588577270508,
+          134.4077606201172,
+          76.17857360839844,
+          142.6555938720703
+        ]
+      },
+      {
+        "text": "84.32",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.247833251953125,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          128.54559326171875,
+          134.48306274414062,
+          147.1032257080078,
+          142.73089599609375
+        ]
+      },
+      {
+        "text": "18.72",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.247833251953125,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          178.6016845703125,
+          134.48306274414062,
+          197.15931701660156,
+          142.73089599609375
+        ]
+      },
+      {
+        "text": " (-65.60%)",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.247833251953125,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          197.15931701660156,
+          134.48306274414062,
+          232.888916015625,
+          142.73089599609375
+        ]
+      },
+      {
+        "text": "36.77",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.247833251953125,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          247.5535888671875,
+          134.48306274414062,
+          266.1112060546875,
+          142.73089599609375
+        ]
+      },
+      {
+        "text": " (-47.55%)",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.247833251953125,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          266.1112060546875,
+          134.48306274414062,
+          301.84088134765625,
+          142.73089599609375
+        ]
+      },
+      {
+        "text": "42.24",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.247833251953125,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          316.4972839355469,
+          134.48306274414062,
+          335.054931640625,
+          142.73089599609375
+        ]
+      },
+      {
+        "text": " (-42.08%)",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.247833251953125,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          335.054931640625,
+          134.48306274414062,
+          370.7845458984375,
+          142.73089599609375
+        ]
+      },
+      {
+        "text": "Fin.",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 8.247833251953125,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          62.88690948486328,
+          146.5048370361328,
+          76.86698913574219,
+          154.75267028808594
+        ]
+      },
+      {
+        "text": "38.74",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.247833251953125,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          109.64983367919922,
+          146.58013916015625,
+          128.20745849609375,
+          154.82797241210938
+        ]
+      },
+      {
+        "text": " (-14.58%)",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.247833251953125,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          128.20745849609375,
+          146.58013916015625,
+          163.93707275390625,
+          154.82797241210938
+        ]
+      },
+      {
+        "text": "53.32",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.247833251953125,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          197.49554443359375,
+          146.58013916015625,
+          216.0531463623047,
+          154.82797241210938
+        ]
+      },
+      {
+        "text": "45.93",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.247833251953125,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          249.61358642578125,
+          146.58013916015625,
+          268.17120361328125,
+          154.82797241210938
+        ]
+      },
+      {
+        "text": " (-7.39%)",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.247833251953125,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          268.17120361328125,
+          146.58013916015625,
+          299.77691650390625,
+          154.82797241210938
+        ]
+      },
+      {
+        "text": "43.69",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.247833251953125,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          318.56549072265625,
+          146.58013916015625,
+          337.1231689453125,
+          154.82797241210938
+        ]
+      },
+      {
+        "text": " (-9.63%)",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.247833251953125,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          337.1231689453125,
+          146.58013916015625,
+          368.7206115722656,
+          154.82797241210938
+        ]
+      },
+      {
+        "text": "Man.",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 8.247833251953125,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          60.598289489746094,
+          158.60191345214844,
+          79.15591430664062,
+          166.84974670410156
+        ]
+      },
+      {
+        "text": "21.59",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.247833251953125,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          109.64982604980469,
+          158.67721557617188,
+          128.2074432373047,
+          166.925048828125
+        ]
+      },
+      {
+        "text": " (-39.92%)",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.247833251953125,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          128.2074432373047,
+          158.67721557617188,
+          163.93704223632812,
+          166.925048828125
+        ]
+      },
+      {
+        "text": "22.34",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.247833251953125,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          178.6016845703125,
+          158.67721557617188,
+          197.15931701660156,
+          166.925048828125
+        ]
+      },
+      {
+        "text": " (-39.17%)",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.247833251953125,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          197.15931701660156,
+          158.67721557617188,
+          232.888916015625,
+          166.925048828125
+        ]
+      },
+      {
+        "text": "61.51",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.247833251953125,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          266.44549560546875,
+          158.67721557617188,
+          285.00311279296875,
+          166.925048828125
+        ]
+      },
+      {
+        "text": "46.99",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.247833251953125,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          316.5015869140625,
+          158.67721557617188,
+          335.05926513671875,
+          166.925048828125
+        ]
+      },
+      {
+        "text": " (-14.52%)",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.247833251953125,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          335.05926513671875,
+          158.67721557617188,
+          370.78887939453125,
+          166.925048828125
+        ]
+      },
+      {
+        "text": "Laws",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 8.247833251953125,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          60.48332214355469,
+          170.6980743408203,
+          79.27188110351562,
+          178.94590759277344
+        ]
+      },
+      {
+        "text": "31.91",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.247833251953125,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          109.64983367919922,
+          170.77337646484375,
+          128.20745849609375,
+          179.02120971679688
+        ]
+      },
+      {
+        "text": " (-39.59%)",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.247833251953125,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          128.20745849609375,
+          170.77337646484375,
+          163.93707275390625,
+          179.02120971679688
+        ]
+      },
+      {
+        "text": "22.08",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.247833251953125,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          178.60171508789062,
+          170.77337646484375,
+          197.1593475341797,
+          179.02120971679688
+        ]
+      },
+      {
+        "text": " (-49.42%)",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.247833251953125,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          197.1593475341797,
+          170.77337646484375,
+          232.88894653320312,
+          179.02120971679688
+        ]
+      },
+      {
+        "text": "49.33",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.247833251953125,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          247.5535888671875,
+          170.77337646484375,
+          266.1112060546875,
+          179.02120971679688
+        ]
+      },
+      {
+        "text": " (-22.17%)",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.247833251953125,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          266.1112060546875,
+          170.77337646484375,
+          301.84088134765625,
+          179.02120971679688
+        ]
+      },
+      {
+        "text": "71.50",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.247833251953125,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          335.3945007324219,
+          170.77337646484375,
+          353.9521484375,
+          179.02120971679688
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      34.0159912109375,
+      205.9464569091797,
+      379.8477783203125,
+      583.5089721679688
+    ],
+    "content": "perform well in layout detection tasks under fully supervised training. Beyond single-modality approaches, VGT [9] employs a two-stream architecture that integrates visualfeatures from a vision transformer and textual information processed by a pre-trainedgrid transformer. This design captures both token-level and segment-level semantics.Nevertheless, fully supervised methods fail to generalize to unseen layouts and re-quire large amounts of annotated data for fine-tuning across varying layouts. Our pre-liminary experiments with Faster R-CNN (Table 1) reveal that training with a singledomain results in a significant drop in mAP of 32.64% when tested with other domains.Source-Free Domain Adaption. A central challenge in machine learning is generaliza-tion—ensuring that a model performs well on unseen data. In real-world applications,models often encounter distribution shifts, leading to performance degradation. Domainadaptation mitigates this issue by compensating for these differences. Traditional meth-ods, such as Unsupervised Domain Adaptation (UDA) [3,18,22,28], assume full accessto the target domain data during adaptation. However, in many real-world scenarios,this assumption is impractical due to the reasons discussed earlier. SFDA relaxes thisrequirement, assuming that only the trained source model is available without direct ac-cess to the target domain data. While SFDA has been widely explored for classificationtasks [6,15,16,29,37], its extension to object detection, known as Source-Free ObjectDetection (SFOD), remains relatively underexplored. SFOD typically relies on mean-teacher self-training, where a student-teacher framework generates pseudo-labels [32].The first SFOD framework, introduced in 2020, proposed a self-training approachwhere a source-trained network generates pseudo-labels to optimize performance onthe target domain [24]. Since then, several studies have enhanced SFOD by improvingpseudo-labeling quality, employing style augmentation [23], adversarial alignment [8],instance relation graphs [33], adaptive thresholds [5, 40], and dynamic learning pro-cesses [14, 25]. A recent notable approach we investigate is Instance Relation Graph(IRG) [34], which enhances feature alignment through contrastive representation learn-ing by modeling relationships between object proposals. However, IRG lacks mecha-nisms for training stability and dynamic pseudo-label refinement, making it prone toerror accumulation and confirmation bias, where early mispredictions reinforce them-selves over time.",
+    "spans": [
+      {
+        "text": "perform well in layout detection tasks under fully supervised training. Beyond single-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          205.9464569091797,
+          379.8376770019531,
+          215.9090576171875
+        ]
+      },
+      {
+        "text": "modality approaches, VGT [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          217.9014434814453,
+          147.58961486816406,
+          227.86404418945312
+        ]
+      },
+      {
+        "text": "9",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 33023,
+        "bbox": [
+          147.58961486816406,
+          217.9014434814453,
+          152.57090759277344,
+          227.86404418945312
+        ]
+      },
+      {
+        "text": "] employs a two-stream architecture that integrates visual",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          152.57090759277344,
+          217.9014434814453,
+          379.84765625,
+          227.86404418945312
+        ]
+      },
+      {
+        "text": "features from a vision transformer and textual information processed by a pre-trained",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          229.85643005371094,
+          379.83770751953125,
+          239.81903076171875
+        ]
+      },
+      {
+        "text": "grid transformer. This design captures both token-level and segment-level semantics.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          241.8124237060547,
+          371.3695373535156,
+          251.7750244140625
+        ]
+      },
+      {
+        "text": "Nevertheless, fully supervised methods fail to generalize to unseen layouts and re-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          48.959999084472656,
+          256.7484130859375,
+          379.8377990722656,
+          266.7110290527344
+        ]
+      },
+      {
+        "text": "quire large amounts of annotated data for fine-tuning across varying layouts. Our pre-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          268.70440673828125,
+          379.837646484375,
+          278.6670227050781
+        ]
+      },
+      {
+        "text": "liminary experiments with Faster R-CNN (Table",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          280.6593933105469,
+          231.64410400390625,
+          290.62200927734375
+        ]
+      },
+      {
+        "text": " 1",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          231.64410400390625,
+          280.6593933105469,
+          240.0625,
+          290.62200927734375
+        ]
+      },
+      {
+        "text": ") reveal that training with a single",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          240.0625,
+          280.6593933105469,
+          379.8376770019531,
+          290.62200927734375
+        ]
+      },
+      {
+        "text": "domain results in a significant drop in mAP of 32.64% when tested with other domains.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          292.6143798828125,
+          379.837646484375,
+          302.5769958496094
+        ]
+      },
+      {
+        "text": "Source-Free Domain Adaption.",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          307.46044921875,
+          165.88095092773438,
+          317.42303466796875
+        ]
+      },
+      {
+        "text": " A central challenge in machine learning is generaliza-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          165.88095092773438,
+          307.5513916015625,
+          379.8424987792969,
+          317.5140075683594
+        ]
+      },
+      {
+        "text": "tion—ensuring that a model performs well on unseen data. In real-world applications,",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.0159912109375,
+          319.5063781738281,
+          379.8376770019531,
+          329.468994140625
+        ]
+      },
+      {
+        "text": "models often encounter distribution shifts, leading to performance degradation. Domain",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.0159912109375,
+          331.46136474609375,
+          379.8376770019531,
+          341.4239807128906
+        ]
+      },
+      {
+        "text": "adaptation mitigates this issue by compensating for these differences. Traditional meth-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.0159912109375,
+          343.4163513183594,
+          379.83770751953125,
+          353.37896728515625
+        ]
+      },
+      {
+        "text": "ods, such as Unsupervised Domain Adaptation (UDA) [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.0159912109375,
+          355.3723449707031,
+          254.33885192871094,
+          365.3349609375
+        ]
+      },
+      {
+        "text": "3",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 33023,
+        "bbox": [
+          254.33885192871094,
+          355.3723449707031,
+          259.3201599121094,
+          365.3349609375
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          259.3201599121094,
+          355.3723449707031,
+          261.8108215332031,
+          365.3349609375
+        ]
+      },
+      {
+        "text": "18",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 33023,
+        "bbox": [
+          262.5580139160156,
+          355.3723449707031,
+          272.5205993652344,
+          365.3349609375
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          272.5205993652344,
+          355.3723449707031,
+          275.0112609863281,
+          365.3349609375
+        ]
+      },
+      {
+        "text": "22",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 33023,
+        "bbox": [
+          275.7684326171875,
+          355.3723449707031,
+          285.73101806640625,
+          365.3349609375
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          285.73101806640625,
+          355.3723449707031,
+          288.2216796875,
+          365.3349609375
+        ]
+      },
+      {
+        "text": "28",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 33023,
+        "bbox": [
+          288.9688720703125,
+          355.3723449707031,
+          298.93145751953125,
+          365.3349609375
+        ]
+      },
+      {
+        "text": "], assume full access",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          298.93145751953125,
+          355.3723449707031,
+          379.8377990722656,
+          365.3349609375
+        ]
+      },
+      {
+        "text": "to the target domain data during adaptation. However, in many real-world scenarios,",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.0159912109375,
+          367.32733154296875,
+          379.8376770019531,
+          377.2899475097656
+        ]
+      },
+      {
+        "text": "this assumption is impractical due to the reasons discussed earlier. SFDA relaxes this",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.0159912109375,
+          379.2823486328125,
+          379.8477783203125,
+          389.2449645996094
+        ]
+      },
+      {
+        "text": "requirement, assuming that only the trained source model is available without direct ac-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.0159912109375,
+          391.23736572265625,
+          379.84759521484375,
+          401.1999816894531
+        ]
+      },
+      {
+        "text": "cess to the target domain data. While SFDA has been widely explored for classification",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.0159912109375,
+          403.1923522949219,
+          379.8376159667969,
+          413.15496826171875
+        ]
+      },
+      {
+        "text": "tasks [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.0159912109375,
+          415.1473388671875,
+          59.9785270690918,
+          425.1099548339844
+        ]
+      },
+      {
+        "text": "6",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 33023,
+        "bbox": [
+          59.9785270690918,
+          415.1473388671875,
+          64.95982360839844,
+          425.1099548339844
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          64.95982360839844,
+          415.1473388671875,
+          67.45046997070312,
+          425.1099548339844
+        ]
+      },
+      {
+        "text": "15",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 33023,
+        "bbox": [
+          68.89505004882812,
+          415.1473388671875,
+          78.85765075683594,
+          425.1099548339844
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          78.85765075683594,
+          415.1473388671875,
+          81.34829711914062,
+          425.1099548339844
+        ]
+      },
+      {
+        "text": "16",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 33023,
+        "bbox": [
+          82.8028335571289,
+          415.1473388671875,
+          92.76543426513672,
+          425.1099548339844
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          92.76543426513672,
+          415.1473388671875,
+          95.2560806274414,
+          425.1099548339844
+        ]
+      },
+      {
+        "text": "29",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 33023,
+        "bbox": [
+          96.7006607055664,
+          415.1473388671875,
+          106.66326141357422,
+          425.1099548339844
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          106.66326141357422,
+          415.1473388671875,
+          109.1539077758789,
+          425.1099548339844
+        ]
+      },
+      {
+        "text": "37",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 33023,
+        "bbox": [
+          110.60844421386719,
+          415.1473388671875,
+          120.571044921875,
+          425.1099548339844
+        ]
+      },
+      {
+        "text": "], its extension to object detection, known as Source-Free Object",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          120.571044921875,
+          415.1473388671875,
+          379.8377685546875,
+          425.1099548339844
+        ]
+      },
+      {
+        "text": "Detection (SFOD), remains relatively underexplored. SFOD typically relies on mean-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.0159912109375,
+          427.10333251953125,
+          379.8376770019531,
+          437.0659484863281
+        ]
+      },
+      {
+        "text": "teacher self-training, where a student-teacher framework generates pseudo-labels [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.0159912109375,
+          439.058349609375,
+          362.5924987792969,
+          449.0209655761719
+        ]
+      },
+      {
+        "text": "32",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 33023,
+        "bbox": [
+          362.5924987792969,
+          439.058349609375,
+          372.5550842285156,
+          449.0209655761719
+        ]
+      },
+      {
+        "text": "].",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          372.5550842285156,
+          439.058349609375,
+          378.36328125,
+          449.0209655761719
+        ]
+      },
+      {
+        "text": "The first SFOD framework, introduced in 2020, proposed a self-training approach",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          48.959991455078125,
+          453.995361328125,
+          379.83770751953125,
+          463.9579772949219
+        ]
+      },
+      {
+        "text": "where a source-trained network generates pseudo-labels to optimize performance on",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.0159912109375,
+          465.9503479003906,
+          379.8376770019531,
+          475.9129638671875
+        ]
+      },
+      {
+        "text": "the target domain [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.0159912109375,
+          477.90533447265625,
+          109.91106414794922,
+          487.8679504394531
+        ]
+      },
+      {
+        "text": "24",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 33023,
+        "bbox": [
+          109.91106414794922,
+          477.90533447265625,
+          119.87366485595703,
+          487.8679504394531
+        ]
+      },
+      {
+        "text": "]. Since then, several studies have enhanced SFOD by improving",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          119.87366485595703,
+          477.90533447265625,
+          379.8377990722656,
+          487.8679504394531
+        ]
+      },
+      {
+        "text": "pseudo-labeling quality, employing style augmentation [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.0159912109375,
+          489.8603515625,
+          258.8718566894531,
+          499.8229675292969
+        ]
+      },
+      {
+        "text": "23",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 33023,
+        "bbox": [
+          258.8718566894531,
+          489.8603515625,
+          268.8344421386719,
+          499.8229675292969
+        ]
+      },
+      {
+        "text": "], adversarial alignment [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          268.8344421386719,
+          489.8603515625,
+          369.0481872558594,
+          499.8229675292969
+        ]
+      },
+      {
+        "text": "8",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 33023,
+        "bbox": [
+          369.0481872558594,
+          489.8603515625,
+          374.02947998046875,
+          499.8229675292969
+        ]
+      },
+      {
+        "text": "],",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          374.02947998046875,
+          489.8603515625,
+          379.8376770019531,
+          499.8229675292969
+        ]
+      },
+      {
+        "text": "instance relation graphs [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.0159912109375,
+          501.81536865234375,
+          137.84620666503906,
+          511.7779846191406
+        ]
+      },
+      {
+        "text": "33",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 33023,
+        "bbox": [
+          137.84620666503906,
+          501.81536865234375,
+          147.8087921142578,
+          511.7779846191406
+        ]
+      },
+      {
+        "text": "], adaptive thresholds [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          147.8087921142578,
+          501.81536865234375,
+          242.11477661132812,
+          511.7779846191406
+        ]
+      },
+      {
+        "text": "5",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 33023,
+        "bbox": [
+          242.11477661132812,
+          501.81536865234375,
+          247.0960693359375,
+          511.7779846191406
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          247.0960693359375,
+          501.81536865234375,
+          249.5867156982422,
+          511.7779846191406
+        ]
+      },
+      {
+        "text": " 40",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 33023,
+        "bbox": [
+          249.5867156982422,
+          501.81536865234375,
+          261.6015930175781,
+          511.7779846191406
+        ]
+      },
+      {
+        "text": "], and dynamic learning pro-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          261.6015930175781,
+          501.81536865234375,
+          379.8376159667969,
+          511.7779846191406
+        ]
+      },
+      {
+        "text": "cesses [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.0159912109375,
+          513.7713623046875,
+          65.62731170654297,
+          523.7339477539062
+        ]
+      },
+      {
+        "text": "14",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 33023,
+        "bbox": [
+          65.62731170654297,
+          513.7713623046875,
+          75.58991241455078,
+          523.7339477539062
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          75.58991241455078,
+          513.7713623046875,
+          78.08055877685547,
+          523.7339477539062
+        ]
+      },
+      {
+        "text": " 25",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 33023,
+        "bbox": [
+          78.08055877685547,
+          513.7713623046875,
+          89.94601440429688,
+          523.7339477539062
+        ]
+      },
+      {
+        "text": "]. A recent notable approach we investigate is Instance Relation Graph",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          89.94601440429688,
+          513.7713623046875,
+          379.8376770019531,
+          523.7339477539062
+        ]
+      },
+      {
+        "text": "(IRG) [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.0159912109375,
+          525.7263793945312,
+          63.415626525878906,
+          535.68896484375
+        ]
+      },
+      {
+        "text": "34",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 33023,
+        "bbox": [
+          63.415626525878906,
+          525.7263793945312,
+          73.37822723388672,
+          535.68896484375
+        ]
+      },
+      {
+        "text": "], which enhances feature alignment through contrastive representation learn-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          73.37822723388672,
+          525.7263793945312,
+          379.83770751953125,
+          535.68896484375
+        ]
+      },
+      {
+        "text": "ing by modeling relationships between object proposals. However, IRG lacks mecha-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.0159912109375,
+          537.6813354492188,
+          379.8377990722656,
+          547.6439208984375
+        ]
+      },
+      {
+        "text": "nisms for training stability and dynamic pseudo-label refinement, making it prone to",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.0159912109375,
+          549.6363525390625,
+          379.8377380371094,
+          559.5989379882812
+        ]
+      },
+      {
+        "text": "error accumulation and confirmation bias, where early mispredictions reinforce them-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.0159912109375,
+          561.5913696289062,
+          379.83770751953125,
+          571.553955078125
+        ]
+      },
+      {
+        "text": "selves over time.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.0159912109375,
+          573.54638671875,
+          100.80523681640625,
+          583.5089721679688
+        ]
+      }
+    ]
+  }
+]

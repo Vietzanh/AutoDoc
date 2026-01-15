@@ -1,0 +1,917 @@
+[
+  {
+    "type": "text",
+    "bbox": [
+      34.01599884033203,
+      11.27492904663086,
+      118.75743865966797,
+      20.241329193115234
+    ],
+    "content": "2S. Tewes et al.",
+    "spans": [
+      {
+        "text": "2",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          11.27492904663086,
+          38.49919891357422,
+          20.241329193115234
+        ]
+      },
+      {
+        "text": "S. Tewes et al.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          67.06614685058594,
+          11.27492904663086,
+          118.75743865966797,
+          20.241329193115234
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      34.01599884033203,
+      34.80211639404297,
+      116.82968139648438,
+      46.75731658935547
+    ],
+    "content": "1Introduction",
+    "spans": [
+      {
+        "text": "1",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 11.9552001953125,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          34.80211639404297,
+          39.99359893798828,
+          46.75731658935547
+        ]
+      },
+      {
+        "text": "Introduction",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 11.9552001953125,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          51.94879913330078,
+          34.80211639404297,
+          116.82968139648438,
+          46.75731658935547
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      34.01599884033203,
+      61.54042053222656,
+      379.8477478027344,
+      334.7578125
+    ],
+    "content": "DLA focuses on identifying and segmenting structural elements within a document,such as text, images, and tables. This process converts unstructured documents intomachine-readable formats, improving digitization, automation, and data extraction. Akey challenge in DLA is the heterogeneity of document structures across domains. Thecommon practice for adapting models to these layouts is supervised fine-tuning usingannotated data. However, in numerous practical applications, accessing source domaindata may not be feasible due to concerns about personal privacy, confidentiality, andcopyright [1].To mitigate the reliance of domain adaptation methods on source data, the Source-Free Domain Adaptation (SFDA) paradigm [19] has been introduced in recent years.This approach has gained significant attention and has been studied in various fields,including image classification [17, 36], semantic segmentation [27], and object detec-tion [24,38]. SFDA provides a compelling solution to the challenges posed by domainshifts. Unlike traditional supervised learning, which assumes identical distributions be-tween source and target domains and relies on concurrent access to both, SFDA appliesa fully self-supervised adaptation phase, refining the model without requiring labeledtarget data. It follows a two-stage process as shown in Figure 1: first, learning discrim-inative feature representations from the source domain in a fully supervised manner,which could be on a similar task dataset (e.g., scientific document layout), and thenleveraging self-supervised learning mechanisms to progressively align the model to thetarget domain (e.g., private medical or financial documents). This adaptation processenables the model to capture domain-specific variations, mitigate distribution discrep-ancies, and enhance generalization without explicit supervision.",
+    "spans": [
+      {
+        "text": "DLA focuses on identifying and segmenting structural elements within a document,",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          61.54042053222656,
+          379.8377380371094,
+          71.50302124023438
+        ]
+      },
+      {
+        "text": "such as text, images, and tables. This process converts unstructured documents into",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          73.49543762207031,
+          379.8376770019531,
+          83.45803833007812
+        ]
+      },
+      {
+        "text": "machine-readable formats, improving digitization, automation, and data extraction. A",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          85.45045471191406,
+          379.8376770019531,
+          95.41305541992188
+        ]
+      },
+      {
+        "text": "key challenge in DLA is the heterogeneity of document structures across domains. The",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          97.40644836425781,
+          379.8377380371094,
+          107.36904907226562
+        ]
+      },
+      {
+        "text": "common practice for adapting models to these layouts is supervised fine-tuning using",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          109.36143493652344,
+          379.837646484375,
+          119.32403564453125
+        ]
+      },
+      {
+        "text": "annotated data. However, in numerous practical applications, accessing source domain",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          121.31642150878906,
+          379.83782958984375,
+          131.27902221679688
+        ]
+      },
+      {
+        "text": "data may not be feasible due to concerns about personal privacy, confidentiality, and",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          133.2714080810547,
+          379.83770751953125,
+          143.2340087890625
+        ]
+      },
+      {
+        "text": "copyright [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          145.2263946533203,
+          77.91120910644531,
+          155.18899536132812
+        ]
+      },
+      {
+        "text": "1",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 33023,
+        "bbox": [
+          77.91120910644531,
+          145.2263946533203,
+          82.89250946044922,
+          155.18899536132812
+        ]
+      },
+      {
+        "text": "].",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          82.89250946044922,
+          145.2263946533203,
+          88.70069885253906,
+          155.18899536132812
+        ]
+      },
+      {
+        "text": "To mitigate the reliance of domain adaptation methods on source data, the Source-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          48.959999084472656,
+          157.4233856201172,
+          379.8377990722656,
+          167.385986328125
+        ]
+      },
+      {
+        "text": "Free Domain Adaptation (SFDA) paradigm [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          169.3783721923828,
+          216.8894500732422,
+          179.34097290039062
+        ]
+      },
+      {
+        "text": "19",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 33023,
+        "bbox": [
+          216.8894500732422,
+          169.3783721923828,
+          226.85203552246094,
+          179.34097290039062
+        ]
+      },
+      {
+        "text": "] has been introduced in recent years.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          226.85203552246094,
+          169.3783721923828,
+          379.837646484375,
+          179.34097290039062
+        ]
+      },
+      {
+        "text": "This approach has gained significant attention and has been studied in various fields,",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          181.33335876464844,
+          379.8377685546875,
+          191.29595947265625
+        ]
+      },
+      {
+        "text": "including image classification [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          193.28834533691406,
+          160.6804962158203,
+          203.25094604492188
+        ]
+      },
+      {
+        "text": "17",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 33023,
+        "bbox": [
+          160.6804962158203,
+          193.28834533691406,
+          170.64308166503906,
+          203.25094604492188
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          170.64308166503906,
+          193.28834533691406,
+          173.13372802734375,
+          203.25094604492188
+        ]
+      },
+      {
+        "text": " 36",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 33023,
+        "bbox": [
+          173.13372802734375,
+          193.28834533691406,
+          184.80987548828125,
+          203.25094604492188
+        ]
+      },
+      {
+        "text": "], semantic segmentation [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          184.80987548828125,
+          193.28834533691406,
+          291.65875244140625,
+          203.25094604492188
+        ]
+      },
+      {
+        "text": "27",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 33023,
+        "bbox": [
+          291.65875244140625,
+          193.28834533691406,
+          301.621337890625,
+          203.25094604492188
+        ]
+      },
+      {
+        "text": "], and object detec-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          301.621337890625,
+          193.28834533691406,
+          379.8376770019531,
+          203.25094604492188
+        ]
+      },
+      {
+        "text": "tion [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          205.2443389892578,
+          55.47544479370117,
+          215.20693969726562
+        ]
+      },
+      {
+        "text": "24",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 33023,
+        "bbox": [
+          55.47544479370117,
+          205.2443389892578,
+          65.43804168701172,
+          215.20693969726562
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          65.43804168701172,
+          205.2443389892578,
+          67.9286880493164,
+          215.20693969726562
+        ]
+      },
+      {
+        "text": "38",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 33023,
+        "bbox": [
+          69.33341217041016,
+          205.2443389892578,
+          79.29601287841797,
+          215.20693969726562
+        ]
+      },
+      {
+        "text": "]. SFDA provides a compelling solution to the challenges posed by domain",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          79.29601287841797,
+          205.2443389892578,
+          379.83770751953125,
+          215.20693969726562
+        ]
+      },
+      {
+        "text": "shifts. Unlike traditional supervised learning, which assumes identical distributions be-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          217.19932556152344,
+          379.837646484375,
+          227.16192626953125
+        ]
+      },
+      {
+        "text": "tween source and target domains and relies on concurrent access to both, SFDA applies",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          229.15431213378906,
+          379.8477478027344,
+          239.11691284179688
+        ]
+      },
+      {
+        "text": "a fully self-supervised adaptation phase, refining the model without requiring labeled",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          241.1092987060547,
+          379.8376159667969,
+          251.0718994140625
+        ]
+      },
+      {
+        "text": "target data. It follows a two-stage process as shown in Figure",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          253.0642852783203,
+          277.9203186035156,
+          263.0268859863281
+        ]
+      },
+      {
+        "text": " 1",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          277.9203186035156,
+          253.0642852783203,
+          285.48193359375,
+          263.0268859863281
+        ]
+      },
+      {
+        "text": ": first, learning discrim-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          285.48193359375,
+          253.0642852783203,
+          379.8376770019531,
+          263.0268859863281
+        ]
+      },
+      {
+        "text": "inative feature representations from the source domain in a fully supervised manner,",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          265.0192565917969,
+          379.8376770019531,
+          274.98187255859375
+        ]
+      },
+      {
+        "text": "which could be on a similar task dataset (e.g., scientific document layout), and then",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          276.9752502441406,
+          379.8377685546875,
+          286.9378662109375
+        ]
+      },
+      {
+        "text": "leveraging self-supervised learning mechanisms to progressively align the model to the",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          288.93023681640625,
+          379.83770751953125,
+          298.8928527832031
+        ]
+      },
+      {
+        "text": "target domain (e.g., private medical or financial documents). This adaptation process",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          300.8852233886719,
+          379.8377685546875,
+          310.84783935546875
+        ]
+      },
+      {
+        "text": "enables the model to capture domain-specific variations, mitigate distribution discrep-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          312.8402099609375,
+          379.8476257324219,
+          322.8028259277344
+        ]
+      },
+      {
+        "text": "ancies, and enhance generalization without explicit supervision.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          324.7951965332031,
+          288.4209289550781,
+          334.7578125
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      64.2625732421875,
+      478.21820068359375,
+      311.71917724609375,
+      486.3183898925781
+    ],
+    "content": "(a) PLN(c) DLN-FIN(b) DLN-SCI",
+    "spans": [
+      {
+        "text": "(a) PLN",
+        "font_name": "TimesNRMTPro",
+        "font_size": 8.100190162658691,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          64.2625732421875,
+          478.21820068359375,
+          92.6929702758789,
+          486.3183898925781
+        ]
+      },
+      {
+        "text": "(c) DLN-FIN",
+        "font_name": "TimesNRMTPro",
+        "font_size": 8.100190162658691,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          264.1329650878906,
+          478.21820068359375,
+          311.71917724609375,
+          486.3183898925781
+        ]
+      },
+      {
+        "text": "(b) DLN-SCI",
+        "font_name": "TimesNRMTPro",
+        "font_size": 8.100190162658691,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          159.83367919921875,
+          478.21820068359375,
+          206.56922912597656,
+          486.3183898925781
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      349.1629638671875,
+      375.6231384277344,
+      362.8553161621094,
+      382.5397644042969
+    ],
+    "content": "Title",
+    "spans": [
+      {
+        "text": "Title",
+        "font_name": "TimesNRMTPro",
+        "font_size": 6.916633605957031,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          349.1629638671875,
+          375.6231384277344,
+          362.8553161621094,
+          382.5397644042969
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      349.4518737792969,
+      393.439453125,
+      362.8536376953125,
+      400.3560791015625
+    ],
+    "content": "Text",
+    "spans": [
+      {
+        "text": "Text",
+        "font_name": "TimesNRMTPro",
+        "font_size": 6.916633605957031,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          349.4518737792969,
+          393.439453125,
+          362.8536376953125,
+          400.3560791015625
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      350.5037536621094,
+      411.2557678222656,
+      377.1553955078125,
+      418.1723937988281
+    ],
+    "content": "List-item",
+    "spans": [
+      {
+        "text": "List-item",
+        "font_name": "TimesNRMTPro",
+        "font_size": 6.916633605957031,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          350.5037536621094,
+          411.2557678222656,
+          377.1553955078125,
+          418.1723937988281
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      349.5978698730469,
+      429.0721130371094,
+      369.0503845214844,
+      435.9887390136719
+    ],
+    "content": "Figure",
+    "spans": [
+      {
+        "text": "Figure",
+        "font_name": "TimesNRMTPro",
+        "font_size": 6.916633605957031,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          349.5978698730469,
+          429.0721130371094,
+          369.0503845214844,
+          435.9887390136719
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      350.3194885253906,
+      446.8884582519531,
+      376.2514343261719,
+      453.8050842285156
+    ],
+    "content": "Formula",
+    "spans": [
+      {
+        "text": "Formula",
+        "font_name": "TimesNRMTPro",
+        "font_size": 6.916633605957031,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          350.3194885253906,
+          446.8884582519531,
+          376.2514343261719,
+          453.8050842285156
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      34.01599884033203,
+      501.1364440917969,
+      379.8377685546875,
+      535.009033203125
+    ],
+    "content": "Fig. 2: Sample documents with ground-truth annotations. (a)-(b) are STEM documents(biology, math), while (c) is a financial document. Color code denote different layoutelements. The structural diversity highlights the need for adaptive DLA across domains.",
+    "spans": [
+      {
+        "text": "Fig. 2: Sample documents with ground-truth annotations. (a)-(b) are STEM documents",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          501.1364440917969,
+          379.8377685546875,
+          511.09906005859375
+        ]
+      },
+      {
+        "text": "(biology, math), while (c) is a financial document. Color code denote different layout",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          513.0914306640625,
+          379.8376770019531,
+          523.0540161132812
+        ]
+      },
+      {
+        "text": "elements. The structural diversity highlights the need for adaptive DLA across domains.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          525.0464477539062,
+          379.8377380371094,
+          535.009033203125
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      34.01599884033203,
+      561.5914306640625,
+      379.83770751953125,
+      583.509033203125
+    ],
+    "content": "Because, to the best of our knowledge, there is no existing benchmark for theSource-Free Document Layout Analysis (SFDLA), we introduce the SFDLA challenge",
+    "spans": [
+      {
+        "text": "Because, to the best of our knowledge, there is no existing benchmark for the",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          48.959999084472656,
+          561.5914306640625,
+          379.83770751953125,
+          571.5540161132812
+        ]
+      },
+      {
+        "text": "Source-Free Document Layout Analysis (SFDLA), we introduce the SFDLA challenge",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          573.5464477539062,
+          379.83770751953125,
+          583.509033203125
+        ]
+      }
+    ]
+  },
+  {
+    "type": "image",
+    "bbox": [
+      34.01599884033203,
+      357.66558837890625,
+      122.96498107910156,
+      472.86181640625
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      121.89564514160156,
+      413.73748779296875,
+      139.78265380859375,
+      416.6927185058594
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      226.65130615234375,
+      413.73748779296875,
+      244.46054077148438,
+      416.6927185058594
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      243.52505493164062,
+      357.66558837890625,
+      332.4740295410156,
+      472.86181640625
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      138.7406005859375,
+      357.6749267578125,
+      227.6895751953125,
+      472.87115478515625
+    ],
+    "xref": null,
+    "ext": "png"
+  }
+]

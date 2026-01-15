@@ -1,0 +1,3678 @@
+[
+  {
+    "type": "text",
+    "bbox": [
+      58.5,
+      75.16299438476562,
+      294.755615234375,
+      713.1659545898438
+    ],
+    "content": "removable using controllable regeneration from clean noise.arXiv preprint arXiv:2410.05470, 2024. 1, 2, 6, 7, 8, 11, 12,13[26] Shilin Lu, Zihan Zhou, Jiayou Lu, Yuanzhi Zhu, and AdamsWai-Kin Kong. Robust watermarking using generative pri-ors against image editing: From benchmarking to advances.arXiv preprint arXiv:2410.18775, 2024. 6, 12[27] Nils Lukas and Florian Kerschbaum. {PTW}: Pivotal tuningwatermarking for {Pre-Trained} image generators. In 32ndUSENIX Security Symposium (USENIX Security 23), pages2241–2258, 2023. 1[28] Nils Lukas, Abdulrahman Diaa, Lucas Fenaux, and FlorianKerschbaum. Leveraging optimization for adaptive attackson image watermarks.arXiv preprint arXiv:2309.16952,2023. 2[29] Andreas M¨uller, Denis Lukovnikov, Jonas Thietke, Asja Fis-cher, and Erwin Quiring. Black-box forgery attacks on se-mantic watermarks for diffusion models. In Proceedings ofthe Computer Vision and Pattern Recognition Conference,pages 20937–20946, 2025. 1, 2, 7[30] Bram Rijsbosch, Gijs van Dijck, and Konrad Kollnig.Adoption of watermarking measures for ai-generated con-tent and implications under the eu ai act.arXiv preprintarXiv:2503.18156, 2025. 1[31] Robin Rombach, Andreas Blattmann, Dominik Lorenz,Patrick Esser, and Bj¨orn Ommer.High-resolution imagesynthesis with latent diffusion models.In Proceedings ofthe IEEE/CVF conference on computer vision and patternrecognition, pages 10684–10695, 2022. 3, 6[32] Mehrdad Saberi, Vinu Sankar Sadasivan, Keivan Rezaei,Aounon Kumar, Atoosa Chegini, Wenxiao Wang, and SoheilFeizi. Robustness of ai-image detectors: Fundamental lim-its and practical attacks. arXiv preprint arXiv:2310.00076,2023. 2[33] GustavoSantana.Gustavosta:Stable-diffusion-prompts.https://huggingface.co/datasets/Gustavosta/Stable-Diffusion-Prompts, 2022.Dataset. 6, 7, 11[34] Tanja ˇSarˇcevi´c, Alicja Karlowicz, Rudolf Mayer, RicardoBaeza-Yates, and Andreas Rauber. U can’t gen this? a sur-vey of intellectual property protection methods for data ingenerative ai. arXiv preprint arXiv:2406.15386, 2024. 1, 2[35] Matthew Tancik, Ben Mildenhall, and Ren Ng. Stegastamp:Invisible hyperlinks in physical photographs. In Proceedingsof the IEEE/CVF conference on computer vision and patternrecognition, pages 2117–2126, 2020. 2, 6, 12[36] Zijie J Wang, Evan Montoya, David Munechika, HaoyangYang, Benjamin Hoover, and Duen Horng Chau.Diffu-siondb: A large-scale prompt gallery dataset for text-to-image generative models.In Proceedings of the 61st An-nual Meeting of the Association for Computational Linguis-tics (Volume 1: Long Papers), pages 893–911, 2023. 6, 7,11, 12[37] Daniel Watson, William Chan, Ricardo Martin-Brualla,JonathanHo,AndreaTagliasacchi,andMohammadNorouzi. Novel view synthesis with diffusion models. arXivpreprint arXiv:2210.04628, 2022. 2",
+    "spans": [
+      {
+        "text": "removable using controllable regeneration from clean noise.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          78.41899871826172,
+          75.16299438476562,
+          294.7513427734375,
+          84.12939453125
+        ]
+      },
+      {
+        "text": "arXiv preprint arXiv:2410.05470",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 8.966400146484375,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          78.41899871826172,
+          85.9631576538086,
+          197.3852081298828,
+          94.92955780029297
+        ]
+      },
+      {
+        "text": ", 2024.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          197.3852081298828,
+          86.12197875976562,
+          222.04281616210938,
+          95.08837890625
+        ]
+      },
+      {
+        "text": " 1",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          222.04281616210938,
+          86.12197875976562,
+          229.7449493408203,
+          95.08837890625
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          229.7449493408203,
+          86.12197875976562,
+          231.98654174804688,
+          95.08837890625
+        ]
+      },
+      {
+        "text": " 2",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          231.98654174804688,
+          86.12197875976562,
+          238.7113494873047,
+          95.08837890625
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          238.7113494873047,
+          86.12197875976562,
+          240.95294189453125,
+          95.08837890625
+        ]
+      },
+      {
+        "text": " 6",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          240.95294189453125,
+          86.12197875976562,
+          247.67774963378906,
+          95.08837890625
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          247.67774963378906,
+          86.12197875976562,
+          249.91934204101562,
+          95.08837890625
+        ]
+      },
+      {
+        "text": " 7",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          249.91934204101562,
+          86.12197875976562,
+          256.6441650390625,
+          95.08837890625
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          256.6441650390625,
+          86.12197875976562,
+          258.8857727050781,
+          95.08837890625
+        ]
+      },
+      {
+        "text": " 8",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          258.8857727050781,
+          86.12197875976562,
+          265.610595703125,
+          95.08837890625
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          265.610595703125,
+          86.12197875976562,
+          267.8522033691406,
+          95.08837890625
+        ]
+      },
+      {
+        "text": " 11",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          267.8522033691406,
+          86.12197875976562,
+          279.06024169921875,
+          95.08837890625
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          279.06024169921875,
+          86.12197875976562,
+          281.3018493652344,
+          95.08837890625
+        ]
+      },
+      {
+        "text": " 12",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          281.3018493652344,
+          86.12197875976562,
+          292.5098876953125,
+          95.08837890625
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          292.5098876953125,
+          86.12197875976562,
+          294.7514953613281,
+          95.08837890625
+        ]
+      },
+      {
+        "text": "13",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          78.41899871826172,
+          97.07998657226562,
+          87.3853988647461,
+          106.04638671875
+        ]
+      },
+      {
+        "text": "[26] Shilin Lu, Zihan Zhou, Jiayou Lu, Yuanzhi Zhu, and Adams",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          109.31796264648438,
+          294.7467346191406,
+          118.28436279296875
+        ]
+      },
+      {
+        "text": "Wai-Kin Kong. Robust watermarking using generative pri-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          78.41899871826172,
+          120.27597045898438,
+          294.7512512207031,
+          129.24237060546875
+        ]
+      },
+      {
+        "text": "ors against image editing: From benchmarking to advances.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          78.41899871826172,
+          131.23495483398438,
+          294.7513122558594,
+          140.20135498046875
+        ]
+      },
+      {
+        "text": "arXiv preprint arXiv:2410.18775",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 8.966400146484375,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          78.41899871826172,
+          142.0351104736328,
+          197.3852081298828,
+          151.0015106201172
+        ]
+      },
+      {
+        "text": ", 2024.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          197.3852081298828,
+          142.19393920898438,
+          222.04281616210938,
+          151.16033935546875
+        ]
+      },
+      {
+        "text": " 6",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          222.04281616210938,
+          142.19393920898438,
+          229.75392150878906,
+          151.16033935546875
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          229.75392150878906,
+          142.19393920898438,
+          231.99551391601562,
+          151.16033935546875
+        ]
+      },
+      {
+        "text": " 12",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          231.99551391601562,
+          142.19393920898438,
+          243.20352172851562,
+          151.16033935546875
+        ]
+      },
+      {
+        "text": "[27] Nils Lukas and Florian Kerschbaum.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          154.43093872070312,
+          209.135498046875,
+          163.3973388671875
+        ]
+      },
+      {
+        "text": " {",
+        "font_name": "CMSY9",
+        "font_size": 8.966400146484375,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          209.135498046875,
+          154.1072235107422,
+          216.2637939453125,
+          163.07362365722656
+        ]
+      },
+      {
+        "text": "PTW",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          216.2637939453125,
+          154.43093872070312,
+          235.19186401367188,
+          163.3973388671875
+        ]
+      },
+      {
+        "text": "}",
+        "font_name": "CMSY9",
+        "font_size": 8.966400146484375,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          235.19186401367188,
+          154.1072235107422,
+          239.80059814453125,
+          163.07362365722656
+        ]
+      },
+      {
+        "text": ": Pivotal tuning",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          239.80059814453125,
+          154.43093872070312,
+          294.755615234375,
+          163.3973388671875
+        ]
+      },
+      {
+        "text": "watermarking for",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          78.41899871826172,
+          165.38992309570312,
+          141.2017364501953,
+          174.3563232421875
+        ]
+      },
+      {
+        "text": " {",
+        "font_name": "CMSY9",
+        "font_size": 8.966400146484375,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          141.2017364501953,
+          165.0662078857422,
+          148.4286651611328,
+          174.03260803222656
+        ]
+      },
+      {
+        "text": "Pre-Trained",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          148.4286651611328,
+          165.38992309570312,
+          190.9383544921875,
+          174.3563232421875
+        ]
+      },
+      {
+        "text": "}",
+        "font_name": "CMSY9",
+        "font_size": 8.966400146484375,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          190.9383544921875,
+          165.0662078857422,
+          195.54708862304688,
+          174.03260803222656
+        ]
+      },
+      {
+        "text": " image generators. In",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          195.54708862304688,
+          165.38992309570312,
+          274.2003173828125,
+          174.3563232421875
+        ]
+      },
+      {
+        "text": " 32nd",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 8.966400146484375,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          274.2003173828125,
+          165.23109436035156,
+          294.7513427734375,
+          174.19749450683594
+        ]
+      },
+      {
+        "text": "USENIX Security Symposium (USENIX Security 23)",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 8.966400146484375,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          78.41899871826172,
+          176.19007873535156,
+          269.0625915527344,
+          185.15647888183594
+        ]
+      },
+      {
+        "text": ", pages",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          269.0625915527344,
+          176.34890747070312,
+          294.7513427734375,
+          185.3153076171875
+        ]
+      },
+      {
+        "text": "2241–2258, 2023.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          78.41899871826172,
+          187.30789184570312,
+          143.4254150390625,
+          196.2742919921875
+        ]
+      },
+      {
+        "text": " 1",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          143.4254150390625,
+          187.30789184570312,
+          151.1365203857422,
+          196.2742919921875
+        ]
+      },
+      {
+        "text": "[28] Nils Lukas, Abdulrahman Diaa, Lucas Fenaux, and Florian",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          199.54489135742188,
+          294.74676513671875,
+          208.51129150390625
+        ]
+      },
+      {
+        "text": "Kerschbaum. Leveraging optimization for adaptive attacks",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          78.41899871826172,
+          210.50387573242188,
+          294.751220703125,
+          219.47027587890625
+        ]
+      },
+      {
+        "text": "on image watermarks.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          78.41899871826172,
+          221.46286010742188,
+          161.25057983398438,
+          230.42926025390625
+        ]
+      },
+      {
+        "text": "arXiv preprint arXiv:2309.16952",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 8.966400146484375,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          170.0555877685547,
+          221.3040313720703,
+          292.509765625,
+          230.2704315185547
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          292.509765625,
+          221.46286010742188,
+          294.7513732910156,
+          230.42926025390625
+        ]
+      },
+      {
+        "text": "2023.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          78.41899871826172,
+          232.42184448242188,
+          98.59339904785156,
+          241.38824462890625
+        ]
+      },
+      {
+        "text": " 2",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          98.59339904785156,
+          232.42184448242188,
+          106.30450439453125,
+          241.38824462890625
+        ]
+      },
+      {
+        "text": "[29] Andreas M¨uller, Denis Lukovnikov, Jonas Thietke, Asja Fis-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          244.61386108398438,
+          294.74676513671875,
+          253.625244140625
+        ]
+      },
+      {
+        "text": "cher, and Erwin Quiring. Black-box forgery attacks on se-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          78.41900634765625,
+          255.61782836914062,
+          294.7513122558594,
+          264.584228515625
+        ]
+      },
+      {
+        "text": "mantic watermarks for diffusion models. In",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          78.41900634765625,
+          266.5768127441406,
+          238.02987670898438,
+          275.543212890625
+        ]
+      },
+      {
+        "text": " Proceedings of",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 8.966400146484375,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          238.02987670898438,
+          266.4179992675781,
+          294.7513122558594,
+          275.3843994140625
+        ]
+      },
+      {
+        "text": "the Computer Vision and Pattern Recognition Conference",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 8.966400146484375,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          78.41900634765625,
+          277.3769836425781,
+          292.50970458984375,
+          286.3433837890625
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          292.50970458984375,
+          277.5357971191406,
+          294.7513122558594,
+          286.502197265625
+        ]
+      },
+      {
+        "text": "pages 20937–20946, 2025.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          78.41900634765625,
+          288.4947814941406,
+          175.0499267578125,
+          297.461181640625
+        ]
+      },
+      {
+        "text": " 1",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          175.0499267578125,
+          288.4947814941406,
+          182.7610321044922,
+          297.461181640625
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          182.7610321044922,
+          288.4947814941406,
+          185.00262451171875,
+          297.461181640625
+        ]
+      },
+      {
+        "text": " 2",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          185.00262451171875,
+          288.4947814941406,
+          191.72743225097656,
+          297.461181640625
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          191.72743225097656,
+          288.4947814941406,
+          193.96902465820312,
+          297.461181640625
+        ]
+      },
+      {
+        "text": " 7",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          193.96902465820312,
+          288.4947814941406,
+          200.69383239746094,
+          297.461181640625
+        ]
+      },
+      {
+        "text": "[30] Bram Rijsbosch, Gijs van Dijck, and Konrad Kollnig.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.50000762939453,
+          300.7317810058594,
+          294.7466735839844,
+          309.69818115234375
+        ]
+      },
+      {
+        "text": "Adoption of watermarking measures for ai-generated con-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          78.41900634765625,
+          311.6907653808594,
+          294.7513732910156,
+          320.65716552734375
+        ]
+      },
+      {
+        "text": "tent and implications under the eu ai act.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          78.41900634765625,
+          322.6497497558594,
+          234.1295166015625,
+          331.61614990234375
+        ]
+      },
+      {
+        "text": "arXiv preprint",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 8.966400146484375,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          242.05581665039062,
+          322.4909362792969,
+          294.7512512207031,
+          331.45733642578125
+        ]
+      },
+      {
+        "text": "arXiv:2503.18156",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 8.966400146484375,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          78.41900634765625,
+          333.4499206542969,
+          143.91856384277344,
+          342.41632080078125
+        ]
+      },
+      {
+        "text": ", 2025.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          143.91856384277344,
+          333.6087341308594,
+          168.576171875,
+          342.57513427734375
+        ]
+      },
+      {
+        "text": " 1",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          168.576171875,
+          333.6087341308594,
+          176.2872772216797,
+          342.57513427734375
+        ]
+      },
+      {
+        "text": "[31] Robin Rombach, Andreas Blattmann, Dominik Lorenz,",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.50000762939453,
+          345.8457336425781,
+          294.7467346191406,
+          354.8121337890625
+        ]
+      },
+      {
+        "text": "Patrick Esser, and Bj¨orn Ommer.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          78.41900634765625,
+          356.75970458984375,
+          203.56637573242188,
+          365.7711181640625
+        ]
+      },
+      {
+        "text": "High-resolution image",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          212.1382598876953,
+          356.8047180175781,
+          294.754638671875,
+          365.7711181640625
+        ]
+      },
+      {
+        "text": "synthesis with latent diffusion models.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          78.41901397705078,
+          367.7627258300781,
+          221.53170776367188,
+          376.7291259765625
+        ]
+      },
+      {
+        "text": "In",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          228.84829711914062,
+          367.7627258300781,
+          236.3173065185547,
+          376.7291259765625
+        ]
+      },
+      {
+        "text": " Proceedings of",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 8.966400146484375,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          236.3173065185547,
+          367.6039123535156,
+          294.7513122558594,
+          376.5703125
+        ]
+      },
+      {
+        "text": "the IEEE/CVF conference on computer vision and pattern",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 8.966400146484375,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          78.41901397705078,
+          378.5628967285156,
+          294.7513427734375,
+          387.529296875
+        ]
+      },
+      {
+        "text": "recognition",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 8.966400146484375,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          78.41901397705078,
+          389.5218811035156,
+          119.34166717529297,
+          398.48828125
+        ]
+      },
+      {
+        "text": ", pages 10684–10695, 2022.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          119.34166717529297,
+          389.6806945800781,
+          220.45578002929688,
+          398.6470947265625
+        ]
+      },
+      {
+        "text": " 3",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          220.45578002929688,
+          389.6806945800781,
+          228.16688537597656,
+          398.6470947265625
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          228.16688537597656,
+          389.6806945800781,
+          230.40847778320312,
+          398.6470947265625
+        ]
+      },
+      {
+        "text": " 6",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          230.40847778320312,
+          389.6806945800781,
+          237.13328552246094,
+          398.6470947265625
+        ]
+      },
+      {
+        "text": "[32] Mehrdad Saberi, Vinu Sankar Sadasivan, Keivan Rezaei,",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.50001525878906,
+          401.9176940917969,
+          294.74664306640625,
+          410.88409423828125
+        ]
+      },
+      {
+        "text": "Aounon Kumar, Atoosa Chegini, Wenxiao Wang, and Soheil",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          78.41901397705078,
+          412.8766784667969,
+          294.7513427734375,
+          421.84307861328125
+        ]
+      },
+      {
+        "text": "Feizi. Robustness of ai-image detectors: Fundamental lim-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          78.41901397705078,
+          423.8356628417969,
+          294.7512512207031,
+          432.80206298828125
+        ]
+      },
+      {
+        "text": "its and practical attacks.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          78.41901397705078,
+          434.7946472167969,
+          166.67529296875,
+          443.76104736328125
+        ]
+      },
+      {
+        "text": " arXiv preprint arXiv:2310.00076",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 8.966400146484375,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          166.67529296875,
+          434.6358337402344,
+          292.50982666015625,
+          443.60223388671875
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          292.50982666015625,
+          434.7946472167969,
+          294.7514343261719,
+          443.76104736328125
+        ]
+      },
+      {
+        "text": "2023.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          78.41901397705078,
+          445.7536315917969,
+          98.59341430664062,
+          454.72003173828125
+        ]
+      },
+      {
+        "text": " 2",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          98.59341430664062,
+          445.7536315917969,
+          106.30451965332031,
+          454.72003173828125
+        ]
+      },
+      {
+        "text": "[33] Gustavo",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.50001525878906,
+          457.9906311035156,
+          107.94970703125,
+          466.95703125
+        ]
+      },
+      {
+        "text": "Santana.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.50788879394531,
+          457.9906311035156,
+          148.13711547851562,
+          466.95703125
+        ]
+      },
+      {
+        "text": "Gustavosta:",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          174.80319213867188,
+          457.9906311035156,
+          216.7838897705078,
+          466.95703125
+        ]
+      },
+      {
+        "text": "Stable-diffusion-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          234.21456909179688,
+          457.9906311035156,
+          294.7467346191406,
+          466.95703125
+        ]
+      },
+      {
+        "text": "prompts.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          78.41901397705078,
+          468.9496154785156,
+          110.05247497558594,
+          477.916015625
+        ]
+      },
+      {
+        "text": "https://huggingface.co/datasets/",
+        "font_name": "NimbusMonL-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 255,
+        "bbox": [
+          117.78150939941406,
+          468.4905700683594,
+          294.7513732910156,
+          477.45697021484375
+        ]
+      },
+      {
+        "text": "Gustavosta/Stable-Diffusion-Prompts",
+        "font_name": "NimbusMonL-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 255,
+        "bbox": [
+          78.41901397705078,
+          479.4495544433594,
+          269.2508239746094,
+          488.41595458984375
+        ]
+      },
+      {
+        "text": ", 2022.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          269.2508239746094,
+          479.9085998535156,
+          294.7513122558594,
+          488.875
+        ]
+      },
+      {
+        "text": "Dataset.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          78.41901397705078,
+          490.8675842285156,
+          107.55084228515625,
+          499.833984375
+        ]
+      },
+      {
+        "text": " 6",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          107.55084228515625,
+          490.8675842285156,
+          115.26194763183594,
+          499.833984375
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          115.26194763183594,
+          490.8675842285156,
+          117.50354766845703,
+          499.833984375
+        ]
+      },
+      {
+        "text": " 7",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          117.50354766845703,
+          490.8675842285156,
+          124.22834777832031,
+          499.833984375
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          124.22834777832031,
+          490.8675842285156,
+          126.4699478149414,
+          499.833984375
+        ]
+      },
+      {
+        "text": " 11",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          126.4699478149414,
+          490.8675842285156,
+          137.67794799804688,
+          499.833984375
+        ]
+      },
+      {
+        "text": "[34] Tanja ",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.50001525878906,
+          503.1045837402344,
+          102.90601348876953,
+          512.0709838867188
+        ]
+      },
+      {
+        "text": "ˇ",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 5,
+        "color": 0,
+        "bbox": [
+          102.90601348876953,
+          501.02459716796875,
+          105.8918228149414,
+          509.9909973144531
+        ]
+      },
+      {
+        "text": "Sarˇcevi´c, Alicja Karlowicz, Rudolf Mayer, Ricardo",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          101.90601348876953,
+          503.0595703125,
+          294.746337890625,
+          512.0709838867188
+        ]
+      },
+      {
+        "text": "Baeza-Yates, and Andreas Rauber. U can’t gen this? a sur-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          78.41902160644531,
+          514.0635375976562,
+          294.7513427734375,
+          523.0299682617188
+        ]
+      },
+      {
+        "text": "vey of intellectual property protection methods for data in",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          78.41902160644531,
+          525.0225219726562,
+          294.75128173828125,
+          533.9889526367188
+        ]
+      },
+      {
+        "text": "generative ai.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          78.41902160644531,
+          535.9815063476562,
+          126.36235046386719,
+          544.9479370117188
+        ]
+      },
+      {
+        "text": " arXiv preprint arXiv:2406.15386",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 8.966400146484375,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          126.36235046386719,
+          535.8226928710938,
+          248.5564727783203,
+          544.7891235351562
+        ]
+      },
+      {
+        "text": ", 2024.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          248.5564727783203,
+          535.9815063476562,
+          273.2141418457031,
+          544.9479370117188
+        ]
+      },
+      {
+        "text": " 1",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          273.2141418457031,
+          535.9815063476562,
+          280.92523193359375,
+          544.9479370117188
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          280.92523193359375,
+          535.9815063476562,
+          283.1668395996094,
+          544.9479370117188
+        ]
+      },
+      {
+        "text": " 2",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          283.1668395996094,
+          535.9815063476562,
+          289.89166259765625,
+          544.9479370117188
+        ]
+      },
+      {
+        "text": "[35] Matthew Tancik, Ben Mildenhall, and Ren Ng. Stegastamp:",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.500022888183594,
+          548.218505859375,
+          294.7466735839844,
+          557.1849365234375
+        ]
+      },
+      {
+        "text": "Invisible hyperlinks in physical photographs. In",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          78.41902160644531,
+          559.177490234375,
+          248.3950653076172,
+          568.1439208984375
+        ]
+      },
+      {
+        "text": " Proceedings",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 8.966400146484375,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          248.3950653076172,
+          559.0186767578125,
+          294.7513427734375,
+          567.985107421875
+        ]
+      },
+      {
+        "text": "of the IEEE/CVF conference on computer vision and pattern",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 8.966400146484375,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          78.41902160644531,
+          569.9777221679688,
+          294.7513427734375,
+          578.9441528320312
+        ]
+      },
+      {
+        "text": "recognition",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 8.966400146484375,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          78.41902160644531,
+          580.9367065429688,
+          119.3416748046875,
+          589.9031372070312
+        ]
+      },
+      {
+        "text": ", pages 2117–2126, 2020.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          119.3416748046875,
+          581.0955200195312,
+          211.4893798828125,
+          590.0619506835938
+        ]
+      },
+      {
+        "text": " 2",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          211.4893798828125,
+          581.0955200195312,
+          219.2004852294922,
+          590.0619506835938
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          219.2004852294922,
+          581.0955200195312,
+          221.44207763671875,
+          590.0619506835938
+        ]
+      },
+      {
+        "text": " 6",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          221.44207763671875,
+          581.0955200195312,
+          228.16688537597656,
+          590.0619506835938
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          228.16688537597656,
+          581.0955200195312,
+          230.40847778320312,
+          590.0619506835938
+        ]
+      },
+      {
+        "text": " 12",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          230.40847778320312,
+          581.0955200195312,
+          241.61648559570312,
+          590.0619506835938
+        ]
+      },
+      {
+        "text": "[36] Zijie J Wang, Evan Montoya, David Munechika, Haoyang",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.500022888183594,
+          593.33251953125,
+          294.74676513671875,
+          602.2989501953125
+        ]
+      },
+      {
+        "text": "Yang, Benjamin Hoover, and Duen Horng Chau.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          78.41902160644531,
+          604.29150390625,
+          263.7724304199219,
+          613.2579345703125
+        ]
+      },
+      {
+        "text": "Diffu-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          272.5684814453125,
+          604.29150390625,
+          294.7513732910156,
+          613.2579345703125
+        ]
+      },
+      {
+        "text": "siondb: A large-scale prompt gallery dataset for text-to-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          78.41902160644531,
+          615.25048828125,
+          294.7512512207031,
+          624.2169189453125
+        ]
+      },
+      {
+        "text": "image generative models.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          78.41902160644531,
+          626.20849609375,
+          172.43170166015625,
+          635.1749267578125
+        ]
+      },
+      {
+        "text": "In",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          179.6227569580078,
+          626.20849609375,
+          187.09176635742188,
+          635.1749267578125
+        ]
+      },
+      {
+        "text": " Proceedings of the 61st An-",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 8.966400146484375,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          187.09176635742188,
+          626.0496826171875,
+          294.7513122558594,
+          635.01611328125
+        ]
+      },
+      {
+        "text": "nual Meeting of the Association for Computational Linguis-",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 8.966400146484375,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          78.41902160644531,
+          637.0087280273438,
+          294.7513427734375,
+          645.9751586914062
+        ]
+      },
+      {
+        "text": "tics (Volume 1: Long Papers)",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 8.966400146484375,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          78.41902160644531,
+          647.9677124023438,
+          186.87660217285156,
+          656.9341430664062
+        ]
+      },
+      {
+        "text": ", pages 893–911, 2023.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          186.87660217285156,
+          648.1265258789062,
+          272.5954284667969,
+          657.0929565429688
+        ]
+      },
+      {
+        "text": " 6",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          272.5954284667969,
+          648.1265258789062,
+          282.6378173828125,
+          657.0929565429688
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          282.6378173828125,
+          648.1265258789062,
+          284.8794250488281,
+          657.0929565429688
+        ]
+      },
+      {
+        "text": " 7",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          284.8794250488281,
+          648.1265258789062,
+          292.50982666015625,
+          657.0929565429688
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          292.50982666015625,
+          648.1265258789062,
+          294.7514343261719,
+          657.0929565429688
+        ]
+      },
+      {
+        "text": "11",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          78.41902160644531,
+          659.0855102539062,
+          87.38542175292969,
+          668.0519409179688
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          87.38542175292969,
+          659.0855102539062,
+          89.62702178955078,
+          668.0519409179688
+        ]
+      },
+      {
+        "text": " 12",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          89.62702178955078,
+          659.0855102539062,
+          100.83502197265625,
+          668.0519409179688
+        ]
+      },
+      {
+        "text": "[37] Daniel Watson, William Chan, Ricardo Martin-Brualla,",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.500022888183594,
+          671.322509765625,
+          294.7466735839844,
+          680.2889404296875
+        ]
+      },
+      {
+        "text": "Jonathan",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          78.41902160644531,
+          682.281494140625,
+          110.29457092285156,
+          691.2479248046875
+        ]
+      },
+      {
+        "text": "Ho,",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          118.08637237548828,
+          682.281494140625,
+          131.284912109375,
+          691.2479248046875
+        ]
+      },
+      {
+        "text": "Andrea",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          140.4665069580078,
+          682.281494140625,
+          166.8546142578125,
+          691.2479248046875
+        ]
+      },
+      {
+        "text": "Tagliasacchi,",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          174.65538024902344,
+          682.281494140625,
+          221.495849609375,
+          691.2479248046875
+        ]
+      },
+      {
+        "text": "and",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          230.6774444580078,
+          682.281494140625,
+          243.6249237060547,
+          691.2479248046875
+        ]
+      },
+      {
+        "text": "Mohammad",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          251.41673278808594,
+          682.281494140625,
+          294.75140380859375,
+          691.2479248046875
+        ]
+      },
+      {
+        "text": "Norouzi. Novel view synthesis with diffusion models.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          78.41902160644531,
+          693.2405395507812,
+          271.79730224609375,
+          702.2069702148438
+        ]
+      },
+      {
+        "text": " arXiv",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 8.966400146484375,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          271.79730224609375,
+          693.0817260742188,
+          294.75128173828125,
+          702.0481567382812
+        ]
+      },
+      {
+        "text": "preprint arXiv:2210.04628",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 8.966400146484375,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          78.41902160644531,
+          704.0407104492188,
+          175.2202911376953,
+          713.0071411132812
+        ]
+      },
+      {
+        "text": ", 2022.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          175.2202911376953,
+          704.1995239257812,
+          199.87789916992188,
+          713.1659545898438
+        ]
+      },
+      {
+        "text": " 2",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          199.87789916992188,
+          704.1995239257812,
+          207.58900451660156,
+          713.1659545898438
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      317.25,
+      75.16256713867188,
+      553.5015869140625,
+      630.0806884765625
+    ],
+    "content": "[38] Yuxin Wen, John Kirchenbauer, Jonas Geiping, and TomGoldstein.Tree-ring watermarks: Fingerprints for diffu-sion images that are invisible and robust.arXiv preprintarXiv:2305.20030, 2023. 1, 2, 6, 12[39] Jay Zhangjie Wu, Yixiao Ge, Xintao Wang, Stan WeixianLei, Yuchao Gu, Yufei Shi, Wynne Hsu, Ying Shan, XiaohuQie, and Mike Zheng Shou. Tune-a-video: One-shot tuningof image diffusion models for text-to-video generation. InProceedings of the IEEE/CVF international conference oncomputer vision, pages 7623–7633, 2023. 2, 3[40] Naen Xu, Changjiang Li, Tianyu Du, Minxi Li, WenjieLuo, Jiacheng Liang, Yuyuan Li, Xuhong Zhang, MengHan, Jianwei Yin, et al. Copyrightmeter: Revisiting copy-right protection in text-to-image models.arXiv preprintarXiv:2411.13144, 2024. 1, 2[41] Zijin Yang, Kai Zeng, Kejiang Chen, Han Fang, Weim-ing Zhang, and Nenghai Yu.Gaussian shading:Prov-able performance-lossless image watermarking for diffusionmodels.In Proceedings of the IEEE/CVF Conference onComputer Vision and Pattern Recognition, pages 12162–12171, 2024. 2, 6, 12[42] Wangbo Yu, Jinbo Xing, Li Yuan, Wenbo Hu, Xiaoyu Li,Zhipeng Huang, Xiangjun Gao, Tien-Tsin Wong, Ying Shan,and Yonghong Tian. Viewcrafter: Taming video diffusionmodels for high-fidelity novel view synthesis. arXiv preprintarXiv:2409.02048, 2024. 3, 4, 5[43] Kevin Alex Zhang, Lei Xu, Alfredo Cuesta-Infante, andKalyan Veeramachaneni. Robust invisible video watermark-ing with attention. arXiv preprint arXiv:1909.01285, 2019.2, 6, 12[44] Lijun Zhang, Xiao Liu, Antoni Viros Martin, Cindy XiongBearfield,Yuriy Brun,and Hui Guan.Robust im-age watermarking using stable diffusion.arXiv preprintarXiv:2401.04247, 2024. 6, 12[45] Xuandong Zhao, Sam Gunn, Miranda Christ, Jaiden Fairoze,Andres Fabrega, Nicholas Carlini, Sanjam Garg, SanghyunHong, Milad Nasr, Florian Tramer, et al.Sok: Water-marking for ai-generated content, 2024. URL https://arxiv.org/abs/2411.18479. 1, 2[46] Xuandong Zhao, Sam Gunn, Miranda Christ, Jaiden Fairoze,Andres Fabrega, Nicholas Carlini, Sanjam Garg, SanghyunHong, Milad Nasr, Florian Tramer, et al. Sok: Watermarkingfor ai-generated content. arXiv preprint arXiv:2411.18479,2024. 1, 2[47] Xuandong Zhao, Kexun Zhang, Zihao Su, Saastha Vasan,Ilya Grishchenko, Christopher Kruegel, Giovanni Vigna, Yu-Xiang Wang, and Lei Li. Invisible image watermarks areprovably removable using generative ai. Advances in neuralinformation processing systems, 37:8643–8672, 2024. 1, 2,6, 7, 8, 11, 12, 13",
+    "spans": [
+      {
+        "text": "[38] Yuxin Wen, John Kirchenbauer, Jonas Geiping, and Tom",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          75.16256713867188,
+          553.4967651367188,
+          84.12896728515625
+        ]
+      },
+      {
+        "text": "Goldstein.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          337.16900634765625,
+          86.12057495117188,
+          374.2809143066406,
+          95.08697509765625
+        ]
+      },
+      {
+        "text": "Tree-ring watermarks: Fingerprints for diffu-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          383.05902099609375,
+          86.12057495117188,
+          553.50146484375,
+          95.08697509765625
+        ]
+      },
+      {
+        "text": "sion images that are invisible and robust.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          337.16900634765625,
+          97.07955932617188,
+          492.574462890625,
+          106.04595947265625
+        ]
+      },
+      {
+        "text": "arXiv preprint",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 8.966400146484375,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          500.73388671875,
+          96.92073822021484,
+          553.5011596679688,
+          105.88713836669922
+        ]
+      },
+      {
+        "text": "arXiv:2305.20030",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 8.966400146484375,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          337.16900634765625,
+          107.87972259521484,
+          402.66864013671875,
+          116.84612274169922
+        ]
+      },
+      {
+        "text": ", 2023.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          402.66864013671875,
+          108.03854370117188,
+          427.3263244628906,
+          117.00494384765625
+        ]
+      },
+      {
+        "text": " 1",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          427.3263244628906,
+          108.03854370117188,
+          435.03741455078125,
+          117.00494384765625
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          435.03741455078125,
+          108.03854370117188,
+          437.2790222167969,
+          117.00494384765625
+        ]
+      },
+      {
+        "text": " 2",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          437.2790222167969,
+          108.03854370117188,
+          444.00384521484375,
+          117.00494384765625
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          444.00384521484375,
+          108.03854370117188,
+          446.2454528808594,
+          117.00494384765625
+        ]
+      },
+      {
+        "text": " 6",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          446.2454528808594,
+          108.03854370117188,
+          452.97027587890625,
+          117.00494384765625
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          452.97027587890625,
+          108.03854370117188,
+          455.2118835449219,
+          117.00494384765625
+        ]
+      },
+      {
+        "text": " 12",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          455.2118835449219,
+          108.03854370117188,
+          466.419921875,
+          117.00494384765625
+        ]
+      },
+      {
+        "text": "[39] Jay Zhangjie Wu, Yixiao Ge, Xintao Wang, Stan Weixian",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          119.99356079101562,
+          553.496826171875,
+          128.9599609375
+        ]
+      },
+      {
+        "text": "Lei, Yuchao Gu, Yufei Shi, Wynne Hsu, Ying Shan, Xiaohu",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          337.16900634765625,
+          130.95254516601562,
+          553.50146484375,
+          139.9189453125
+        ]
+      },
+      {
+        "text": "Qie, and Mike Zheng Shou. Tune-a-video: One-shot tuning",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          337.16900634765625,
+          141.91152954101562,
+          553.5015869140625,
+          150.8779296875
+        ]
+      },
+      {
+        "text": "of image diffusion models for text-to-video generation. In",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          337.16900634765625,
+          152.87051391601562,
+          553.5012817382812,
+          161.8369140625
+        ]
+      },
+      {
+        "text": "Proceedings of the IEEE/CVF international conference on",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 8.966400146484375,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          337.16900634765625,
+          163.67066955566406,
+          553.5014038085938,
+          172.63706970214844
+        ]
+      },
+      {
+        "text": "computer vision",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 8.966400146484375,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          337.16900634765625,
+          174.62965393066406,
+          394.69744873046875,
+          183.59605407714844
+        ]
+      },
+      {
+        "text": ", pages 7623–7633, 2023.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          394.69744873046875,
+          174.78848266601562,
+          486.8453674316406,
+          183.7548828125
+        ]
+      },
+      {
+        "text": " 2",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          486.8453674316406,
+          174.78848266601562,
+          494.55645751953125,
+          183.7548828125
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          494.55645751953125,
+          174.78848266601562,
+          496.7980651855469,
+          183.7548828125
+        ]
+      },
+      {
+        "text": " 3",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          496.7980651855469,
+          174.78848266601562,
+          503.52288818359375,
+          183.7548828125
+        ]
+      },
+      {
+        "text": "[40] Naen Xu, Changjiang Li, Tianyu Du, Minxi Li, Wenjie",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          186.74349975585938,
+          553.4968872070312,
+          195.70989990234375
+        ]
+      },
+      {
+        "text": "Luo, Jiacheng Liang, Yuyuan Li, Xuhong Zhang, Meng",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          337.16900634765625,
+          197.70248413085938,
+          553.5015258789062,
+          206.66888427734375
+        ]
+      },
+      {
+        "text": "Han, Jianwei Yin, et al. Copyrightmeter: Revisiting copy-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          337.16900634765625,
+          208.66146850585938,
+          553.5015258789062,
+          217.62786865234375
+        ]
+      },
+      {
+        "text": "right protection in text-to-image models.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          337.16900634765625,
+          219.62045288085938,
+          490.69158935546875,
+          228.58685302734375
+        ]
+      },
+      {
+        "text": "arXiv preprint",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 8.966400146484375,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          500.28564453125,
+          219.4616241455078,
+          553.501220703125,
+          228.4280242919922
+        ]
+      },
+      {
+        "text": "arXiv:2411.13144",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 8.966400146484375,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          337.16900634765625,
+          230.4206085205078,
+          402.66864013671875,
+          239.3870086669922
+        ]
+      },
+      {
+        "text": ", 2024.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          402.66864013671875,
+          230.57943725585938,
+          427.3263244628906,
+          239.54583740234375
+        ]
+      },
+      {
+        "text": " 1",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          427.3263244628906,
+          230.57943725585938,
+          435.03741455078125,
+          239.54583740234375
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          435.03741455078125,
+          230.57943725585938,
+          437.2790222167969,
+          239.54583740234375
+        ]
+      },
+      {
+        "text": " 2",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          437.2790222167969,
+          230.57943725585938,
+          444.00384521484375,
+          239.54583740234375
+        ]
+      },
+      {
+        "text": "[41] Zijin Yang, Kai Zeng, Kejiang Chen, Han Fang, Weim-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          242.53445434570312,
+          553.496826171875,
+          251.5008544921875
+        ]
+      },
+      {
+        "text": "ing Zhang, and Nenghai Yu.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          337.16900634765625,
+          253.49343872070312,
+          448.0027770996094,
+          262.4598388671875
+        ]
+      },
+      {
+        "text": "Gaussian shading:",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          458.565185546875,
+          253.49343872070312,
+          526.3511962890625,
+          262.4598388671875
+        ]
+      },
+      {
+        "text": "Prov-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          533.7125854492188,
+          253.49343872070312,
+          553.50146484375,
+          262.4598388671875
+        ]
+      },
+      {
+        "text": "able performance-lossless image watermarking for diffusion",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          337.16900634765625,
+          264.4524230957031,
+          553.5014038085938,
+          273.4188232421875
+        ]
+      },
+      {
+        "text": "models.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          337.16900634765625,
+          275.4114074707031,
+          365.31451416015625,
+          284.3778076171875
+        ]
+      },
+      {
+        "text": "In",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          373.01666259765625,
+          275.4114074707031,
+          380.48565673828125,
+          284.3778076171875
+        ]
+      },
+      {
+        "text": " Proceedings of the IEEE/CVF Conference on",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 8.966400146484375,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          380.48565673828125,
+          275.2525939941406,
+          553.5012817382812,
+          284.218994140625
+        ]
+      },
+      {
+        "text": "Computer Vision and Pattern Recognition",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 8.966400146484375,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          337.16900634765625,
+          286.2115783691406,
+          495.0224609375,
+          295.177978515625
+        ]
+      },
+      {
+        "text": ", pages 12162–",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          495.0224609375,
+          286.3703918457031,
+          553.50146484375,
+          295.3367919921875
+        ]
+      },
+      {
+        "text": "12171, 2024.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          337.16900634765625,
+          297.3283996582031,
+          384.2427673339844,
+          306.2947998046875
+        ]
+      },
+      {
+        "text": " 2",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          384.2427673339844,
+          297.3283996582031,
+          391.953857421875,
+          306.2947998046875
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          391.953857421875,
+          297.3283996582031,
+          394.1954650878906,
+          306.2947998046875
+        ]
+      },
+      {
+        "text": " 6",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          394.1954650878906,
+          297.3283996582031,
+          400.9202880859375,
+          306.2947998046875
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          400.9202880859375,
+          297.3283996582031,
+          403.1618957519531,
+          306.2947998046875
+        ]
+      },
+      {
+        "text": " 12",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          403.1618957519531,
+          297.3283996582031,
+          414.36993408203125,
+          306.2947998046875
+        ]
+      },
+      {
+        "text": "[42] Wangbo Yu, Jinbo Xing, Li Yuan, Wenbo Hu, Xiaoyu Li,",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          309.2843933105469,
+          553.4968872070312,
+          318.25079345703125
+        ]
+      },
+      {
+        "text": "Zhipeng Huang, Xiangjun Gao, Tien-Tsin Wong, Ying Shan,",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          337.16900634765625,
+          320.2433776855469,
+          553.5015869140625,
+          329.20977783203125
+        ]
+      },
+      {
+        "text": "and Yonghong Tian. Viewcrafter: Taming video diffusion",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          337.16900634765625,
+          331.2013854980469,
+          553.5015869140625,
+          340.16778564453125
+        ]
+      },
+      {
+        "text": "models for high-fidelity novel view synthesis.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          337.16900634765625,
+          342.1603698730469,
+          499.828369140625,
+          351.12677001953125
+        ]
+      },
+      {
+        "text": " arXiv preprint",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 8.966400146484375,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          499.828369140625,
+          342.0015563964844,
+          553.501220703125,
+          350.96795654296875
+        ]
+      },
+      {
+        "text": "arXiv:2409.02048",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 8.966400146484375,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          337.16900634765625,
+          352.9605407714844,
+          402.66864013671875,
+          361.92694091796875
+        ]
+      },
+      {
+        "text": ", 2024.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          402.66864013671875,
+          353.1193542480469,
+          427.3263244628906,
+          362.08575439453125
+        ]
+      },
+      {
+        "text": " 3",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          427.3263244628906,
+          353.1193542480469,
+          435.03741455078125,
+          362.08575439453125
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          435.03741455078125,
+          353.1193542480469,
+          437.2790222167969,
+          362.08575439453125
+        ]
+      },
+      {
+        "text": " 4",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          437.2790222167969,
+          353.1193542480469,
+          444.00384521484375,
+          362.08575439453125
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          444.00384521484375,
+          353.1193542480469,
+          446.2454528808594,
+          362.08575439453125
+        ]
+      },
+      {
+        "text": " 5",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          446.2454528808594,
+          353.1193542480469,
+          452.97027587890625,
+          362.08575439453125
+        ]
+      },
+      {
+        "text": "[43] Kevin Alex Zhang, Lei Xu, Alfredo Cuesta-Infante, and",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          365.0743408203125,
+          553.4968872070312,
+          374.0407409667969
+        ]
+      },
+      {
+        "text": "Kalyan Veeramachaneni. Robust invisible video watermark-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          337.16900634765625,
+          376.0333557128906,
+          553.5014038085938,
+          384.999755859375
+        ]
+      },
+      {
+        "text": "ing with attention.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          337.16900634765625,
+          386.9923400878906,
+          403.6189270019531,
+          395.958740234375
+        ]
+      },
+      {
+        "text": " arXiv preprint arXiv:1909.01285",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 8.966400146484375,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          403.6189270019531,
+          386.8335266113281,
+          528.2518310546875,
+          395.7999267578125
+        ]
+      },
+      {
+        "text": ", 2019.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          528.2518310546875,
+          386.9923400878906,
+          553.501220703125,
+          395.958740234375
+        ]
+      },
+      {
+        "text": "2",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          337.16900634765625,
+          397.9513244628906,
+          341.6522216796875,
+          406.917724609375
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          341.6522216796875,
+          397.9513244628906,
+          343.8938293457031,
+          406.917724609375
+        ]
+      },
+      {
+        "text": " 6",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          343.8938293457031,
+          397.9513244628906,
+          350.61865234375,
+          406.917724609375
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          350.61865234375,
+          397.9513244628906,
+          352.8602600097656,
+          406.917724609375
+        ]
+      },
+      {
+        "text": " 12",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          352.8602600097656,
+          397.9513244628906,
+          364.06829833984375,
+          406.917724609375
+        ]
+      },
+      {
+        "text": "[44] Lijun Zhang, Xiao Liu, Antoni Viros Martin, Cindy Xiong",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          409.90631103515625,
+          553.4967651367188,
+          418.8727111816406
+        ]
+      },
+      {
+        "text": "Bearfield,",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          337.16900634765625,
+          420.8653259277344,
+          372.2814025878906,
+          429.83172607421875
+        ]
+      },
+      {
+        "text": "Yuriy Brun,",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          379.5083312988281,
+          420.8653259277344,
+          425.8377990722656,
+          429.83172607421875
+        ]
+      },
+      {
+        "text": "and Hui Guan.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          433.0647277832031,
+          420.8653259277344,
+          493.5879821777344,
+          429.83172607421875
+        ]
+      },
+      {
+        "text": "Robust im-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          509.58404541015625,
+          420.8653259277344,
+          553.5015258789062,
+          429.83172607421875
+        ]
+      },
+      {
+        "text": "age watermarking using stable diffusion.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          337.16900634765625,
+          431.8243103027344,
+          490.8440856933594,
+          440.79071044921875
+        ]
+      },
+      {
+        "text": "arXiv preprint",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 8.966400146484375,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          500.3215637207031,
+          431.6654968261719,
+          553.5012817382812,
+          440.63189697265625
+        ]
+      },
+      {
+        "text": "arXiv:2401.04247",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 8.966400146484375,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          337.16900634765625,
+          442.6244812011719,
+          402.66864013671875,
+          451.59088134765625
+        ]
+      },
+      {
+        "text": ", 2024.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          402.66864013671875,
+          442.7832946777344,
+          427.3263244628906,
+          451.74969482421875
+        ]
+      },
+      {
+        "text": " 6",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          427.3263244628906,
+          442.7832946777344,
+          435.03741455078125,
+          451.74969482421875
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          435.03741455078125,
+          442.7832946777344,
+          437.2790222167969,
+          451.74969482421875
+        ]
+      },
+      {
+        "text": " 12",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          437.2790222167969,
+          442.7832946777344,
+          448.487060546875,
+          451.74969482421875
+        ]
+      },
+      {
+        "text": "[45] Xuandong Zhao, Sam Gunn, Miranda Christ, Jaiden Fairoze,",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          454.73828125,
+          553.496826171875,
+          463.7046813964844
+        ]
+      },
+      {
+        "text": "Andres Fabrega, Nicholas Carlini, Sanjam Garg, Sanghyun",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          337.16900634765625,
+          465.6972961425781,
+          553.5013427734375,
+          474.6636962890625
+        ]
+      },
+      {
+        "text": "Hong, Milad Nasr, Florian Tramer, et al.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          337.16900634765625,
+          476.6562805175781,
+          496.1792297363281,
+          485.6226806640625
+        ]
+      },
+      {
+        "text": "Sok: Water-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          506.0960693359375,
+          476.6562805175781,
+          553.5015869140625,
+          485.6226806640625
+        ]
+      },
+      {
+        "text": "marking for ai-generated content, 2024.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          337.16900634765625,
+          487.6152648925781,
+          482.6578063964844,
+          496.5816650390625
+        ]
+      },
+      {
+        "text": " URL https://arxiv.",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 8.966400146484375,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          482.6578063964844,
+          487.4564514160156,
+          553.50146484375,
+          496.4228515625
+        ]
+      },
+      {
+        "text": "org/abs/2411.18479",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 8.966400146484375,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          337.16900634765625,
+          498.4154357910156,
+          409.3216552734375,
+          507.3818359375
+        ]
+      },
+      {
+        "text": ".",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          409.3216552734375,
+          498.5742492675781,
+          411.5632629394531,
+          507.5406494140625
+        ]
+      },
+      {
+        "text": " 1",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          411.5632629394531,
+          498.5742492675781,
+          419.27435302734375,
+          507.5406494140625
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          419.27435302734375,
+          498.5742492675781,
+          421.5159606933594,
+          507.5406494140625
+        ]
+      },
+      {
+        "text": " 2",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          421.5159606933594,
+          498.5742492675781,
+          428.24078369140625,
+          507.5406494140625
+        ]
+      },
+      {
+        "text": "[46] Xuandong Zhao, Sam Gunn, Miranda Christ, Jaiden Fairoze,",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          510.5292053222656,
+          553.496826171875,
+          519.49560546875
+        ]
+      },
+      {
+        "text": "Andres Fabrega, Nicholas Carlini, Sanjam Garg, Sanghyun",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          337.16900634765625,
+          521.4882202148438,
+          553.5013427734375,
+          530.4546508789062
+        ]
+      },
+      {
+        "text": "Hong, Milad Nasr, Florian Tramer, et al. Sok: Watermarking",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          337.16900634765625,
+          532.4472045898438,
+          553.50146484375,
+          541.4136352539062
+        ]
+      },
+      {
+        "text": "for ai-generated content.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          337.16900634765625,
+          543.40625,
+          426.16943359375,
+          552.3726806640625
+        ]
+      },
+      {
+        "text": " arXiv preprint arXiv:2411.18479",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 8.966400146484375,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          426.16943359375,
+          543.2474365234375,
+          551.2596435546875,
+          552.2138671875
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          551.2596435546875,
+          543.40625,
+          553.501220703125,
+          552.3726806640625
+        ]
+      },
+      {
+        "text": "2024.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          337.16900634765625,
+          554.365234375,
+          357.3434753417969,
+          563.3316650390625
+        ]
+      },
+      {
+        "text": " 1",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          357.3434753417969,
+          554.365234375,
+          365.0545654296875,
+          563.3316650390625
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          365.0545654296875,
+          554.365234375,
+          367.2961730957031,
+          563.3316650390625
+        ]
+      },
+      {
+        "text": " 2",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          367.2961730957031,
+          554.365234375,
+          374.02099609375,
+          563.3316650390625
+        ]
+      },
+      {
+        "text": "[47] Xuandong Zhao, Kexun Zhang, Zihao Su, Saastha Vasan,",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          566.3201904296875,
+          553.4969482421875,
+          575.28662109375
+        ]
+      },
+      {
+        "text": "Ilya Grishchenko, Christopher Kruegel, Giovanni Vigna, Yu-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          337.16900634765625,
+          577.2792358398438,
+          553.50146484375,
+          586.2456665039062
+        ]
+      },
+      {
+        "text": "Xiang Wang, and Lei Li. Invisible image watermarks are",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          337.16900634765625,
+          588.2382202148438,
+          553.50146484375,
+          597.2046508789062
+        ]
+      },
+      {
+        "text": "provably removable using generative ai.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          337.16900634765625,
+          599.1962280273438,
+          480.66717529296875,
+          608.1626586914062
+        ]
+      },
+      {
+        "text": " Advances in neural",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 8.966400146484375,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          480.66717529296875,
+          599.0374145507812,
+          553.5012817382812,
+          608.0038452148438
+        ]
+      },
+      {
+        "text": "information processing systems",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 8.966400146484375,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          337.16900634765625,
+          609.9963989257812,
+          450.6835021972656,
+          618.9628295898438
+        ]
+      },
+      {
+        "text": ", 37:8643–8672, 2024.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          450.6835021972656,
+          610.1552124023438,
+          532.6993408203125,
+          619.1216430664062
+        ]
+      },
+      {
+        "text": " 1",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          532.6993408203125,
+          610.1552124023438,
+          541.764404296875,
+          619.1216430664062
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          541.764404296875,
+          610.1552124023438,
+          544.0059814453125,
+          619.1216430664062
+        ]
+      },
+      {
+        "text": " 2",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          544.0059814453125,
+          610.1552124023438,
+          551.2598266601562,
+          619.1216430664062
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          551.2598266601562,
+          610.1552124023438,
+          553.5014038085938,
+          619.1216430664062
+        ]
+      },
+      {
+        "text": "6",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          337.16900634765625,
+          621.1142578125,
+          341.6522216796875,
+          630.0806884765625
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          341.6522216796875,
+          621.1142578125,
+          343.8938293457031,
+          630.0806884765625
+        ]
+      },
+      {
+        "text": " 7",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          343.8938293457031,
+          621.1142578125,
+          350.61865234375,
+          630.0806884765625
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          350.61865234375,
+          621.1142578125,
+          352.8602600097656,
+          630.0806884765625
+        ]
+      },
+      {
+        "text": " 8",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          352.8602600097656,
+          621.1142578125,
+          359.5850830078125,
+          630.0806884765625
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          359.5850830078125,
+          621.1142578125,
+          361.8266906738281,
+          630.0806884765625
+        ]
+      },
+      {
+        "text": " 11",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          361.8266906738281,
+          621.1142578125,
+          373.03472900390625,
+          630.0806884765625
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          373.03472900390625,
+          621.1142578125,
+          375.2763366699219,
+          630.0806884765625
+        ]
+      },
+      {
+        "text": " 12",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          375.2763366699219,
+          621.1142578125,
+          386.484375,
+          630.0806884765625
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          386.484375,
+          621.1142578125,
+          388.7259826660156,
+          630.0806884765625
+        ]
+      },
+      {
+        "text": " 13",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          388.7259826660156,
+          621.1142578125,
+          399.93402099609375,
+          630.0806884765625
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      301.0190124511719,
+      733.3317260742188,
+      310.9815979003906,
+      743.2943115234375
+    ],
+    "content": "10",
+    "spans": [
+      {
+        "text": "10",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          301.0190124511719,
+          733.3317260742188,
+          310.9815979003906,
+          743.2943115234375
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,1477 @@
+[
+  {
+    "type": "text",
+    "bbox": [
+      10.940000534057617,
+      134.23898315429688,
+      37.619998931884766,
+      480.8789978027344
+    ],
+    "content": "arXiv:2503.18742v2  [cs.CV]  18 Jun 2025",
+    "spans": [
+      {
+        "text": "arXiv:2503.18742v2  [cs.CV]  18 Jun 2025",
+        "font_name": "Times-Roman",
+        "font_size": 20.0,
+        "font_flags": 4,
+        "color": 8421504,
+        "bbox": [
+          10.940000534057617,
+          134.23898315429688,
+          37.619998931884766,
+          480.8789978027344
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      57.542999267578125,
+      32.96697998046875,
+      356.3170166015625,
+      47.31317901611328
+    ],
+    "content": "SFDLA: Source-Free Document Layout Analysis",
+    "spans": [
+      {
+        "text": "SFDLA: Source-Free Document Layout Analysis",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 14.346199989318848,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          57.542999267578125,
+          32.96697998046875,
+          356.3170166015625,
+          47.31317901611328
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      36.92499923706055,
+      72.35377502441406,
+      376.93231201171875,
+      99.39608764648438
+    ],
+    "content": "Sebastian Tewes1,⋆, Yufan Chen1,⋆, Omar Moured1, Jiaming Zhang1,2,†, andRainer Stiefelhagen1",
+    "spans": [
+      {
+        "text": "Sebastian Tewes",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          36.92499923706055,
+          77.47846984863281,
+          102.65823364257812,
+          87.44107055664062
+        ]
+      },
+      {
+        "text": "1",
+        "font_name": "CMR7",
+        "font_size": 6.973800182342529,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          110.802001953125,
+          75.96876525878906,
+          114.77706909179688,
+          82.94255828857422
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "CMMI7",
+        "font_size": 6.973800182342529,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          114.77400207519531,
+          75.96876525878906,
+          117.13812255859375,
+          82.94255828857422
+        ]
+      },
+      {
+        "text": "⋆",
+        "font_name": "CMMI7",
+        "font_size": 6.973800182342529,
+        "font_flags": 7,
+        "color": 0,
+        "bbox": [
+          117.13999938964844,
+          72.35377502441406,
+          121.21967315673828,
+          79.32756805419922
+        ]
+      },
+      {
+        "text": ", Yufan Chen",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          122.21800231933594,
+          77.47846984863281,
+          174.4120330810547,
+          87.44107055664062
+        ]
+      },
+      {
+        "text": "1",
+        "font_name": "CMR7",
+        "font_size": 6.973800182342529,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          182.55599975585938,
+          75.96876525878906,
+          186.53106689453125,
+          82.94255828857422
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "CMMI7",
+        "font_size": 6.973800182342529,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          186.5279998779297,
+          75.96876525878906,
+          188.89212036132812,
+          82.94255828857422
+        ]
+      },
+      {
+        "text": "⋆",
+        "font_name": "CMMI7",
+        "font_size": 6.973800182342529,
+        "font_flags": 7,
+        "color": 0,
+        "bbox": [
+          188.8939971923828,
+          72.96174621582031,
+          192.97366333007812,
+          79.93553924560547
+        ]
+      },
+      {
+        "text": ", Omar Moured",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          193.9720001220703,
+          77.47846984863281,
+          255.6703643798828,
+          87.44107055664062
+        ]
+      },
+      {
+        "text": "1",
+        "font_name": "CMR7",
+        "font_size": 6.973800182342529,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          263.8139953613281,
+          75.96876525878906,
+          267.7890625,
+          82.94255828857422
+        ]
+      },
+      {
+        "text": ", Jiaming Zhang",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          268.28399658203125,
+          77.47846984863281,
+          332.761962890625,
+          87.44107055664062
+        ]
+      },
+      {
+        "text": "1",
+        "font_name": "CMR7",
+        "font_size": 6.973800182342529,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          340.906005859375,
+          75.96876525878906,
+          344.8810729980469,
+          82.94255828857422
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "CMMI7",
+        "font_size": 6.973800182342529,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          344.87701416015625,
+          75.96876525878906,
+          347.2411193847656,
+          82.94255828857422
+        ]
+      },
+      {
+        "text": "2",
+        "font_name": "CMR7",
+        "font_size": 6.973800182342529,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          347.2430114746094,
+          75.96876525878906,
+          351.21807861328125,
+          82.94255828857422
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "CMMI7",
+        "font_size": 6.973800182342529,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          351.2140197753906,
+          75.96876525878906,
+          353.578125,
+          82.94255828857422
+        ]
+      },
+      {
+        "text": "†",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 6.973800182342529,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          353.58001708984375,
+          76.1301498413086,
+          357.0669250488281,
+          83.10395050048828
+        ]
+      },
+      {
+        "text": ", and",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          357.56500244140625,
+          77.47846984863281,
+          376.93231201171875,
+          87.44107055664062
+        ]
+      },
+      {
+        "text": "Rainer Stiefelhagen",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          161.1959991455078,
+          89.43348693847656,
+          240.0500030517578,
+          99.39608764648438
+        ]
+      },
+      {
+        "text": "1",
+        "font_name": "CMR7",
+        "font_size": 6.973800182342529,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          248.1929931640625,
+          87.92372131347656,
+          252.16806030273438,
+          94.89751434326172
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      98.94400024414062,
+      107.26095581054688,
+      314.9170837402344,
+      130.99533081054688
+    ],
+    "content": "1 CV:HCI lab, Karlsruhe Institute of Technology, Germany.2 CVG, ETH Zurich, Switzerland.",
+    "spans": [
+      {
+        "text": "1",
+        "font_name": "CMR6",
+        "font_size": 5.97760009765625,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          98.94400024414062,
+          109.38928985595703,
+          102.5963134765625,
+          115.36688995361328
+        ]
+      },
+      {
+        "text": " CV:HCI lab, Karlsruhe Institute of Technology, Germany.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          102.5963134765625,
+          107.26095581054688,
+          314.9170837402344,
+          120.03634643554688
+        ]
+      },
+      {
+        "text": "2",
+        "font_name": "CMR6",
+        "font_size": 5.97760009765625,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          144.40699768066406,
+          120.34827423095703,
+          148.05931091308594,
+          126.32587432861328
+        ]
+      },
+      {
+        "text": " CVG, ETH Zurich, Switzerland.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          148.05931091308594,
+          118.21994018554688,
+          269.4518127441406,
+          130.99533081054688
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      247.2244415283203,
+      213.45166015625,
+      271.6432189941406,
+      218.86978149414062
+    ],
+    "content": "Initialization",
+    "spans": [
+      {
+        "text": "Initialization",
+        "font_name": "CanvaSans-Bold",
+        "font_size": 3.978602170944214,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          247.2244415283203,
+          213.45166015625,
+          271.6432189941406,
+          218.86978149414062
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      62.64387512207031,
+      153.5248565673828,
+      70.23380279541016,
+      195.16070556640625
+    ],
+    "content": "Source Domain",
+    "spans": [
+      {
+        "text": "Source Domain",
+        "font_name": "CanvaSans-Bold",
+        "font_size": 5.573385238647461,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          62.64387512207031,
+          153.5248565673828,
+          70.23380279541016,
+          195.16070556640625
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      36.56485366821289,
+      238.63710021972656,
+      44.149906158447266,
+      278.6896667480469
+    ],
+    "content": "Target Domain",
+    "spans": [
+      {
+        "text": "Target Domain",
+        "font_name": "CanvaSans-Bold",
+        "font_size": 5.5698041915893555,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          36.56485366821289,
+          238.63710021972656,
+          44.149906158447266,
+          278.6896667480469
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      233.11019897460938,
+      175.0682373046875,
+      238.36802673339844,
+      186.3350067138672
+    ],
+    "content": "S",
+    "spans": [
+      {
+        "text": "S",
+        "font_name": "ApricotsRegular",
+        "font_size": 9.507820129394531,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          233.11019897460938,
+          175.0682373046875,
+          238.36802673339844,
+          186.3350067138672
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      323.0694885253906,
+      212.05743408203125,
+      353.4830627441406,
+      218.34201049804688
+    ],
+    "content": "Ground-truth",
+    "spans": [
+      {
+        "text": "Ground-truth",
+        "font_name": "CanvaSans-Bold",
+        "font_size": 4.61484432220459,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          323.0694885253906,
+          212.05743408203125,
+          353.4830627441406,
+          218.34201049804688
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      335.04736328125,
+      287.9755859375,
+      365.96685791015625,
+      294.2601623535156
+    ],
+    "content": "Pseudo-Label",
+    "spans": [
+      {
+        "text": "Pseudo-Label",
+        "font_name": "CanvaSans-Bold",
+        "font_size": 4.61484432220459,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          335.04736328125,
+          287.9755859375,
+          365.96685791015625,
+          294.2601623535156
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      233.4716796875,
+      255.7678985595703,
+      238.0069122314453,
+      267.03466796875
+    ],
+    "content": "T",
+    "spans": [
+      {
+        "text": "T",
+        "font_name": "ApricotsRegular",
+        "font_size": 9.507820129394531,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          233.4716796875,
+          255.7678985595703,
+          238.0069122314453,
+          267.03466796875
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      221.55149841308594,
+      288.5990905761719,
+      272.8956604003906,
+      297.2684326171875
+    ],
+    "content": "Source-free DLA",
+    "spans": [
+      {
+        "text": "Source-free DLA",
+        "font_name": "CanvaSans-Bold",
+        "font_size": 6.366002082824707,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          221.55149841308594,
+          288.5990905761719,
+          272.8956604003906,
+          297.2684326171875
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      61.97669219970703,
+      214.77700805664062,
+      182.97308349609375,
+      222.78176879882812
+    ],
+    "content": "Geometry-awareContent-aware",
+    "spans": [
+      {
+        "text": "Geometry-aware",
+        "font_name": "CanvaSans-Bold",
+        "font_size": 5.5698041915893555,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          61.97669219970703,
+          214.77700805664062,
+          107.69049835205078,
+          222.362060546875
+        ]
+      },
+      {
+        "text": "Content-aware",
+        "font_name": "CanvaSans-Bold",
+        "font_size": 5.5698041915893555,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          142.17056274414062,
+          215.19671630859375,
+          182.97308349609375,
+          222.78176879882812
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      34.01599884033203,
+      301.15045166015625,
+      379.8423156738281,
+      335.0230407714844
+    ],
+    "content": "Fig. 1: Overview of Source-Free Document Layout Analysis (SFDLA), adapting thesource-domain fine-tuned model (e.g., \\protect \\mathcal  {S} for scientific papers) to the target domain (e.g.,\\protect \\mathcal  {T} for financial reports), without access to any source data or target labels.",
+    "spans": [
+      {
+        "text": "Fig. 1: Overview of Source-Free Document Layout Analysis (SFDLA), adapting the",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          301.15045166015625,
+          379.8376770019531,
+          311.1130676269531
+        ]
+      },
+      {
+        "text": "source-domain fine-tuned model (",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          313.1054382324219,
+          168.15243530273438,
+          323.06805419921875
+        ]
+      },
+      {
+        "text": "e.g",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          168.14898681640625,
+          312.9289855957031,
+          179.89488220214844,
+          322.8915710449219
+        ]
+      },
+      {
+        "text": ".,",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          179.89498901367188,
+          313.1054382324219,
+          184.87628173828125,
+          323.06805419921875
+        ]
+      },
+      {
+        "text": " \\protect \\mathcal  {S}",
+        "font_name": "CMSY10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          184.87628173828125,
+          312.74578857421875,
+          202.97793579101562,
+          322.7083740234375
+        ]
+      },
+      {
+        "text": " for scientific papers) to the target domain (",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          193.0153350830078,
+          313.1054382324219,
+          363.111083984375,
+          323.06805419921875
+        ]
+      },
+      {
+        "text": "e.g",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          363.114990234375,
+          312.9289855957031,
+          374.86090087890625,
+          322.8915710449219
+        ]
+      },
+      {
+        "text": ".,",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          374.8609924316406,
+          313.1054382324219,
+          379.8423156738281,
+          323.06805419921875
+        ]
+      },
+      {
+        "text": "\\protect \\mathcal  {T}",
+        "font_name": "CMSY10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          324.7007751464844,
+          49.40821838378906,
+          334.6633605957031
+        ]
+      },
+      {
+        "text": " for financial reports), without access to any source data or target labels.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          39.44561767578125,
+          325.0604248046875,
+          328.2795104980469,
+          335.0230407714844
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      62.361968994140625,
+      349.3250732421875,
+      351.5013732910156,
+      566.5923461914062
+    ],
+    "content": "Abstract. Document Layout Analysis (DLA) is a fundamental task in documentunderstanding. However, existing DLA and adaptation methods often require ac-cess to large-scale source data and target labels. This requirements severely lim-iting their real-world applicability, particularly in privacy-sensitive and resource-constrained domains, such as financial statements, medical records, and propri-etary business documents. According to our observation, directly transferringsource-domain fine-tuned models on target domains often results in a signifi-cant performance drop (Avg. −32.64%). In this work, we introduce Source-FreeDocument Layout Analysis (SFDLA), aiming for adapting a pre-trained sourceDLA models to an unlabeled target domain, without access to any source data.To address this challenge, we establish the first SFDLA benchmark, coveringthree major DLA datasets for geometric- and content-aware adaptation. Further-more, we propose Document Layout Analysis Adapter (DLAdapter), a novelframework that is designed to improve source-free adaptation across documentdomains. Our method achieves a +4.21% improvement over the source-onlybaseline and a +2.26% gain over existing source-free methods from PubLayNetto DocLayNet. We believe this work will inspire the DLA community to furtherinvestigate source-free document understanding. To support future research ofthe community, the benchmark, models, and code will be publicly available athttps://github.com/s3setewe/sfdla-DLAdapter.",
+    "spans": [
+      {
+        "text": "Abstract.",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 8.966400146484375,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          62.36199951171875,
+          349.3250732421875,
+          97.96756744384766,
+          358.2914733886719
+        ]
+      },
+      {
+        "text": " Document Layout Analysis (DLA) is a fundamental task in document",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          97.96756744384766,
+          349.4069519042969,
+          351.4975280761719,
+          358.37335205078125
+        ]
+      },
+      {
+        "text": "understanding. However, existing DLA and adaptation methods often require ac-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          62.362003326416016,
+          360.3649597167969,
+          351.4925231933594,
+          369.33135986328125
+        ]
+      },
+      {
+        "text": "cess to large-scale source data and target labels. This requirements severely lim-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          62.362003326416016,
+          371.3239440917969,
+          351.5013732910156,
+          380.29034423828125
+        ]
+      },
+      {
+        "text": "iting their real-world applicability, particularly in privacy-sensitive and resource-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          62.362003326416016,
+          382.282958984375,
+          351.492431640625,
+          391.2493591308594
+        ]
+      },
+      {
+        "text": "constrained domains, such as financial statements, medical records, and propri-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          62.362003326416016,
+          393.2419738769531,
+          351.4924011230469,
+          402.2083740234375
+        ]
+      },
+      {
+        "text": "etary business documents. According to our observation, directly transferring",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          62.362003326416016,
+          404.2009582519531,
+          351.49249267578125,
+          413.1673583984375
+        ]
+      },
+      {
+        "text": "source-domain fine-tuned models on target domains often results in a signifi-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          62.362003326416016,
+          415.1599426269531,
+          351.4924621582031,
+          424.1263427734375
+        ]
+      },
+      {
+        "text": "cant performance drop (Avg.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          62.362003326416016,
+          426.11895751953125,
+          164.919677734375,
+          435.0853576660156
+        ]
+      },
+      {
+        "text": " −",
+        "font_name": "CMSY9",
+        "font_size": 8.966400146484375,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          164.919677734375,
+          425.7952575683594,
+          174.0421600341797,
+          434.76165771484375
+        ]
+      },
+      {
+        "text": "32",
+        "font_name": "CMR9",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          174.04600524902344,
+          425.91143798828125,
+          183.2634735107422,
+          434.8778381347656
+        ]
+      },
+      {
+        "text": ".",
+        "font_name": "CMMI9",
+        "font_size": 8.966400146484375,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          183.26100158691406,
+          425.91143798828125,
+          185.8253936767578,
+          434.8778381347656
+        ]
+      },
+      {
+        "text": "64%",
+        "font_name": "CMR9",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          185.8209991455078,
+          425.91143798828125,
+          202.72267150878906,
+          434.8778381347656
+        ]
+      },
+      {
+        "text": "). In this work, we introduce",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          202.71600341796875,
+          426.11895751953125,
+          303.05902099609375,
+          435.0853576660156
+        ]
+      },
+      {
+        "text": " Source-Free",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 8.966400146484375,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          303.05902099609375,
+          426.0370788574219,
+          351.4967956542969,
+          435.00347900390625
+        ]
+      },
+      {
+        "text": "Document Layout Analysis (SFDLA)",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 8.966400146484375,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          62.36201477050781,
+          436.99609375,
+          203.18829345703125,
+          445.9624938964844
+        ]
+      },
+      {
+        "text": ", aiming for adapting a pre-trained source",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          203.18601989746094,
+          437.0779724121094,
+          351.4992370605469,
+          446.04437255859375
+        ]
+      },
+      {
+        "text": "DLA models to an unlabeled target domain, without access to any source data.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          62.36201477050781,
+          448.0369567871094,
+          351.4925537109375,
+          457.00335693359375
+        ]
+      },
+      {
+        "text": "To address this challenge, we establish the first SFDLA benchmark, covering",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          62.36201477050781,
+          458.9959411621094,
+          351.49261474609375,
+          467.96234130859375
+        ]
+      },
+      {
+        "text": "three major DLA datasets for geometric- and content-aware adaptation. Further-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          62.36201477050781,
+          469.9539489746094,
+          351.4925537109375,
+          478.92034912109375
+        ]
+      },
+      {
+        "text": "more, we propose",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          62.36201477050781,
+          480.9129333496094,
+          126.91112518310547,
+          489.87933349609375
+        ]
+      },
+      {
+        "text": " Document Layout Analysis Adapter (DLAdapter)",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 8.966400146484375,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          126.91112518310547,
+          480.8310546875,
+          320.5807189941406,
+          489.7974548339844
+        ]
+      },
+      {
+        "text": ", a novel",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          320.5830078125,
+          480.9129333496094,
+          351.4991455078125,
+          489.87933349609375
+        ]
+      },
+      {
+        "text": "framework that is designed to improve source-free adaptation across document",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          62.36199951171875,
+          491.8719482421875,
+          351.4924011230469,
+          500.8383483886719
+        ]
+      },
+      {
+        "text": "domains. Our method achieves a",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          62.36199951171875,
+          502.8309631347656,
+          185.1927032470703,
+          511.79736328125
+        ]
+      },
+      {
+        "text": " +4",
+        "font_name": "CMR9",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          185.1927032470703,
+          502.6234436035156,
+          200.6768798828125,
+          511.58984375
+        ]
+      },
+      {
+        "text": ".",
+        "font_name": "CMMI9",
+        "font_size": 8.966400146484375,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          200.67898559570312,
+          502.6234436035156,
+          203.24337768554688,
+          511.58984375
+        ]
+      },
+      {
+        "text": "21%",
+        "font_name": "CMR9",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          203.23898315429688,
+          502.6234436035156,
+          220.14065551757812,
+          511.58984375
+        ]
+      },
+      {
+        "text": " improvement over the source-only",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          220.14065551757812,
+          502.8309631347656,
+          351.49560546875,
+          511.79736328125
+        ]
+      },
+      {
+        "text": "baseline and a",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          62.361968994140625,
+          513.7899169921875,
+          113.3359375,
+          522.75634765625
+        ]
+      },
+      {
+        "text": " +2",
+        "font_name": "CMR9",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          113.3359375,
+          513.5824584960938,
+          127.43384552001953,
+          522.548828125
+        ]
+      },
+      {
+        "text": ".",
+        "font_name": "CMMI9",
+        "font_size": 8.966400146484375,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          127.43596649169922,
+          513.5824584960938,
+          130.00035095214844,
+          522.548828125
+        ]
+      },
+      {
+        "text": "26%",
+        "font_name": "CMR9",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          129.9959716796875,
+          513.5824584960938,
+          146.89764404296875,
+          522.548828125
+        ]
+      },
+      {
+        "text": " gain over existing source-free methods from PubLayNet",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          146.89764404296875,
+          513.7899169921875,
+          351.4929504394531,
+          522.75634765625
+        ]
+      },
+      {
+        "text": "to DocLayNet. We believe this work will inspire the DLA community to further",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          62.361968994140625,
+          524.7489013671875,
+          351.4924621582031,
+          533.71533203125
+        ]
+      },
+      {
+        "text": "investigate source-free document understanding. To support future research of",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          62.361968994140625,
+          535.7078857421875,
+          351.4924011230469,
+          544.67431640625
+        ]
+      },
+      {
+        "text": "the community, the benchmark, models, and code will be publicly available at",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          62.361968994140625,
+          546.6669311523438,
+          351.49237060546875,
+          555.6333618164062
+        ]
+      },
+      {
+        "text": "https://github.com/s3setewe/sfdla-DLAdapter",
+        "font_name": "NimbusMonL-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 15466636,
+        "bbox": [
+          62.361968994140625,
+          557.1668701171875,
+          294.19720458984375,
+          566.13330078125
+        ]
+      },
+      {
+        "text": ".",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          294.1929626464844,
+          557.6259155273438,
+          296.4345703125,
+          566.5923461914062
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      37.41999816894531,
+      572.6212768554688,
+      202.1990966796875,
+      583.2683715820312
+    ],
+    "content": "⋆Equal contribution. † Corresponding author.",
+    "spans": [
+      {
+        "text": "⋆",
+        "font_name": "CMMI6",
+        "font_size": 5.97760009765625,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          37.41999816894531,
+          572.6212768554688,
+          41.23968505859375,
+          578.598876953125
+        ]
+      },
+      {
+        "text": "Equal contribution. † Corresponding author.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          43.977996826171875,
+          574.3019409179688,
+          202.1990966796875,
+          583.2683715820312
+        ]
+      }
+    ]
+  },
+  {
+    "type": "image",
+    "bbox": [
+      314.8373718261719,
+      143.89073181152344,
+      356.8556213378906,
+      199.27841186523438
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      226.29725646972656,
+      158.48004150390625,
+      270.22540283203125,
+      201.93072509765625
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      92.4158935546875,
+      141.1177215576172,
+      134.67288208007812,
+      196.1472930908203
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      102.84329223632812,
+      146.3322296142578,
+      148.0845184326172,
+      202.9136199951172
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      319.2533874511719,
+      148.6566162109375,
+      362.82342529296875,
+      205.11862182617188
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      323.8905334472656,
+      153.56448364257812,
+      367.5799560546875,
+      210.1458740234375
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      58.14845657348633,
+      235.8704376220703,
+      111.14874267578125,
+      292.5711975097656
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      226.29725646972656,
+      239.45867919921875,
+      270.22540283203125,
+      282.90936279296875
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      302.4200744628906,
+      223.80116271972656,
+      372.609619140625,
+      293.99072265625
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      109.63020324707031,
+      151.66500854492188,
+      153.3196258544922,
+      208.12701416015625
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      63.282806396484375,
+      231.62548828125,
+      108.88214111328125,
+      287.1325378417969
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      70.29358673095703,
+      225.97509765625,
+      113.38615417480469,
+      282.67584228515625
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      134.98829650878906,
+      238.6034698486328,
+      170.79930114746094,
+      293.03619384765625
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      141.04586791992188,
+      234.1533660888672,
+      182.94473266601562,
+      289.77978515625
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      146.33775329589844,
+      228.22592163085938,
+      190.0271759033203,
+      284.80731201171875
+    ],
+    "xref": null,
+    "ext": "png"
+  }
+]

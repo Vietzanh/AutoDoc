@@ -1,0 +1,1365 @@
+[
+  {
+    "type": "text",
+    "bbox": [
+      34.01599884033203,
+      11.27492904663086,
+      118.75743865966797,
+      20.241329193115234
+    ],
+    "content": "16S. Tewes et al.",
+    "spans": [
+      {
+        "text": "16",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          11.27492904663086,
+          42.982398986816406,
+          20.241329193115234
+        ]
+      },
+      {
+        "text": "S. Tewes et al.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          67.06614685058594,
+          11.27492904663086,
+          118.75743865966797,
+          20.241329193115234
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      34.01597595214844,
+      37.17794418334961,
+      379.8459777832031,
+      517.376953125
+    ],
+    "content": "27. Liu, Y., Zhang, W., Wang, J.: Source-free domain adaptation for semantic segmentation. In:Proceedings of the IEEE/CVF conference on computer vision and pattern recognition. pp.1215–1224 (2021) 228. Mohamadi, H., Keyvanrad, M.A., Mohammadi, M.R.: Feature based methods domain adap-tation for object detection: A review paper (2024) 429. Nath Kundu, J., Venkat, N., Rahul, M.V., Venkatesh Babu, R.: Universal source-free domainadaptation. In: 2020 IEEE/CVF Conference on Computer Vision and Pattern Recognition(CVPR). pp. 4543–4552 (2020) 4, 530. Pfitzmann, B., Auer, C., Dolfi, M., Nassar, A.S., Staar, P.: Doclaynet: A large human-annotated dataset for document-layout segmentation. In: Proceedings of the 28th ACMSIGKDD Conference on Knowledge Discovery and Data Mining. p. 3743–3751. KDD ’22,Association for Computing Machinery, New York, NY, USA (2022) 3, 4, 5, 6, 9, 10, 11, 12,1331. Ren, S., He, K., Girshick, R., Sun, J.: Faster r-cnn: Towards real-time object detection withregion proposal networks. In: Cortes, C., Lawrence, N., Lee, D., Sugiyama, M., Garnett, R.(eds.) Advances in Neural Information Processing Systems. vol. 28. Curran Associates, Inc.(2015) 3, 4, 632. Tarvainen, A., Valpola, H.: Mean teachers are better role models: Weight-averaged consis-tency targets improve semi-supervised deep learning results. In: Proceedings of the 31st In-ternational Conference on Neural Information Processing Systems. p. 1195–1204. NIPS’17,Curran Associates Inc., Red Hook, NY, USA (2017) 433. VS, V., Oza, P., Patel, V.M.: Instance relation graph guided source-free domain adaptive ob-ject detection. In: 2023 IEEE/CVF Conference on Computer Vision and Pattern Recognition(CVPR). pp. 3520–3530. IEEE Computer Society, Los Alamitos, CA, USA (Jun 2023) 4,10, 11, 1234. VS, V., Oza, P., Patel, V.M.: Instance relation graph guided source-free domain adaptive ob-ject detection. In: Proceedings of the IEEE/CVF conference on computer vision and patternrecognition. pp. 3520–3530 (2023) 435. Wu, Y., Kirillov, A., Massa, F., Lo, W.Y., Girshick, R.: Detectron2. https://github.com/facebookresearch/detectron2 (2019) 936. Xia, H., Zhao, H., Ding, Z.: Adaptive adversarial network for source-free domain adaptation.In: Proceedings of the IEEE/CVF international conference on computer vision. pp. 9010–9019 (2021) 237. Xiao, Y., Xiao, G., Chen, H.: Unified multi-level neighbor clustering for source-free unsu-pervised domain adaptation. Pattern Recognition 153, 110533 (2024) 4, 538. Xiong, L., Ye, M., Zhang, D., Gan, Y., Liu, Y.: Source data-free domain adaptation for afaster r-cnn. Pattern Recognition 124, 108436 (2022) 239. Yoon, I., Kwon, H., Kim, J., Park, J., Jang, H., Sohn, K.: Enhancing source-free domainadaptive object detection with low-confidence pseudo label distillation (2024) 540. Zhang, S., Zhang, L., Liu, Z.: Refined pseudo labeling for source-free domain adaptive objectdetection. In: ICASSP 2023 - 2023 IEEE International Conference on Acoustics, Speech andSignal Processing (ICASSP). pp. 1–5 (2023) 441. Zhong, X., Tang, J., Yepes, A.J.: Publaynet: largest dataset ever for document layout analysis(2019) 3, 5, 6, 9, 10",
+    "spans": [
+      {
+        "text": "27. Liu, Y., Zhang, W., Wang, J.: Source-free domain adaptation for semantic segmentation. In:",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          37.17794418334961,
+          379.8408508300781,
+          46.144344329833984
+        ]
+      },
+      {
+        "text": "Proceedings of the IEEE/CVF conference on computer vision and pattern recognition. pp.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          50.20499801635742,
+          48.13692855834961,
+          379.8456726074219,
+          57.103328704833984
+        ]
+      },
+      {
+        "text": "1215–1224 (2021)",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          50.20499801635742,
+          59.09591293334961,
+          116.69982147216797,
+          68.06231689453125
+        ]
+      },
+      {
+        "text": " 2",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          116.69982147216797,
+          59.09591293334961,
+          124.41092681884766,
+          68.06231689453125
+        ]
+      },
+      {
+        "text": "28. Mohamadi, H., Keyvanrad, M.A., Mohammadi, M.R.: Feature based methods domain adap-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          70.05490112304688,
+          379.8411560058594,
+          79.02130126953125
+        ]
+      },
+      {
+        "text": "tation for object detection: A review paper (2024)",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          50.20499801635742,
+          81.01388549804688,
+          228.29563903808594,
+          89.98028564453125
+        ]
+      },
+      {
+        "text": " 4",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          228.29563903808594,
+          81.01388549804688,
+          236.00674438476562,
+          89.98028564453125
+        ]
+      },
+      {
+        "text": "29. Nath Kundu, J., Venkat, N., Rahul, M.V., Venkatesh Babu, R.: Universal source-free domain",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          91.97286987304688,
+          379.84112548828125,
+          100.93927001953125
+        ]
+      },
+      {
+        "text": "adaptation. In: 2020 IEEE/CVF Conference on Computer Vision and Pattern Recognition",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          50.20499801635742,
+          102.93185424804688,
+          379.84564208984375,
+          111.89825439453125
+        ]
+      },
+      {
+        "text": "(CVPR). pp. 4543–4552 (2020)",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          50.20499801635742,
+          113.89083862304688,
+          164.0244903564453,
+          122.85723876953125
+        ]
+      },
+      {
+        "text": " 4",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          164.0244903564453,
+          113.89083862304688,
+          171.735595703125,
+          122.85723876953125
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          171.735595703125,
+          113.89083862304688,
+          173.97720336914062,
+          122.85723876953125
+        ]
+      },
+      {
+        "text": " 5",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          173.97720336914062,
+          113.89083862304688,
+          180.70201110839844,
+          122.85723876953125
+        ]
+      },
+      {
+        "text": "30. Pfitzmann, B., Auer, C., Dolfi, M., Nassar, A.S., Staar, P.: Doclaynet: A large human-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          124.84982299804688,
+          379.8410949707031,
+          133.81622314453125
+        ]
+      },
+      {
+        "text": "annotated dataset for document-layout segmentation. In: Proceedings of the 28th ACM",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          50.20499801635742,
+          135.80783081054688,
+          379.8456726074219,
+          144.77423095703125
+        ]
+      },
+      {
+        "text": "SIGKDD Conference on Knowledge Discovery and Data Mining. p. 3743–3751. KDD ’22,",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          50.20499801635742,
+          146.76681518554688,
+          379.8459167480469,
+          155.73321533203125
+        ]
+      },
+      {
+        "text": "Association for Computing Machinery, New York, NY, USA (2022)",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          50.20499801635742,
+          157.72579956054688,
+          293.8759460449219,
+          166.69219970703125
+        ]
+      },
+      {
+        "text": " 3",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          293.8759460449219,
+          157.72579956054688,
+          301.53326416015625,
+          166.69219970703125
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          301.53326416015625,
+          157.72579956054688,
+          303.7748718261719,
+          166.69219970703125
+        ]
+      },
+      {
+        "text": " 4",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          303.7748718261719,
+          157.72579956054688,
+          310.48175048828125,
+          166.69219970703125
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          310.48175048828125,
+          157.72579956054688,
+          312.7233581542969,
+          166.69219970703125
+        ]
+      },
+      {
+        "text": " 5",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          312.7233581542969,
+          157.72579956054688,
+          319.43023681640625,
+          166.69219970703125
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          319.43023681640625,
+          157.72579956054688,
+          321.6718444824219,
+          166.69219970703125
+        ]
+      },
+      {
+        "text": " 6",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          321.6718444824219,
+          157.72579956054688,
+          328.3697509765625,
+          166.69219970703125
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          328.3697509765625,
+          157.72579956054688,
+          330.6113586425781,
+          166.69219970703125
+        ]
+      },
+      {
+        "text": " 9",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          330.6113586425781,
+          157.72579956054688,
+          337.3182373046875,
+          166.69219970703125
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          337.3182373046875,
+          157.72579956054688,
+          339.5598449707031,
+          166.69219970703125
+        ]
+      },
+      {
+        "text": " 10",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          339.5598449707031,
+          157.72579956054688,
+          350.74993896484375,
+          166.69219970703125
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          350.74993896484375,
+          157.72579956054688,
+          352.9915466308594,
+          166.69219970703125
+        ]
+      },
+      {
+        "text": " 11",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          352.9915466308594,
+          157.72579956054688,
+          364.17266845703125,
+          166.69219970703125
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          364.17266845703125,
+          157.72579956054688,
+          366.4142761230469,
+          166.69219970703125
+        ]
+      },
+      {
+        "text": " 12",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          366.4142761230469,
+          157.72579956054688,
+          377.6043701171875,
+          166.69219970703125
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          377.6043701171875,
+          157.72579956054688,
+          379.8459777832031,
+          166.69219970703125
+        ]
+      },
+      {
+        "text": "13",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          50.20499801635742,
+          168.68478393554688,
+          59.1713981628418,
+          177.65118408203125
+        ]
+      },
+      {
+        "text": "31. Ren, S., He, K., Girshick, R., Sun, J.: Faster r-cnn: Towards real-time object detection with",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          179.64376831054688,
+          379.8409423828125,
+          188.61016845703125
+        ]
+      },
+      {
+        "text": "region proposal networks. In: Cortes, C., Lawrence, N., Lee, D., Sugiyama, M., Garnett, R.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          50.20499801635742,
+          190.60275268554688,
+          379.845703125,
+          199.56915283203125
+        ]
+      },
+      {
+        "text": "(eds.) Advances in Neural Information Processing Systems. vol. 28. Curran Associates, Inc.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          50.20499801635742,
+          201.56173706054688,
+          379.8457946777344,
+          210.52813720703125
+        ]
+      },
+      {
+        "text": "(2015)",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          50.20499801635742,
+          212.52072143554688,
+          74.10942077636719,
+          221.48712158203125
+        ]
+      },
+      {
+        "text": " 3",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          74.10942077636719,
+          212.52072143554688,
+          81.82052612304688,
+          221.48712158203125
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          81.82052612304688,
+          212.52072143554688,
+          84.06212615966797,
+          221.48712158203125
+        ]
+      },
+      {
+        "text": " 4",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          84.06212615966797,
+          212.52072143554688,
+          90.78692626953125,
+          221.48712158203125
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          90.78692626953125,
+          212.52072143554688,
+          93.02852630615234,
+          221.48712158203125
+        ]
+      },
+      {
+        "text": " 6",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          93.02852630615234,
+          212.52072143554688,
+          99.75332641601562,
+          221.48712158203125
+        ]
+      },
+      {
+        "text": "32. Tarvainen, A., Valpola, H.: Mean teachers are better role models: Weight-averaged consis-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          223.47970581054688,
+          379.84100341796875,
+          232.44610595703125
+        ]
+      },
+      {
+        "text": "tency targets improve semi-supervised deep learning results. In: Proceedings of the 31st In-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          50.20499801635742,
+          234.43869018554688,
+          379.8456115722656,
+          243.40509033203125
+        ]
+      },
+      {
+        "text": "ternational Conference on Neural Information Processing Systems. p. 1195–1204. NIPS’17,",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          50.20499801635742,
+          245.39669799804688,
+          379.8458557128906,
+          254.36309814453125
+        ]
+      },
+      {
+        "text": "Curran Associates Inc., Red Hook, NY, USA (2017)",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          50.20499801635742,
+          256.3556823730469,
+          237.55795288085938,
+          265.32208251953125
+        ]
+      },
+      {
+        "text": " 4",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          237.55795288085938,
+          256.3556823730469,
+          245.26905822753906,
+          265.32208251953125
+        ]
+      },
+      {
+        "text": "33. VS, V., Oza, P., Patel, V.M.: Instance relation graph guided source-free domain adaptive ob-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          267.3146667480469,
+          379.8410949707031,
+          276.28106689453125
+        ]
+      },
+      {
+        "text": "ject detection. In: 2023 IEEE/CVF Conference on Computer Vision and Pattern Recognition",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          50.20499801635742,
+          278.2736511230469,
+          379.845703125,
+          287.24005126953125
+        ]
+      },
+      {
+        "text": "(CVPR). pp. 3520–3530. IEEE Computer Society, Los Alamitos, CA, USA (Jun 2023)",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          50.20499801635742,
+          289.2326354980469,
+          368.0459899902344,
+          298.19903564453125
+        ]
+      },
+      {
+        "text": " 4",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          368.0459899902344,
+          289.2326354980469,
+          377.60418701171875,
+          298.19903564453125
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          377.60418701171875,
+          289.2326354980469,
+          379.8457946777344,
+          298.19903564453125
+        ]
+      },
+      {
+        "text": "10",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          50.20499801635742,
+          300.1916198730469,
+          59.1713981628418,
+          309.15802001953125
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          59.1713981628418,
+          300.1916198730469,
+          61.41299819946289,
+          309.15802001953125
+        ]
+      },
+      {
+        "text": " 11",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          61.41299819946289,
+          300.1916198730469,
+          72.62100219726562,
+          309.15802001953125
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          72.62100219726562,
+          300.1916198730469,
+          74.86260223388672,
+          309.15802001953125
+        ]
+      },
+      {
+        "text": " 12",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          74.86260223388672,
+          300.1916198730469,
+          86.07060241699219,
+          309.15802001953125
+        ]
+      },
+      {
+        "text": "34. VS, V., Oza, P., Patel, V.M.: Instance relation graph guided source-free domain adaptive ob-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          311.1506042480469,
+          379.8410949707031,
+          320.11700439453125
+        ]
+      },
+      {
+        "text": "ject detection. In: Proceedings of the IEEE/CVF conference on computer vision and pattern",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          50.20499801635742,
+          322.1095886230469,
+          379.84564208984375,
+          331.07598876953125
+        ]
+      },
+      {
+        "text": "recognition. pp. 3520–3530 (2023)",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          50.20499801635742,
+          333.0685729980469,
+          175.47457885742188,
+          342.03497314453125
+        ]
+      },
+      {
+        "text": " 4",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          175.47457885742188,
+          333.0685729980469,
+          183.18568420410156,
+          342.03497314453125
+        ]
+      },
+      {
+        "text": "35. Wu, Y., Kirillov, A., Massa, F., Lo, W.Y., Girshick, R.: Detectron2.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          344.0275573730469,
+          296.2563781738281,
+          352.99395751953125
+        ]
+      },
+      {
+        "text": " https://github.",
+        "font_name": "NimbusMonL-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 15466636,
+        "bbox": [
+          296.2563781738281,
+          343.5685119628906,
+          379.8427734375,
+          352.534912109375
+        ]
+      },
+      {
+        "text": "com/facebookresearch/detectron2",
+        "font_name": "NimbusMonL-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 15466636,
+        "bbox": [
+          50.204986572265625,
+          354.5265197753906,
+          216.97994995117188,
+          363.492919921875
+        ]
+      },
+      {
+        "text": " (2019)",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          216.97994995117188,
+          354.9855651855469,
+          243.1254119873047,
+          363.95196533203125
+        ]
+      },
+      {
+        "text": " 9",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          243.1254119873047,
+          354.9855651855469,
+          250.83651733398438,
+          363.95196533203125
+        ]
+      },
+      {
+        "text": "36. Xia, H., Zhao, H., Ding, Z.: Adaptive adversarial network for source-free domain adaptation.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.0159912109375,
+          365.9445495605469,
+          379.8409729003906,
+          374.91094970703125
+        ]
+      },
+      {
+        "text": "In: Proceedings of the IEEE/CVF international conference on computer vision. pp. 9010–",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          50.20499038696289,
+          376.903564453125,
+          379.845703125,
+          385.8699645996094
+        ]
+      },
+      {
+        "text": "9019 (2021)",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          50.20499038696289,
+          387.8625793457031,
+          94.28380584716797,
+          396.8289794921875
+        ]
+      },
+      {
+        "text": " 2",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          94.28380584716797,
+          387.8625793457031,
+          101.99491119384766,
+          396.8289794921875
+        ]
+      },
+      {
+        "text": "37. Xiao, Y., Xiao, G., Chen, H.: Unified multi-level neighbor clustering for source-free unsu-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.0159912109375,
+          398.8215637207031,
+          379.8410339355469,
+          407.7879638671875
+        ]
+      },
+      {
+        "text": "pervised domain adaptation. Pattern Recognition",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          50.20499038696289,
+          409.7805480957031,
+          225.14842224121094,
+          418.7469482421875
+        ]
+      },
+      {
+        "text": " 153",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 8.966400146484375,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          225.14842224121094,
+          409.69866943359375,
+          240.83758544921875,
+          418.6650695800781
+        ]
+      },
+      {
+        "text": ", 110533 (2024)",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          240.8369903564453,
+          409.7805480957031,
+          298.3655090332031,
+          418.7469482421875
+        ]
+      },
+      {
+        "text": " 4",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          298.3655090332031,
+          409.7805480957031,
+          306.07659912109375,
+          418.7469482421875
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          306.07659912109375,
+          409.7805480957031,
+          308.3182067871094,
+          418.7469482421875
+        ]
+      },
+      {
+        "text": " 5",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          308.3182067871094,
+          409.7805480957031,
+          315.04302978515625,
+          418.7469482421875
+        ]
+      },
+      {
+        "text": "38. Xiong, L., Ye, M., Zhang, D., Gan, Y., Liu, Y.: Source data-free domain adaptation for a",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.0159912109375,
+          420.73956298828125,
+          379.84100341796875,
+          429.7059631347656
+        ]
+      },
+      {
+        "text": "faster r-cnn. Pattern Recognition",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          50.20499038696289,
+          431.6985778808594,
+          166.83990478515625,
+          440.66497802734375
+        ]
+      },
+      {
+        "text": " 124",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 8.966400146484375,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          166.83990478515625,
+          431.61669921875,
+          182.5295867919922,
+          440.5830993652344
+        ]
+      },
+      {
+        "text": ", 108436 (2022)",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          182.5299835205078,
+          431.6985778808594,
+          240.05841064453125,
+          440.66497802734375
+        ]
+      },
+      {
+        "text": " 2",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          240.05841064453125,
+          431.6985778808594,
+          247.76951599121094,
+          440.66497802734375
+        ]
+      },
+      {
+        "text": "39. Yoon, I., Kwon, H., Kim, J., Park, J., Jang, H., Sohn, K.: Enhancing source-free domain",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01597595214844,
+          442.6575622558594,
+          379.8411865234375,
+          451.62396240234375
+        ]
+      },
+      {
+        "text": "adaptive object detection with low-confidence pseudo label distillation (2024)",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          50.20497512817383,
+          453.6165466308594,
+          329.0420227050781,
+          462.58294677734375
+        ]
+      },
+      {
+        "text": " 5",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          329.0420227050781,
+          453.6165466308594,
+          336.75311279296875,
+          462.58294677734375
+        ]
+      },
+      {
+        "text": "40. Zhang, S., Zhang, L., Liu, Z.: Refined pseudo labeling for source-free domain adaptive object",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01597595214844,
+          464.5745544433594,
+          379.841064453125,
+          473.54095458984375
+        ]
+      },
+      {
+        "text": "detection. In: ICASSP 2023 - 2023 IEEE International Conference on Acoustics, Speech and",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          50.20497512817383,
+          475.5335388183594,
+          379.84564208984375,
+          484.49993896484375
+        ]
+      },
+      {
+        "text": "Signal Processing (ICASSP). pp. 1–5 (2023)",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          50.20497512817383,
+          486.4925537109375,
+          210.35386657714844,
+          495.4589538574219
+        ]
+      },
+      {
+        "text": " 4",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          210.35386657714844,
+          486.4925537109375,
+          218.06497192382812,
+          495.4589538574219
+        ]
+      },
+      {
+        "text": "41. Zhong, X., Tang, J., Yepes, A.J.: Publaynet: largest dataset ever for document layout analysis",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01597595214844,
+          497.4515686035156,
+          379.8409729003906,
+          506.41796875
+        ]
+      },
+      {
+        "text": "(2019)",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          50.20497512817383,
+          508.4105529785156,
+          74.1093978881836,
+          517.376953125
+        ]
+      },
+      {
+        "text": " 3",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          74.1093978881836,
+          508.4105529785156,
+          81.82050323486328,
+          517.376953125
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          81.82050323486328,
+          508.4105529785156,
+          84.06210327148438,
+          517.376953125
+        ]
+      },
+      {
+        "text": " 5",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          84.06210327148438,
+          508.4105529785156,
+          90.78690338134766,
+          517.376953125
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          90.78690338134766,
+          508.4105529785156,
+          93.02850341796875,
+          517.376953125
+        ]
+      },
+      {
+        "text": " 6",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          93.02850341796875,
+          508.4105529785156,
+          99.75330352783203,
+          517.376953125
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          99.75330352783203,
+          508.4105529785156,
+          101.99490356445312,
+          517.376953125
+        ]
+      },
+      {
+        "text": " 9",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          101.99490356445312,
+          508.4105529785156,
+          108.7197036743164,
+          517.376953125
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.7197036743164,
+          508.4105529785156,
+          110.9613037109375,
+          517.376953125
+        ]
+      },
+      {
+        "text": " 10",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          110.9613037109375,
+          508.4105529785156,
+          122.16930389404297,
+          517.376953125
+        ]
+      }
+    ]
+  }
+]

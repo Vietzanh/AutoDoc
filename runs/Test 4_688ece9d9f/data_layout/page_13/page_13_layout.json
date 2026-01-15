@@ -1,0 +1,932 @@
+[
+  {
+    "type": "text",
+    "bbox": [
+      34.01599884033203,
+      11.27492904663086,
+      118.75743865966797,
+      20.241329193115234
+    ],
+    "content": "14S. Tewes et al.",
+    "spans": [
+      {
+        "text": "14",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          11.27492904663086,
+          42.982398986816406,
+          20.241329193115234
+        ]
+      },
+      {
+        "text": "S. Tewes et al.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          67.06614685058594,
+          11.27492904663086,
+          118.75743865966797,
+          20.241329193115234
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      34.01599884033203,
+      36.42243957519531,
+      379.83770751953125,
+      70.29605102539062
+    ],
+    "content": "significant domain discrepancies. We hope that this work will stimulate further researchin both the SFDA and DLA communities, fostering more robust and privacy-preservingdocument analysis.",
+    "spans": [
+      {
+        "text": "significant domain discrepancies. We hope that this work will stimulate further research",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          36.42243957519531,
+          379.8376770019531,
+          46.38503646850586
+        ]
+      },
+      {
+        "text": "in both the SFDA and DLA communities, fostering more robust and privacy-preserving",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          48.37745666503906,
+          379.83770751953125,
+          58.34005355834961
+        ]
+      },
+      {
+        "text": "document analysis.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          60.33345031738281,
+          110.38927459716797,
+          70.29605102539062
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      34.01599884033203,
+      92.18450164794922,
+      379.8397521972656,
+      173.97000122070312
+    ],
+    "content": "Limitations Despite its promising results, DLAdapter is adapted without labeled targetdata, and errors in pseudo-labels can accumulate under large domain gaps. Our currentapproach focuses mainly on visual input, while textual input with OCR could improveadaptation for semantically driven layout elements. The dual-teacher design, thougheffective, adds extra training and inference overhead. Addressing these issues couldlead to more robust and efficient source-free domain adaptation in document layoutanalysis, enabling broader real-world applicability.",
+    "spans": [
+      {
+        "text": "Limitations",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          92.18450164794922,
+          83.28105926513672,
+          102.14710235595703
+        ]
+      },
+      {
+        "text": " Despite its promising results, DLAdapter is adapted without labeled target",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          83.28105926513672,
+          92.27546691894531,
+          379.8397521972656,
+          102.23806762695312
+        ]
+      },
+      {
+        "text": "data, and errors in pseudo-labels can accumulate under large domain gaps. Our current",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          104.23146057128906,
+          379.8377685546875,
+          114.19406127929688
+        ]
+      },
+      {
+        "text": "approach focuses mainly on visual input, while textual input with OCR could improve",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          116.18644714355469,
+          379.8376159667969,
+          126.1490478515625
+        ]
+      },
+      {
+        "text": "adaptation for semantically driven layout elements. The dual-teacher design, though",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          128.1414337158203,
+          379.8376770019531,
+          138.10403442382812
+        ]
+      },
+      {
+        "text": "effective, adds extra training and inference overhead. Addressing these issues could",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          140.09642028808594,
+          379.8376770019531,
+          150.05902099609375
+        ]
+      },
+      {
+        "text": "lead to more robust and efficient source-free domain adaptation in document layout",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          152.05140686035156,
+          379.83770751953125,
+          162.01400756835938
+        ]
+      },
+      {
+        "text": "analysis, enabling broader real-world applicability.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          164.0074005126953,
+          236.35641479492188,
+          173.97000122070312
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      34.01599884033203,
+      195.85842895507812,
+      379.84454345703125,
+      313.5088806152344
+    ],
+    "content": "Acknowledgment This work was supported in part by Helmholtz Association of Ger-man Research Centers, in part by the Ministry of Science, Research and the Arts ofBaden-Württemberg (MWK) through the Cooperative Graduate School Accessibilitythrough AI-based Assistive Technology (KATE) under Grant BW6-03, and in part byKarlsruhe House of Young Scientists (KHYS). This work was partially performed onthe HoreKa supercomputer funded by the MWK and by the Federal Ministry of Ed-ucation and Research, partially on the HAICORE@KIT partition supported by theHelmholtz Association Initiative and Networking Fund, and partially on bwForClusterHelix supported by the state of Baden-Württemberg through bwHPC and the GermanResearch Foundation (DFG) through grant INST 35/1597-1 FUGG.",
+    "spans": [
+      {
+        "text": "Acknowledgment",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          195.85842895507812,
+          108.07796478271484,
+          205.82102966308594
+        ]
+      },
+      {
+        "text": " This work was supported in part by Helmholtz Association of Ger-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.07796478271484,
+          195.9493865966797,
+          379.84454345703125,
+          205.9119873046875
+        ]
+      },
+      {
+        "text": "man Research Centers, in part by the Ministry of Science, Research and the Arts of",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          207.90538024902344,
+          379.83770751953125,
+          217.86798095703125
+        ]
+      },
+      {
+        "text": "Baden-Württemberg (MWK) through the Cooperative Graduate School Accessibility",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          219.86036682128906,
+          379.837646484375,
+          229.82296752929688
+        ]
+      },
+      {
+        "text": "through AI-based Assistive Technology (KATE) under Grant BW6-03, and in part by",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          231.8153533935547,
+          379.837646484375,
+          241.7779541015625
+        ]
+      },
+      {
+        "text": "Karlsruhe House of Young Scientists (KHYS). This work was partially performed on",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          243.7703399658203,
+          379.8376770019531,
+          253.73294067382812
+        ]
+      },
+      {
+        "text": "the HoreKa supercomputer funded by the MWK and by the Federal Ministry of Ed-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          255.72532653808594,
+          379.8376159667969,
+          265.68792724609375
+        ]
+      },
+      {
+        "text": "ucation and Research, partially on the HAICORE@KIT partition supported by the",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          267.6802978515625,
+          379.8376159667969,
+          277.6429138183594
+        ]
+      },
+      {
+        "text": "Helmholtz Association Initiative and Networking Fund, and partially on bwForCluster",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          279.63629150390625,
+          379.8376159667969,
+          289.5989074707031
+        ]
+      },
+      {
+        "text": "Helix supported by the state of Baden-Württemberg through bwHPC and the German",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          291.5912780761719,
+          379.8377685546875,
+          301.55389404296875
+        ]
+      },
+      {
+        "text": "Research Foundation (DFG) through grant INST 35/1597-1 FUGG.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          303.5462646484375,
+          303.9326171875,
+          313.5088806152344
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      34.01599884033203,
+      335.8609619140625,
+      89.55986022949219,
+      347.816162109375
+    ],
+    "content": "References",
+    "spans": [
+      {
+        "text": "References",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 11.9552001953125,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          335.8609619140625,
+          89.55986022949219,
+          347.816162109375
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      38.498985290527344,
+      363.2057800292969,
+      379.84588623046875,
+      583.2681884765625
+    ],
+    "content": "1. Bhatt, J., Hashmi, K.A., Afzal, M.Z., Stricker, D.: A survey of graphical page object detec-tion with deep neural networks. Applied Sciences 11(12), 5344 (2021) 22. Bhowmik, S.: Document layout analysis. Springer (2023) 33. Chen, M., Chen, W., Yang, S., Song, J., Wang, X., Zhang, L., Yan, Y., Qi, D., Zhuang, Y.,Xie, D., Pu, S.: Learning domain adaptive object detection with probabilistic teacher (2022)44. Chen, Y., Zhang, J., Peng, K., Zheng, J., Liu, R., Torr, P., Stiefelhagen, R.: Rodla: Bench-marking the robustness of document layout analysis models (2024) 35. Chen, Z., Wang, Z., Zhang, Y.: Exploiting low-confidence pseudo-labels for source-free ob-ject detection. In: Proceedings of the 31st ACM International Conference on Multimedia. p.5370–5379. MM ’23, Association for Computing Machinery, New York, NY, USA (2023) 46. Cheng, C., Yue, Z., Zhang, H.: Towards debiased source-free domain adaptation (2024) 4, 57. Cheng, H., Zhang, P., Wu, S., Zhang, J., Zhu, Q., Xie, Z., Li, J., Ding, K., Jin, L.: M6doc:A large-scale multi-format, multi-type, multi-layout, multi-language, multi-annotation cate-gory dataset for modern document layout analysis (2023) 3, 5, 9, 10, 118. Chu, Q., Li, S., Chen, G., Li, K., Li, X.: Adversarial alignment for source free ob-ject detection. In: Proceedings of the Thirty-Seventh AAAI Conference on Artificial In-telligence and Thirty-Fifth Conference on Innovative Applications of Artificial Intelli-gence and Thirteenth Symposium on Educational Advances in Artificial Intelligence.AAAI’23/IAAI’23/EAAI’23, AAAI Press (2023) 4",
+    "spans": [
+      {
+        "text": "1. Bhatt, J., Hashmi, K.A., Afzal, M.Z., Stricker, D.: A survey of graphical page object detec-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          38.499000549316406,
+          363.2057800292969,
+          379.84088134765625,
+          372.17218017578125
+        ]
+      },
+      {
+        "text": "tion with deep neural networks. Applied Sciences",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          50.20500183105469,
+          374.1647644042969,
+          228.1701202392578,
+          383.13116455078125
+        ]
+      },
+      {
+        "text": " 11",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 8.966400146484375,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          228.1701202392578,
+          374.0828857421875,
+          239.37539672851562,
+          383.0492858886719
+        ]
+      },
+      {
+        "text": "(12), 5344 (2021)",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          239.37599182128906,
+          374.1647644042969,
+          305.1177673339844,
+          383.13116455078125
+        ]
+      },
+      {
+        "text": " 2",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          305.1177673339844,
+          374.1647644042969,
+          312.828857421875,
+          383.13116455078125
+        ]
+      },
+      {
+        "text": "2. Bhowmik, S.: Document layout analysis. Springer (2023)",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          38.498992919921875,
+          385.5347595214844,
+          256.4453125,
+          394.50115966796875
+        ]
+      },
+      {
+        "text": " 3",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          256.4453125,
+          385.5347595214844,
+          264.15643310546875,
+          394.50115966796875
+        ]
+      },
+      {
+        "text": "3. Chen, M., Chen, W., Yang, S., Song, J., Wang, X., Zhang, L., Yan, Y., Qi, D., Zhuang, Y.,",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          38.498992919921875,
+          396.9047546386719,
+          379.8411560058594,
+          405.87115478515625
+        ]
+      },
+      {
+        "text": "Xie, D., Pu, S.: Learning domain adaptive object detection with probabilistic teacher (2022)",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          50.204994201660156,
+          407.86376953125,
+          379.8457336425781,
+          416.8301696777344
+        ]
+      },
+      {
+        "text": "4",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          50.204994201660156,
+          418.8227844238281,
+          54.688194274902344,
+          427.7891845703125
+        ]
+      },
+      {
+        "text": "4. Chen, Y., Zhang, J., Peng, K., Zheng, J., Liu, R., Torr, P., Stiefelhagen, R.: Rodla: Bench-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          38.498992919921875,
+          430.1927795410156,
+          379.8409118652344,
+          439.1591796875
+        ]
+      },
+      {
+        "text": "marking the robustness of document layout analysis models (2024)",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          50.204994201660156,
+          441.1517639160156,
+          290.6031799316406,
+          450.1181640625
+        ]
+      },
+      {
+        "text": " 3",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          290.6031799316406,
+          441.1517639160156,
+          298.31427001953125,
+          450.1181640625
+        ]
+      },
+      {
+        "text": "5. Chen, Z., Wang, Z., Zhang, Y.: Exploiting low-confidence pseudo-labels for source-free ob-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          38.498992919921875,
+          452.5207824707031,
+          379.8407897949219,
+          461.4871826171875
+        ]
+      },
+      {
+        "text": "ject detection. In: Proceedings of the 31st ACM International Conference on Multimedia. p.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          50.204994201660156,
+          463.4797668457031,
+          379.8457946777344,
+          472.4461669921875
+        ]
+      },
+      {
+        "text": "5370–5379. MM ’23, Association for Computing Machinery, New York, NY, USA (2023)",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          50.204994201660156,
+          474.4387512207031,
+          372.3589172363281,
+          483.4051513671875
+        ]
+      },
+      {
+        "text": " 4",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          372.3589172363281,
+          474.4387512207031,
+          379.84588623046875,
+          483.4051513671875
+        ]
+      },
+      {
+        "text": "6. Cheng, C., Yue, Z., Zhang, H.: Towards debiased source-free domain adaptation (2024)",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          38.498992919921875,
+          485.80877685546875,
+          363.2799987792969,
+          494.7751770019531
+        ]
+      },
+      {
+        "text": " 4",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          363.2799987792969,
+          485.80877685546875,
+          370.910400390625,
+          494.7751770019531
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          370.910400390625,
+          485.80877685546875,
+          373.1520080566406,
+          494.7751770019531
+        ]
+      },
+      {
+        "text": " 5",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          373.1520080566406,
+          485.80877685546875,
+          379.8409423828125,
+          494.7751770019531
+        ]
+      },
+      {
+        "text": "7. Cheng, H., Zhang, P., Wu, S., Zhang, J., Zhu, Q., Xie, Z., Li, J., Ding, K., Jin, L.: M",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          38.498992919921875,
+          497.17877197265625,
+          360.2493896484375,
+          506.1451721191406
+        ]
+      },
+      {
+        "text": "6",
+        "font_name": "CMR6",
+        "font_size": 5.97760009765625,
+        "font_flags": 5,
+        "color": 0,
+        "bbox": [
+          360.2519836425781,
+          495.49810791015625,
+          363.904296875,
+          501.4757080078125
+        ]
+      },
+      {
+        "text": "doc:",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          364.4029846191406,
+          497.17877197265625,
+          379.8431091308594,
+          506.1451721191406
+        ]
+      },
+      {
+        "text": "A large-scale multi-format, multi-type, multi-layout, multi-language, multi-annotation cate-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          50.204986572265625,
+          508.1377868652344,
+          379.845703125,
+          517.1041870117188
+        ]
+      },
+      {
+        "text": "gory dataset for modern document layout analysis (2023)",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          50.204986572265625,
+          519.0967407226562,
+          255.65213012695312,
+          528.0631713867188
+        ]
+      },
+      {
+        "text": " 3",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          255.65213012695312,
+          519.0967407226562,
+          263.36322021484375,
+          528.0631713867188
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          263.36322021484375,
+          519.0967407226562,
+          265.6048278808594,
+          528.0631713867188
+        ]
+      },
+      {
+        "text": " 5",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          265.6048278808594,
+          519.0967407226562,
+          272.32965087890625,
+          528.0631713867188
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          272.32965087890625,
+          519.0967407226562,
+          274.5712585449219,
+          528.0631713867188
+        ]
+      },
+      {
+        "text": " 9",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          274.5712585449219,
+          519.0967407226562,
+          281.29608154296875,
+          528.0631713867188
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          281.29608154296875,
+          519.0967407226562,
+          283.5376892089844,
+          528.0631713867188
+        ]
+      },
+      {
+        "text": " 10",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          283.5376892089844,
+          519.0967407226562,
+          294.7457275390625,
+          528.0631713867188
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          294.7457275390625,
+          519.0967407226562,
+          296.9873352050781,
+          528.0631713867188
+        ]
+      },
+      {
+        "text": " 11",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          296.9873352050781,
+          519.0967407226562,
+          308.19537353515625,
+          528.0631713867188
+        ]
+      },
+      {
+        "text": "8. Chu, Q., Li, S., Chen, G., Li, K., Li, X.: Adversarial alignment for source free ob-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          38.498985290527344,
+          530.4667358398438,
+          379.8408508300781,
+          539.4331665039062
+        ]
+      },
+      {
+        "text": "ject detection. In: Proceedings of the Thirty-Seventh AAAI Conference on Artificial In-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          50.204986572265625,
+          541.4257202148438,
+          379.8457336425781,
+          550.3921508789062
+        ]
+      },
+      {
+        "text": "telligence and Thirty-Fifth Conference on Innovative Applications of Artificial Intelli-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          50.204986572265625,
+          552.384765625,
+          379.8456115722656,
+          561.3511962890625
+        ]
+      },
+      {
+        "text": "gence and Thirteenth Symposium on Educational Advances in Artificial Intelligence.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          50.204986572265625,
+          563.3427734375,
+          379.8456115722656,
+          572.3092041015625
+        ]
+      },
+      {
+        "text": "AAAI’23/IAAI’23/EAAI’23, AAAI Press (2023)",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          50.204986572265625,
+          574.3017578125,
+          227.9907684326172,
+          583.2681884765625
+        ]
+      },
+      {
+        "text": " 4",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          227.9907684326172,
+          574.3017578125,
+          235.70187377929688,
+          583.2681884765625
+        ]
+      }
+    ]
+  }
+]

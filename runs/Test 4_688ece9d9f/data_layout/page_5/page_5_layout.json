@@ -1,0 +1,552 @@
+[
+  {
+    "type": "text",
+    "bbox": [
+      34.01599884033203,
+      11.27492904663086,
+      118.75743865966797,
+      20.241329193115234
+    ],
+    "content": "6S. Tewes et al.",
+    "spans": [
+      {
+        "text": "6",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          11.27492904663086,
+          38.49919891357422,
+          20.241329193115234
+        ]
+      },
+      {
+        "text": "S. Tewes et al.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          67.06614685058594,
+          11.27492904663086,
+          118.75743865966797,
+          20.241329193115234
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      34.01599884033203,
+      275.3324279785156,
+      379.8376770019531,
+      297.2500305175781
+    ],
+    "content": "Fig. 4: Cross-domain Faster R-CNN [31] performance visualization between Pub-LayNet [41] and DocLayNet [30] without any adaptation.",
+    "spans": [
+      {
+        "text": "Fig. 4: Cross-domain Faster R-CNN [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          275.3324279785156,
+          193.45745849609375,
+          285.2950439453125
+        ]
+      },
+      {
+        "text": "31",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 33023,
+        "bbox": [
+          193.45745849609375,
+          275.3324279785156,
+          203.4200439453125,
+          285.2950439453125
+        ]
+      },
+      {
+        "text": "] performance visualization between Pub-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          203.4200439453125,
+          275.3324279785156,
+          379.8376770019531,
+          285.2950439453125
+        ]
+      },
+      {
+        "text": "LayNet [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          287.28741455078125,
+          69.7020263671875,
+          297.2500305175781
+        ]
+      },
+      {
+        "text": "41",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 33023,
+        "bbox": [
+          69.7020263671875,
+          287.28741455078125,
+          79.66462707519531,
+          297.2500305175781
+        ]
+      },
+      {
+        "text": "] and DocLayNet [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          79.66462707519531,
+          287.28741455078125,
+          154.63319396972656,
+          297.2500305175781
+        ]
+      },
+      {
+        "text": "30",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 33023,
+        "bbox": [
+          154.63319396972656,
+          287.28741455078125,
+          164.5957794189453,
+          297.2500305175781
+        ]
+      },
+      {
+        "text": "] without any adaptation.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          164.5957794189453,
+          287.28741455078125,
+          264.0623779296875,
+          297.2500305175781
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      34.01599884033203,
+      324.3091125488281,
+      111.05531311035156,
+      336.2643127441406
+    ],
+    "content": "4DLAdapter",
+    "spans": [
+      {
+        "text": "4",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 11.9552001953125,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          324.3091125488281,
+          39.99359893798828,
+          336.2643127441406
+        ]
+      },
+      {
+        "text": "DLAdapter",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 11.9552001953125,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          51.94879913330078,
+          324.3091125488281,
+          111.05531311035156,
+          336.2643127441406
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      34.01599884033203,
+      355.7864685058594,
+      379.84771728515625,
+      413.6610412597656
+    ],
+    "content": "We propose the novel DLAdapter framework to enable the SFDLA task. DLAdapterbuilds on a standard object detection architecture that has been trained on source-domain documents. Given only the pre-trained weights and unlabeled target-domainimages, DLAdapter performs self-supervised adaptation without accessing source data.Fig. 5 presents the core components of DLAdapter:",
+    "spans": [
+      {
+        "text": "We propose the novel",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          355.8774108886719,
+          121.66695404052734,
+          365.84002685546875
+        ]
+      },
+      {
+        "text": " DLAdapter",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          121.66695404052734,
+          355.7864685058594,
+          173.94407653808594,
+          365.7490539550781
+        ]
+      },
+      {
+        "text": " framework to enable the SFDLA task. DLAdapter",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          173.94407653808594,
+          355.8774108886719,
+          379.8443908691406,
+          365.84002685546875
+        ]
+      },
+      {
+        "text": "builds on a standard object detection architecture that has been trained on source-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01600646972656,
+          367.8323974609375,
+          379.8377380371094,
+          377.7950134277344
+        ]
+      },
+      {
+        "text": "domain documents. Given only the pre-trained weights and unlabeled target-domain",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01600646972656,
+          379.78839111328125,
+          379.8377380371094,
+          389.7510070800781
+        ]
+      },
+      {
+        "text": "images, DLAdapter performs self-supervised adaptation without accessing source data.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01600646972656,
+          391.743408203125,
+          379.84771728515625,
+          401.7060241699219
+        ]
+      },
+      {
+        "text": "Fig.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01600646972656,
+          403.69842529296875,
+          49.79676818847656,
+          413.6610412597656
+        ]
+      },
+      {
+        "text": " 5",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          49.79676818847656,
+          403.69842529296875,
+          57.26871871948242,
+          413.6610412597656
+        ]
+      },
+      {
+        "text": " presents the core components of DLAdapter:",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          57.26871871948242,
+          403.69842529296875,
+          238.76731872558594,
+          413.6610412597656
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      40.99000549316406,
+      431.5634765625,
+      379.8390808105469,
+      453.572021484375
+    ],
+    "content": "– Student Model: An initial source-trained network iteratively adapted to the targetdomain based on pseudo-labels derived from dual-teacher predictions.",
+    "spans": [
+      {
+        "text": "– Student Model",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          40.99000549316406,
+          431.5634765625,
+          114.02582550048828,
+          441.52606201171875
+        ]
+      },
+      {
+        "text": ": An initial source-trained network iteratively adapted to the target",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          114.02700805664062,
+          431.6544189453125,
+          379.8390808105469,
+          441.6170349121094
+        ]
+      },
+      {
+        "text": "domain based on pseudo-labels derived from dual-teacher predictions.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          50.95200729370117,
+          443.6094055175781,
+          330.5523376464844,
+          453.572021484375
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      40.99000549316406,
+      466.64447021484375,
+      379.8473205566406,
+      524.5180053710938
+    ],
+    "content": "– Dual-Teacher Models (Static & Dynamic): Two teacher networks each maintainan exponential moving average (EMA) of the student’s parameters but at differentupdate rates. The static teacher retains stable, long-term source knowledge, whilethe dynamic teacher speedily captures target-specific features. Their synergy miti-gates overfitting to noisy targets and catastrophic forgetting of source information.",
+    "spans": [
+      {
+        "text": "– Dual-Teacher Models (Static & Dynamic)",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          40.99000549316406,
+          466.64447021484375,
+          227.9381866455078,
+          476.6070556640625
+        ]
+      },
+      {
+        "text": ": Two teacher networks each maintain",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          227.93299865722656,
+          466.73541259765625,
+          379.8426513671875,
+          476.6980285644531
+        ]
+      },
+      {
+        "text": "an exponential moving average (EMA) of the student’s parameters but at different",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          50.951995849609375,
+          478.6904296875,
+          379.84722900390625,
+          488.6530456542969
+        ]
+      },
+      {
+        "text": "update rates. The static teacher retains stable, long-term source knowledge, while",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          50.951995849609375,
+          490.6454162597656,
+          379.8472900390625,
+          500.6080322265625
+        ]
+      },
+      {
+        "text": "the dynamic teacher speedily captures target-specific features. Their synergy miti-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          50.951995849609375,
+          502.60040283203125,
+          379.8473205566406,
+          512.56298828125
+        ]
+      },
+      {
+        "text": "gates overfitting to noisy targets and catastrophic forgetting of source information.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          50.951995849609375,
+          514.555419921875,
+          378.69158935546875,
+          524.5180053710938
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      40.98999786376953,
+      537.5904541015625,
+      385.9841613769531,
+      583.509033203125
+    ],
+    "content": "– Consensus Pseudo-Labeling: The two teachers’ predictions are fused for high-confidence pseudo-labels. Matching detections become consensus labels with ele-vated confidence, whereas unmatched or inconsistent predictions are down-weighted.These pseudo-labels supervise the student model in a self-supervised manner.",
+    "spans": [
+      {
+        "text": "– Consensus Pseudo-Labeling",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          40.98999786376953,
+          537.5904541015625,
+          170.86244201660156,
+          547.5530395507812
+        ]
+      },
+      {
+        "text": ": The two teachers’ predictions are fused for high-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          170.86199951171875,
+          537.681396484375,
+          379.847412109375,
+          547.6439819335938
+        ]
+      },
+      {
+        "text": "confidence pseudo-labels. Matching detections become consensus labels with ele-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          50.951995849609375,
+          549.6364135742188,
+          379.8473205566406,
+          559.5989990234375
+        ]
+      },
+      {
+        "text": "vated confidence, whereas unmatched or inconsistent predictions are down-weighted.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          50.951995849609375,
+          561.5914306640625,
+          385.9841613769531,
+          571.5540161132812
+        ]
+      },
+      {
+        "text": "These pseudo-labels supervise the student model in a self-supervised manner.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          50.951995849609375,
+          573.5464477539062,
+          359.7427673339844,
+          583.509033203125
+        ]
+      }
+    ]
+  },
+  {
+    "type": "image",
+    "bbox": [
+      34.01599884033203,
+      34.01585388183594,
+      379.8276672363281,
+      264.5569763183594
+    ],
+    "xref": null,
+    "ext": "png"
+  }
+]

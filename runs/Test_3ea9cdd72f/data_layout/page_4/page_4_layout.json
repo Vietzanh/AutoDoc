@@ -1,0 +1,1214 @@
+[
+  {
+    "type": "text",
+    "bbox": [
+      108.0,
+      192.53628540039062,
+      503.9981384277344,
+      224.39205932617188
+    ],
+    "content": "Figure 3: Success rates for each model under different prompting strategies across difficulty binsdefined by optimal A* solution length. Each bin contains ten puzzles, and the percentage solved iscomputed within each bin.",
+    "spans": [
+      {
+        "text": "Figure 3: Success rates for each model under different prompting strategies across difficulty bins",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          192.53628540039062,
+          503.9974365234375,
+          202.5980224609375
+        ]
+      },
+      {
+        "text": "defined by optimal A* solution length. Each bin contains ten puzzles, and the percentage solved is",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.017244338989258,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          203.47901916503906,
+          503.9981384277344,
+          213.4962615966797
+        ]
+      },
+      {
+        "text": "computed within each bin.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          214.42945861816406,
+          213.70315551757812,
+          224.39205932617188
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      108.0,
+      248.58741760253906,
+      504.0014953613281,
+      269.3830871582031
+    ],
+    "content": "baseline reasoning and planning abilities and serves as a control to benchmark unguided performanceagainst CoT and AoT interventions. We illustrate this setup in Fig. 1.",
+    "spans": [
+      {
+        "text": "baseline reasoning and planning abilities and serves as a control to benchmark unguided performance",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.862470626831055,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          248.58741760253906,
+          504.0014953613281,
+          258.44989013671875
+        ]
+      },
+      {
+        "text": "against CoT and AoT interventions. We illustrate this setup in Fig. 1.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          259.42047119140625,
+          383.22674560546875,
+          269.3830871582031
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      108.0,
+      284.659423828125,
+      505.6539001464844,
+      371.153076171875
+    ],
+    "content": "Chain-of-Thought (CoT):CoT is a prompting approach that often enhances LLM problem-solving by instructing the model to generate intermediate steps [10, 11, 15]. We provided additionalassistance using the few-shot paradigm, designing a 3-shot CoT prompt that gives the model a diverseset of worked examples. We chose three examples to limit prompt length and because prior worksuggests that performance gains tend to diminish beyond a few examples [10, 31]. Our selectedexamples feature diverse board configurations and, critically, showcase complete solutions of varyinglengths—3, 5, and 6 moves—and slightly different strategies to teach the model flexible and adaptivereasoning. The full prompt is available in Appendix A.2.",
+    "spans": [
+      {
+        "text": "Chain-of-Thought (CoT):",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 10.061732292175293,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          108.0,
+          284.659423828125,
+          220.22752380371094,
+          294.72113037109375
+        ]
+      },
+      {
+        "text": "CoT is a prompting approach that often enhances LLM problem-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          230.18614196777344,
+          284.75128173828125,
+          505.6539001464844,
+          294.8130187988281
+        ]
+      },
+      {
+        "text": "solving by instructing the model to generate intermediate steps [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.932666778564453,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          295.7581481933594,
+          362.6512145996094,
+          305.6908264160156
+        ]
+      },
+      {
+        "text": "10",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          362.64898681640625,
+          295.7354431152344,
+          372.611572265625,
+          305.69805908203125
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.932666778564453,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          372.61199951171875,
+          295.7581481933594,
+          375.08770751953125,
+          305.6908264160156
+        ]
+      },
+      {
+        "text": " 11",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          375.08770751953125,
+          295.7354431152344,
+          387.55157470703125,
+          305.69805908203125
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.932666778564453,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          387.5509948730469,
+          295.7581481933594,
+          390.0267028808594,
+          305.6908264160156
+        ]
+      },
+      {
+        "text": " 15",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          390.0267028808594,
+          295.7354431152344,
+          402.4906005859375,
+          305.69805908203125
+        ]
+      },
+      {
+        "text": "]. We provided additional",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.932666778564453,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          402.4909973144531,
+          295.7581481933594,
+          504.0048828125,
+          305.6908264160156
+        ]
+      },
+      {
+        "text": "assistance using the few-shot paradigm, designing a 3-shot CoT prompt that gives the model a diverse",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.862470626831055,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          306.7204284667969,
+          504.00140380859375,
+          316.5828857421875
+        ]
+      },
+      {
+        "text": "set of worked examples. We chose three examples to limit prompt length and because prior work",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          317.4783020019531,
+          504.25146484375,
+          327.5400390625
+        ]
+      },
+      {
+        "text": "suggests that performance gains tend to diminish beyond a few examples [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          328.3872985839844,
+          416.09722900390625,
+          338.44903564453125
+        ]
+      },
+      {
+        "text": "10",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          416.0950012207031,
+          328.46246337890625,
+          426.0575866699219,
+          338.4250793457031
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          426.0570068359375,
+          328.3872985839844,
+          428.59747314453125,
+          338.44903564453125
+        ]
+      },
+      {
+        "text": " 31",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          428.59747314453125,
+          328.46246337890625,
+          441.6335754394531,
+          338.4250793457031
+        ]
+      },
+      {
+        "text": "]. Our selected",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          441.6340026855469,
+          328.3872985839844,
+          503.9973449707031,
+          338.44903564453125
+        ]
+      },
+      {
+        "text": "examples feature diverse board configurations and, critically, showcase complete solutions of varying",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.862470626831055,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          339.4474182128906,
+          504.00146484375,
+          349.30987548828125
+        ]
+      },
+      {
+        "text": "lengths—3, 5, and 6 moves—and slightly different strategies to teach the model flexible and adaptive",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.872529029846191,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          350.3487854003906,
+          503.9978332519531,
+          360.2213134765625
+        ]
+      },
+      {
+        "text": "reasoning. The full prompt is available in Appendix A.2.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          361.1904602050781,
+          334.220703125,
+          371.153076171875
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      107.69100189208984,
+      386.4284362792969,
+      505.7433776855469,
+      472.9220886230469
+    ],
+    "content": "Algorithm-of-Thought (AoT):Algorithm-of-Thought works by guiding a language model tofollow explicit algorithmic reasoning steps—often structured like pseudocode or formal rules—sothat its outputs mimic systematic, step-by-step problem solving rather than free-form reasoning [12].The original work reports improvements across many tasks and shows that AoT can outperform otherprompting techniques, such as Chain-of-Thought (CoT) [10] and Tree-of-Thought (ToT) [14, 12].For our work, we specify a simple Manhattan-style search—similar to A*—and again provide thesame three example boards to stay consistent with the CoT prompt and ensure a fair comparisonbetween approaches. For further details on the AoT prompt, see Appendix A.3.",
+    "spans": [
+      {
+        "text": "Algorithm-of-Thought (AoT):",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 10.061732292175293,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          108.0,
+          386.4284362792969,
+          238.33595275878906,
+          396.4901428222656
+        ]
+      },
+      {
+        "text": "Algorithm-of-Thought works by guiding a language model to",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          248.29457092285156,
+          386.5202941894531,
+          503.99749755859375,
+          396.58203125
+        ]
+      },
+      {
+        "text": "follow explicit algorithmic reasoning steps—often structured like pseudocode or formal rules—so",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.041984558105469,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          397.44427490234375,
+          504.0032653808594,
+          407.4862365722656
+        ]
+      },
+      {
+        "text": "that its outputs mimic systematic, step-by-step problem solving rather than free-form reasoning [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.9126615524292,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          408.4513244628906,
+          490.03240966796875,
+          418.364013671875
+        ]
+      },
+      {
+        "text": "12",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          490.031005859375,
+          408.4134521484375,
+          499.99359130859375,
+          418.3760681152344
+        ]
+      },
+      {
+        "text": "].",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.9126615524292,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          499.9930114746094,
+          408.4513244628906,
+          505.74310302734375,
+          418.364013671875
+        ]
+      },
+      {
+        "text": "The original work reports improvements across many tasks and shows that AoT can outperform other",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.862470626831055,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.69100189208984,
+          419.3984069824219,
+          504.1708068847656,
+          429.2608642578125
+        ]
+      },
+      {
+        "text": "prompting techniques, such as Chain-of-Thought (CoT) [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          430.1562805175781,
+          341.40771484375,
+          440.218017578125
+        ]
+      },
+      {
+        "text": "10",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          341.40399169921875,
+          430.2314453125,
+          351.3665771484375,
+          440.1940612792969
+        ]
+      },
+      {
+        "text": "] and Tree-of-Thought (ToT) [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          351.3659973144531,
+          430.1562805175781,
+          474.720947265625,
+          440.218017578125
+        ]
+      },
+      {
+        "text": "14",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          474.72601318359375,
+          430.2314453125,
+          484.6885986328125,
+          440.1940612792969
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          484.6889953613281,
+          430.1562805175781,
+          487.2294616699219,
+          440.218017578125
+        ]
+      },
+      {
+        "text": " 12",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          487.2294616699219,
+          430.2314453125,
+          499.8185729980469,
+          440.1940612792969
+        ]
+      },
+      {
+        "text": "].",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          499.8190002441406,
+          430.1562805175781,
+          505.7433776855469,
+          440.218017578125
+        ]
+      },
+      {
+        "text": "For our work, we specify a simple Manhattan-style search—similar to A*—and again provide the",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.051863670349121,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          441.0727844238281,
+          504.0016784667969,
+          451.1246643066406
+        ]
+      },
+      {
+        "text": "same three example boards to stay consistent with the CoT prompt and ensure a fair comparison",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          451.97528076171875,
+          503.997314453125,
+          462.0370178222656
+        ]
+      },
+      {
+        "text": "between approaches. For further details on the AoT prompt, see Appendix A.3.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          462.95947265625,
+          424.1431884765625,
+          472.9220886230469
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      108.0,
+      489.6185302734375,
+      171.12301635742188,
+      499.58111572265625
+    ],
+    "content": "3.4Feedback",
+    "spans": [
+      {
+        "text": "3.4",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          108.0,
+          489.6185302734375,
+          120.4532470703125,
+          499.58111572265625
+        ]
+      },
+      {
+        "text": "Feedback",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          130.4158477783203,
+          489.6185302734375,
+          171.12301635742188,
+          499.58111572265625
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      107.64099884033203,
+      510.6393127441406,
+      505.2441101074219,
+      596.9280395507812
+    ],
+    "content": "For each puzzle that a model failed to solve on its first attempt under any condition (Zero-Shot, CoT,or AoT), we ran three independent feedback trials: a repeat control, a trial with specific feedback, andone with suggestive feedback, as shown in Fig. 2. All three feedback trials start from the same failurestate and have up to three additional attempts to solve the puzzle. That is, within a given trial, theattempt k+1 resumes from the furthest valid state reached in the attempt k. Concretely, if model Mfailed puzzle i under AoT (even if it passed under Zero-Shot or CoT), we re-prompted M with theAoT system prompt for up to three attempts under each feedback condition: repeat (no feedback),specific feedback, and suggestive feedback.",
+    "spans": [
+      {
+        "text": "For each puzzle that a model failed to solve on its first attempt under any condition (Zero-Shot, CoT,",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.9126615524292,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          510.6393127441406,
+          505.2412109375,
+          520.552001953125
+        ]
+      },
+      {
+        "text": "or AoT), we ran three independent feedback trials: a repeat control, a trial with specific feedback, and",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.862470626831055,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          521.58642578125,
+          504.00146484375,
+          531.4489135742188
+        ]
+      },
+      {
+        "text": "one with suggestive feedback, as shown in Fig. 2. All three feedback trials start from the same failure",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.862470626831055,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          532.495361328125,
+          504.0013732910156,
+          542.3578491210938
+        ]
+      },
+      {
+        "text": "state and have up to three additional attempts to solve the puzzle. That is, within a given trial, the",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          543.2532958984375,
+          503.9973449707031,
+          553.3150634765625
+        ]
+      },
+      {
+        "text": "attempt",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.862470626831055,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          554.3133544921875,
+          137.29005432128906,
+          564.1758422851562
+        ]
+      },
+      {
+        "text": " k",
+        "font_name": "CMMI10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          137.29005432128906,
+          554.0068969726562,
+          144.91452026367188,
+          563.969482421875
+        ]
+      },
+      {
+        "text": "+1",
+        "font_name": "CMR10",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          145.22335815429688,
+          554.0068969726562,
+          157.95555114746094,
+          563.969482421875
+        ]
+      },
+      {
+        "text": " resumes from the",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.862470626831055,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          157.95555114746094,
+          554.3133544921875,
+          228.1651611328125,
+          564.1758422851562
+        ]
+      },
+      {
+        "text": " furthest valid state",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.862470626831055,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          228.1651611328125,
+          554.2233276367188,
+          308.5760803222656,
+          564.0858154296875
+        ]
+      },
+      {
+        "text": " reached in the attempt",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.862470626831055,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          308.5760803222656,
+          554.3133544921875,
+          397.4811096191406,
+          564.1758422851562
+        ]
+      },
+      {
+        "text": " k",
+        "font_name": "CMMI10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          397.4811096191406,
+          554.0068969726562,
+          405.1075134277344,
+          563.969482421875
+        ]
+      },
+      {
+        "text": ". Concretely, if model",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.862470626831055,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          405.4169921875,
+          554.3133544921875,
+          490.8169860839844,
+          564.1758422851562
+        ]
+      },
+      {
+        "text": " M",
+        "font_name": "CMMI10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          490.8169860839844,
+          554.0068969726562,
+          502.9127197265625,
+          563.969482421875
+        ]
+      },
+      {
+        "text": "failed puzzle",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.02714729309082,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          565.0975341796875,
+          159.7119598388672,
+          575.1246948242188
+        ]
+      },
+      {
+        "text": " i",
+        "font_name": "CMMI10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          159.7119598388672,
+          564.9159545898438,
+          165.64010620117188,
+          574.8785400390625
+        ]
+      },
+      {
+        "text": " under AoT (even if it passed under Zero-Shot or CoT), we re-prompted",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.02714729309082,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          165.64010620117188,
+          565.0975341796875,
+          455.4989929199219,
+          575.1246948242188
+        ]
+      },
+      {
+        "text": " M",
+        "font_name": "CMMI10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          455.4989929199219,
+          564.9159545898438,
+          467.6537170410156,
+          574.8785400390625
+        ]
+      },
+      {
+        "text": " with the",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.02714729309082,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          467.6537170410156,
+          565.0975341796875,
+          504.0020751953125,
+          575.1246948242188
+        ]
+      },
+      {
+        "text": "AoT system prompt for up to three attempts under each feedback condition: repeat (no feedback),",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.64099884033203,
+          575.980224609375,
+          505.2441101074219,
+          586.0419921875
+        ]
+      },
+      {
+        "text": "specific feedback, and suggestive feedback.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          586.9654541015625,
+          281.33929443359375,
+          596.9280395507812
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      107.64099884033203,
+      603.2546997070312,
+      505.2454528808594,
+      722.4070434570312
+    ],
+    "content": "By furthest valid state we mean the last board configuration before failure: for invalid_move, wherethe model moves a tile off the board or one that is not adjacent to the space, or loop_detected,where the model repeats a board configuration, we resume from the state immediately before theoffending move. If the model fails due to an early_stop, where it makes only valid moves but stopsbefore reaching the goal state, we resume from the state after the last move. We reset the visited-stateset at the start of each attempt. Attempts stop early upon success; otherwise, they terminate dueto a timeout, token limit, early stop, loop, invalid move, or graceful failure, in which the modeleither refuses to solve the problem or asks for clarification on how to do so. We cap retries at threeper feedback condition (repeat, specific, and suggestive) to align with prior work on iterative LLMcorrection [32] and to limit API costs. Across feedback conditions, we keep the system prompt andhyperparameters fixed.",
+    "spans": [
+      {
+        "text": "By",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.862470626831055,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          603.4293823242188,
+          119.39382934570312,
+          613.2918701171875
+        ]
+      },
+      {
+        "text": " furthest valid state",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.862470626831055,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          119.39382934570312,
+          603.2546997070312,
+          193.6636505126953,
+          613.1171875
+        ]
+      },
+      {
+        "text": " we mean the last board configuration before failure: for",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.862470626831055,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          193.6636505126953,
+          603.4293823242188,
+          410.57611083984375,
+          613.2918701171875
+        ]
+      },
+      {
+        "text": " invalid_move",
+        "font_name": "SFTT1000",
+        "font_size": 9.962599754333496,
+        "font_flags": 12,
+        "color": 0,
+        "bbox": [
+          410.57611083984375,
+          603.6015014648438,
+          475.49951171875,
+          613.5640869140625
+        ]
+      },
+      {
+        "text": ", where",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.862470626831055,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          475.4840087890625,
+          603.4293823242188,
+          504.00274658203125,
+          613.2918701171875
+        ]
+      },
+      {
+        "text": "the model moves a tile off the board or one that is not adjacent to the space, or",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          614.187255859375,
+          431.83795166015625,
+          624.2490234375
+        ]
+      },
+      {
+        "text": " loop_detected",
+        "font_name": "SFTT1000",
+        "font_size": 9.962599754333496,
+        "font_flags": 12,
+        "color": 0,
+        "bbox": [
+          431.83795166015625,
+          614.510498046875,
+          502.7209167480469,
+          624.4730834960938
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          502.7049865722656,
+          614.187255859375,
+          505.2454528808594,
+          624.2490234375
+        ]
+      },
+      {
+        "text": "where the model repeats a board configuration, we resume from the state immediately before the",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.64099884033203,
+          625.0962524414062,
+          504.00408935546875,
+          635.1580200195312
+        ]
+      },
+      {
+        "text": "offending move. If the model fails due to an",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.862470626831055,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          636.1563720703125,
+          279.6299133300781,
+          646.0188598632812
+        ]
+      },
+      {
+        "text": " early_stop",
+        "font_name": "SFTT1000",
+        "font_size": 9.962599754333496,
+        "font_flags": 12,
+        "color": 0,
+        "bbox": [
+          279.6299133300781,
+          636.3284912109375,
+          334.30377197265625,
+          646.2910766601562
+        ]
+      },
+      {
+        "text": ", where it makes only valid moves but stops",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.862470626831055,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          334.2909851074219,
+          636.1563720703125,
+          503.9975891113281,
+          646.0188598632812
+        ]
+      },
+      {
+        "text": "before reaching the goal state, we resume from the state after the last move. We reset the visited-state",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.862470626831055,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          647.0653686523438,
+          504.0013732910156,
+          656.9278564453125
+        ]
+      },
+      {
+        "text": "set at the start of each attempt. Attempts stop early upon success; otherwise, they terminate due",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          657.8242797851562,
+          503.997314453125,
+          667.8860473632812
+        ]
+      },
+      {
+        "text": "to a timeout, token limit, early stop, loop, invalid move, or graceful failure, in which the model",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          668.7332763671875,
+          503.9974060058594,
+          678.7950439453125
+        ]
+      },
+      {
+        "text": "either refuses to solve the problem or asks for clarification on how to do so. We cap retries at three",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.017244338989258,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          679.676025390625,
+          503.998046875,
+          689.6932983398438
+        ]
+      },
+      {
+        "text": "per feedback condition (repeat, specific, and suggestive) to align with prior work on iterative LLM",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.017244338989258,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          690.5850219726562,
+          503.9981689453125,
+          700.602294921875
+        ]
+      },
+      {
+        "text": "correction [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.972557067871094,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          701.5278930664062,
+          154.2789764404297,
+          711.50048828125
+        ]
+      },
+      {
+        "text": "32",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          154.281005859375,
+          701.5354614257812,
+          164.24359130859375,
+          711.498046875
+        ]
+      },
+      {
+        "text": "] and to limit API costs. Across feedback conditions, we keep the system prompt and",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.972557067871094,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          164.24400329589844,
+          701.5278930664062,
+          503.99969482421875,
+          711.50048828125
+        ]
+      },
+      {
+        "text": "hyperparameters fixed.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          712.4444580078125,
+          199.0980224609375,
+          722.4070434570312
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      303.5090026855469,
+      742.3324584960938,
+      308.49029541015625,
+      752.2950439453125
+    ],
+    "content": "5",
+    "spans": [
+      {
+        "text": "5",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          303.5090026855469,
+          742.3324584960938,
+          308.49029541015625,
+          752.2950439453125
+        ]
+      }
+    ]
+  },
+  {
+    "type": "image",
+    "bbox": [
+      108.0,
+      71.99886322021484,
+      504.0064392089844,
+      171.375
+    ],
+    "xref": null,
+    "ext": "png"
+  }
+]

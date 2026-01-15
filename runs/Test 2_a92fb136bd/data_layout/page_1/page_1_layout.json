@@ -1,0 +1,2388 @@
+[
+  {
+    "type": "text",
+    "bbox": [
+      58.5,
+      74.40748596191406,
+      294.7531433105469,
+      589.175048828125
+    ],
+    "content": "injection, often fail against modern semantic watermark-ing schemes and can introduce visible artifacts [1]. Latent-space diffusion approaches can suppress stronger water-marks, but they typically rely on substantial noise injec-tion, which disrupts scene structure and degrades visual re-alism [47]. In addition, many state-of-the-art methods incurhigh computational cost [25], requiring several minutes perimage [29], or depend on privileged information such as ac-cess to the watermark decoder [28] or watermarked trainingdata [32], which limits their practical applicability.In this work, we expose a fundamental vulnerability ininvisible watermarking by re-conceptualizing removal as anovel view synthesis problem [37]. Our key insight is thatgenerating a perceptually consistent alternative “view” ofthe same semantic content produces a new image instancethat preserves visual fidelity while statistically decorrelatingfrom the embedded watermark signal. This exposes a criti-cal gap in current robustness evaluations: even watermarksthat can withstand pixel-space manipulation and latent-space purification remain vulnerable to semantic-preservingviewpoint transformations. Crucially, our approach doesnot require access to watermark detectors, no knowledgeof the watermarking scheme, and no additional data or re-training, allowing deployment in practical settings.To realize our view synthesis attack, we introduce a zero-shot diffusion-based framework that modulates latent rep-resentations to simulate novel viewpoints while preservingsemantic content.Our method partially inverts the wa-termarked image into the diffusion latent space, exposingthe watermark-entangled representation while preservingthe semantic structure of the scene. We then apply subtlelatent-space viewpoint shifts that introduce geometric vari-ations sufficient to disrupt watermark alignment without al-tering semantic image content. To maintain high percep-tual fidelity during reconstruction, we replace conventionalself-attention with a view-guided correspondence attentionmechanism that enforces structural consistency between theoriginal and synthesized views.Notably, our approachoperates in a zero-shot manner using a frozen pre-trainedimage-to-image diffusion model and requires only the wa-termarked image as input, enabling deployment across di-verse watermarking schemes without adaptation or retrain-ing. Our contributions are as follows:",
+    "spans": [
+      {
+        "text": "injection, often fail against modern semantic watermark-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          74.40748596191406,
+          294.7530822753906,
+          84.37008666992188
+        ]
+      },
+      {
+        "text": "ing schemes and can introduce visible artifacts [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          86.36250305175781,
+          251.5154571533203,
+          96.32510375976562
+        ]
+      },
+      {
+        "text": "1",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 6592255,
+        "bbox": [
+          251.5154571533203,
+          86.36250305175781,
+          256.49676513671875,
+          96.32510375976562
+        ]
+      },
+      {
+        "text": "]. Latent-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          256.49676513671875,
+          86.36250305175781,
+          294.7531433105469,
+          96.32510375976562
+        ]
+      },
+      {
+        "text": "space diffusion approaches can suppress stronger water-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          98.31752014160156,
+          294.7530517578125,
+          108.28012084960938
+        ]
+      },
+      {
+        "text": "marks, but they typically rely on substantial noise injec-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          110.27253723144531,
+          294.7530517578125,
+          120.23513793945312
+        ]
+      },
+      {
+        "text": "tion, which disrupts scene structure and degrades visual re-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          122.22755432128906,
+          294.7530822753906,
+          132.19015502929688
+        ]
+      },
+      {
+        "text": "alism [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          134.1835479736328,
+          85.6779556274414,
+          144.14614868164062
+        ]
+      },
+      {
+        "text": "47",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 6592255,
+        "bbox": [
+          85.6779556274414,
+          134.1835479736328,
+          95.64055633544922,
+          144.14614868164062
+        ]
+      },
+      {
+        "text": "]. In addition, many state-of-the-art methods incur",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          95.64055633544922,
+          134.1835479736328,
+          294.7530822753906,
+          144.14614868164062
+        ]
+      },
+      {
+        "text": "high computational cost [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          146.13856506347656,
+          160.1982421875,
+          156.10116577148438
+        ]
+      },
+      {
+        "text": "25",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 6592255,
+        "bbox": [
+          160.1982421875,
+          146.13856506347656,
+          170.16082763671875,
+          156.10116577148438
+        ]
+      },
+      {
+        "text": "], requiring several minutes per",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          170.16082763671875,
+          146.13856506347656,
+          294.75311279296875,
+          156.10116577148438
+        ]
+      },
+      {
+        "text": "image [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          158.0935821533203,
+          88.3877944946289,
+          168.05618286132812
+        ]
+      },
+      {
+        "text": "29",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 6592255,
+        "bbox": [
+          88.3877944946289,
+          158.0935821533203,
+          98.35039520263672,
+          168.05618286132812
+        ]
+      },
+      {
+        "text": "], or depend on privileged information such as ac-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          98.35039520263672,
+          158.0935821533203,
+          294.7530822753906,
+          168.05618286132812
+        ]
+      },
+      {
+        "text": "cess to the watermark decoder [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          170.04859924316406,
+          183.6202850341797,
+          180.01119995117188
+        ]
+      },
+      {
+        "text": "28",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 6592255,
+        "bbox": [
+          183.6202850341797,
+          170.04859924316406,
+          193.58287048339844,
+          180.01119995117188
+        ]
+      },
+      {
+        "text": "] or watermarked training",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          193.58287048339844,
+          170.04859924316406,
+          294.7530212402344,
+          180.01119995117188
+        ]
+      },
+      {
+        "text": "data [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          182.0036163330078,
+          80.90587615966797,
+          191.96621704101562
+        ]
+      },
+      {
+        "text": "32",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 6592255,
+        "bbox": [
+          80.90587615966797,
+          182.0036163330078,
+          90.86847686767578,
+          191.96621704101562
+        ]
+      },
+      {
+        "text": "], which limits their practical applicability.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          90.86847686767578,
+          182.0036163330078,
+          260.402099609375,
+          191.96621704101562
+        ]
+      },
+      {
+        "text": "In this work, we expose a fundamental vulnerability in",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          70.45500183105469,
+          195.30262756347656,
+          294.7528991699219,
+          205.26522827148438
+        ]
+      },
+      {
+        "text": "invisible watermarking by re-conceptualizing removal as a",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          207.2586212158203,
+          294.7530822753906,
+          217.22122192382812
+        ]
+      },
+      {
+        "text": "novel view synthesis problem [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          219.21363830566406,
+          184.32765197753906,
+          229.17623901367188
+        ]
+      },
+      {
+        "text": "37",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 6592255,
+        "bbox": [
+          184.32765197753906,
+          219.21363830566406,
+          194.2902374267578,
+          229.17623901367188
+        ]
+      },
+      {
+        "text": "]. Our key insight is that",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          194.2902374267578,
+          219.21363830566406,
+          294.7530517578125,
+          229.17623901367188
+        ]
+      },
+      {
+        "text": "generating a perceptually consistent alternative “view” of",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          231.1686553955078,
+          294.75311279296875,
+          241.13125610351562
+        ]
+      },
+      {
+        "text": "the same semantic content produces a new image instance",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          243.12367248535156,
+          294.7530517578125,
+          253.08627319335938
+        ]
+      },
+      {
+        "text": "that preserves visual fidelity while statistically decorrelating",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          255.0786895751953,
+          294.7530822753906,
+          265.0412902832031
+        ]
+      },
+      {
+        "text": "from the embedded watermark signal. This exposes a criti-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          267.03369140625,
+          294.7530822753906,
+          276.9963073730469
+        ]
+      },
+      {
+        "text": "cal gap in current robustness evaluations: even watermarks",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          278.98968505859375,
+          294.7530822753906,
+          288.9523010253906
+        ]
+      },
+      {
+        "text": "that can withstand pixel-space manipulation and latent-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          290.9446716308594,
+          294.7530517578125,
+          300.90728759765625
+        ]
+      },
+      {
+        "text": "space purification remain vulnerable to semantic-preserving",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          302.899658203125,
+          294.75311279296875,
+          312.8622741699219
+        ]
+      },
+      {
+        "text": "viewpoint transformations. Crucially, our approach does",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          314.8546447753906,
+          294.75311279296875,
+          324.8172607421875
+        ]
+      },
+      {
+        "text": "not require access to watermark detectors, no knowledge",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          326.80963134765625,
+          294.7530822753906,
+          336.7722473144531
+        ]
+      },
+      {
+        "text": "of the watermarking scheme, and no additional data or re-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          338.7646179199219,
+          294.7530212402344,
+          348.72723388671875
+        ]
+      },
+      {
+        "text": "training, allowing deployment in practical settings.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          350.7206115722656,
+          260.9898681640625,
+          360.6832275390625
+        ]
+      },
+      {
+        "text": "To realize our view synthesis attack, we introduce a zero-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          70.45500183105469,
+          364.0196228027344,
+          294.75299072265625,
+          373.98223876953125
+        ]
+      },
+      {
+        "text": "shot diffusion-based framework that modulates latent rep-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          375.974609375,
+          294.7530822753906,
+          385.9372253417969
+        ]
+      },
+      {
+        "text": "resentations to simulate novel viewpoints while preserving",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          387.9295959472656,
+          294.7530212402344,
+          397.8922119140625
+        ]
+      },
+      {
+        "text": "semantic content.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          399.88458251953125,
+          130.3203582763672,
+          409.8471984863281
+        ]
+      },
+      {
+        "text": "Our method partially inverts the wa-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          139.67523193359375,
+          399.88458251953125,
+          294.7530212402344,
+          409.8471984863281
+        ]
+      },
+      {
+        "text": "termarked image into the diffusion latent space, exposing",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          411.840576171875,
+          294.7530822753906,
+          421.8031921386719
+        ]
+      },
+      {
+        "text": "the watermark-entangled representation while preserving",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          423.7955627441406,
+          294.7530822753906,
+          433.7581787109375
+        ]
+      },
+      {
+        "text": "the semantic structure of the scene. We then apply subtle",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          435.75054931640625,
+          294.7530517578125,
+          445.7131652832031
+        ]
+      },
+      {
+        "text": "latent-space viewpoint shifts that introduce geometric vari-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          447.7055358886719,
+          294.7530517578125,
+          457.66815185546875
+        ]
+      },
+      {
+        "text": "ations sufficient to disrupt watermark alignment without al-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          459.6605224609375,
+          294.7530517578125,
+          469.6231384277344
+        ]
+      },
+      {
+        "text": "tering semantic image content. To maintain high percep-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          471.6155090332031,
+          294.7530517578125,
+          481.578125
+        ]
+      },
+      {
+        "text": "tual fidelity during reconstruction, we replace conventional",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          483.5715026855469,
+          294.7530517578125,
+          493.53411865234375
+        ]
+      },
+      {
+        "text": "self-attention with a view-guided correspondence attention",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          495.5264892578125,
+          294.75299072265625,
+          505.4891052246094
+        ]
+      },
+      {
+        "text": "mechanism that enforces structural consistency between the",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          507.4814453125,
+          294.7530822753906,
+          517.4440307617188
+        ]
+      },
+      {
+        "text": "original and synthesized views.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          519.4364624023438,
+          190.4546356201172,
+          529.3990478515625
+        ]
+      },
+      {
+        "text": "Notably, our approach",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          200.67626953125,
+          519.4364624023438,
+          294.7530517578125,
+          529.3990478515625
+        ]
+      },
+      {
+        "text": "operates in a zero-shot manner using a frozen pre-trained",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          531.3914794921875,
+          294.7530212402344,
+          541.3540649414062
+        ]
+      },
+      {
+        "text": "image-to-image diffusion model and requires only the wa-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          543.346435546875,
+          294.7530212402344,
+          553.3090209960938
+        ]
+      },
+      {
+        "text": "termarked image as input, enabling deployment across di-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          555.302490234375,
+          294.7530517578125,
+          565.2650756835938
+        ]
+      },
+      {
+        "text": "verse watermarking schemes without adaptation or retrain-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          567.2574462890625,
+          294.75299072265625,
+          577.2200317382812
+        ]
+      },
+      {
+        "text": "ing. Our contributions are as follows:",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          579.2124633789062,
+          207.5205841064453,
+          589.175048828125
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      58.5,
+      595.7575073242188,
+      294.7531433105469,
+      713.4070434570312
+    ],
+    "content": "• Novel Attack Vector via View Synthesis: We exposea critical gap in watermark robustness evaluation by re-framing removal as a view synthesis problem: synthesiz-ing a perceptually consistent alternative view of the samescene preserves semantics while statistically decorrelat-ing from the original watermark embedding.• Latent Viewpoint Modulation Framework: We designa zero-shot diffusion-based pipeline that removes water-marks by applying controlled viewpoint shifts in latentspace, producing perceptually consistent images without",
+    "spans": [
+      {
+        "text": "•",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          595.8484497070312,
+          61.98691177368164,
+          605.81103515625
+        ]
+      },
+      {
+        "text": " Novel Attack Vector via View Synthesis",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          61.98691177368164,
+          595.7575073242188,
+          241.37350463867188,
+          605.7200927734375
+        ]
+      },
+      {
+        "text": ": We expose",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          241.37350463867188,
+          595.8484497070312,
+          294.7531433105469,
+          605.81103515625
+        ]
+      },
+      {
+        "text": "a critical gap in watermark robustness evaluation by re-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          66.96800231933594,
+          607.803466796875,
+          294.7528381347656,
+          617.7660522460938
+        ]
+      },
+      {
+        "text": "framing removal as a view synthesis problem: synthesiz-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          66.96800231933594,
+          619.7584838867188,
+          294.7528991699219,
+          629.7210693359375
+        ]
+      },
+      {
+        "text": "ing a perceptually consistent alternative view of the same",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          66.96800231933594,
+          631.7135009765625,
+          294.7528991699219,
+          641.6760864257812
+        ]
+      },
+      {
+        "text": "scene preserves semantics while statistically decorrelat-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          66.96800231933594,
+          643.66845703125,
+          294.7529602050781,
+          653.6310424804688
+        ]
+      },
+      {
+        "text": "ing from the original watermark embedding.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          66.96800231933594,
+          655.6244506835938,
+          243.95355224609375,
+          665.5870361328125
+        ]
+      },
+      {
+        "text": "•",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          667.5794677734375,
+          61.98691177368164,
+          677.5420532226562
+        ]
+      },
+      {
+        "text": " Latent Viewpoint Modulation Framework",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          61.98691177368164,
+          667.488525390625,
+          246.72335815429688,
+          677.4511108398438
+        ]
+      },
+      {
+        "text": ": We design",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          246.72335815429688,
+          667.5794677734375,
+          294.7530517578125,
+          677.5420532226562
+        ]
+      },
+      {
+        "text": "a zero-shot diffusion-based pipeline that removes water-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          66.96800231933594,
+          679.5344848632812,
+          294.7528381347656,
+          689.4970703125
+        ]
+      },
+      {
+        "text": "marks by applying controlled viewpoint shifts in latent",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          66.96800231933594,
+          691.489501953125,
+          294.7528381347656,
+          701.4520874023438
+        ]
+      },
+      {
+        "text": "space, producing perceptually consistent images without",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          66.96800231933594,
+          703.4444580078125,
+          294.75286865234375,
+          713.4070434570312
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      317.2500305175781,
+      74.40748596191406,
+      553.5032958984375,
+      215.87722778320312
+    ],
+    "content": "requiring access to watermark decoder or knowledge ofthe watermarking scheme.• View-Guided Correspondence Attention:We intro-duce a correspondence-aware attention mechanism thatmaintains structural and appearance alignment betweenthe original and synthesized views, enabling watermarksuppression without altering fine-grained visual details.• Extensive Evaluation:We demonstrate state-of-the-art watermark removal across multiple watermarkingschemes and evaluate robustness under various attackconditions. Our approach attains superior watermark sup-pression with minimal perceptual degradation.",
+    "spans": [
+      {
+        "text": "requiring access to watermark decoder or knowledge of",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          325.718017578125,
+          74.40748596191406,
+          553.5028076171875,
+          84.37008666992188
+        ]
+      },
+      {
+        "text": "the watermarking scheme.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          325.718017578125,
+          86.36250305175781,
+          430.4747619628906,
+          96.32510375976562
+        ]
+      },
+      {
+        "text": "•",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.2500305175781,
+          98.31752014160156,
+          320.7369384765625,
+          108.28012084960938
+        ]
+      },
+      {
+        "text": " View-Guided Correspondence Attention",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          320.7369384765625,
+          98.22655487060547,
+          502.0364074707031,
+          108.18915557861328
+        ]
+      },
+      {
+        "text": ":",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          502.0364074707031,
+          98.31752014160156,
+          504.8059997558594,
+          108.28012084960938
+        ]
+      },
+      {
+        "text": "We intro-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          513.1945190429688,
+          98.31752014160156,
+          553.5032958984375,
+          108.28012084960938
+        ]
+      },
+      {
+        "text": "duce a correspondence-aware attention mechanism that",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          325.718017578125,
+          110.27253723144531,
+          553.5028076171875,
+          120.23513793945312
+        ]
+      },
+      {
+        "text": "maintains structural and appearance alignment between",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          325.718017578125,
+          122.22853088378906,
+          553.5028686523438,
+          132.19113159179688
+        ]
+      },
+      {
+        "text": "the original and synthesized views, enabling watermark",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          325.718017578125,
+          134.1835479736328,
+          553.5028686523438,
+          144.14614868164062
+        ]
+      },
+      {
+        "text": "suppression without altering fine-grained visual details.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          325.718017578125,
+          146.13856506347656,
+          546.5388793945312,
+          156.10116577148438
+        ]
+      },
+      {
+        "text": "•",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.2500305175781,
+          158.0935821533203,
+          320.7369384765625,
+          168.05618286132812
+        ]
+      },
+      {
+        "text": " Extensive Evaluation",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          320.7369384765625,
+          158.00262451171875,
+          418.7489013671875,
+          167.96522521972656
+        ]
+      },
+      {
+        "text": ":",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          418.7489013671875,
+          158.0935821533203,
+          421.51849365234375,
+          168.05618286132812
+        ]
+      },
+      {
+        "text": "We demonstrate state-of-the-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          431.3515930175781,
+          158.0935821533203,
+          553.503173828125,
+          168.05618286132812
+        ]
+      },
+      {
+        "text": "art watermark removal across multiple watermarking",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          325.718017578125,
+          170.04859924316406,
+          553.5029296875,
+          180.01119995117188
+        ]
+      },
+      {
+        "text": "schemes and evaluate robustness under various attack",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          325.718017578125,
+          182.0045928955078,
+          553.5029907226562,
+          191.96719360351562
+        ]
+      },
+      {
+        "text": "conditions. Our approach attains superior watermark sup-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          325.718017578125,
+          193.95960998535156,
+          553.5028686523438,
+          203.92221069335938
+        ]
+      },
+      {
+        "text": "pression with minimal perceptual degradation.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          325.718017578125,
+          205.9146270751953,
+          510.6835632324219,
+          215.87722778320312
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      317.2500305175781,
+      228.4412841796875,
+      400.3625793457031,
+      240.396484375
+    ],
+    "content": "2. Related Work",
+    "spans": [
+      {
+        "text": "2. Related Work",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 11.9552001953125,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          317.2500305175781,
+          228.4412841796875,
+          400.3625793457031,
+          240.396484375
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      317.2500305175781,
+      248.9786376953125,
+      553.5032348632812,
+      713.407958984375
+    ],
+    "content": "Image Watermarking.Image watermarking enablesprovenance verification of AI-generated content by embed-ding imperceptible signals that can later be decoded forauthentication [34, 40, 45].Existing techniques can begrouped by when the watermark is inserted and where itresides in the representation.Post-hoc methods operatedirectly on generated images using signal processing orencoder-decoder architectures (e.g., DwtDCT [10], Riva-GAN [43], StegaStamp [35]), offering broad applicabilitybut often degrading under denoising, compression, or crop-ping. In contrast, in-generation watermarking modifies thegenerative model or its latent inputs, such as VAE-decodertuning (StableSignature [15]), latent distribution shaping(Gaussian Shading [41]), or noise-pattern encoding (TreeR-ing [38]) to achieve stronger robustness by coupling the wa-termark with semantic structure. While these schemes areprimarily evaluated for detection accuracy and robustnessagainst distortions, their resilience to sophisticated removalattacks remains an active area of investigation [2].Watermark Removal Attacks. Efforts to remove embed-ded watermarks can be characterized by their threat modelassumptions and attack primitives. Signal processing meth-ods apply standard image transformations such as JPEGcompression, geometric distortions, cropping, and additivenoise [2]. While computationally efficient and requiring nomodel access, these approaches offer limited effectivenessagainst modern robust watermarking schemes [13]. Regen-eration attacks leverage diffusion models [47] or VAEs [28]to reconstruct images by injecting and removing noise, ef-fectively eliminating pixel-level watermarks but often failagainst semantic watermarks. Moreover, achieving removalof stronger watermarks requires substantial noise injec-tion, which rapidly degrades structural consistency and vi-sual realism, limiting practical applicability. Adversarialoptimization-based methods treat the detector as a classi-fier and craft perturbations to induce detection failure [46],but typically rely on unrealistic capabilities—white-boxaccess [28] or surrogate training using non-watermarkeddata [32, 39]. Existing approaches thus exhibit a persis-",
+    "spans": [
+      {
+        "text": "Image Watermarking.",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          317.2500305175781,
+          248.9786376953125,
+          415.600830078125,
+          258.94122314453125
+        ]
+      },
+      {
+        "text": "Image watermarking enables",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          430.5845947265625,
+          249.06959533691406,
+          553.503173828125,
+          259.0321960449219
+        ]
+      },
+      {
+        "text": "provenance verification of AI-generated content by embed-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.2500305175781,
+          261.02459716796875,
+          553.5031127929688,
+          270.9872131347656
+        ]
+      },
+      {
+        "text": "ding imperceptible signals that can later be decoded for",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.2500305175781,
+          272.9795837402344,
+          553.503173828125,
+          282.94219970703125
+        ]
+      },
+      {
+        "text": "authentication [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.2500305175781,
+          284.9355773925781,
+          381.58843994140625,
+          294.898193359375
+        ]
+      },
+      {
+        "text": "34",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 6592255,
+        "bbox": [
+          381.58843994140625,
+          284.9355773925781,
+          391.551025390625,
+          294.898193359375
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          391.551025390625,
+          284.9355773925781,
+          394.04168701171875,
+          294.898193359375
+        ]
+      },
+      {
+        "text": " 40",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 6592255,
+        "bbox": [
+          394.04168701171875,
+          284.9355773925781,
+          408.567138671875,
+          294.898193359375
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          408.567138671875,
+          284.9355773925781,
+          411.05780029296875,
+          294.898193359375
+        ]
+      },
+      {
+        "text": " 45",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 6592255,
+        "bbox": [
+          411.05780029296875,
+          284.9355773925781,
+          425.5932312011719,
+          294.898193359375
+        ]
+      },
+      {
+        "text": "].",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          425.5932312011719,
+          284.9355773925781,
+          431.40142822265625,
+          294.898193359375
+        ]
+      },
+      {
+        "text": "Existing techniques can be",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          440.7264099121094,
+          284.9355773925781,
+          553.5029907226562,
+          294.898193359375
+        ]
+      },
+      {
+        "text": "grouped by when the watermark is inserted and where it",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.2500305175781,
+          296.89056396484375,
+          553.5030517578125,
+          306.8531799316406
+        ]
+      },
+      {
+        "text": "resides in the representation.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.2500305175781,
+          308.8455505371094,
+          437.32916259765625,
+          318.80816650390625
+        ]
+      },
+      {
+        "text": "Post-hoc methods operate",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          446.5047302246094,
+          308.8455505371094,
+          553.5030517578125,
+          318.80816650390625
+        ]
+      },
+      {
+        "text": "directly on generated images using signal processing or",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.2500305175781,
+          320.800537109375,
+          553.5029907226562,
+          330.7631530761719
+        ]
+      },
+      {
+        "text": "encoder-decoder architectures (",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.2500305175781,
+          332.7555236816406,
+          445.906982421875,
+          342.7181396484375
+        ]
+      },
+      {
+        "text": "e.g.",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          445.906982421875,
+          332.5790710449219,
+          459.9941101074219,
+          342.5416564941406
+        ]
+      },
+      {
+        "text": ", DwtDCT [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          459.9941101074219,
+          332.7555236816406,
+          511.550537109375,
+          342.7181396484375
+        ]
+      },
+      {
+        "text": "10",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 6592255,
+        "bbox": [
+          511.550537109375,
+          332.7555236816406,
+          521.51318359375,
+          342.7181396484375
+        ]
+      },
+      {
+        "text": "], Riva-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          521.51318359375,
+          332.7555236816406,
+          553.503173828125,
+          342.7181396484375
+        ]
+      },
+      {
+        "text": "GAN [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.2500305175781,
+          344.71051025390625,
+          345.6334533691406,
+          354.6731262207031
+        ]
+      },
+      {
+        "text": "43",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 6592255,
+        "bbox": [
+          345.6334533691406,
+          344.71051025390625,
+          355.5960388183594,
+          354.6731262207031
+        ]
+      },
+      {
+        "text": "], StegaStamp [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          355.5960388183594,
+          344.71051025390625,
+          419.356689453125,
+          354.6731262207031
+        ]
+      },
+      {
+        "text": "35",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 6592255,
+        "bbox": [
+          419.356689453125,
+          344.71051025390625,
+          429.31927490234375,
+          354.6731262207031
+        ]
+      },
+      {
+        "text": "]), offering broad applicability",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          429.31927490234375,
+          344.71051025390625,
+          553.5030517578125,
+          354.6731262207031
+        ]
+      },
+      {
+        "text": "but often degrading under denoising, compression, or crop-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.2500305175781,
+          356.66650390625,
+          553.503173828125,
+          366.6291198730469
+        ]
+      },
+      {
+        "text": "ping. In contrast, in-generation watermarking modifies the",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.2500305175781,
+          368.6214904785156,
+          553.5029296875,
+          378.5841064453125
+        ]
+      },
+      {
+        "text": "generative model or its latent inputs, such as VAE-decoder",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.2500305175781,
+          380.57647705078125,
+          553.503173828125,
+          390.5390930175781
+        ]
+      },
+      {
+        "text": "tuning (StableSignature [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.2500305175781,
+          392.5314636230469,
+          421.4786376953125,
+          402.49407958984375
+        ]
+      },
+      {
+        "text": "15",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 6592255,
+        "bbox": [
+          421.4786376953125,
+          392.5314636230469,
+          431.44122314453125,
+          402.49407958984375
+        ]
+      },
+      {
+        "text": "]), latent distribution shaping",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          431.44122314453125,
+          392.5314636230469,
+          553.5029907226562,
+          402.49407958984375
+        ]
+      },
+      {
+        "text": "(Gaussian Shading [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.2500305175781,
+          404.4864501953125,
+          397.48876953125,
+          414.4490661621094
+        ]
+      },
+      {
+        "text": "41",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 6592255,
+        "bbox": [
+          397.48876953125,
+          404.4864501953125,
+          407.45135498046875,
+          414.4490661621094
+        ]
+      },
+      {
+        "text": "]), or noise-pattern encoding (TreeR-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          407.45135498046875,
+          404.4864501953125,
+          553.5031127929688,
+          414.4490661621094
+        ]
+      },
+      {
+        "text": "ing [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.2500305175781,
+          416.4414367675781,
+          335.4616394042969,
+          426.404052734375
+        ]
+      },
+      {
+        "text": "38",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 6592255,
+        "bbox": [
+          335.4616394042969,
+          416.4414367675781,
+          345.4242248535156,
+          426.404052734375
+        ]
+      },
+      {
+        "text": "]) to achieve stronger robustness by coupling the wa-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          345.4242248535156,
+          416.4414367675781,
+          553.503173828125,
+          426.404052734375
+        ]
+      },
+      {
+        "text": "termark with semantic structure. While these schemes are",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.2500305175781,
+          428.3974304199219,
+          553.5031127929688,
+          438.36004638671875
+        ]
+      },
+      {
+        "text": "primarily evaluated for detection accuracy and robustness",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.2500305175781,
+          440.3524169921875,
+          553.5029907226562,
+          450.3150329589844
+        ]
+      },
+      {
+        "text": "against distortions, their resilience to sophisticated removal",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.2500305175781,
+          452.3074035644531,
+          553.5031127929688,
+          462.27001953125
+        ]
+      },
+      {
+        "text": "attacks remains an active area of investigation [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.2500305175781,
+          464.26239013671875,
+          505.7723083496094,
+          474.2250061035156
+        ]
+      },
+      {
+        "text": "2",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 6592255,
+        "bbox": [
+          505.7723083496094,
+          464.26239013671875,
+          510.75360107421875,
+          474.2250061035156
+        ]
+      },
+      {
+        "text": "].",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          510.75360107421875,
+          464.26239013671875,
+          516.5618286132812,
+          474.2250061035156
+        ]
+      },
+      {
+        "text": "Watermark Removal Attacks.",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          317.2500305175781,
+          476.2054443359375,
+          445.4586486816406,
+          486.16802978515625
+        ]
+      },
+      {
+        "text": " Efforts to remove embed-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          445.4586486816406,
+          476.29638671875,
+          553.5031127929688,
+          486.2590026855469
+        ]
+      },
+      {
+        "text": "ded watermarks can be characterized by their threat model",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.2500305175781,
+          488.2513732910156,
+          553.5031127929688,
+          498.2139892578125
+        ]
+      },
+      {
+        "text": "assumptions and attack primitives.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.2500305175781,
+          500.2073669433594,
+          454.6043701171875,
+          510.16998291015625
+        ]
+      },
+      {
+        "text": " Signal processing meth-",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          454.6043701171875,
+          500.0309143066406,
+          553.5031127929688,
+          509.9934997558594
+        ]
+      },
+      {
+        "text": "ods",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          317.2500305175781,
+          511.98590087890625,
+          331.08807373046875,
+          521.948486328125
+        ]
+      },
+      {
+        "text": " apply standard image transformations such as JPEG",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          331.08807373046875,
+          512.162353515625,
+          553.5029907226562,
+          522.1249389648438
+        ]
+      },
+      {
+        "text": "compression, geometric distortions, cropping, and additive",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.2500305175781,
+          524.1173095703125,
+          553.5031127929688,
+          534.0798950195312
+        ]
+      },
+      {
+        "text": "noise [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.2500305175781,
+          536.0723266601562,
+          344.1689453125,
+          546.034912109375
+        ]
+      },
+      {
+        "text": "2",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 6592255,
+        "bbox": [
+          344.1689453125,
+          536.0723266601562,
+          349.1502380371094,
+          546.034912109375
+        ]
+      },
+      {
+        "text": "]. While computationally efficient and requiring no",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          349.1502380371094,
+          536.0723266601562,
+          553.5031127929688,
+          546.034912109375
+        ]
+      },
+      {
+        "text": "model access, these approaches offer limited effectiveness",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.2500305175781,
+          548.02734375,
+          553.5031127929688,
+          557.9899291992188
+        ]
+      },
+      {
+        "text": "against modern robust watermarking schemes [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.2500305175781,
+          559.9823608398438,
+          506.3202209472656,
+          569.9449462890625
+        ]
+      },
+      {
+        "text": "13",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 6592255,
+        "bbox": [
+          506.3202209472656,
+          559.9823608398438,
+          516.2828369140625,
+          569.9449462890625
+        ]
+      },
+      {
+        "text": "].",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          516.2828369140625,
+          559.9823608398438,
+          522.091064453125,
+          569.9449462890625
+        ]
+      },
+      {
+        "text": " Regen-",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          522.091064453125,
+          559.805908203125,
+          553.5032348632812,
+          569.7684936523438
+        ]
+      },
+      {
+        "text": "eration attacks",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          317.2500305175781,
+          571.7619018554688,
+          376.0592041015625,
+          581.7244873046875
+        ]
+      },
+      {
+        "text": " leverage diffusion models [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          376.0592041015625,
+          571.9383544921875,
+          485.8569641113281,
+          581.9009399414062
+        ]
+      },
+      {
+        "text": "47",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 6592255,
+        "bbox": [
+          485.8569641113281,
+          571.9383544921875,
+          495.8195495605469,
+          581.9009399414062
+        ]
+      },
+      {
+        "text": "] or VAEs [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          495.8195495605469,
+          571.9383544921875,
+          540.2227783203125,
+          581.9009399414062
+        ]
+      },
+      {
+        "text": "28",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 6592255,
+        "bbox": [
+          540.2227783203125,
+          571.9383544921875,
+          550.1854248046875,
+          581.9009399414062
+        ]
+      },
+      {
+        "text": "]",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          550.1854248046875,
+          571.9383544921875,
+          553.5029907226562,
+          581.9009399414062
+        ]
+      },
+      {
+        "text": "to reconstruct images by injecting and removing noise, ef-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.2500305175781,
+          583.893310546875,
+          553.5031127929688,
+          593.8558959960938
+        ]
+      },
+      {
+        "text": "fectively eliminating pixel-level watermarks but often fail",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.2500305175781,
+          595.8483276367188,
+          553.5030517578125,
+          605.8109130859375
+        ]
+      },
+      {
+        "text": "against semantic watermarks. Moreover, achieving removal",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.2500305175781,
+          607.8033447265625,
+          553.5032348632812,
+          617.7659301757812
+        ]
+      },
+      {
+        "text": "of stronger watermarks requires substantial noise injec-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.2500305175781,
+          619.7583618164062,
+          553.5029907226562,
+          629.720947265625
+        ]
+      },
+      {
+        "text": "tion, which rapidly degrades structural consistency and vi-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.2500305175781,
+          631.71435546875,
+          553.5031127929688,
+          641.6769409179688
+        ]
+      },
+      {
+        "text": "sual realism, limiting practical applicability. Adversarial",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.2500305175781,
+          643.6693115234375,
+          553.5031127929688,
+          653.6318969726562
+        ]
+      },
+      {
+        "text": "optimization-based methods treat the detector as a classi-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.2500305175781,
+          655.6243286132812,
+          553.5029907226562,
+          665.5869140625
+        ]
+      },
+      {
+        "text": "fier and craft perturbations to induce detection failure [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.2500305175781,
+          667.579345703125,
+          537.732177734375,
+          677.5419311523438
+        ]
+      },
+      {
+        "text": "46",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 6592255,
+        "bbox": [
+          537.732177734375,
+          667.579345703125,
+          547.69482421875,
+          677.5419311523438
+        ]
+      },
+      {
+        "text": "],",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          547.69482421875,
+          667.579345703125,
+          553.5030517578125,
+          677.5419311523438
+        ]
+      },
+      {
+        "text": "but typically rely on unrealistic capabilities—white-box",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.2500305175781,
+          679.5343627929688,
+          553.5031127929688,
+          689.4969482421875
+        ]
+      },
+      {
+        "text": "access [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.2500305175781,
+          691.4893798828125,
+          350.38568115234375,
+          701.4519653320312
+        ]
+      },
+      {
+        "text": "28",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 6592255,
+        "bbox": [
+          350.38568115234375,
+          691.4893798828125,
+          360.3482666015625,
+          701.4519653320312
+        ]
+      },
+      {
+        "text": "] or surrogate training using non-watermarked",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          360.3482666015625,
+          691.4893798828125,
+          553.503173828125,
+          701.4519653320312
+        ]
+      },
+      {
+        "text": "data [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.2500305175781,
+          703.4453735351562,
+          341.1004943847656,
+          713.407958984375
+        ]
+      },
+      {
+        "text": "32",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 6592255,
+        "bbox": [
+          341.1004943847656,
+          703.4453735351562,
+          351.0630798339844,
+          713.407958984375
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          351.0630798339844,
+          703.4453735351562,
+          353.5537414550781,
+          713.407958984375
+        ]
+      },
+      {
+        "text": " 39",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 6592255,
+        "bbox": [
+          353.5537414550781,
+          703.4453735351562,
+          367.4515686035156,
+          713.407958984375
+        ]
+      },
+      {
+        "text": "]. Existing approaches thus exhibit a persis-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          367.4515686035156,
+          703.4453735351562,
+          553.5031127929688,
+          713.407958984375
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      303.509033203125,
+      733.3323364257812,
+      308.4903259277344,
+      743.294921875
+    ],
+    "content": "2",
+    "spans": [
+      {
+        "text": "2",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          303.509033203125,
+          733.3323364257812,
+          308.4903259277344,
+          743.294921875
+        ]
+      }
+    ]
+  }
+]

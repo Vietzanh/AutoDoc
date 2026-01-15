@@ -1,0 +1,1097 @@
+[
+  {
+    "type": "text",
+    "bbox": [
+      318.3940124511719,
+      11.27492904663086,
+      379.8408203125,
+      20.241329193115234
+    ],
+    "content": "SFDLA13",
+    "spans": [
+      {
+        "text": "SFDLA",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          318.3940124511719,
+          11.27492904663086,
+          346.7906494140625,
+          20.241329193115234
+        ]
+      },
+      {
+        "text": "13",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          370.8743896484375,
+          11.27492904663086,
+          379.8408203125,
+          20.241329193115234
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      34.01600646972656,
+      44.431724548339844,
+      379.8405456542969,
+      79.27550506591797
+    ],
+    "content": "Table 5: Ablation study of DLAdapter on PLN4 →DLN4. Each row corresponds toactivating or deactivating specific components/settings of our DLAdapter framework.The final configuration achieves the best mAP50.",
+    "spans": [
+      {
+        "text": "Table 5: Ablation study of DLAdapter on",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.016021728515625,
+          44.79139709472656,
+          203.04147338867188,
+          54.75399398803711
+        ]
+      },
+      {
+        "text": " PLN",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          203.04147338867188,
+          44.700435638427734,
+          226.18020629882812,
+          54.66303253173828
+        ]
+      },
+      {
+        "text": "4",
+        "font_name": "CMR7",
+        "font_size": 6.973800182342529,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          226.18101501464844,
+          48.39069747924805,
+          230.1560821533203,
+          55.364498138427734
+        ]
+      },
+      {
+        "text": " →",
+        "font_name": "CMSY10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          230.1560821533203,
+          44.431724548339844,
+          244.72361755371094,
+          55.88833999633789
+        ]
+      },
+      {
+        "text": "DLN",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          247.9390106201172,
+          44.700435638427734,
+          268.9700622558594,
+          54.66303253173828
+        ]
+      },
+      {
+        "text": "4",
+        "font_name": "CMR7",
+        "font_size": 6.973800182342529,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          268.9700012207031,
+          48.39069747924805,
+          272.945068359375,
+          55.364498138427734
+        ]
+      },
+      {
+        "text": ". Each row corresponds to",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          273.44000244140625,
+          44.79139709472656,
+          379.8405456542969,
+          54.75399398803711
+        ]
+      },
+      {
+        "text": "activating or deactivating specific components/settings of our DLAdapter framework.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01600646972656,
+          56.74641418457031,
+          379.83770751953125,
+          66.70901489257812
+        ]
+      },
+      {
+        "text": "The final configuration achieves the best mAP",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01600646972656,
+          68.70143127441406,
+          217.90567016601562,
+          78.66403198242188
+        ]
+      },
+      {
+        "text": "50",
+        "font_name": "CMR7",
+        "font_size": 6.973800182342529,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          217.9040069580078,
+          72.30171203613281,
+          225.85414123535156,
+          79.27550506591797
+        ]
+      },
+      {
+        "text": ".",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          226.34500122070312,
+          68.70143127441406,
+          228.8356475830078,
+          78.66403198242188
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      37.645381927490234,
+      84.2101058959961,
+      375.7335205078125,
+      104.09823608398438
+    ],
+    "content": "Source Only Hard Selection Dynamic SelectionSoft LabelKL Distillation Auxiliary Losses mAP50",
+    "spans": [
+      {
+        "text": "Source Only Hard Selection Dynamic Selection",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 8.950080871582031,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          37.645381927490234,
+          89.67916107177734,
+          219.1128692626953,
+          98.67910766601562
+        ]
+      },
+      {
+        "text": "Soft Label",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 8.950080871582031,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          231.2523651123047,
+          84.2101058959961,
+          270.784912109375,
+          93.16018676757812
+        ]
+      },
+      {
+        "text": "KL Distillation ",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 8.950080871582031,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          222.29769897460938,
+          95.14815521240234,
+          282.9211730957031,
+          104.09823608398438
+        ]
+      },
+      {
+        "text": "Auxiliary Losses mAP",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 8.950080871582031,
+        "font_flags": 21,
+        "color": 0,
+        "bbox": [
+          282.9211730957031,
+          89.67916107177734,
+          368.4424743652344,
+          98.67910766601562
+        ]
+      },
+      {
+        "text": "50",
+        "font_name": "CMR6",
+        "font_size": 5.9667205810546875,
+        "font_flags": 5,
+        "color": 0,
+        "bbox": [
+          368.44219970703125,
+          92.92935180664062,
+          375.7335205078125,
+          98.89607238769531
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      57.93039321899414,
+      110.52959442138672,
+      372.7138366699219,
+      187.27647399902344
+    ],
+    "content": "✓✗✗✗✗36.15✗✓✗✗✗37.90✗✓✗✓✗37.79✗✗✓✗✗38.54✗✗✓✓✗39.36✗✗✓✓✓40.36",
+    "spans": [
+      {
+        "text": "✓",
+        "font_name": "Dingbats",
+        "font_size": 8.950080871582031,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          57.93039321899414,
+          110.52959442138672,
+          64.68770599365234,
+          119.47967529296875
+        ]
+      },
+      {
+        "text": "✗",
+        "font_name": "Dingbats",
+        "font_size": 8.950080871582031,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          114.06529235839844,
+          110.52959442138672,
+          119.17578887939453,
+          119.47967529296875
+        ]
+      },
+      {
+        "text": "✗",
+        "font_name": "Dingbats",
+        "font_size": 8.950080871582031,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          181.13719177246094,
+          110.52959442138672,
+          186.2476806640625,
+          119.47967529296875
+        ]
+      },
+      {
+        "text": "✗",
+        "font_name": "Dingbats",
+        "font_size": 8.950080871582031,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          248.459716796875,
+          110.52959442138672,
+          253.57022094726562,
+          119.47967529296875
+        ]
+      },
+      {
+        "text": "✗",
+        "font_name": "Dingbats",
+        "font_size": 8.950080871582031,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          311.8442077636719,
+          110.52959442138672,
+          316.9547119140625,
+          119.47967529296875
+        ]
+      },
+      {
+        "text": "36.15",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.950080871582031,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          352.576171875,
+          112.69203186035156,
+          372.7138366699219,
+          121.6421127319336
+        ]
+      },
+      {
+        "text": "✗",
+        "font_name": "Dingbats",
+        "font_size": 8.950080871582031,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.753902435302734,
+          123.65666961669922,
+          63.86439895629883,
+          132.60675048828125
+        ]
+      },
+      {
+        "text": "✓",
+        "font_name": "Dingbats",
+        "font_size": 8.950080871582031,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          113.24200439453125,
+          123.65666961669922,
+          119.99931335449219,
+          132.60675048828125
+        ]
+      },
+      {
+        "text": "✗",
+        "font_name": "Dingbats",
+        "font_size": 8.950080871582031,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          181.13731384277344,
+          123.65666961669922,
+          186.247802734375,
+          132.60675048828125
+        ]
+      },
+      {
+        "text": "✗",
+        "font_name": "Dingbats",
+        "font_size": 8.950080871582031,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          248.4598388671875,
+          123.65666961669922,
+          253.57034301757812,
+          132.60675048828125
+        ]
+      },
+      {
+        "text": "✗",
+        "font_name": "Dingbats",
+        "font_size": 8.950080871582031,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          311.8443298339844,
+          123.65666961669922,
+          316.954833984375,
+          132.60675048828125
+        ]
+      },
+      {
+        "text": "37.90",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.950080871582031,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          352.576171875,
+          125.81910705566406,
+          372.7138366699219,
+          134.76918029785156
+        ]
+      },
+      {
+        "text": "✗",
+        "font_name": "Dingbats",
+        "font_size": 8.950080871582031,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.753902435302734,
+          136.78372192382812,
+          63.86439895629883,
+          145.73379516601562
+        ]
+      },
+      {
+        "text": "✓",
+        "font_name": "Dingbats",
+        "font_size": 8.950080871582031,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          113.24200439453125,
+          136.78372192382812,
+          119.99931335449219,
+          145.73379516601562
+        ]
+      },
+      {
+        "text": "✗",
+        "font_name": "Dingbats",
+        "font_size": 8.950080871582031,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          181.13731384277344,
+          136.78372192382812,
+          186.247802734375,
+          145.73379516601562
+        ]
+      },
+      {
+        "text": "✓",
+        "font_name": "Dingbats",
+        "font_size": 8.950080871582031,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          247.6364288330078,
+          136.78372192382812,
+          254.39373779296875,
+          145.73379516601562
+        ]
+      },
+      {
+        "text": "✗",
+        "font_name": "Dingbats",
+        "font_size": 8.950080871582031,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          311.8443298339844,
+          136.78372192382812,
+          316.954833984375,
+          145.73379516601562
+        ]
+      },
+      {
+        "text": "37.79",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.950080871582031,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          352.576171875,
+          138.94615173339844,
+          372.7138366699219,
+          147.89622497558594
+        ]
+      },
+      {
+        "text": "✗",
+        "font_name": "Dingbats",
+        "font_size": 8.950080871582031,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.753902435302734,
+          149.9097900390625,
+          63.86439895629883,
+          158.85986328125
+        ]
+      },
+      {
+        "text": "✗",
+        "font_name": "Dingbats",
+        "font_size": 8.950080871582031,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          114.06539916992188,
+          149.9097900390625,
+          119.17589569091797,
+          158.85986328125
+        ]
+      },
+      {
+        "text": "✓",
+        "font_name": "Dingbats",
+        "font_size": 8.950080871582031,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          180.31390380859375,
+          149.9097900390625,
+          187.0712127685547,
+          158.85986328125
+        ]
+      },
+      {
+        "text": "✗",
+        "font_name": "Dingbats",
+        "font_size": 8.950080871582031,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          248.45982360839844,
+          149.9097900390625,
+          253.5703125,
+          158.85986328125
+        ]
+      },
+      {
+        "text": "✗",
+        "font_name": "Dingbats",
+        "font_size": 8.950080871582031,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          311.8443298339844,
+          149.9097900390625,
+          316.954833984375,
+          158.85986328125
+        ]
+      },
+      {
+        "text": "38.54",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.950080871582031,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          352.576171875,
+          152.0722198486328,
+          372.7138366699219,
+          161.0222930908203
+        ]
+      },
+      {
+        "text": "✗",
+        "font_name": "Dingbats",
+        "font_size": 8.950080871582031,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.753902435302734,
+          163.036865234375,
+          63.86439895629883,
+          171.9869384765625
+        ]
+      },
+      {
+        "text": "✗",
+        "font_name": "Dingbats",
+        "font_size": 8.950080871582031,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          114.06539916992188,
+          163.036865234375,
+          119.17589569091797,
+          171.9869384765625
+        ]
+      },
+      {
+        "text": "✓",
+        "font_name": "Dingbats",
+        "font_size": 8.950080871582031,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          180.31390380859375,
+          163.036865234375,
+          187.0712127685547,
+          171.9869384765625
+        ]
+      },
+      {
+        "text": "✓",
+        "font_name": "Dingbats",
+        "font_size": 8.950080871582031,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          247.63641357421875,
+          163.036865234375,
+          254.3937225341797,
+          171.9869384765625
+        ]
+      },
+      {
+        "text": "✗",
+        "font_name": "Dingbats",
+        "font_size": 8.950080871582031,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          311.8443298339844,
+          163.036865234375,
+          316.954833984375,
+          171.9869384765625
+        ]
+      },
+      {
+        "text": "39.36",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.950080871582031,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          352.576171875,
+          165.1992950439453,
+          372.7138366699219,
+          174.1493682861328
+        ]
+      },
+      {
+        "text": "✗",
+        "font_name": "Dingbats",
+        "font_size": 8.950080871582031,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.75389099121094,
+          176.16397094726562,
+          63.86438751220703,
+          185.11404418945312
+        ]
+      },
+      {
+        "text": "✗",
+        "font_name": "Dingbats",
+        "font_size": 8.950080871582031,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          114.06503295898438,
+          176.16397094726562,
+          119.17552947998047,
+          185.11404418945312
+        ]
+      },
+      {
+        "text": "✓",
+        "font_name": "Dingbats",
+        "font_size": 8.950080871582031,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          180.31324768066406,
+          176.16397094726562,
+          187.070556640625,
+          185.11404418945312
+        ]
+      },
+      {
+        "text": "✓",
+        "font_name": "Dingbats",
+        "font_size": 8.950080871582031,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          247.63949584960938,
+          176.16397094726562,
+          254.3968048095703,
+          185.11404418945312
+        ]
+      },
+      {
+        "text": "✓",
+        "font_name": "Dingbats",
+        "font_size": 8.950080871582031,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          311.0189208984375,
+          176.16397094726562,
+          317.7762451171875,
+          185.11404418945312
+        ]
+      },
+      {
+        "text": "40.36",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.950080871582031,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          352.576171875,
+          178.32640075683594,
+          372.7138366699219,
+          187.27647399902344
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      34.01599884033203,
+      325.28436279296875,
+      379.8377380371094,
+      359.1569519042969
+    ],
+    "content": "Fig. 6: A qualitative visualization of our adaptation process with DocLayNet [30]. Theleft panel shows ground-truth annotations, while the middle and right panels display thepseudo-labels produced by DLAdapter after the 1st and 4th adaptation epoch.",
+    "spans": [
+      {
+        "text": "Fig. 6: A qualitative visualization of our adaptation process with DocLayNet [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          325.28436279296875,
+          345.9350280761719,
+          335.2469787597656
+        ]
+      },
+      {
+        "text": "30",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 33023,
+        "bbox": [
+          345.9350280761719,
+          325.28436279296875,
+          355.8976135253906,
+          335.2469787597656
+        ]
+      },
+      {
+        "text": "]. The",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          355.8976135253906,
+          325.28436279296875,
+          379.8377380371094,
+          335.2469787597656
+        ]
+      },
+      {
+        "text": "left panel shows ground-truth annotations, while the middle and right panels display the",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          337.2393493652344,
+          379.8376770019531,
+          347.20196533203125
+        ]
+      },
+      {
+        "text": "pseudo-labels produced by DLAdapter after the 1st and 4th adaptation epoch.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          349.1943359375,
+          343.06573486328125,
+          359.1569519042969
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      34.01599884033203,
+      385.558349609375,
+      379.8377380371094,
+      467.251953125
+    ],
+    "content": "ground-truth annotations (right) and the pseudo labels predicted by our method after 1and 4 training epochs. Visually, the detection quality improves substantially over time,with more accurate bounding boxes and fewer misclassifications by the fourth epoch.Nevertheless, these results also clearly show the limitations of this method. If the pseudolabels were perfect and thus the source model, we would not need domain adaptation.This also means that the existence of the target labels still provides great added valueand that without them, there is a significant loss in performance.",
+    "spans": [
+      {
+        "text": "ground-truth annotations (right) and the pseudo labels predicted by our method after 1",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          385.558349609375,
+          379.8376770019531,
+          395.5209655761719
+        ]
+      },
+      {
+        "text": "and 4 training epochs. Visually, the detection quality improves substantially over time,",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          397.51434326171875,
+          379.83770751953125,
+          407.4769592285156
+        ]
+      },
+      {
+        "text": "with more accurate bounding boxes and fewer misclassifications by the fourth epoch.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          409.4693298339844,
+          379.8376159667969,
+          419.43194580078125
+        ]
+      },
+      {
+        "text": "Nevertheless, these results also clearly show the limitations of this method. If the pseudo",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          421.42431640625,
+          379.83770751953125,
+          431.3869323730469
+        ]
+      },
+      {
+        "text": "labels were perfect and thus the source model, we would not need domain adaptation.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          433.37933349609375,
+          379.837646484375,
+          443.3419494628906
+        ]
+      },
+      {
+        "text": "This also means that the existence of the target labels still provides great added value",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          445.3343505859375,
+          379.8377380371094,
+          455.2969665527344
+        ]
+      },
+      {
+        "text": "and that without them, there is a significant loss in performance.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          457.2893371582031,
+          289.6961975097656,
+          467.251953125
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      34.01599884033203,
+      487.89501953125,
+      109.08271789550781,
+      499.8502197265625
+    ],
+    "content": "6Conclusion",
+    "spans": [
+      {
+        "text": "6",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 11.9552001953125,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          487.89501953125,
+          39.99359893798828,
+          499.8502197265625
+        ]
+      },
+      {
+        "text": "Conclusion",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 11.9552001953125,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          51.94879913330078,
+          487.89501953125,
+          109.08271789550781,
+          499.8502197265625
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      34.0159912109375,
+      513.6793823242188,
+      379.8440856933594,
+      583.5089111328125
+    ],
+    "content": "In this paper, we introduced DLAdapter, the first method that integrates DocumentLayout Analysis (DLA) with source-free domain adaptation under the constraint thatboth target labels and source data are inaccessible. Through extensive experimentsacross multiple datasets, DLAdapter consistently outperforms source-only baselinesand achieves state-of-the-art performance among existing SFDA methods. Nonetheless,there remains a gap compared to fully supervised target-domain models, largely due to",
+    "spans": [
+      {
+        "text": "In this paper, we introduced",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          513.7703247070312,
+          149.83120727539062,
+          523.73291015625
+        ]
+      },
+      {
+        "text": " DLAdapter",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          149.83120727539062,
+          513.6793823242188,
+          202.7490692138672,
+          523.6419677734375
+        ]
+      },
+      {
+        "text": ", the first method that integrates Document",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          202.74899291992188,
+          513.7703247070312,
+          379.8440856933594,
+          523.73291015625
+        ]
+      },
+      {
+        "text": "Layout Analysis (DLA) with source-free domain adaptation under the constraint that",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.0159912109375,
+          525.726318359375,
+          379.8376770019531,
+          535.6889038085938
+        ]
+      },
+      {
+        "text": "both target labels and source data are inaccessible. Through extensive experiments",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.0159912109375,
+          537.6813354492188,
+          379.8377685546875,
+          547.6439208984375
+        ]
+      },
+      {
+        "text": "across multiple datasets, DLAdapter consistently outperforms source-only baselines",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.0159912109375,
+          549.6363525390625,
+          379.8376770019531,
+          559.5989379882812
+        ]
+      },
+      {
+        "text": "and achieves state-of-the-art performance among existing SFDA methods. Nonetheless,",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.0159912109375,
+          561.59130859375,
+          379.83782958984375,
+          571.5538940429688
+        ]
+      },
+      {
+        "text": "there remains a gap compared to fully supervised target-domain models, largely due to",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.0159912109375,
+          573.5463256835938,
+          379.8377380371094,
+          583.5089111328125
+        ]
+      }
+    ]
+  },
+  {
+    "type": "image",
+    "bbox": [
+      37.474998474121094,
+      201.5428466796875,
+      376.370361328125,
+      314.5079650878906
+    ],
+    "xref": null,
+    "ext": "png"
+  }
+]

@@ -1,0 +1,564 @@
+[
+  {
+    "type": "text",
+    "bbox": [
+      108.0,
+      297.0102844238281,
+      505.7452392578125,
+      339.77508544921875
+    ],
+    "content": "Figure 4: Termination breakdown of the four LLMs on the 8-puzzle across prompting strategies.Each stacked bar represents 100% of trials for a given model and prompting condition (Zero-Shot,CoT, or AoT). The colored segments show the percentage of trials that ended in success (Solved) orin each failure mode.",
+    "spans": [
+      {
+        "text": "Figure 4: Termination breakdown of the four LLMs on the 8-puzzle across prompting strategies.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          297.0102844238281,
+          505.7452392578125,
+          307.072021484375
+        ]
+      },
+      {
+        "text": "Each stacked bar represents 100% of trials for a given model and prompting condition (Zero-Shot,",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.041984558105469,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          307.93426513671875,
+          505.2481384277344,
+          317.9762268066406
+        ]
+      },
+      {
+        "text": "CoT, or AoT). The colored segments show the percentage of trials that ended in success (Solved) or",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.947644233703613,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          318.9148254394531,
+          504.16644287109375,
+          328.86248779296875
+        ]
+      },
+      {
+        "text": "in each failure mode.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          329.8124694824219,
+          192.004638671875,
+          339.77508544921875
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      108.0,
+      361.5052795410156,
+      505.6536865234375,
+      415.1800842285156
+    ],
+    "content": "some achieve or match their best performance in the moderate-length bins. For example, GPT-5-Thinking with AoT matches its lower bin performance in two of the moderate bins. Similarly,GPT-5-mini, with its CoT prompt, solves no puzzles in the two shortest bins, then jumps up to 10% inthe middle one. This pattern points to planning and state-tracking issues, rather than puzzle difficultyalone, as the main determinants of success rates.",
+    "spans": [
+      {
+        "text": "some achieve or match their best performance in the moderate-length bins. For example, GPT-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          361.5052795410156,
+          505.6536865234375,
+          371.5670166015625
+        ]
+      },
+      {
+        "text": "5-Thinking with AoT matches its lower bin performance in two of the moderate bins. Similarly,",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          372.414306640625,
+          505.2471923828125,
+          382.4760437011719
+        ]
+      },
+      {
+        "text": "GPT-5-mini, with its CoT prompt, solves no puzzles in the two shortest bins, then jumps up to 10% in",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.862470626831055,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          383.47540283203125,
+          504.0014953613281,
+          393.3378601074219
+        ]
+      },
+      {
+        "text": "the middle one. This pattern points to planning and state-tracking issues, rather than puzzle difficulty",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.882577896118164,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          394.3691711425781,
+          504.35345458984375,
+          404.2517395019531
+        ]
+      },
+      {
+        "text": "alone, as the main determinants of success rates.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          405.21746826171875,
+          300.84613037109375,
+          415.1800842285156
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      108.0,
+      431.5875244140625,
+      197.97222900390625,
+      441.55010986328125
+    ],
+    "content": "4.2Feedback Helps",
+    "spans": [
+      {
+        "text": "4.2",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          108.0,
+          431.5875244140625,
+          120.4532470703125,
+          441.55010986328125
+        ]
+      },
+      {
+        "text": "Feedback Helps",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          130.4158477783203,
+          431.5875244140625,
+          197.97222900390625,
+          441.55010986328125
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      107.64099884033203,
+      452.5304260253906,
+      505.6548767089844,
+      527.8720092773438
+    ],
+    "content": "As shown in Fig. 5, providing feedback, additional attempts, and saving progress yielded performancegains across all models and prompting strategies, except for Llama 3.1 8B-Instruct. GPT-5-Thinkingshowed the most significant improvement, with AoT prompting and suggestive feedback yielding a68% success rate, the best performance for any model. As the level of feedback increased, GPT-5-Thinking’s performance improved with AoT and Zero-Shot, but the opposite occurred with CoT: itsperformance steadily decreased. We observe the same trend for GPT-5-mini under CoT. These resultssuggest that more informative feedback may not always be desirable for these models.",
+    "spans": [
+      {
+        "text": "As shown in Fig. 5, providing feedback, additional attempts, and saving progress yielded performance",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.862470626831055,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.64099884033203,
+          452.5304260253906,
+          504.0036926269531,
+          462.39288330078125
+        ]
+      },
+      {
+        "text": "gains across all models and prompting strategies, except for Llama 3.1 8B-Instruct. GPT-5-Thinking",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.902643203735352,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          463.408935546875,
+          503.99554443359375,
+          473.31158447265625
+        ]
+      },
+      {
+        "text": "showed the most significant improvement, with AoT prompting and suggestive feedback yielding a",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.977532386779785,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          474.2611389160156,
+          504.0025939941406,
+          484.2386779785156
+        ]
+      },
+      {
+        "text": "68% success rate, the best performance for any model. As the level of feedback increased, GPT-5-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.051863670349121,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          485.1147766113281,
+          505.6548767089844,
+          495.1666564941406
+        ]
+      },
+      {
+        "text": "Thinking’s performance improved with AoT and Zero-Shot, but the opposite occurred with CoT: its",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.947644233703613,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.69100189208984,
+          496.1028137207031,
+          503.9964904785156,
+          506.05047607421875
+        ]
+      },
+      {
+        "text": "performance steadily decreased. We observe the same trend for GPT-5-mini under CoT. These results",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.862470626831055,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          507.0764465332031,
+          504.0016174316406,
+          516.9389038085938
+        ]
+      },
+      {
+        "text": "suggest that more informative feedback may not always be desirable for these models.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          517.909423828125,
+          451.3211975097656,
+          527.8720092773438
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      107.69100189208984,
+      534.3353881835938,
+      504.2514953613281,
+      642.4420776367188
+    ],
+    "content": "The other models, excluding Llama 3.1 8B-Instruct, also showed steady gains. Both Gemini-2.5-Proand GPT-5-mini achieved a peak success rate of 18%. Notably, both models achieved this peakunder the \"Repeat\" condition (Gemini-2.5-Pro with Zero-Shot and GPT-5-mini with CoT), suggestingthat the primary benefit came from saving progress and re-prompting rather than from the feedbackcontent itself. Gemini-2.5-Pro, however, matched this 18% performance when using the combinationof AoT prompting and suggestive feedback. GPT-5-mini with CoT, similar to GPT-5-Thinking withCoT, shows a steady decline in performance as the level of feedback increases, again highlightingthat more informative feedback is not always beneficial. Finally, at the lowest end of the performancespectrum, Llama 3.1 8B-Instruct failed to solve any puzzles even with feedback, underscoring asignificant capability gap on this task.",
+    "spans": [
+      {
+        "text": "The other models, excluding Llama 3.1 8B-Instruct, also showed steady gains. Both Gemini-2.5-Pro",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.9126615524292,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.69100189208984,
+          534.3353881835938,
+          503.9952087402344,
+          544.248046875
+        ]
+      },
+      {
+        "text": "and GPT-5-mini achieved a peak success rate of 18%. Notably, both models achieved this peak",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          545.1312255859375,
+          504.2514953613281,
+          555.1929931640625
+        ]
+      },
+      {
+        "text": "under the \"Repeat\" condition (Gemini-2.5-Pro with Zero-Shot and GPT-5-mini with CoT), suggesting",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.862470626831055,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          556.1923828125,
+          504.00152587890625,
+          566.0548706054688
+        ]
+      },
+      {
+        "text": "that the primary benefit came from saving progress and re-prompting rather than from the feedback",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.972557067871094,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          567.0178833007812,
+          504.246826171875,
+          576.990478515625
+        ]
+      },
+      {
+        "text": "content itself. Gemini-2.5-Pro, however, matched this 18% performance when using the combination",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.872529029846191,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          578.0027465820312,
+          503.99761962890625,
+          587.8753051757812
+        ]
+      },
+      {
+        "text": "of AoT prompting and suggestive feedback. GPT-5-mini with CoT, similar to GPT-5-Thinking with",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.947644233703613,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          588.8547973632812,
+          503.9975280761719,
+          598.8024291992188
+        ]
+      },
+      {
+        "text": "CoT, shows a steady decline in performance as the level of feedback increases, again highlighting",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          599.67724609375,
+          503.9974365234375,
+          609.739013671875
+        ]
+      },
+      {
+        "text": "that more informative feedback is not always beneficial. Finally, at the lowest end of the performance",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.862470626831055,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          610.7373657226562,
+          504.00146484375,
+          620.599853515625
+        ]
+      },
+      {
+        "text": "spectrum, Llama 3.1 8B-Instruct failed to solve any puzzles even with feedback, underscoring a",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          621.4952392578125,
+          503.9974365234375,
+          631.5570068359375
+        ]
+      },
+      {
+        "text": "significant capability gap on this task.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          632.4794921875,
+          258.49505615234375,
+          642.4420776367188
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      108.0,
+      658.8494873046875,
+      357.4734191894531,
+      668.8120727539062
+    ],
+    "content": "4.3External Move Validator Highlights Planning Deficits",
+    "spans": [
+      {
+        "text": "4.3",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          108.0,
+          658.8494873046875,
+          120.4532470703125,
+          668.8120727539062
+        ]
+      },
+      {
+        "text": "External Move Validator Highlights Planning Deficits",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          130.4158477783203,
+          658.8494873046875,
+          357.4734191894531,
+          668.8120727539062
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      108.0,
+      679.7477416992188,
+      504.0043640136719,
+      722.4154663085938
+    ],
+    "content": "In the final experiment, we aimed to isolate planning abilities by offloading part of the state trackingresponsibilities. The results, shown in Fig. 6, reveal a critical failure in heuristic planning: none ofthe models solved any puzzles. The dominant failure mode for the models shifts to looping, in whichthey repeat a move and return to an already visited board configuration. GPT-5-Thinking looped in",
+    "spans": [
+      {
+        "text": "In the final experiment, we aimed to isolate planning abilities by offloading part of the state tracking",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.92266845703125,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          679.7477416992188,
+          503.99737548828125,
+          689.67041015625
+        ]
+      },
+      {
+        "text": "responsibilities. The results, shown in Fig. 6, reveal a critical failure in heuristic planning: none of",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.02714729309082,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          690.5775146484375,
+          504.0043640136719,
+          700.6046752929688
+        ]
+      },
+      {
+        "text": "the models solved any puzzles. The dominant failure mode for the models shifts to looping, in which",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.877554893493652,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          701.5999755859375,
+          503.9993591308594,
+          711.4775390625
+        ]
+      },
+      {
+        "text": "they repeat a move and return to an already visited board configuration. GPT-5-Thinking looped in",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.997407913208008,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          712.4180908203125,
+          503.99658203125,
+          722.4154663085938
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      303.5090026855469,
+      742.3324584960938,
+      308.49029541015625,
+      752.2950439453125
+    ],
+    "content": "7",
+    "spans": [
+      {
+        "text": "7",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          303.5090026855469,
+          742.3324584960938,
+          308.49029541015625,
+          752.2950439453125
+        ]
+      }
+    ]
+  },
+  {
+    "type": "image",
+    "bbox": [
+      126.55599975585938,
+      72.00079345703125,
+      482.95458984375,
+      286.75799560546875
+    ],
+    "xref": null,
+    "ext": "png"
+  }
+]

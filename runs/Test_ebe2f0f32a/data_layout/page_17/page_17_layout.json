@@ -1,0 +1,753 @@
+[
+  {
+    "type": "text",
+    "bbox": [
+      117.0510025024414,
+      80.60951232910156,
+      398.88348388671875,
+      112.39010620117188
+    ],
+    "content": "Assistant:Initial State: [[1, 3, 6], [4, 0, 2], [7, 5, 8]]. h=6.Search Process: Empty space is at (1, 1). Possible moves are 3, 4, 5, 2.",
+    "spans": [
+      {
+        "text": "Assistant:",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.0510025024414,
+          80.60951232910156,
+          156.35350036621094,
+          90.57211303710938
+        ]
+      },
+      {
+        "text": "Initial State: [[1, 3, 6], [4, 0, 2], [7, 5, 8]]. h=6.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          91.51850891113281,
+          304.3581848144531,
+          101.48110961914062
+        ]
+      },
+      {
+        "text": "Search Process: Empty space is at (1, 1). Possible moves are 3, 4, 5, 2.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          102.42750549316406,
+          398.88348388671875,
+          112.39010620117188
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      117.41000366210938,
+      124.24549865722656,
+      208.38844299316406,
+      166.93508911132812
+    ],
+    "content": "Move 3: h=7 -> WorseMove 4: h=7 -> WorseMove 5: h=5 -> BetterMove 2: h=5 -> Better",
+    "spans": [
+      {
+        "text": "Move 3: h=7 -> Worse",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          124.24549865722656,
+          208.38844299316406,
+          134.20809936523438
+        ]
+      },
+      {
+        "text": "Move 4: h=7 -> Worse",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          135.1544952392578,
+          208.38844299316406,
+          145.11709594726562
+        ]
+      },
+      {
+        "text": "Move 5: h=5 -> Better",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          146.06349182128906,
+          207.53167724609375,
+          156.02609252929688
+        ]
+      },
+      {
+        "text": "Move 2: h=5 -> Better",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          156.9724884033203,
+          207.53167724609375,
+          166.93508911132812
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      117.10100555419922,
+      178.7904815673828,
+      484.8405456542969,
+      199.66207885742188
+    ],
+    "content": "Two moves give equal gains. I’ll try move 2 first.If in three moves I am not making progress I will come back to this position and try move 5.",
+    "spans": [
+      {
+        "text": "Two moves give equal gains. I’ll try move 2 first.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.10100555419922,
+          178.7904815673828,
+          312.9557800292969,
+          188.75308227539062
+        ]
+      },
+      {
+        "text": "If in three moves I am not making progress I will come back to this position and try move 5.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          189.69947814941406,
+          484.8405456542969,
+          199.66207885742188
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      117.41000366210938,
+      211.5185089111328,
+      402.42010498046875,
+      232.39010620117188
+    ],
+    "content": "Move tile 2. Current path: [2]. State: [[1, 3, 6], [4, 2, 0], [7, 5, 8]]. h=5.Search Process: Empty space is at (1, 2). Possible moves are 6, 2, 8.",
+    "spans": [
+      {
+        "text": "Move tile 2. Current path: [2]. State: [[1, 3, 6], [4, 2, 0], [7, 5, 8]]. h=5.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          211.5185089111328,
+          402.42010498046875,
+          221.48110961914062
+        ]
+      },
+      {
+        "text": "Search Process: Empty space is at (1, 2). Possible moves are 6, 2, 8.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          222.42750549316406,
+          388.9208679199219,
+          232.39010620117188
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      117.41000366210938,
+      244.24549865722656,
+      208.38844299316406,
+      276.0260925292969
+    ],
+    "content": "Move 6: h=5 -> BetterMove 2: h=6 -> WorseMove 8: h=6 -> Worse",
+    "spans": [
+      {
+        "text": "Move 6: h=5 -> Better",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          244.24549865722656,
+          207.53167724609375,
+          254.20809936523438
+        ]
+      },
+      {
+        "text": "Move 2: h=6 -> Worse",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          255.1544952392578,
+          208.38844299316406,
+          265.1170959472656
+        ]
+      },
+      {
+        "text": "Move 8: h=6 -> Worse",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          266.0634765625,
+          208.38844299316406,
+          276.0260925292969
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      117.41000366210938,
+      287.8814697265625,
+      412.3826599121094,
+      308.7530822753906
+    ],
+    "content": "Move tile 6. Current path: [2, 6]. State: [[1, 3, 0], [4, 2, 6], [7, 5, 8]]. h=4.Search Process: Empty space is at (0, 2). Possible moves are 3, 6.",
+    "spans": [
+      {
+        "text": "Move tile 6. Current path: [2, 6]. State: [[1, 3, 0], [4, 2, 6], [7, 5, 8]]. h=4.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          287.8814697265625,
+          412.3826599121094,
+          297.8440856933594
+        ]
+      },
+      {
+        "text": "Search Process: Empty space is at (0, 2). Possible moves are 3, 6.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          298.79046630859375,
+          378.958251953125,
+          308.7530822753906
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      117.41000366210938,
+      320.60845947265625,
+      352.5970764160156,
+      341.4810791015625
+    ],
+    "content": "Move 3: h=3 -> BetterMove 6: h=5 -> Worse [skip: visited/immediate backtrack]",
+    "spans": [
+      {
+        "text": "Move 3: h=3 -> Better",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          320.60845947265625,
+          207.53167724609375,
+          330.5710754394531
+        ]
+      },
+      {
+        "text": "Move 6: h=5 -> Worse [skip: visited/immediate backtrack]",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          331.5184631347656,
+          352.5970764160156,
+          341.4810791015625
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      117.41000366210938,
+      353.3364562988281,
+      388.9208679199219,
+      385.1170654296875
+    ],
+    "content": "Move tile 3. Current path: [2, 6, 3].State: [[1, 0, 3], [4, 2, 6], [7, 5, 8]]. h=3.Search Process: Empty space is at (0, 1). Possible moves are 1, 2, 3.",
+    "spans": [
+      {
+        "text": "Move tile 3. Current path: [2, 6, 3].",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          353.3364562988281,
+          258.5999450683594,
+          363.299072265625
+        ]
+      },
+      {
+        "text": "State: [[1, 0, 3], [4, 2, 6], [7, 5, 8]]. h=3.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          364.2454528808594,
+          278.06683349609375,
+          374.20806884765625
+        ]
+      },
+      {
+        "text": "Search Process: Empty space is at (0, 1). Possible moves are 1, 2, 3.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          375.1544494628906,
+          388.9208679199219,
+          385.1170654296875
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      117.41000366210938,
+      396.9724426269531,
+      208.38844299316406,
+      428.7530517578125
+    ],
+    "content": "Move 1: h=4 -> WorseMove 2: h=2 -> BetterMove 3: h=4 -> Worse",
+    "spans": [
+      {
+        "text": "Move 1: h=4 -> Worse",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          396.9724426269531,
+          208.38844299316406,
+          406.93505859375
+        ]
+      },
+      {
+        "text": "Move 2: h=2 -> Better",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          407.8814392089844,
+          207.53167724609375,
+          417.84405517578125
+        ]
+      },
+      {
+        "text": "Move 3: h=4 -> Worse",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          418.7904357910156,
+          208.38844299316406,
+          428.7530517578125
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      117.41000366210938,
+      440.6084289550781,
+      398.88348388671875,
+      472.3900451660156
+    ],
+    "content": "Move tile 2. Current path: [2, 6, 3, 2].State: [[1, 2, 3], [4, 0, 6], [7, 5, 8]]. h=2.Search Process: Empty space is at (1, 1). Possible moves are 2, 4, 6, 5.",
+    "spans": [
+      {
+        "text": "Move tile 2. Current path: [2, 6, 3, 2].",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          440.6084289550781,
+          268.5625305175781,
+          450.571044921875
+        ]
+      },
+      {
+        "text": "State: [[1, 2, 3], [4, 0, 6], [7, 5, 8]]. h=2.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          451.5174255371094,
+          278.06683349609375,
+          461.48004150390625
+        ]
+      },
+      {
+        "text": "Search Process: Empty space is at (1, 1). Possible moves are 2, 4, 6, 5.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          462.42742919921875,
+          398.88348388671875,
+          472.3900451660156
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      117.41000366210938,
+      484.24542236328125,
+      208.38844299316406,
+      526.9349975585938
+    ],
+    "content": "Move 2: h=3 -> WorseMove 4: h=3 -> WorseMove 5: h=1 -> BetterMove 6: h=3 -> Worse",
+    "spans": [
+      {
+        "text": "Move 2: h=3 -> Worse",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          484.24542236328125,
+          208.38844299316406,
+          494.2080383300781
+        ]
+      },
+      {
+        "text": "Move 4: h=3 -> Worse",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          495.1544189453125,
+          208.38844299316406,
+          505.1170349121094
+        ]
+      },
+      {
+        "text": "Move 5: h=1 -> Better",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          506.06341552734375,
+          207.53167724609375,
+          516.0260009765625
+        ]
+      },
+      {
+        "text": "Move 6: h=3 -> Worse",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          516.972412109375,
+          208.38844299316406,
+          526.9349975585938
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      117.41000366210938,
+      538.7904052734375,
+      388.9208679199219,
+      570.5709838867188
+    ],
+    "content": "Move tile 5. Current path: [2, 6, 3, 2, 5].State: [[1, 2, 3], [4, 5, 6], [7, 0, 8]]. h=1.Search Process: Empty space is at (2, 1). Possible moves are 5, 7, 8.",
+    "spans": [
+      {
+        "text": "Move tile 5. Current path: [2, 6, 3, 2, 5].",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          538.7904052734375,
+          278.525146484375,
+          548.7529907226562
+        ]
+      },
+      {
+        "text": "State: [[1, 2, 3], [4, 5, 6], [7, 0, 8]]. h=1.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          549.6994018554688,
+          278.06683349609375,
+          559.6619873046875
+        ]
+      },
+      {
+        "text": "Search Process: Empty space is at (2, 1). Possible moves are 5, 7, 8.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          560.6083984375,
+          388.9208679199219,
+          570.5709838867188
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      117.41000366210938,
+      582.4263916015625,
+      208.38844299316406,
+      614.2079467773438
+    ],
+    "content": "Move 5: h=2 -> WorseMove 7: h=2 -> WorseMove 8: h=0 -> Better",
+    "spans": [
+      {
+        "text": "Move 5: h=2 -> Worse",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          582.4263916015625,
+          208.38844299316406,
+          592.3889770507812
+        ]
+      },
+      {
+        "text": "Move 7: h=2 -> Worse",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          593.33642578125,
+          208.38844299316406,
+          603.2990112304688
+        ]
+      },
+      {
+        "text": "Move 8: h=0 -> Better",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          604.245361328125,
+          207.53167724609375,
+          614.2079467773438
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      117.41000366210938,
+      626.0633544921875,
+      288.4877624511719,
+      657.8439331054688
+    ],
+    "content": "Move tile 8. Current path: [2, 6, 3, 2, 5, 8].State: [[1, 2, 3], [4, 5, 6], [7, 8, 0]]Puzzle Solved!",
+    "spans": [
+      {
+        "text": "Move tile 8. Current path: [2, 6, 3, 2, 5, 8].",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          626.0633544921875,
+          288.4877624511719,
+          636.0259399414062
+        ]
+      },
+      {
+        "text": "State: [[1, 2, 3], [4, 5, 6], [7, 8, 0]]",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          636.972412109375,
+          254.41561889648438,
+          646.9349975585938
+        ]
+      },
+      {
+        "text": "Puzzle Solved!",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          647.88134765625,
+          177.30516052246094,
+          657.8439331054688
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      117.41000366210938,
+      669.6994018554688,
+      238.65478515625,
+      690.5709838867188
+    ],
+    "content": "Output:Final Answer: [2, 6, 3, 2, 5, 8]",
+    "spans": [
+      {
+        "text": "Output:",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          669.6994018554688,
+          147.855712890625,
+          679.6619873046875
+        ]
+      },
+      {
+        "text": "Final Answer: [2, 6, 3, 2, 5, 8]",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          680.6083984375,
+          238.65478515625,
+          690.5709838867188
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      301.0190124511719,
+      742.3324584960938,
+      310.9815979003906,
+      752.2950439453125
+    ],
+    "content": "18",
+    "spans": [
+      {
+        "text": "18",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          301.0190124511719,
+          742.3324584960938,
+          310.9815979003906,
+          752.2950439453125
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,1367 @@
+[
+  {
+    "type": "text",
+    "bbox": [
+      318.3940124511719,
+      11.27492904663086,
+      379.8408203125,
+      20.241329193115234
+    ],
+    "content": "SFDLA7",
+    "spans": [
+      {
+        "text": "SFDLA",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          318.3940124511719,
+          11.27492904663086,
+          346.7906494140625,
+          20.241329193115234
+        ]
+      },
+      {
+        "text": "7",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          375.35760498046875,
+          11.27492904663086,
+          379.8408203125,
+          20.241329193115234
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      334.4181213378906,
+      37.705013275146484,
+      340.3875732421875,
+      135.5721435546875
+    ],
+    "content": "Generating Class-Aware pseudo labels",
+    "spans": [
+      {
+        "text": "Generating Class-Aware pseudo labels",
+        "font_name": "TimesNRMTPro",
+        "font_size": 5.969447612762451,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          334.4181213378906,
+          37.705013275146484,
+          340.3875732421875,
+          135.5721435546875
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      342.73388671875,
+      39.536659240722656,
+      348.7033386230469,
+      133.73907470703125
+    ],
+    "content": "with adynamic consensus mechanism",
+    "spans": [
+      {
+        "text": "with adynamic consensus mechanism",
+        "font_name": "TimesNRMTPro",
+        "font_size": 5.969447612762451,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          342.73388671875,
+          39.536659240722656,
+          348.7033386230469,
+          133.73907470703125
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      151.75912475585938,
+      95.08059692382812,
+      156.87652587890625,
+      112.12152099609375
+    ],
+    "content": "EMA π₂",
+    "spans": [
+      {
+        "text": "EMA π₂",
+        "font_name": "TimesNRMTPro-BoldItalic",
+        "font_size": 5.117400169372559,
+        "font_flags": 22,
+        "color": 0,
+        "bbox": [
+          151.75912475585938,
+          95.08059692382812,
+          156.87652587890625,
+          112.12152099609375
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      51.36664581298828,
+      57.070526123046875,
+      101.90117645263672,
+      63.8932991027832
+    ],
+    "content": "Document Image",
+    "spans": [
+      {
+        "text": "Document Image",
+        "font_name": "TimesNRMTPro",
+        "font_size": 6.8227739334106445,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          51.36664581298828,
+          57.070526123046875,
+          101.90117645263672,
+          63.8932991027832
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      162.7568359375,
+      203.58584594726562,
+      195.1504669189453,
+      209.55528259277344
+    ],
+    "content": "Student Net.",
+    "spans": [
+      {
+        "text": "Student Net.",
+        "font_name": "TimesNRMTPro",
+        "font_size": 5.969447612762451,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          162.7568359375,
+          203.58584594726562,
+          195.1504669189453,
+          209.55528259277344
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      138.65460205078125,
+      36.54269027709961,
+      187.6598358154297,
+      42.51213836669922
+    ],
+    "content": "Static Teacher Net.",
+    "spans": [
+      {
+        "text": "Static Teacher Net.",
+        "font_name": "TimesNRMTPro",
+        "font_size": 5.969447612762451,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          138.65460205078125,
+          36.54269027709961,
+          187.6598358154297,
+          42.51213836669922
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      186.31521606445312,
+      103.50856018066406,
+      244.1544952392578,
+      109.4780044555664
+    ],
+    "content": "Dynamic Teacher Net.",
+    "spans": [
+      {
+        "text": "Dynamic Teacher Net.",
+        "font_name": "TimesNRMTPro",
+        "font_size": 5.969447612762451,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          186.31521606445312,
+          103.50856018066406,
+          244.1544952392578,
+          109.4780044555664
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      177.30990600585938,
+      138.93719482421875,
+      194.350830078125,
+      144.05459594726562
+    ],
+    "content": "EMA π₁",
+    "spans": [
+      {
+        "text": "EMA π₁",
+        "font_name": "TimesNRMTPro-BoldItalic",
+        "font_size": 5.117400169372559,
+        "font_flags": 22,
+        "color": 0,
+        "bbox": [
+          177.30990600585938,
+          138.93719482421875,
+          194.350830078125,
+          144.05459594726562
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      125.1389389038086,
+      108.12467193603516,
+      128.92457580566406,
+      178.89682006835938
+    ],
+    "content": "Weak AugmentationStrong Augmentation",
+    "spans": [
+      {
+        "text": "Weak Augmentation",
+        "font_name": "TimesNRMTPro",
+        "font_size": 3.4107472896575928,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          125.51383209228516,
+          108.12467193603516,
+          128.92457580566406,
+          138.50009155273438
+        ]
+      },
+      {
+        "text": "Strong Augmentation",
+        "font_name": "TimesNRMTPro",
+        "font_size": 3.4107472896575928,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          125.1389389038086,
+          147.17774963378906,
+          128.5496826171875,
+          178.89682006835938
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      34.01599884033203,
+      226.3284454345703,
+      379.8477783203125,
+      272.1570129394531
+    ],
+    "content": "Fig. 5: Architecture of our method DLAdapter for SFDLA task: We follow a student-teacher framework with a static and dynamic teacher that generates class-aware pseudo-labels for the student in a consensus mechanism. Various supporting losses (yellow) letthe student model learn, which in turn updates the two teacher models via EMA.",
+    "spans": [
+      {
+        "text": "Fig. 5: Architecture of our method DLAdapter for SFDLA task: We follow a student-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          226.3284454345703,
+          379.8377380371094,
+          236.29104614257812
+        ]
+      },
+      {
+        "text": "teacher framework with a static and dynamic teacher that generates class-aware pseudo-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          238.28343200683594,
+          379.8477783203125,
+          248.24603271484375
+        ]
+      },
+      {
+        "text": "labels for the student in a consensus mechanism. Various supporting losses (yellow) let",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          250.23841857910156,
+          379.8376770019531,
+          260.2010192871094
+        ]
+      },
+      {
+        "text": "the student model learn, which in turn updates the two teacher models via EMA.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          262.19439697265625,
+          354.6124572753906,
+          272.1570129394531
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      34.01599884033203,
+      297.2574462890625,
+      253.5418701171875,
+      307.22003173828125
+    ],
+    "content": "4.1Student Model with Dual-Teacher Framework",
+    "spans": [
+      {
+        "text": "4.1",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          297.2574462890625,
+          46.4692497253418,
+          307.22003173828125
+        ]
+      },
+      {
+        "text": "Student Model with Dual-Teacher Framework",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          56.43185043334961,
+          297.2574462890625,
+          253.5418701171875,
+          307.22003173828125
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      34.0159912109375,
+      316.2013854980469,
+      379.83929443359375,
+      362.0300598144531
+    ],
+    "content": "A major difficulty in SFDLA is the overfitting to noisy pseudo-labels. To address thisissue, we draw inspiration from PETS [26] and propose a dual-teacher framework com-prising a static teacher and a dynamic teacher. Let \\theta _{\\mathrm {teac}} and \\theta _{\\mathrm {stud}} denote the teacherand student weights, respectively. After every update interval, we compute:",
+    "spans": [
+      {
+        "text": "A major difficulty in SFDLA is the overfitting to noisy pseudo-labels. To address this",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          316.2013854980469,
+          379.8376770019531,
+          326.16400146484375
+        ]
+      },
+      {
+        "text": "issue, we draw inspiration from PETS [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          328.1563720703125,
+          189.76129150390625,
+          338.1189880371094
+        ]
+      },
+      {
+        "text": "26",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 33023,
+        "bbox": [
+          189.76129150390625,
+          328.1563720703125,
+          199.723876953125,
+          338.1189880371094
+        ]
+      },
+      {
+        "text": "] and propose a dual-teacher framework com-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          199.723876953125,
+          328.1563720703125,
+          379.8376770019531,
+          338.1189880371094
+        ]
+      },
+      {
+        "text": "prising a static teacher and a dynamic teacher. Let",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01599884033203,
+          340.11236572265625,
+          238.9366912841797,
+          350.0749816894531
+        ]
+      },
+      {
+        "text": " \\",
+        "font_name": "CMMI10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          238.9366912841797,
+          339.8818359375,
+          246.84445190429688,
+          349.844482421875
+        ]
+      },
+      {
+        "text": "theta _{\\mathrm {teac}}",
+        "font_name": "CMR7",
+        "font_size": 6.973800182342529,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          246.84799194335938,
+          343.7117004394531,
+          264.9868469238281,
+          350.6855163574219
+        ]
+      },
+      {
+        "text": " and",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          261.0187683105469,
+          340.1124267578125,
+          279.1419982910156,
+          351.56903076171875
+        ]
+      },
+      {
+        "text": " \\",
+        "font_name": "CMMI10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          279.1419982910156,
+          339.88189697265625,
+          287.054443359375,
+          349.844482421875
+        ]
+      },
+      {
+        "text": "theta _{\\mathrm {stud}}",
+        "font_name": "CMR7",
+        "font_size": 6.973800182342529,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          287.0589904785156,
+          343.7117004394531,
+          306.52288818359375,
+          350.6855163574219
+        ]
+      },
+      {
+        "text": " denote the teacher",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          302.12939453125,
+          340.1124267578125,
+          379.83929443359375,
+          351.56903076171875
+        ]
+      },
+      {
+        "text": "and student weights, respectively. After every update interval, we compute:",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.0159912109375,
+          352.06744384765625,
+          333.3522644042969,
+          362.0300598144531
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      135.86500549316406,
+      371.5083312988281,
+      379.8423767089844,
+      383.8714904785156
+    ],
+    "content": "\\la b e l {eq :te a cher_ema} \\theta _{\\mathrm {teac}} \\;\\leftarrow \\; \\pi \\,\\theta _{\\mathrm {teac}} \\;+\\; \\bigl (1-\\pi \\bigr )\\,\\theta _{\\mathrm {stud}}, (1)",
+    "spans": [
+      {
+        "text": " ",
+        "font_name": "CMMI10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          135.86500549316406,
+          372.4149169921875,
+          140.53746032714844,
+          382.37750244140625
+        ]
+      },
+      {
+        "text": " \\la",
+        "font_name": "CMR7",
+        "font_size": 6.973800182342529,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          140.54200744628906,
+          376.2447204589844,
+          154.71278381347656,
+          383.2185363769531
+        ]
+      },
+      {
+        "text": " b",
+        "font_name": "CMSY10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          154.71278381347656,
+          372.2857971191406,
+          170.70660400390625,
+          383.74237060546875
+        ]
+      },
+      {
+        "text": " e l",
+        "font_name": "CMMI10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          170.70660400390625,
+          372.4149169921875,
+          188.6145477294922,
+          382.37750244140625
+        ]
+      },
+      {
+        "text": " {eq",
+        "font_name": "CMR7",
+        "font_size": 6.973800182342529,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          188.614990234375,
+          376.2447204589844,
+          202.7857666015625,
+          383.2185363769531
+        ]
+      },
+      {
+        "text": " :",
+        "font_name": "CMR10",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          202.7857666015625,
+          372.4149169921875,
+          216.014892578125,
+          383.8714904785156
+        ]
+      },
+      {
+        "text": "t",
+        "font_name": "CMEX10",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          220.99398803710938,
+          371.5083312988281,
+          225.55685424804688,
+          381.4709167480469
+        ]
+      },
+      {
+        "text": "e",
+        "font_name": "CMR10",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          225.5599822998047,
+          372.4149169921875,
+          230.54127502441406,
+          382.37750244140625
+        ]
+      },
+      {
+        "text": " a",
+        "font_name": "CMSY10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          230.54127502441406,
+          372.2857971191406,
+          240.50588989257812,
+          382.2483825683594
+        ]
+      },
+      {
+        "text": " c",
+        "font_name": "CMMI10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          240.50588989257812,
+          372.4149169921875,
+          248.39666748046875,
+          382.37750244140625
+        ]
+      },
+      {
+        "text": "h",
+        "font_name": "CMEX10",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          248.7539825439453,
+          371.5083312988281,
+          253.3168487548828,
+          381.4709167480469
+        ]
+      },
+      {
+        "text": "e",
+        "font_name": "CMMI10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          254.98098754882812,
+          372.4149169921875,
+          259.6534423828125,
+          382.37750244140625
+        ]
+      },
+      {
+        "text": "r_em",
+        "font_name": "CMR7",
+        "font_size": 6.973800182342529,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          259.6579895019531,
+          376.2447509765625,
+          274.7283935546875,
+          383.21856689453125
+        ]
+      },
+      {
+        "text": "a} \\theta _{\\mathrm {teac}} \\;\\leftarrow \\; \\pi \\,\\theta _{\\mathrm {teac}} \\;+\\; \\bigl (1-\\pi \\bigr )\\,\\theta _{\\mathrm {stud}}, ",
+        "font_name": "CMMI10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          275.2259826660156,
+          372.4149169921875,
+          286.74273681640625,
+          382.37750244140625
+        ]
+      },
+      {
+        "text": "(1)",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          368.22601318359375,
+          372.64544677734375,
+          379.8423767089844,
+          382.6080627441406
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      34.01600646972656,
+      393.08233642578125,
+      379.8478088378906,
+      583.509033203125
+    ],
+    "content": "where π ∈[0,1] is the momentum factor,\u00001 −π\u0001determines the portion of updatedparameters incorporated at each update.Dynamic Teacher Model. As a normal single teacher framework, the dynamic teacheremploys a larger \\pi _{\\mathrm {1}}, while the dynamic teacher model updates every 2000 iterations intraining. This allows the dynamic teacher to capture the student’s most recent learningin near real time, reflecting subtle target-domain cues as soon as they emerge. More-over, since each update only partially shifts its parameters, the dynamic teacher avoidsmaking wrong weights shift with student errors or noisy pseudo-labels.Static Teacher Model. By contrast, we choose a relatively small \\pi _{\\mathrm {2}}, but still largeenough to prevent noisy weights shifting in the static teacher model. After each trainingepoch, the static teacher absorbs a greater fraction of the student’s current weights, re-sulting in a sizeable parameter shift. Infrequent updates shield it from transient gradientnoise, accumulating the student’s progress more conservatively over a larger traininginterval. Meanwhile, each static update assimilates a substantial portion of the student’sparameters, this teacher can also serve as a robust reference if rapid self-training leadsto severe label drift, which effectively stabilizes the student model.",
+    "spans": [
+      {
+        "text": "where",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.016021728515625,
+          394.21942138671875,
+          58.354652404785156,
+          404.1820373535156
+        ]
+      },
+      {
+        "text": " π",
+        "font_name": "CMMI10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          58.354652404785156,
+          393.9888916015625,
+          67.22470092773438,
+          403.95147705078125
+        ]
+      },
+      {
+        "text": " ∈",
+        "font_name": "CMSY10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          67.22470092773438,
+          393.8597717285156,
+          78.29207611083984,
+          403.8223571777344
+        ]
+      },
+      {
+        "text": "[0",
+        "font_name": "CMR10",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          82.35401916503906,
+          393.9888916015625,
+          90.10491943359375,
+          403.95147705078125
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "CMMI10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          90.10301971435547,
+          393.9888916015625,
+          92.87261962890625,
+          403.95147705078125
+        ]
+      },
+      {
+        "text": "1]",
+        "font_name": "CMR10",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          92.8700180053711,
+          393.9888916015625,
+          100.62091827392578,
+          403.95147705078125
+        ]
+      },
+      {
+        "text": " is the momentum factor,",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          100.62091827392578,
+          394.21942138671875,
+          202.81834411621094,
+          404.1820373535156
+        ]
+      },
+      {
+        "text": "\u0000",
+        "font_name": "CMEX10",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          206.00901794433594,
+          393.08233642578125,
+          210.57188415527344,
+          403.044921875
+        ]
+      },
+      {
+        "text": "1",
+        "font_name": "CMR10",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          210.57501220703125,
+          393.9889221191406,
+          215.55630493164062,
+          403.9515075683594
+        ]
+      },
+      {
+        "text": " −",
+        "font_name": "CMSY10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          215.55630493164062,
+          393.85980224609375,
+          226.04090881347656,
+          403.8223876953125
+        ]
+      },
+      {
+        "text": "π",
+        "font_name": "CMMI10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          228.77101135253906,
+          393.9889221191406,
+          234.44969177246094,
+          403.9515075683594
+        ]
+      },
+      {
+        "text": "\u0001",
+        "font_name": "CMEX10",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          234.80801391601562,
+          393.08233642578125,
+          239.37088012695312,
+          403.044921875
+        ]
+      },
+      {
+        "text": "determines the portion of updated",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          242.5650177001953,
+          394.2194519042969,
+          379.83953857421875,
+          404.18206787109375
+        ]
+      },
+      {
+        "text": "parameters incorporated at each update.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.016021728515625,
+          406.1744384765625,
+          192.5309295654297,
+          416.1370544433594
+        ]
+      },
+      {
+        "text": "Dynamic Teacher Model.",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          34.016021728515625,
+          418.03851318359375,
+          140.61585998535156,
+          428.0010986328125
+        ]
+      },
+      {
+        "text": " As a normal single teacher framework, the dynamic teacher",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          140.61585998535156,
+          418.12945556640625,
+          379.8410949707031,
+          428.0920715332031
+        ]
+      },
+      {
+        "text": "employs a larger",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.016021728515625,
+          430.08447265625,
+          100.20752716064453,
+          440.0470886230469
+        ]
+      },
+      {
+        "text": " \\",
+        "font_name": "CMMI10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          100.20752716064453,
+          429.8539123535156,
+          108.41268157958984,
+          439.8165283203125
+        ]
+      },
+      {
+        "text": "pi _{\\mathrm {1}}",
+        "font_name": "CMR7",
+        "font_size": 6.973800182342529,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.41300201416016,
+          433.6847229003906,
+          116.35616302490234,
+          440.6585388183594
+        ]
+      },
+      {
+        "text": ", while the dynamic teacher model updates every 2000 iterations in",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          112.88200378417969,
+          430.0844421386719,
+          379.8397521972656,
+          440.04705810546875
+        ]
+      },
+      {
+        "text": "training. This allows the dynamic teacher to capture the student’s most recent learning",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01600646972656,
+          442.0394287109375,
+          379.83770751953125,
+          452.0020446777344
+        ]
+      },
+      {
+        "text": "in near real time, reflecting subtle target-domain cues as soon as they emerge. More-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01600646972656,
+          453.99542236328125,
+          379.8377990722656,
+          463.9580383300781
+        ]
+      },
+      {
+        "text": "over, since each update only partially shifts its parameters, the dynamic teacher avoids",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01600646972656,
+          465.950439453125,
+          379.8478088378906,
+          475.9130554199219
+        ]
+      },
+      {
+        "text": "making wrong weights shift with student errors or noisy pseudo-labels.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.01600646972656,
+          477.90545654296875,
+          317.37225341796875,
+          487.8680725097656
+        ]
+      },
+      {
+        "text": "Static Teacher Model.",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          34.01600646972656,
+          489.7695007324219,
+          129.5872344970703,
+          499.7320861816406
+        ]
+      },
+      {
+        "text": " By contrast, we choose a relatively small",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          129.5872344970703,
+          489.8604431152344,
+          304.63427734375,
+          499.82305908203125
+        ]
+      },
+      {
+        "text": " \\",
+        "font_name": "CMMI10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          304.63427734375,
+          489.6299133300781,
+          314.148681640625,
+          499.5924987792969
+        ]
+      },
+      {
+        "text": "pi _{\\mathrm {2}}",
+        "font_name": "CMR7",
+        "font_size": 6.973800182342529,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          314.14898681640625,
+          493.459716796875,
+          322.0921325683594,
+          500.43353271484375
+        ]
+      },
+      {
+        "text": ", but still large",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          318.6180114746094,
+          489.8604431152344,
+          379.838134765625,
+          499.82305908203125
+        ]
+      },
+      {
+        "text": "enough to prevent noisy weights shifting in the static teacher model. After each training",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.016021728515625,
+          501.8154296875,
+          379.8377685546875,
+          511.7780456542969
+        ]
+      },
+      {
+        "text": "epoch, the static teacher absorbs a greater fraction of the student’s current weights, re-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.016021728515625,
+          513.7704467773438,
+          379.8377380371094,
+          523.7330322265625
+        ]
+      },
+      {
+        "text": "sulting in a sizeable parameter shift. Infrequent updates shield it from transient gradient",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.016021728515625,
+          525.7264404296875,
+          379.83770751953125,
+          535.6890258789062
+        ]
+      },
+      {
+        "text": "noise, accumulating the student’s progress more conservatively over a larger training",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.016021728515625,
+          537.6814575195312,
+          379.83770751953125,
+          547.64404296875
+        ]
+      },
+      {
+        "text": "interval. Meanwhile, each static update assimilates a substantial portion of the student’s",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.016021728515625,
+          549.636474609375,
+          379.84771728515625,
+          559.5990600585938
+        ]
+      },
+      {
+        "text": "parameters, this teacher can also serve as a robust reference if rapid self-training leads",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.016021728515625,
+          561.5914306640625,
+          379.84771728515625,
+          571.5540161132812
+        ]
+      },
+      {
+        "text": "to severe label drift, which effectively stabilizes the student model.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          34.016021728515625,
+          573.5464477539062,
+          299.9776306152344,
+          583.509033203125
+        ]
+      }
+    ]
+  },
+  {
+    "type": "image",
+    "bbox": [
+      34.01599884033203,
+      67.27059936523438,
+      123.05876159667969,
+      182.28416442871094
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      151.5677032470703,
+      41.886314392089844,
+      207.60324096679688,
+      97.15423583984375
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      151.5677032470703,
+      147.81826782226562,
+      207.60324096679688,
+      203.086181640625
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      225.387939453125,
+      54.90193557739258,
+      247.0089569091797,
+      94.81765747070312
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      199.7269287109375,
+      108.25132751464844,
+      257.29766845703125,
+      165.05447387695312
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      266.5897521972656,
+      102.01641845703125,
+      289.8739318847656,
+      144.6187744140625
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      355.6543273925781,
+      63.3360710144043,
+      379.83404541015625,
+      107.47364807128906
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      272.72271728515625,
+      144.29917907714844,
+      292.4247131347656,
+      162.97769165039062
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      208.17340087890625,
+      202.4469757080078,
+      239.64541625976562,
+      211.53036499023438
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      215.15139770507812,
+      173.35955810546875,
+      234.8533935546875,
+      192.03807067871094
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      313.7850646972656,
+      147.09255981445312,
+      326.19476318359375,
+      158.86257934570312
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      313.7850646972656,
+      162.8729705810547,
+      331.82391357421875,
+      168.11830139160156
+    ],
+    "xref": null,
+    "ext": "png"
+  }
+]
