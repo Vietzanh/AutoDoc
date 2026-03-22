@@ -11,6 +11,7 @@ PDF Tools (pure pymupdf):
 - Split, organize, crop, number pages
 """
 
+import shutil
 import sys
 import uuid
 from pathlib import Path
@@ -44,6 +45,7 @@ from src.pdf_operations.combine import combine_pdfs  # noqa: E402
 # ---------------------------------------------------------------------------
 # Tool pages
 # ---------------------------------------------------------------------------
+
 
 def _tool_combine_files(project_root: Path) -> None:
     """Combine multiple PDF files into one, with up/down reordering."""
@@ -89,16 +91,15 @@ def _tool_combine_files(project_root: Path) -> None:
 
         col_up, col_down = row_cols[1].columns(2)
 
-        if col_up.button("▲", key=f"up_{i}") and i > 0:
-            order[i], order[i - 1] = order[i - 1], order[i]
+        if col_up.button("▲", key=f"up_{i}", disabled=(i == 0)):
+            order[i - 1], order[i] = order[i], order[i - 1]
             st.session_state.combine_order = order
             st.rerun()
 
-        col_down.button(
-            "▼",
-            key=f"down_{i}",
-            disabled=(i >= len(order) - 1),
-        )
+        if col_down.button("▼", key=f"down_{i}", disabled=(i == len(order) - 1)):
+            order[i], order[i + 1] = order[i + 1], order[i]
+            st.session_state.combine_order = order
+            st.rerun()
 
     st.markdown("---")
 
@@ -163,11 +164,17 @@ def _tool_reconstruct(project_root: Path) -> None:
     uploaded = st.file_uploader("Upload a PDF file", type=["pdf"])
     max_image_width = st.number_input(
         "Max image width (inches)",
-        min_value=1.0, max_value=8.0, value=6.0, step=0.5,
+        min_value=1.0,
+        max_value=8.0,
+        value=6.0,
+        step=0.5,
     )
     render_dpi = st.number_input(
         "Render DPI",
-        min_value=72, max_value=600, value=300, step=50,
+        min_value=72,
+        max_value=600,
+        value=300,
+        step=50,
     )
 
     st.caption(
@@ -238,8 +245,465 @@ def _tool_reconstruct(project_root: Path) -> None:
 
 
 # ---------------------------------------------------------------------------
+# Organize Pages
+# ---------------------------------------------------------------------------
+
+import base64
+
+import pymupdf
+
+PAGES_PER_ROW = 5
+THUMBNAIL_DPI = 72
+
+
+def _init_organize_state(num_pages: int) -> None:
+    """Initialize or reset session state for the organize tool."""
+    if "org_selected" not in st.session_state:
+        st.session_state.org_selected: set = set()
+    if "org_rotations" not in st.session_state:
+        st.session_state.org_rotations: dict = {}
+    if "org_insertions" not in st.session_state:
+        # List of (after_index: int, file_bytes: bytes, file_name: str)
+        st.session_state.org_insertions: list = []
+    if "org_mode" not in st.session_state:
+        st.session_state.org_mode = "view"  # "view" | "insert"
+    if "org_pending_insert" not in st.session_state:
+        st.session_state.org_pending_insert: dict = {}  # slot_idx -> None (waiting for file)
+
+
+def _tool_organize_pages(project_root: Path) -> None:
+    """Organize PDF pages: view, rotate, delete, insert, extract."""
+    st.subheader("Upload a PDF to organize")
+
+    uploaded = st.file_uploader("Upload a PDF file", type=["pdf"], key="org_uploader")
+
+    if uploaded is None:
+        return
+
+    # Reset state when a new file is uploaded
+    if st.session_state.get("org_last_file") != uploaded.name:
+        st.session_state.org_last_file = uploaded.name
+        st.session_state.org_selected = set()
+        st.session_state.org_rotations = {}
+        st.session_state.org_insertions = []
+        st.session_state.org_mode = "view"
+        for key in list(st.session_state.keys()):
+            if key.startswith("insert_file_slot_"):
+                del st.session_state[key]
+
+    # Save uploaded file to disk so pymupdf can read it
+    run_id = uuid.uuid4().hex[:8]
+    run_root = project_root / "runs" / f"organize_{run_id}"
+    run_root.mkdir(parents=True, exist_ok=True)
+    pdf_path = run_root / "base.pdf"
+    with pdf_path.open("wb") as f:
+        f.write(uploaded.getbuffer())
+
+    # Open PDF (needed for both rendering and applying operations)
+    doc = pymupdf.open(str(pdf_path))
+    num_pages = len(doc)
+
+    _init_organize_state(num_pages)
+
+    # ---- Process pending operations BEFORE rendering ----
+
+    # Delete: rebuild PDF excluding selected pages
+    if st.session_state.get("org_delete_req"):
+        st.session_state.org_delete_req = False
+        msg = _apply_delete_operation(pdf_path, run_root)
+        st.session_state.org_message = msg
+        doc.close()
+        st.rerun()
+
+    # Extract: build extracted PDF and show download button
+    if st.session_state.get("org_extract_req"):
+        st.session_state.org_extract_req = False
+        ext_path, msg = _build_extracted_pdf(pdf_path, run_root)
+        st.session_state.org_extracted_path = str(ext_path)
+        st.session_state.org_message = msg
+        # Do NOT rerun — show the download button first
+
+    # ---- Render top toolbar ----
+    sel = st.session_state.org_selected
+    insert_mode = st.session_state.org_mode == "insert"
+
+    t1, t2, t3, t4, t5, t6 = st.columns([1, 1, 1, 1, 1, 2])
+
+    with t1:
+        st.button(
+            "↺ Rotate left",
+            key="top_rotate_all_left",
+            disabled=len(sel) == 0,
+        )
+    with t2:
+        st.button(
+            "↻ Rotate right",
+            key="top_rotate_all_right",
+            disabled=len(sel) == 0,
+        )
+    with t3:
+        st.button(
+            ("✳ Done Inserting" if insert_mode else "➕ Insert pages"),
+            key="top_toggle_insert",
+        )
+    with t4:
+        st.button(
+            f"📤 Extract ({len(sel)})" if sel else "📤 Extract",
+            key="top_extract",
+            disabled=len(sel) == 0,
+        )
+    with t5:
+        st.button(
+            f"🗑 Delete ({len(sel)})" if sel else "🗑 Delete",
+            key="top_delete",
+            disabled=len(sel) == 0,
+        )
+    with t6:
+        pass
+
+    # Handle toolbar button clicks (after rendering so keys are registered)
+    if st.session_state.get("top_rotate_all_left", False):
+        st.session_state.top_rotate_all_left = False
+        for idx in sel:
+            st.session_state.org_rotations[idx] = (
+                st.session_state.org_rotations.get(idx, 0) - 90
+            ) % 360
+        doc.close()
+        st.rerun()
+
+    if st.session_state.get("top_rotate_all_right", False):
+        st.session_state.top_rotate_all_right = False
+        for idx in sel:
+            st.session_state.org_rotations[idx] = (
+                st.session_state.org_rotations.get(idx, 0) + 90
+            ) % 360
+        doc.close()
+        st.rerun()
+
+    if st.session_state.get("top_toggle_insert", False):
+        st.session_state.top_toggle_insert = False
+        st.session_state.org_mode = "view" if insert_mode else "insert"
+        doc.close()
+        st.rerun()
+
+    if st.session_state.get("top_extract", False):
+        st.session_state.top_extract = False
+        st.session_state.org_extract_req = True
+        doc.close()
+        st.rerun()
+
+    if st.session_state.get("top_delete", False):
+        st.session_state.top_delete = False
+        st.session_state.org_delete_req = True
+        doc.close()
+        st.rerun()
+
+    # Status messages
+    if st.session_state.get("org_message"):
+        st.success(st.session_state.org_message)
+        st.session_state.org_message = None
+
+    # Extract download button
+    if st.session_state.get("org_extracted_path"):
+        ep = st.session_state.org_extracted_path
+        if Path(ep).exists():
+            with open(ep, "rb") as f:
+                st.download_button(
+                    "Download extracted PDF",
+                    f,
+                    file_name="extracted.pdf",
+                    mime="application/pdf",
+                    key="dl_extracted",
+                )
+        st.session_state.org_extracted_path = None
+
+    if sel:
+        st.caption(f"{len(sel)} page(s) selected.")
+    else:
+        st.caption("Click **Select** on a thumbnail to select pages for batch actions.")
+
+    st.markdown("---")
+
+    # ---- Render page thumbnails ----
+    _render_page_grid(doc, pdf_path, run_root, num_pages, insert_mode)
+
+    st.markdown("---")
+
+    # ---- Save / Download final output ----
+    has_changes = (
+        st.session_state.org_rotations
+        or st.session_state.org_insertions
+        or st.session_state.get("org_delete_req")
+    )
+
+    out_name = st.text_input("Output filename", value="organized.pdf", key="org_out_name")
+    if not out_name.lower().endswith(".pdf"):
+        out_name += ".pdf"
+
+    save_col, dl_col = st.columns([1, 1])
+    with save_col:
+        save_pressed = st.button("💾 Save & Download", type="primary")
+
+    if save_pressed:
+        out_path = run_root / out_name
+        with st.spinner("Building output PDF..."):
+            _build_final_output(pdf_path, run_root, out_path)
+        with open(str(out_path), "rb") as f:
+            st.download_button(
+                "Download organized PDF",
+                f,
+                file_name=out_name,
+                mime="application/pdf",
+                key="dl_organized",
+            )
+        st.session_state.org_message = f"Saved as {out_name}"
+        st.rerun()
+
+    doc.close()
+
+
+def _render_page_grid(
+    doc: pymupdf.Document,
+    pdf_path: Path,
+    run_root: Path,
+    num_pages: int,
+    insert_mode: bool,
+) -> None:
+    """Render the page thumbnail grid with per-page selection and action buttons."""
+    rows = []
+    for i in range(0, num_pages, PAGES_PER_ROW):
+        rows.append(list(range(i, min(i + PAGES_PER_ROW, num_pages))))
+
+    for row_pages in rows:
+        cols = st.columns(PAGES_PER_ROW)
+        for col_idx, page_num in enumerate(row_pages):
+            with cols[col_idx]:
+                _render_single_page(doc, pdf_path, run_root, page_num)
+
+    # ---- Insert-mode "+" slots between pages ----
+    if insert_mode:
+        st.markdown("---")
+        st.markdown("**➕ Insert pages — choose a position and upload a PDF:**")
+        slots = list(range(num_pages + 1))
+        slot_cols = st.columns(len(slots))
+
+        for slot_idx, slot in enumerate(slots):
+            with slot_cols[slot_idx]:
+                label = "Start" if slot == 0 else (f"After p.{slot}" if slot <= num_pages else "End")
+                st.caption(f"**{label}**")
+
+                existing = next(
+                    (fname for (pos, _, fname) in st.session_state.org_insertions if pos == slot),
+                    None,
+                )
+
+                if existing:
+                    st.success(f"✓ {existing}")
+                else:
+                    key = f"insert_file_slot_{slot}"
+                    inserted = st.file_uploader(
+                        "Choose PDF",
+                        type=["pdf"],
+                        key=key,
+                        label_visibility="collapsed",
+                    )
+                    if inserted is not None:
+                        fbytes = inserted.getbuffer().tobytes()
+                        st.session_state.org_insertions.append((slot, fbytes, inserted.name))
+                        st.rerun()
+
+
+def _render_single_page(
+    doc: pymupdf.Document,
+    pdf_path: Path,
+    run_root: Path,
+    page_num: int,
+) -> None:
+    """Render one page thumbnail: image + selection border + per-page action buttons."""
+    page = doc[page_num]
+    rotation = st.session_state.org_rotations.get(page_num, 0)
+
+    # Render page thumbnail
+    mat = pymupdf.Matrix()
+    if rotation != 0:
+        mat = pymupdf.Matrix().prerotate(rotation)
+
+    pix = page.get_pixmap(matrix=mat, dpi=THUMBNAIL_DPI)
+    thumb_path = run_root / f"thumb_{page_num}_{rotation}.png"
+    with thumb_path.open("wb") as f:
+        f.write(pix.tobytes("png"))
+
+    with thumb_path.open("rb") as f:
+        b64 = base64.b64encode(f.read()).decode()
+
+    is_selected = page_num in st.session_state.org_selected
+    border_color = "#2563eb" if is_selected else "#e5e7eb"
+    border_width = 3 if is_selected else 1
+    bg_color = "#eff6ff" if is_selected else "#ffffff"
+    rotation_label = f"  ↺{rotation}°" if rotation else ""
+
+    pending = sum(1 for (pos, _, _) in st.session_state.org_insertions if pos == page_num + 1)
+
+    img_html = f"""
+    <div style="position:relative; display:inline-block; width:100%;">
+        <div style="
+            border: {border_width}px solid {border_color};
+            border-radius: 4px;
+            background: {bg_color};
+            overflow: hidden;
+        ">
+            <img src="data:image/png;base64,{b64}" width="100%" style="display:block;" />
+        </div>
+        {f'<div style="position:absolute;top:2px;right:2px;background:#16a34a;'
+          f'color:white;font-size:10px;padding:1px 4px;border-radius:3px;">+{pending}</div>' if pending else ''}
+    </div>
+    """
+    st.markdown(img_html, unsafe_allow_html=True)
+
+    display_num = page_num + 1
+    st.caption(f"**Page {display_num}{rotation_label}**")
+
+    btn_col1, btn_col2, btn_col3 = st.columns([1, 1, 1])
+
+    with btn_col1:
+        if st.button("↺", key=f"rot_L_{page_num}", help="Rotate left"):
+            st.session_state.org_rotations[page_num] = (
+                st.session_state.org_rotations.get(page_num, 0) - 90
+            ) % 360
+            st.rerun()
+
+    with btn_col2:
+        if st.button("↻", key=f"rot_R_{page_num}", help="Rotate right"):
+            st.session_state.org_rotations[page_num] = (
+                st.session_state.org_rotations.get(page_num, 0) + 90
+            ) % 360
+            st.rerun()
+
+    with btn_col3:
+        if st.button("🗑", key=f"del_{page_num}", help="Delete this page"):
+            st.session_state.org_selected = {page_num}
+            st.session_state.org_delete_req = True
+
+    sel_label = "✓ Selected" if is_selected else "Select"
+    if st.button(sel_label, key=f"sel_{page_num}"):
+        if page_num in st.session_state.org_selected:
+            st.session_state.org_selected.discard(page_num)
+        else:
+            st.session_state.org_selected.add(page_num)
+        st.rerun()
+
+
+# ---------------------------------------------------------------------------
+# Apply pending operations
+# ---------------------------------------------------------------------------
+
+
+def _apply_delete_operation(pdf_path: Path, run_root: Path) -> str:
+    """Apply stored deletions and rotations to the PDF on disk. Returns description."""
+    selected = st.session_state.org_selected.copy()
+    rotations = st.session_state.org_rotations.copy()
+
+    doc = pymupdf.open(str(pdf_path))
+
+    # Apply all rotations first
+    for idx, rot in rotations.items():
+        if 0 <= idx < len(doc) and rot:
+            doc[idx].set_rotation(rot)
+
+    # Write pages excluding deleted ones
+    writer = pymupdf.open()
+    for page_i in range(len(doc)):
+        if page_i not in selected:
+            writer.insert_pdf(doc, from_page=page_i, to_page=page_i)
+
+    out = run_root / "output.pdf"
+    writer.save(str(out), garbage=4, deflate=True, clean=True)
+    writer.close()
+    doc.close()
+
+    shutil.copy(str(out), str(pdf_path))
+
+    # Clear rotations since the doc was rebuilt
+    st.session_state.org_rotations = {}
+    st.session_state.org_selected = set()
+    st.session_state.org_insertions = []
+
+    deleted = sorted(selected)
+    return f"Deleted {len(deleted)} page(s): indices {deleted}"
+
+
+def _build_extracted_pdf(pdf_path: Path, run_root: Path) -> tuple[Path, str]:
+    """Apply rotations and build an extracted PDF. Returns (path, description)."""
+    selected = sorted(st.session_state.org_selected)
+    rotations = st.session_state.org_rotations
+
+    doc = pymupdf.open(str(pdf_path))
+
+    for idx, rot in rotations.items():
+        if 0 <= idx < len(doc) and rot:
+            doc[idx].set_rotation(rot)
+
+    writer = pymupdf.open()
+    for idx in selected:
+        if 0 <= idx < len(doc):
+            writer.insert_pdf(doc, from_page=idx, to_page=idx)
+
+    out = run_root / "extracted.pdf"
+    writer.save(str(out), garbage=4, deflate=True, clean=True)
+    writer.close()
+    doc.close()
+
+    return out, f"Extracted {len(selected)} page(s): indices {selected}"
+
+
+def _build_final_output(pdf_path: Path, run_root: Path, out_path: Path) -> Path:
+    """Apply all rotations and insertions, produce final output PDF."""
+    insertions = st.session_state.org_insertions
+    rotations = st.session_state.org_rotations
+
+    # Load base doc and apply rotations
+    doc = pymupdf.open(str(pdf_path))
+    for idx, rot in rotations.items():
+        if 0 <= idx < len(doc) and rot:
+            doc[idx].set_rotation(rot)
+
+    writer = pymupdf.open()
+
+    # Iterate through all positions in the final output
+    # slot 0 = before page 0, slot 1 = after page 0, ..., slot N = after page N-1
+    num_pages = len(doc)
+
+    for pos in range(num_pages + 1):
+        # Insert any files scheduled for this slot
+        for slot_pos, fbytes, fname in insertions:
+            if slot_pos == pos:
+                tmp = run_root / f"_insert_{uuid.uuid4().hex[:6]}.pdf"
+                with tmp.open("wb") as f:
+                    f.write(fbytes)
+                insert_doc = pymupdf.open(str(tmp))
+                writer.insert_pdf(insert_doc)
+                insert_doc.close()
+                tmp.unlink(missing_ok=True)
+
+        # Insert the original page at this slot (0-indexed page = slot index)
+        if pos < num_pages:
+            writer.insert_pdf(doc, from_page=pos, to_page=pos)
+
+    out = out_path
+    writer.save(str(out), garbage=4, deflate=True, clean=True)
+    writer.close()
+    doc.close()
+
+    return out
+
+
+
+
+
+# ---------------------------------------------------------------------------
 # Main entry point
 # ---------------------------------------------------------------------------
+
 
 def main() -> None:
     project_root = get_project_root()
@@ -266,7 +730,7 @@ def main() -> None:
     elif tool == "✂️ Split PDF":
         st.info("Split PDF — coming soon.")
     elif tool == "📑 Organize Pages":
-        st.info("Organize Pages — coming soon.")
+        _tool_organize_pages(project_root)
     elif tool == "✂️ Crop Pages":
         st.info("Crop Pages — coming soon.")
     elif tool == "🔢 Number Pages":
