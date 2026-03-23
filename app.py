@@ -289,17 +289,21 @@ def _tool_organize_pages(project_root: Path) -> None:
         st.session_state.org_rotations = {}
         st.session_state.org_insertions = []
         st.session_state.org_mode = "view"
+        st.session_state.org_run_id = uuid.uuid4().hex[:8]
         for key in list(st.session_state.keys()):
             if key.startswith("insert_file_slot_"):
                 del st.session_state[key]
 
-    # Save uploaded file to disk so pymupdf can read it
-    run_id = uuid.uuid4().hex[:8]
+    # Use persisted run_id so the same directory is used across reruns
+    run_id = st.session_state.get("org_run_id") or uuid.uuid4().hex[:8]
     run_root = project_root / "runs" / f"organize_{run_id}"
     run_root.mkdir(parents=True, exist_ok=True)
+
+    # Save base PDF only if it doesn't already exist in this run's directory
     pdf_path = run_root / "base.pdf"
-    with pdf_path.open("wb") as f:
-        f.write(uploaded.getbuffer())
+    if not pdf_path.exists():
+        with pdf_path.open("wb") as f:
+            f.write(uploaded.getbuffer())
 
     # Open PDF (needed for both rendering and applying operations)
     doc = pymupdf.open(str(pdf_path))
@@ -350,14 +354,12 @@ def _tool_organize_pages(project_root: Path) -> None:
         st.button(
             "↺ Rotate left",
             key="org_rotate_all_left",
-            disabled=len(sel) == 0,
             on_click=_rotate_left,
         )
     with t2:
         st.button(
             "↻ Rotate right",
             key="org_rotate_all_right",
-            disabled=len(sel) == 0,
             on_click=_rotate_right,
         )
     with t3:
@@ -387,7 +389,8 @@ def _tool_organize_pages(project_root: Path) -> None:
     action = st.session_state.pop("org_pending_action", None)
 
     if action == "rotate_left":
-        for idx in sel:
+        target = sel if sel else set(range(num_pages))
+        for idx in target:
             st.session_state.org_rotations[idx] = (
                 st.session_state.org_rotations.get(idx, 0) - 90
             ) % 360
@@ -395,7 +398,8 @@ def _tool_organize_pages(project_root: Path) -> None:
         st.rerun()
 
     if action == "rotate_right":
-        for idx in sel:
+        target = sel if sel else set(range(num_pages))
+        for idx in target:
             st.session_state.org_rotations[idx] = (
                 st.session_state.org_rotations.get(idx, 0) + 90
             ) % 360
@@ -478,7 +482,6 @@ def _tool_organize_pages(project_root: Path) -> None:
                 key="dl_organized",
             )
         st.session_state.org_message = f"Saved as {out_name}"
-        st.rerun()
 
     doc.close()
 
