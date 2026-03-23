@@ -282,14 +282,18 @@ def _tool_organize_pages(project_root: Path) -> None:
     if uploaded is None:
         return
 
-    # Reset state when a new file is uploaded
-    if st.session_state.get("org_last_file") != uploaded.name:
+    # Reset state when the same file is re-uploaded (different name OR different content)
+    last_name = st.session_state.get("org_last_file")
+    last_size = st.session_state.get("org_last_size", -1)
+    if last_name != uploaded.name or last_size != uploaded.size:
         st.session_state.org_last_file = uploaded.name
+        st.session_state.org_last_size = uploaded.size
         st.session_state.org_selected = set()
         st.session_state.org_rotations = {}
         st.session_state.org_insertions = []
         st.session_state.org_mode = "view"
         st.session_state.org_run_id = uuid.uuid4().hex[:8]
+        # Clear all orphaned file-uploader widget states
         for key in list(st.session_state.keys()):
             if key.startswith("insert_file_slot_"):
                 del st.session_state[key]
@@ -470,6 +474,10 @@ def _tool_organize_pages(project_root: Path) -> None:
         save_pressed = st.button("💾 Save & Download", type="primary")
 
     if save_pressed:
+        # Apply pending delete first so the output reflects current page state
+        if st.session_state.org_selected and not st.session_state.get("org_delete_req"):
+            _apply_delete_operation(pdf_path, run_root)
+
         out_path = run_root / out_name
         with st.spinner("Building output PDF..."):
             _build_final_output(pdf_path, run_root, out_path)
@@ -544,6 +552,8 @@ def _render_page_grid(
                         st.session_state.org_insertions.append(
                             (slot, fbytes, inserted.name)
                         )
+                        # Clear widget state so the uploader key is fresh on next render
+                        del st.session_state[key]
                         st.rerun()
 
 
@@ -619,6 +629,7 @@ def _render_single_page(
         if st.button("🗑", key=f"del_{page_num}", help="Delete this page"):
             st.session_state.org_selected = {page_num}
             st.session_state.org_delete_req = True
+            st.rerun()
 
     sel_label = "✓ Selected" if is_selected else "Select"
     if st.button(sel_label, key=f"sel_{page_num}"):
@@ -663,6 +674,10 @@ def _apply_delete_operation(pdf_path: Path, run_root: Path) -> str:
     st.session_state.org_rotations = {}
     st.session_state.org_selected = set()
     st.session_state.org_insertions = []
+    # Clear orphaned file-uploader widget states so re-uploading shows the fresh filename
+    for key in list(st.session_state.keys()):
+        if key.startswith("insert_file_slot_"):
+            del st.session_state[key]
 
     deleted = sorted(selected)
     return f"Deleted {len(deleted)} page(s): indices {deleted}"
