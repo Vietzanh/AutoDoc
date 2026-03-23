@@ -268,7 +268,9 @@ def _init_organize_state(num_pages: int) -> None:
     if "org_mode" not in st.session_state:
         st.session_state.org_mode = "view"  # "view" | "insert"
     if "org_pending_insert" not in st.session_state:
-        st.session_state.org_pending_insert: dict = {}  # slot_idx -> None (waiting for file)
+        st.session_state.org_pending_insert: dict = (
+            {}
+        )  # slot_idx -> None (waiting for file)
 
 
 def _tool_organize_pages(project_root: Path) -> None:
@@ -329,41 +331,62 @@ def _tool_organize_pages(project_root: Path) -> None:
 
     t1, t2, t3, t4, t5, t6 = st.columns([1, 1, 1, 1, 1, 2])
 
+    def _rotate_left():
+        st.session_state.org_pending_action = "rotate_left"
+
+    def _rotate_right():
+        st.session_state.org_pending_action = "rotate_right"
+
+    def _toggle_insert():
+        st.session_state.org_pending_action = "toggle_insert"
+
+    def _extract():
+        st.session_state.org_pending_action = "extract"
+
+    def _delete():
+        st.session_state.org_pending_action = "delete"
+
     with t1:
         st.button(
             "↺ Rotate left",
-            key="top_rotate_all_left",
+            key="org_rotate_all_left",
             disabled=len(sel) == 0,
+            on_click=_rotate_left,
         )
     with t2:
         st.button(
             "↻ Rotate right",
-            key="top_rotate_all_right",
+            key="org_rotate_all_right",
             disabled=len(sel) == 0,
+            on_click=_rotate_right,
         )
     with t3:
         st.button(
             ("✳ Done Inserting" if insert_mode else "➕ Insert pages"),
-            key="top_toggle_insert",
+            key="org_toggle_insert",
+            on_click=_toggle_insert,
         )
     with t4:
         st.button(
             f"📤 Extract ({len(sel)})" if sel else "📤 Extract",
-            key="top_extract",
+            key="org_extract",
             disabled=len(sel) == 0,
+            on_click=_extract,
         )
     with t5:
         st.button(
             f"🗑 Delete ({len(sel)})" if sel else "🗑 Delete",
-            key="top_delete",
+            key="org_delete",
             disabled=len(sel) == 0,
+            on_click=_delete,
         )
     with t6:
         pass
 
-    # Handle toolbar button clicks (after rendering so keys are registered)
-    if st.session_state.get("top_rotate_all_left", False):
-        st.session_state.top_rotate_all_left = False
+    # Handle toolbar button actions — reads separate action flag, never writes widget keys
+    action = st.session_state.pop("org_pending_action", None)
+
+    if action == "rotate_left":
         for idx in sel:
             st.session_state.org_rotations[idx] = (
                 st.session_state.org_rotations.get(idx, 0) - 90
@@ -371,8 +394,7 @@ def _tool_organize_pages(project_root: Path) -> None:
         doc.close()
         st.rerun()
 
-    if st.session_state.get("top_rotate_all_right", False):
-        st.session_state.top_rotate_all_right = False
+    if action == "rotate_right":
         for idx in sel:
             st.session_state.org_rotations[idx] = (
                 st.session_state.org_rotations.get(idx, 0) + 90
@@ -380,20 +402,17 @@ def _tool_organize_pages(project_root: Path) -> None:
         doc.close()
         st.rerun()
 
-    if st.session_state.get("top_toggle_insert", False):
-        st.session_state.top_toggle_insert = False
+    if action == "toggle_insert":
         st.session_state.org_mode = "view" if insert_mode else "insert"
         doc.close()
         st.rerun()
 
-    if st.session_state.get("top_extract", False):
-        st.session_state.top_extract = False
+    if action == "extract":
         st.session_state.org_extract_req = True
         doc.close()
         st.rerun()
 
-    if st.session_state.get("top_delete", False):
-        st.session_state.top_delete = False
+    if action == "delete":
         st.session_state.org_delete_req = True
         doc.close()
         st.rerun()
@@ -436,7 +455,9 @@ def _tool_organize_pages(project_root: Path) -> None:
         or st.session_state.get("org_delete_req")
     )
 
-    out_name = st.text_input("Output filename", value="organized.pdf", key="org_out_name")
+    out_name = st.text_input(
+        "Output filename", value="organized.pdf", key="org_out_name"
+    )
     if not out_name.lower().endswith(".pdf"):
         out_name += ".pdf"
 
@@ -489,11 +510,19 @@ def _render_page_grid(
 
         for slot_idx, slot in enumerate(slots):
             with slot_cols[slot_idx]:
-                label = "Start" if slot == 0 else (f"After p.{slot}" if slot <= num_pages else "End")
+                label = (
+                    "Start"
+                    if slot == 0
+                    else (f"After p.{slot}" if slot <= num_pages else "End")
+                )
                 st.caption(f"**{label}**")
 
                 existing = next(
-                    (fname for (pos, _, fname) in st.session_state.org_insertions if pos == slot),
+                    (
+                        fname
+                        for (pos, _, fname) in st.session_state.org_insertions
+                        if pos == slot
+                    ),
                     None,
                 )
 
@@ -509,7 +538,9 @@ def _render_page_grid(
                     )
                     if inserted is not None:
                         fbytes = inserted.getbuffer().tobytes()
-                        st.session_state.org_insertions.append((slot, fbytes, inserted.name))
+                        st.session_state.org_insertions.append(
+                            (slot, fbytes, inserted.name)
+                        )
                         st.rerun()
 
 
@@ -542,7 +573,9 @@ def _render_single_page(
     bg_color = "#eff6ff" if is_selected else "#ffffff"
     rotation_label = f"  ↺{rotation}°" if rotation else ""
 
-    pending = sum(1 for (pos, _, _) in st.session_state.org_insertions if pos == page_num + 1)
+    pending = sum(
+        1 for (pos, _, _) in st.session_state.org_insertions if pos == page_num + 1
+    )
 
     img_html = f"""
     <div style="position:relative; display:inline-block; width:100%;">
@@ -695,9 +728,6 @@ def _build_final_output(pdf_path: Path, run_root: Path, out_path: Path) -> Path:
     doc.close()
 
     return out
-
-
-
 
 
 # ---------------------------------------------------------------------------
