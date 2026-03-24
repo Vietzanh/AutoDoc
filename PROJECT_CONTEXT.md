@@ -255,17 +255,17 @@ split_even_odd(pdf_path: Path, output_dir: Path) -> Tuple[Path, Path]
 - Page ranges: `List[Tuple[int, int]]` (0-indexed, inclusive)
 - Creates a sub-directory per split output
 
-### Organize Pages (`organize.py`) — _planned_
+### Organize Pages — Implemented in `app.py` (not `organize.py`)
 
-| Function                  | Description                              |
-| ------------------------ | ---------------------------------------- |
-| `delete_pages()`         | Remove specific page indices             |
-| `rotate_pages()`         | Rotate pages by 90/180/270 degrees        |
-| `extract_pages()`         | Copy specific pages to a new PDF          |
-| `insert_pages()`          | Insert pages from another PDF             |
-| `reorder_pages()`        | Rearrange pages by custom index list      |
+All Organize Pages logic is implemented directly in `app.py` within `_tool_organize_pages`, with supporting functions `_apply_delete_operation`, `_build_final_output`, `_build_extracted_pdf`, `_render_page_grid`, and `_render_single_page`. Key behaviors:
 
-All accept `src_path`, `dest_path`, and a list of page indices (0-indexed).
+| Feature | Description |
+|---------|-------------|
+| Delete pages | Rebuilds `base.pdf` excluding selected pages; thumbnails rerender to show new count |
+| Rotate pages | Stores per-page rotation in `org_rotations` dict; applied in `_build_final_output` |
+| Extract pages | Builds a new PDF from selected pages; provided as download without modifying `base.pdf` |
+| Insert pages | Schedules insertions via slot-based UI; merged into final output in `_build_final_output` |
+| View thumbnails | Renders each page at 72 DPI as base64-encoded PNG inline HTML with rotation applied |
 
 ### Crop Pages (`crop.py`) — _planned_
 
@@ -312,10 +312,10 @@ add_page_numbers(
 | `utils/table_utils.py`         | `is_same_line`, `horizontally_separated`, `remove_table_borders`, `set_table_col_widths`, `is_bbox_contained`                | Table detection and DOCX styling                                     |
 | `pdf_operations/combine.py`    | `combine_pdfs`, `combine_pdfs_in_place`                                                                                      | Merge multiple PDFs into one (pure pymupdf)                          |
 | `pdf_operations/split.py`       | `split_by_ranges`, `split_even_odd`                                                                                          | Split PDF by page ranges or even/odd pages (pure pymupdf)            |
-| `pdf_operations/organize.py`     | `delete_pages`, `rotate_pages`, `extract_pages`, `insert_pages`, `reorder_pages`                                            | Page-level PDF mutations (pure pymupdf)                             |
+| `pdf_operations/organize.py`     | `delete_pages`, `rotate_pages`, `extract_pages`, `insert_pages`, `reorder_pages`                                            | Standalone page-level PDF mutation functions (pure pymupdf); not used by the web UI which uses inline pymupdf calls in `app.py` |
 | `pdf_operations/crop.py`        | `crop_by_margins`, `crop_by_rect`                                                                                            | Crop pages by margin or rectangular region (pure pymupdf)            |
 | `pdf_operations/page_numbers.py`| `add_page_numbers`                                                                                                            | Add page numbers with position/format options (pure pymupdf)         |
-| `app.py`                       | `main`, `_tool_reconstruct`, `_tool_combine_files`                                                                          | Streamlit web interface — tool hub with sidebar navigation           |
+| `app.py`                       | `main`, `_tool_reconstruct`, `_tool_combine_files`, `_tool_organize_pages`, `_apply_delete_operation`, `_build_final_output`, `_build_extracted_pdf`, `_render_page_grid`, `_render_single_page` | Streamlit web interface — tool hub with sidebar navigation; all Organize Pages logic |
 
 ---
 
@@ -376,9 +376,19 @@ DOCX file (with headers, footers, page numbers)
 
 ### PDF Operations (combine, split, organize, crop, number pages)
 
-Each operation follows the same simple pattern:
+**Combine PDFs** follows the simple pattern:
 ```
 Upload PDF(s) → Save to runs/{run_id}/ → Call pdf_operations function → Save output → Provide download
+```
+
+**Organize Pages** is implemented in `app.py` (not `pdf_operations/organize.py`). It uses a per-run directory with stateful session management:
+```
+Upload PDF → runs/organize_{run_id}/base.pdf written on every rerun
+  │
+  ├─ Per-page rotation → stored in org_rotations → applied in _build_final_output
+  ├─ Delete → base.pdf rebuilt immediately → _build_final_output skips re-deleting
+  ├─ Extract → new PDF built from selected pages → download only, no base.pdf change
+  └─ Insert → scheduled in org_insertions → merged into final output in _build_final_output
 ```
 
 No layout extraction, no YOLO, no DOCX generation.
@@ -454,3 +464,31 @@ Every user action in the web UI creates a unique `runs/{run_id}/` directory cont
 - **Per-run output** (`runs/`) — heavy, machine-specific temporary files per Streamlit session
 - **Cached metadata** (`data_layout/`, `docx_file/`) — large generated files that don't belong in the repo
 - **Model cache** (`.huggingface/`, `.cache/`) — ~300 MB YOLO model, each machine downloads its own copy
+
+### Organize Pages state management (`app.py`)
+
+All Organize Pages logic lives in `app.py` (`_tool_organize_pages`), not in `src/pdf_operations/organize.py`. The tool uses a **per-run directory** approach with the following state management patterns:
+
+**File identity detection** — When the file uploader is cleared (`uploaded is None`), the old run is abandoned by resetting `org_run_id` to a fresh UUID. Additionally, a content hash (`MD5`) of the uploaded file is compared against the last-known hash to detect when a file with the same name/size but different content is re-uploaded. Both conditions trigger a full state reset.
+
+**`base.pdf` always overwritten** — Unlike the original buggy pattern that guarded the write with `if not pdf_path.exists()`, the file is always written on every rerun. Because `run_id` resets whenever state resets, a fresh directory and fresh `base.pdf` are always created on a new run.
+
+**Session state keys** (all prefixed `org_`):
+
+| Key | Type | Purpose |
+|-----|------|---------|
+| `org_last_file` | `str \| None` | Uploaded file name for change detection |
+| `org_last_hash` | `str \| None` | MD5 hash of uploaded bytes for content-level change detection |
+| `org_run_id` | `str` | Unique ID for the current run directory |
+| `org_selected` | `set[int]` | Indices of currently selected pages |
+| `org_rotations` | `dict[int, int]` | Per-page rotation in degrees (0/90/180/270) |
+| `org_insertions` | `list[tuple]` | Scheduled insertions: `(slot_index, bytes, filename)` |
+| `org_mode` | `"view" \| "insert"` | Current tool mode |
+| `org_pending_action` | `str \| None` | Toolbar button action to apply on next render (`"rotate_left"`, `"rotate_right"`, `"toggle_insert"`, `"extract"`, `"delete"`) |
+| `insert_file_slot_*` | widget keys | Per-slot file uploader keys in Streamlit session state |
+
+**Pending action pattern** — Toolbar buttons use `on_click` to set a string flag (`org_pending_action`) rather than directly mutating session state. The script body reads and `pop()`s this flag once per render, ensuring all mutations happen in a single controlled location and preventing accidental double-application during Streamlit's widget re-evaluation.
+
+**Delete is not baked into `base.pdf`** — `_apply_delete_operation` writes the deletion result to `base.pdf` immediately (so thumbnails reflect the new page count after a rerun), but `_build_final_output` does **not** re-apply deletions. This is intentional: it avoids a double-operation bug where intermediate reruns would cause `_build_final_output` to process an already-modified `base.pdf`. Rotations, however, are baked into `base.pdf` by `_apply_delete_operation` only if the user clicks Save & Download **without** first clicking the toolbar Delete button — a known limitation where `_build_final_output` applies rotations on top of the baked-in ones.
+
+**Build final output** (`_build_final_output`) — This is the single place where all remaining operations (rotations from `org_rotations`, insertions from `org_insertions`) are applied in one pass into the final output PDF. Rotations are applied via `doc[idx].set_rotation()` before page extraction.
