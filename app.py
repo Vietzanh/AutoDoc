@@ -280,14 +280,32 @@ def _tool_organize_pages(project_root: Path) -> None:
     uploaded = st.file_uploader("Upload a PDF file", type=["pdf"], key="org_uploader")
 
     if uploaded is None:
+        # User removed the file via the ✕ icon — abandon the old run entirely
+        # so a fresh file (even the same filename) gets a clean slate.
+        st.session_state.org_last_file = None
+        st.session_state.org_last_hash = None
+        st.session_state.org_run_id = uuid.uuid4().hex[:8]
+        st.session_state.org_selected = set()
+        st.session_state.org_rotations = {}
+        st.session_state.org_insertions = []
+        st.session_state.org_mode = "view"
+        for key in list(st.session_state.keys()):
+            if key.startswith("insert_file_slot_"):
+                st.session_state.pop(key, None)
         return
 
-    # Reset state when the same file is re-uploaded (different name OR different content)
+    # Reset state when a genuinely different file is uploaded (different name OR
+    # different content). Use a content hash so same-name/same-size files with
+    # different content are also detected.
+    import hashlib
+    uploaded_bytes = uploaded.getbuffer()
+    uploaded_hash = hashlib.md5(uploaded_bytes).hexdigest()
+
     last_name = st.session_state.get("org_last_file")
-    last_size = st.session_state.get("org_last_size", -1)
-    if last_name != uploaded.name or last_size != uploaded.size:
+    last_hash = st.session_state.get("org_last_hash", "")
+    if last_name != uploaded.name or last_hash != uploaded_hash:
         st.session_state.org_last_file = uploaded.name
-        st.session_state.org_last_size = uploaded.size
+        st.session_state.org_last_hash = uploaded_hash
         st.session_state.org_selected = set()
         st.session_state.org_rotations = {}
         st.session_state.org_insertions = []
@@ -303,11 +321,11 @@ def _tool_organize_pages(project_root: Path) -> None:
     run_root = project_root / "runs" / f"organize_{run_id}"
     run_root.mkdir(parents=True, exist_ok=True)
 
-    # Save base PDF only if it doesn't already exist in this run's directory
+    # Always write base.pdf — the run_id is fresh whenever state resets, so
+    # this always creates a new file, never overwrites a stale one.
     pdf_path = run_root / "base.pdf"
-    if not pdf_path.exists():
-        with pdf_path.open("wb") as f:
-            f.write(uploaded.getbuffer())
+    with pdf_path.open("wb") as f:
+        f.write(uploaded_bytes)
 
     # Open PDF (needed for both rendering and applying operations)
     doc = pymupdf.open(str(pdf_path))
@@ -316,14 +334,6 @@ def _tool_organize_pages(project_root: Path) -> None:
     _init_organize_state(num_pages)
 
     # ---- Process pending operations BEFORE rendering ----
-
-    # Delete: rebuild PDF excluding selected pages
-    if st.session_state.get("org_delete_req"):
-        st.session_state.org_delete_req = False
-        msg = _apply_delete_operation(pdf_path, run_root)
-        st.session_state.org_message = msg
-        doc.close()
-        st.rerun()
 
     # Extract: build extracted PDF and show download button
     if st.session_state.get("org_extract_req"):
@@ -421,7 +431,7 @@ def _tool_organize_pages(project_root: Path) -> None:
         st.rerun()
 
     if action == "delete":
-        st.session_state.org_delete_req = True
+        _apply_delete_operation(pdf_path, run_root)
         doc.close()
         st.rerun()
 
@@ -460,7 +470,7 @@ def _tool_organize_pages(project_root: Path) -> None:
     has_changes = (
         st.session_state.org_rotations
         or st.session_state.org_insertions
-        or st.session_state.get("org_delete_req")
+        or st.session_state.org_selected
     )
 
     out_name = st.text_input(
@@ -474,10 +484,6 @@ def _tool_organize_pages(project_root: Path) -> None:
         save_pressed = st.button("💾 Save & Download", type="primary")
 
     if save_pressed:
-        # Apply pending delete first so the output reflects current page state
-        if st.session_state.org_selected and not st.session_state.get("org_delete_req"):
-            _apply_delete_operation(pdf_path, run_root)
-
         out_path = run_root / out_name
         with st.spinner("Building output PDF..."):
             _build_final_output(pdf_path, run_root, out_path)
@@ -628,7 +634,7 @@ def _render_single_page(
     with btn_col3:
         if st.button("🗑", key=f"del_{page_num}", help="Delete this page"):
             st.session_state.org_selected = {page_num}
-            st.session_state.org_delete_req = True
+            _apply_delete_operation(pdf_path, run_root)
             st.rerun()
 
     sel_label = "✓ Selected" if is_selected else "Select"
@@ -646,18 +652,18 @@ def _render_single_page(
 
 
 def _apply_delete_operation(pdf_path: Path, run_root: Path) -> str:
-    """Apply stored deletions and rotations to the PDF on disk. Returns description."""
+    """Apply stored deletions to the PDF on disk. Returns description.
+
+    Note: Rotations are NOT applied here — they are applied in _build_final_output
+    alongside deletions and insertions in a single pass. This avoids a double-
+    rotation bug where intermediate reruns would bake rotations into base.pdf,
+    only for _build_final_output to apply them again.
+    """
     selected = st.session_state.org_selected.copy()
-    rotations = st.session_state.org_rotations.copy()
 
     doc = pymupdf.open(str(pdf_path))
 
-    # Apply all rotations first
-    for idx, rot in rotations.items():
-        if 0 <= idx < len(doc) and rot:
-            doc[idx].set_rotation(rot)
-
-    # Write pages excluding deleted ones
+    # Write pages excluding deleted ones (no rotation — only deletions here)
     writer = pymupdf.open()
     for page_i in range(len(doc)):
         if page_i not in selected:
@@ -670,11 +676,9 @@ def _apply_delete_operation(pdf_path: Path, run_root: Path) -> str:
 
     shutil.copy(str(out), str(pdf_path))
 
-    # Clear rotations since the doc was rebuilt
-    st.session_state.org_rotations = {}
     st.session_state.org_selected = set()
     st.session_state.org_insertions = []
-    # Clear orphaned file-uploader widget states so re-uploading shows the fresh filename
+    # Clear orphaned file-uploader widget states
     for key in list(st.session_state.keys()):
         if key.startswith("insert_file_slot_"):
             del st.session_state[key]
