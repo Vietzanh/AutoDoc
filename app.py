@@ -260,6 +260,10 @@ def _init_organize_state(num_pages: int) -> None:
     """Initialize or reset session state for the organize tool."""
     if "org_selected" not in st.session_state:
         st.session_state.org_selected: set = set()
+    if "org_deleted_pages" not in st.session_state:
+        st.session_state.org_deleted_pages: set = set()
+    if "org_delete_needed" not in st.session_state:
+        st.session_state.org_delete_needed: bool = False
     if "org_rotations" not in st.session_state:
         st.session_state.org_rotations: dict = {}
     if "org_insertions" not in st.session_state:
@@ -286,6 +290,8 @@ def _tool_organize_pages(project_root: Path) -> None:
         st.session_state.org_last_hash = None
         st.session_state.org_run_id = uuid.uuid4().hex[:8]
         st.session_state.org_selected = set()
+        st.session_state.org_deleted_pages = set()
+        st.session_state.org_delete_needed = False
         st.session_state.org_rotations = {}
         st.session_state.org_insertions = []
         st.session_state.org_mode = "view"
@@ -307,6 +313,8 @@ def _tool_organize_pages(project_root: Path) -> None:
         st.session_state.org_last_file = uploaded.name
         st.session_state.org_last_hash = uploaded_hash
         st.session_state.org_selected = set()
+        st.session_state.org_deleted_pages = set()
+        st.session_state.org_delete_needed = False
         st.session_state.org_rotations = {}
         st.session_state.org_insertions = []
         st.session_state.org_mode = "view"
@@ -326,6 +334,13 @@ def _tool_organize_pages(project_root: Path) -> None:
     pdf_path = run_root / "base.pdf"
     with pdf_path.open("wb") as f:
         f.write(uploaded_bytes)
+
+    # If a delete was applied in the previous render (stored by the toolbar delete
+    # handler), base.pdf has been rebuilt to disk but the line above has just
+    # overwritten it with the original bytes. Re-apply the deletion exactly once.
+    if st.session_state.get("org_delete_needed"):
+        _apply_delete_operation(pdf_path, run_root, uploaded_bytes)
+        st.session_state.org_delete_needed = False
 
     # Open PDF (needed for both rendering and applying operations)
     doc = pymupdf.open(str(pdf_path))
@@ -431,7 +446,8 @@ def _tool_organize_pages(project_root: Path) -> None:
         st.rerun()
 
     if action == "delete":
-        _apply_delete_operation(pdf_path, run_root)
+        _apply_delete_operation(pdf_path, run_root, uploaded_bytes)
+        st.session_state.org_delete_needed = True
         doc.close()
         st.rerun()
 
@@ -462,7 +478,7 @@ def _tool_organize_pages(project_root: Path) -> None:
     st.markdown("---")
 
     # ---- Render page thumbnails ----
-    _render_page_grid(doc, pdf_path, run_root, num_pages, insert_mode)
+    _render_page_grid(doc, pdf_path, run_root, num_pages, insert_mode, uploaded_bytes)
 
     st.markdown("---")
 
@@ -471,6 +487,7 @@ def _tool_organize_pages(project_root: Path) -> None:
         st.session_state.org_rotations
         or st.session_state.org_insertions
         or st.session_state.org_selected
+        or st.session_state.org_deleted_pages
     )
 
     out_name = st.text_input(
@@ -506,6 +523,7 @@ def _render_page_grid(
     run_root: Path,
     num_pages: int,
     insert_mode: bool,
+    uploaded_bytes: bytes,
 ) -> None:
     """Render the page thumbnail grid with per-page selection and action buttons."""
     rows = []
@@ -516,7 +534,7 @@ def _render_page_grid(
         cols = st.columns(PAGES_PER_ROW)
         for col_idx, page_num in enumerate(row_pages):
             with cols[col_idx]:
-                _render_single_page(doc, pdf_path, run_root, page_num)
+                _render_single_page(doc, pdf_path, run_root, page_num, uploaded_bytes)
 
     # ---- Insert-mode "+" slots between pages ----
     if insert_mode:
@@ -568,6 +586,7 @@ def _render_single_page(
     pdf_path: Path,
     run_root: Path,
     page_num: int,
+    uploaded_bytes: bytes,
 ) -> None:
     """Render one page thumbnail: image + selection border + per-page action buttons."""
     page = doc[page_num]
@@ -634,7 +653,9 @@ def _render_single_page(
     with btn_col3:
         if st.button("🗑", key=f"del_{page_num}", help="Delete this page"):
             st.session_state.org_selected = {page_num}
-            _apply_delete_operation(pdf_path, run_root)
+            st.session_state.org_deleted_pages.add(page_num)
+            _apply_delete_operation(pdf_path, run_root, uploaded_bytes)
+            st.session_state.org_delete_needed = True
             st.rerun()
 
     sel_label = "✓ Selected" if is_selected else "Select"
@@ -651,8 +672,13 @@ def _render_single_page(
 # ---------------------------------------------------------------------------
 
 
-def _apply_delete_operation(pdf_path: Path, run_root: Path) -> str:
+def _apply_delete_operation(
+    pdf_path: Path, run_root: Path, original_bytes: bytes
+) -> str:
     """Apply stored deletions to the PDF on disk. Returns description.
+
+    Accumulates selected pages into org_deleted_pages (persistent across reruns)
+    so that repeated deletes work correctly even after base.pdf has been rebuilt.
 
     Note: Rotations are NOT applied here — they are applied in _build_final_output
     alongside deletions and insertions in a single pass. This avoids a double-
@@ -661,12 +687,16 @@ def _apply_delete_operation(pdf_path: Path, run_root: Path) -> str:
     """
     selected = st.session_state.org_selected.copy()
 
-    doc = pymupdf.open(str(pdf_path))
+    # Persist deleted pages so they survive reruns and multiple delete actions
+    deleted_pages = st.session_state.org_deleted_pages
+    deleted_pages.update(selected)
+    st.session_state.org_deleted_pages = deleted_pages
 
-    # Write pages excluding deleted ones (no rotation — only deletions here)
+    # Rebuild base.pdf from original bytes, skipping all persistently deleted pages
+    doc = pymupdf.open("pdf", original_bytes)
     writer = pymupdf.open()
     for page_i in range(len(doc)):
-        if page_i not in selected:
+        if page_i not in deleted_pages:
             writer.insert_pdf(doc, from_page=page_i, to_page=page_i)
 
     out = run_root / "output.pdf"
@@ -715,6 +745,7 @@ def _build_final_output(pdf_path: Path, run_root: Path, out_path: Path) -> Path:
     """Apply all rotations and insertions, produce final output PDF."""
     insertions = st.session_state.org_insertions
     rotations = st.session_state.org_rotations
+    deleted_pages = st.session_state.org_deleted_pages
 
     # Load base doc and apply rotations
     doc = pymupdf.open(str(pdf_path))
@@ -741,7 +772,8 @@ def _build_final_output(pdf_path: Path, run_root: Path, out_path: Path) -> Path:
                 tmp.unlink(missing_ok=True)
 
         # Insert the original page at this slot (0-indexed page = slot index)
-        if pos < num_pages:
+        # Skip pages that have been deleted
+        if pos < num_pages and pos not in deleted_pages:
             writer.insert_pdf(doc, from_page=pos, to_page=pos)
 
     out = out_path
