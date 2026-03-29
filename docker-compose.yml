@@ -1,0 +1,32 @@
+# ── AutoDoc Docker Compose — Development ──────────────────────────────────────
+# Hot reload enabled: code changes inside backend/ reflect immediately.
+# Run with: docker compose up
+
+version: "3.9"
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      # Mount source code for hot reload (uvicorn --reload watches this)
+      - ./backend:/app
+      # Persist uploaded files and database
+      - backend_data:/app/data
+    environment:
+      - DEBUG=true
+      - HOST=0.0.0.0
+      - PORT=8000
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+volumes:
+  backend_data:
+    name: autodoc_backend_data
