@@ -211,7 +211,7 @@ class JobService:
         _session,
     ) -> None:
         from src.models.database_models import JobStatus
-        from src.pdf_operations.combine import combine_pdfs
+        from src.pdf_operations.combine import combine_pdfs  # backend/src/pdf_operations/ — canonical
 
         job_repo = JobRepository(_session)
         doc_repo = DocumentRepository(_session)

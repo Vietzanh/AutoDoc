@@ -68,6 +68,37 @@ class DocumentService:
             return False
         return self.repo.delete(doc_id)
 
+    def get_thumbnails(self, doc: Document, *, thumb_width: int = 200) -> list[dict]:
+        """
+        Render each page of the PDF as a base64-encoded PNG thumbnail.
+
+        Returns
+        -------
+        list[dict]
+            [{page_number: 1, image_base64: "<data:...>"}, ...]
+        """
+        import base64
+        import io
+
+        pdf_path = Path(doc.file_path)
+        if not pdf_path.exists():
+            return []
+
+        thumbnails = []
+        with pymupdf.open(str(pdf_path)) as pdf:
+            for page_num, page in enumerate(pdf, start=1):
+                # Calculate zoom to get thumb_width at 72 DPI (screen scale)
+                zoom = thumb_width / page.rect.width
+                mat = pymupdf.Matrix(zoom, zoom)
+                pix = page.get_pixmap(matrix=mat)
+                buf = io.BytesIO(pix.tobytes("png"))
+                b64 = base64.b64encode(buf.getvalue()).decode("ascii")
+                thumbnails.append({
+                    "page_number": page_num,
+                    "image_base64": f"data:image/png;base64,{b64}",
+                })
+        return thumbnails
+
     def get_output_path(self, job_id: int, filename: str) -> Path:
         out_dir = self.settings.OUTPUT_DIR / str(job_id)
         out_dir.mkdir(parents=True, exist_ok=True)

@@ -1,7 +1,7 @@
 # AutoDoc — Project Context
 
-> **Last updated:** 2026-03-29
-> **Status:** Backend scaffold complete · Frontend scaffolding stopped mid-implementation
+> **Last updated:** 2026-04-01
+> **Status:** Frontend scaffold complete · Remaining: backend PDF ops + 4 frontend tool pages + DevOps
 
 ---
 
@@ -75,42 +75,53 @@ backend/
 
 ```
 frontend/
-├── package.json               # React 18, Vite, Tailwind, axios, react-router-dom, sonner
+├── package.json               # React 18, Vite, Tailwind, axios, react-router-dom, sonner, react-dropzone
+├── postcss.config.js
 ├── vite.config.ts             # Dev proxy: /api → http://localhost:8000
 ├── tailwind.config.js
 ├── tsconfig.json
-├── index.html
-│
+├── tsconfig.node.json
 └── src/
-    ├── main.tsx               # App entry
+    ├── main.tsx               # App entry, BrowserRouter, AuthProvider, Toaster
     ├── index.css              # Tailwind base
+    ├── App.tsx               # Routes: /login, /register, /, /reconstruct, /combine
     │
     ├── context/
-    │   └── AuthContext.tsx    # AuthProvider, useAuth hook (JWT in localStorage)
+    │   └── AuthContext.tsx    # AuthProvider, useAuth hook (JWT in localStorage, auto-restore session)
     │
     ├── services/
-    │   └── api.ts             # Axios client with typed methods for all endpoints
+    │   └── api.ts             # Axios singleton with typed methods for all endpoints
     │
     ├── hooks/
     │   └── useJobPoll.ts      # useJobPoll(jobId, interval) — polls until terminal state
     │
     ├── components/
-    │   └── ui/                # Reusable UI components (Button, Input, Card, etc.)
+    │   └── ui/
+    │       ├── Badge.tsx      # Status badge (pending/done/failed/processing variants)
+    │       ├── Button.tsx     # Variants: primary, secondary, danger, ghost; sizes: sm/md/lg
+    │       ├── Card.tsx       # Card + CardHeader + CardBody + CardFooter
+    │       ├── Input.tsx      # Input with label + error message, forwardRef support
+    │       ├── Layout.tsx     # Shared shell: sticky header with nav, footer, mobile nav
+    │       ├── ProgressBar.tsx # Animated blue progress bar (0–100%)
+    │       └── Spinner.tsx    # SVG animate-spin spinner, sizes sm/md/lg
     │
     └── pages/
-        ├── LoginPage.tsx      # Login form (email/username + password)
-        ├── RegisterPage.tsx    # Registration form
-        ├── DashboardPage.tsx  # Home — document list + job list
-        ├── ReconstructPage.tsx # PDF → DOCX tool
-        ├── CombinePage.tsx    # Combine PDFs tool
-        └── [Organize/Split/Crop/PageNumbers pages]
+        ├── LoginPage.tsx      # Login form (username + password), redirects if authed
+        ├── RegisterPage.tsx   # Register form (email, username, password, confirmPassword)
+        ├── DashboardPage.tsx  # Document table + Recent Jobs table
+        ├── ReconstructPage.tsx # 4-state wizard: upload → ready → processing → done/failed
+        ├── CombinePage.tsx    # Multi-doc selector + output filename → job + download
+        ├── OrganizePage.tsx   # ⬜ TODO — page thumbnail grid, rotate/delete/extract/insert
+        ├── SplitPage.tsx      # ⬜ TODO — split by ranges or even/odd pages
+        ├── CropPage.tsx       # ⬜ TODO — crop by margins or custom rect
+        └── PageNumbersPage.tsx # ⬜ TODO — add page numbers (position, format, font)
 ```
 
 ---
 
-## 3. Backend — What Was Built
+## 3. What Was Built
 
-### ✅ Completed
+### ✅ Backend — Complete
 
 | File | Status |
 |------|--------|
@@ -134,13 +145,54 @@ frontend/
 | `backend/src/main.py` | ✅ Written — FastAPI app, CORS, startup init_db |
 | `backend/src/**/__init__.py` | ✅ All `__init__.py` files created |
 
-### 🚫 Not Yet Built
+### 🚫 Backend — Not Yet Built
 
-- All remaining PDF operations (split, crop, page numbers) — routes, services, schemas not written
-- Register page in frontend
-- All frontend pages (Dashboard, Reconstruct, Combine, etc.)
-- `frontend/package.json`, `vite.config.ts`, `tailwind.config.js`, `tsconfig.json`
-- Any frontend components
+- Remaining PDF operation routes, services, and schemas:
+  - `split` job (`/jobs/split`) — by ranges, even/odd
+  - `organize` job (`/jobs/organize`) — rotate, delete, extract, insert pages
+  - `crop` job (`/jobs/crop`) — by margins or custom rect
+  - `page_numbers` job (`/jobs/page-numbers`) — position, format, font
+- `src/services/pdf_ops_service.py` — wraps pdf_operations/ modules
+- `src/routes/pdf_ops_routes.py` — all 4 new endpoints
+
+### ✅ Frontend — Complete
+
+| File | Status |
+|------|--------|
+| `frontend/package.json` | ✅ Written — React 18, Vite 5, Tailwind 3, axios, react-router-dom, sonner, react-dropzone |
+| `frontend/postcss.config.js` | ✅ Written |
+| `frontend/vite.config.ts` | ✅ Written — proxy /api → localhost:8000 |
+| `frontend/tailwind.config.js` | ✅ Written |
+| `frontend/tsconfig.json` | ✅ Written — strict mode, path alias @/* |
+| `frontend/tsconfig.node.json` | ✅ Written |
+| `frontend/index.html` | ✅ Written |
+| `frontend/src/main.tsx` | ✅ Written — BrowserRouter, AuthProvider, Toaster |
+| `frontend/src/index.css` | ✅ Written — Tailwind directives + base styles |
+| `frontend/src/App.tsx` | ✅ Written — ProtectedRoute/PublicRoute guards, all routes wired |
+| `frontend/src/context/AuthContext.tsx` | ✅ Written — auto-restore session, login/register/logout |
+| `frontend/src/services/api.ts` | ✅ Written — full Axios singleton, typed methods, 401 interceptor |
+| `frontend/src/hooks/useJobPoll.ts` | ✅ Written — polls until done/failed, stoppedRef guard |
+| `frontend/src/components/ui/Badge.tsx` | ✅ Written — variants + JobStatusBadge convenience |
+| `frontend/src/components/ui/Button.tsx` | ✅ Written — variants, sizes, loading state |
+| `frontend/src/components/ui/Card.tsx` | ✅ Written — Card + CardHeader + CardBody + CardFooter |
+| `frontend/src/components/ui/Input.tsx` | ✅ Written — label, error, forwardRef |
+| `frontend/src/components/ui/Layout.tsx` | ✅ Written — sticky header, nav, footer, mobile nav |
+| `frontend/src/components/ui/ProgressBar.tsx` | ✅ Written — animated, 0–100% |
+| `frontend/src/components/ui/Spinner.tsx` | ✅ Written — SVG animate-spin, sm/md/lg |
+| `frontend/src/pages/LoginPage.tsx` | ✅ Written — username + password, redirects if authed |
+| `frontend/src/pages/RegisterPage.tsx` | ✅ Written — email, username, password, confirmPassword |
+| `frontend/src/pages/DashboardPage.tsx` | ✅ Written — document table + recent jobs table |
+| `frontend/src/pages/ReconstructPage.tsx` | ✅ Written — 4-state wizard: upload → ready → processing → done/failed |
+| `frontend/src/pages/CombinePage.tsx` | ✅ Written — multi-doc selector → reorder → job → download |
+
+### 🚫 Frontend — Not Yet Built
+
+- `frontend/src/pages/OrganizePage.tsx` — page thumbnail grid, rotate/delete/extract/insert pages
+- `frontend/src/pages/SplitPage.tsx` — split by ranges or even/odd pages
+- `frontend/src/pages/CropPage.tsx` — crop by margins or custom rect
+- `frontend/src/pages/PageNumbersPage.tsx` — add page numbers (position, format, font)
+- API methods for the 4 new job types (`api.ts` update)
+- Routing entries for the 4 new pages (`App.tsx` update)
 
 ---
 
@@ -257,31 +309,24 @@ Client                     FastAPI                        Background Thread
 
 ## 7. Implementation Plan (Remaining Work)
 
-### Priority 1 — Backend (complete)
-- [ ] Add remaining PDF operation routes & services:
-  - `split` job (by ranges, even/odd)
-  - `organize` job (rotate, delete, extract, insert pages)
-  - `crop` job (margins, custom rect)
-  - `page_numbers` job (position, format, font)
-- [ ] Implement `src/services/pdf_ops_service.py` to wrap existing `src/pdf_operations/` modules
-- [ ] Add missing Pydantic schemas for split/crop/number requests
-- [ ] Write `src/routes/pdf_ops_routes.py`
+### Priority 1 — Backend: Remaining PDF Operations
+- [ ] Implement `src/services/pdf_ops_service.py` — wraps `src/pdf_operations/` modules for split/organize/crop/page_numbers
+- [ ] Add missing Pydantic schemas in `src/models/schemas.py` for split/organize/crop/page_numbers requests
+- [ ] Write `src/routes/pdf_ops_routes.py` — 4 new endpoints:
+  - `POST /jobs/split` — by ranges, even/odd
+  - `POST /jobs/organize` — rotate, delete, extract, insert pages
+  - `POST /jobs/crop` — by margins or custom rect
+  - `POST /jobs/page-numbers` — position, format, font
 - [ ] Unit tests for services and routes
 
-### Priority 2 — Frontend (complete)
-- [ ] Install npm dependencies: `npm install` in `frontend/`
-- [ ] Write all remaining pages:
-  - `RegisterPage.tsx`
-  - `DashboardPage.tsx` (document list + job list)
-  - `ReconstructPage.tsx` (upload → start job → poll → download)
-  - `CombinePage.tsx` (select docs → reorder → start job → poll → download)
-  - `OrganizePage.tsx` (page thumbnail grid, rotate/delete/extract/insert)
-  - `SplitPage.tsx`, `CropPage.tsx`, `PageNumbersPage.tsx`
-- [ ] Write reusable UI components in `src/components/ui/`
-- [ ] Wire up routing in `App.tsx` with `react-router-dom`
-- [ ] Integrate `useJobPoll` into all tool pages
-- [ ] Add toast notifications via `sonner` for success/error/auto-delete failed jobs
-- [ ] Style with Tailwind CSS
+### Priority 2 — Frontend: Remaining Tool Pages
+- [ ] Update `frontend/src/services/api.ts` — add API methods for split/organize/crop/page_numbers jobs
+- [ ] Update `frontend/src/App.tsx` — add routes for the 4 new pages
+- [ ] Write `frontend/src/pages/OrganizePage.tsx` — page thumbnail grid, rotate/delete/extract/insert
+- [ ] Write `frontend/src/pages/SplitPage.tsx` — split by ranges or even/odd
+- [ ] Write `frontend/src/pages/CropPage.tsx` — crop by margins or custom rect
+- [ ] Write `frontend/src/pages/PageNumbersPage.tsx` — add page numbers (position, format, font)
+- [ ] Update `Layout.tsx` nav — add links to the 4 new tool pages
 
 ### Priority 3 — DevOps & Polish
 - [ ] Production `Dockerfile` (multi-stage build for frontend static files served by Nginx)
@@ -368,13 +413,14 @@ Docker Compose mounts `./backend:/app`, and uvicorn `--reload` watches `/app`. N
 
 ### Frontend
 
-| Package | Purpose |
-|---------|---------|
-| `react` + `react-dom` | UI framework |
-| `react-router-dom` | Client-side routing |
-| `axios` | HTTP client |
-| `sonner` | Toast notifications |
-| `react-dropzone` | Drag-and-drop file upload |
-| `@vitejs/plugin-react` | Vite React integration |
-| `tailwindcss` + `autoprefixer` | CSS utility framework |
-| `typescript` | Type safety |
+| Package | Version | Purpose |
+|---------|---------|---------|
+| `react` + `react-dom` | ^18.2.0 | UI framework |
+| `react-router-dom` | ^6.20.0 | Client-side routing |
+| `axios` | ^1.6.0 | HTTP client |
+| `sonner` | ^1.2.0 | Toast notifications |
+| `react-dropzone` | ^14.2.3 | Drag-and-drop file upload |
+| `@vitejs/plugin-react` | ^4.2.0 | Vite React integration |
+| `tailwindcss` + `autoprefixer` + `postcss` | ^3.3.6 / ^10.4.16 / ^8.4.32 | CSS utility framework |
+| `typescript` | ^5.3.0 | Type safety |
+| `vite` | ^5.0.0 | Build tool |

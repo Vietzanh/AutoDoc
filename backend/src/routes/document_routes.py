@@ -8,7 +8,7 @@ from sqlmodel import Session
 
 from src.models.database import get_session
 from src.models.database_models import User
-from src.models.schemas import DocumentRead, DocumentListResponse
+from src.models.schemas import DocumentRead, DocumentListResponse, PageThumbnailsResponse
 from src.services.document_service import DocumentService
 from src.core.security import get_current_user
 
