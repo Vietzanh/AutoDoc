@@ -1,7 +1,7 @@
 # AutoDoc — Project Context
 
 > **Last updated:** 2026-04-01
-> **Status:** Frontend scaffold complete · Remaining: backend PDF ops + 4 frontend tool pages + DevOps
+> **Status:** Frontend scaffold complete · Remaining: organize/crop/page-numbers backend + 3 frontend tool pages + DevOps
 
 ---
 
@@ -148,12 +148,10 @@ frontend/
 ### 🚫 Backend — Not Yet Built
 
 - Remaining PDF operation routes, services, and schemas:
-  - `split` job (`/jobs/split`) — by ranges, even/odd
   - `organize` job (`/jobs/organize`) — rotate, delete, extract, insert pages
   - `crop` job (`/jobs/crop`) — by margins or custom rect
   - `page_numbers` job (`/jobs/page-numbers`) — position, format, font
-- `src/services/pdf_ops_service.py` — wraps pdf_operations/ modules
-- `src/routes/pdf_ops_routes.py` — all 4 new endpoints
+- `src/services/pdf_ops_service.py` — wraps pdf_operations/ modules (optional consolidation layer)
 
 ### ✅ Frontend — Complete
 
@@ -184,11 +182,11 @@ frontend/
 | `frontend/src/pages/DashboardPage.tsx` | ✅ Written — document table + recent jobs table |
 | `frontend/src/pages/ReconstructPage.tsx` | ✅ Written — 4-state wizard: upload → ready → processing → done/failed |
 | `frontend/src/pages/CombinePage.tsx` | ✅ Written — multi-doc selector → reorder → job → download |
+| `frontend/src/pages/SplitPage.tsx` | ✅ Written — thumbnail grid with scissor-split lines, ZIP download |
 
 ### 🚫 Frontend — Not Yet Built
 
 - `frontend/src/pages/OrganizePage.tsx` — page thumbnail grid, rotate/delete/extract/insert pages
-- `frontend/src/pages/SplitPage.tsx` — split by ranges or even/odd pages
 - `frontend/src/pages/CropPage.tsx` — crop by margins or custom rect
 - `frontend/src/pages/PageNumbersPage.tsx` — add page numbers (position, format, font)
 - API methods for the 4 new job types (`api.ts` update)
@@ -215,6 +213,7 @@ frontend/
 | `GET` | `/api/documents/{id}` | Get a single document |
 | `DELETE` | `/api/documents/{id}` | Delete a document |
 | `GET` | `/api/documents/{id}/download` | Download the original PDF |
+| `GET` | `/api/documents/{id}/thumbnails` | Get page thumbnails (base64 PNG) for Split UI |
 
 ### Jobs
 
@@ -222,6 +221,8 @@ frontend/
 |--------|----------|-------------|
 | `POST` | `/api/jobs/reconstruct` | Start PDF → DOCX job (async) |
 | `POST` | `/api/jobs/combine` | Start combine PDFs job (async) |
+| `POST` | `/api/jobs/split` | Start split PDF job (async) |
+| `GET` | `/api/jobs/{id}/parts` | List split parts after split job completes |
 | `GET` | `/api/jobs/{id}` | Poll job status + progress |
 | `GET` | `/api/jobs` | List user's jobs (filterable by status) |
 | `DELETE` | `/api/jobs/{id}` | Delete a job + its output file |
@@ -310,23 +311,20 @@ Client                     FastAPI                        Background Thread
 ## 7. Implementation Plan (Remaining Work)
 
 ### Priority 1 — Backend: Remaining PDF Operations
-- [ ] Implement `src/services/pdf_ops_service.py` — wraps `src/pdf_operations/` modules for split/organize/crop/page_numbers
-- [ ] Add missing Pydantic schemas in `src/models/schemas.py` for split/organize/crop/page_numbers requests
-- [ ] Write `src/routes/pdf_ops_routes.py` — 4 new endpoints:
-  - `POST /jobs/split` — by ranges, even/odd
-  - `POST /jobs/organize` — rotate, delete, extract, insert pages
-  - `POST /jobs/crop` — by margins or custom rect
-  - `POST /jobs/page-numbers` — position, format, font
-- [ ] Unit tests for services and routes
+- [x] `POST /jobs/split` + `GET /jobs/{id}/parts` + ZIP download ✅
+- [ ] `POST /jobs/organize` — rotate, delete, extract, insert pages
+- [ ] `POST /jobs/crop` — by margins or custom rect
+- [ ] `POST /jobs/page-numbers` — position, format, font
+- [ ] `src/services/pdf_ops_service.py` — optional consolidation layer
 
 ### Priority 2 — Frontend: Remaining Tool Pages
-- [ ] Update `frontend/src/services/api.ts` — add API methods for split/organize/crop/page_numbers jobs
-- [ ] Update `frontend/src/App.tsx` — add routes for the 4 new pages
+- [x] Update `frontend/src/services/api.ts` — `createSplitJob`, `getSplitParts`, `getDocumentThumbnails` ✅
+- [x] Update `frontend/src/App.tsx` — `/split` route ✅
+- [x] Update `frontend/src/components/ui/Layout.tsx` — Split nav link ✅
+- [x] Write `frontend/src/pages/SplitPage.tsx` — thumbnail grid, scissor-split lines, ZIP download ✅
 - [ ] Write `frontend/src/pages/OrganizePage.tsx` — page thumbnail grid, rotate/delete/extract/insert
-- [ ] Write `frontend/src/pages/SplitPage.tsx` — split by ranges or even/odd
 - [ ] Write `frontend/src/pages/CropPage.tsx` — crop by margins or custom rect
 - [ ] Write `frontend/src/pages/PageNumbersPage.tsx` — add page numbers (position, format, font)
-- [ ] Update `Layout.tsx` nav — add links to the 4 new tool pages
 
 ### Priority 3 — DevOps & Polish
 - [ ] Production `Dockerfile` (multi-stage build for frontend static files served by Nginx)
@@ -359,9 +357,9 @@ src/
 │   └── table_utils.py       # is_same_line, horizontally_separated, etc.
 │
 └── pdf_operations/
-    ├── combine.py            # combine_pdfs() — pure pymupdf
-    ├── split.py              # split_by_ranges, split_even_odd (planned)
-    ├── organize.py            # delete/rotate/extract/insert helpers (planned)
+    ├── combine.py            # combine_pdfs() — pure pymupdf ✅ (canonical: backend/src/)
+    ├── split.py              # split_by_points() ✅ (canonical: backend/src/)
+    ├── organize.py           # delete/rotate/extract/insert helpers ✅ (canonical: backend/src/)
     ├── crop.py               # crop_by_margins, crop_by_rect (planned)
     └── page_numbers.py       # add_page_numbers() (planned)
 ```

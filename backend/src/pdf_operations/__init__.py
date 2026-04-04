@@ -13,6 +13,7 @@ from .organize import (
     reorder_pages,
     rotate_pages,
 )
+from .split import split_by_points
 
 __all__ = [
     "combine_pdfs",
@@ -21,4 +22,5 @@ __all__ = [
     "insert_pages",
     "reorder_pages",
     "rotate_pages",
+    "split_by_points",
 ]

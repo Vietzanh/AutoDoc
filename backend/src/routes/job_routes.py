@@ -15,6 +15,7 @@ from src.models.database_models import User, JobStatus
 from src.models.schemas import (
     JobRead, JobListResponse,
     ReconstructRequest, CombineRequest,
+    SplitRequest, SplitPartsResponse,
 )
 from src.services.job_service import JobService
 from src.services.document_service import DocumentService
@@ -91,6 +92,58 @@ def create_combine_job(
     return _job_to_read(job)
 
 
+# ── Split ───────────────────────────────────────────────────────────────────
+
+@router.post("/split", response_model=JobRead, status_code=status.HTTP_202_ACCEPTED)
+def create_split_job(
+    request: SplitRequest,
+    session: Session = Depends(get_session),
+    current_user: User = Depends(get_current_user),
+):
+    """Start a split PDF job. Each split point marks the last page of that part."""
+    doc_service = DocumentService(session)
+    doc = doc_service.get(request.document_id)
+    if not doc or doc.user_id != current_user.id:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Document not found")
+
+    service = JobService(session)
+    job = service.create_split_job(
+        user_id=current_user.id,
+        document_id=request.document_id,
+        split_points=request.split_points,
+        output_filename=request.output_filename,
+    )
+    return _job_to_read(job)
+
+
+@router.get("/{job_id}/parts", response_model=SplitPartsResponse)
+def get_split_parts(
+    job_id: int,
+    session: Session = Depends(get_session),
+    current_user: User = Depends(get_current_user),
+):
+    """Return the list of split parts after a split job completes."""
+    service = JobService(session)
+    job = service.get(job_id)
+    if not job:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Job not found")
+    _check_ownership(job, current_user.id)
+
+    if job.tool != "split":
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Not a split job")
+
+    if job.status != JobStatus.DONE.value:
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Job not done yet")
+
+    import json
+    try:
+        parts = json.loads(job.output_filename or "[]")
+    except Exception:
+        raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail="Corrupted parts data")
+
+    return SplitPartsResponse(parts=parts)
+
+
 # ── Poll / list / delete ─────────────────────────────────────────────────────
 
 @router.get("/{job_id}", response_model=JobRead)
@@ -135,10 +188,13 @@ def delete_job(
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Job not found")
     _check_ownership(job, current_user.id)
 
-    # Remove output file
+    # Remove output file(s)
     if job.output_path:
         p = Path(job.output_path)
-        if p.exists():
+        if p.is_dir():
+            import shutil
+            shutil.rmtree(p, ignore_errors=True)
+        elif p.exists():
             p.unlink(missing_ok=True)
 
     from src.repositories.job_repository import JobRepository
@@ -151,7 +207,9 @@ def download_job_result(
     session: Session = Depends(get_session),
     current_user: User = Depends(get_current_user),
 ):
-    """Download the output file produced by a completed job."""
+    """Download the output file (or ZIP of split parts) produced by a completed job."""
+    import io, zipfile
+
     service = JobService(session)
     job = service.get(job_id)
     if not job:
@@ -167,6 +225,26 @@ def download_job_result(
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Output file not found")
 
     path = Path(job.output_path)
+
+    # Split jobs: output_path is a directory of PDF parts — zip them up
+    if job.tool == "split":
+        if not path.is_dir():
+            raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Split output directory not found")
+        # Use source doc name as zip name, falling back to job id
+        zip_name = f"split_parts_{job_id}.zip"
+        buffer = io.BytesIO()
+        with zipfile.ZipFile(buffer, "w", zipfile.ZIP_DEFLATED) as zf:
+            for pdf_file in sorted(path.glob("*.pdf")):
+                zf.write(pdf_file, pdf_file.name)
+        buffer.seek(0)
+        from fastapi.responses import StreamingResponse
+        return StreamingResponse(
+            iter([buffer.getvalue()]),
+            media_type="application/zip",
+            headers={"Content-Disposition": f'attachment; filename="{zip_name}"'},
+        )
+
+    # Non-split jobs: single output file
     if not path.exists():
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Output file missing from disk")
 

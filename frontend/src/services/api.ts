@@ -140,6 +140,13 @@ class ApiClient {
     return res.data;
   }
 
+  async getDocumentThumbnails(docId: number): Promise<{ page_number: number; image_base64: string }[]> {
+    const res = await this.client.get<{ thumbnails: { page_number: number; image_base64: string }[] }>(
+      `/documents/${docId}/thumbnails`
+    );
+    return res.data.thumbnails;
+  }
+
   // ── Jobs ───────────────────────────────────────────────────────────────────
 
   async createReconstructJob(
@@ -164,6 +171,26 @@ class ApiClient {
       output_filename: outputFilename,
     });
     return res.data;
+  }
+
+  async createSplitJob(
+    documentId: number,
+    splitPoints: number[],
+    outputFilename = "split_part"
+  ): Promise<Job> {
+    const res = await this.client.post<Job>("/jobs/split", {
+      document_id: documentId,
+      split_points: splitPoints,
+      output_filename: outputFilename,
+    });
+    return res.data;
+  }
+
+  async getSplitParts(jobId: number): Promise<{ filename: string; pages: string }[]> {
+    const res = await this.client.get<{ parts: { filename: string; pages: string }[] }>(
+      `/jobs/${jobId}/parts`
+    );
+    return res.data.parts;
   }
 
   async getJob(jobId: number): Promise<Job> {

@@ -59,6 +59,21 @@ def get_document(
     return doc
 
 
+@router.get("/{doc_id}/thumbnails", response_model=PageThumbnailsResponse)
+def get_document_thumbnails(
+    doc_id: int,
+    session: Session = Depends(get_session),
+    current_user: User = Depends(get_current_user),
+):
+    """Get page thumbnails for a document (for the Split tool UI)."""
+    service = DocumentService(session)
+    doc = service.get(doc_id)
+    if not doc or doc.user_id != current_user.id:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Document not found")
+    thumbs = service.get_thumbnails(doc)
+    return PageThumbnailsResponse(thumbnails=thumbs)
+
+
 @router.delete("/{doc_id}", status_code=status.HTTP_204_NO_CONTENT)
 def delete_document(
     doc_id: int,

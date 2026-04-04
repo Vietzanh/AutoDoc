@@ -100,6 +100,35 @@ class JobService:
         )
         return job
 
+    def create_split_job(
+        self,
+        user_id: int,
+        document_id: int,
+        split_points: list[int],
+        output_filename: str,
+    ) -> Job:
+        job = self.repo.create(
+            user_id=user_id,
+            document_id=document_id,
+            tool=JobTool.SPLIT.value,
+            status=JobStatus.PENDING.value,
+            input_document_ids=json.dumps(split_points),
+            # output_filename will be set to JSON parts list by _run_split
+            output_filename=output_filename,
+            progress=0,
+        )
+        self._start_background(
+            job,
+            target=self._run_split,
+            kwargs=dict(
+                job_id=job.id,
+                document_id=document_id,
+                split_points=split_points,
+                output_filename=output_filename,
+            ),
+        )
+        return job
+
     # ── Status helpers ────────────────────────────────────────────────────────
 
     def get(self, job_id: int) -> Optional[Job]:
@@ -248,7 +277,79 @@ class JobService:
             output_filename=output_filename,
         )
 
-    # ── Internal helpers ──────────────────────────────────────────────────────
+    # ── Split runner ─────────────────────────────────────────────────────────
+
+    def _run_split(
+        self,
+        job_id: int,
+        document_id: int,
+        split_points: list[int],
+        output_filename: str,
+        _session,
+    ) -> None:
+        from src.models.database_models import JobStatus
+        from src.pdf_operations.split import split_by_points
+
+        job_repo = JobRepository(_session)
+        doc_repo = DocumentRepository(_session)
+
+        self._update(job_repo, job_id, JobStatus.PROCESSING.value, progress=10)
+
+        doc = doc_repo.get(document_id)
+        if not doc:
+            self._fail_job(job_id, _session, f"Document {document_id} not found")
+            return
+
+        pdf_path = Path(doc.file_path)
+        if not pdf_path.exists():
+            self._fail_job(job_id, _session, "PDF file not found on disk")
+            return
+
+        self._update(job_repo, job_id, JobStatus.PROCESSING.value, progress=30)
+
+        output_dir = self.settings.OUTPUT_DIR / str(job_id)
+        output_dir.mkdir(parents=True, exist_ok=True)
+
+        # Open PDF once to get page count and split
+        import pymupdf
+        with pymupdf.open(str(pdf_path)) as pdf:
+            total = pdf.page_count
+            try:
+                part_paths = split_by_points(
+                    str(pdf_path),
+                    str(output_dir),
+                    split_points,
+                    base_name=output_filename,
+                    verbose=False,
+                )
+            except Exception as exc:
+                self._fail_job(job_id, _session, f"Split failed: {exc}")
+                return
+
+        parts_manifest = []
+        prev = -1
+        for i, point in enumerate(sorted(split_points)):
+            pages_label = f"{prev + 2}-{point + 1}"
+            parts_manifest.append({
+                "filename": Path(part_paths[i]).name,
+                "pages": pages_label,
+            })
+            prev = point
+        # Final part
+        pages_label = f"{prev + 2}-{total}"
+        parts_manifest.append({
+            "filename": Path(part_paths[-1]).name,
+            "pages": pages_label,
+        })
+
+        self._update(
+            job_repo, job_id, JobStatus.DONE.value,
+            progress=100,
+            output_path=str(output_dir),
+            output_filename=json.dumps(parts_manifest),
+        )
+
+    # ── Internal helpers ─────────────────────────────────────────────────────
 
     @staticmethod
     def _update(repo, job_id, status, progress=None, **kwargs):

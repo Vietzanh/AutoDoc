@@ -64,6 +64,15 @@ class DocumentListResponse(BaseModel):
     total: int
 
 
+class PageThumbnail(BaseModel):
+    page_number: int
+    image_base64: str  # data URL: "data:image/png;base64,..."
+
+
+class PageThumbnailsResponse(BaseModel):
+    thumbnails: list[PageThumbnail]
+
+
 # ── Job ───────────────────────────────────────────────────────────────────────
 
 class JobRead(BaseModel):
@@ -98,6 +107,33 @@ class ReconstructRequest(BaseModel):
 class CombineRequest(BaseModel):
     document_ids: list[int] = Field(min_length=2, description="Ordered list of document IDs to combine")
     output_filename: str = Field(default="combined.pdf", max_length=255)
+
+
+# ── Split ─────────────────────────────────────────────────────────────────────
+
+class SplitRequest(BaseModel):
+    document_id: int = Field(description="ID of the source PDF document")
+    split_points: list[int] = Field(
+        min_length=1,
+        description=(
+            "0-based page indices marking the end of each output file. "
+            "E.g. [2, 4] with 5 pages → Part 1: pages 0-2, Part 2: pages 3-4."
+        ),
+    )
+    output_filename: str = Field(
+        default="split_part",
+        max_length=255,
+        description="Base name for output PDF parts. E.g. 'report' → report_part_1.pdf, report_part_2.pdf, ...",
+    )
+
+
+class SplitPart(BaseModel):
+    filename: str
+    pages: str  # human-readable range, e.g. "1-3"
+
+
+class SplitPartsResponse(BaseModel):
+    parts: list[SplitPart]
 
 
 # ── Error ─────────────────────────────────────────────────────────────────────
