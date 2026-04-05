@@ -129,6 +129,62 @@ class JobService:
         )
         return job
 
+    def create_organize_job(
+        self,
+        user_id: int,
+        document_id: int,
+        pages: list[dict],
+        output_filename: str,
+    ) -> Job:
+        job = self.repo.create(
+            user_id=user_id,
+            document_id=document_id,
+            tool=JobTool.ORGANIZE.value,
+            status=JobStatus.PENDING.value,
+            input_document_ids=json.dumps(pages),
+            output_filename=output_filename,
+            progress=0,
+        )
+        self._start_background(
+            job,
+            target=self._run_organize,
+            kwargs=dict(
+                job_id=job.id,
+                document_id=document_id,
+                pages=pages,
+                output_filename=output_filename,
+            ),
+        )
+        return job
+
+    def create_extract_job(
+        self,
+        user_id: int,
+        document_id: int,
+        pages: list[dict],
+        output_filename: str,
+    ) -> Job:
+        job = self.repo.create(
+            user_id=user_id,
+            document_id=document_id,
+            tool=JobTool.EXTRACT.value,
+            status=JobStatus.PENDING.value,
+            input_document_ids=json.dumps(pages),
+            output_filename=output_filename,
+            progress=0,
+        )
+        self._start_background(
+            job,
+            target=self._run_extract,
+            kwargs=dict(
+                job_id=job.id,
+                document_id=document_id,
+                pages=pages,
+                output_filename=output_filename,
+            ),
+        )
+        return job
+
     # ── Status helpers ────────────────────────────────────────────────────────
 
     def get(self, job_id: int) -> Optional[Job]:
@@ -347,6 +403,170 @@ class JobService:
             progress=100,
             output_path=str(output_dir),
             output_filename=json.dumps(parts_manifest),
+        )
+
+    # ── Organize runner ──────────────────────────────────────────────────────
+
+    def _run_organize(
+        self,
+        job_id: int,
+        document_id: int,
+        pages: list[dict],
+        output_filename: str,
+        _session,
+    ) -> None:
+        from src.models.database_models import JobStatus
+        from src.pdf_operations.organize import delete_pages, rotate_pages, reorder_pages
+
+        job_repo = JobRepository(_session)
+        doc_repo = DocumentRepository(_session)
+
+        self._update(job_repo, job_id, JobStatus.PROCESSING.value, progress=5)
+
+        doc = doc_repo.get(document_id)
+        if not doc:
+            self._fail_job(job_id, _session, "Document not found")
+            return
+
+        pdf_path = Path(doc.file_path)
+        if not pdf_path.exists():
+            self._fail_job(job_id, _session, "PDF file not found on disk")
+            return
+
+        # Working directory for intermediate files
+        work_dir = self.settings.OUTPUT_DIR / str(job_id)
+        work_dir.mkdir(parents=True, exist_ok=True)
+
+        temp_path = work_dir / "temp_original.pdf"
+
+        # ── Step 1: delete ────────────────────────────────────────────────────
+        self._update(job_repo, job_id, JobStatus.PROCESSING.value, progress=15)
+        deleted_indices = [p["original_index"] for p in pages if p.get("deleted")]
+        if deleted_indices:
+            delete_pages(str(pdf_path), str(temp_path), deleted_indices)
+            src = temp_path
+        else:
+            # Just copy the original to temp_path so subsequent steps read from it
+            import shutil
+            shutil.copy2(str(pdf_path), str(temp_path))
+            src = temp_path
+
+        # ── Step 2: rotate remaining pages ────────────────────────────────────
+        self._update(job_repo, job_id, JobStatus.PROCESSING.value, progress=35)
+        remaining = [p for p in pages if not p.get("deleted")]
+        to_rotate = {
+            p["original_index"]: p["rotation"]
+            for p in remaining
+            if p.get("rotation", 0) not in (0, 360)
+        }
+        if to_rotate:
+            rotated_path = work_dir / "rotated.pdf"
+            # After deletion the temp file has pages renumbered 0..N-1.
+            # Map original_index → temp-file position (cumulative count of non-deleted pages before it).
+            deleted_set = set(deleted_indices)
+            temp_index_map = {}
+            temp_idx = 0
+            for orig_i in range(len(pages)):
+                if orig_i not in deleted_set:
+                    temp_index_map[orig_i] = temp_idx
+                    temp_idx += 1
+            temp_rotations = {
+                temp_index_map[orig_i]: delta
+                for orig_i, delta in to_rotate.items()
+            }
+            rotate_pages(str(src), str(rotated_path), temp_rotations)
+            src = rotated_path
+
+        # ── Step 3: reorder ───────────────────────────────────────────────────
+        self._update(job_repo, job_id, JobStatus.PROCESSING.value, progress=60)
+        # After deletion (+ optional rotation), the temp file has pages 0..N-1
+        # in original-index order. `remaining` is in display order.
+        # new_order maps temp-file position → original_index in the display order.
+        deleted_set = set(deleted_indices)
+        temp_index_map = {}
+        temp_idx = 0
+        for orig_i in range(len(pages)):
+            if orig_i not in deleted_set:
+                temp_index_map[orig_i] = temp_idx
+                temp_idx += 1
+        # new_order: for each page in display order, what original_index does it come from?
+        new_order = [p["original_index"] for p in remaining]
+
+        output_path = work_dir / output_filename
+        if new_order != list(range(len(new_order))):
+            reorder_pages(str(src), str(output_path), new_order)
+        else:
+            # No reorder needed — just copy the rotated (or original) file
+            import shutil
+            shutil.copy2(str(src), str(output_path))
+
+        # ── Done ───────────────────────────────────────────────────────────────
+        self._update(
+            job_repo, job_id, JobStatus.DONE.value,
+            progress=100,
+            output_path=str(output_path),
+            output_filename=output_filename,
+        )
+
+    # ── Extract runner ─────────────────────────────────────────────────────────
+
+    def _run_extract(
+        self,
+        job_id: int,
+        document_id: int,
+        pages: list[dict],
+        output_filename: str,
+        _session,
+    ) -> None:
+        from src.models.database_models import JobStatus
+        from src.pdf_operations.organize import delete_pages, rotate_pages, extract_pages
+
+        job_repo = JobRepository(_session)
+        doc_repo = DocumentRepository(_session)
+
+        self._update(job_repo, job_id, JobStatus.PROCESSING.value, progress=5)
+
+        doc = doc_repo.get(document_id)
+        if not doc:
+            self._fail_job(job_id, _session, "Document not found")
+            return
+
+        pdf_path = Path(doc.file_path)
+        if not pdf_path.exists():
+            self._fail_job(job_id, _session, "PDF file not found on disk")
+            return
+
+        work_dir = self.settings.OUTPUT_DIR / str(job_id)
+        work_dir.mkdir(parents=True, exist_ok=True)
+
+        # ── Step 1: rotate ────────────────────────────────────────────────────
+        self._update(job_repo, job_id, JobStatus.PROCESSING.value, progress=25)
+        to_rotate = {
+            p["original_index"]: p["rotation"]
+            for p in pages
+            if p.get("rotation", 0) not in (0, 360)
+        }
+        rotated_path = work_dir / "rotated.pdf"
+        if to_rotate:
+            rotate_pages(str(pdf_path), str(rotated_path), to_rotate)
+            src = rotated_path
+        else:
+            import shutil
+            shutil.copy2(str(pdf_path), str(rotated_path))
+            src = rotated_path
+
+        # ── Step 2: extract ────────────────────────────────────────────────────
+        self._update(job_repo, job_id, JobStatus.PROCESSING.value, progress=60)
+        output_path = work_dir / output_filename
+        extract_indices = [p["original_index"] for p in pages]
+        extract_pages(str(src), str(output_path), extract_indices)
+
+        # ── Done ───────────────────────────────────────────────────────────────
+        self._update(
+            job_repo, job_id, JobStatus.DONE.value,
+            progress=100,
+            output_path=str(output_path),
+            output_filename=output_filename,
         )
 
     # ── Internal helpers ─────────────────────────────────────────────────────

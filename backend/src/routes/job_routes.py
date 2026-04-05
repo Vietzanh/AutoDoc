@@ -16,6 +16,7 @@ from src.models.schemas import (
     JobRead, JobListResponse,
     ReconstructRequest, CombineRequest,
     SplitRequest, SplitPartsResponse,
+    OrganizeRequest, ExtractRequest,
 )
 from src.services.job_service import JobService
 from src.services.document_service import DocumentService
@@ -142,6 +143,60 @@ def get_split_parts(
         raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail="Corrupted parts data")
 
     return SplitPartsResponse(parts=parts)
+
+
+# ── Organize ───────────────────────────────────────────────────────────────────
+
+@router.post("/organize", response_model=JobRead, status_code=status.HTTP_202_ACCEPTED)
+def create_organize_job(
+    request: OrganizeRequest,
+    session: Session = Depends(get_session),
+    current_user: User = Depends(get_current_user),
+):
+    """Organize a PDF: delete, rotate, and/or reorder pages."""
+    doc_service = DocumentService(session)
+    doc = doc_service.get(request.document_id)
+    if not doc or doc.user_id != current_user.id:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Document not found")
+
+    if not request.pages:
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="No pages provided")
+
+    service = JobService(session)
+    job = service.create_organize_job(
+        user_id=current_user.id,
+        document_id=request.document_id,
+        pages=[p.model_dump() for p in request.pages],
+        output_filename=request.output_filename,
+    )
+    return _job_to_read(job)
+
+
+# ── Extract ─────────────────────────────────────────────────────────────────────
+
+@router.post("/extract", response_model=JobRead, status_code=status.HTTP_202_ACCEPTED)
+def create_extract_job(
+    request: ExtractRequest,
+    session: Session = Depends(get_session),
+    current_user: User = Depends(get_current_user),
+):
+    """Extract selected pages from a PDF as a separate file."""
+    doc_service = DocumentService(session)
+    doc = doc_service.get(request.document_id)
+    if not doc or doc.user_id != current_user.id:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Document not found")
+
+    if not request.pages:
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="No pages provided")
+
+    service = JobService(session)
+    job = service.create_extract_job(
+        user_id=current_user.id,
+        document_id=request.document_id,
+        pages=[p.model_dump() for p in request.pages],
+        output_filename=request.output_filename,
+    )
+    return _job_to_read(job)
 
 
 # ── Poll / list / delete ─────────────────────────────────────────────────────

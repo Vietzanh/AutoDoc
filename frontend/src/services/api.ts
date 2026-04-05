@@ -193,6 +193,32 @@ class ApiClient {
     return res.data.parts;
   }
 
+  async createOrganizeJob(
+    documentId: number,
+    pages: Array<{ original_index: number; rotation: number; deleted: boolean }>,
+    outputFilename = "organized.pdf"
+  ): Promise<Job> {
+    const res = await this.client.post<Job>("/jobs/organize", {
+      document_id: documentId,
+      pages,
+      output_filename: outputFilename,
+    });
+    return res.data;
+  }
+
+  async createExtractJob(
+    documentId: number,
+    pages: Array<{ original_index: number; rotation: number; deleted: boolean }>,
+    outputFilename = "extracted.pdf"
+  ): Promise<Job> {
+    const res = await this.client.post<Job>("/jobs/extract", {
+      document_id: documentId,
+      pages,
+      output_filename: outputFilename,
+    });
+    return res.data;
+  }
+
   async getJob(jobId: number): Promise<Job> {
     const res = await this.client.get<Job>(`/jobs/${jobId}`);
     return res.data;

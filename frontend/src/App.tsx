@@ -8,6 +8,7 @@ import DashboardPage from "./pages/DashboardPage";
 import ReconstructPage from "./pages/ReconstructPage";
 import CombinePage from "./pages/CombinePage";
 import SplitPage from "./pages/SplitPage";
+import OrganizePage from "./pages/OrganizePage";
 
 function ProtectedRoute({ children }: { children: React.ReactNode }) {
   const { user, loading } = useAuth();
@@ -93,6 +94,14 @@ export default function App() {
         element={
           <ProtectedRoute>
             <SplitPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/organize"
+        element={
+          <ProtectedRoute>
+            <OrganizePage />
           </ProtectedRoute>
         }
       />

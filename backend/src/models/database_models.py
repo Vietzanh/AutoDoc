@@ -20,6 +20,7 @@ class JobTool(str, Enum):
     COMBINE = "combine"               # Combine PDFs
     SPLIT = "split"                   # Split PDF
     ORGANIZE = "organize"             # Organize pages
+    EXTRACT = "extract"               # Extract pages
     CROP = "crop"                     # Crop pages
     PAGE_NUMBERS = "page_numbers"     # Number pages
 

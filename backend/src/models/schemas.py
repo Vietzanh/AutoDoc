@@ -136,6 +136,50 @@ class SplitPartsResponse(BaseModel):
     parts: list[SplitPart]
 
 
+# ── Organize ───────────────────────────────────────────────────────────────────
+
+class OrganizePage(BaseModel):
+    """
+    Represents a single page in the organize request.
+    Pages are sent in their final display order; the server reconstructs the PDF
+    in exactly that order, applying any per-page rotation.
+    """
+    original_index: int = Field(
+        description="0-based index of this page in the original uploaded PDF"
+    )
+    rotation: int = Field(
+        default=0,
+        description="Rotation to apply to this page: 0, 90, 180, or 270 degrees"
+    )
+    deleted: bool = Field(default=False, description="Whether this page is marked deleted")
+
+
+class OrganizeRequest(BaseModel):
+    document_id: int = Field(description="ID of the source PDF document")
+    pages: list[OrganizePage] = Field(
+        description="Pages in their final display order. Deleted pages are included with deleted=True."
+    )
+    output_filename: str = Field(
+        default="organized.pdf",
+        max_length=255,
+        description="Name of the output PDF file"
+    )
+
+
+# ── Extract ────────────────────────────────────────────────────────────────────
+
+class ExtractRequest(BaseModel):
+    document_id: int = Field(description="ID of the source PDF document")
+    pages: list[OrganizePage] = Field(
+        description="Pages to extract (in their current order after organize modifications)"
+    )
+    output_filename: str = Field(
+        default="extracted.pdf",
+        max_length=255,
+        description="Name of the output PDF file"
+    )
+
+
 # ── Error ─────────────────────────────────────────────────────────────────────
 
 class ErrorResponse(BaseModel):
