@@ -1,7 +1,7 @@
 # AutoDoc — Project Context
 
-> **Last updated:** 2026-04-01
-> **Status:** Frontend scaffold complete · Remaining: organize/crop/page-numbers backend + 3 frontend tool pages + DevOps
+> **Last updated:** 2026-04-05
+> **Status:** Organize + Split complete · Remaining: Crop + Page Numbers backend/frontend + DevOps
 
 ---
 
@@ -84,7 +84,7 @@ frontend/
 └── src/
     ├── main.tsx               # App entry, BrowserRouter, AuthProvider, Toaster
     ├── index.css              # Tailwind base
-    ├── App.tsx               # Routes: /login, /register, /, /reconstruct, /combine
+    ├── App.tsx               # Routes: /login, /register, /, /reconstruct, /combine, /split, /organize
     │
     ├── context/
     │   └── AuthContext.tsx    # AuthProvider, useAuth hook (JWT in localStorage, auto-restore session)
@@ -111,8 +111,8 @@ frontend/
         ├── DashboardPage.tsx  # Document table + Recent Jobs table
         ├── ReconstructPage.tsx # 4-state wizard: upload → ready → processing → done/failed
         ├── CombinePage.tsx    # Multi-doc selector + output filename → job + download
-        ├── OrganizePage.tsx   # ⬜ TODO — page thumbnail grid, rotate/delete/extract/insert
-        ├── SplitPage.tsx      # ⬜ TODO — split by ranges or even/odd pages
+        ├── OrganizePage.tsx   # Thumbnail grid, rotate/delete/reorder/insert/extract ✅
+        ├── SplitPage.tsx      # Thumbnail grid with scissor-split lines, ZIP download ✅
         ├── CropPage.tsx       # ⬜ TODO — crop by margins or custom rect
         └── PageNumbersPage.tsx # ⬜ TODO — add page numbers (position, format, font)
 ```
@@ -148,7 +148,7 @@ frontend/
 ### 🚫 Backend — Not Yet Built
 
 - Remaining PDF operation routes, services, and schemas:
-  - `organize` job (`/jobs/organize`) — rotate, delete, extract, insert pages
+  - `organize` job (`/jobs/organize`) — rotate, delete, extract, insert pages ✅ **done**
   - `crop` job (`/jobs/crop`) — by margins or custom rect
   - `page_numbers` job (`/jobs/page-numbers`) — position, format, font
 - `src/services/pdf_ops_service.py` — wraps pdf_operations/ modules (optional consolidation layer)
@@ -186,11 +186,11 @@ frontend/
 
 ### 🚫 Frontend — Not Yet Built
 
-- `frontend/src/pages/OrganizePage.tsx` — page thumbnail grid, rotate/delete/extract/insert pages
 - `frontend/src/pages/CropPage.tsx` — crop by margins or custom rect
 - `frontend/src/pages/PageNumbersPage.tsx` — add page numbers (position, format, font)
-- API methods for the 4 new job types (`api.ts` update)
-- Routing entries for the 4 new pages (`App.tsx` update)
+- `frontend/src/pages/OrganizePage.tsx` — page thumbnail grid, rotate/delete/extract/insert pages ✅ **done**
+- API methods for Crop + Page Numbers (`api.ts` update)
+- Routing entries for Crop + Page Numbers (`App.tsx` update)
 
 ---
 
@@ -223,6 +223,8 @@ frontend/
 | `POST` | `/api/jobs/combine` | Start combine PDFs job (async) |
 | `POST` | `/api/jobs/split` | Start split PDF job (async) |
 | `GET` | `/api/jobs/{id}/parts` | List split parts after split job completes |
+| `POST` | `/api/jobs/organize` | Start organize pages job (async) — delete, rotate, reorder |
+| `POST` | `/api/jobs/extract` | Start extract pages job (async) — immediate extract to separate PDF |
 | `GET` | `/api/jobs/{id}` | Poll job status + progress |
 | `GET` | `/api/jobs` | List user's jobs (filterable by status) |
 | `DELETE` | `/api/jobs/{id}` | Delete a job + its output file |
@@ -308,11 +310,68 @@ Client                     FastAPI                        Background Thread
 
 ---
 
-## 7. Implementation Plan (Remaining Work)
+## 7. How to Test
+
+### Prerequisites
+
+```bash
+# Backend
+cd backend
+cp .env.example .env
+pip install -r requirements.txt
+
+# Frontend
+cd frontend
+npm install
+```
+
+### Run Backend
+
+```bash
+# Option A: Direct (development)
+cd backend
+python run.py
+# or
+uvicorn src.main:app --reload --port 8000
+
+# Option B: Docker
+cd backend
+docker compose up
+```
+
+### Run Frontend
+
+```bash
+cd frontend
+npm run dev
+# Opens at http://localhost:5173
+```
+
+### Test Organize Pages
+
+1. Register / log in at `http://localhost:5173`
+2. Navigate to **Organize** in the nav bar
+3. **Upload** a multi-page PDF (e.g. any 5+ page document)
+4. Wait for thumbnails to load — you should see each page as a tile
+5. **Select a page** — click its checkbox (top-left of tile)
+6. **Rotate** — hover over a tile to reveal ↺ ↻ buttons; click to rotate the page 90° in that direction
+7. **Delete** — hover over a tile and click the trash icon; the tile disappears
+8. **Reorder** — drag a tile and drop it onto another to swap their positions
+9. **Insert pages** — click the "+" icon between any two tiles; select a second PDF from the file picker; its pages are inserted at that position
+10. **Extract mode** — click the **Extract** button in the top-right; select pages with their checkboxes; click **Extract**; a PDF with only those pages downloads immediately
+11. **Save (organize)** — with some pages modified, enter an output filename and click **Save**; a job starts with a progress bar; when done, the organized PDF downloads
+
+### Test Split, Combine, Reconstruct
+
+All other tools work independently. See their respective pages under the nav bar.
+
+---
+
+## 8. Implementation Plan (Remaining Work)
 
 ### Priority 1 — Backend: Remaining PDF Operations
 - [x] `POST /jobs/split` + `GET /jobs/{id}/parts` + ZIP download ✅
-- [ ] `POST /jobs/organize` — rotate, delete, extract, insert pages
+- [x] `POST /jobs/organize` + `POST /jobs/extract` — rotate, delete, reorder pages ✅
 - [ ] `POST /jobs/crop` — by margins or custom rect
 - [ ] `POST /jobs/page-numbers` — position, format, font
 - [ ] `src/services/pdf_ops_service.py` — optional consolidation layer
@@ -322,7 +381,7 @@ Client                     FastAPI                        Background Thread
 - [x] Update `frontend/src/App.tsx` — `/split` route ✅
 - [x] Update `frontend/src/components/ui/Layout.tsx` — Split nav link ✅
 - [x] Write `frontend/src/pages/SplitPage.tsx` — thumbnail grid, scissor-split lines, ZIP download ✅
-- [ ] Write `frontend/src/pages/OrganizePage.tsx` — page thumbnail grid, rotate/delete/extract/insert
+- [x] Write `frontend/src/pages/OrganizePage.tsx` — thumbnail grid, rotate/delete/reorder/insert/extract ✅
 - [ ] Write `frontend/src/pages/CropPage.tsx` — crop by margins or custom rect
 - [ ] Write `frontend/src/pages/PageNumbersPage.tsx` — add page numbers (position, format, font)
 
@@ -334,7 +393,7 @@ Client                     FastAPI                        Background Thread
 
 ---
 
-## 8. Existing Modules (src/ — pipeline logic, unchanged)
+## 9. Existing Modules (src/ — pipeline logic, unchanged)
 
 > These are the original modules that power the PDF → DOCX reconstruction. They remain unchanged; the backend imports and calls them directly.
 
@@ -366,7 +425,7 @@ src/
 
 ---
 
-## 9. Design Decisions
+## 10. Design Decisions
 
 ### SQLite (via SQLModel) — Why
 No separate database service needed; single `autodoc.db` file alongside the app. Sufficient for a university project with single-server deployment. Can be swapped for PostgreSQL by changing `DATABASE_URL` in `.env`.
@@ -388,7 +447,7 @@ Docker Compose mounts `./backend:/app`, and uvicorn `--reload` watches `/app`. N
 
 ---
 
-## 10. Dependencies
+## 11. Dependencies
 
 ### Backend
 
