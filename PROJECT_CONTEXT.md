@@ -460,6 +460,7 @@ Docker Compose mounts `./backend:/app`, and uvicorn `--reload` watches `/app`. N
 | `aiosqlite` | ≥0.19.0 | Async SQLite driver |
 | `python-jose[cryptography]` | ≥3.3.0 | JWT encoding/decoding |
 | `passlib[bcrypt]` | ≥1.7.4 | Password hashing |
+| `email-validator` | ≥2.0.0 | Email validation for Pydantic `EmailStr` |
 | `pydantic-settings` | ≥2.0.0 | Settings from env vars |
 | `pymupdf` | ≥1.23.0 | PDF processing |
 | `python-docx` | ≥1.1.0 | DOCX generation |

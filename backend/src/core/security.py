@@ -12,7 +12,8 @@ from fastapi.security import OAuth2PasswordBearer
 from sqlmodel import Session, select
 
 from src.core.config import get_settings, Settings
-from src.models.database import User, get_session
+from src.models.database import get_session
+from src.models.database_models import User
 
 # ── Password hashing ─────────────────────────────────────────────────────────
 

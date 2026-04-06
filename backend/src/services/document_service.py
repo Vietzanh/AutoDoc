@@ -5,6 +5,7 @@ Document service — upload, list, delete.
 import uuid
 import json
 from typing import BinaryIO
+from typing import List
 from pathlib import Path
 
 import pymupdf
@@ -68,7 +69,7 @@ class DocumentService:
             return False
         return self.repo.delete(doc_id)
 
-    def get_thumbnails(self, doc: Document, *, thumb_width: int = 200) -> list[dict]:
+    def get_thumbnails(self, doc: Document, *, thumb_width: int = 200) -> List[dict]:
         """
         Render each page of the PDF as a base64-encoded PNG thumbnail.
 

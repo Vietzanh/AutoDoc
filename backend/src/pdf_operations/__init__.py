@@ -1,8 +1,5 @@
 """
 PDF operations module — pure pymupdf transformations (no ML).
-
-Canonical location: backend/src/pdf_operations/
-Reference (read-only): AutoDoc/src/pdf_operations/
 """
 
 from .combine import combine_pdfs

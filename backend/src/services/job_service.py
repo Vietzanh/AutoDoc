@@ -8,7 +8,7 @@ import json
 import uuid
 import threading
 from pathlib import Path
-from typing import Optional
+from typing import List, Optional
 
 import pymupdf
 
@@ -17,23 +17,6 @@ from src.models.database_models import Job, JobStatus, JobTool, Document
 from src.repositories.job_repository import JobRepository
 from src.repositories.document_repository import DocumentRepository
 
-
-# ── Shared pipeline import ────────────────────────────────────────────────────
-# Import existing pipeline logic directly — no duplication needed.
-# The project root contains the original `src/` with pipeline, extract_layout, etc.
-# We need to add the project root (AutoDoc/) to sys.path so that
-# `from src.pipeline import ...` resolves to AutoDoc/src/pipeline.py.
-import sys
-from pathlib import Path as P
-
-_PROJECT_ROOT = P(__file__).resolve().parent.root  # backend/src/services/ → backend/src/ → backend/
-_AUTO_PARENT  = _PROJECT_ROOT.parent               # backend/src/ → backend/ → AutoDoc/
-
-def _add_project_root_to_path():
-    if str(_AUTO_PARENT) not in sys.path:
-        sys.path.insert(0, str(_AUTO_PARENT))
-
-_add_project_root_to_path()
 
 from src.pipeline import PDFToDocxPipeline
 from src.extract_layout import extract_pdf_layout
@@ -78,7 +61,7 @@ class JobService:
     def create_combine_job(
         self,
         user_id: int,
-        document_ids: list[int],
+        document_ids: List[int],
         output_filename: str,
     ) -> Job:
         job = self.repo.create(
@@ -104,7 +87,7 @@ class JobService:
         self,
         user_id: int,
         document_id: int,
-        split_points: list[int],
+        split_points: List[int],
         output_filename: str,
     ) -> Job:
         job = self.repo.create(
@@ -133,7 +116,7 @@ class JobService:
         self,
         user_id: int,
         document_id: int,
-        pages: list[dict],
+        pages: List[dict],
         output_filename: str,
     ) -> Job:
         job = self.repo.create(
@@ -161,7 +144,7 @@ class JobService:
         self,
         user_id: int,
         document_id: int,
-        pages: list[dict],
+        pages: List[dict],
         output_filename: str,
     ) -> Job:
         job = self.repo.create(
@@ -190,7 +173,7 @@ class JobService:
     def get(self, job_id: int) -> Optional[Job]:
         return self.repo.get(job_id)
 
-    def list(self, user_id: int, status: Optional[str] = None) -> tuple[list[Job], int]:
+    def list(self, user_id: int, status: Optional[str] = None) -> tuple[List[Job], int]:
         return self.repo.get_by_user(user_id, status=status)
 
     # ── Background runner ─────────────────────────────────────────────────────
@@ -200,6 +183,7 @@ class JobService:
             # Each thread needs its own DB session
             from src.models.database import get_engine
             from sqlmodel import Session
+
             session = Session(get_engine())
             try:
                 target(**kwargs, _session=session)
@@ -280,7 +264,9 @@ class JobService:
             return
 
         self._update(
-            job_repo, job_id, JobStatus.DONE.value,
+            job_repo,
+            job_id,
+            JobStatus.DONE.value,
             progress=100,
             output_path=str(output_path),
             output_filename=output_filename,
@@ -291,12 +277,14 @@ class JobService:
     def _run_combine(
         self,
         job_id: int,
-        document_ids: list[int],
+        document_ids: List[int],
         output_filename: str,
         _session,
     ) -> None:
         from src.models.database_models import JobStatus
-        from src.pdf_operations.combine import combine_pdfs  # backend/src/pdf_operations/ — canonical
+        from src.pdf_operations.combine import (
+            combine_pdfs,
+        )  # backend/src/pdf_operations/ — canonical
 
         job_repo = JobRepository(_session)
         doc_repo = DocumentRepository(_session)
@@ -327,7 +315,9 @@ class JobService:
             return
 
         self._update(
-            job_repo, job_id, JobStatus.DONE.value,
+            job_repo,
+            job_id,
+            JobStatus.DONE.value,
             progress=100,
             output_path=str(output_path),
             output_filename=output_filename,
@@ -339,7 +329,7 @@ class JobService:
         self,
         job_id: int,
         document_id: int,
-        split_points: list[int],
+        split_points: List[int],
         output_filename: str,
         _session,
     ) -> None:
@@ -368,6 +358,7 @@ class JobService:
 
         # Open PDF once to get page count and split
         import pymupdf
+
         with pymupdf.open(str(pdf_path)) as pdf:
             total = pdf.page_count
             try:
@@ -386,20 +377,26 @@ class JobService:
         prev = -1
         for i, point in enumerate(sorted(split_points)):
             pages_label = f"{prev + 2}-{point + 1}"
-            parts_manifest.append({
-                "filename": Path(part_paths[i]).name,
-                "pages": pages_label,
-            })
+            parts_manifest.append(
+                {
+                    "filename": Path(part_paths[i]).name,
+                    "pages": pages_label,
+                }
+            )
             prev = point
         # Final part
         pages_label = f"{prev + 2}-{total}"
-        parts_manifest.append({
-            "filename": Path(part_paths[-1]).name,
-            "pages": pages_label,
-        })
+        parts_manifest.append(
+            {
+                "filename": Path(part_paths[-1]).name,
+                "pages": pages_label,
+            }
+        )
 
         self._update(
-            job_repo, job_id, JobStatus.DONE.value,
+            job_repo,
+            job_id,
+            JobStatus.DONE.value,
             progress=100,
             output_path=str(output_dir),
             output_filename=json.dumps(parts_manifest),
@@ -411,12 +408,16 @@ class JobService:
         self,
         job_id: int,
         document_id: int,
-        pages: list[dict],
+        pages: List[dict],
         output_filename: str,
         _session,
     ) -> None:
         from src.models.database_models import JobStatus
-        from src.pdf_operations.organize import delete_pages, rotate_pages, reorder_pages
+        from src.pdf_operations.organize import (
+            delete_pages,
+            rotate_pages,
+            reorder_pages,
+        )
 
         job_repo = JobRepository(_session)
         doc_repo = DocumentRepository(_session)
@@ -448,6 +449,7 @@ class JobService:
         else:
             # Just copy the original to temp_path so subsequent steps read from it
             import shutil
+
             shutil.copy2(str(pdf_path), str(temp_path))
             src = temp_path
 
@@ -471,8 +473,7 @@ class JobService:
                     temp_index_map[orig_i] = temp_idx
                     temp_idx += 1
             temp_rotations = {
-                temp_index_map[orig_i]: delta
-                for orig_i, delta in to_rotate.items()
+                temp_index_map[orig_i]: delta for orig_i, delta in to_rotate.items()
             }
             rotate_pages(str(src), str(rotated_path), temp_rotations)
             src = rotated_path
@@ -498,11 +499,14 @@ class JobService:
         else:
             # No reorder needed — just copy the rotated (or original) file
             import shutil
+
             shutil.copy2(str(src), str(output_path))
 
         # ── Done ───────────────────────────────────────────────────────────────
         self._update(
-            job_repo, job_id, JobStatus.DONE.value,
+            job_repo,
+            job_id,
+            JobStatus.DONE.value,
             progress=100,
             output_path=str(output_path),
             output_filename=output_filename,
@@ -514,12 +518,16 @@ class JobService:
         self,
         job_id: int,
         document_id: int,
-        pages: list[dict],
+        pages: List[dict],
         output_filename: str,
         _session,
     ) -> None:
         from src.models.database_models import JobStatus
-        from src.pdf_operations.organize import delete_pages, rotate_pages, extract_pages
+        from src.pdf_operations.organize import (
+            delete_pages,
+            rotate_pages,
+            extract_pages,
+        )
 
         job_repo = JobRepository(_session)
         doc_repo = DocumentRepository(_session)
@@ -552,6 +560,7 @@ class JobService:
             src = rotated_path
         else:
             import shutil
+
             shutil.copy2(str(pdf_path), str(rotated_path))
             src = rotated_path
 
@@ -563,7 +572,9 @@ class JobService:
 
         # ── Done ───────────────────────────────────────────────────────────────
         self._update(
-            job_repo, job_id, JobStatus.DONE.value,
+            job_repo,
+            job_id,
+            JobStatus.DONE.value,
             progress=100,
             output_path=str(output_path),
             output_filename=output_filename,
@@ -581,10 +592,16 @@ class JobService:
             for k, v in kwargs.items():
                 setattr(job, k, v)
             from datetime import datetime
+
             job.updated_at = datetime.utcnow()
             repo.session.add(job)
             repo.session.commit()
 
     @staticmethod
     def _fail_job(job_id: int, session, error_message: str):
-        JobService._update(JobRepository(session), job_id, JobStatus.FAILED.value, error_message=error_message)
+        JobService._update(
+            JobRepository(session),
+            job_id,
+            JobStatus.FAILED.value,
+            error_message=error_message,
+        )

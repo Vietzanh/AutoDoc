@@ -11,7 +11,9 @@ class Settings(BaseSettings):
     """Application-wide settings."""
 
     # ── Paths ────────────────────────────────────────────────────────────────
-    BASE_DIR: Path = Path(__file__).resolve().parent.root
+    BASE_DIR: Path = (
+        Path(__file__).resolve().parent.parent.parent
+    )  # AutoDoc root (backend/src/core → backend/src → backend → AutoDoc)
     DATA_DIR: Path = BASE_DIR / "data"
     UPLOAD_DIR: Path = DATA_DIR / "uploads"
     OUTPUT_DIR: Path = DATA_DIR / "outputs"
