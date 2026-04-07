@@ -2,11 +2,7 @@
 Database models (SQLModel/SQLAlchemy) — users, documents, jobs.
 """
 
-from datetime import datetime
-from typing import Optional
-from enum import Enum
-
-from sqlmodel import SQLModel, Field, Session, select, create_engine
+from sqlmodel import SQLModel, Session, create_engine
 from sqlmodel.pool import StaticPool
 
 from src.core.config import get_settings
