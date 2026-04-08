@@ -63,7 +63,11 @@ class ApiClient {
   private client: AxiosInstance;
 
   constructor() {
-    this.client = axios.create({ baseURL: BASE_URL });
+    this.client = axios.create({
+      baseURL: BASE_URL,
+      timeout: 60000,
+      withCredentials: false,
+    });
     this.client.interceptors.request.use((config) => {
       const token = localStorage.getItem("access_token");
       if (token) {
@@ -134,10 +138,16 @@ class ApiClient {
   }
 
   async downloadDocument(docId: number): Promise<Blob> {
-    const res = await this.client.get(`/documents/${docId}/download`, {
-      responseType: "blob",
+    const token = localStorage.getItem("access_token");
+    const res = await fetch(`/api/documents/${docId}/download`, {
+      headers: {
+        ...(token ? { Authorization: `Bearer ${token}` } : {}),
+      },
     });
-    return res.data;
+    if (!res.ok) {
+      throw new Error(`Download failed: ${res.status} ${res.statusText}`);
+    }
+    return res.blob();
   }
 
   async getDocumentThumbnails(docId: number): Promise<{ page_number: number; image_base64: string }[]> {
@@ -235,11 +245,21 @@ class ApiClient {
     await this.client.delete(`/jobs/${jobId}`);
   }
 
+  /**
+   * Download a job result as a Blob.
+   * Uses native fetch to avoid Vite proxy truncating large binary responses.
+   */
   async downloadJobResult(jobId: number): Promise<Blob> {
-    const res = await this.client.get(`/jobs/${jobId}/download`, {
-      responseType: "blob",
+    const token = localStorage.getItem("access_token");
+    const res = await fetch(`/api/jobs/${jobId}/download`, {
+      headers: {
+        ...(token ? { Authorization: `Bearer ${token}` } : {}),
+      },
     });
-    return res.data;
+    if (!res.ok) {
+      throw new Error(`Download failed: ${res.status} ${res.statusText}`);
+    }
+    return res.blob();
   }
 }
 

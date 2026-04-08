@@ -13,7 +13,12 @@ import { Spinner } from "@/components/ui/Spinner";
 export default function CombinePage() {
   const navigate = useNavigate();
 
-  const [selectedDocs, setSelectedDocs] = useState<Document[]>([]);
+  // ── State ─────────────────────────────────────────────────────────────────
+  // `allDocs`     — full document list fetched from the API
+  // `selectedIds` — IDs of the docs currently checked for combining
+  // Splitting these two means "Refresh" can reload the list without wiping selections.
+  const [allDocs, setAllDocs] = useState<Document[]>([]);
+  const [selectedIds, setSelectedIds] = useState<Set<number>>(new Set());
   const [loadingDocs, setLoadingDocs] = useState(false);
   const [uploading, setUploading] = useState(false);
   const [outputFilename, setOutputFilename] = useState("combined.pdf");
@@ -25,12 +30,13 @@ export default function CombinePage() {
     if (job) setCreatedJob(job);
   }, [job]);
 
-  // Load existing documents
+  // ── Load documents from API ───────────────────────────────────────────────
+  // Refresh button calls this — it replaces `allDocs` but preserves `selectedIds`.
   const loadDocuments = useCallback(async () => {
     setLoadingDocs(true);
     try {
       const res = await api.listDocuments(0, 100);
-      setSelectedDocs(res.documents);
+      setAllDocs(res.documents);
     } catch {
       toast.error("Failed to load documents");
     } finally {
@@ -42,7 +48,8 @@ export default function CombinePage() {
     loadDocuments();
   }, [loadDocuments]);
 
-  // File drop — upload and add to selection
+  // ── File drop — upload then append to selection ───────────────────────────
+  // Files are added to the END so: upload order = UI order = output order.
   const onDrop = useCallback(async (acceptedFiles: File[]) => {
     const file = acceptedFiles[0];
     if (!file) return;
@@ -50,7 +57,8 @@ export default function CombinePage() {
     setUploading(true);
     try {
       const doc = await api.uploadDocument(file);
-      setSelectedDocs((prev) => [doc, ...prev]);
+      setAllDocs((prev) => [...prev, doc]);
+      setSelectedIds((prev) => new Set([...prev, doc.id]));
       toast.success(`Uploaded: ${doc.original_filename}`);
     } catch {
       toast.error("Upload failed");
@@ -66,15 +74,25 @@ export default function CombinePage() {
     disabled: uploading,
   });
 
+  // ── Selection helpers ─────────────────────────────────────────────────────
   const toggleDoc = (doc: Document) => {
-    setSelectedDocs((prev) => {
-      const exists = prev.some((d) => d.id === doc.id);
-      return exists ? prev.filter((d) => d.id !== doc.id) : [...prev, doc];
+    setSelectedIds((prev) => {
+      const next = new Set(prev);
+      if (next.has(doc.id)) {
+        next.delete(doc.id);
+      } else {
+        next.add(doc.id);
+      }
+      return next;
     });
   };
 
+  // Derived: docs in the order they appear in `allDocs`, filtered to selectedIds
+  const selectedDocs = allDocs.filter((d) => selectedIds.has(d.id));
+
+  // ── Job actions ───────────────────────────────────────────────────────────
   const handleStartJob = async () => {
-    if (selectedDocs.length < 2) {
+    if (selectedIds.size < 2) {
       toast.error("Select at least 2 documents to combine");
       return;
     }
@@ -99,19 +117,72 @@ export default function CombinePage() {
     if (!createdJob) return;
     try {
       const blob = await api.downloadJobResult(createdJob.id);
+      if (!blob || blob.size === 0) {
+        toast.error("Download failed: empty response");
+        return;
+      }
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;
       a.download = createdJob.output_filename || `combined.pdf`;
       a.click();
       URL.revokeObjectURL(url);
-    } catch {
+    } catch (err) {
+      console.error("Download error:", err);
       toast.error("Download failed");
     }
   };
 
+  // ── Delete helpers ─────────────────────────────────────────────────────────
+  const handleDeleteAll = async () => {
+    if (allDocs.length === 0) return;
+    if (!window.confirm(`Delete all ${allDocs.length} documents? This cannot be undone.`)) return;
+    setLoadingDocs(true);
+    try {
+      await Promise.all(allDocs.map((doc) => api.deleteDocument(doc.id)));
+      setAllDocs([]);
+      setSelectedIds(new Set());
+      toast.success("All documents deleted");
+    } catch {
+      toast.error("Failed to delete some documents");
+      loadDocuments();
+    } finally {
+      setLoadingDocs(false);
+    }
+  };
+
+  const handleDeleteSelected = async () => {
+    const ids = [...selectedIds];
+    if (ids.length === 0) return;
+    const count = ids.length;
+    if (
+      !window.confirm(
+        `Delete ${count} selected document${count > 1 ? "s" : ""}? This cannot be undone.`
+      )
+    )
+      return;
+    setLoadingDocs(true);
+    try {
+      await Promise.all(ids.map((id) => api.deleteDocument(id)));
+      setAllDocs((prev) => prev.filter((d) => !selectedIds.has(d.id)));
+      setSelectedIds(new Set());
+      toast.success(`${count} document${count > 1 ? "s" : ""} deleted`);
+    } catch {
+      toast.error("Failed to delete some documents");
+      loadDocuments();
+    } finally {
+      setLoadingDocs(false);
+    }
+  };
+
+  const handleClearSelection = () => {
+    setSelectedIds(new Set());
+  };
+
+  // Clears job + selection so the next session starts fresh (index #1, not #N)
   const handleReset = () => {
     setCreatedJob(null);
+    setSelectedIds(new Set());
     setOutputFilename("combined.pdf");
   };
 
@@ -193,11 +264,19 @@ export default function CombinePage() {
             <CardHeader>
               <div className="flex items-center justify-between">
                 <h2 className="font-semibold text-gray-900">
-                  Select Documents ({selectedDocs.length})
+                  Select Documents ({selectedIds.size})
                 </h2>
-                <Button variant="ghost" size="sm" onClick={loadDocuments}>
-                  Refresh
-                </Button>
+                <div className="flex gap-2">
+                  <Button variant="ghost" size="sm" onClick={handleClearSelection} disabled={selectedIds.size === 0}>
+                    Clear Selection
+                  </Button>
+                  <Button variant="ghost" size="sm" onClick={handleDeleteSelected} disabled={selectedIds.size === 0}>
+                    Delete ({selectedIds.size})
+                  </Button>
+                  <Button variant="danger" size="sm" onClick={handleDeleteAll} disabled={allDocs.length === 0 || loadingDocs}>
+                    Delete All
+                  </Button>
+                </div>
               </div>
             </CardHeader>
             <CardBody className="p-0">
@@ -205,14 +284,14 @@ export default function CombinePage() {
                 <div className="flex justify-center py-10">
                   <Spinner />
                 </div>
-              ) : selectedDocs.length === 0 ? (
+              ) : allDocs.length === 0 ? (
                 <div className="flex flex-col items-center py-10 text-gray-500">
                   <p className="text-sm">No documents available</p>
                   <p className="text-xs text-gray-400 mt-1">Upload a PDF to get started</p>
                 </div>
               ) : (
                 <ul className="divide-y divide-gray-50">
-                  {selectedDocs.map((doc) => (
+                  {allDocs.map((doc, idx) => (
                     <li
                       key={doc.id}
                       className="flex items-center gap-4 px-6 py-3 hover:bg-gray-50 transition-colors cursor-pointer"
@@ -220,8 +299,8 @@ export default function CombinePage() {
                     >
                       <input
                         type="checkbox"
-                        checked
-                        readOnly
+                        checked={selectedIds.has(doc.id)}
+                        onChange={() => {}} // handled by li onClick; prevents double-firing
                         className="w-4 h-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
                       />
                       <div className="flex-1 min-w-0">
@@ -233,7 +312,7 @@ export default function CombinePage() {
                         </p>
                       </div>
                       <span className="text-xs text-gray-400">
-                        #{doc.id}
+                        #{idx + 1}
                       </span>
                     </li>
                   ))}
@@ -243,7 +322,7 @@ export default function CombinePage() {
           </Card>
 
           {/* Output filename + start */}
-          {selectedDocs.length >= 2 && (
+          {selectedIds.size >= 2 && (
             <Card>
               <CardBody className="space-y-4">
                 <Input
@@ -253,16 +332,13 @@ export default function CombinePage() {
                   placeholder="combined.pdf"
                 />
                 <p className="text-xs text-gray-400">
-                  {selectedDocs.length} documents selected — they will be merged in the order shown above
+                  {selectedIds.size} documents selected — they will be merged in the order shown above
                 </p>
               </CardBody>
               <CardFooter>
-                <div className="flex gap-3">
-                  <Button onClick={handleStartJob}>
-                    Combine ({selectedDocs.length} files)
-                  </Button>
-                  <Button variant="ghost" onClick={handleReset}>Clear Selection</Button>
-                </div>
+                <Button onClick={handleStartJob}>
+                  Combine ({selectedIds.size} files)
+                </Button>
               </CardFooter>
             </Card>
           )}
