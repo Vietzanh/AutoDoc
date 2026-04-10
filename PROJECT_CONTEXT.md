@@ -1,7 +1,7 @@
 # AutoDoc — Project Context
 
-> **Last updated:** 2026-04-05
-> **Status:** Organize + Split complete · Remaining: Crop + Page Numbers backend/frontend + DevOps
+> **Last updated:** 2026-04-10
+> **Status:** Combine + Organize + Split done · Crop + Page Numbers backend/frontend remaining · DevOps pending
 
 ---
 
@@ -43,10 +43,10 @@ backend/
 │   │
 │   ├── core/                  # App-wide settings, security, config
 │   │   ├── config.py          # Settings (pydantic-settings, env vars)
-│   │   └── security.py        # JWT hashing, token creation, get_current_user
+│   │   └── security.py        # JWT hashing (passlib+bcrypt), token creation, get_current_user
 │   │
 │   ├── models/                # DB models & API schemas
-│   │   ├── database.py        # SQLModel engine, session factory, init_db()
+│   │   ├── database.py        # SQLModel engine (NullPool for thread safety), get_session, init_db()
 │   │   ├── database_models.py  # User, Document, Job SQLModel tables
 │   │   └── schemas.py         # Pydantic request/response bodies
 │   │
@@ -63,11 +63,12 @@ backend/
 │   └── routes/                 # FastAPI route handlers (thin, HTTP only)
 │       ├── auth_routes.py      # POST /auth/register, /auth/login, GET /auth/me
 │       ├── document_routes.py  # CRUD + download for documents
-│       └── job_routes.py       # Create + poll + download for jobs
+│       └── job_routes.py       # Create + poll + list + delete + download for jobs
 │
 └── data/                       # Auto-created at runtime (gitignored)
     ├── uploads/{user_id}/      # Uploaded PDF files
     ├── outputs/{job_id}/       # Generated DOCX / PDF output files
+    ├── layouts/{job_id}/       # Layout cache for reconstruct jobs
     └── autodoc.db              # SQLite database
 ```
 
@@ -77,7 +78,7 @@ backend/
 frontend/
 ├── package.json               # React 18, Vite, Tailwind, axios, react-router-dom, sonner, react-dropzone
 ├── postcss.config.js
-├── vite.config.ts             # Dev proxy: /api → http://localhost:8000
+├── vite.config.ts             # Dev proxy: /api → localhost:8000
 ├── tailwind.config.js
 ├── tsconfig.json
 ├── tsconfig.node.json
@@ -90,7 +91,7 @@ frontend/
     │   └── AuthContext.tsx    # AuthProvider, useAuth hook (JWT in localStorage, auto-restore session)
     │
     ├── services/
-    │   └── api.ts             # Axios singleton with typed methods for all endpoints
+    │   └── api.ts             # Axios singleton (typed methods) + native fetch() for blob downloads
     │
     ├── hooks/
     │   └── useJobPoll.ts      # useJobPoll(jobId, interval) — polls until terminal state
@@ -107,12 +108,12 @@ frontend/
     │
     └── pages/
         ├── LoginPage.tsx      # Login form (username + password), redirects if authed
-        ├── RegisterPage.tsx   # Register form (email, username, password, confirmPassword)
-        ├── DashboardPage.tsx  # Document table + Recent Jobs table
+        ├── RegisterPage.tsx  # Register form (email, username, password, confirmPassword)
+        ├── DashboardPage.tsx # Document table + Recent Jobs table
         ├── ReconstructPage.tsx # 4-state wizard: upload → ready → processing → done/failed
-        ├── CombinePage.tsx    # Multi-doc selector + output filename → job + download
+        ├── CombinePage.tsx    # Multi-doc upload + select/delete controls + job + download ✅
         ├── OrganizePage.tsx   # Thumbnail grid, rotate/delete/reorder/insert/extract ✅
-        ├── SplitPage.tsx      # Thumbnail grid with scissor-split lines, ZIP download ✅
+        ├── SplitPage.tsx     # Single-PDF upload + blue-to-red scissor split lines + ZIP download ✅
         ├── CropPage.tsx       # ⬜ TODO — crop by margins or custom rect
         └── PageNumbersPage.tsx # ⬜ TODO — add page numbers (position, format, font)
 ```
@@ -131,14 +132,14 @@ frontend/
 | `backend/docker-compose.yml` | ✅ Written — hot reload enabled, backend_data volume |
 | `backend/run.py` | ✅ Written — uvicorn reload entry point |
 | `backend/src/core/config.py` | ✅ Written — pydantic-settings, dirs auto-created |
-| `backend/src/core/security.py` | ✅ Written — bcrypt, JWT create/decode, OAuth2 scheme |
-| `backend/src/models/database.py` | ✅ Written — SQLModel engine, get_session, init_db |
+| `backend/src/core/security.py` | ✅ Written — passlib bcrypt, JWT, get_current_user |
+| `backend/src/models/database.py` | ✅ Written — SQLModel engine (NullPool), get_session, init_db |
 | `backend/src/models/database_models.py` | ✅ Written — User, Document, Job tables |
 | `backend/src/models/schemas.py` | ✅ Written — all request/response Pydantic models |
 | `backend/src/repositories/*.py` | ✅ Written — UserRepository, DocumentRepository, JobRepository |
 | `backend/src/services/auth_service.py` | ✅ Written — register, authenticate |
 | `backend/src/services/document_service.py` | ✅ Written — upload, list, get, delete |
-| `backend/src/services/job_service.py` | ✅ Written — create + background thread runner for reconstruct + combine |
+| `backend/src/services/job_service.py` | ✅ Written — create + background thread runner for all job types |
 | `backend/src/routes/auth_routes.py` | ✅ Written — /auth/register, /auth/login, /auth/me |
 | `backend/src/routes/document_routes.py` | ✅ Written — full CRUD + download |
 | `backend/src/routes/job_routes.py` | ✅ Written — create, poll, list, delete, download |
@@ -147,11 +148,16 @@ frontend/
 
 ### 🚫 Backend — Not Yet Built
 
-- Remaining PDF operation routes, services, and schemas:
-  - `organize` job (`/jobs/organize`) — rotate, delete, extract, insert pages ✅ **done**
-  - `crop` job (`/jobs/crop`) — by margins or custom rect
-  - `page_numbers` job (`/jobs/page-numbers`) — position, format, font
-- `src/services/pdf_ops_service.py` — wraps pdf_operations/ modules (optional consolidation layer)
+- `POST /jobs/crop` — by margins or custom rect
+- `POST /jobs/page-numbers` — position, format, font
+- `src/services/pdf_ops_service.py` — optional consolidation layer
+
+### 🔧 Backend — Fixed / Improved (2026-04-10)
+
+- `src/core/security.py` — added bootstrap patch at module top to inject `bcrypt.__about__.__version__` before passlib is imported; fixes the `(trapped) error reading bcrypt version` warning caused by bcrypt 4.x not re-exporting `__about__` at the top level
+- `src/models/database.py` — replaced `StaticPool` with `NullPool` to prevent "cannot commit - no transaction is active" errors when multiple background threads access SQLite simultaneously
+- `src/routes/job_routes.py` — download endpoint uses `StreamingResponse` with explicit `Content-Length` + `Accept-Ranges: none`; both ZIP (split) and single-file (PDF/DOCX) paths covered
+- `src/repositories/document_repository.py` — changed `order_by(created_at.desc())` → `order_by(created_at.asc())` so `GET /documents` returns files in upload order
 
 ### ✅ Frontend — Complete
 
@@ -168,7 +174,7 @@ frontend/
 | `frontend/src/index.css` | ✅ Written — Tailwind directives + base styles |
 | `frontend/src/App.tsx` | ✅ Written — ProtectedRoute/PublicRoute guards, all routes wired |
 | `frontend/src/context/AuthContext.tsx` | ✅ Written — auto-restore session, login/register/logout |
-| `frontend/src/services/api.ts` | ✅ Written — full Axios singleton, typed methods, 401 interceptor |
+| `frontend/src/services/api.ts` | ✅ Written — Axios singleton + native fetch() for blob downloads |
 | `frontend/src/hooks/useJobPoll.ts` | ✅ Written — polls until done/failed, stoppedRef guard |
 | `frontend/src/components/ui/Badge.tsx` | ✅ Written — variants + JobStatusBadge convenience |
 | `frontend/src/components/ui/Button.tsx` | ✅ Written — variants, sizes, loading state |
@@ -181,16 +187,22 @@ frontend/
 | `frontend/src/pages/RegisterPage.tsx` | ✅ Written — email, username, password, confirmPassword |
 | `frontend/src/pages/DashboardPage.tsx` | ✅ Written — document table + recent jobs table |
 | `frontend/src/pages/ReconstructPage.tsx` | ✅ Written — 4-state wizard: upload → ready → processing → done/failed |
-| `frontend/src/pages/CombinePage.tsx` | ✅ Written — multi-doc selector → reorder → job → download |
-| `frontend/src/pages/SplitPage.tsx` | ✅ Written — thumbnail grid with scissor-split lines, ZIP download |
+| `frontend/src/pages/CombinePage.tsx` | ✅ Written — upload + select/delete controls + job + download |
+| `frontend/src/pages/OrganizePage.tsx` | ✅ Written — thumbnail grid, rotate/delete/reorder/insert/extract |
+| `frontend/src/pages/SplitPage.tsx` | ✅ Written — single-PDF upload + blue-to-red scissor split lines + ZIP download |
 
 ### 🚫 Frontend — Not Yet Built
 
 - `frontend/src/pages/CropPage.tsx` — crop by margins or custom rect
 - `frontend/src/pages/PageNumbersPage.tsx` — add page numbers (position, format, font)
-- `frontend/src/pages/OrganizePage.tsx` — page thumbnail grid, rotate/delete/extract/insert pages ✅ **done**
 - API methods for Crop + Page Numbers (`api.ts` update)
 - Routing entries for Crop + Page Numbers (`App.tsx` update)
+
+### 🔧 Frontend — Fixed / Improved (2026-04-10)
+
+- `CombinePage.tsx` — fixed 3 bugs: (1) upload order now matches UI/output order (was prepending instead of appending), (2) Refresh replaced with Delete All + Delete Selected controls, (3) Clear Selection moved to header; `handleReset` properly clears all state so new sessions start fresh at index #1; state split into `allDocs` (list) and `selectedIds` (Set) so Refresh reloads the list without wiping selections
+- `SplitPage.tsx` — redesigned: removed document picker list; single upload-drop zone now handles both initial upload and "Split Another" reset; split lines turn blue (idle/hover) → red (active/split point set); scissor icon color matches line state
+- `frontend/src/services/api.ts` — replaced axios blob downloads with native `fetch()` for `downloadJobResult` and `downloadDocument`; axios singleton keeps `timeout: 60000` and `withCredentials: false`
 
 ---
 
@@ -209,7 +221,7 @@ frontend/
 | Method | Endpoint | Description |
 |--------|----------|-------------|
 | `POST` | `/api/documents` | Upload a PDF file |
-| `GET` | `/api/documents` | List user's documents (paginated) |
+| `GET` | `/api/documents` | List user's documents (paginated), ordered by upload time (ascending) |
 | `GET` | `/api/documents/{id}` | Get a single document |
 | `DELETE` | `/api/documents/{id}` | Delete a document |
 | `GET` | `/api/documents/{id}/download` | Download the original PDF |
@@ -263,9 +275,9 @@ CREATE TABLE jobs (
   id INTEGER PRIMARY KEY,
   user_id INTEGER REFERENCES user.id,
   document_id INTEGER REFERENCES document.id,
-  tool TEXT,               -- reconstruct, combine, split, etc.
+  tool TEXT,               -- reconstruct, combine, split, organize, extract
   status TEXT,             -- pending, processing, done, failed
-  input_document_ids TEXT, -- JSON list (for combine)
+  input_document_ids TEXT, -- JSON list (for combine) or pages JSON (organize/extract)
   output_filename TEXT,
   output_path TEXT,
   error_message TEXT,
@@ -279,18 +291,18 @@ CREATE TABLE jobs (
 
 ## 6. Job Processing Model
 
-Jobs run in **background threads** inside the FastAPI process (via `threading.Thread`). This keeps everything in a single container/process without requiring Celery/Redis.
+Jobs run in **background threads** inside the FastAPI process (via `threading.Thread`). Each thread gets its own DB session from `NullPool` to avoid SQLite concurrency errors.
 
 ```
 Client                     FastAPI                        Background Thread
   │                            │                                  │
   ├─ POST /jobs/reconstruct ───►│                                  │
-  │                            ├── create Job (status=pending)      │
+  │                            ├── create Job (status=pending)     │
   │                            │                                  │
   │◄── 202 {job_id} ───────────┤                                  │
   │                            │                                  │
   │                            │───────────────────────────────►   │
-  │                            │  start thread → _run_reconstruct  │
+  │                            │  thread → _run_reconstruct        │
   │                            │                                   ├─ extract layout (progress=30%)
   │                            │                                   ├─ run pipeline  (progress=60%)
   │                            │                                   └─ save output    (progress=100%)
@@ -301,7 +313,7 @@ Client                     FastAPI                        Background Thread
   ├─ GET /jobs/{id}            │
   │◄── status=done, 100% ──────┤
   │                            │
-  ├─ GET /jobs/{id}/download ◄─┤── serve output file
+  ├─ GET /jobs/{id}/download ◄─┤── serve output file (StreamingResponse)
 ```
 
 **Polling interval:** 2 seconds on the client side (`useJobPoll` hook).
@@ -347,49 +359,51 @@ npm run dev
 # Opens at http://localhost:5173
 ```
 
-### Test Organize Pages
+### Test Combine PDFs
 
 1. Register / log in at `http://localhost:5173`
-2. Navigate to **Organize** in the nav bar
-3. **Upload** a multi-page PDF (e.g. any 5+ page document)
-4. Wait for thumbnails to load — you should see each page as a tile
-5. **Select a page** — click its checkbox (top-left of tile)
-6. **Rotate** — hover over a tile to reveal ↺ ↻ buttons; click to rotate the page 90° in that direction
-7. **Delete** — hover over a tile and click the trash icon; the tile disappears
-8. **Reorder** — drag a tile and drop it onto another to swap their positions
-9. **Insert pages** — click the "+" icon between any two tiles; select a second PDF from the file picker; its pages are inserted at that position
-10. **Extract mode** — click the **Extract** button in the top-right; select pages with their checkboxes; click **Extract**; a PDF with only those pages downloads immediately
-11. **Save (organize)** — with some pages modified, enter an output filename and click **Save**; a job starts with a progress bar; when done, the organized PDF downloads
+2. Navigate to **Combine** in the nav bar
+3. **Upload** PDFs — drop or click to select; files are automatically added and checked; they appear in upload order (which is also the combine order)
+4. **Clear Selection** — unchecks all without removing files from the list
+5. **Delete (N)** — deletes selected files from the server
+6. **Delete All** — deletes all uploaded files from the server
+7. Enter an output filename and click **Combine**
+8. Wait for the job to finish → click **Download Combined PDF**
 
-### Test Split, Combine, Reconstruct
+### Test Split PDF
+
+1. Navigate to **Split** in the nav bar
+2. Drop or click to upload a single PDF — thumbnails load automatically
+3. Click the **blue** vertical lines between pages to add split points; lines turn **red** when active
+4. Click the red chips below to remove split points, or **Clear all** to reset
+5. Enter a base filename and click **Split PDF**
+6. Download the ZIP of parts → **Split Another** resets to the upload drop zone
+
+### Test Organize, Reconstruct
 
 All other tools work independently. See their respective pages under the nav bar.
 
 ---
 
-## 8. Implementation Plan (Remaining Work)
+## 8. Implementation Plan
 
 ### Priority 1 — Backend: Remaining PDF Operations
-- [x] `POST /jobs/split` + `GET /jobs/{id}/parts` + ZIP download ✅
-- [x] `POST /jobs/organize` + `POST /jobs/extract` — rotate, delete, reorder pages ✅
 - [ ] `POST /jobs/crop` — by margins or custom rect
 - [ ] `POST /jobs/page-numbers` — position, format, font
 - [ ] `src/services/pdf_ops_service.py` — optional consolidation layer
 
 ### Priority 2 — Frontend: Remaining Tool Pages
-- [x] Update `frontend/src/services/api.ts` — `createSplitJob`, `getSplitParts`, `getDocumentThumbnails` ✅
-- [x] Update `frontend/src/App.tsx` — `/split` route ✅
-- [x] Update `frontend/src/components/ui/Layout.tsx` — Split nav link ✅
-- [x] Write `frontend/src/pages/SplitPage.tsx` — thumbnail grid, scissor-split lines, ZIP download ✅
-- [x] Write `frontend/src/pages/OrganizePage.tsx` — thumbnail grid, rotate/delete/reorder/insert/extract ✅
 - [ ] Write `frontend/src/pages/CropPage.tsx` — crop by margins or custom rect
 - [ ] Write `frontend/src/pages/PageNumbersPage.tsx` — add page numbers (position, format, font)
+- [ ] API methods for Crop + Page Numbers (`api.ts` update)
+- [ ] Routing entries for Crop + Page Numbers (`App.tsx` update)
 
 ### Priority 3 — DevOps & Polish
 - [ ] Production `Dockerfile` (multi-stage build for frontend static files served by Nginx)
 - [ ] Production `docker-compose.yml` with `nginx` service as reverse proxy
 - [ ] `.gitignore` update to exclude `backend/data/`, `backend/.env`
 - [ ] README with setup instructions
+- [ ] Auto-cleanup of old job outputs (`data/outputs/`, `data/layouts/`)
 
 ---
 
@@ -416,9 +430,9 @@ src/
 │   └── table_utils.py       # is_same_line, horizontally_separated, etc.
 │
 └── pdf_operations/
-    ├── combine.py            # combine_pdfs() — pure pymupdf ✅ (canonical: backend/src/)
-    ├── split.py              # split_by_points() ✅ (canonical: backend/src/)
-    ├── organize.py           # delete/rotate/extract/insert helpers ✅ (canonical: backend/src/)
+    ├── combine.py            # combine_pdfs() — pure pymupdf ✅
+    ├── split.py              # split_by_points() ✅
+    ├── organize.py           # delete/rotate/extract/insert helpers ✅
     ├── crop.py               # crop_by_margins, crop_by_rect (planned)
     └── page_numbers.py       # add_page_numbers() (planned)
 ```
@@ -445,6 +459,12 @@ Docker Compose mounts `./backend:/app`, and uvicorn `--reload` watches `/app`. N
 ### Vite proxy for API calls — Why
 `vite.config.ts` proxies `/api/*` → `http://localhost:8000`, so the React app calls `/api/*` in development without CORS issues. In production, Nginx serves the built React files and proxies to FastAPI.
 
+### Blob downloads via native fetch (not axios) — Why
+Axios's `responseType: "blob"` through Vite's dev proxy causes `net::ERR_FAILED` on large binary responses (HTTP 206 Partial Content truncation). `downloadJobResult` and `downloadDocument` in `api.ts` use native `fetch()` instead. The backend serves all file responses via `StreamingResponse` with explicit `Content-Length` and `Accept-Ranges: none` headers.
+
+### passlib + bcrypt compatibility — Why the bootstrap patch
+`passlib 1.7.x` reads `bcrypt.__about__.__version__` to detect the backend. bcrypt 4.x moved `__about__` out of the top-level namespace. `src/core/security.py` injects `bcrypt.__about__` at module load time before passlib is imported, making the warning disappear without requiring any passlib code changes.
+
 ---
 
 ## 11. Dependencies
@@ -460,6 +480,7 @@ Docker Compose mounts `./backend:/app`, and uvicorn `--reload` watches `/app`. N
 | `aiosqlite` | ≥0.19.0 | Async SQLite driver |
 | `python-jose[cryptography]` | ≥3.3.0 | JWT encoding/decoding |
 | `passlib[bcrypt]` | ≥1.7.4 | Password hashing |
+| `bcrypt` | ≥4.1.0,<4.2.0 | Backend for passlib (must be <4.2.0 for passlib compatibility) |
 | `email-validator` | ≥2.0.0 | Email validation for Pydantic `EmailStr` |
 | `pydantic-settings` | ≥2.0.0 | Settings from env vars |
 | `pymupdf` | ≥1.23.0 | PDF processing |

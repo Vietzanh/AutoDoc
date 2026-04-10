@@ -2,16 +2,37 @@
 Authentication & authorization helpers.
 """
 
+# ── Bootstrap: bcrypt 4.x no longer exports __about__ at top level ────────────
+# passlib tries to read bcrypt.__about__.__version__ to detect the backend.
+# Since the module no longer exposes __about__ directly, inject it here so
+# passlib's version check succeeds without any (trapped) warnings.
+import importlib.util
+import bcrypt as _bc
+
+_spec = importlib.util.find_spec("bcrypt._about")
+if _spec is not None:
+    _about = importlib.util.module_from_spec(_spec)
+    _spec.loader.exec_module(_about)
+    _bc.__about__ = _about
+else:
+    # Final fallback: mirror just the version attribute passlib needs
+    class _about_ns:
+        pass
+    _ns = _about_ns()
+    _ns.__version__ = _bc.__version__
+    _bc.__about__ = _ns
+# ── End bootstrap ────────────────────────────────────────────────────────────
+
+
 from datetime import datetime, timedelta, timezone
-from typing import Any
 
 from jose import JWTError, jwt
 from passlib.context import CryptContext
 from fastapi import Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer
-from sqlmodel import Session, select
+from sqlmodel import Session
 
-from src.core.config import get_settings, Settings
+from src.core.config import get_settings
 from src.models.database import get_session
 from src.models.database_models import User
 

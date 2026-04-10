@@ -10,7 +10,7 @@ import { Input } from "@/components/ui/Input";
 import { ProgressBar } from "@/components/ui/ProgressBar";
 import { Spinner } from "@/components/ui/Spinner";
 
-// ── SplitLine — scissor click target between two page thumbnails ──────────────
+// ── SplitLine — blue scissor click target between two page thumbnails ─────────
 interface SplitLineProps {
   pageEnd: number;        // 0-based index of the last page in the current part
   isActive: boolean;      // whether a split point is set here
@@ -26,8 +26,8 @@ function SplitLine({ pageEnd, isActive, onToggle }: SplitLineProps) {
       className={`
         relative flex flex-col items-center justify-center select-none
         w-6 h-56 cursor-pointer transition-colors duration-150 flex-shrink-0
-        ${hovered ? "bg-red-50" : "bg-transparent"}
-        ${isActive ? "bg-red-100" : ""}
+        ${isActive ? "bg-red-50" : "bg-transparent"}
+        ${hovered && !isActive ? "bg-blue-50" : ""}
       `}
       style={{ width: "1.5rem", minWidth: "1.5rem" }}
       onMouseEnter={() => setHovered(true)}
@@ -35,29 +35,20 @@ function SplitLine({ pageEnd, isActive, onToggle }: SplitLineProps) {
       onClick={() => onToggle(gapIndex)}
       title={isActive ? "Remove split point" : "Click to split here"}
     >
-      {/* Vertical line */}
+      {/* Vertical line — blue before click, red after */}
       <div
         className={`
           absolute left-1/2 top-2 bottom-2 w-px
           transition-colors duration-150
-          ${hovered || isActive ? "bg-red-400" : "bg-gray-200"}
+          ${isActive ? "bg-red-500" : "bg-blue-300"}
         `}
       />
 
       {/* Scissor icon — shown on hover or when active */}
       {(hovered || isActive) && (
-        <div
-          className={`
-            z-10 transition-all duration-150
-            ${isActive ? "scale-110" : "scale-100"}
-          `}
-        >
-          {/* Scissors SVG icon */}
+        <div className="z-10 transition-all duration-150">
           <svg
-            className={`
-              w-5 h-5
-              ${isActive ? "text-red-600" : "text-red-500"}
-            `}
+            className={`w-5 h-5 ${isActive ? "text-red-600" : "text-blue-500"}`}
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -87,8 +78,6 @@ export default function SplitPage() {
 
   // ── State ──────────────────────────────────────────────────────────────────
   const [selectedDoc, setSelectedDoc] = useState<Document | null>(null);
-  const [docs, setDocs] = useState<Document[]>([]);
-  const [loadingDocs, setLoadingDocs] = useState(false);
   const [thumbnails, setThumbnails] = useState<Thumbnail[]>([]);
   const [loadingThumbs, setLoadingThumbs] = useState(false);
   const [uploading, setUploading] = useState(false);
@@ -99,69 +88,55 @@ export default function SplitPage() {
 
   const { job } = useJobPoll(createdJob?.id ?? 0);
 
-  // ── Data loading ───────────────────────────────────────────────────────────
-  const loadDocs = useCallback(async () => {
-    setLoadingDocs(true);
-    try {
-      const res = await api.listDocuments(0, 100);
-      setDocs(res.documents);
-    } catch {
-      toast.error("Failed to load documents");
-    } finally {
-      setLoadingDocs(false);
-    }
-  }, []);
+  useEffect(() => {
+    if (job) setCreatedJob(job);
+  }, [job]);
 
-  useEffect(() => { loadDocs(); }, [loadDocs]);
-
-  // Fetch thumbnails when a document is selected
-  const selectDocument = useCallback(async (doc: Document) => {
-    setSelectedDoc(doc);
-    setSplitPoints([]);
-    setCreatedJob(null);
-    setSplitParts([]);
-    setLoadingThumbs(true);
-    try {
-      const thumbs = await api.getDocumentThumbnails(doc.id);
-      setThumbnails(thumbs);
-    } catch {
-      toast.error("Failed to load page thumbnails");
-      setSelectedDoc(null);
-    } finally {
-      setLoadingThumbs(false);
-    }
-  }, []);
-
-  // ── Upload ─────────────────────────────────────────────────────────────────
+  // ── Upload & select — single PDF at a time ──────────────────────────────────
+  // Drop zone handles both initial upload and "Split Another" re-upload.
   const onDrop = useCallback(async (acceptedFiles: File[]) => {
     const file = acceptedFiles[0];
     if (!file) return;
+
+    // Reset state before uploading a new file
+    setSelectedDoc(null);
+    setThumbnails([]);
+    setSplitPoints([]);
+    setCreatedJob(null);
+    setSplitParts([]);
     setUploading(true);
+
     try {
       const doc = await api.uploadDocument(file);
-      setDocs((prev) => [doc, ...prev]);
-      await selectDocument(doc);
+      setSelectedDoc(doc);
+      setLoadingThumbs(true);
+      try {
+        const thumbs = await api.getDocumentThumbnails(doc.id);
+        setThumbnails(thumbs);
+      } catch {
+        toast.error("Failed to load page thumbnails");
+        setSelectedDoc(null);
+      } finally {
+        setLoadingThumbs(false);
+      }
       toast.success(`Uploaded: ${doc.original_filename}`);
     } catch {
       toast.error("Upload failed");
     } finally {
       setUploading(false);
     }
-  }, [selectDocument]);
+  }, []);
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
     accept: { "application/pdf": [".pdf"] },
     multiple: false,
-    disabled: uploading,
+    disabled: uploading || loadingThumbs,
   });
 
-  // ── Split point logic ──────────────────────────────────────────────────────
-  // Toggle split point at a gap index (between thumbnail[i-1] and thumbnail[i])
-  // gap index 1 = after page 0 (before page 1), gap index 2 = after page 1, etc.
+  // ── Split point logic ───────────────────────────────────────────────────────
   const toggleSplitPoint = useCallback((gapIndex: number) => {
-    // gapIndex is 1-based (gap after page 0)
-    const pageEnd = gapIndex - 1; // 0-based page that ends this part
+    const pageEnd = gapIndex - 1;
     setSplitPoints((prev) => {
       if (prev.includes(pageEnd)) {
         return prev.filter((p) => p !== pageEnd);
@@ -210,6 +185,7 @@ export default function SplitPage() {
     }
   };
 
+  // Reset everything — back to the upload drop zone
   const handleReset = () => {
     setSelectedDoc(null);
     setThumbnails([]);
@@ -229,7 +205,7 @@ export default function SplitPage() {
       <div>
         <h1 className="text-2xl font-bold text-gray-900">Split PDF</h1>
         <p className="text-sm text-gray-500 mt-1">
-          Click between pages to add split points, then split into separate PDFs
+          Upload a PDF, click the blue split lines between pages, then split into separate files
         </p>
       </div>
 
@@ -302,216 +278,141 @@ export default function SplitPage() {
         </Card>
       )}
 
-      {/* ── Document selection — hidden while processing ── */}
+      {/* ── Upload drop zone — always shown when no job exists ── */}
       {!createdJob && (
-        <>
-          {/* Upload drop zone */}
-          <Card>
-            <CardBody>
-              <div
-                {...getRootProps()}
-                className={`
-                  border-2 border-dashed rounded-xl p-5 text-center cursor-pointer
-                  transition-colors text-sm
-                  ${isDragActive ? "border-blue-500 bg-blue-50" : "border-gray-300 hover:border-gray-400"}
-                  ${uploading ? "opacity-50 cursor-wait" : ""}
-                `}
-              >
-                <input {...getInputProps()} />
-                {uploading ? (
-                  <><Spinner size="sm" className="mx-auto mb-2" /><p className="text-gray-600">Uploading…</p></>
-                ) : isDragActive ? (
-                  <p className="text-blue-600 font-medium">Drop PDF here</p>
-                ) : (
-                  <p className="text-gray-600">
-                    Drop a PDF here to upload, or{" "}
-                    <span className="text-blue-600 font-medium">click</span> to select
-                  </p>
-                )}
-              </div>
-            </CardBody>
-          </Card>
-
-          {/* Document list */}
-          <Card>
-            <CardHeader>
-              <div className="flex items-center justify-between">
-                <h2 className="font-semibold text-gray-900">
-                  Select a Document
-                  {selectedDoc && (
-                    <span className="ml-2 text-sm font-normal text-blue-600">
-                      — {selectedDoc.original_filename} ({thumbnails.length} pages)
-                    </span>
-                  )}
-                </h2>
-                <Button variant="ghost" size="sm" onClick={loadDocs}>Refresh</Button>
-              </div>
-            </CardHeader>
-            <CardBody className="p-0">
-              {loadingDocs ? (
-                <div className="flex justify-center py-10"><Spinner /></div>
-              ) : docs.length === 0 ? (
-                <div className="flex flex-col items-center py-10 text-gray-500">
-                  <p className="text-sm">No documents available</p>
-                  <p className="text-xs text-gray-400 mt-1">Upload a PDF above to get started</p>
-                </div>
+        <Card>
+          <CardBody>
+            <div
+              {...getRootProps()}
+              className={`
+                border-2 border-dashed rounded-xl p-5 text-center cursor-pointer
+                transition-colors text-sm
+                ${isDragActive ? "border-blue-500 bg-blue-50" : "border-gray-300 hover:border-gray-400"}
+                ${uploading || loadingThumbs ? "opacity-50 cursor-wait" : ""}
+              `}
+            >
+              <input {...getInputProps()} />
+              {uploading ? (
+                <><Spinner size="sm" className="mx-auto mb-2" /><p className="text-gray-600">Uploading…</p></>
+              ) : loadingThumbs ? (
+                <><Spinner size="sm" className="mx-auto mb-2" /><p className="text-gray-600">Loading pages…</p></>
+              ) : isDragActive ? (
+                <p className="text-blue-600 font-medium">Drop PDF here</p>
               ) : (
-                <ul className="divide-y divide-gray-50">
-                  {docs.map((doc) => (
-                    <li
-                      key={doc.id}
-                      className={`
-                        flex items-center gap-4 px-6 py-3 cursor-pointer transition-colors
-                        ${selectedDoc?.id === doc.id ? "bg-blue-50" : "hover:bg-gray-50"}
-                      `}
-                      onClick={() => selectDocument(doc)}
-                    >
-                      {/* Thumbnail preview for selected doc */}
-                      {selectedDoc?.id === doc.id && thumbnails.length > 0 ? (
-                        <div className="flex gap-1 flex-shrink-0">
-                          {thumbnails.slice(0, 5).map((t) => (
-                            <img
-                              key={t.page_number}
-                              src={t.image_base64}
-                              alt={`Page ${t.page_number}`}
-                              className="w-6 h-8 object-cover rounded border border-gray-200"
-                            />
-                          ))}
-                          {thumbnails.length > 5 && (
-                            <span className="text-xs text-gray-400 self-center">+{thumbnails.length - 5}</span>
-                          )}
-                        </div>
-                      ) : (
-                        <div className="w-8 h-8 bg-red-50 rounded flex items-center justify-center flex-shrink-0">
-                          <svg className="w-4 h-4 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
-                              d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                          </svg>
-                        </div>
-                      )}
-                      <div className="flex-1 min-w-0">
-                        <p className="text-sm font-medium text-gray-900 truncate">{doc.original_filename}</p>
-                        <p className="text-xs text-gray-500">{doc.page_count ?? "?"} pages</p>
-                      </div>
-                      {selectedDoc?.id === doc.id && (
-                        <span className="text-xs text-blue-600 font-medium">Selected</span>
-                      )}
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </CardBody>
-          </Card>
-
-          {/* ── Page strip with scissor lines ── */}
-          {selectedDoc && (
-            <Card>
-              <CardHeader>
-                <div className="flex items-center justify-between">
-                  <h2 className="font-semibold text-gray-900">
-                    Click a split line between pages
-                    {splitPoints.length > 0 && (
-                      <span className="ml-2 text-sm font-normal text-gray-500">
-                        — {splitPoints.length} split point{splitPoints.length !== 1 ? "s" : ""}
-                      </span>
-                    )}
-                  </h2>
-                  {splitPoints.length > 0 && (
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      onClick={() => setSplitPoints([])}
-                    >
-                      Clear all
-                    </Button>
-                  )}
-                </div>
-                <p className="text-xs text-gray-400 mt-1">
-                  Hover over the space between pages to reveal a split line, then click to split.
+                <p className="text-gray-600">
+                  Drop a PDF here to upload, or{" "}
+                  <span className="text-blue-600 font-medium">click</span> to select
                 </p>
-              </CardHeader>
-              <CardBody>
-                {loadingThumbs ? (
-                  <div className="flex justify-center py-10"><Spinner /></div>
-                ) : (
-                  <div className="space-y-4">
-                    {/* 5-per-row thumbnail strip with scissor split lines */}
-                    <div className="flex flex-wrap gap-0 overflow-x-auto">
-                      {thumbnails.map((thumb, idx) => (
-                        <div key={thumb.page_number} className="flex items-start flex-shrink-0">
-                          {/* Thumbnail */}
-                          <div className="relative group/thumb">
-                            <img
-                              src={thumb.image_base64}
-                              alt={`Page ${thumb.page_number}`}
-                              className="w-40 h-56 object-cover border border-gray-200"
-                              style={{ display: "block" }}
-                            />
-                            {/* Page number badge */}
-                            <span className="absolute bottom-1 left-1/2 -translate-x-1/2 text-xs bg-black/60 text-white px-1.5 py-0.5 rounded">
-                              {thumb.page_number}
-                            </span>
-                          </div>
+              )}
+            </div>
+          </CardBody>
+        </Card>
+      )}
 
-                          {/* Scissor split line — rendered between every pair of thumbnails */}
-                          {idx < thumbnails.length - 1 && (
-                            <SplitLine
-                              pageEnd={(thumb.page_number - 1)} // 0-based page that ends the current part
-                              isActive={splitPoints.includes(thumb.page_number - 1)}
-                              onToggle={toggleSplitPoint}
-                            />
-                          )}
-                        </div>
-                      ))}
+      {/* ── Thumbnail strip + split lines — shown after a PDF is uploaded ── */}
+      {!createdJob && selectedDoc && !loadingThumbs && (
+        <Card>
+          <CardHeader>
+            <div className="flex items-center justify-between">
+              <h2 className="font-semibold text-gray-900">
+                Click the blue lines between pages to add split points
+                {splitPoints.length > 0 && (
+                  <span className="ml-2 text-sm font-normal text-gray-500">
+                    — {splitPoints.length} split point{splitPoints.length !== 1 ? "s" : ""}
+                  </span>
+                )}
+              </h2>
+              <div className="flex gap-2">
+                {splitPoints.length > 0 && (
+                  <Button variant="ghost" size="sm" onClick={() => setSplitPoints([])}>
+                    Clear all
+                  </Button>
+                )}
+                <Button variant="ghost" size="sm" onClick={handleReset}>
+                  Split Another
+                </Button>
+              </div>
+            </div>
+            <p className="text-xs text-gray-400 mt-1">
+              {thumbnails.length} pages — hover over the space between pages to reveal a split line, then click to split.
+            </p>
+          </CardHeader>
+          <CardBody>
+            <div className="space-y-4">
+              {/* 5-per-row thumbnail strip with blue scissor split lines */}
+              <div className="flex flex-wrap gap-0 overflow-x-auto">
+                {thumbnails.map((thumb, idx) => (
+                  <div key={thumb.page_number} className="flex items-start flex-shrink-0">
+                    {/* Thumbnail */}
+                    <div className="relative">
+                      <img
+                        src={thumb.image_base64}
+                        alt={`Page ${thumb.page_number}`}
+                        className="w-40 h-56 object-cover border border-gray-200"
+                        style={{ display: "block" }}
+                      />
+                      {/* Page number badge */}
+                      <span className="absolute bottom-1 left-1/2 -translate-x-1/2 text-xs bg-black/60 text-white px-1.5 py-0.5 rounded">
+                        {thumb.page_number}
+                      </span>
                     </div>
 
-                    {/* Split point legend */}
-                    {splitPoints.length > 0 && (
-                      <div className="flex flex-wrap gap-3">
-                        {splitPoints.map((pt) => {
-                          return (
-                            <span key={pt} className="inline-flex items-center gap-1.5 bg-red-50 border border-red-200 text-red-700 text-xs px-2 py-1 rounded">
-                              <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
-                                <path d="M6 9l6 6 6-6" /><path d="M6 15l6-6 6 6" />
-                              </svg>
-                              Split after page {pt + 1}
-                              <button
-                                onClick={() => toggleSplitPoint(pt + 1)}
-                                className="ml-1 text-red-400 hover:text-red-700 font-bold"
-                                title="Remove split point"
-                              >×</button>
-                            </span>
-                          );
-                        })}
-                      </div>
+                    {/* Blue scissor split line — rendered between every pair of thumbnails */}
+                    {idx < thumbnails.length - 1 && (
+                      <SplitLine
+                        pageEnd={thumb.page_number - 1}
+                        isActive={splitPoints.includes(thumb.page_number - 1)}
+                        onToggle={toggleSplitPoint}
+                      />
                     )}
                   </div>
-                )}
-              </CardBody>
+                ))}
+              </div>
 
-              {/* Action footer */}
-              {selectedDoc && !loadingThumbs && thumbnails.length > 1 && (
-                <CardFooter className="flex-col items-stretch gap-4">
-                  <div className="flex gap-3 items-end">
-                    <Input
-                      label="Base filename"
-                      value={outputFilename}
-                      onChange={(e) => setOutputFilename(e.target.value)}
-                      placeholder="split_part"
-                    />
-                    <Button
-                      onClick={handleStartJob}
-                      disabled={splitPoints.length === 0}
+              {/* Active split point chips */}
+              {splitPoints.length > 0 && (
+                <div className="flex flex-wrap gap-2">
+                  {splitPoints.map((pt) => (
+                    <span
+                      key={pt}
+                      className="inline-flex items-center gap-1.5 bg-red-50 border border-red-200 text-red-700 text-xs px-2 py-1 rounded"
                     >
-                      Split PDF ({splitPoints.length > 0 ? `${splitPoints.length + 1} parts` : "add points first"})
-                    </Button>
-                    <Button variant="ghost" onClick={handleReset}>Cancel</Button>
-                  </div>
-                </CardFooter>
+                      <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+                        <path d="M6 9l6 6 6-6" /><path d="M6 15l6-6 6 6" />
+                      </svg>
+                      Split after page {pt + 1}
+                      <button
+                        onClick={() => toggleSplitPoint(pt + 1)}
+                        className="ml-1 text-red-400 hover:text-red-700 font-bold"
+                        title="Remove split point"
+                      >×</button>
+                    </span>
+                  ))}
+                </div>
               )}
-            </Card>
+            </div>
+          </CardBody>
+
+          {/* Action footer */}
+          {thumbnails.length > 1 && (
+            <CardFooter className="flex-col items-stretch gap-4">
+              <div className="flex gap-3 items-end">
+                <Input
+                  label="Base filename"
+                  value={outputFilename}
+                  onChange={(e) => setOutputFilename(e.target.value)}
+                  placeholder="split_part"
+                />
+                <Button
+                  onClick={handleStartJob}
+                  disabled={splitPoints.length === 0}
+                >
+                  Split PDF ({splitPoints.length > 0 ? `${splitPoints.length + 1} parts` : "add points first"})
+                </Button>
+              </div>
+            </CardFooter>
           )}
-        </>
+        </Card>
       )}
     </div>
   );

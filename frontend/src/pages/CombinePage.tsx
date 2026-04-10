@@ -128,8 +128,9 @@ export default function CombinePage() {
       a.click();
       URL.revokeObjectURL(url);
     } catch (err) {
-      console.error("Download error:", err);
-      toast.error("Download failed");
+      const msg = err instanceof Error ? err.message : String(err);
+      console.error("Download error:", msg, err);
+      toast.error(msg || "Download failed");
     }
   };
 

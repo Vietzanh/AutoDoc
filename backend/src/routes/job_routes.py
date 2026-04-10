@@ -7,7 +7,7 @@ from pathlib import Path
 from typing import Optional
 
 from fastapi import APIRouter, Depends, HTTPException, status, Query
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, StreamingResponse
 from sqlmodel import Session
 
 from src.models.database import get_session
@@ -292,11 +292,17 @@ def download_job_result(
             for pdf_file in sorted(path.glob("*.pdf")):
                 zf.write(pdf_file, pdf_file.name)
         buffer.seek(0)
-        from fastapi.responses import StreamingResponse
+        buffer_bytes = buffer.getvalue()
+        def iter_zip():
+            yield buffer_bytes
         return StreamingResponse(
-            iter([buffer.getvalue()]),
+            iter_zip(),
             media_type="application/zip",
-            headers={"Content-Disposition": f'attachment; filename="{zip_name}"'},
+            headers={
+                "Content-Disposition": f'attachment; filename="{zip_name}"',
+                "Content-Length": str(len(buffer_bytes)),
+                "Accept-Ranges": "none",
+            },
         )
 
     # Non-split jobs: single output file
@@ -306,8 +312,19 @@ def download_job_result(
     mime = "application/pdf" if job.output_filename.endswith(".pdf") else \
            "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
 
-    return FileResponse(
-        path,
+    # Serve the full file as a single-chunk StreamingResponse to avoid 206
+    # Partial Content (range response) which breaks blob downloads in axios.
+    file_bytes = path.read_bytes()
+
+    def iter_file():
+        yield file_bytes
+
+    return StreamingResponse(
+        iter_file(),
         media_type=mime,
-        filename=job.output_filename,
+        headers={
+            "Content-Disposition": f'attachment; filename="{job.output_filename}"',
+            "Content-Length": str(len(file_bytes)),
+            "Accept-Ranges": "none",
+        },
     )

@@ -26,7 +26,7 @@ class DocumentRepository:
         return self.session.get(Document, doc_id)
 
     def get_by_user(self, user_id: int, offset: int = 0, limit: int = 20) -> tuple[list[Document], int]:
-        query = select(Document).where(Document.user_id == user_id).order_by(Document.created_at.desc())
+        query = select(Document).where(Document.user_id == user_id).order_by(Document.created_at.asc())
         count_query = select(func.count()).select_from(Document).where(Document.user_id == user_id)
 
         total = self.session.exec(count_query).one()
