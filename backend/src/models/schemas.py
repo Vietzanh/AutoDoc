@@ -143,9 +143,13 @@ class OrganizePage(BaseModel):
     Represents a single page in the organize request.
     Pages are sent in their final display order; the server reconstructs the PDF
     in exactly that order, applying any per-page rotation.
+    Supports pages from the primary document AND from inserted documents.
     """
     original_index: int = Field(
-        description="0-based index of this page in the original uploaded PDF"
+        description="0-based index of this page in its source PDF"
+    )
+    source_document_id: int = Field(
+        description="ID of the PDF document this page comes from"
     )
     rotation: int = Field(
         default=0,
