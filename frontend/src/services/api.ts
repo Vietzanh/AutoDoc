@@ -205,7 +205,7 @@ class ApiClient {
 
   async createOrganizeJob(
     documentId: number,
-    pages: Array<{ original_index: number; rotation: number; deleted: boolean }>,
+    pages: Array<{ original_index: number; source_document_id: number; rotation: number; deleted: boolean }>,
     outputFilename = "organized.pdf"
   ): Promise<Job> {
     const res = await this.client.post<Job>("/jobs/organize", {
@@ -224,6 +224,19 @@ class ApiClient {
     const res = await this.client.post<Job>("/jobs/extract", {
       document_id: documentId,
       pages,
+      output_filename: outputFilename,
+    });
+    return res.data;
+  }
+
+  async createReorderJob(
+    documentId: number,
+    newOrder: number[],
+    outputFilename = "reordered.pdf"
+  ): Promise<Job> {
+    const res = await this.client.post<Job>("/jobs/reorder", {
+      document_id: documentId,
+      new_order: newOrder,
       output_filename: outputFilename,
     });
     return res.data;
