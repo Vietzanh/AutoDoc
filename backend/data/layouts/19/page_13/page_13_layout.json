@@ -1,0 +1,854 @@
+[
+  {
+    "type": "text",
+    "bbox": [
+      108.0,
+      72.78716278076172,
+      211.7113494873047,
+      84.74236297607422
+    ],
+    "content": "ASystem Prompts",
+    "spans": [
+      {
+        "text": "A",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 11.9552001953125,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          108.0,
+          72.78716278076172,
+          116.63165283203125,
+          84.74236297607422
+        ]
+      },
+      {
+        "text": "System Prompts",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 11.9552001953125,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          128.58685302734375,
+          72.78716278076172,
+          211.7113494873047,
+          84.74236297607422
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      108.0,
+      97.98253631591797,
+      210.57492065429688,
+      107.94513702392578
+    ],
+    "content": "A.1Zero-Shot Prompt",
+    "spans": [
+      {
+        "text": "A.1",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          108.0,
+          97.98253631591797,
+          122.66494750976562,
+          107.94513702392578
+        ]
+      },
+      {
+        "text": "Zero-Shot Prompt",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          132.62754821777344,
+          97.98253631591797,
+          210.57492065429688,
+          107.94513702392578
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      107.64099884033203,
+      118.34127807617188,
+      505.7431945800781,
+      161.10708618164062
+    ],
+    "content": "As outlined in our Methods section, we designed the Zero-Shot prompt to provide an overview ofthe problem and the rules the model must follow. We provide no additional assistance to the model.This format serves as our control condition, showing how strong each model is on its own, withoutprompting-based guidance.",
+    "spans": [
+      {
+        "text": "As outlined in our Methods section, we designed the Zero-Shot prompt to provide an overview of",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.64099884033203,
+          118.34127807617188,
+          504.00433349609375,
+          128.40301513671875
+        ]
+      },
+      {
+        "text": "the problem and the rules the model must follow. We provide no additional assistance to the model.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.987475395202637,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          129.30657958984375,
+          505.7431945800781,
+          139.2940673828125
+        ]
+      },
+      {
+        "text": "This format serves as our control condition, showing how strong each model is on its own, without",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.007330894470215,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.69100189208984,
+          140.20156860351562,
+          504.0011291503906,
+          150.20889282226562
+        ]
+      },
+      {
+        "text": "prompting-based guidance.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          151.1444854736328,
+          216.4628143310547,
+          161.10708618164062
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      117.41000366210938,
+      170.89654541015625,
+      240.73703002929688,
+      180.85914611816406
+    ],
+    "content": "System Prompt — Zero-Shot",
+    "spans": [
+      {
+        "text": "System Prompt — Zero-Shot",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 16777215,
+        "bbox": [
+          117.41000366210938,
+          170.89654541015625,
+          240.73703002929688,
+          180.85914611816406
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      116.83200073242188,
+      192.0084991455078,
+      224.86643981933594,
+      201.97109985351562
+    ],
+    "content": "You are an 8-puzzle solver.",
+    "spans": [
+      {
+        "text": "You are an 8-puzzle solver.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          116.83200073242188,
+          192.0084991455078,
+          224.86643981933594,
+          201.97109985351562
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      117.08100128173828,
+      213.75131225585938,
+      494.9390563964844,
+      256.49285888671875
+    ],
+    "content": "The board is a 3 by 3 grid where numbers 1 to 8 are movable tiles and 0 is the emptyspace.At each step, slide one tile orthogonally adjacent to 0 into the empty space(no diagonal moves; tiles cannot move off the board). The goal is to arrange the board asfollows: [[1, 2, 3], [4, 5, 6], [7, 8, 0]]. Any valid solution is acceptable; optimality is not required.",
+    "spans": [
+      {
+        "text": "The board is a 3 by 3 grid where numbers 1 to 8 are movable tiles and 0 is the empty",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.10099792480469,
+          213.75131225585938,
+          494.9390563964844,
+          223.81304931640625
+        ]
+      },
+      {
+        "text": "space.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          224.66030883789062,
+          142.51992797851562,
+          234.7220458984375
+        ]
+      },
+      {
+        "text": "At each step, slide one tile orthogonally adjacent to 0 into the empty space",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          154.29751586914062,
+          224.66030883789062,
+          494.58746337890625,
+          234.7220458984375
+        ]
+      },
+      {
+        "text": "(no diagonal moves; tiles cannot move off the board). The goal is to arrange the board as",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.08100128173828,
+          235.56930541992188,
+          494.5939025878906,
+          245.63104248046875
+        ]
+      },
+      {
+        "text": "follows: [[1, 2, 3], [4, 5, 6], [7, 8, 0]]. Any valid solution is acceptable; optimality is not required.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.862470626831055,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          246.63038635253906,
+          494.587646484375,
+          256.49285888671875
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      117.10099792480469,
+      268.2972717285156,
+      494.5935974121094,
+      300.153076171875
+    ],
+    "content": "The puzzle is guaranteed solvable.Output only the final move sequence as the orderedlist of tile labels—the number on the tile slid into 0 at each step—in chronological order. Do notinclude positions, directions, or intermediate states. The digit 0 never appears in this list.",
+    "spans": [
+      {
+        "text": "The puzzle is guaranteed solvable.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.10099792480469,
+          268.2972717285156,
+          263.9600830078125,
+          278.3590087890625
+        ]
+      },
+      {
+        "text": "Output only the final move sequence as the ordered",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          272.33343505859375,
+          268.2972717285156,
+          494.5935974121094,
+          278.3590087890625
+        ]
+      },
+      {
+        "text": "list of tile labels—the number on the tile slid into 0 at each step—in chronological order. Do not",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.867501258850098,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          279.3536071777344,
+          494.5914611816406,
+          289.2210998535156
+        ]
+      },
+      {
+        "text": "include positions, directions, or intermediate states. The digit 0 never appears in this list.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          290.1904602050781,
+          470.4247741699219,
+          300.153076171875
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      117.41000366210938,
+      312.0084533691406,
+      361.2546691894531,
+      321.9710693359375
+    ],
+    "content": "Format your response exactly as: Final Answer: [m1, m2, ...]",
+    "spans": [
+      {
+        "text": "Format your response exactly as: Final Answer: [m1, m2, ...]",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          312.0084533691406,
+          361.2546691894531,
+          321.9710693359375
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      108.0,
+      345.5915222167969,
+      186.4056396484375,
+      355.5541076660156
+    ],
+    "content": "A.2CoT Prompt",
+    "spans": [
+      {
+        "text": "A.2",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          108.0,
+          345.5915222167969,
+          122.66494750976562,
+          355.5541076660156
+        ]
+      },
+      {
+        "text": "CoT Prompt",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          132.62754821777344,
+          345.5915222167969,
+          186.4056396484375,
+          355.5541076660156
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      107.53199768066406,
+      366.0216979980469,
+      504.0009460449219,
+      419.62506103515625
+    ],
+    "content": "We designed the few-shot CoT prompt to show the model several worked examples of how to solvedifferent puzzles. The solutions vary in length but are kept relatively short to keep the promptmanageable. In each example, we explicitly track the state by repeating the current board after eachmove. This explicit state tracking is intended to encourage the model to follow a similar procedureand to minimize the number of invalid moves.",
+    "spans": [
+      {
+        "text": "We designed the few-shot CoT prompt to show the model several worked examples of how to solve",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.96757984161377,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.53199768066406,
+          366.0216979980469,
+          504.0009460449219,
+          375.9892578125
+        ]
+      },
+      {
+        "text": "different puzzles. The solutions vary in length but are kept relatively short to keep the prompt",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          376.8592834472656,
+          503.9972229003906,
+          386.9210205078125
+        ]
+      },
+      {
+        "text": "manageable. In each example, we explicitly track the state by repeating the current board after each",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.952631950378418,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          387.85101318359375,
+          503.9971008300781,
+          397.80364990234375
+        ]
+      },
+      {
+        "text": "move. This explicit state tracking is intended to encourage the model to follow a similar procedure",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.007330894470215,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          398.71954345703125,
+          503.9985046386719,
+          408.72686767578125
+        ]
+      },
+      {
+        "text": "and to minimize the number of invalid moves.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          409.6624450683594,
+          291.3516845703125,
+          419.62506103515625
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      117.41000366210938,
+      429.4145202636719,
+      216.5677490234375,
+      439.3771057128906
+    ],
+    "content": "System Prompt — CoT",
+    "spans": [
+      {
+        "text": "System Prompt — CoT",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 16777215,
+        "bbox": [
+          117.41000366210938,
+          429.4145202636719,
+          216.5677490234375,
+          439.3771057128906
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      116.83200073242188,
+      450.5264587402344,
+      224.86643981933594,
+      460.48907470703125
+    ],
+    "content": "You are an 8-puzzle solver.",
+    "spans": [
+      {
+        "text": "You are an 8-puzzle solver.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          116.83200073242188,
+          450.5264587402344,
+          224.86643981933594,
+          460.48907470703125
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      117.08100128173828,
+      472.269287109375,
+      494.9390563964844,
+      515.0108642578125
+    ],
+    "content": "The board is a 3 by 3 grid where numbers 1 to 8 are movable tiles and 0 is the emptyspace.At each step, slide one tile orthogonally adjacent to 0 into the empty space(no diagonal moves; tiles cannot move off the board). The goal is to arrange the board asfollows: [[1, 2, 3], [4, 5, 6], [7, 8, 0]]. Any valid solution is acceptable; optimality is not required.",
+    "spans": [
+      {
+        "text": "The board is a 3 by 3 grid where numbers 1 to 8 are movable tiles and 0 is the empty",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.10099792480469,
+          472.269287109375,
+          494.9390563964844,
+          482.3310241699219
+        ]
+      },
+      {
+        "text": "space.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          483.17828369140625,
+          142.51992797851562,
+          493.2400207519531
+        ]
+      },
+      {
+        "text": "At each step, slide one tile orthogonally adjacent to 0 into the empty space",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          154.29751586914062,
+          483.17828369140625,
+          494.58746337890625,
+          493.2400207519531
+        ]
+      },
+      {
+        "text": "(no diagonal moves; tiles cannot move off the board). The goal is to arrange the board as",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.08100128173828,
+          494.0872802734375,
+          494.5939025878906,
+          504.1490173339844
+        ]
+      },
+      {
+        "text": "follows: [[1, 2, 3], [4, 5, 6], [7, 8, 0]]. Any valid solution is acceptable; optimality is not required.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.862470626831055,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          505.1484069824219,
+          494.587646484375,
+          515.0108642578125
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      117.10099792480469,
+      526.9473876953125,
+      495.83038330078125,
+      558.6710815429688
+    ],
+    "content": "The puzzle is guaranteed solvable. Think step-by-step to find the solution. After your reasoning,provide the final sequence of tile numbers that slide into the empty space as an array in thefollowing format: Final Answer: [m1, m2, ...]",
+    "spans": [
+      {
+        "text": "The puzzle is guaranteed solvable. Think step-by-step to find the solution. After your reasoning,",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.887598037719727,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.10099792480469,
+          526.9473876953125,
+          495.83038330078125,
+          536.8350219726562
+        ]
+      },
+      {
+        "text": "provide the final sequence of tile numbers that slide into the empty space as an array in the",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          537.7242431640625,
+          494.5876159667969,
+          547.7860107421875
+        ]
+      },
+      {
+        "text": "following format: Final Answer: [m1, m2, ...]",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          548.70849609375,
+          300.1640319824219,
+          558.6710815429688
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      117.41000366210938,
+      570.5264892578125,
+      354.7889099121094,
+      580.4890747070312
+    ],
+    "content": "Here are three complete examples of how to solve a puzzle:",
+    "spans": [
+      {
+        "text": "Here are three complete examples of how to solve a puzzle:",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          570.5264892578125,
+          354.7889099121094,
+          580.4890747070312
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      117.41000366210938,
+      592.344482421875,
+      163.068603515625,
+      602.3070678710938
+    ],
+    "content": "Example 1:",
+    "spans": [
+      {
+        "text": "Example 1:",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          592.344482421875,
+          163.068603515625,
+          602.3070678710938
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      117.41000366210938,
+      614.1624755859375,
+      261.0506896972656,
+      635.0339965820312
+    ],
+    "content": "User:Puzzle: [[1, 2, 3], [4, 8, 5], [7, 0, 6]]",
+    "spans": [
+      {
+        "text": "User:",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          614.1624755859375,
+          138.989013671875,
+          624.1250610351562
+        ]
+      },
+      {
+        "text": "Puzzle: [[1, 2, 3], [4, 8, 5], [7, 0, 6]]",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          625.0714111328125,
+          261.0506896972656,
+          635.0339965820312
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      116.66300201416016,
+      646.8904418945312,
+      496.329833984375,
+      711.3980102539062
+    ],
+    "content": "Assistant:1. My goal is to get the board to the goal state. I will plan a sequence of moves.2. First, I need to get the ’8’ into its correct position. I will slide tile 8 down into the emptyspace. The board is now [[1, 2, 3], [4, 0, 5], [7, 8, 6]].3. Next, I need to get the ’5’ into its correct position. I will slide tile 5 left into the empty space.The board is now [[1, 2, 3], [4, 5, 0], [7, 8, 6]].",
+    "spans": [
+      {
+        "text": "Assistant:",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.0510025024414,
+          646.8904418945312,
+          156.35350036621094,
+          656.85302734375
+        ]
+      },
+      {
+        "text": "1. My goal is to get the board to the goal state. I will plan a sequence of moves.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          116.66300201416016,
+          657.7994384765625,
+          433.83233642578125,
+          667.7620239257812
+        ]
+      },
+      {
+        "text": "2. First, I need to get the ’8’ into its correct position. I will slide tile 8 down into the empty",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          668.6332397460938,
+          494.9328918457031,
+          678.6950073242188
+        ]
+      },
+      {
+        "text": "space. The board is now [[1, 2, 3], [4, 0, 5], [7, 8, 6]].",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          679.617431640625,
+          330.51995849609375,
+          689.5800170898438
+        ]
+      },
+      {
+        "text": "3. Next, I need to get the ’5’ into its correct position. I will slide tile 5 left into the empty space.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.92266845703125,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          690.5567626953125,
+          496.329833984375,
+          700.4794311523438
+        ]
+      },
+      {
+        "text": "The board is now [[1, 2, 3], [4, 5, 0], [7, 8, 6]].",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.10099792480469,
+          701.4354248046875,
+          302.5049133300781,
+          711.3980102539062
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      301.0190124511719,
+      742.3324584960938,
+      310.9815979003906,
+      752.2950439453125
+    ],
+    "content": "14",
+    "spans": [
+      {
+        "text": "14",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          301.0190124511719,
+          742.3324584960938,
+          310.9815979003906,
+          752.2950439453125
+        ]
+      }
+    ]
+  }
+]

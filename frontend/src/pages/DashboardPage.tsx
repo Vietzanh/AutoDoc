@@ -95,19 +95,11 @@ export default function DashboardPage() {
   return (
     <div className="space-y-8">
       {/* Page title */}
-      <div className="flex items-center justify-between">
-        <div>
-          <h1 className="text-2xl font-bold text-gray-900">Dashboard</h1>
-          <p className="text-sm text-gray-500 mt-1">
-            Manage your documents and view job history
-          </p>
-        </div>
-        <div className="flex gap-3">
-          <Button variant="secondary" onClick={() => navigate("/reconstruct")}>
-            Reconstruct PDF
-          </Button>
-          <Button onClick={() => navigate("/combine")}>Combine PDFs</Button>
-        </div>
+      <div>
+        <h1 className="text-2xl font-bold text-gray-900">Dashboard</h1>
+        <p className="text-sm text-gray-500 mt-1">
+          Manage your documents and view job history
+        </p>
       </div>
 
       {/* Documents section */}

@@ -1,0 +1,966 @@
+[
+  {
+    "type": "text",
+    "bbox": [
+      108.0,
+      74.24044036865234,
+      503.9986267089844,
+      128.00607299804688
+    ],
+    "content": "Repeat:As a control condition, we re-prompt the model from the furthest valid state of its lastfailed attempt without providing any feedback. The prompt presents this state as a new, standalonepuzzle. This trial serves as a baseline to measure performance gains arising purely from modelstochasticity and from an additional attempt, thereby isolating the effects of the feedback providedunder other conditions.",
+    "spans": [
+      {
+        "text": "Repeat:",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 10.061732292175293,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          108.0,
+          74.24044036865234,
+          141.8592987060547,
+          84.30216979980469
+        ]
+      },
+      {
+        "text": "As a control condition, we re-prompt the model from the furthest valid state of its last",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          151.8179168701172,
+          74.33230590820312,
+          503.99725341796875,
+          84.39403533935547
+        ]
+      },
+      {
+        "text": "failed attempt without providing any feedback. The prompt presents this state as a new, standalone",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.007330894470215,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          85.28255462646484,
+          503.9986267089844,
+          95.28988647460938
+        ]
+      },
+      {
+        "text": "puzzle. This trial serves as a baseline to measure performance gains arising purely from model",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          96.15029907226562,
+          503.9974670410156,
+          106.21202850341797
+        ]
+      },
+      {
+        "text": "stochasticity and from an additional attempt, thereby isolating the effects of the feedback provided",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.017244338989258,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          107.09303283691406,
+          503.9981384277344,
+          117.11027526855469
+        ]
+      },
+      {
+        "text": "under other conditions.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          118.04347229003906,
+          200.14407348632812,
+          128.00607299804688
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      107.53199768066406,
+      140.2344970703125,
+      505.7471008300781,
+      204.83407592773438
+    ],
+    "content": "Specific:Specific feedback also resumes from the furthest valid state, but provides precise detailson the previous failed attempt. If the model makes an invalid move, we inform it of the error andidentify the specific tile involved. If it exceeds the time limit, we specify the exact duration allowed.We designed this level to help the model avoid immediately repeating the same mistake and tohighlight where it went wrong so it can correct its behaviour. For example, highlighting that themodel made an invalid move should encourage it to focus more on tracking the state space.",
+    "spans": [
+      {
+        "text": "Specific:",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          108.0,
+          140.2344970703125,
+          143.97496032714844,
+          150.1970977783203
+        ]
+      },
+      {
+        "text": "Specific feedback also resumes from the furthest valid state, but provides precise details",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          153.93756103515625,
+          140.32545471191406,
+          504.0032653808594,
+          150.28805541992188
+        ]
+      },
+      {
+        "text": "on the previous failed attempt. If the model makes an invalid move, we inform it of the error and",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          151.16030883789062,
+          503.99749755859375,
+          161.2220458984375
+        ]
+      },
+      {
+        "text": "identify the specific tile involved. If it exceeds the time limit, we specify the exact duration allowed.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.952631950378418,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          162.15203857421875,
+          505.7471008300781,
+          172.10467529296875
+        ]
+      },
+      {
+        "text": "We designed this level to help the model avoid immediately repeating the same mistake and to",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.53199768066406,
+          172.97830200195312,
+          503.99664306640625,
+          183.0400390625
+        ]
+      },
+      {
+        "text": "highlight where it went wrong so it can correct its behaviour. For example, highlighting that the",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          183.88729858398438,
+          503.9972839355469,
+          193.94903564453125
+        ]
+      },
+      {
+        "text": "model made an invalid move should encourage it to focus more on tracking the state space.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          194.87147521972656,
+          470.6286315917969,
+          204.83407592773438
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      107.53199768066406,
+      216.9864044189453,
+      505.7463684082031,
+      303.4800720214844
+    ],
+    "content": "Suggestive:Suggestive feedback includes all elements of Specific feedback, plus a scalar hint:the optimal solution length for the current board. We computed this value exactly using IterativeDeepening A* (IDA*) with the admissible Manhattan-distance heuristic. Because the Manhattanheuristic is admissible (and consistent) for the 8-puzzle, the returned length equals the true optimum.We reveal only the length x—never the action sequence—and append: “Hint: The optimal solutionhas x moves. Your solution may be longer, but try to find an efficient path.” The hint provides aprogress signal while still leaving planning to the model, aiming to prevent it from undertaking anunnecessarily long search. We illustrate this level of feedback in Fig. 2.",
+    "spans": [
+      {
+        "text": "Suggestive:",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 10.061732292175293,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          108.0,
+          216.9864044189453,
+          156.9089813232422,
+          227.0481414794922
+        ]
+      },
+      {
+        "text": "Suggestive feedback includes all elements of Specific feedback, plus a scalar hint:",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          166.8777618408203,
+          217.07827758789062,
+          505.3793640136719,
+          227.1400146484375
+        ]
+      },
+      {
+        "text": "the",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          227.98727416992188,
+          120.41778564453125,
+          238.04901123046875
+        ]
+      },
+      {
+        "text": " optimal solution length",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 10.061732292175293,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          120.41778564453125,
+          227.80905151367188,
+          218.1647186279297,
+          237.87078857421875
+        ]
+      },
+      {
+        "text": " for the current board. We computed this value exactly using Iterative",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          218.1647186279297,
+          227.98727416992188,
+          503.997314453125,
+          238.04901123046875
+        ]
+      },
+      {
+        "text": "Deepening A* (IDA*) with the admissible Manhattan-distance heuristic. Because the Manhattan",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          238.89730834960938,
+          503.9974365234375,
+          248.95904541015625
+        ]
+      },
+      {
+        "text": "heuristic is admissible (and consistent) for the 8-puzzle, the returned length equals the true optimum.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.90765380859375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          249.92315673828125,
+          505.7463684082031,
+          259.830810546875
+        ]
+      },
+      {
+        "text": "We reveal only the length",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.987475395202637,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.53199768066406,
+          260.7716064453125,
+          209.7487335205078,
+          270.75909423828125
+        ]
+      },
+      {
+        "text": " x",
+        "font_name": "CMMI10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          209.7487335205078,
+          260.5599365234375,
+          217.94061279296875,
+          270.52252197265625
+        ]
+      },
+      {
+        "text": "—never the action sequence—and append: “Hint: The optimal solution",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.987475395202637,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          217.93600463867188,
+          260.7716064453125,
+          504.0007019042969,
+          270.75909423828125
+        ]
+      },
+      {
+        "text": "has",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          271.6242980957031,
+          121.54574584960938,
+          281.68603515625
+        ]
+      },
+      {
+        "text": " x",
+        "font_name": "CMMI10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          121.54574584960938,
+          271.46893310546875,
+          130.13760375976562,
+          281.4315185546875
+        ]
+      },
+      {
+        "text": " moves. Your solution may be longer, but try to find an efficient path.” The hint provides a",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          130.13760375976562,
+          271.6242980957031,
+          503.99566650390625,
+          281.68603515625
+        ]
+      },
+      {
+        "text": "progress signal while still leaving planning to the model, aiming to prevent it from undertaking an",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.046924591064453,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          282.5445251464844,
+          503.9974365234375,
+          292.5914611816406
+        ]
+      },
+      {
+        "text": "unnecessarily long search. We illustrate this level of feedback in Fig. 2.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          293.5174560546875,
+          392.3924560546875,
+          303.4800720214844
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      108.0,
+      317.05352783203125,
+      235.9595947265625,
+      327.01611328125
+    ],
+    "content": "3.5External Move Validator",
+    "spans": [
+      {
+        "text": "3.5",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          108.0,
+          317.05352783203125,
+          120.4532470703125,
+          327.01611328125
+        ]
+      },
+      {
+        "text": "External Move Validator",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          130.4158477783203,
+          317.05352783203125,
+          235.9595947265625,
+          327.01611328125
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      108.0,
+      337.0442810058594,
+      504.3428955078125,
+      445.2640686035156
+    ],
+    "content": "In our final intervention, we offload part of the state-tracking burden from the model. The modelreceives the current puzzle state along with two lists: one containing all valid moves from the currentposition and another containing the previous move to help it avoid loops (e.g., immediately reversingthe last action). This setup removes the need for the model to determine which moves are valid; itonly has to examine the puzzle and select the best next move from the list. We instruct the modelto return a single move, which we then apply to the puzzle. After applying the move, we updatethe puzzle state and move lists and re-query the model. Since the longest optimal solution for any8-puzzle instance is 31 moves and roughly 94% of puzzles require 26 or fewer moves, we allow themodels to take up to 50 moves per puzzle, providing ample opportunity to solve it while avoidingexcessively long, run-on trajectories.",
+    "spans": [
+      {
+        "text": "In our final intervention, we offload part of the state-tracking burden from the model. The model",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          337.0442810058594,
+          503.99755859375,
+          347.10601806640625
+        ]
+      },
+      {
+        "text": "receives the current puzzle state along with two lists: one containing all valid moves from the current",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.872529029846191,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          348.0977783203125,
+          503.9976806640625,
+          357.9703063964844
+        ]
+      },
+      {
+        "text": "position and another containing the previous move to help it avoid loops (e.g., immediately reversing",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.882577896118164,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          358.9991455078125,
+          504.00048828125,
+          368.8817138671875
+        ]
+      },
+      {
+        "text": "the last action). This setup removes the need for the model to determine which moves are valid; it",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          369.7723083496094,
+          503.997314453125,
+          379.83404541015625
+        ]
+      },
+      {
+        "text": "only has to examine the puzzle and select the best next move from the list. We instruct the model",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          380.6813049316406,
+          503.9972839355469,
+          390.7430419921875
+        ]
+      },
+      {
+        "text": "to return a single move, which we then apply to the puzzle. After applying the move, we update",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          391.5903015136719,
+          503.9972839355469,
+          401.65203857421875
+        ]
+      },
+      {
+        "text": "the puzzle state and move lists and re-query the model. Since the longest optimal solution for any",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          402.4992980957031,
+          504.3428955078125,
+          412.56103515625
+        ]
+      },
+      {
+        "text": "8-puzzle instance is 31 moves and roughly 94% of puzzles require 26 or fewer moves, we allow the",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.95761775970459,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          413.48724365234375,
+          503.9956970214844,
+          423.4448547363281
+        ]
+      },
+      {
+        "text": "models to take up to 50 moves per puzzle, providing ample opportunity to solve it while avoiding",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          424.3172912597656,
+          503.9973449707031,
+          434.3790283203125
+        ]
+      },
+      {
+        "text": "excessively long, run-on trajectories.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          435.30145263671875,
+          254.37051391601562,
+          445.2640686035156
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      108.0,
+      461.244140625,
+      163.12542724609375,
+      473.1993408203125
+    ],
+    "content": "4Results",
+    "spans": [
+      {
+        "text": "4",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 11.9552001953125,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          108.0,
+          461.244140625,
+          113.97760009765625,
+          473.1993408203125
+        ]
+      },
+      {
+        "text": "Results",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 11.9552001953125,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          125.93280029296875,
+          461.244140625,
+          163.12542724609375,
+          473.1993408203125
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      108.0,
+      485.0555114746094,
+      248.03427124023438,
+      495.0180969238281
+    ],
+    "content": "4.1LLMs Continue to Struggle",
+    "spans": [
+      {
+        "text": "4.1",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          108.0,
+          485.0555114746094,
+          120.4532470703125,
+          495.0180969238281
+        ]
+      },
+      {
+        "text": "LLMs Continue to Struggle",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          130.4158477783203,
+          485.0555114746094,
+          248.03427124023438,
+          495.0180969238281
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      107.64099884033203,
+      505.1300048828125,
+      505.2439270019531,
+      569.6300659179688
+    ],
+    "content": "Initial experiments established a performance baseline across all four models using Zero-Shot, CoT,and AoT prompting. The results, summarized in Fig. 4, reveal that successful puzzle completionwas rare for most models. GPT-5-Thinking was the only model to achieve a modest success rate,with 30% of puzzles solved under the AoT condition. This result represents the highest performancerecorded in this phase, outperforming the next-best attempt (its own CoT performance) by eightpercentage points.",
+    "spans": [
+      {
+        "text": "Initial experiments established a performance baseline across all four models using Zero-Shot, CoT,",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.952631950378418,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          505.1300048828125,
+          505.2400207519531,
+          515.0826416015625
+        ]
+      },
+      {
+        "text": "and AoT prompting. The results, summarized in Fig. 4, reveal that successful puzzle completion",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          515.956298828125,
+          503.997314453125,
+          526.01806640625
+        ]
+      },
+      {
+        "text": "was rare for most models. GPT-5-Thinking was the only model to achieve a modest success rate,",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.64099884033203,
+          526.865234375,
+          505.2439270019531,
+          536.927001953125
+        ]
+      },
+      {
+        "text": "with 30% of puzzles solved under the AoT condition. This result represents the highest performance",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.90765380859375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.64099884033203,
+          537.8911743164062,
+          503.9980773925781,
+          547.798828125
+        ]
+      },
+      {
+        "text": "recorded in this phase, outperforming the next-best attempt (its own CoT performance) by eight",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          548.6832275390625,
+          503.99737548828125,
+          558.7449951171875
+        ]
+      },
+      {
+        "text": "percentage points.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          559.66748046875,
+          180.4878692626953,
+          569.6300659179688
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      108.0,
+      576.0592041015625,
+      505.6515808105469,
+      695.1090698242188
+    ],
+    "content": "In contrast to GPT-5-Thinking, the other models struggled significantly. Gemini-2.5-Pro and Llama3.1 8B-Instruct were almost entirely unsuccessful, with Gemini solving only a single puzzle underthe Zero-Shot condition and Llama solving none. The primary failure mode of these models isinvalid moves across all prompting strategies, except Llama with CoT, which had a spike in parseerrors because there was no list to extract from its answers. Interestingly, GPT-5-mini outperformedGemini-2.5-Pro by solving more puzzles overall and at least one puzzle under each condition. GPT-5-mini also demonstrated a notable divergence from GPT-5-Thinking; its Zero-Shot performance wascomparable to GPT-5-Thinking’s at an 8% success rate. However, unlike its more capable counterpart,introducing more complex CoT and AoT prompts did not improve performance, as its success ratedropped under both approaches. With GPT-5-mini, we also see, in both CoT and AoT, a sharpincrease in graceful failure, where the model refuses to continue or requests clarification.",
+    "spans": [
+      {
+        "text": "In contrast to GPT-5-Thinking, the other models struggled significantly. Gemini-2.5-Pro and Llama",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.95761775970459,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          576.0592041015625,
+          503.9957580566406,
+          586.016845703125
+        ]
+      },
+      {
+        "text": "3.1 8B-Instruct were almost entirely unsuccessful, with Gemini solving only a single puzzle under",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.02714729309082,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          586.91650390625,
+          504.1658020019531,
+          596.9436645507812
+        ]
+      },
+      {
+        "text": "the Zero-Shot condition and Llama solving none. The primary failure mode of these models is",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          597.7992553710938,
+          503.9975280761719,
+          607.8610229492188
+        ]
+      },
+      {
+        "text": "invalid moves across all prompting strategies, except Llama with CoT, which had a spike in parse",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          608.708251953125,
+          503.9974060058594,
+          618.77001953125
+        ]
+      },
+      {
+        "text": "errors because there was no list to extract from its answers. Interestingly, GPT-5-mini outperformed",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.942654609680176,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          619.7075805664062,
+          503.9969482421875,
+          629.6502685546875
+        ]
+      },
+      {
+        "text": "Gemini-2.5-Pro by solving more puzzles overall and at least one puzzle under each condition. GPT-5-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.862470626831055,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          630.6773681640625,
+          505.6515808105469,
+          640.5398559570312
+        ]
+      },
+      {
+        "text": "mini also demonstrated a notable divergence from GPT-5-Thinking; its Zero-Shot performance was",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          641.5104370117188,
+          504.0032958984375,
+          651.4730224609375
+        ]
+      },
+      {
+        "text": "comparable to GPT-5-Thinking’s at an 8% success rate. However, unlike its more capable counterpart,",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.862470626831055,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          652.495361328125,
+          505.2414245605469,
+          662.3578491210938
+        ]
+      },
+      {
+        "text": "introducing more complex CoT and AoT prompts did not improve performance, as its success rate",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.017244338989258,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          663.2870483398438,
+          503.99810791015625,
+          673.3043212890625
+        ]
+      },
+      {
+        "text": "dropped under both approaches. With GPT-5-mini, we also see, in both CoT and AoT, a sharp",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          674.1622314453125,
+          503.9974365234375,
+          684.2239990234375
+        ]
+      },
+      {
+        "text": "increase in graceful failure, where the model refuses to continue or requests clarification.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          685.146484375,
+          462.03094482421875,
+          695.1090698242188
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      108.0,
+      701.5468139648438,
+      505.2470397949219,
+      722.414306640625
+    ],
+    "content": "Reviewing success rates by difficulty, as shown in Fig. 3, we observe that success does not decreasemonotonically with optimal solution length. Although all models struggle with the longest puzzles,",
+    "spans": [
+      {
+        "text": "Reviewing success rates by difficulty, as shown in Fig. 3, we observe that success does not decrease",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.947644233703613,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          701.5468139648438,
+          503.9976501464844,
+          711.4944458007812
+        ]
+      },
+      {
+        "text": "monotonically with optimal solution length. Although all models struggle with the longest puzzles,",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.992443084716797,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          712.4218139648438,
+          505.2470397949219,
+          722.414306640625
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      303.5090026855469,
+      742.3324584960938,
+      308.49029541015625,
+      752.2950439453125
+    ],
+    "content": "6",
+    "spans": [
+      {
+        "text": "6",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          303.5090026855469,
+          742.3324584960938,
+          308.49029541015625,
+          752.2950439453125
+        ]
+      }
+    ]
+  }
+]

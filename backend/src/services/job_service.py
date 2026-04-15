@@ -36,6 +36,7 @@ class JobService:
         self,
         user_id: int,
         document_id: int,
+        output_filename: str = "",
         max_image_width: float = 6.0,
         render_dpi: int = 300,
     ) -> Job:
@@ -44,6 +45,7 @@ class JobService:
             document_id=document_id,
             tool=JobTool.RECONSTRUCT.value,
             status=JobStatus.PENDING.value,
+            output_filename=output_filename,
             progress=0,
         )
         self._start_background(
@@ -52,6 +54,7 @@ class JobService:
             kwargs=dict(
                 job_id=job.id,
                 document_id=document_id,
+                output_filename=output_filename,
                 max_image_width=max_image_width,
                 render_dpi=render_dpi,
             ),
@@ -230,6 +233,7 @@ class JobService:
         self,
         job_id: int,
         document_id: int,
+        output_filename: str,
         max_image_width: float,
         render_dpi: int,
         _session,
@@ -271,8 +275,16 @@ class JobService:
         self._update(job_repo, job_id, JobStatus.PROCESSING.value, progress=60)
 
         # Run pipeline
-        output_filename = pdf_path.stem + ".docx"
-        output_path = self.settings.OUTPUT_DIR / str(job_id) / output_filename
+        # Determine output filename — use given name, or derive from original PDF filename
+        if output_filename:
+            out_name = output_filename
+        else:
+            # Use original_filename (e.g. "Quarterly Report Q1 2024") instead of
+            # stored UUID name so the DOCX has a meaningful default filename.
+            out_name = doc.original_filename.rsplit(".", 1)[0] + ".docx"
+        if not out_name.lower().endswith(".docx"):
+            out_name += ".docx"
+        output_path = self.settings.OUTPUT_DIR / str(job_id) / out_name
         output_path.parent.mkdir(parents=True, exist_ok=True)
 
         try:
@@ -297,7 +309,7 @@ class JobService:
             JobStatus.DONE.value,
             progress=100,
             output_path=str(output_path),
-            output_filename=output_filename,
+            output_filename=out_name,
         )
 
     # ── Combine pipeline ─────────────────────────────────────────────────────

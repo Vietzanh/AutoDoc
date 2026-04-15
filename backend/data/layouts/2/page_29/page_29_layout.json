@@ -1,0 +1,749 @@
+[
+  {
+    "type": "text",
+    "bbox": [
+      117.41000366210938,
+      80.60945129394531,
+      277.4690856933594,
+      101.48104858398438
+    ],
+    "content": "Move 5. Path: [..., 5].State: [[1, 2, 3], [4, 5, 0], [7, 6, 8]], h=3.",
+    "spans": [
+      {
+        "text": "Move 5. Path: [..., 5].",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          80.60945129394531,
+          203.38719177246094,
+          90.57205200195312
+        ]
+      },
+      {
+        "text": "State: [[1, 2, 3], [4, 5, 0], [7, 6, 8]], h=3.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          91.51844787597656,
+          277.4690856933594,
+          101.48104858398438
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      117.41000366210938,
+      113.33644104003906,
+      277.4690856933594,
+      134.20803833007812
+    ],
+    "content": "Move 8. Path: [..., 8].State: [[1, 2, 3], [4, 5, 8], [7, 6, 0]], h=4.",
+    "spans": [
+      {
+        "text": "Move 8. Path: [..., 8].",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          113.33644104003906,
+          203.38719177246094,
+          123.29904174804688
+        ]
+      },
+      {
+        "text": "State: [[1, 2, 3], [4, 5, 8], [7, 6, 0]], h=4.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          124.24543762207031,
+          277.4690856933594,
+          134.20803833007812
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      117.41000366210938,
+      146.0634307861328,
+      277.4690856933594,
+      166.93502807617188
+    ],
+    "content": "Move 6. Path: [..., 6].State: [[1, 2, 3], [4, 5, 8], [7, 0, 6]], h=3.",
+    "spans": [
+      {
+        "text": "Move 6. Path: [..., 6].",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          146.0634307861328,
+          203.38719177246094,
+          156.02603149414062
+        ]
+      },
+      {
+        "text": "State: [[1, 2, 3], [4, 5, 8], [7, 0, 6]], h=3.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          156.97242736816406,
+          277.4690856933594,
+          166.93502807617188
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      117.41000366210938,
+      178.79042053222656,
+      277.4690856933594,
+      199.66201782226562
+    ],
+    "content": "Move 8. Path: [..., 8].State: [[1, 2, 3], [4, 5, 0], [7, 8, 6]], h=1.",
+    "spans": [
+      {
+        "text": "Move 8. Path: [..., 8].",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          178.79042053222656,
+          203.38719177246094,
+          188.75302124023438
+        ]
+      },
+      {
+        "text": "State: [[1, 2, 3], [4, 5, 0], [7, 8, 6]], h=1.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          189.6994171142578,
+          277.4690856933594,
+          199.66201782226562
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      117.41000366210938,
+      211.51844787597656,
+      277.4690856933594,
+      232.39004516601562
+    ],
+    "content": "Move 6. Path: [..., 6].State: [[1, 2, 3], [4, 5, 6], [7, 8, 0]], h=0.",
+    "spans": [
+      {
+        "text": "Move 6. Path: [..., 6].",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          211.51844787597656,
+          203.38719177246094,
+          221.48104858398438
+        ]
+      },
+      {
+        "text": "State: [[1, 2, 3], [4, 5, 6], [7, 8, 0]], h=0.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          222.4274444580078,
+          277.4690856933594,
+          232.39004516601562
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      117.41000366210938,
+      244.2454376220703,
+      177.30516052246094,
+      254.20803833007812
+    ],
+    "content": "Puzzle Solved!",
+    "spans": [
+      {
+        "text": "Puzzle Solved!",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          244.2454376220703,
+          177.30516052246094,
+          254.20803833007812
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      117.41000366210938,
+      266.06341552734375,
+      457.8322448730469,
+      276.0260314941406
+    ],
+    "content": "Final Answer: [3, 1, 7, 3, 1, 7, 3, 2, 2, 3, 6, 2, 3, 2, 6, 4, 8, 7, 4, 6, 5, 8, 6, 5, 8, 6, 8, 6]",
+    "spans": [
+      {
+        "text": "Final Answer: [3, 1, 7, 3, 1, 7, 3, 2, 2, 3, 6, 2, 3, 2, 6, 4, 8, 7, 4, 6, 5, 8, 6, 5, 8, 6, 8, 6]",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          266.06341552734375,
+          457.8322448730469,
+          276.0260314941406
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      117.41000366210938,
+      294.34552001953125,
+      186.6600341796875,
+      304.30810546875
+    ],
+    "content": "Compute Moves",
+    "spans": [
+      {
+        "text": "Compute Moves",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 16777215,
+        "bbox": [
+          117.41000366210938,
+          294.34552001953125,
+          186.6600341796875,
+          304.30810546875
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      117.0510025024414,
+      315.4584655761719,
+      492.88995361328125,
+      336.330078125
+    ],
+    "content": "After eight legal moves, the model then proposes the looping move 2 from the following state:[[1, 0, 2], [7, 3, 6], [8, 4, 5]]",
+    "spans": [
+      {
+        "text": "After eight legal moves, the model then proposes the looping move 2 from the following state:",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.0510025024414,
+          315.4584655761719,
+          492.88995361328125,
+          325.42108154296875
+        ]
+      },
+      {
+        "text": "[[1, 0, 2], [7, 3, 6], [8, 4, 5]]",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          326.3674621582031,
+          228.6323699951172,
+          336.330078125
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      117.41000366210938,
+      354.6495056152344,
+      187.11831665039062,
+      364.6120910644531
+    ],
+    "content": "Retry Attempt 2",
+    "spans": [
+      {
+        "text": "Retry Attempt 2",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 16777215,
+        "bbox": [
+          117.41000366210938,
+          354.6495056152344,
+          187.11831665039062,
+          364.6120910644531
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      117.0510025024414,
+      375.7614440917969,
+      280.0291748046875,
+      396.633056640625
+    ],
+    "content": "System:AoT system prompt (see Appendix A.3).",
+    "spans": [
+      {
+        "text": "System:",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          375.7614440917969,
+          149.5194854736328,
+          385.72406005859375
+        ]
+      },
+      {
+        "text": "AoT system prompt (see Appendix A.3).",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.0510025024414,
+          386.6704406738281,
+          280.0291748046875,
+          396.633056640625
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      117.41000366210938,
+      408.48944091796875,
+      496.3355407714844,
+      462.08807373046875
+    ],
+    "content": "User:Previous attempt created a loop after ’2’. The board shown is the state before that move.Continue from this state; do not revisit prior states.Hint: The optimal solution has 21 moves. Your solution may be longer, but try to find anefficient path.’",
+    "spans": [
+      {
+        "text": "User:",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          408.48944091796875,
+          138.989013671875,
+          418.4520568847656
+        ]
+      },
+      {
+        "text": "Previous attempt created a loop after ’2’. The board shown is the state before that move.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          419.32330322265625,
+          496.3355407714844,
+          429.3850402832031
+        ]
+      },
+      {
+        "text": "Continue from this state; do not revisit prior states.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          430.3074645996094,
+          320.0093994140625,
+          440.27008056640625
+        ]
+      },
+      {
+        "text": "Hint: The optimal solution has 21 moves. Your solution may be longer, but try to find an",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          441.14129638671875,
+          494.5875244140625,
+          451.2030334472656
+        ]
+      },
+      {
+        "text": "efficient path.’",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          452.1254577636719,
+          174.56544494628906,
+          462.08807373046875
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      117.41000366210938,
+      473.9434509277344,
+      261.0506896972656,
+      483.90606689453125
+    ],
+    "content": "Puzzle: [[1, 0, 2], [7, 3, 6], [8, 4, 5]]",
+    "spans": [
+      {
+        "text": "Puzzle: [[1, 0, 2], [7, 3, 6], [8, 4, 5]]",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          473.9434509277344,
+          261.0506896972656,
+          483.90606689453125
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      117.41000366210938,
+      495.7614440917969,
+      147.855712890625,
+      505.72406005859375
+    ],
+    "content": "Output:",
+    "spans": [
+      {
+        "text": "Output:",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          495.7614440917969,
+          147.855712890625,
+          505.72406005859375
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      117.41000366210938,
+      517.5804443359375,
+      388.9208679199219,
+      538.4520263671875
+    ],
+    "content": "Initial State: [[1, 0, 2], [7, 3, 6], [8, 4, 5]]. h=9.Search Process: Empty space is at (0, 1). Possible moves are 1, 3, 2.",
+    "spans": [
+      {
+        "text": "Initial State: [[1, 0, 2], [7, 3, 6], [8, 4, 5]]. h=9.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          517.5804443359375,
+          304.3581848144531,
+          527.5430297851562
+        ]
+      },
+      {
+        "text": "Search Process: Empty space is at (0, 1). Possible moves are 1, 3, 2.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          528.4894409179688,
+          388.9208679199219,
+          538.4520263671875
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      117.41000366210938,
+      550.3074340820312,
+      213.36973571777344,
+      582.0880126953125
+    ],
+    "content": "Move 1: h=10 -> WorseMove 3: h=8 -> BetterMove 2: h=8 -> Better",
+    "spans": [
+      {
+        "text": "Move 1: h=10 -> Worse",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          550.3074340820312,
+          213.36973571777344,
+          560.27001953125
+        ]
+      },
+      {
+        "text": "Move 3: h=8 -> Better",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          561.2164306640625,
+          207.53167724609375,
+          571.1790161132812
+        ]
+      },
+      {
+        "text": "Move 2: h=8 -> Better",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          572.1254272460938,
+          207.53167724609375,
+          582.0880126953125
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      117.10100555419922,
+      593.9434204101562,
+      437.3287353515625,
+      603.906005859375
+    ],
+    "content": "Two equally promising moves. To avoid the loop noted “after 2,” I’ll take 3 first.",
+    "spans": [
+      {
+        "text": "Two equally promising moves. To avoid the loop noted “after 2,” I’ll take 3 first.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.10100555419922,
+          593.9434204101562,
+          437.3287353515625,
+          603.906005859375
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      117.41000366210938,
+      615.7614135742188,
+      365.130126953125,
+      647.5419921875
+    ],
+    "content": "Move tile 3. Current path: [3].State: [[1, 3, 2], [7, 0, 6], [8, 4, 5]], h=8.Search Process: Empty at (1, 1). Possible moves are 3, 7, 6, 4.",
+    "spans": [
+      {
+        "text": "Move tile 3. Current path: [3].",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          615.7614135742188,
+          238.6747589111328,
+          625.7239990234375
+        ]
+      },
+      {
+        "text": "State: [[1, 3, 2], [7, 0, 6], [8, 4, 5]], h=8.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          626.67041015625,
+          277.4690856933594,
+          636.6329956054688
+        ]
+      },
+      {
+        "text": "Search Process: Empty at (1, 1). Possible moves are 3, 7, 6, 4.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          637.5794067382812,
+          365.130126953125,
+          647.5419921875
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      117.41000366210938,
+      659.3984375,
+      308.0443115234375,
+      702.0879516601562
+    ],
+    "content": "Move 3: h=9 -> Worse [skip: visited/backtrack]Move 7: h=9 -> WorseMove 6: h=9 -> WorseMove 4: h=6 -> Better",
+    "spans": [
+      {
+        "text": "Move 3: h=9 -> Worse [skip: visited/backtrack]",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          659.3984375,
+          308.0443115234375,
+          669.3610229492188
+        ]
+      },
+      {
+        "text": "Move 7: h=9 -> Worse",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          670.307373046875,
+          208.38844299316406,
+          680.2699584960938
+        ]
+      },
+      {
+        "text": "Move 6: h=9 -> Worse",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          681.2164306640625,
+          208.38844299316406,
+          691.1790161132812
+        ]
+      },
+      {
+        "text": "Move 4: h=6 -> Better",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          692.1253662109375,
+          207.53167724609375,
+          702.0879516601562
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      301.0190124511719,
+      742.3324584960938,
+      310.9815979003906,
+      752.2950439453125
+    ],
+    "content": "30",
+    "spans": [
+      {
+        "text": "30",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          301.0190124511719,
+          742.3324584960938,
+          310.9815979003906,
+          752.2950439453125
+        ]
+      }
+    ]
+  }
+]

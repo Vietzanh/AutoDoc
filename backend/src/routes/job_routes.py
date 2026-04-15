@@ -61,6 +61,7 @@ def create_reconstruct_job(
     job = service.create_reconstruct_job(
         user_id=current_user.id,
         document_id=doc_id,
+        output_filename=request.output_filename,
         max_image_width=request.max_image_width,
         render_dpi=request.render_dpi,
     )

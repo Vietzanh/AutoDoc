@@ -1,0 +1,1663 @@
+[
+  {
+    "type": "text",
+    "bbox": [
+      108.0,
+      74.33230590820312,
+      504.0041198730469,
+      117.09707641601562
+    ],
+    "content": "[12] Bilgehan Sel, Ahmad Al-Tawaha, Vanshaj Khattar, Ruoxi Jia, and Ming Jin. Algorithm ofthoughts: Enhancing exploration of ideas in large language models. In Proceedings of the 41stInternational Conference on Machine Learning (ICML), volume 235 of Proceedings of MachineLearning Research, 2024.",
+    "spans": [
+      {
+        "text": "[12]",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          74.40748596191406,
+          124.59768676757812,
+          84.37008666992188
+        ]
+      },
+      {
+        "text": " Bilgehan Sel, Ahmad Al-Tawaha, Vanshaj Khattar, Ruoxi Jia, and Ming Jin. Algorithm of",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          124.59768676757812,
+          74.33230590820312,
+          504.0027160644531,
+          84.39403533935547
+        ]
+      },
+      {
+        "text": "thoughts: Enhancing exploration of ideas in large language models. In",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.927669525146484,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          129.57899475097656,
+          85.34297180175781,
+          408.71600341796875,
+          95.27063751220703
+        ]
+      },
+      {
+        "text": " Proceedings of the 41st",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.927669525146484,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          408.71600341796875,
+          85.16712188720703,
+          504.0041198730469,
+          95.09479522705078
+        ]
+      },
+      {
+        "text": "International Conference on Machine Learning (ICML)",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.862470626831055,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          129.41000366210938,
+          96.12672424316406,
+          346.2344970703125,
+          105.98918914794922
+        ]
+      },
+      {
+        "text": ", volume 235 of",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.862470626831055,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          346.2344970703125,
+          96.3014144897461,
+          407.2847900390625,
+          106.16388702392578
+        ]
+      },
+      {
+        "text": " Proceedings of Machine",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.862470626831055,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          407.2847900390625,
+          96.12672424316406,
+          504.0005798339844,
+          105.98918914794922
+        ]
+      },
+      {
+        "text": "Learning Research",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          129.3000030517578,
+          106.9580078125,
+          204.8762664794922,
+          116.92060852050781
+        ]
+      },
+      {
+        "text": ", 2024.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          204.8762664794922,
+          107.13447570800781,
+          232.27337646484375,
+          117.09707641601562
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      108.0,
+      125.42794799804688,
+      504.0039978027344,
+      157.21609497070312
+    ],
+    "content": "[13] Xuezhi Wang, Jason Wei, Dale Schuurmans, Quoc Le, Ed H. Chi, Sharan Narang, AakankshaChowdhery, and Denny Zhou. Self-consistency improves chain of thought reasoning in languagemodels. In International Conference on Learning Representations (ICLR), 2023.",
+    "spans": [
+      {
+        "text": "[13]",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          125.43550109863281,
+          124.59768676757812,
+          135.39810180664062
+        ]
+      },
+      {
+        "text": " Xuezhi Wang, Jason Wei, Dale Schuurmans, Quoc Le, Ed H. Chi, Sharan Narang, Aakanksha",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.972557067871094,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          124.59768676757812,
+          125.42794799804688,
+          504.0039978027344,
+          135.4005126953125
+        ]
+      },
+      {
+        "text": "Chowdhery, and Denny Zhou. Self-consistency improves chain of thought reasoning in language",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.862470626831055,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          129.57899475097656,
+          136.42042541503906,
+          504.0035400390625,
+          146.28289794921875
+        ]
+      },
+      {
+        "text": "models. In",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          129.57899475097656,
+          147.2534942626953,
+          172.73696899414062,
+          157.21609497070312
+        ]
+      },
+      {
+        "text": " International Conference on Learning Representations (ICLR)",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          172.73696899414062,
+          147.0770263671875,
+          424.3722839355469,
+          157.0396270751953
+        ]
+      },
+      {
+        "text": ", 2023.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          424.3722839355469,
+          147.2534942626953,
+          451.7694396972656,
+          157.21609497070312
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      107.99999237060547,
+      165.5554962158203,
+      504.24749755859375,
+      197.33609008789062
+    ],
+    "content": "[14] Shunyu Yao, Dian Yu, Jeffrey Zhao, Izhak Shafran, Thomas L. Griffiths, Yuan Cao, and KarthikNarasimhan. Tree of thoughts: Deliberate problem solving with large language models. InAdvances in Neural Information Processing Systems, 2023.",
+    "spans": [
+      {
+        "text": "[14]",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.99999237060547,
+          165.5554962158203,
+          124.5976791381836,
+          175.51809692382812
+        ]
+      },
+      {
+        "text": " Shunyu Yao, Dian Yu, Jeffrey Zhao, Izhak Shafran, Thomas L. Griffiths, Yuan Cao, and Karthik",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.862470626831055,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          124.5976791381836,
+          165.6314239501953,
+          504.24749755859375,
+          175.493896484375
+        ]
+      },
+      {
+        "text": "Narasimhan. Tree of thoughts: Deliberate problem solving with large language models. In",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          129.57899475097656,
+          176.38931274414062,
+          504.002685546875,
+          186.4510498046875
+        ]
+      },
+      {
+        "text": "Advances in Neural Information Processing Systems",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          128.9709930419922,
+          187.197021484375,
+          337.8468933105469,
+          197.1596221923828
+        ]
+      },
+      {
+        "text": ", 2023.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          337.8468933105469,
+          187.3734893798828,
+          365.2440490722656,
+          197.33609008789062
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      107.99999237060547,
+      205.61050415039062,
+      505.74053955078125,
+      237.70411682128906
+    ],
+    "content": "[15] Boshi Wang, Sewon Min, Xiang Deng, Jiaming Shen, You Wu, Luke Zettlemoyer, and HuanSun. Towards understanding chain-of-thought prompting: An empirical study of what matters.arXiv, 2022. URL https://arxiv.org/abs/2212.10001. arXiv:2212.10001.",
+    "spans": [
+      {
+        "text": "[15]",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.99999237060547,
+          205.6745147705078,
+          124.5976791381836,
+          215.63711547851562
+        ]
+      },
+      {
+        "text": " Boshi Wang, Sewon Min, Xiang Deng, Jiaming Shen, You Wu, Luke Zettlemoyer, and Huan",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.046924591064453,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          124.5976791381836,
+          205.61050415039062,
+          503.99554443359375,
+          215.65748596191406
+        ]
+      },
+      {
+        "text": "Sun. Towards understanding chain-of-thought prompting: An empirical study of what matters.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.952631950378418,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          129.57899475097656,
+          216.59100341796875,
+          505.74053955078125,
+          226.54364013671875
+        ]
+      },
+      {
+        "text": "arXiv",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          129.57899475097656,
+          227.3170166015625,
+          151.7158966064453,
+          237.2796173095703
+        ]
+      },
+      {
+        "text": ", 2022. URL",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          151.7158966064453,
+          227.4934844970703,
+          202.62472534179688,
+          237.45608520507812
+        ]
+      },
+      {
+        "text": " https://arxiv.org/abs/2212.10001",
+        "font_name": "SFTT1000",
+        "font_size": 9.962599754333496,
+        "font_flags": 12,
+        "color": 0,
+        "bbox": [
+          202.62472534179688,
+          227.74151611328125,
+          372.47735595703125,
+          237.70411682128906
+        ]
+      },
+      {
+        "text": ". arXiv:2212.10001.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          372.47735595703125,
+          227.4934844970703,
+          453.5728759765625,
+          237.45608520507812
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      107.99999237060547,
+      245.7945098876953,
+      505.06878662109375,
+      277.82305908203125
+    ],
+    "content": "[16] Zhenni Bi, Kai Han, Chuanjian Liu, Yehui Tang, and Yunhe Wang. Forest-of-thought: Scalingtest-time compute for enhancing LLM reasoning. arXiv, 2024. URL https://arxiv.org/abs/2412.09078. arXiv:2412.09078.",
+    "spans": [
+      {
+        "text": "[16]",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.99999237060547,
+          245.7945098876953,
+          124.5976791381836,
+          255.75711059570312
+        ]
+      },
+      {
+        "text": " Zhenni Bi, Kai Han, Chuanjian Liu, Yehui Tang, and Yunhe Wang. Forest-of-thought: Scaling",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.937662124633789,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          124.5976791381836,
+          245.8133544921875,
+          503.9948425292969,
+          255.75108337402344
+        ]
+      },
+      {
+        "text": "test-time compute for enhancing LLM reasoning.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          129.57899475097656,
+          256.6282653808594,
+          329.98095703125,
+          266.69000244140625
+        ]
+      },
+      {
+        "text": " arXiv",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 10.061732292175293,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          329.98095703125,
+          256.4500427246094,
+          356.3306579589844,
+          266.51177978515625
+        ]
+      },
+      {
+        "text": ", 2024. URL",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          356.3306579589844,
+          256.6282653808594,
+          408.37969970703125,
+          266.69000244140625
+        ]
+      },
+      {
+        "text": " https://arxiv.org/",
+        "font_name": "SFTT1000",
+        "font_size": 9.962599754333496,
+        "font_flags": 12,
+        "color": 0,
+        "bbox": [
+          408.37969970703125,
+          256.95147705078125,
+          505.06878662109375,
+          266.9140625
+        ]
+      },
+      {
+        "text": "abs/2412.09078",
+        "font_name": "SFTT1000",
+        "font_size": 9.962599754333496,
+        "font_flags": 12,
+        "color": 0,
+        "bbox": [
+          129.57901000976562,
+          267.8604736328125,
+          202.8040771484375,
+          277.82305908203125
+        ]
+      },
+      {
+        "text": ". arXiv:2412.09078.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          202.8040771484375,
+          267.6124267578125,
+          283.89959716796875,
+          277.5750427246094
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      108.00000762939453,
+      285.8719787597656,
+      505.2413635253906,
+      317.695068359375
+    ],
+    "content": "[17] Luyu Gao, Aman Madaan, Shuyan Zhou, Uri Alon, Pengfei Liu, Yiming Yang, Jamie Callan,and Graham Neubig. Program-aided language models. In Advances in Neural InformationProcessing Systems, 2023.",
+    "spans": [
+      {
+        "text": "[17]",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.00000762939453,
+          285.9134216308594,
+          124.59769439697266,
+          295.87603759765625
+        ]
+      },
+      {
+        "text": " Luyu Gao, Aman Madaan, Shuyan Zhou, Uri Alon, Pengfei Liu, Yiming Yang, Jamie Callan,",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.017244338989258,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          124.59769439697266,
+          285.8719787597656,
+          505.2413635253906,
+          295.8892822265625
+        ]
+      },
+      {
+        "text": "and Graham Neubig. Program-aided language models. In",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          129.57899475097656,
+          296.748291015625,
+          368.73828125,
+          306.8100280761719
+        ]
+      },
+      {
+        "text": " Advances in Neural Information",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 10.061732292175293,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          368.73828125,
+          296.570068359375,
+          504.00274658203125,
+          306.6318054199219
+        ]
+      },
+      {
+        "text": "Processing Systems",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          129.27000427246094,
+          307.5559997558594,
+          207.12774658203125,
+          317.5185852050781
+        ]
+      },
+      {
+        "text": ", 2023.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          207.12774658203125,
+          307.7324523925781,
+          234.5248565673828,
+          317.695068359375
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      108.0,
+      326.033447265625,
+      505.65350341796875,
+      357.8140869140625
+    ],
+    "content": "[18] Wenhu Chen, Xueguang Ma, Xinyi Wang, and William W. Cohen. Program of thoughts prompt-ing: Disentangling computation from reasoning for numerical reasoning tasks. Transactions onMachine Learning Research, 2023.",
+    "spans": [
+      {
+        "text": "[18]",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          326.033447265625,
+          124.59768676757812,
+          335.9960632324219
+        ]
+      },
+      {
+        "text": " Wenhu Chen, Xueguang Ma, Xinyi Wang, and William W. Cohen. Program of thoughts prompt-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.862470626831055,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          124.59768676757812,
+          326.1094055175781,
+          505.65350341796875,
+          335.97186279296875
+        ]
+      },
+      {
+        "text": "ing: Disentangling computation from reasoning for numerical reasoning tasks.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.887598037719727,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          129.57899475097656,
+          336.99932861328125,
+          437.5849304199219,
+          346.8869323730469
+        ]
+      },
+      {
+        "text": " Transactions on",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.887598037719727,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          437.5849304199219,
+          336.8241882324219,
+          504.0004577636719,
+          346.7117919921875
+        ]
+      },
+      {
+        "text": "Machine Learning Research",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          129.16099548339844,
+          347.6750183105469,
+          241.93759155273438,
+          357.6376037597656
+        ]
+      },
+      {
+        "text": ", 2023.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          241.93759155273438,
+          347.8514709472656,
+          269.334716796875,
+          357.8140869140625
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      108.0,
+      366.07830810546875,
+      505.74346923828125,
+      408.84307861328125
+    ],
+    "content": "[19] Timo Schick, Jane Dwivedi-Yu, Roberto Dessi, Roberta Raileanu, Maria Lomeli, LukeZettlemoyer, Nicola Cancedda, and Thomas Scialom. Toolformer: Language models canteach themselves to use tools. arXiv, 2023. URL https://arxiv.org/abs/2302.04761.arXiv:2302.04761.",
+    "spans": [
+      {
+        "text": "[19]",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          366.1534729003906,
+          124.59768676757812,
+          376.1160888671875
+        ]
+      },
+      {
+        "text": " Timo Schick, Jane Dwivedi-Yu, Roberto Dessi, Roberta Raileanu, Maria Lomeli, Luke",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          124.59768676757812,
+          366.07830810546875,
+          504.00274658203125,
+          376.1400451660156
+        ]
+      },
+      {
+        "text": "Zettlemoyer, Nicola Cancedda, and Thomas Scialom. Toolformer: Language models can",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          129.57899475097656,
+          376.9873046875,
+          504.00274658203125,
+          387.0490417480469
+        ]
+      },
+      {
+        "text": "teach themselves to use tools.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          129.57899475097656,
+          387.89630126953125,
+          251.5415496826172,
+          397.9580383300781
+        ]
+      },
+      {
+        "text": " arXiv",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 10.061732292175293,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          251.5415496826172,
+          387.71807861328125,
+          279.1411437988281,
+          397.7798156738281
+        ]
+      },
+      {
+        "text": ", 2023. URL",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          279.1411437988281,
+          387.89630126953125,
+          332.9380187988281,
+          397.9580383300781
+        ]
+      },
+      {
+        "text": " https://arxiv.org/abs/2302.04761",
+        "font_name": "SFTT1000",
+        "font_size": 9.962599754333496,
+        "font_flags": 12,
+        "color": 0,
+        "bbox": [
+          332.9380187988281,
+          388.2195129394531,
+          503.2331237792969,
+          398.1820983886719
+        ]
+      },
+      {
+        "text": ".",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          503.2030029296875,
+          387.89630126953125,
+          505.74346923828125,
+          397.9580383300781
+        ]
+      },
+      {
+        "text": "arXiv:2302.04761.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          129.57899475097656,
+          398.8804626464844,
+          204.59730529785156,
+          408.84307861328125
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      107.99999237060547,
+      417.1062927246094,
+      504.4905090332031,
+      449.2100830078125
+    ],
+    "content": "[20] Shunyu Yao, Jeffrey Zhao, Dian Yu, Nan Du, Izhak Shafran, Karthik Narasimhan, and YuanCao. ReAct: Synergizing reasoning and acting in language models. arXiv, 2022. URLhttps://arxiv.org/abs/2210.03629. arXiv:2210.03629.",
+    "spans": [
+      {
+        "text": "[20]",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.99999237060547,
+          417.18145751953125,
+          124.5976791381836,
+          427.1440734863281
+        ]
+      },
+      {
+        "text": " Shunyu Yao, Jeffrey Zhao, Dian Yu, Nan Du, Izhak Shafran, Karthik Narasimhan, and Yuan",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          124.5976791381836,
+          417.1062927246094,
+          504.0028991699219,
+          427.16802978515625
+        ]
+      },
+      {
+        "text": "Cao. ReAct: Synergizing reasoning and acting in language models.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          129.57899475097656,
+          428.0152893066406,
+          417.10870361328125,
+          438.0770263671875
+        ]
+      },
+      {
+        "text": " arXiv",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 10.061732292175293,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          417.10870361328125,
+          427.8370666503906,
+          447.2081298828125,
+          437.8988037109375
+        ]
+      },
+      {
+        "text": ", 2022. URL",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          447.2081298828125,
+          428.0152893066406,
+          504.4905090332031,
+          438.0770263671875
+        ]
+      },
+      {
+        "text": "https://arxiv.org/abs/2210.03629",
+        "font_name": "SFTT1000",
+        "font_size": 9.962599754333496,
+        "font_flags": 12,
+        "color": 0,
+        "bbox": [
+          129.57899475097656,
+          439.24749755859375,
+          296.94073486328125,
+          449.2100830078125
+        ]
+      },
+      {
+        "text": ". arXiv:2210.03629.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          296.94073486328125,
+          438.99945068359375,
+          378.0362548828125,
+          448.9620666503906
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      107.99999237060547,
+      457.260009765625,
+      505.0660400390625,
+      478.42108154296875
+    ],
+    "content": "[21] Mathematical Association of America. MAA invitational competitions. https://maa.org/maa-invitational-competitions/, 2025. Webpage; accessed 2025-08-26.",
+    "spans": [
+      {
+        "text": "[21]",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.99999237060547,
+          457.30145263671875,
+          124.5976791381836,
+          467.2640686035156
+        ]
+      },
+      {
+        "text": " Mathematical Association of America. MAA invitational competitions.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.017244338989258,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          124.5976791381836,
+          457.260009765625,
+          417.7644348144531,
+          467.27728271484375
+        ]
+      },
+      {
+        "text": " https://maa.org/",
+        "font_name": "SFTT1000",
+        "font_size": 9.962599754333496,
+        "font_flags": 12,
+        "color": 0,
+        "bbox": [
+          417.7644348144531,
+          457.54949951171875,
+          505.0660400390625,
+          467.5120849609375
+        ]
+      },
+      {
+        "text": "maa-invitational-competitions/",
+        "font_name": "SFTT1000",
+        "font_size": 9.962599754333496,
+        "font_flags": 12,
+        "color": 0,
+        "bbox": [
+          129.57901000976562,
+          468.45849609375,
+          287.47625732421875,
+          478.42108154296875
+        ]
+      },
+      {
+        "text": ", 2025. Webpage; accessed 2025-08-26.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          287.47625732421875,
+          468.21044921875,
+          446.8579406738281,
+          478.1730651855469
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      108.00000762939453,
+      486.436279296875,
+      505.74346923828125,
+      518.2920532226562
+    ],
+    "content": "[22] Long Phan, Alice Gatti, Ziwen Han, Nathaniel Li, Dan Hendrycks, Alexandr Wang,et al. Humanity’s last exam. arXiv, 2025. URL https://arxiv.org/abs/2501.14249.arXiv:2501.14249.",
+    "spans": [
+      {
+        "text": "[22]",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.00000762939453,
+          486.5114440917969,
+          124.59769439697266,
+          496.47406005859375
+        ]
+      },
+      {
+        "text": " Long Phan, Alice Gatti, Ziwen Han, Nathaniel Li, Dan Hendrycks, Alexandr Wang,",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          124.59769439697266,
+          486.436279296875,
+          505.2424621582031,
+          496.4980163574219
+        ]
+      },
+      {
+        "text": "et al. Humanity’s last exam.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          129.57899475097656,
+          497.3453063964844,
+          248.64537048339844,
+          507.40704345703125
+        ]
+      },
+      {
+        "text": " arXiv",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 10.061732292175293,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          248.64537048339844,
+          497.1670837402344,
+          277.31195068359375,
+          507.22882080078125
+        ]
+      },
+      {
+        "text": ", 2025. URL",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          277.31195068359375,
+          497.3453063964844,
+          332.60260009765625,
+          507.40704345703125
+        ]
+      },
+      {
+        "text": " https://arxiv.org/abs/2501.14249",
+        "font_name": "SFTT1000",
+        "font_size": 9.962599754333496,
+        "font_flags": 12,
+        "color": 0,
+        "bbox": [
+          332.60260009765625,
+          497.66851806640625,
+          503.2331237792969,
+          507.631103515625
+        ]
+      },
+      {
+        "text": ".",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          503.2030029296875,
+          497.3453063964844,
+          505.74346923828125,
+          507.40704345703125
+        ]
+      },
+      {
+        "text": "arXiv:2501.14249.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          129.57899475097656,
+          508.3294677734375,
+          204.59730529785156,
+          518.2920532226562
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      107.99999237060547,
+      526.5562744140625,
+      505.2425842285156,
+      580.4780883789062
+    ],
+    "content": "[23] Yubo Wang, Xueguang Ma, Ge Zhang, Yuansheng Ni, Abhranil Chandra, Shiguang Guo,Weiming Ren, Aaran Arulraj, Xuan He, Ziyan Jiang, Tianle Li, Max Ku, Kai Wang, AlexZhuang, Rongqi Fan, Xiang Yue, and Wenhu Chen. MMLU-Pro: A more robust and challengingmulti-task language understanding benchmark. arXiv, 2024. URL https://arxiv.org/abs/2406.01574. arXiv:2406.01574.",
+    "spans": [
+      {
+        "text": "[23]",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.99999237060547,
+          526.6314697265625,
+          124.5976791381836,
+          536.5940551757812
+        ]
+      },
+      {
+        "text": " Yubo Wang, Xueguang Ma, Ge Zhang, Yuansheng Ni, Abhranil Chandra, Shiguang Guo,",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          124.5976791381836,
+          526.5562744140625,
+          505.2425842285156,
+          536.6180419921875
+        ]
+      },
+      {
+        "text": "Weiming Ren, Aaran Arulraj, Xuan He, Ziyan Jiang, Tianle Li, Max Ku, Kai Wang, Alex",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          129.11099243164062,
+          537.4652709960938,
+          504.2459716796875,
+          547.5270385742188
+        ]
+      },
+      {
+        "text": "Zhuang, Rongqi Fan, Xiang Yue, and Wenhu Chen. MMLU-Pro: A more robust and challenging",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.862470626831055,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          129.57899475097656,
+          548.525390625,
+          504.0035705566406,
+          558.3878784179688
+        ]
+      },
+      {
+        "text": "multi-task language understanding benchmark.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.862470626831055,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          129.57899475097656,
+          559.4343872070312,
+          312.76873779296875,
+          569.296875
+        ]
+      },
+      {
+        "text": " arXiv",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.862470626831055,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          312.76873779296875,
+          559.2597045898438,
+          337.85076904296875,
+          569.1221923828125
+        ]
+      },
+      {
+        "text": ", 2024. URL",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.862470626831055,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          337.85076904296875,
+          559.4343872070312,
+          387.60479736328125,
+          569.296875
+        ]
+      },
+      {
+        "text": " https://arxiv.org/abs/",
+        "font_name": "SFTT1000",
+        "font_size": 9.962599754333496,
+        "font_flags": 12,
+        "color": 0,
+        "bbox": [
+          387.60479736328125,
+          559.6065063476562,
+          505.0633544921875,
+          569.569091796875
+        ]
+      },
+      {
+        "text": "2406.01574",
+        "font_name": "SFTT1000",
+        "font_size": 9.962599754333496,
+        "font_flags": 12,
+        "color": 0,
+        "bbox": [
+          129.57901000976562,
+          570.5155029296875,
+          181.88262939453125,
+          580.4780883789062
+        ]
+      },
+      {
+        "text": ". arXiv:2406.01574.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          181.88262939453125,
+          570.2674560546875,
+          262.9781494140625,
+          580.2300415039062
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      108.00000762939453,
+      588.4942626953125,
+      506.62225341796875,
+      642.4160766601562
+    ],
+    "content": "[24] Mehran Kazemi, Bahare Fatemi, Hritik Bansal, John Palowitch, Chrysovalantis Anastasiou,Sanket Vaibhav Mehta, Lalit K. Jain, Virginia Aglietti, Disha Jindal, Peter Chen, NishanthDikkala, Gladys Tyen, Xin Liu, Uri Shalit, Silvia Chiappa, Kate Olszewska, Yi Tay, Vinh Q.Tran, Quoc V. Le, and Orhan Firat. BIG-Bench extra hard. arXiv, 2025. URL https://arxiv.org/abs/2502.19187. arXiv:2502.19187.",
+    "spans": [
+      {
+        "text": "[24]",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.00000762939453,
+          588.5694580078125,
+          124.59769439697266,
+          598.5320434570312
+        ]
+      },
+      {
+        "text": " Mehran Kazemi, Bahare Fatemi, Hritik Bansal, John Palowitch, Chrysovalantis Anastasiou,",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          124.59769439697266,
+          588.4942626953125,
+          505.2423095703125,
+          598.5560302734375
+        ]
+      },
+      {
+        "text": "Sanket Vaibhav Mehta, Lalit K. Jain, Virginia Aglietti, Disha Jindal, Peter Chen, Nishanth",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          129.57899475097656,
+          599.4032592773438,
+          504.0027160644531,
+          609.4650268554688
+        ]
+      },
+      {
+        "text": "Dikkala, Gladys Tyen, Xin Liu, Uri Shalit, Silvia Chiappa, Kate Olszewska, Yi Tay, Vinh Q.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          129.57899475097656,
+          610.312255859375,
+          505.7403869628906,
+          620.3740234375
+        ]
+      },
+      {
+        "text": "Tran, Quoc V. Le, and Orhan Firat. BIG-Bench extra hard.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          129.27000427246094,
+          621.2212524414062,
+          383.15386962890625,
+          631.2830200195312
+        ]
+      },
+      {
+        "text": " arXiv",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 10.061732292175293,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          383.15386962890625,
+          621.0430297851562,
+          413.6191101074219,
+          631.1047973632812
+        ]
+      },
+      {
+        "text": ", 2025. URL",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          413.6191101074219,
+          621.2212524414062,
+          471.4095764160156,
+          631.2830200195312
+        ]
+      },
+      {
+        "text": " https:",
+        "font_name": "SFTT1000",
+        "font_size": 9.962599754333496,
+        "font_flags": 12,
+        "color": 0,
+        "bbox": [
+          471.4095764160156,
+          621.5444946289062,
+          506.62225341796875,
+          631.507080078125
+        ]
+      },
+      {
+        "text": "//arxiv.org/abs/2502.19187",
+        "font_name": "SFTT1000",
+        "font_size": 9.962599754333496,
+        "font_flags": 12,
+        "color": 0,
+        "bbox": [
+          129.05599975585938,
+          632.4534912109375,
+          265.03546142578125,
+          642.4160766601562
+        ]
+      },
+      {
+        "text": ". arXiv:2502.19187.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          265.03546142578125,
+          632.2054443359375,
+          346.1309814453125,
+          642.1680297851562
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      108.0,
+      650.5064697265625,
+      507.6842346191406,
+      682.5350952148438
+    ],
+    "content": "[25] Cheng Xu, Shuhao Guan, Derek Greene, and M-Tahar Kechadi. Benchmark data contaminationof large language models: A survey. arXiv, 2024. URL https://arxiv.org/abs/2406.04244. arXiv:2406.04244.",
+    "spans": [
+      {
+        "text": "[25]",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          650.5064697265625,
+          124.59768676757812,
+          660.4690551757812
+        ]
+      },
+      {
+        "text": " Cheng Xu, Shuhao Guan, Derek Greene, and M-Tahar Kechadi. Benchmark data contamination",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.862470626831055,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          124.59768676757812,
+          650.5823974609375,
+          504.00347900390625,
+          660.4448852539062
+        ]
+      },
+      {
+        "text": "of large language models: A survey.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          129.57899475097656,
+          661.3402709960938,
+          280.16754150390625,
+          671.4020385742188
+        ]
+      },
+      {
+        "text": " arXiv",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 10.061732292175293,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          280.16754150390625,
+          661.1620483398438,
+          308.4988098144531,
+          671.2238159179688
+        ]
+      },
+      {
+        "text": ", 2024. URL",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          308.4988098144531,
+          661.3402709960938,
+          363.3118896484375,
+          671.4020385742188
+        ]
+      },
+      {
+        "text": " https://arxiv.org/abs/2406.",
+        "font_name": "SFTT1000",
+        "font_size": 9.962599754333496,
+        "font_flags": 12,
+        "color": 0,
+        "bbox": [
+          363.3118896484375,
+          661.6635131835938,
+          507.6842346191406,
+          671.6260986328125
+        ]
+      },
+      {
+        "text": "04244",
+        "font_name": "SFTT1000",
+        "font_size": 9.962599754333496,
+        "font_flags": 12,
+        "color": 0,
+        "bbox": [
+          129.57899475097656,
+          672.572509765625,
+          155.73080444335938,
+          682.5350952148438
+        ]
+      },
+      {
+        "text": ". arXiv:2406.04244.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          155.73080444335938,
+          672.324462890625,
+          236.8262939453125,
+          682.2870483398438
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      107.99999237060547,
+      690.55126953125,
+      506.62225341796875,
+      722.6550903320312
+    ],
+    "content": "[26] Shanchao Liang, Spandan Garg, and Roshanak Zilouchian Moghaddam. The SWE-Benchillusion: When state-of-the-art LLMs remember instead of reason. arXiv, 2025. URL https://arxiv.org/abs/2506.12286. arXiv:2506.12286.",
+    "spans": [
+      {
+        "text": "[26]",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.99999237060547,
+          690.62646484375,
+          124.5976791381836,
+          700.5890502929688
+        ]
+      },
+      {
+        "text": " Shanchao Liang, Spandan Garg, and Roshanak Zilouchian Moghaddam. The SWE-Bench",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          124.5976791381836,
+          690.55126953125,
+          504.0028991699219,
+          700.613037109375
+        ]
+      },
+      {
+        "text": "illusion: When state-of-the-art LLMs remember instead of reason.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.002370834350586,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          129.57899475097656,
+          701.5053100585938,
+          395.55926513671875,
+          711.5076904296875
+        ]
+      },
+      {
+        "text": " arXiv",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 10.002370834350586,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          395.55926513671875,
+          701.328125,
+          421.4683837890625,
+          711.3305053710938
+        ]
+      },
+      {
+        "text": ", 2025. URL",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.002370834350586,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          421.4683837890625,
+          701.5053100585938,
+          472.744384765625,
+          711.5076904296875
+        ]
+      },
+      {
+        "text": " https:",
+        "font_name": "SFTT1000",
+        "font_size": 9.962599754333496,
+        "font_flags": 12,
+        "color": 0,
+        "bbox": [
+          472.744384765625,
+          701.7835083007812,
+          506.62225341796875,
+          711.74609375
+        ]
+      },
+      {
+        "text": "//arxiv.org/abs/2506.12286",
+        "font_name": "SFTT1000",
+        "font_size": 9.962599754333496,
+        "font_flags": 12,
+        "color": 0,
+        "bbox": [
+          129.05599975585938,
+          712.6925048828125,
+          265.03546142578125,
+          722.6550903320312
+        ]
+      },
+      {
+        "text": ". arXiv:2506.12286.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          265.03546142578125,
+          712.4444580078125,
+          346.1309814453125,
+          722.4070434570312
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      301.01898193359375,
+      742.3324584960938,
+      310.9815673828125,
+      752.2950439453125
+    ],
+    "content": "12",
+    "spans": [
+      {
+        "text": "12",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          301.01898193359375,
+          742.3324584960938,
+          310.9815673828125,
+          752.2950439453125
+        ]
+      }
+    ]
+  }
+]

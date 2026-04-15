@@ -161,11 +161,13 @@ class ApiClient {
 
   async createReconstructJob(
     documentId: number,
+    outputFilename = "",
     maxImageWidth = 6.0,
     renderDpi = 300
   ): Promise<Job> {
     const res = await this.client.post<Job>("/jobs/reconstruct", {
       document_id: documentId,
+      output_filename: outputFilename,
       max_image_width: maxImageWidth,
       render_dpi: renderDpi,
     });

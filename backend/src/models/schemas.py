@@ -100,6 +100,11 @@ class JobListResponse(BaseModel):
 
 class ReconstructRequest(BaseModel):
     document_id: int = Field(description="ID of the uploaded PDF document")
+    output_filename: str = Field(
+        default="",
+        max_length=255,
+        description="Name of the output DOCX file (defaults to the PDF filename with .docx extension)",
+    )
     max_image_width: float = Field(default=6.0, ge=1.0, le=12.0)
     render_dpi: int = Field(default=300, ge=72, le=600)
 
