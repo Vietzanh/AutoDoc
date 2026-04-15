@@ -1,7 +1,7 @@
 # AutoDoc — Project Context
 
 > **Last updated:** 2026-04-10
-> **Status:** Combine + Organize + Split done · Crop + Page Numbers backend/frontend remaining · DevOps pending
+> **Status:** Combine + Organize + Split + Reorder done · Crop + Page Numbers backend/frontend remaining · DevOps pending
 
 ---
 
@@ -112,7 +112,7 @@ frontend/
         ├── DashboardPage.tsx # Document table + Recent Jobs table
         ├── ReconstructPage.tsx # 4-state wizard: upload → ready → processing → done/failed
         ├── CombinePage.tsx    # Multi-doc upload + select/delete controls + job + download ✅
-        ├── OrganizePage.tsx   # Thumbnail grid, rotate/delete/reorder/insert/extract ✅
+        ├── OrganizePage.tsx   # Single-PDF upload, CSS grid 5-col, gap-8, Insert/Extract/RotateL/RotateR/Delete icons, blue + centered in gaps in insert mode, Extract mode toggle ✅
         ├── SplitPage.tsx     # Single-PDF upload + blue-to-red scissor split lines + ZIP download ✅
         ├── CropPage.tsx       # ⬜ TODO — crop by margins or custom rect
         └── PageNumbersPage.tsx # ⬜ TODO — add page numbers (position, format, font)
@@ -139,7 +139,7 @@ frontend/
 | `backend/src/repositories/*.py` | ✅ Written — UserRepository, DocumentRepository, JobRepository |
 | `backend/src/services/auth_service.py` | ✅ Written — register, authenticate |
 | `backend/src/services/document_service.py` | ✅ Written — upload, list, get, delete |
-| `backend/src/services/job_service.py` | ✅ Written — create + background thread runner for all job types |
+| `backend/src/services/job_service.py` | ✅ Written — create + background thread runner for all job types; organize handles pages from multiple source PDFs via `source_document_id` |
 | `backend/src/routes/auth_routes.py` | ✅ Written — /auth/register, /auth/login, /auth/me |
 | `backend/src/routes/document_routes.py` | ✅ Written — full CRUD + download |
 | `backend/src/routes/job_routes.py` | ✅ Written — create, poll, list, delete, download |
@@ -183,13 +183,16 @@ frontend/
 | `frontend/src/components/ui/Layout.tsx` | ✅ Written — sticky header, nav, footer, mobile nav |
 | `frontend/src/components/ui/ProgressBar.tsx` | ✅ Written — animated, 0–100% |
 | `frontend/src/components/ui/Spinner.tsx` | ✅ Written — SVG animate-spin, sm/md/lg |
+| `frontend/src/components/ui/Thumbnail.tsx` | ✅ Written — reusable page thumbnail card (selection, drag states) |
+| `frontend/src/hooks/useReorderGrid.ts` | ✅ Written — drag state, gap index, isDirty, reset helpers |
 | `frontend/src/pages/LoginPage.tsx` | ✅ Written — username + password, redirects if authed |
 | `frontend/src/pages/RegisterPage.tsx` | ✅ Written — email, username, password, confirmPassword |
 | `frontend/src/pages/DashboardPage.tsx` | ✅ Written — document table + recent jobs table |
 | `frontend/src/pages/ReconstructPage.tsx` | ✅ Written — 4-state wizard: upload → ready → processing → done/failed |
 | `frontend/src/pages/CombinePage.tsx` | ✅ Written — upload + select/delete controls + job + download |
-| `frontend/src/pages/OrganizePage.tsx` | ✅ Written — thumbnail grid, rotate/delete/reorder/insert/extract |
+| `frontend/src/pages/OrganizePage.tsx` | ✅ Redesigned — single-PDF upload, CSS grid 5-col with gap-8, Insert/Extract/RotateL/RotateR/Delete icons, blue + centered in gaps in insert mode (position:absolute child of tile, left:calc(100%+2px)), Extract mode toggle, Save/Extract button, multi-PDF insert support, before-first/after-last insert points removed |
 | `frontend/src/pages/SplitPage.tsx` | ✅ Written — single-PDF upload + blue-to-red scissor split lines + ZIP download |
+| `frontend/src/pages/ReorderPage.tsx` | ✅ Written — @dnd-kit sortable 5-col grid, drag ghost overlay, Save/Revert, job + download |
 
 ### 🚫 Frontend — Not Yet Built
 
@@ -237,6 +240,7 @@ frontend/
 | `GET` | `/api/jobs/{id}/parts` | List split parts after split job completes |
 | `POST` | `/api/jobs/organize` | Start organize pages job (async) — delete, rotate, reorder |
 | `POST` | `/api/jobs/extract` | Start extract pages job (async) — immediate extract to separate PDF |
+| `POST` | `/api/jobs/reorder` | Start reorder pages job (async) — new page sequence |
 | `GET` | `/api/jobs/{id}` | Poll job status + progress |
 | `GET` | `/api/jobs` | List user's jobs (filterable by status) |
 | `DELETE` | `/api/jobs/{id}` | Delete a job + its output file |
@@ -397,6 +401,18 @@ All other tools work independently. See their respective pages under the nav bar
 - [ ] Write `frontend/src/pages/PageNumbersPage.tsx` — add page numbers (position, format, font)
 - [ ] API methods for Crop + Page Numbers (`api.ts` update)
 - [ ] Routing entries for Crop + Page Numbers (`App.tsx` update)
+
+### ✅ Completed — Reorder Pages
+- `backend/src/models/database_models.py` — added `REORDER` to `JobTool`
+- `backend/src/models/schemas.py` — added `ReorderRequest`
+- `backend/src/services/job_service.py` — `create_reorder_job` + `_run_reorder` using existing `reorder_pages()`
+- `backend/src/routes/job_routes.py` — `POST /jobs/reorder`
+- `frontend/src/hooks/useReorderGrid.ts` — drag state + gap logic
+- `frontend/src/pages/ReorderPage.tsx` — @dnd-kit sortable 5-col grid, ghost overlay, Save/Revert, job + download
+- `frontend/src/components/ui/Thumbnail.tsx` — reusable thumbnail card
+- `frontend/src/services/api.ts` — `createReorderJob`
+- `frontend/src/App.tsx` + `Layout.tsx` — `/reorder` route + nav link
+- `frontend/package.json` — added `@dnd-kit/core`, `@dnd-kit/sortable`, `@dnd-kit/utilities`
 
 ### Priority 3 — DevOps & Polish
 - [ ] Production `Dockerfile` (multi-stage build for frontend static files served by Nginx)

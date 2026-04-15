@@ -236,9 +236,9 @@ export default function CombinePage() {
               <div
                 {...getRootProps()}
                 className={`
-                  border-2 border-dashed rounded-xl p-6 text-center cursor-pointer
+                  border-2 border-dashed rounded-xl p-10 text-center cursor-pointer
                   transition-colors text-sm
-                  ${isDragActive ? "border-blue-500 bg-blue-50" : "border-gray-300 hover:border-gray-400"}
+                  ${isDragActive ? "border-blue-500 bg-blue-50 text-blue-700" : "border-gray-300 hover:border-gray-400 text-gray-600"}
                   ${uploading ? "opacity-50 cursor-wait" : ""}
                 `}
               >
@@ -246,13 +246,13 @@ export default function CombinePage() {
                 {uploading ? (
                   <>
                     <Spinner size="sm" className="mx-auto mb-2" />
-                    <p className="text-gray-600">Uploading…</p>
+                    <p>Uploading…</p>
                   </>
                 ) : isDragActive ? (
-                  <p className="text-blue-600 font-medium">Drop PDF here</p>
+                  <p className="font-medium">Drop PDF here</p>
                 ) : (
-                  <p className="text-gray-600">
-                    Drop a PDF here to upload, or{" "}
+                  <p>
+                    Drop a PDF here, or{" "}
                     <span className="text-blue-600 font-medium">click</span> to select
                   </p>
                 )}

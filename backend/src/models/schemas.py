@@ -184,6 +184,23 @@ class ExtractRequest(BaseModel):
     )
 
 
+# ── Reorder ────────────────────────────────────────────────────────────────────
+
+class ReorderRequest(BaseModel):
+    document_id: int = Field(description="ID of the source PDF document")
+    new_order: list[int] = Field(
+        description=(
+            "List of 0-based page indices in the desired output order. "
+            "All pages must be present exactly once. E.g. [2, 0, 1] swaps page 3 to first."
+        )
+    )
+    output_filename: str = Field(
+        default="reordered.pdf",
+        max_length=255,
+        description="Name of the output PDF file"
+    )
+
+
 # ── Error ─────────────────────────────────────────────────────────────────────
 
 class ErrorResponse(BaseModel):

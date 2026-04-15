@@ -109,29 +109,21 @@ export default function ReconstructPage() {
               {...getRootProps()}
               className={`
                 border-2 border-dashed rounded-xl p-10 text-center cursor-pointer
-                transition-colors
-                ${isDragActive ? "border-blue-500 bg-blue-50" : "border-gray-300 hover:border-gray-400"}
+                transition-colors text-sm
+                ${isDragActive ? "border-blue-500 bg-blue-50 text-blue-700" : "border-gray-300 hover:border-gray-400 text-gray-600"}
                 ${uploading ? "opacity-50 cursor-wait" : ""}
               `}
             >
               <input {...getInputProps()} />
-              <svg className="w-10 h-10 mx-auto mb-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-              </svg>
               {uploading ? (
-                <>
-                  <Spinner size="md" className="mx-auto mb-3" />
-                  <p className="text-sm text-gray-600">Uploading…</p>
-                </>
+                <><Spinner size="sm" className="mx-auto mb-2" /><p>Uploading…</p></>
               ) : isDragActive ? (
-                <p className="text-sm text-blue-600 font-medium">Drop your PDF here</p>
+                <p className="font-medium">Drop PDF here</p>
               ) : (
-                <>
-                  <p className="text-sm text-gray-600 font-medium">
-                    Drag & drop a PDF here, or click to select
-                  </p>
-                  <p className="text-xs text-gray-400 mt-2">Only PDF files are supported</p>
-                </>
+                <p>
+                  Drop a PDF here, or{" "}
+                  <span className="text-blue-600 font-medium">click</span> to select
+                </p>
               )}
             </div>
 

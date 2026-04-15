@@ -39,8 +39,9 @@ type AppMode = "normal" | "insert" | "extract";
 
 // ── Helpers ────────────────────────────────────────────────────────────────────
 
-const ROTATE_CW  = (r: number) => (r + 90) % 360;
-const ROTATE_CCW = (r: number) => (r - 90 + 360) % 360;
+// Cumulative rotation — NOT wrapped to 0-359 so CSS always animates the shortest path.
+const ROTATE_CW  = (r: number) => r + 90;
+const ROTATE_CCW = (r: number) => r - 90;
 
 function buildInitialPages(
   docId: number,
@@ -122,9 +123,9 @@ function IconDelete() {
 }
 
 // ── InsertPoint — blue "+" centered in the 32px grid gap ─────────────────────────────────
-// gap-8 = 32px, button = 28px (w-7).
-// left: calc(100% + 2px) → button center = tile.right + 2px + 14px = tile.right + 16px = gap center.
-// Button right = tile.right + 30px = 2px into next tile. Visually centered in the 32px gap.
+// gap-12 = 48px, button = 28px (w-7).
+// left: calc(100% + 10px) → button center = tile.right + 10px + 14px = tile.right + 24px = gap center.
+// Button right = tile.right + 38px = 10px into next tile. Visually centered in the 48px gap.
 
 function InsertPoint({ onClick }: { onClick: () => void }) {
   return (
@@ -133,7 +134,7 @@ function InsertPoint({ onClick }: { onClick: () => void }) {
       className="absolute top-1/2 -translate-y-1/2
                  w-7 h-7 rounded-full bg-blue-500 hover:bg-blue-600 text-white
                  flex items-center justify-center shadow-md z-20"
-      style={{ left: "calc(100% + 2px)" }}
+      style={{ left: "calc(100% + 10px)" }}
       title="Insert pages from another PDF"
     >
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={3}
@@ -750,9 +751,9 @@ export default function OrganizePage() {
                   <div className="flex justify-center py-10"><Spinner /></div>
                 ) : (
                   <>
-                    {/* Thumbnail grid: CSS grid, 5 columns × gap. + is absolute child of each tile. */}
+                    {/* Thumbnail grid: CSS grid, 5 columns × gap-12. + is absolute child of each tile. */}
                     <div
-                      className="grid gap-8"
+                      className="grid gap-12"
                       style={{ gridTemplateColumns: "repeat(5, 9rem)" }}
                     >
                       {chunks.map((rowPages, rowIdx) =>

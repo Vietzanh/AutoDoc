@@ -201,7 +201,7 @@ export default function SplitPage() {
 
   // ── Render ─────────────────────────────────────────────────────────────────
   return (
-    <div className="max-w-5xl mx-auto space-y-6">
+    <div className="max-w-6xl mx-auto space-y-5">
       <div>
         <h1 className="text-2xl font-bold text-gray-900">Split PDF</h1>
         <p className="text-sm text-gray-500 mt-1">
@@ -285,22 +285,22 @@ export default function SplitPage() {
             <div
               {...getRootProps()}
               className={`
-                border-2 border-dashed rounded-xl p-5 text-center cursor-pointer
+                border-2 border-dashed rounded-xl p-10 text-center cursor-pointer
                 transition-colors text-sm
-                ${isDragActive ? "border-blue-500 bg-blue-50" : "border-gray-300 hover:border-gray-400"}
+                ${isDragActive ? "border-blue-500 bg-blue-50 text-blue-700" : "border-gray-300 hover:border-gray-400 text-gray-600"}
                 ${uploading || loadingThumbs ? "opacity-50 cursor-wait" : ""}
               `}
             >
               <input {...getInputProps()} />
               {uploading ? (
-                <><Spinner size="sm" className="mx-auto mb-2" /><p className="text-gray-600">Uploading…</p></>
+                <><Spinner size="sm" className="mx-auto mb-2" /><p>Uploading…</p></>
               ) : loadingThumbs ? (
-                <><Spinner size="sm" className="mx-auto mb-2" /><p className="text-gray-600">Loading pages…</p></>
+                <><Spinner size="sm" className="mx-auto mb-2" /><p>Loading pages…</p></>
               ) : isDragActive ? (
-                <p className="text-blue-600 font-medium">Drop PDF here</p>
+                <p className="font-medium">Drop PDF here</p>
               ) : (
-                <p className="text-gray-600">
-                  Drop a PDF here to upload, or{" "}
+                <p>
+                  Drop a PDF here, or{" "}
                   <span className="text-blue-600 font-medium">click</span> to select
                 </p>
               )}

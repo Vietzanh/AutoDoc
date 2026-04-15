@@ -26,7 +26,8 @@ class JobTool(str, Enum):
     ORGANIZE = "organize"             # Organize pages
     EXTRACT = "extract"               # Extract pages
     CROP = "crop"                     # Crop pages
-    PAGE_NUMBERS = "page_numbers"     # Number pages
+    PAGE_NUMBERS = "page_numbers"    # Number pages
+    REORDER = "reorder"               # Reorder pages
 
 
 class User(SQLModel, table=True):

@@ -12,7 +12,12 @@ export function useJobPoll(jobId: number, interval = 2000) {
   const stoppedRef = useRef(false);
 
   useEffect(() => {
-    if (!jobId) return;
+    // Reset internal state when jobId becomes falsy (e.g. after a reset / "start over")
+    if (!jobId) {
+      setJob(null);
+      setError(null);
+      return;
+    }
 
     stoppedRef.current = false;
 
