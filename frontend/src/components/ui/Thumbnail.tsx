@@ -18,6 +18,7 @@ interface ThumbnailProps {
   dragHandleProps?: Record<string, unknown>;
   onClick?: () => void;
   className?: string;
+  pageNumberPosition?: "top-left" | "top-right" | "bottom-left" | "bottom-right" | null;
 }
 
 export function Thumbnail({
@@ -29,6 +30,7 @@ export function Thumbnail({
   dragHandleProps = {},
   onClick,
   className = "",
+  pageNumberPosition = null,
 }: ThumbnailProps) {
   return (
     <div
@@ -77,6 +79,18 @@ export function Thumbnail({
         <span className="absolute bottom-1 left-1/2 -translate-x-1/2 text-xs bg-black/60 text-white px-1.5 py-0.5 rounded pointer-events-none">
           {pageNumber}
         </span>
+
+        {/* Page number positional indicator (red circle) */}
+        {pageNumberPosition && (
+          <div
+            className={`absolute w-3 h-3 bg-red-500 rounded-full border border-white shadow hover:scale-125 transition-transform duration-150 z-20 pointer-events-none
+              ${pageNumberPosition === "top-left" ? "top-2 left-2" : ""}
+              ${pageNumberPosition === "top-right" ? "top-2 right-2" : ""}
+              ${pageNumberPosition === "bottom-left" ? "bottom-2 left-2" : ""}
+              ${pageNumberPosition === "bottom-right" ? "bottom-2 right-2" : ""}
+            `}
+          />
+        )}
       </div>
     </div>
   );

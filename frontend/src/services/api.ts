@@ -59,6 +59,30 @@ export interface JobListResponse {
   total: number;
 }
 
+export type PageNumberPosition = "top-left" | "top-right" | "bottom-left" | "bottom-right";
+export type PageNumberFormat = "number-only" | "page-n" | "page-n-of-p" | "custom";
+export type PageNumberMode = "single" | "facing";
+
+export interface PageNumberParams {
+  document_id: number;
+  mode: PageNumberMode;
+  position: PageNumberPosition;
+  start_number: number;
+  from_page: number;
+  to_page: number;
+  format: PageNumberFormat;
+  custom_text?: string;
+  text_style: {
+    font_name: string;
+    font_size: number;
+    bold: boolean;
+    italic: boolean;
+    underline: boolean;
+    color: string;
+  };
+  output_filename: string;
+}
+
 class ApiClient {
   private client: AxiosInstance;
 
@@ -241,6 +265,11 @@ class ApiClient {
       new_order: newOrder,
       output_filename: outputFilename,
     });
+    return res.data;
+  }
+
+  async createPageNumbersJob(params: PageNumberParams): Promise<Job> {
+    const res = await this.client.post<Job>("/jobs/page-numbers", params);
     return res.data;
   }
 

@@ -206,6 +206,49 @@ class ReorderRequest(BaseModel):
     )
 
 
+# ── Page Numbers ────────────────────────────────────────────────────────────────
+
+PageNumberFormat = Literal["number-only", "page-n", "page-n-of-p", "custom"]
+PageNumberPosition = Literal["top-left", "top-right", "bottom-left", "bottom-right"]
+PageNumberMode = Literal["single", "facing"]
+
+
+class TextStyle(BaseModel):
+    font_name: str = Field(default="Helvetica")
+    font_size: float = Field(default=10.0, ge=4.0, le=72.0)
+    bold: bool = Field(default=False)
+    italic: bool = Field(default=False)
+    underline: bool = Field(default=False)
+    color: str = Field(default="#000000", description="Hex color string e.g. #000000")
+
+
+class PageNumberRequest(BaseModel):
+    document_id: int = Field(description="ID of the source PDF document")
+    mode: PageNumberMode = Field(default="single", description="'single' or 'facing'")
+    position: PageNumberPosition = Field(
+        default="bottom-right",
+        description="Corner position for page numbers"
+    )
+    start_number: int = Field(default=1, ge=1, description="First page number to display")
+    from_page: int = Field(default=1, ge=1, description="1-based first page to number")
+    to_page: int = Field(default=0, ge=0, description="1-based last page to number (0 = last page)")
+    format: PageNumberFormat = Field(
+        default="number-only",
+        description="'number-only' (recommended), 'page-n', 'page-n-of-p', or 'custom'"
+    )
+    custom_text: str = Field(
+        default="Page {n}",
+        max_length=255,
+        description="Custom text containing {n} (page number) and/or {p} (total pages)"
+    )
+    text_style: TextStyle = Field(default_factory=TextStyle)
+    output_filename: str = Field(
+        default="numbered.pdf",
+        max_length=255,
+        description="Name of the output PDF file"
+    )
+
+
 # ── Error ─────────────────────────────────────────────────────────────────────
 
 class ErrorResponse(BaseModel):

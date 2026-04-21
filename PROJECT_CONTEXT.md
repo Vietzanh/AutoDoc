@@ -1,7 +1,7 @@
 # AutoDoc — Project Context
 
-> **Last updated:** 2026-04-10
-> **Status:** Combine + Organize + Split + Reorder done · Crop + Page Numbers backend/frontend remaining · DevOps pending
+> **Last updated:** 2026-04-21
+> **Status:** Combine + Organize + Split + Reorder + Page Numbers done · Crop backend/frontend remaining · DevOps pending
 
 ---
 
@@ -115,7 +115,7 @@ frontend/
         ├── OrganizePage.tsx   # Single-PDF upload, CSS grid 5-col, gap-8, Insert/Extract/RotateL/RotateR/Delete icons, blue + centered in gaps in insert mode, Extract mode toggle ✅
         ├── SplitPage.tsx     # Single-PDF upload + blue-to-red scissor split lines + ZIP download ✅
         ├── CropPage.tsx       # ⬜ TODO — crop by margins or custom rect
-        └── PageNumbersPage.tsx # ⬜ TODO — add page numbers (position, format, font)
+        └── PageNumbersPage.tsx # two-panel layout: thumbnails (left) + options (right); single/facing-page modes; 2×2 PositionGrid; page range; text format; job + download ✅
 ```
 
 ---
@@ -149,7 +149,6 @@ frontend/
 ### 🚫 Backend — Not Yet Built
 
 - `POST /jobs/crop` — by margins or custom rect
-- `POST /jobs/page-numbers` — position, format, font
 - `src/services/pdf_ops_service.py` — optional consolidation layer
 
 ### 🔧 Backend — Fixed / Improved (2026-04-10)
@@ -193,16 +192,24 @@ frontend/
 | `frontend/src/pages/OrganizePage.tsx` | ✅ Redesigned — single-PDF upload, CSS grid 5-col with gap-8, Insert/Extract/RotateL/RotateR/Delete icons, blue + centered in gaps in insert mode (position:absolute child of tile, left:calc(100%+2px)), Extract mode toggle, Save/Extract button, multi-PDF insert support, before-first/after-last insert points removed |
 | `frontend/src/pages/SplitPage.tsx` | ✅ Written — single-PDF upload + blue-to-red scissor split lines + ZIP download |
 | `frontend/src/pages/ReorderPage.tsx` | ✅ Written — @dnd-kit sortable 5-col grid, drag ghost overlay, Save/Revert, job + download |
+| `frontend/src/pages/PageNumbersPage.tsx` | ✅ Written — two-panel layout, single/facing modes, 2×2 PositionGrid, page range, format options, text style, job + download |
+| `frontend/src/components/ui/PositionGrid.tsx` | ✅ Written — reusable 2×2 corner grid with red circle selector |
+| `frontend/src/hooks/useFacingPages.ts` | ✅ Written — mirror logic for facing-pages mode |
+| `frontend/src/components/ui/Thumbnail.tsx` | ✅ Updated — optional `pageNumberPosition` prop with red-circle corner overlay |
 
 ### 🚫 Frontend — Not Yet Built
 
 - `frontend/src/pages/CropPage.tsx` — crop by margins or custom rect
-- `frontend/src/pages/PageNumbersPage.tsx` — add page numbers (position, format, font)
-- API methods for Crop + Page Numbers (`api.ts` update)
-- Routing entries for Crop + Page Numbers (`App.tsx` update)
+- API methods for Crop (`api.ts` update)
+- Routing entries for Crop (`App.tsx` update)
 
-### 🔧 Frontend — Fixed / Improved (2026-04-10)
+### 🔧 Frontend — Fixed / Improved (2026-04-21)
 
+- `PageNumbersPage.tsx` — fully implemented the Page Numbers feature UI previously listed as complete but missing from the repository, including two-column layout, Single/Facing page layout logic mappings, format inputs, and text stylings.
+- `Thumbnail.tsx` — successfully integrated the actual `pageNumberPosition` coordinate plotting logic over the cards.
+- `api.ts` — added `PageNumberParams` schema and `createPageNumbersJob` request handler successfully.
+- `PositionGrid.tsx` — fixed TypeScript build error relating to unused `rowIdx` variables.
+- `App.tsx` & `Layout.tsx` — wired navigation linking explicitly for the Page Numbers feature mapping.
 - `CombinePage.tsx` — fixed 3 bugs: (1) upload order now matches UI/output order (was prepending instead of appending), (2) Refresh replaced with Delete All + Delete Selected controls, (3) Clear Selection moved to header; `handleReset` properly clears all state so new sessions start fresh at index #1; state split into `allDocs` (list) and `selectedIds` (Set) so Refresh reloads the list without wiping selections
 - `SplitPage.tsx` — redesigned: removed document picker list; single upload-drop zone now handles both initial upload and "Split Another" reset; split lines turn blue (idle/hover) → red (active/split point set); scissor icon color matches line state
 - `frontend/src/services/api.ts` — replaced axios blob downloads with native `fetch()` for `downloadJobResult` and `downloadDocument`; axios singleton keeps `timeout: 60000` and `withCredentials: false`
@@ -241,6 +248,7 @@ frontend/
 | `POST` | `/api/jobs/organize` | Start organize pages job (async) — delete, rotate, reorder |
 | `POST` | `/api/jobs/extract` | Start extract pages job (async) — immediate extract to separate PDF |
 | `POST` | `/api/jobs/reorder` | Start reorder pages job (async) — new page sequence |
+| `POST` | `/api/jobs/page-numbers` | Start page-numbering job (async) — single or facing-pages mode |
 | `GET` | `/api/jobs/{id}` | Poll job status + progress |
 | `GET` | `/api/jobs` | List user's jobs (filterable by status) |
 | `DELETE` | `/api/jobs/{id}` | Delete a job + its output file |
@@ -279,7 +287,7 @@ CREATE TABLE jobs (
   id INTEGER PRIMARY KEY,
   user_id INTEGER REFERENCES user.id,
   document_id INTEGER REFERENCES document.id,
-  tool TEXT,               -- reconstruct, combine, split, organize, extract
+  tool TEXT,               -- reconstruct, combine, split, organize, extract, reorder, page-numbers
   status TEXT,             -- pending, processing, done, failed
   input_document_ids TEXT, -- JSON list (for combine) or pages JSON (organize/extract)
   output_filename TEXT,
@@ -393,14 +401,107 @@ All other tools work independently. See their respective pages under the nav bar
 
 ### Priority 1 — Backend: Remaining PDF Operations
 - [ ] `POST /jobs/crop` — by margins or custom rect
-- [ ] `POST /jobs/page-numbers` — position, format, font
 - [ ] `src/services/pdf_ops_service.py` — optional consolidation layer
 
 ### Priority 2 — Frontend: Remaining Tool Pages
 - [ ] Write `frontend/src/pages/CropPage.tsx` — crop by margins or custom rect
-- [ ] Write `frontend/src/pages/PageNumbersPage.tsx` — add page numbers (position, format, font)
-- [ ] API methods for Crop + Page Numbers (`api.ts` update)
-- [ ] Routing entries for Crop + Page Numbers (`App.tsx` update)
+- [ ] API methods for Crop (`api.ts` update)
+- [ ] Routing entries for Crop (`App.tsx` update)
+
+### ✅ Completed — Page Numbers
+
+#### Feature Overview
+
+A two-panel page-numbering tool with a left panel (thumbnails with red-circle position markers) and a right panel (options). Two numbering modes:
+
+- **Single-page mode** — each page is numbered individually at the chosen corner position (TL, TR, BL, BR).
+- **Facing-pages mode** — pages are treated in pairs; the second page mirrors the first horizontally (TL↔TR, BL↔BR). An odd last page is treated as standalone (no mirror needed). "First page is cover page" checkbox is **not** implemented.
+
+Position is selected via a **2×2 corner grid** (TL / TR / BL / BR) shown in the options panel. The chosen cell shows a red circle marker. Thumbnails on the left also display a red circle marker at the matching position to give live visual feedback.
+
+Numbering is scoped to a user-selected page range (e.g. "from page 2 to 5" → only those thumbnails show the red marker, only those pages are numbered in the output).
+
+#### Backend (`backend/src/`)
+
+- `src/pdf_operations/page_numbers.py` — `add_page_numbers(doc_path, output_path, config)` using pymupdf
+  - `config` is a `PageNumberConfig` dict: `{mode, position, start_number, from_page, to_page, total_pages, format, font_name, font_size, bold, italic, underline, color}`
+  - `position` values: `"top-left"`, `"top-right"`, `"bottom-left"`, `"bottom-right"`
+  - `mode`: `"single"` or `"facing"`
+  - `format`: `"number-only"` | `"page-n"` | `"page-n-of-p"` | `"custom"`
+  - `format == "custom"`: user-supplied string may contain `{n}` (current page number) and `{p}` (total pages)
+  - In facing mode: process pages as pairs `(1,2), (3,4), ...`. Page at odd index → chosen position; page at even index → horizontally mirrored position. Odd leftover page → chosen position directly.
+  - Progress reported to DB via `update_job_progress(job_id, pct)` at start and end (100%)
+- `src/models/schemas.py` — `PageNumberFormat` (Literal), `PageNumberPosition` (Literal), `PageNumberMode` (Literal), `TextStyle`, `PageNumberConfig` (Pydantic model), `PageNumberRequest`
+- `src/services/job_service.py` — `create_page_numbers_job()`, `_run_page_numbers()`
+- `src/services/pdf_ops_service.py` — optional consolidation layer (may be skipped if logic stays in `page_numbers.py`)
+- `src/routes/job_routes.py` — `POST /jobs/page-numbers`
+- `src/models/database_models.py` — add `PAGE_NUMBERS` to `JobTool` enum
+
+#### Frontend (`frontend/src/`)
+
+- `src/components/ui/PositionGrid.tsx` — new reusable component
+  - Props: `value: Position`, `onChange: (pos: Position) => void`, `size?: "sm" | "md" | "lg"`
+  - 2×2 grid of cells (TL, TR, BL, BR); each cell is a white rounded box
+  - Selected cell has a red circle centered in it
+  - Hover state on unselected cells (light blue tint)
+  - CSS grid layout, no external icon library needed
+- `src/components/ui/Thumbnail.tsx` — updated
+  - New optional prop: `pageNumberPosition?: Position | null`
+  - When `pageNumberPosition` is set, render an absolutely-positioned red circle (12px diameter) at the matching corner of the thumbnail card
+  - Red circle uses `position: absolute` with corner offset (e.g. `bottom: 8px; left: 8px` for bottom-left)
+- `src/hooks/useFacingPages.ts` — new hook
+  - `useFacingPages(mode, position)` → `{ getPositionForPage: (pageIndex: number) => Position }`
+  - In `single` mode: returns the chosen position for all pages
+  - In `facing` mode: even index (0-based) → chosen position; odd index → horizontally mirrored position
+- `src/pages/PageNumbersPage.tsx` — main page
+  - Two-panel layout: left = thumbnail grid (scrollable), right = options panel (fixed/sticky)
+  - State: `uploadedFile`, `thumbnails`, `mode`, `position`, `startNumber`, `fromPage`, `toPage`, `format`, `customText`, `fontName`, `fontSize`, `bold`, `italic`, `underline`, `color`, `jobId`, `jobStatus`
+  - Left panel: `@dnd-kit`-style CSS grid 4-col (or responsive 2/3-col), each thumbnail shows `Thumbnail` with `pageNumberPosition` applied only to pages in `[fromPage, toPage]` range
+  - Right panel sections:
+    1. **Page mode** — radio buttons: Single page / Facing pages
+    2. **Position** — `PositionGrid` component
+    3. **First number** — numeric input (min 1, default 1)
+    4. **Pages** — "from page" + "to page" numeric inputs (1-indexed, bounded by thumbnail count)
+    5. **Format** — radio group: Number only (recommended) / Page {n} / Page {n} of {p} / Custom
+       - Custom: text input + helper line "Text samples: {n}, Page {n}, Page {n} of {p}"
+    6. **Text format** — font name dropdown, font size input, B / I / U toggles, color picker (or preset swatches)
+    7. **Add page numbers** — red primary button; calls `createPageNumbersJob`, then polls via `useJobPoll`, then offers download on completion
+  - "Single page" screenshot: all thumbnails in a 2×4 grid (8 pages), each with a red circle marker at the chosen corner; right panel shows Single page radio selected, 2×2 grid with red dot in one cell
+  - "Facing pages" screenshot: same layout but Facing pages radio selected; thumbnail markers reflect the mirror logic
+  - "Page Number options" (screenshot 3): right panel fully expanded showing all sections
+  - "Page Number options" text tab (screenshot 4): same right panel but showing the Custom / Text format sections
+  - On job completion: replace the "Add page numbers" button with a "Download Numbered PDF" button
+  - `useCallback`-wrapped handlers; no inline anonymous functions in render
+- `src/services/api.ts` — new methods:
+  - `createPageNumbersJob(params: PageNumberParams): Promise<{ job_id: string }>`
+  - `uploadDocumentForPageNumbers(file: File): Promise<Document>` (reuse existing uploadDocument or POST /api/documents)
+- `src/App.tsx` — add route: `/page-numbers` → `PageNumbersPage` (inside `ProtectedRoute`)
+- `src/components/ui/Layout.tsx` — add nav link: `/page-numbers` → "Page Numbers" (in the nav bar alongside Split, Organize, Reorder, Combine, Reconstruct)
+
+#### `PageNumberParams` Type
+
+```typescript
+type PageNumberPosition = "top-left" | "top-right" | "bottom-left" | "bottom-right";
+type PageNumberFormat = "number-only" | "page-n" | "page-n-of-p" | "custom";
+type PageNumberMode = "single" | "facing";
+
+interface PageNumberParams {
+  documentId: number;
+  mode: PageNumberMode;
+  position: PageNumberPosition;   // chosen corner; mirror applied automatically in facing mode
+  startNumber: number;            // first number to use (default 1)
+  fromPage: number;                // 1-indexed start of range
+  toPage: number;                  // 1-indexed end of range
+  format: PageNumberFormat;
+  customText?: string;             // required when format === "custom"; may contain {n} and {p}
+  fontName: string;
+  fontSize: number;
+  bold: boolean;
+  italic: boolean;
+  underline: boolean;
+  color: string;                   // hex string e.g. "#000000"
+}
+```
 
 ### ✅ Completed — Reorder Pages
 - `backend/src/models/database_models.py` — added `REORDER` to `JobTool`
@@ -409,10 +510,22 @@ All other tools work independently. See their respective pages under the nav bar
 - `backend/src/routes/job_routes.py` — `POST /jobs/reorder`
 - `frontend/src/hooks/useReorderGrid.ts` — drag state + gap logic
 - `frontend/src/pages/ReorderPage.tsx` — @dnd-kit sortable 5-col grid, ghost overlay, Save/Revert, job + download
-- `frontend/src/components/ui/Thumbnail.tsx` — reusable thumbnail card
 - `frontend/src/services/api.ts` — `createReorderJob`
 - `frontend/src/App.tsx` + `Layout.tsx` — `/reorder` route + nav link
 - `frontend/package.json` — added `@dnd-kit/core`, `@dnd-kit/sortable`, `@dnd-kit/utilities`
+
+### ✅ Completed — Page Numbers
+- `backend/src/models/database_models.py` — added `PAGE_NUMBERS` to `JobTool`
+- `backend/src/models/schemas.py` — `PageNumberFormat`, `PageNumberPosition`, `PageNumberMode`, `PageNumberRequest`
+- `backend/src/services/job_service.py` — `create_page_numbers_job()` + `_run_page_numbers()`
+- `backend/src/routes/job_routes.py` — `POST /jobs/page-numbers`
+- `backend/src/pdf_operations/page_numbers.py` — `add_page_numbers()` with single + facing-pages modes
+- `frontend/src/components/ui/PositionGrid.tsx` — reusable 2×2 corner grid with red circle selector
+- `frontend/src/components/ui/Thumbnail.tsx` — updated: optional `pageNumberPosition` prop with red-circle corner overlay
+- `frontend/src/hooks/useFacingPages.ts` — mirror logic for facing-pages mode
+- `frontend/src/pages/PageNumbersPage.tsx` — two-panel layout, all options, job + download
+- `frontend/src/services/api.ts` — `createPageNumbersJob` + `uploadDocumentForPageNumbers`
+- `frontend/src/App.tsx` + `Layout.tsx` — `/page-numbers` route + nav link
 
 ### Priority 3 — DevOps & Polish
 - [ ] Production `Dockerfile` (multi-stage build for frontend static files served by Nginx)
@@ -450,7 +563,7 @@ src/
     ├── split.py              # split_by_points() ✅
     ├── organize.py           # delete/rotate/extract/insert helpers ✅
     ├── crop.py               # crop_by_margins, crop_by_rect (planned)
-    └── page_numbers.py       # add_page_numbers() (planned)
+    └── page_numbers.py       # add_page_numbers() — single + facing-pages modes ✅
 ```
 
 ---

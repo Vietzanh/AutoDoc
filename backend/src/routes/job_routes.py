@@ -18,6 +18,7 @@ from src.models.schemas import (
     SplitRequest, SplitPartsResponse,
     OrganizeRequest, ExtractRequest,
     ReorderRequest,
+    PageNumberRequest,
 )
 from src.services.job_service import JobService
 from src.services.document_service import DocumentService
@@ -223,6 +224,43 @@ def create_reorder_job(
         user_id=current_user.id,
         document_id=request.document_id,
         new_order=request.new_order,
+        output_filename=request.output_filename,
+    )
+    return _job_to_read(job)
+
+
+# ── Page Numbers ───────────────────────────────────────────────────────────────
+
+@router.post("/page-numbers", response_model=JobRead, status_code=status.HTTP_202_ACCEPTED)
+def create_page_numbers_job(
+    request: PageNumberRequest,
+    session: Session = Depends(get_session),
+    current_user: User = Depends(get_current_user),
+):
+    """Add page numbers to a PDF in single-page or facing-pages mode."""
+    doc_service = DocumentService(session)
+    doc = doc_service.get(request.document_id)
+    if not doc or doc.user_id != current_user.id:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Document not found")
+
+    service = JobService(session)
+    job = service.create_page_numbers_job(
+        user_id=current_user.id,
+        document_id=request.document_id,
+        mode=request.mode,
+        position=request.position,
+        start_number=request.start_number,
+        from_page=request.from_page,
+        to_page=request.to_page,
+        total_pages=doc.page_count or 0,
+        fmt=request.format,
+        custom_text=request.custom_text,
+        font_name=request.text_style.font_name,
+        font_size=request.text_style.font_size,
+        bold=request.text_style.bold,
+        italic=request.text_style.italic,
+        underline=request.text_style.underline,
+        color=request.text_style.color,
         output_filename=request.output_filename,
     )
     return _job_to_read(job)

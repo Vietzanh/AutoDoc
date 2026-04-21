@@ -10,6 +10,7 @@ import CombinePage from "./pages/CombinePage";
 import SplitPage from "./pages/SplitPage";
 import OrganizePage from "./pages/OrganizePage";
 import ReorderPage from "./pages/ReorderPage";
+import PageNumbersPage from "./pages/PageNumbersPage";
 
 function ProtectedRoute({ children }: { children: React.ReactNode }) {
   const { user, loading } = useAuth();
@@ -111,6 +112,14 @@ export default function App() {
         element={
           <ProtectedRoute>
             <ReorderPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/page-numbers"
+        element={
+          <ProtectedRoute>
+            <PageNumbersPage />
           </ProtectedRoute>
         }
       />
