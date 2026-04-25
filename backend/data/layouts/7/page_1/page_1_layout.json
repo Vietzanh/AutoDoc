@@ -1,0 +1,874 @@
+[
+  {
+    "type": "text",
+    "bbox": [
+      108.0,
+      260.4634094238281,
+      504.00146484375,
+      303.07708740234375
+    ],
+    "content": "Figure 1: Example of our 8-puzzle evaluation pipeline. The model receives the system prompt, in thiscase, our Zero-Shot prompt, as well as the puzzle. The model then returns a sequence of moves. Anexternal function applies each move to determine whether the model solved the puzzle. We highlightthe legal moves in green. In this example, the model solves the puzzle on its first attempt.",
+    "spans": [
+      {
+        "text": "Figure 1: Example of our 8-puzzle evaluation pipeline. The model receives the system prompt, in this",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.862470626831055,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          260.4634094238281,
+          504.00146484375,
+          270.32586669921875
+        ]
+      },
+      {
+        "text": "case, our Zero-Shot prompt, as well as the puzzle. The model then returns a sequence of moves. An",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.942654609680176,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          271.31158447265625,
+          503.9969177246094,
+          281.2542419433594
+        ]
+      },
+      {
+        "text": "external function applies each move to determine whether the model solved the puzzle. We highlight",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.89261531829834,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          282.258544921875,
+          503.9998779296875,
+          292.1511535644531
+        ]
+      },
+      {
+        "text": "the legal moves in green. In this example, the model solves the puzzle on its first attempt.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          293.1144714355469,
+          463.9338073730469,
+          303.07708740234375
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      107.7509994506836,
+      326.58856201171875,
+      504.1656494140625,
+      412.862060546875
+    ],
+    "content": "of feedback (repeat, specific, and suggestive). Within each feedback level, we save progress betweencalls. With these additional attempts, we observe more success under some conditions for particularmodels (GPT-5-Thinking with AoT and suggestive feedback). However, no single approach performsbest across models, and the improvements are slow and costly. The final intervention we investigateis an external move validator that offloads the burden of determining move validity. The models nolonger have to decide which moves are valid and which are not; we provide them with a list of allvalid moves and ask them to return the best one. We then apply the move, update the board state andlist, and reprompt the model. Despite this assistance, no model solves any puzzles.",
+    "spans": [
+      {
+        "text": "of feedback (repeat, specific, and suggestive). Within each feedback level, we save progress between",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.89261531829834,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          326.58856201171875,
+          503.9997863769531,
+          336.4811706542969
+        ]
+      },
+      {
+        "text": "calls. With these additional attempts, we observe more success under some conditions for particular",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.942654609680176,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          337.4595947265625,
+          504.1656494140625,
+          347.4022521972656
+        ]
+      },
+      {
+        "text": "models (GPT-5-Thinking with AoT and suggestive feedback). However, no single approach performs",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.862470626831055,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          348.4294128417969,
+          504.0014953613281,
+          358.2918701171875
+        ]
+      },
+      {
+        "text": "best across models, and the improvements are slow and costly. The final intervention we investigate",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.947644233703613,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          359.2748107910156,
+          503.99761962890625,
+          369.22247314453125
+        ]
+      },
+      {
+        "text": "is an external move validator that offloads the burden of determining move validity. The models no",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.992443084716797,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          370.14984130859375,
+          504.0042419433594,
+          380.14227294921875
+        ]
+      },
+      {
+        "text": "longer have to decide which moves are valid and which are not; we provide them with a list of all",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          381.00628662109375,
+          503.9973449707031,
+          391.0680236816406
+        ]
+      },
+      {
+        "text": "valid moves and ask them to return the best one. We then apply the move, update the board state and",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.902643203735352,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.7509994506836,
+          392.0359191894531,
+          504.00225830078125,
+          401.9385681152344
+        ]
+      },
+      {
+        "text": "list, and reprompt the model. Despite this assistance, no model solves any puzzles.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          402.8994445800781,
+          437.0348205566406,
+          412.862060546875
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      107.64099884033203,
+      419.2235107421875,
+      504.00323486328125,
+      472.8870849609375
+    ],
+    "content": "Across models and conditions, two dominant deficits emerge: fallible representations of the boardstate, leading to invalid moves, and weak heuristic planning, leading to loops or moves that do notadvance the puzzle toward the goal state. This work moves beyond aggregate performance metricsto offer a granular, qualitative analysis of why LLMs struggle with such tasks and how differentinterventions modulate these failures. Our contributions can be summarized as:",
+    "spans": [
+      {
+        "text": "Across models and conditions, two dominant deficits emerge: fallible representations of the board",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.046924591064453,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.64099884033203,
+          419.2235107421875,
+          504.00323486328125,
+          429.27044677734375
+        ]
+      },
+      {
+        "text": "state, leading to invalid moves, and weak heuristic planning, leading to loops or moves that do not",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.041984558105469,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          430.13629150390625,
+          504.00311279296875,
+          440.1782531738281
+        ]
+      },
+      {
+        "text": "advance the puzzle toward the goal state. This work moves beyond aggregate performance metrics",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.017244338989258,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          441.06500244140625,
+          503.9980163574219,
+          451.082275390625
+        ]
+      },
+      {
+        "text": "to offer a granular, qualitative analysis of why LLMs struggle with such tasks and how different",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          451.9403076171875,
+          503.997314453125,
+          462.0020446777344
+        ]
+      },
+      {
+        "text": "interventions modulate these failures. Our contributions can be summarized as:",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          462.9244689941406,
+          423.5852966308594,
+          472.8870849609375
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      135.39700317382812,
+      485.32647705078125,
+      503.99920654296875,
+      517.1070556640625
+    ],
+    "content": "• A tool-free 8-puzzle evaluation across four LLMs under Zero-Shot, CoT and AoT promptingand tiered feedback, with a common protocol that isolates the effects of prompting versusfeedback.",
+    "spans": [
+      {
+        "text": "•",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          135.39700317382812,
+          485.32647705078125,
+          138.8839111328125,
+          495.2890930175781
+        ]
+      },
+      {
+        "text": " A tool-free 8-puzzle evaluation across four LLMs under Zero-Shot, CoT and AoT prompting",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.862470626831055,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          138.8839111328125,
+          485.40240478515625,
+          503.99920654296875,
+          495.264892578125
+        ]
+      },
+      {
+        "text": "and tiered feedback, with a common protocol that isolates the effects of prompting versus",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.017244338989258,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          143.86599731445312,
+          496.1940002441406,
+          503.99713134765625,
+          506.2112731933594
+        ]
+      },
+      {
+        "text": "feedback.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          143.86599731445312,
+          507.14447021484375,
+          182.31167602539062,
+          517.1070556640625
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      135.39700317382812,
+      523.3392333984375,
+      503.998779296875,
+      544.2860717773438
+    ],
+    "content": "• A fine-grained failure-mode analysis with per-condition breakdowns, revealing how andwhy models terminate instead of only reporting success rates.",
+    "spans": [
+      {
+        "text": "•",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          135.39700317382812,
+          523.4144287109375,
+          138.8839111328125,
+          533.3770141601562
+        ]
+      },
+      {
+        "text": " A fine-grained failure-mode analysis with per-condition breakdowns, revealing how and",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          138.8839111328125,
+          523.3392333984375,
+          503.998779296875,
+          533.4010009765625
+        ]
+      },
+      {
+        "text": "why models terminate instead of only reporting success rates.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          143.5070037841797,
+          534.323486328125,
+          388.8858337402344,
+          544.2860717773438
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      135.39700317382812,
+      550.5934448242188,
+      503.9991149902344,
+      582.3740234375
+    ],
+    "content": "• An external move validator condition that eliminates the need to determine which moves arevalid, isolating planning capabilities and quantifying each model’s ability to work toward agoal when state tracking is no longer the bottleneck.",
+    "spans": [
+      {
+        "text": "•",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          135.39700317382812,
+          550.5934448242188,
+          138.8839111328125,
+          560.5560302734375
+        ]
+      },
+      {
+        "text": " An external move validator condition that eliminates the need to determine which moves are",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.862470626831055,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          138.8839111328125,
+          550.6693725585938,
+          503.9991149902344,
+          560.5318603515625
+        ]
+      },
+      {
+        "text": "valid, isolating planning capabilities and quantifying each model’s ability to work toward a",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.937662124633789,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          143.61599731445312,
+          561.5213623046875,
+          503.9954528808594,
+          571.4590454101562
+        ]
+      },
+      {
+        "text": "goal when state tracking is no longer the bottleneck.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          143.86599731445312,
+          572.4114379882812,
+          351.6658630371094,
+          582.3740234375
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      108.0,
+      600.733154296875,
+      197.09014892578125,
+      612.6883544921875
+    ],
+    "content": "2Related Work",
+    "spans": [
+      {
+        "text": "2",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 11.9552001953125,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          108.0,
+          600.733154296875,
+          113.97760009765625,
+          612.6883544921875
+        ]
+      },
+      {
+        "text": "Related Work",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 11.9552001953125,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          125.93280029296875,
+          600.733154296875,
+          197.09014892578125,
+          612.6883544921875
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      108.0,
+      626.3045043945312,
+      306.7339172363281,
+      636.26708984375
+    ],
+    "content": "2.1Improving LLM Reasoning and Planning",
+    "spans": [
+      {
+        "text": "2.1",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          108.0,
+          626.3045043945312,
+          120.4532470703125,
+          636.26708984375
+        ]
+      },
+      {
+        "text": "Improving LLM Reasoning and Planning",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          130.4158477783203,
+          626.3045043945312,
+          306.7339172363281,
+          636.26708984375
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      107.25299835205078,
+      646.9142456054688,
+      505.6501159667969,
+      722.4070434570312
+    ],
+    "content": "Many studies have investigated how to improve LLM reasoning without fine-tuning models [10,13, 14, 12]. A common approach that consistently shows improvement is prompt engineering,where one uses the system prompt to specify how the model should approach a problem. Chain-of-Thought [10, 15] is a familiar example, and it often asks the model to work step-by-step through atask. Algorithm-of-Thought [12] is another approach that instructs the model to think like a searchalgorithm. Other works seek to decompose the problem [16, 14], allowing the model to exploreseveral reasoning branches and then proceed with the most promising one based on a heuristic such",
+    "spans": [
+      {
+        "text": "Many studies have investigated how to improve LLM reasoning without fine-tuning models [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          646.9142456054688,
+          492.7380065917969,
+          656.9760131835938
+        ]
+      },
+      {
+        "text": "10",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          492.74200439453125,
+          646.9894409179688,
+          502.70458984375,
+          656.9520263671875
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          502.7049865722656,
+          646.9142456054688,
+          505.2454528808594,
+          656.9760131835938
+        ]
+      },
+      {
+        "text": "13",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.25299835205078,
+          657.8994750976562,
+          117.2155990600586,
+          667.862060546875
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.21499633789062,
+          657.8242797851562,
+          119.75546264648438,
+          667.8860473632812
+        ]
+      },
+      {
+        "text": " 14",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          119.75546264648438,
+          657.8994750976562,
+          133.4215850830078,
+          667.862060546875
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          133.4219970703125,
+          657.8242797851562,
+          135.96246337890625,
+          667.8860473632812
+        ]
+      },
+      {
+        "text": " 12",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          135.96246337890625,
+          657.8994750976562,
+          149.62757873535156,
+          667.862060546875
+        ]
+      },
+      {
+        "text": "]. A common approach that consistently shows improvement is prompt engineering,",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          149.6280059814453,
+          657.8242797851562,
+          505.24212646484375,
+          667.8860473632812
+        ]
+      },
+      {
+        "text": "where one uses the system prompt to specify how the model should approach a problem. Chain-of-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.007330894470215,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.64099884033203,
+          668.7745361328125,
+          505.6501159667969,
+          678.7819213867188
+        ]
+      },
+      {
+        "text": "Thought [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.046924591064453,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.69100189208984,
+          679.6535034179688,
+          147.89462280273438,
+          689.700439453125
+        ]
+      },
+      {
+        "text": "10",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          147.8979949951172,
+          679.7174682617188,
+          157.86058044433594,
+          689.6800537109375
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.046924591064453,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          157.86099243164062,
+          679.6535034179688,
+          160.39398193359375,
+          689.700439453125
+        ]
+      },
+      {
+        "text": " 15",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          160.39398193359375,
+          679.7174682617188,
+          172.8525848388672,
+          689.6800537109375
+        ]
+      },
+      {
+        "text": "] is a familiar example, and it often asks the model to work step-by-step through a",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.046924591064453,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          172.8520050048828,
+          679.6535034179688,
+          503.9949035644531,
+          689.700439453125
+        ]
+      },
+      {
+        "text": "task. Algorithm-of-Thought [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.012289047241211,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          690.5888061523438,
+          226.7644805908203,
+          700.60107421875
+        ]
+      },
+      {
+        "text": "12",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          226.76300048828125,
+          690.62646484375,
+          236.7255859375,
+          700.5890502929688
+        ]
+      },
+      {
+        "text": "] is another approach that instructs the model to think like a search",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.012289047241211,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          236.72500610351562,
+          690.5888061523438,
+          503.9979248046875,
+          700.60107421875
+        ]
+      },
+      {
+        "text": "algorithm. Other works seek to decompose the problem [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          701.4602661132812,
+          345.6451416015625,
+          711.5220336914062
+        ]
+      },
+      {
+        "text": "16",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          345.64599609375,
+          701.5354614257812,
+          355.60858154296875,
+          711.498046875
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          355.6090087890625,
+          701.4602661132812,
+          358.14947509765625,
+          711.5220336914062
+        ]
+      },
+      {
+        "text": " 14",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          358.14947509765625,
+          701.5354614257812,
+          371.18658447265625,
+          711.498046875
+        ]
+      },
+      {
+        "text": "], allowing the model to explore",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          371.18701171875,
+          701.4602661132812,
+          504.00244140625,
+          711.5220336914062
+        ]
+      },
+      {
+        "text": "several reasoning branches and then proceed with the most promising one based on a heuristic such",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          712.4444580078125,
+          504.0032653808594,
+          722.4070434570312
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      303.5090026855469,
+      742.3324584960938,
+      308.49029541015625,
+      752.2950439453125
+    ],
+    "content": "2",
+    "spans": [
+      {
+        "text": "2",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          303.5090026855469,
+          742.3324584960938,
+          308.49029541015625,
+          752.2950439453125
+        ]
+      }
+    ]
+  },
+  {
+    "type": "image",
+    "bbox": [
+      108.0,
+      71.99917602539062,
+      504.021240234375,
+      239.1510009765625
+    ],
+    "xref": null,
+    "ext": "png"
+  }
+]

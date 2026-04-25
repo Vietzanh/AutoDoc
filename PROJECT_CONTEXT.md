@@ -1,6 +1,6 @@
 # AutoDoc — Project Context
 
-> **Last updated:** 2026-04-21
+> **Last updated:** 2026-04-25
 > **Status:** Combine + Organize + Split + Reorder + Page Numbers done · Crop backend/frontend remaining · DevOps pending
 
 ---
@@ -203,16 +203,26 @@ frontend/
 - API methods for Crop (`api.ts` update)
 - Routing entries for Crop (`App.tsx` update)
 
-### 🔧 Frontend — Fixed / Improved (2026-04-21)
+### 🔧 Backend — Fixed / Improved (2026-04-25)
+
+- `src/pdf_operations/page_numbers.py` — Refactored text placement to use dynamic, per-page coordinate computation (replacing the old fixed-width `_get_rect` helper). Right-aligned positions (`top-right`, `bottom-right`) now compute `x0 = w - margin - text_length` to expand leftward, preventing any text from bleeding off the right edge. Bottom-aligned positions use `font_size` instead of the hardcoded `25`px offset, so the text baseline is always exactly at the page margin regardless of the configured font size.
+- `src/pdf_operations/page_numbers.py` — Underline line length is now computed from the actual rendered text width via `get_text_length` (was hardcoded to 60px).
+- `src/pdf_operations/page_numbers.py` — Added `_get_true_fontname(base, bold, italic)` helper that maps base font names to their correct PostScript variant names (e.g. `Helvetica-BoldOblique`). PyMuPDF's `insert_text` does not apply bold/italic from flags alone; the correct variant name must be passed as `fontname`.
+- `src/utils/font_utils.py` — Added `get_text_length(text, font_name, font_size)` utility function that queries PyMuPDF for exact rendered text width, with a fallback estimation if native methods are unavailable.
+
+### 🔧 Frontend — Fixed / Improved (2026-04-25)
 
 - `PageNumbersPage.tsx` — fully implemented the Page Numbers feature UI previously listed as complete but missing from the repository, including two-column layout, Single/Facing page layout logic mappings, format inputs, and text stylings.
+- `PageNumbersPage.tsx` — Facing mode now renders thumbnails as "book spreads" (paired spread cards with a center spine). An odd last page renders centered and alone in its spread card, not beside a blank cover.
+- `PageNumbersPage.tsx` — Replaced native `<input type="color">` with a 20-swatch preset color table (clickable squares with selection ring).
+- `PageNumbersPage.tsx` — Numeric inputs (`First number`, `From page`, `To page`, `Font size`) now store `number | ""` in state, allowing full keyboard interaction (backspace, clear, retype) without value jumping.
+- `PositionGrid.tsx` — Cells are now explicitly sized `w-12 h-12` so they remain perfectly square regardless of surrounding layout. The red circle `<span>` is always rendered (toggling `bg-transparent` / `bg-red-500`) to prevent layout shift when selection changes.
 - `Thumbnail.tsx` — successfully integrated the actual `pageNumberPosition` coordinate plotting logic over the cards.
-- `api.ts` — added `PageNumberParams` schema and `createPageNumbersJob` request handler successfully.
-- `PositionGrid.tsx` — fixed TypeScript build error relating to unused `rowIdx` variables.
-- `App.tsx` & `Layout.tsx` — wired navigation linking explicitly for the Page Numbers feature mapping.
-- `CombinePage.tsx` — fixed 3 bugs: (1) upload order now matches UI/output order (was prepending instead of appending), (2) Refresh replaced with Delete All + Delete Selected controls, (3) Clear Selection moved to header; `handleReset` properly clears all state so new sessions start fresh at index #1; state split into `allDocs` (list) and `selectedIds` (Set) so Refresh reloads the list without wiping selections
-- `SplitPage.tsx` — redesigned: removed document picker list; single upload-drop zone now handles both initial upload and "Split Another" reset; split lines turn blue (idle/hover) → red (active/split point set); scissor icon color matches line state
-- `frontend/src/services/api.ts` — replaced axios blob downloads with native `fetch()` for `downloadJobResult` and `downloadDocument`; axios singleton keeps `timeout: 60000` and `withCredentials: false`
+- `api.ts` — added `PageNumberParams` schema and `createPageNumbersJob` request handler.
+- `App.tsx` & `Layout.tsx` — wired navigation linking for the Page Numbers feature.
+- `CombinePage.tsx` — fixed 3 bugs: (1) upload order now matches UI/output order, (2) Refresh replaced with Delete All + Delete Selected controls, (3) Clear Selection moved to header.
+- `SplitPage.tsx` — redesigned: single upload-drop zone, split lines turn blue (idle/hover) → red (active); scissor icon color matches line state.
+- `frontend/src/services/api.ts` — replaced axios blob downloads with native `fetch()` for `downloadJobResult` and `downloadDocument`.
 
 ---
 
@@ -554,7 +564,7 @@ src/
 │   └── processors.py        # process_text_block, process_table_block, etc.
 │
 ├── utils/
-│   ├── font_utils.py        # clean_font_name, round_font_size
+│   ├── font_utils.py        # clean_font_name, round_font_size, get_text_length
 │   ├── heading_utils.py     # get_section_heading_level
 │   └── table_utils.py       # is_same_line, horizontally_separated, etc.
 │

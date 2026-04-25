@@ -1,0 +1,788 @@
+[
+  {
+    "type": "text",
+    "bbox": [
+      117.41000366210938,
+      80.60951232910156,
+      269.94732666015625,
+      90.57211303710938
+    ],
+    "content": "Begin your step-by-step thinking now.",
+    "spans": [
+      {
+        "text": "Begin your step-by-step thinking now.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          80.60951232910156,
+          269.94732666015625,
+          90.57211303710938
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      108.0,
+      113.01952362060547,
+      238.17129516601562,
+      122.98212432861328
+    ],
+    "content": "A.4External Move Validator",
+    "spans": [
+      {
+        "text": "A.4",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          108.0,
+          113.01952362060547,
+          122.66494750976562,
+          122.98212432861328
+        ]
+      },
+      {
+        "text": "External Move Validator",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          132.62754821777344,
+          113.01952362060547,
+          238.17129516601562,
+          122.98212432861328
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      107.69100189208984,
+      133.16139221191406,
+      504.3453369140625,
+      175.77505493164062
+    ],
+    "content": "The external move validator prompt is similar to the Zero-Shot prompt; however, we now provide a listof valid moves from the current state and the previous move to prevent the model from immediatelyrepeating a move. Aside from the variation in state, valid moves, and the previous move, we pass thesame prompt to the model on each call.",
+    "spans": [
+      {
+        "text": "The external move validator prompt is similar to the Zero-Shot prompt; however, we now provide a list",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.862470626831055,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.69100189208984,
+          133.16139221191406,
+          503.9950866699219,
+          143.02386474609375
+        ]
+      },
+      {
+        "text": "of valid moves from the current state and the previous move to prevent the model from immediately",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.947644233703613,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          144.00579833984375,
+          504.3453369140625,
+          153.9534454345703
+        ]
+      },
+      {
+        "text": "repeating a move. Aside from the variation in state, valid moves, and the previous move, we pass the",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.89261531829834,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          154.95652770996094,
+          503.99993896484375,
+          164.84915161132812
+        ]
+      },
+      {
+        "text": "same prompt to the model on each call.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          165.8124542236328,
+          264.6120300292969,
+          175.77505493164062
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      117.41000366210938,
+      184.74554443359375,
+      303.2921447753906,
+      194.70814514160156
+    ],
+    "content": "System Prompt — External Move Validator",
+    "spans": [
+      {
+        "text": "System Prompt — External Move Validator",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 16777215,
+        "bbox": [
+          117.41000366210938,
+          184.74554443359375,
+          303.2921447753906,
+          194.70814514160156
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      116.83200073242188,
+      205.8574981689453,
+      224.86643981933594,
+      215.82009887695312
+    ],
+    "content": "You are an 8-puzzle solver.",
+    "spans": [
+      {
+        "text": "You are an 8-puzzle solver.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          116.83200073242188,
+          205.8574981689453,
+          224.86643981933594,
+          215.82009887695312
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      117.10099792480469,
+      227.60128784179688,
+      494.9390563964844,
+      303.0688781738281
+    ],
+    "content": "The board is a 3 by 3 grid where numbers 1 to 8 are movable tiles and 0 is the emptyspace. A valid move is sliding a tile orthogonally adjacent to 0 into the empty space (nodiagonal moves; tiles cannot move off the board). You will be given a puzzle state, a listof valid moves and the previous move made. Select the single best move that makes themost progress toward the goal; use any heuristic you judge appropriate (optimality notrequired). If multiple moves are equally good, you may choose any of them but do notundo the previous move. The goal is to arrange the board as follows: [[1, 2, 3], [4, 5, 6], [7, 8, 0]].",
+    "spans": [
+      {
+        "text": "The board is a 3 by 3 grid where numbers 1 to 8 are movable tiles and 0 is the empty",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.10099792480469,
+          227.60128784179688,
+          494.9390563964844,
+          237.66302490234375
+        ]
+      },
+      {
+        "text": "space. A valid move is sliding a tile orthogonally adjacent to 0 into the empty space (no",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          238.51028442382812,
+          494.5875244140625,
+          248.572021484375
+        ]
+      },
+      {
+        "text": "diagonal moves; tiles cannot move off the board). You will be given a puzzle state, a list",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          249.41928100585938,
+          494.5874938964844,
+          259.48101806640625
+        ]
+      },
+      {
+        "text": "of valid moves and the previous move made. Select the single best move that makes the",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          260.3282775878906,
+          494.5876159667969,
+          270.3900146484375
+        ]
+      },
+      {
+        "text": "most progress toward the goal; use any heuristic you judge appropriate (optimality not",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          271.2372741699219,
+          494.5875244140625,
+          281.29901123046875
+        ]
+      },
+      {
+        "text": "required). If multiple moves are equally good, you may choose any of them but do not",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          282.14630126953125,
+          494.5874938964844,
+          292.2080383300781
+        ]
+      },
+      {
+        "text": "undo the previous move. The goal is to arrange the board as follows: [[1, 2, 3], [4, 5, 6], [7, 8, 0]].",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.862470626831055,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          293.2064208984375,
+          494.5876770019531,
+          303.0688781738281
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      117.10099792480469,
+      314.9070129394531,
+      494.5864562988281,
+      335.820068359375
+    ],
+    "content": "The puzzle is guaranteed solvable. Your response must be only the single integer representingyour chosen move. Do not include any other words, explanations, or formatting.",
+    "spans": [
+      {
+        "text": "The puzzle is guaranteed solvable. Your response must be only the single integer representing",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.017244338989258,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.10099792480469,
+          314.9070129394531,
+          494.5864562988281,
+          324.9242858886719
+        ]
+      },
+      {
+        "text": "your chosen move. Do not include any other words, explanations, or formatting.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.16100311279297,
+          325.8574523925781,
+          436.6514587402344,
+          335.820068359375
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      117.41000366210938,
+      347.67645263671875,
+      155.59666442871094,
+      357.6390686035156
+    ],
+    "content": "Example:",
+    "spans": [
+      {
+        "text": "Example:",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          347.67645263671875,
+          155.59666442871094,
+          357.6390686035156
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      117.0510025024414,
+      369.49444580078125,
+      261.0506896972656,
+      412.1840515136719
+    ],
+    "content": "Input:Puzzle: [[1, 2, 3], [4, 5, 6], [0, 7, 8]]Previous move: 4Valid moves: [4, 7]",
+    "spans": [
+      {
+        "text": "Input:",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          369.49444580078125,
+          141.2106475830078,
+          379.4570617675781
+        ]
+      },
+      {
+        "text": "Puzzle: [[1, 2, 3], [4, 5, 6], [0, 7, 8]]",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          380.4034423828125,
+          261.0506896972656,
+          390.3660583496094
+        ]
+      },
+      {
+        "text": "Previous move: 4",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          391.31243896484375,
+          187.19798278808594,
+          401.2750549316406
+        ]
+      },
+      {
+        "text": "Valid moves: [4, 7]",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.0510025024414,
+          402.221435546875,
+          193.72314453125,
+          412.1840515136719
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      117.16100311279297,
+      424.0394287109375,
+      147.855712890625,
+      444.9110412597656
+    ],
+    "content": "Output:7",
+    "spans": [
+      {
+        "text": "Output:",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          424.0394287109375,
+          147.855712890625,
+          434.0020446777344
+        ]
+      },
+      {
+        "text": "7",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.16100311279297,
+          434.94842529296875,
+          122.14230346679688,
+          444.9110412597656
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      108.0,
+      467.7071533203125,
+      176.7782745361328,
+      479.662353515625
+    ],
+    "content": "BFeedback",
+    "spans": [
+      {
+        "text": "B",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 11.9552001953125,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          108.0,
+          467.7071533203125,
+          115.97412109375,
+          479.662353515625
+        ]
+      },
+      {
+        "text": "Feedback",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 11.9552001953125,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          127.9293212890625,
+          467.7071533203125,
+          176.7782745361328,
+          479.662353515625
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      108.0,
+      492.0985107421875,
+      207.93482971191406,
+      502.06109619140625
+    ],
+    "content": "B.1Specific Feedback",
+    "spans": [
+      {
+        "text": "B.1",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          108.0,
+          492.0985107421875,
+          122.11700439453125,
+          502.06109619140625
+        ]
+      },
+      {
+        "text": "Specific Feedback",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          132.07960510253906,
+          492.0985107421875,
+          207.93482971191406,
+          502.06109619140625
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      107.53199768066406,
+      512.2403564453125,
+      504.3435974121094,
+      543.9450073242188
+    ],
+    "content": "With specific feedback we tell the model exactly why it failed. We provide specific limits on time andtokens. We also tell it the exact move it made that caused it to fail in the case of invalid moves, earlystops and loops.",
+    "spans": [
+      {
+        "text": "With specific feedback we tell the model exactly why it failed. We provide specific limits on time and",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.862470626831055,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.53199768066406,
+          512.2403564453125,
+          504.0022277832031,
+          522.1028442382812
+        ]
+      },
+      {
+        "text": "tokens. We also tell it the exact move it made that caused it to fail in the case of invalid moves, early",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.9126615524292,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          523.1113891601562,
+          504.3435974121094,
+          533.0240478515625
+        ]
+      },
+      {
+        "text": "stops and loops.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.0,
+          533.982421875,
+          171.9299774169922,
+          543.9450073242188
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      117.41000366210938,
+      552.91552734375,
+      212.71221923828125,
+      562.8781127929688
+    ],
+    "content": "Exact Feedback Given",
+    "spans": [
+      {
+        "text": "Exact Feedback Given",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 16777215,
+        "bbox": [
+          117.41000366210938,
+          552.91552734375,
+          212.71221923828125,
+          562.8781127929688
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      117.41000366210938,
+      572.0540771484375,
+      494.9388732910156,
+      592.9970092773438
+    ],
+    "content": "PARSE_ERROR = \"Previous attempt failed due to invalid formatting of the final answer. Tryagain.\"",
+    "spans": [
+      {
+        "text": "PARSE_ERROR = \"Previous attempt failed due to invalid formatting of the final answer. Try",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.056798934936523,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          572.0540771484375,
+          494.9388732910156,
+          582.11083984375
+        ]
+      },
+      {
+        "text": "again.\"",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          583.034423828125,
+          145.49456787109375,
+          592.9970092773438
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      117.41000366210938,
+      604.8524169921875,
+      388.5520935058594,
+      614.8150024414062
+    ],
+    "content": "NO_REPLY = \"Previous attempt produced no response. Try again.\"",
+    "spans": [
+      {
+        "text": "NO_REPLY = \"Previous attempt produced no response. Try again.\"",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          604.8524169921875,
+          388.5520935058594,
+          614.8150024414062
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      117.10100555419922,
+      626.67041015625,
+      422.5642395019531,
+      636.6329956054688
+    ],
+    "content": "TIMEOUT = \"Previous attempt exceeded the 1800-second limit. Try again.\"",
+    "spans": [
+      {
+        "text": "TIMEOUT = \"Previous attempt exceeded the 1800-second limit. Try again.\"",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.10100555419922,
+          626.67041015625,
+          422.5642395019531,
+          636.6329956054688
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      117.10100555419922,
+      648.4894409179688,
+      445.80694580078125,
+      658.4520263671875
+    ],
+    "content": "TOKEN_LIMIT = \"Previous attempt exceeded the 64,000-token limit. Try again.\"",
+    "spans": [
+      {
+        "text": "TOKEN_LIMIT = \"Previous attempt exceeded the 64,000-token limit. Try again.\"",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.10100555419922,
+          648.4894409179688,
+          445.80694580078125,
+          658.4520263671875
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      117.41000366210938,
+      670.2360229492188,
+      494.93316650390625,
+      702.0880737304688
+    ],
+    "content": "GRACEFUL_FAILURE = \"Previous attempt ended without a move sequence. This puzzle issolvable within the established constraints (1800-second limit and 64,000-token limit). Tryagain.\"",
+    "spans": [
+      {
+        "text": "GRACEFUL_FAILURE = \"Previous attempt ended without a move sequence. This puzzle is",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.056798934936523,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          670.2360229492188,
+          494.5938415527344,
+          680.2927856445312
+        ]
+      },
+      {
+        "text": "solvable within the established constraints (1800-second limit and 64,000-token limit). Try",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 10.061732292175293,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          681.1412353515625,
+          494.93316650390625,
+          691.2030029296875
+        ]
+      },
+      {
+        "text": "again.\"",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.41000366210938,
+          692.12548828125,
+          145.49456787109375,
+          702.0880737304688
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      301.0190124511719,
+      742.3324584960938,
+      310.9815979003906,
+      752.2950439453125
+    ],
+    "content": "19",
+    "spans": [
+      {
+        "text": "19",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          301.0190124511719,
+          742.3324584960938,
+          310.9815979003906,
+          752.2950439453125
+        ]
+      }
+    ]
+  }
+]

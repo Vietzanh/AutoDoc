@@ -20,6 +20,11 @@ interface PageThumbnail {
 
 const FONTS = ["Helvetica", "Times-Roman", "Courier"];
 
+const COLORS = [
+  "#000000", "#434343", "#666666", "#999999", "#b7b7b7", "#cccccc", "#d9d9d9", "#efefef", "#f3f3f3", "#ffffff",
+  "#980000", "#ff0000", "#ff9900", "#ffff00", "#00ff00", "#00ffff", "#4a86e8", "#0000ff", "#9900ff", "#ff00ff"
+];
+
 export default function PageNumbersPage() {
   const navigate = useNavigate();
 
@@ -32,14 +37,14 @@ export default function PageNumbersPage() {
   // ── Options State ─────────────────────────────────────────────────────────
   const [mode, setMode] = useState<PageNumberMode>("single");
   const [position, setPosition] = useState<PageNumberPosition>("bottom-right");
-  const [startNumber, setStartNumber] = useState<number>(1);
-  const [fromPage, setFromPage] = useState<number>(1);
-  const [toPage, setToPage] = useState<number>(1); // Updates when thumbnails load
+  const [startNumber, setStartNumber] = useState<number | "">(1);
+  const [fromPage, setFromPage] = useState<number | "">(1);
+  const [toPage, setToPage] = useState<number | "">(1); // Updates when thumbnails load
   const [format, setFormat] = useState<PageNumberFormat>("number-only");
   const [customText, setCustomText] = useState<string>("Page {n}");
   
   const [fontName, setFontName] = useState<string>("Helvetica");
-  const [fontSize, setFontSize] = useState<number>(10);
+  const [fontSize, setFontSize] = useState<number | "">(10);
   const [bold, setBold] = useState<boolean>(false);
   const [italic, setItalic] = useState<boolean>(false);
   const [underline, setUnderline] = useState<boolean>(false);
@@ -106,14 +111,14 @@ export default function PageNumbersPage() {
         document_id: selectedDoc.id,
         mode,
         position,
-        start_number: startNumber,
-        from_page: fromPage,
-        to_page: toPage,
+        start_number: startNumber === "" ? 1 : startNumber,
+        from_page: fromPage === "" ? 1 : fromPage,
+        to_page: toPage === "" ? thumbnails.length : toPage,
         format,
         custom_text: customText,
         text_style: {
           font_name: fontName,
-          font_size: fontSize,
+          font_size: fontSize === "" ? 10 : fontSize,
           bold,
           italic,
           underline,
@@ -250,20 +255,74 @@ export default function PageNumbersPage() {
                 </div>
               </CardHeader>
               <CardBody>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-h-[600px] overflow-y-auto pr-2">
-                  {thumbnails.map((thumb, idx) => {
-                    const pageNum = thumb.page_number;
-                    const inRange = pageNum >= fromPage && pageNum <= toPage;
-                    return (
-                      <Thumbnail
-                        key={pageNum}
-                        thumbnail={thumb.image_base64}
-                        pageNumber={pageNum}
-                        pageNumberPosition={inRange ? getPositionForPage(idx) : null}
-                      />
-                    );
-                  })}
-                </div>
+                {mode === "single" ? (
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-h-[600px] overflow-y-auto pr-2">
+                    {thumbnails.map((thumb, idx) => {
+                      const pageNum = thumb.page_number;
+                      const inRange = pageNum >= (fromPage || 1) && pageNum <= (toPage || 1);
+                      return (
+                        <Thumbnail
+                          key={pageNum}
+                          thumbnail={thumb.image_base64}
+                          pageNumber={pageNum}
+                          pageNumberPosition={inRange ? getPositionForPage(idx) : null}
+                        />
+                      );
+                    })}
+                  </div>
+                ) : (
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-h-[600px] overflow-y-auto pr-2 pb-4">
+                    {(() => {
+                      if (thumbnails.length === 0) return null;
+                      const spreads: (PageThumbnail | null)[][] = [];
+                      for (let i = 0; i < thumbnails.length; i += 2) {
+                        spreads.push([thumbnails[i], thumbnails[i + 1] || null]);
+                      }
+                      
+                      return spreads.map((spread, sIdx) => {
+                        const leftThumb = spread[0];
+                        const rightThumb = spread[1];
+                        
+                        const renderThumb = (thumb: PageThumbnail | null) => {
+                          if (!thumb) return null;
+                          
+                          const pageNum = thumb.page_number;
+                          const idx = pageNum - 1;
+                          const inRange = pageNum >= (fromPage || 1) && pageNum <= (toPage || 1);
+                          return (
+                            <Thumbnail
+                              thumbnail={thumb.image_base64}
+                              pageNumber={pageNum}
+                              pageNumberPosition={inRange ? getPositionForPage(idx) : null}
+                            />
+                          );
+                        };
+
+                        if (!rightThumb) {
+                          return (
+                            <div key={sIdx} className="flex border-2 border-gray-300 rounded-lg bg-white shadow-sm p-3 h-fit items-center justify-center">
+                              <div className="w-1/2 min-w-0">
+                                {renderThumb(leftThumb)}
+                              </div>
+                            </div>
+                          );
+                        }
+
+                        return (
+                          <div key={sIdx} className="flex border-2 border-gray-300 rounded-lg bg-white shadow-sm p-3 gap-2 h-fit items-center">
+                            <div className="flex-1 min-w-0">
+                              {renderThumb(leftThumb)}
+                            </div>
+                            <div className="w-px bg-gray-200 self-stretch" />
+                            <div className="flex-1 min-w-0">
+                              {renderThumb(rightThumb)}
+                            </div>
+                          </div>
+                        );
+                      });
+                    })()}
+                  </div>
+                )}
               </CardBody>
             </Card>
           </div>
@@ -289,19 +348,19 @@ export default function PageNumbersPage() {
               </div>
 
               <div className="space-y-3">
-                <span className="text-sm font-medium text-gray-700">Position</span>
+                <div className="text-sm font-medium text-gray-700">Position</div>
                 <PositionGrid value={position} onChange={setPosition} />
               </div>
 
               <div className="space-y-3">
-                <Input type="number" label="First number" min={1} value={startNumber} onChange={e => setStartNumber(parseInt(e.target.value) || 1)} />
+                <Input type="number" label="First number" min={1} value={startNumber} onChange={e => setStartNumber(e.target.value === "" ? "" : parseInt(e.target.value))} />
               </div>
 
               <div className="space-y-3">
                 <span className="text-sm font-medium text-gray-700">Pages</span>
                 <div className="flex gap-2">
-                  <Input type="number" label="From page" min={1} max={thumbnails.length} value={fromPage} onChange={e => setFromPage(parseInt(e.target.value) || 1)} />
-                  <Input type="number" label="To page" min={1} max={thumbnails.length} value={toPage} onChange={e => setToPage(parseInt(e.target.value) || 1)} />
+                  <Input type="number" label="From page" min={1} max={thumbnails.length} value={fromPage} onChange={e => setFromPage(e.target.value === "" ? "" : parseInt(e.target.value))} />
+                  <Input type="number" label="To page" min={1} max={thumbnails.length} value={toPage} onChange={e => setToPage(e.target.value === "" ? "" : parseInt(e.target.value))} />
                 </div>
               </div>
 
@@ -345,20 +404,31 @@ export default function PageNumbersPage() {
                   </div>
                   <div>
                     <label className="block text-xs text-gray-600 mb-1">Font size</label>
-                    <input type="number" min={4} max={72} className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500" value={fontSize} onChange={e => setFontSize(parseInt(e.target.value) || 10)} />
+                    <input type="number" min={4} max={72} className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500" value={fontSize} onChange={e => setFontSize(e.target.value === "" ? "" : parseInt(e.target.value))} />
                   </div>
                 </div>
 
-                <div className="flex gap-4 items-center">
-                  <div className="flex rounded border border-gray-300 overflow-hidden">
+                <div className="flex flex-col gap-3">
+                  <div className="flex rounded border border-gray-300 overflow-hidden w-fit">
                     <button type="button" onClick={() => setBold(!bold)} className={`px-3 py-1.5 font-serif font-bold text-sm ${bold ? "bg-blue-100 text-blue-700" : "bg-white text-gray-600"}`}>B</button>
                     <button type="button" onClick={() => setItalic(!italic)} className={`px-3 py-1.5 font-serif italic text-sm border-l border-r border-gray-300 ${italic ? "bg-blue-100 text-blue-700" : "bg-white text-gray-600"}`}>I</button>
                     <button type="button" onClick={() => setUnderline(!underline)} className={`px-3 py-1.5 font-serif underline text-sm ${underline ? "bg-blue-100 text-blue-700" : "bg-white text-gray-600"}`}>U</button>
                   </div>
 
-                  <div className="flex items-center gap-2">
+                  <div className="space-y-1.5">
                     <span className="text-xs text-gray-600">Color:</span>
-                    <input type="color" className="w-8 h-8 rounded p-0 border-0 cursor-pointer" value={color} onChange={e => setColor(e.target.value)} />
+                    <div className="grid grid-cols-10 gap-1 w-fit">
+                      {COLORS.map(c => (
+                        <button
+                          key={c}
+                          type="button"
+                          onClick={() => setColor(c)}
+                          className={`w-6 h-6 rounded shadow-sm border ${color === c ? "ring-2 ring-blue-500 ring-offset-1 border-transparent" : "border-gray-200"}`}
+                          style={{ backgroundColor: c }}
+                          aria-label={`Select color ${c}`}
+                        />
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>

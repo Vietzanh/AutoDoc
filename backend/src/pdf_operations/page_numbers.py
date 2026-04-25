@@ -10,6 +10,8 @@ from typing import Literal, TypedDict, Union
 
 import pymupdf
 
+from src.utils.font_utils import get_text_length
+
 
 class PageNumberConfig(TypedDict, total=False):
     mode: Literal["single", "facing"]
@@ -109,6 +111,28 @@ def _get_font_flags(bold: bool, italic: bool, underline: bool) -> int:
     return flags
 
 
+def _get_true_fontname(base_font: str, bold: bool, italic: bool) -> str:
+    """
+    Map base font names to their proper PyMuPDF PostScript variants.
+    """
+    base = base_font.split("-")[0].lower()
+    if base == "times":
+        if bold and italic: return "Times-BoldItalic"
+        if bold: return "Times-Bold"
+        if italic: return "Times-Italic"
+        return "Times-Roman"
+    elif base == "courier":
+        if bold and italic: return "Courier-BoldOblique"
+        if bold: return "Courier-Bold"
+        if italic: return "Courier-Oblique"
+        return "Courier"
+    else:  # Helvetica
+        if bold and italic: return "Helvetica-BoldOblique"
+        if bold: return "Helvetica-Bold"
+        if italic: return "Helvetica-Oblique"
+        return "Helvetica"
+
+
 # ── main function ──────────────────────────────────────────────────────────────
 
 def add_page_numbers(
@@ -172,6 +196,8 @@ def add_page_numbers(
     b = int(hex_color[4:6], 16) / 255
     color_tuple = (r, g, b)
 
+    # Resolve actual font name based on style flags
+    font_name = _get_true_fontname(font_name, bold, italic)
     font_flags = _get_font_flags(bold, italic, False)
 
     for display_idx in range(len(doc)):
@@ -200,21 +226,33 @@ def add_page_numbers(
         display_number = start_number + (page_num - from_page)
         label = _format_text(display_number, total_pages, fmt, custom_text)
 
-        # Compute text rectangle
-        rect = _get_rect(page.rect, effective_pos, margin=20)
+        # Compute text rectangle manually based on exact text length
+        point_size = font_size
+        text_length = get_text_length(label, font_name, point_size)
+        
+        margin = 20
+        w = page.rect.width
+        h = page.rect.height
+
+        if effective_pos == "top-left":
+            x0, y0 = margin, margin
+        elif effective_pos == "top-right":
+            x0, y0 = w - margin - text_length, margin
+        elif effective_pos == "bottom-left":
+            x0, y0 = margin, h - font_size - margin
+        elif effective_pos == "bottom-right":
+            x0, y0 = w - margin - text_length, h - font_size - margin
+        else:
+            x0, y0 = margin, margin
+
+        # pymupdf text insertion point is the bottom-left of the text
+        # For top corners: y0 is already near the top edge
+        # For bottom corners: y1 is the bottom edge; y position = y1 - font_size
+        text_x = x0
+        text_y = y0 + font_size  # pymupdf y goes downward; y0 is the text baseline
 
         # Insert text annotation
-        # We use insert_text with font options; pymupdf inserts at baseline
-        # For better corner placement we use a small text point at top-left of rect
         try:
-            point_size = font_size
-            x0, y0, x1, y1 = rect
-            # pymupdf text insertion point is the bottom-left of the text
-            # For top corners: y0 is already near the top edge
-            # For bottom corners: y1 is the bottom edge; y position = y1 - font_size
-            text_x = x0
-            text_y = y0 + font_size  # pymupdf y goes downward; y0 is the text baseline
-
             page.insert_text(
                 (text_x, text_y),
                 label,
@@ -240,7 +278,7 @@ def add_page_numbers(
                 # Approximate underline position: a few pixels below the baseline
                 line_y = text_y + 2
                 annot = page.add_freetext_annot(
-                    (x0, text_y - 2, x0 + 60, text_y + 3),
+                    (x0, text_y - 2, x0 + text_length, text_y + 3),
                     "",
                     fontname=font_name,
                     fontsize=point_size,
@@ -248,7 +286,7 @@ def add_page_numbers(
                     text_color=color_tuple,
                 )
                 # Actually draw a line below the text
-                line_rect = pymupdf.Rect(x0, line_y, x0 + 60, line_y + 0.5)
+                line_rect = pymupdf.Rect(x0, line_y, x0 + text_length, line_y + 0.5)
                 page.draw_line(
                     (line_rect.x0, line_rect.y0),
                     (line_rect.x1, line_rect.y1),
