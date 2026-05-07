@@ -62,15 +62,16 @@ def get_document(
 @router.get("/{doc_id}/thumbnails", response_model=PageThumbnailsResponse)
 def get_document_thumbnails(
     doc_id: int,
+    width: int = Query(200, ge=50, le=800, description="Thumbnail width in pixels"),
     session: Session = Depends(get_session),
     current_user: User = Depends(get_current_user),
 ):
-    """Get page thumbnails for a document (for the Split tool UI)."""
+    """Get page thumbnails for a document (for Split / Crop tool UIs)."""
     service = DocumentService(session)
     doc = service.get(doc_id)
     if not doc or doc.user_id != current_user.id:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Document not found")
-    thumbs = service.get_thumbnails(doc)
+    thumbs = service.get_thumbnails(doc, thumb_width=width)
     return PageThumbnailsResponse(thumbnails=thumbs)
 
 

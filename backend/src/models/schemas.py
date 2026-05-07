@@ -67,6 +67,8 @@ class DocumentListResponse(BaseModel):
 class PageThumbnail(BaseModel):
     page_number: int
     image_base64: str  # data URL: "data:image/png;base64,..."
+    width_pts: float = 0.0   # actual page width in points
+    height_pts: float = 0.0  # actual page height in points
 
 
 class PageThumbnailsResponse(BaseModel):
@@ -244,6 +246,27 @@ class PageNumberRequest(BaseModel):
     text_style: TextStyle = Field(default_factory=TextStyle)
     output_filename: str = Field(
         default="numbered.pdf",
+        max_length=255,
+        description="Name of the output PDF file"
+    )
+
+
+# ── Crop ─────────────────────────────────────────────────────────────────────
+
+class CropMargins(BaseModel):
+    top: float = Field(default=0.0, ge=0.0, description="Top margin to trim in points")
+    bottom: float = Field(default=0.0, ge=0.0, description="Bottom margin to trim in points")
+    left: float = Field(default=0.0, ge=0.0, description="Left margin to trim in points")
+    right: float = Field(default=0.0, ge=0.0, description="Right margin to trim in points")
+
+
+class CropRequest(BaseModel):
+    document_id: int = Field(description="ID of the source PDF document")
+    margins: CropMargins = Field(default_factory=CropMargins, description="Trim margins in points")
+    from_page: int = Field(default=1, ge=1, description="1-based first page to crop")
+    to_page: int = Field(default=0, ge=0, description="1-based last page to crop (0 = last page)")
+    output_filename: str = Field(
+        default="cropped.pdf",
         max_length=255,
         description="Name of the output PDF file"
     )

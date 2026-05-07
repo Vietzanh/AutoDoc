@@ -66,6 +66,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                   <NavLink to="/organize">Organize</NavLink>
                   <NavLink to="/reorder">Reorder</NavLink>
                   <NavLink to="/page-numbers">Page Numbers</NavLink>
+                  <NavLink to="/crop">Crop</NavLink>
                 </nav>
               )}
             </div>
@@ -106,6 +107,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           <NavLink to="/organize">Organize</NavLink>
           <NavLink to="/reorder">Reorder</NavLink>
           <NavLink to="/page-numbers">Page Numbers</NavLink>
+          <NavLink to="/crop">Crop</NavLink>
         </nav>
       )}
 

@@ -199,6 +199,41 @@ class JobService:
         )
         return job
 
+    def create_crop_job(
+        self,
+        user_id: int,
+        document_id: int,
+        margins: dict,
+        from_page: int,
+        to_page: int,
+        output_filename: str,
+    ) -> Job:
+        config = dict(
+            margins=margins,
+            from_page=from_page,
+            to_page=to_page,
+        )
+        job = self.repo.create(
+            user_id=user_id,
+            document_id=document_id,
+            tool=JobTool.CROP.value,
+            status=JobStatus.PENDING.value,
+            input_document_ids=json.dumps(config),
+            output_filename=output_filename,
+            progress=0,
+        )
+        self._start_background(
+            job,
+            target=self._run_crop,
+            kwargs=dict(
+                job_id=job.id,
+                document_id=document_id,
+                config=config,
+                output_filename=output_filename,
+            ),
+        )
+        return job
+
     def create_page_numbers_job(
         self,
         user_id: int,
@@ -726,6 +761,62 @@ class JobService:
             reorder_pages(str(pdf_path), str(output_path), new_order)
         except Exception as exc:
             self._fail_job(job_id, _session, f"Reorder failed: {exc}")
+            return
+
+        self._update(
+            job_repo,
+            job_id,
+            JobStatus.DONE.value,
+            progress=100,
+            output_path=str(output_path),
+            output_filename=output_filename,
+        )
+
+    # ── Crop runner ────────────────────────────────────────────────────────────
+
+    def _run_crop(
+        self,
+        job_id: int,
+        document_id: int,
+        config: dict,
+        output_filename: str,
+        _session,
+    ) -> None:
+        from src.models.database_models import JobStatus
+        from src.pdf_operations.crop import crop_by_margins
+
+        job_repo = JobRepository(_session)
+        doc_repo = DocumentRepository(_session)
+
+        self._update(job_repo, job_id, JobStatus.PROCESSING.value, progress=10)
+
+        doc = doc_repo.get(document_id)
+        if not doc:
+            self._fail_job(job_id, _session, f"Document {document_id} not found")
+            return
+
+        pdf_path = Path(doc.file_path)
+        if not pdf_path.exists():
+            self._fail_job(job_id, _session, "PDF file not found on disk")
+            return
+
+        self._update(job_repo, job_id, JobStatus.PROCESSING.value, progress=30)
+
+        work_dir = self.settings.OUTPUT_DIR / str(job_id)
+        work_dir.mkdir(parents=True, exist_ok=True)
+
+        output_path = work_dir / output_filename
+
+        try:
+            crop_by_margins(
+                doc_path=str(pdf_path),
+                output_path=str(output_path),
+                margins=config.get("margins", {}),
+                from_page=config.get("from_page", 1),
+                to_page=config.get("to_page", 0),
+            )
+        except Exception as exc:
+            self._fail_job(job_id, _session, f"Crop failed: {exc}")
             return
 
         self._update(

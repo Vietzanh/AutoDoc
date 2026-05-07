@@ -266,6 +266,34 @@ def create_page_numbers_job(
     return _job_to_read(job)
 
 
+# ── Crop ───────────────────────────────────────────────────────────────────────
+
+from src.models.schemas import CropRequest
+
+@router.post("/crop", response_model=JobRead, status_code=status.HTTP_202_ACCEPTED)
+def create_crop_job(
+    request: CropRequest,
+    session: Session = Depends(get_session),
+    current_user: User = Depends(get_current_user),
+):
+    """Crop pages in a PDF by trimming margins."""
+    doc_service = DocumentService(session)
+    doc = doc_service.get(request.document_id)
+    if not doc or doc.user_id != current_user.id:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Document not found")
+
+    service = JobService(session)
+    job = service.create_crop_job(
+        user_id=current_user.id,
+        document_id=request.document_id,
+        margins=request.margins.model_dump(),
+        from_page=request.from_page,
+        to_page=request.to_page,
+        output_filename=request.output_filename,
+    )
+    return _job_to_read(job)
+
+
 # ── Poll / list / delete ─────────────────────────────────────────────────────
 
 @router.get("/{job_id}", response_model=JobRead)

@@ -83,6 +83,19 @@ export interface PageNumberParams {
   output_filename: string;
 }
 
+export interface CropParams {
+  document_id: number;
+  margins: {
+    top: number;
+    bottom: number;
+    left: number;
+    right: number;
+  };
+  from_page: number;
+  to_page: number;
+  output_filename: string;
+}
+
 class ApiClient {
   private client: AxiosInstance;
 
@@ -174,9 +187,9 @@ class ApiClient {
     return res.blob();
   }
 
-  async getDocumentThumbnails(docId: number): Promise<{ page_number: number; image_base64: string }[]> {
-    const res = await this.client.get<{ thumbnails: { page_number: number; image_base64: string }[] }>(
-      `/documents/${docId}/thumbnails`
+  async getDocumentThumbnails(docId: number, width: number = 200): Promise<{ page_number: number; image_base64: string; width_pts: number; height_pts: number }[]> {
+    const res = await this.client.get<{ thumbnails: { page_number: number; image_base64: string; width_pts: number; height_pts: number }[] }>(
+      `/documents/${docId}/thumbnails`, { params: { width } }
     );
     return res.data.thumbnails;
   }
@@ -270,6 +283,11 @@ class ApiClient {
 
   async createPageNumbersJob(params: PageNumberParams): Promise<Job> {
     const res = await this.client.post<Job>("/jobs/page-numbers", params);
+    return res.data;
+  }
+
+  async createCropJob(params: CropParams): Promise<Job> {
+    const res = await this.client.post<Job>("/jobs/crop", params);
     return res.data;
   }
 

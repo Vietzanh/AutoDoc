@@ -11,6 +11,7 @@ import SplitPage from "./pages/SplitPage";
 import OrganizePage from "./pages/OrganizePage";
 import ReorderPage from "./pages/ReorderPage";
 import PageNumbersPage from "./pages/PageNumbersPage";
+import CropPage from "./pages/CropPage";
 
 function ProtectedRoute({ children }: { children: React.ReactNode }) {
   const { user, loading } = useAuth();
@@ -120,6 +121,14 @@ export default function App() {
         element={
           <ProtectedRoute>
             <PageNumbersPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/crop"
+        element={
+          <ProtectedRoute>
+            <CropPage />
           </ProtectedRoute>
         }
       />

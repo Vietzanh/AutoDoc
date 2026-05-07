@@ -97,6 +97,8 @@ class DocumentService:
                 thumbnails.append({
                     "page_number": page_num,
                     "image_base64": f"data:image/png;base64,{b64}",
+                    "width_pts": round(page.rect.width, 2),
+                    "height_pts": round(page.rect.height, 2),
                 })
         return thumbnails
 
