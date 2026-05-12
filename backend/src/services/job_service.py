@@ -38,7 +38,7 @@ class JobService:
         document_id: int,
         output_filename: str = "",
         max_image_width: float = 6.0,
-        render_dpi: int = 300,
+        render_dpi: int = 100,
     ) -> Job:
         job = self.repo.create(
             user_id=user_id,
@@ -364,8 +364,6 @@ class JobService:
             self._fail_job(job_id, _session, f"Layout extraction failed: {exc}")
             return
 
-        self._update(job_repo, job_id, JobStatus.PROCESSING.value, progress=60)
-
         # Run pipeline
         # Determine output filename — use given name, or derive from original PDF filename
         if output_filename:
@@ -386,10 +384,15 @@ class JobService:
                 max_image_width=max_image_width,
                 dpi=render_dpi,
             )
+            
+            def _progress_cb(pct: int):
+                self._update(job_repo, job_id, JobStatus.PROCESSING.value, progress=pct)
+                
             pipeline.process_pdf(
                 pdf_path=str(pdf_path),
                 output_path=str(output_path),
                 json_base_path=str(layout_dir),
+                progress_callback=_progress_cb
             )
         except Exception as exc:
             self._fail_job(job_id, _session, f"Pipeline failed: {exc}")

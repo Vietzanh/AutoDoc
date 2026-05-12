@@ -2,63 +2,635 @@
   {
     "type": "text",
     "bbox": [
-      107.53199768066406,
-      458.7182922363281,
-      505.7442626953125,
-      501.4830627441406
+      103.91400146484375,
+      73.18811798095703,
+      249.3372039794922,
+      334.68939208984375
     ],
-    "content": "Figure 2: Example of our feedback pipeline. As in Fig. 1, the model first receives the Zero-Shotsystem prompt and the puzzle, but its initial attempt fails due to an invalid move (highlighted in red).We go back to the preceding valid state and re-prompt the model with suggestive feedback (shown inbold), after which the model successfully solves the puzzle.",
+    "content": "Our MethodDocLayout-YOLODocument TitleTitleParagraph TitleTitleTextPlain TextPage NumberAbandonAbstractPlain TextContentPlain TextReferencePlain TextFootnoteAbandonHeaderAbandonFooterAbandonAlgorithmPlain TextFormulaIsolate FormulaFormula NumberFormula NumberImageFigureImage CaptionFigure CaptionTableTableTable CaptionTable CaptionChartFigureChart CaptionFigure CaptionSealFigureHeader ImageAbandonFooter ImageAbandonAside TextAbandon",
     "spans": [
       {
-        "text": "Figure 2: Example of our feedback pipeline. As in Fig. 1, the model first receives the Zero-Shot",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
-        "font_flags": 4,
+        "text": "Our Method",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 8.966400146484375,
+        "font_flags": 20,
         "color": 0,
         "bbox": [
-          108.0,
-          458.7182922363281,
-          503.9972839355469,
-          468.780029296875
+          110.81800079345703,
+          73.18811798095703,
+          158.88687133789062,
+          82.1545181274414
         ]
       },
       {
-        "text": "system prompt and the puzzle, but its initial attempt fails due to an invalid move (highlighted in red).",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.9126615524292,
-        "font_flags": 4,
+        "text": "DocLayout-YOLO",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 8.966400146484375,
+        "font_flags": 20,
         "color": 0,
         "bbox": [
-          108.0,
-          469.7403259277344,
-          505.7442626953125,
-          479.65301513671875
+          178.1439971923828,
+          73.18811798095703,
+          249.3372039794922,
+          82.1545181274414
         ]
       },
       {
-        "text": "We go back to the preceding valid state and re-prompt the model with suggestive feedback (shown in",
+        "text": "Document Title",
         "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.882577896118164,
+        "font_size": 8.966400146484375,
         "font_flags": 4,
         "color": 0,
         "bbox": [
-          107.53199768066406,
-          480.6721496582031,
-          504.0030212402344,
-          490.5547180175781
+          106.74299621582031,
+          84.62698364257812,
+          162.9623260498047,
+          93.5933837890625
         ]
       },
       {
-        "text": "bold), after which the model successfully solves the puzzle.",
+        "text": "Title",
         "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.962599754333496,
+        "font_size": 8.966400146484375,
         "font_flags": 4,
         "color": 0,
         "bbox": [
-          108.0,
-          491.52044677734375,
-          345.2493591308594,
-          501.4830627441406
+          205.42799377441406,
+          84.62698364257812,
+          222.05169677734375,
+          93.5933837890625
+        ]
+      },
+      {
+        "text": "Paragraph Title",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.31199645996094,
+          95.58596801757812,
+          162.39259338378906,
+          104.5523681640625
+        ]
+      },
+      {
+        "text": "Title",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          205.42799377441406,
+          95.58596801757812,
+          222.05169677734375,
+          104.5523681640625
+        ]
+      },
+      {
+        "text": "Text",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          127.01499938964844,
+          106.54495239257812,
+          142.68826293945312,
+          115.5113525390625
+        ]
+      },
+      {
+        "text": "Plain Text",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          195.56500244140625,
+          106.54495239257812,
+          231.914794921875,
+          115.5113525390625
+        ]
+      },
+      {
+        "text": "Page Number",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          110.39199829101562,
+          117.50399780273438,
+          159.3126678466797,
+          126.47039794921875
+        ]
+      },
+      {
+        "text": "Abandon",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          197.30499267578125,
+          117.50399780273438,
+          230.17581176757812,
+          126.47039794921875
+        ]
+      },
+      {
+        "text": "Abstract",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          119.66300201416016,
+          128.46298217773438,
+          150.04115295410156,
+          137.42938232421875
+        ]
+      },
+      {
+        "text": "Plain Text",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          195.56500244140625,
+          128.46298217773438,
+          231.914794921875,
+          137.42938232421875
+        ]
+      },
+      {
+        "text": "Content",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          120.65399932861328,
+          139.42196655273438,
+          149.05059814453125,
+          148.38836669921875
+        ]
+      },
+      {
+        "text": "Plain Text",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          195.56500244140625,
+          139.42196655273438,
+          231.914794921875,
+          148.38836669921875
+        ]
+      },
+      {
+        "text": "Reference",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          116.68199920654297,
+          150.38101196289062,
+          153.02281188964844,
+          159.347412109375
+        ]
+      },
+      {
+        "text": "Plain Text",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          195.56500244140625,
+          150.38101196289062,
+          231.914794921875,
+          159.347412109375
+        ]
+      },
+      {
+        "text": "Footnote",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          118.97699737548828,
+          161.33895874023438,
+          150.72702026367188,
+          170.30535888671875
+        ]
+      },
+      {
+        "text": "Abandon",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          197.30499267578125,
+          161.33895874023438,
+          230.17581176757812,
+          170.30535888671875
+        ]
+      },
+      {
+        "text": "Header",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          121.90899658203125,
+          172.29800415039062,
+          147.79498291015625,
+          181.264404296875
+        ]
+      },
+      {
+        "text": "Abandon",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          197.30499267578125,
+          172.29800415039062,
+          230.17581176757812,
+          181.264404296875
+        ]
+      },
+      {
+        "text": "Footer",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          123.21399688720703,
+          183.25698852539062,
+          146.4907684326172,
+          192.223388671875
+        ]
+      },
+      {
+        "text": "Abandon",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          197.30499267578125,
+          183.25698852539062,
+          230.17581176757812,
+          192.223388671875
+        ]
+      },
+      {
+        "text": "Algorithm",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          116.1709976196289,
+          194.21597290039062,
+          153.53399658203125,
+          203.182373046875
+        ]
+      },
+      {
+        "text": "Plain Text",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          195.56500244140625,
+          194.21597290039062,
+          231.914794921875,
+          203.182373046875
+        ]
+      },
+      {
+        "text": "Formula",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          119.72599792480469,
+          205.17495727539062,
+          149.9786376953125,
+          214.141357421875
+        ]
+      },
+      {
+        "text": "Isolate Formula",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          185.54100036621094,
+          205.17495727539062,
+          241.93966674804688,
+          214.141357421875
+        ]
+      },
+      {
+        "text": "Formula Number",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          103.91400146484375,
+          216.13400268554688,
+          165.79112243652344,
+          225.10040283203125
+        ]
+      },
+      {
+        "text": "Formula Number",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          182.802001953125,
+          216.13400268554688,
+          244.67913818359375,
+          225.10040283203125
+        ]
+      },
+      {
+        "text": "Image",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          123.64900207519531,
+          227.09298706054688,
+          146.0560302734375,
+          236.05938720703125
+        ]
+      },
+      {
+        "text": "Figure",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          202.03500366210938,
+          227.09298706054688,
+          225.44627380371094,
+          236.05938720703125
+        ]
+      },
+      {
+        "text": "Image Caption",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.33000183105469,
+          238.05197143554688,
+          161.37522888183594,
+          247.01837158203125
+        ]
+      },
+      {
+        "text": "Figure Caption",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          186.71600341796875,
+          238.05197143554688,
+          240.76547241210938,
+          247.01837158203125
+        ]
+      },
+      {
+        "text": "Table",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          125.00199890136719,
+          249.01095581054688,
+          144.701171875,
+          257.97735595703125
+        ]
+      },
+      {
+        "text": "Table",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          203.89100646972656,
+          249.01095581054688,
+          223.59017944335938,
+          257.97735595703125
+        ]
+      },
+      {
+        "text": "Table Caption",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          109.68399810791016,
+          259.9700012207031,
+          160.02137756347656,
+          268.9364013671875
+        ]
+      },
+      {
+        "text": "Table Caption",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          188.57200622558594,
+          259.9700012207031,
+          238.9093780517578,
+          268.9364013671875
+        ]
+      },
+      {
+        "text": "Chart",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          124.88999938964844,
+          270.9280090332031,
+          144.81333923339844,
+          279.8944091796875
+        ]
+      },
+      {
+        "text": "Figure",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          202.03500366210938,
+          270.9280090332031,
+          225.44627380371094,
+          279.8944091796875
+        ]
+      },
+      {
+        "text": "Chart Caption",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          109.5719985961914,
+          281.8869934082031,
+          160.13352966308594,
+          290.8533935546875
+        ]
+      },
+      {
+        "text": "Figure Caption",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          186.71600341796875,
+          281.8869934082031,
+          240.76547241210938,
+          290.8533935546875
+        ]
+      },
+      {
+        "text": "Seal",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          127.13200378417969,
+          292.8459777832031,
+          142.5721435546875,
+          301.8123779296875
+        ]
+      },
+      {
+        "text": "Figure",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          202.03500366210938,
+          292.8459777832031,
+          225.44627380371094,
+          301.8123779296875
+        ]
+      },
+      {
+        "text": "Header Image",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          109.58499908447266,
+          303.80499267578125,
+          160.11961364746094,
+          312.7713928222656
+        ]
+      },
+      {
+        "text": "Abandon",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          197.30499267578125,
+          303.80499267578125,
+          230.17581176757812,
+          312.7713928222656
+        ]
+      },
+      {
+        "text": "Footer Image",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          110.88999938964844,
+          314.76397705078125,
+          158.81541442871094,
+          323.7303771972656
+        ]
+      },
+      {
+        "text": "Abandon",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          197.30499267578125,
+          314.76397705078125,
+          230.17581176757812,
+          323.7303771972656
+        ]
+      },
+      {
+        "text": "Aside Text",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          115.43499755859375,
+          325.7229919433594,
+          154.2684783935547,
+          334.68939208984375
+        ]
+      },
+      {
+        "text": "Abandon",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          197.30499267578125,
+          325.7229919433594,
+          230.17581176757812,
+          334.68939208984375
         ]
       }
     ]
@@ -66,102 +638,345 @@
   {
     "type": "text",
     "bbox": [
-      107.64099884033203,
-      526.892333984375,
-      505.2450866699219,
-      591.3820190429688
+      58.5,
+      347.04296875,
+      294.74676513671875,
+      366.9683837890625
     ],
-    "content": "and prompts for all four models: a token limit of 64,000, a time limit of 1,800 seconds per response,a temperature of 1.0, and identical system prompts. We set the temperature to 1.0 because theGPT-5 models do not allow variation from this value. Furthermore, a temperature of 1.0 is consistentwith previous work [28], and even when variation is allowed, temperatures of 0.0 are not alwaysdeterministic with OpenAI models [6]. To control API costs, especially for the larger models, weevaluated all models on the same set of 50 puzzles, consistent with prior work [28].",
+    "content": "Table 1. Comparison of categories recognized by our method andanother advanced algorithm DocLayout-YOLO [14].",
     "spans": [
       {
-        "text": "and prompts for all four models: a token limit of 64,000, a time limit of 1,800 seconds per response,",
+        "text": "Table 1. Comparison of categories recognized by our method and",
         "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.937662124633789,
+        "font_size": 8.966400146484375,
         "font_flags": 4,
         "color": 0,
         "bbox": [
-          108.0,
-          526.892333984375,
-          505.2450866699219,
-          536.8300170898438
+          58.5,
+          347.04296875,
+          294.74676513671875,
+          356.0093688964844
         ]
       },
       {
-        "text": "a temperature of 1.0, and identical system prompts. We set the temperature to 1.0 because the",
+        "text": "another advanced algorithm DocLayout-YOLO [",
         "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
+        "font_size": 8.966400146484375,
         "font_flags": 4,
         "color": 0,
         "bbox": [
-          108.0,
-          537.707275390625,
-          503.997314453125,
-          547.76904296875
+          58.5,
+          358.0019836425781,
+          233.80206298828125,
+          366.9683837890625
         ]
       },
       {
-        "text": "GPT-5 models do not allow variation from this value. Furthermore, a temperature of 1.0 is consistent",
+        "text": "14",
         "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.882577896118164,
+        "font_size": 8.966400146484375,
+        "font_flags": 4,
+        "color": 3571133,
+        "bbox": [
+          233.80206298828125,
+          358.0019836425781,
+          242.76846313476562,
+          366.9683837890625
+        ]
+      },
+      {
+        "text": "].",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 8.966400146484375,
         "font_flags": 4,
         "color": 0,
         "bbox": [
-          108.0,
-          548.752197265625,
-          504.0004577636719,
-          558.634765625
+          242.76846313476562,
+          358.0019836425781,
+          247.99588012695312,
+          366.9683837890625
         ]
-      },
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      58.5,
+      390.9694519042969,
+      294.7531433105469,
+      460.7070007324219
+    ],
+    "content": "along with the real labeled data, form a comprehensivetraining set that enhances the learning process of the studentmodels PP-DocLayout-S and PP-DocLayout-M. By inte-grating the high-quality pseudo-labels with the labeled data,the models can generalize better, learning robust featuresthat improve document layout detection.",
+    "spans": [
       {
-        "text": "with previous work [",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          107.64099884033203,
-          559.5262451171875,
-          193.34609985351562,
-          569.5880126953125
-        ]
-      },
-      {
-        "text": "28",
+        "text": "along with the real labeled data, form a comprehensive",
         "font_name": "NimbusRomNo9L-Regu",
         "font_size": 9.962599754333496,
         "font_flags": 4,
         "color": 0,
         "bbox": [
-          193.3489990234375,
-          559.6014404296875,
-          203.31158447265625,
-          569.5640258789062
+          58.5,
+          390.9694519042969,
+          294.7531433105469,
+          400.93206787109375
         ]
       },
       {
-        "text": "], and even when variation is allowed, temperatures of 0.0 are not always",
+        "text": "training set that enhances the learning process of the student",
         "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
+        "font_size": 9.962599754333496,
         "font_flags": 4,
         "color": 0,
         "bbox": [
-          203.31199645996094,
-          559.5262451171875,
-          504.00128173828125,
-          569.5880126953125
+          58.5,
+          402.9244384765625,
+          294.7530822753906,
+          412.8870544433594
         ]
       },
       {
-        "text": "deterministic with OpenAI models [",
+        "text": "models PP-DocLayout-S and PP-DocLayout-M. By inte-",
         "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
+        "font_size": 9.962599754333496,
         "font_flags": 4,
         "color": 0,
         "bbox": [
-          108.0,
-          570.4352416992188,
-          255.13343811035156,
-          580.4970092773438
+          58.5,
+          414.8794250488281,
+          294.7530212402344,
+          424.842041015625
+        ]
+      },
+      {
+        "text": "grating the high-quality pseudo-labels with the labeled data,",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          426.83441162109375,
+          294.75311279296875,
+          436.7970275878906
+        ]
+      },
+      {
+        "text": "the models can generalize better, learning robust features",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          438.7893981933594,
+          294.7530822753906,
+          448.75201416015625
+        ]
+      },
+      {
+        "text": "that improve document layout detection.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          450.744384765625,
+          219.52548217773438,
+          460.7070007324219
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      58.5,
+      473.8550720214844,
+      180.37130737304688,
+      485.8102722167969
+    ],
+    "content": "4. Experimental Results",
+    "spans": [
+      {
+        "text": "4. Experimental Results",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 11.9552001953125,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          58.5,
+          473.8550720214844,
+          180.37130737304688,
+          485.8102722167969
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      58.5,
+      493.82275390625,
+      112.97669219970703,
+      504.7816467285156
+    ],
+    "content": "4.1. Dataset",
+    "spans": [
+      {
+        "text": "4.1. Dataset",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 10.958900451660156,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          58.5,
+          493.82275390625,
+          112.97669219970703,
+          504.7816467285156
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      58.49999237060547,
+      511.88836669921875,
+      294.7531433105469,
+      713.4069213867188
+    ],
+    "content": "we collected a comprehensive dataset of document im-ages encompassing a wide variety of types such as Chineseand English academic papers, magazines, newspapers, re-search reports, exam papers, handwritten notes, contracts,and books. This diverse dataset ensures the robustness andgeneralizability of our model across different document for-mats and structures. The dataset comprises 30,000 imagesfor training and 500 images for evaluation. Images are col-lected from Baidu image search and public datasets, includ-ing Doclaynet [6] and PublayNet [15]. Images are anno-tated with 23 common layout categories and the distributionof these categories is detailed in the Table 5 in the appendix.As shown in Table 1, our method defines a more com-prehensive and fine-grained set of categories compared toDocLayout-YOLO [14]. While DocLayout-YOLO simpli-fies many document elements into broad classes such as“title,” “text,” and “figure,” our method distinguishes be-",
+    "spans": [
+      {
+        "text": "we collected a comprehensive dataset of document im-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          511.88836669921875,
+          294.7530822753906,
+          521.8509521484375
+        ]
+      },
+      {
+        "text": "ages encompassing a wide variety of types such as Chinese",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          523.8433837890625,
+          294.75311279296875,
+          533.8059692382812
+        ]
+      },
+      {
+        "text": "and English academic papers, magazines, newspapers, re-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          535.79833984375,
+          294.75311279296875,
+          545.7609252929688
+        ]
+      },
+      {
+        "text": "search reports, exam papers, handwritten notes, contracts,",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          547.7533569335938,
+          294.7530822753906,
+          557.7159423828125
+        ]
+      },
+      {
+        "text": "and books. This diverse dataset ensures the robustness and",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          559.7093505859375,
+          294.75311279296875,
+          569.6719360351562
+        ]
+      },
+      {
+        "text": "generalizability of our model across different document for-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          571.6643676757812,
+          294.7530822753906,
+          581.626953125
+        ]
+      },
+      {
+        "text": "mats and structures. The dataset comprises 30,000 images",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          583.619384765625,
+          294.75311279296875,
+          593.5819702148438
+        ]
+      },
+      {
+        "text": "for training and 500 images for evaluation. Images are col-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          595.5743408203125,
+          294.7530517578125,
+          605.5369262695312
+        ]
+      },
+      {
+        "text": "lected from Baidu image search and public datasets, includ-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          607.5293579101562,
+          294.7531433105469,
+          617.491943359375
+        ]
+      },
+      {
+        "text": "ing Doclaynet [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          619.484375,
+          122.72887420654297,
+          629.4469604492188
         ]
       },
       {
@@ -169,38 +984,233 @@
         "font_name": "NimbusRomNo9L-Regu",
         "font_size": 9.962599754333496,
         "font_flags": 4,
-        "color": 0,
+        "color": 3571133,
         "bbox": [
-          255.13400268554688,
-          570.5104370117188,
-          260.11529541015625,
-          580.4730224609375
+          122.72887420654297,
+          619.484375,
+          127.71017456054688,
+          629.4469604492188
         ]
       },
       {
-        "text": "]. To control API costs, especially for the larger models, we",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          260.1159973144531,
-          570.4352416992188,
-          504.0007019042969,
-          580.4970092773438
-        ]
-      },
-      {
-        "text": "evaluated all models on the same set of 50 puzzles, consistent with prior work [28].",
+        "text": "] and PublayNet [",
         "font_name": "NimbusRomNo9L-Regu",
         "font_size": 9.962599754333496,
         "font_flags": 4,
         "color": 0,
         "bbox": [
-          108.0,
-          581.41943359375,
-          439.99359130859375,
-          591.3820190429688
+          127.71017456054688,
+          619.484375,
+          201.652587890625,
+          629.4469604492188
+        ]
+      },
+      {
+        "text": "15",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 3571133,
+        "bbox": [
+          201.652587890625,
+          619.484375,
+          211.61517333984375,
+          629.4469604492188
+        ]
+      },
+      {
+        "text": "]. Images are anno-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          211.61517333984375,
+          619.484375,
+          294.7530517578125,
+          629.4469604492188
+        ]
+      },
+      {
+        "text": "tated with 23 common layout categories and the distribution",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          631.4403686523438,
+          294.7530212402344,
+          641.4029541015625
+        ]
+      },
+      {
+        "text": "of these categories is detailed in the Table",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          643.3953857421875,
+          222.35491943359375,
+          653.3579711914062
+        ]
+      },
+      {
+        "text": " 5",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 3571133,
+        "bbox": [
+          222.35491943359375,
+          643.3953857421875,
+          229.4482879638672,
+          653.3579711914062
+        ]
+      },
+      {
+        "text": " in the appendix.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          229.4482879638672,
+          643.3953857421875,
+          294.75311279296875,
+          653.3579711914062
+        ]
+      },
+      {
+        "text": "As shown in",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          70.45500183105469,
+          655.6233520507812,
+          121.41371154785156,
+          665.5859375
+        ]
+      },
+      {
+        "text": " Table",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          121.41371154785156,
+          655.5324096679688,
+          148.0389862060547,
+          665.4949951171875
+        ]
+      },
+      {
+        "text": " 1",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 3571133,
+        "bbox": [
+          148.0389862060547,
+          655.5324096679688,
+          156.20831298828125,
+          665.4949951171875
+        ]
+      },
+      {
+        "text": ", our method defines a more com-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          156.20599365234375,
+          655.6233520507812,
+          294.7458801269531,
+          665.5859375
+        ]
+      },
+      {
+        "text": "prehensive and fine-grained set of categories compared to",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.49999237060547,
+          667.579345703125,
+          294.7530822753906,
+          677.5419311523438
+        ]
+      },
+      {
+        "text": "DocLayout-YOLO [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.49999237060547,
+          679.5343627929688,
+          140.31288146972656,
+          689.4969482421875
+        ]
+      },
+      {
+        "text": "14",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 3571133,
+        "bbox": [
+          140.31288146972656,
+          679.5343627929688,
+          150.2754669189453,
+          689.4969482421875
+        ]
+      },
+      {
+        "text": "]. While DocLayout-YOLO simpli-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          150.2754669189453,
+          679.5343627929688,
+          294.7530517578125,
+          689.4969482421875
+        ]
+      },
+      {
+        "text": "fies many document elements into broad classes such as",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.49999237060547,
+          691.4893798828125,
+          294.7531433105469,
+          701.4519653320312
+        ]
+      },
+      {
+        "text": "“title,” “text,” and “figure,” our method distinguishes be-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.49999237060547,
+          703.4443359375,
+          294.7530212402344,
+          713.4069213867188
         ]
       }
     ]
@@ -208,37 +1218,167 @@
   {
     "type": "text",
     "bbox": [
-      108.0,
-      609.508544921875,
-      220.71685791015625,
-      619.4711303710938
+      317.25,
+      74.40736389160156,
+      553.5032348632812,
+      203.92208862304688
     ],
-    "content": "3.3Prompting Strategies",
+    "content": "tween semantically meaningful elements like document ti-tles, paragraph titles, page numbers, headers, footers, andfootnotes.This granularity enables better parsing of thedocument’s hierarchical structure and logical relationships.Additionally, our method accurately identifies and catego-rizes high-value elements such as formulas, charts, andseals, which DocLayout-YOLO either misclassifies or ig-nores (e.g., labeling them as “abandon” or “figure”). Thiscomprehensive categorization supports a wider range ofdownstream tasks, including document understanding, in-formation extraction, and format conversion.",
     "spans": [
       {
-        "text": "3.3",
-        "font_name": "NimbusRomNo9L-Medi",
+        "text": "tween semantically meaningful elements like document ti-",
+        "font_name": "NimbusRomNo9L-Regu",
         "font_size": 9.962599754333496,
-        "font_flags": 20,
+        "font_flags": 4,
         "color": 0,
         "bbox": [
-          108.0,
-          609.508544921875,
-          120.4532470703125,
-          619.4711303710938
+          317.25,
+          74.40736389160156,
+          553.5031127929688,
+          84.36996459960938
         ]
       },
       {
-        "text": "Prompting Strategies",
-        "font_name": "NimbusRomNo9L-Medi",
+        "text": "tles, paragraph titles, page numbers, headers, footers, and",
+        "font_name": "NimbusRomNo9L-Regu",
         "font_size": 9.962599754333496,
-        "font_flags": 20,
+        "font_flags": 4,
         "color": 0,
         "bbox": [
-          130.4158477783203,
-          609.508544921875,
-          220.71685791015625,
-          619.4711303710938
+          317.25,
+          86.36238098144531,
+          553.503173828125,
+          96.32498168945312
+        ]
+      },
+      {
+        "text": "footnotes.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          98.31739807128906,
+          356.8214111328125,
+          108.27999877929688
+        ]
+      },
+      {
+        "text": "This granularity enables better parsing of the",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          364.8612365722656,
+          98.31739807128906,
+          553.5031127929688,
+          108.27999877929688
+        ]
+      },
+      {
+        "text": "document’s hierarchical structure and logical relationships.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          110.27241516113281,
+          553.5029907226562,
+          120.23501586914062
+        ]
+      },
+      {
+        "text": "Additionally, our method accurately identifies and catego-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          122.22743225097656,
+          553.5031127929688,
+          132.19003295898438
+        ]
+      },
+      {
+        "text": "rizes high-value elements such as formulas, charts, and",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          134.1834259033203,
+          553.5032348632812,
+          144.14602661132812
+        ]
+      },
+      {
+        "text": "seals, which DocLayout-YOLO either misclassifies or ig-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          146.13844299316406,
+          553.5031127929688,
+          156.10104370117188
+        ]
+      },
+      {
+        "text": "nores (e.g., labeling them as “abandon” or “figure”). This",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          158.0934600830078,
+          553.5030517578125,
+          168.05606079101562
+        ]
+      },
+      {
+        "text": "comprehensive categorization supports a wider range of",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          170.04847717285156,
+          553.5031127929688,
+          180.01107788085938
+        ]
+      },
+      {
+        "text": "downstream tasks, including document understanding, in-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          182.0034942626953,
+          553.5031127929688,
+          191.96609497070312
+        ]
+      },
+      {
+        "text": "formation extraction, and format conversion.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          193.95948791503906,
+          495.2915344238281,
+          203.92208862304688
         ]
       }
     ]
@@ -246,180 +1386,983 @@
   {
     "type": "text",
     "bbox": [
-      107.53199768066406,
-      630.8964233398438,
-      505.2784729003906,
-      684.6620483398438
+      317.25,
+      214.64187622070312,
+      446.31292724609375,
+      225.60076904296875
     ],
-    "content": "We study three prompting regimes under a common setup: Zero-Shot (no examples or reasoningcues), CoT (three worked examples encouraging stepwise reasoning), and AoT (three examplesimplementing a simple Manhattan-style search). The CoT and AoT prompts use the same threeexample boards, differing only in the reasoning styles they demonstrate. These three approachesserve as our base conditions, on which we build all subsequent attempts with and without feedback.",
+    "content": "4.2. Implementation Details",
     "spans": [
       {
-        "text": "We study three prompting regimes under a common setup:",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          107.53199768066406,
-          630.98828125,
-          346.325439453125,
-          641.050048828125
-        ]
-      },
-      {
-        "text": " Zero-Shot",
+        "text": "4.2. Implementation Details",
         "font_name": "NimbusRomNo9L-Medi",
-        "font_size": 10.061732292175293,
+        "font_size": 10.958900451660156,
         "font_flags": 20,
         "color": 0,
         "bbox": [
-          346.325439453125,
-          630.8964233398438,
-          393.60858154296875,
-          640.9581909179688
+          317.25,
+          214.64187622070312,
+          446.31292724609375,
+          225.60076904296875
         ]
-      },
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      317.25,
+      232.88055419921875,
+      553.5032348632812,
+      410.3060302734375
+    ],
+    "content": "The PP-DocLayout-L model is built upon the RT-DETR-L[13] object detection architecture and utilizes a pre-trainedPPHGNetV2-B4 model that has undergone knowledge dis-tillation. The training was configured with a constant learn-ing rate of 0.0001. The model was trained for 100 epochswith a batch size of 2 per GPU, using a total of 8 GPUs,resulting in a total training time of approximately 26 hourson NVIDIA V100 GPUs. The PP-DocLayout-M and PP-DocLayout-S models are based on the PicoDet-M andPicoDet-S [12] object detection architecture, respectively.Both models were trained for 100 epochs with a batch sizeof 2 per GPU, utilizing a total of 8 GPUs. The learningrates were set to for 0.02 PP-DocLayout-M and 0.06 forPP-DocLayout-S, and were dynamically adjusted using theCosineDecay [5] learning rate scheduler.",
+    "spans": [
       {
-        "text": " (no examples or reasoning",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          393.60858154296875,
-          630.98828125,
-          503.9969482421875,
-          641.050048828125
-        ]
-      },
-      {
-        "text": "cues),",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          641.8972778320312,
-          131.9819793701172,
-          651.9590454101562
-        ]
-      },
-      {
-        "text": " CoT",
-        "font_name": "NimbusRomNo9L-Medi",
-        "font_size": 10.061732292175293,
-        "font_flags": 20,
-        "color": 0,
-        "bbox": [
-          131.9819793701172,
-          641.805419921875,
-          154.39903259277344,
-          651.8671875
-        ]
-      },
-      {
-        "text": " (three worked examples encouraging stepwise reasoning), and",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          154.39903259277344,
-          641.8972778320312,
-          413.6382141113281,
-          651.9590454101562
-        ]
-      },
-      {
-        "text": " AoT",
-        "font_name": "NimbusRomNo9L-Medi",
-        "font_size": 10.061732292175293,
-        "font_flags": 20,
-        "color": 0,
-        "bbox": [
-          413.6382141113281,
-          641.805419921875,
-          435.9129943847656,
-          651.8671875
-        ]
-      },
-      {
-        "text": " (three examples",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          435.9129943847656,
-          641.8972778320312,
-          503.9974670410156,
-          651.9590454101562
-        ]
-      },
-      {
-        "text": "implementing a simple Manhattan-style search). The CoT and AoT prompts use the same three",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          652.8062744140625,
-          503.9974670410156,
-          662.8680419921875
-        ]
-      },
-      {
-        "text": "example boards, differing only in the reasoning styles they demonstrate. These three approaches",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          663.7152709960938,
-          503.99749755859375,
-          673.7770385742188
-        ]
-      },
-      {
-        "text": "serve as our",
+        "text": "The",
         "font_name": "NimbusRomNo9L-Regu",
         "font_size": 9.962599754333496,
         "font_flags": 4,
         "color": 0,
         "bbox": [
-          108.0,
-          674.699462890625,
-          155.4319305419922,
-          684.6620483398438
+          317.25,
+          232.9715118408203,
+          332.7418518066406,
+          242.93411254882812
         ]
       },
       {
-        "text": " base conditions",
+        "text": " PP-DocLayout-L",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          332.7418518066406,
+          232.88055419921875,
+          407.395751953125,
+          242.84315490722656
+        ]
+      },
+      {
+        "text": " model is built upon the RT-DETR-L",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          407.395751953125,
+          232.9715118408203,
+          553.5005493164062,
+          242.93411254882812
+        ]
+      },
+      {
+        "text": "[",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          244.92652893066406,
+          320.5675354003906,
+          254.88912963867188
+        ]
+      },
+      {
+        "text": "13",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 3571133,
+        "bbox": [
+          320.5675354003906,
+          244.92652893066406,
+          330.5301208496094,
+          254.88912963867188
+        ]
+      },
+      {
+        "text": "] object detection architecture and utilizes a pre-trained",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          330.5301208496094,
+          244.92652893066406,
+          553.5030517578125,
+          254.88912963867188
+        ]
+      },
+      {
+        "text": "PPHGNetV2-B4 model that has undergone knowledge dis-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          256.88153076171875,
+          553.5029907226562,
+          266.8441467285156
+        ]
+      },
+      {
+        "text": "tillation. The training was configured with a constant learn-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          268.8365478515625,
+          553.5029907226562,
+          278.7991638183594
+        ]
+      },
+      {
+        "text": "ing rate of 0.0001. The model was trained for 100 epochs",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          280.7915344238281,
+          553.5031127929688,
+          290.754150390625
+        ]
+      },
+      {
+        "text": "with a batch size of 2 per GPU, using a total of 8 GPUs,",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          292.7475280761719,
+          553.5029907226562,
+          302.71014404296875
+        ]
+      },
+      {
+        "text": "resulting in a total training time of approximately 26 hours",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          304.7025146484375,
+          553.5030517578125,
+          314.6651306152344
+        ]
+      },
+      {
+        "text": "on NVIDIA V100 GPUs. The",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          316.6575012207031,
+          439.7899169921875,
+          326.6201171875
+        ]
+      },
+      {
+        "text": " PP-DocLayout-M",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          439.7899169921875,
+          316.5665588378906,
+          517.743408203125,
+          326.5291442871094
+        ]
+      },
+      {
+        "text": " and",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          517.743408203125,
+          316.6575012207031,
+          535.0680541992188,
+          326.6201171875
+        ]
+      },
+      {
+        "text": " PP-",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          535.0680541992188,
+          316.5665588378906,
+          553.4998779296875,
+          326.5291442871094
+        ]
+      },
+      {
+        "text": "DocLayout-S",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          317.25,
+          328.52154541015625,
+          372.90106201171875,
+          338.484130859375
+        ]
+      },
+      {
+        "text": " models are based on the PicoDet-M and",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          372.90106201171875,
+          328.61248779296875,
+          553.4974975585938,
+          338.5751037597656
+        ]
+      },
+      {
+        "text": "PicoDet-S [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          340.5674743652344,
+          365.2099304199219,
+          350.53009033203125
+        ]
+      },
+      {
+        "text": "12",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 3571133,
+        "bbox": [
+          365.2099304199219,
+          340.5674743652344,
+          375.1725158691406,
+          350.53009033203125
+        ]
+      },
+      {
+        "text": "] object detection architecture, respectively.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          375.1725158691406,
+          340.5674743652344,
+          553.5029907226562,
+          350.53009033203125
+        ]
+      },
+      {
+        "text": "Both models were trained for 100 epochs with a batch size",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          352.5224609375,
+          553.5029296875,
+          362.4850769042969
+        ]
+      },
+      {
+        "text": "of 2 per GPU, utilizing a total of 8 GPUs. The learning",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          364.47845458984375,
+          553.5030517578125,
+          374.4410705566406
+        ]
+      },
+      {
+        "text": "rates were set to for 0.02 PP-DocLayout-M and 0.06 for",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          376.4334411621094,
+          553.5032348632812,
+          386.39605712890625
+        ]
+      },
+      {
+        "text": "PP-DocLayout-S, and were dynamically adjusted using the",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          388.388427734375,
+          553.503173828125,
+          398.3510437011719
+        ]
+      },
+      {
+        "text": "CosineDecay [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          400.3434143066406,
+          376.17877197265625,
+          410.3060302734375
+        ]
+      },
+      {
+        "text": "5",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 3571133,
+        "bbox": [
+          376.17877197265625,
+          400.3434143066406,
+          381.1600646972656,
+          410.3060302734375
+        ]
+      },
+      {
+        "text": "] learning rate scheduler.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          381.1600646972656,
+          400.3434143066406,
+          479.6502990722656,
+          410.3060302734375
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      317.25,
+      421.0257873535156,
+      398.22528076171875,
+      431.98468017578125
+    ],
+    "content": "4.3. Main Results",
+    "spans": [
+      {
+        "text": "4.3. Main Results",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 10.958900451660156,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          317.25,
+          421.0257873535156,
+          398.22528076171875,
+          431.98468017578125
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      317.25,
+      439.26446533203125,
+      553.5032958984375,
+      713.4069213867188
+    ],
+    "content": "Table 2 presents the performance and specifications of dif-ferent variants of the PP-DocLayout model. The table high-lights the trade-offs between accuracy, inference speed, andmodel size for each model variant.The PP-DocLayout-L model achieves the highest accu-racy with a mean Average Precision (mAP) of 90.4% at anIoU threshold of 0.5. However, this accuracy comes with amodel size of 30.94 million parameters and inference times,taking 13.39 milliseconds on a T4 GPU, about 74.6 FPSand approximately 759.76 milliseconds on a CPU, whichtranslates to about 1.32 FPS. Referring to Figure 4 in theappendix, we provide additional visualization results to fur-ther demonstrate the effectiveness of our model across a di-verse range of document types and layouts. Specifically,we visualize the performance of our method on documentssuch as papers, magazines, newspapers, research reports,books, notebooks, contracts and test papers. The visualiza-tions clearly show that our model accurately identifies andcategorizes diverse elements.The PP-DocLayout-S model offers a significantlysmaller model size of 1.21 million parameters with fasterinference times 8.11 milliseconds on a T4 GPU, about 123FPS and 14.49 milliseconds on a CPU, which translates to",
+    "spans": [
+      {
+        "text": "Table",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          317.25,
+          439.26446533203125,
+          340.6919860839844,
+          449.22705078125
+        ]
+      },
+      {
+        "text": " 2",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 3571133,
+        "bbox": [
+          340.6919860839844,
+          439.26446533203125,
+          348.34326171875,
+          449.22705078125
+        ]
+      },
+      {
+        "text": " presents the performance and specifications of dif-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          348.34326171875,
+          439.35540771484375,
+          553.5029296875,
+          449.3180236816406
+        ]
+      },
+      {
+        "text": "ferent variants of the PP-DocLayout model. The table high-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          451.3114013671875,
+          553.5031127929688,
+          461.2740173339844
+        ]
+      },
+      {
+        "text": "lights the trade-offs between accuracy, inference speed, and",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          463.2663879394531,
+          553.5031127929688,
+          473.22900390625
+        ]
+      },
+      {
+        "text": "model size for each model variant.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          475.22137451171875,
+          454.7837219238281,
+          485.1839904785156
+        ]
+      },
+      {
+        "text": "The PP-DocLayout-L model achieves the highest accu-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          329.2049865722656,
+          487.7143859863281,
+          553.5029907226562,
+          497.677001953125
+        ]
+      },
+      {
+        "text": "racy with a mean Average Precision (mAP) of 90.4% at an",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          499.66937255859375,
+          553.5030517578125,
+          509.6319885253906
+        ]
+      },
+      {
+        "text": "IoU threshold of 0.5. However, this accuracy comes with a",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          511.6243896484375,
+          553.5029907226562,
+          521.5869750976562
+        ]
+      },
+      {
+        "text": "model size of 30.94 million parameters and inference times,",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          523.579345703125,
+          553.5030517578125,
+          533.5419311523438
+        ]
+      },
+      {
+        "text": "taking 13.39 milliseconds on a T4 GPU, about 74.6 FPS",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          535.5343627929688,
+          553.5029907226562,
+          545.4969482421875
+        ]
+      },
+      {
+        "text": "and approximately 759.76 milliseconds on a CPU, which",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          547.4903564453125,
+          553.5030517578125,
+          557.4529418945312
+        ]
+      },
+      {
+        "text": "translates to about 1.32 FPS. Referring to",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          559.4453125,
+          487.2218322753906,
+          569.4078979492188
+        ]
+      },
+      {
+        "text": " Figure",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          487.2218322753906,
+          559.3543701171875,
+          518.5997314453125,
+          569.3169555664062
+        ]
+      },
+      {
+        "text": " 4",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 3571133,
+        "bbox": [
+          518.5997314453125,
+          559.3543701171875,
+          526.9085693359375,
+          569.3169555664062
+        ]
+      },
+      {
+        "text": " in the",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          526.9085693359375,
+          559.4453125,
+          553.4967651367188,
+          569.4078979492188
+        ]
+      },
+      {
+        "text": "appendix, we provide additional visualization results to fur-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          571.4003295898438,
+          553.5029907226562,
+          581.3629150390625
+        ]
+      },
+      {
+        "text": "ther demonstrate the effectiveness of our model across a di-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          583.3553466796875,
+          553.5031127929688,
+          593.3179321289062
+        ]
+      },
+      {
+        "text": "verse range of document types and layouts. Specifically,",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          595.3103637695312,
+          553.5030517578125,
+          605.27294921875
+        ]
+      },
+      {
+        "text": "we visualize the performance of our method on documents",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          607.265380859375,
+          553.5030517578125,
+          617.2279663085938
+        ]
+      },
+      {
+        "text": "such as",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          619.2213134765625,
+          347.27728271484375,
+          629.1838989257812
+        ]
+      },
+      {
+        "text": " papers",
         "font_name": "NimbusRomNo9L-ReguItal",
         "font_size": 9.962599754333496,
         "font_flags": 6,
         "color": 0,
         "bbox": [
-          155.4319305419922,
-          674.5230102539062,
-          220.18881225585938,
-          684.485595703125
+          347.27728271484375,
+          619.0448608398438,
+          377.7725524902344,
+          629.0074462890625
         ]
       },
       {
-        "text": ", on which we build all subsequent attempts with and without feedback.",
+        "text": ",",
         "font_name": "NimbusRomNo9L-Regu",
         "font_size": 9.962599754333496,
         "font_flags": 4,
         "color": 0,
         "bbox": [
-          220.18881225585938,
-          674.699462890625,
-          505.2784729003906,
-          684.6620483398438
+          377.7720031738281,
+          619.2213134765625,
+          380.2626647949219,
+          629.1838989257812
+        ]
+      },
+      {
+        "text": " magazines",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          380.2626647949219,
+          619.0448608398438,
+          425.94244384765625,
+          629.0074462890625
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          425.9420166015625,
+          619.2213134765625,
+          428.43267822265625,
+          629.1838989257812
+        ]
+      },
+      {
+        "text": " newspapers",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          428.43267822265625,
+          619.0448608398438,
+          478.9443359375,
+          629.0074462890625
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          478.94403076171875,
+          619.2213134765625,
+          481.4346923828125,
+          629.1838989257812
+        ]
+      },
+      {
+        "text": " research reports",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          481.4346923828125,
+          619.0448608398438,
+          551.0048828125,
+          629.0074462890625
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          551.009033203125,
+          619.2213134765625,
+          553.4996948242188,
+          629.1838989257812
+        ]
+      },
+      {
+        "text": "books",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          317.2500305175781,
+          630.9998779296875,
+          340.4927673339844,
+          640.9624633789062
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          340.4930419921875,
+          631.1763305664062,
+          342.98370361328125,
+          641.138916015625
+        ]
+      },
+      {
+        "text": " notebooks",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          342.98370361328125,
+          630.9998779296875,
+          385.9653625488281,
+          640.9624633789062
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          385.9650573730469,
+          631.1763305664062,
+          388.4557189941406,
+          641.138916015625
+        ]
+      },
+      {
+        "text": " contracts",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          388.4557189941406,
+          630.9998779296875,
+          427.97039794921875,
+          640.9624633789062
+        ]
+      },
+      {
+        "text": " and",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          427.97039794921875,
+          631.1763305664062,
+          444.9210510253906,
+          641.138916015625
+        ]
+      },
+      {
+        "text": " test papers",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          444.9210510253906,
+          630.9998779296875,
+          490.9030456542969,
+          640.9624633789062
+        ]
+      },
+      {
+        "text": ". The visualiza-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          490.90704345703125,
+          631.1763305664062,
+          553.5021362304688,
+          641.138916015625
+        ]
+      },
+      {
+        "text": "tions clearly show that our model accurately identifies and",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25006103515625,
+          643.13134765625,
+          553.5030517578125,
+          653.0939331054688
+        ]
+      },
+      {
+        "text": "categorizes diverse elements.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25006103515625,
+          655.0863647460938,
+          433.1748962402344,
+          665.0489501953125
+        ]
+      },
+      {
+        "text": "The PP-DocLayout-S model offers a significantly",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          329.2050476074219,
+          667.579345703125,
+          553.5029907226562,
+          677.5419311523438
+        ]
+      },
+      {
+        "text": "smaller model size of 1.21 million parameters with faster",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25006103515625,
+          679.5343627929688,
+          553.5032348632812,
+          689.4969482421875
+        ]
+      },
+      {
+        "text": "inference times 8.11 milliseconds on a T4 GPU, about 123",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25006103515625,
+          691.4893798828125,
+          553.5032958984375,
+          701.4519653320312
+        ]
+      },
+      {
+        "text": "FPS and 14.49 milliseconds on a CPU, which translates to",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25006103515625,
+          703.4443359375,
+          553.5030517578125,
+          713.4069213867188
         ]
       }
     ]
@@ -427,87 +2370,10 @@
   {
     "type": "text",
     "bbox": [
-      107.64099884033203,
-      701.4521484375,
-      505.2399597167969,
-      722.4310302734375
-    ],
-    "content": "Zero-Shot:Our Zero-Shot prompt provides only the 8-puzzle rules, goal state, and output format,without examples or reasoning cues like \"think step-by-step\" [31]. This setup isolates the model’s",
-    "spans": [
-      {
-        "text": "Zero-Shot:",
-        "font_name": "NimbusRomNo9L-Medi",
-        "font_size": 9.952631950378418,
-        "font_flags": 20,
-        "color": 0,
-        "bbox": [
-          108.0,
-          701.4521484375,
-          154.21356201171875,
-          711.40478515625
-        ]
-      },
-      {
-        "text": "Our Zero-Shot prompt provides only the 8-puzzle rules, goal state, and output format,",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.952631950378418,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          164.17611694335938,
-          701.5430297851562,
-          505.2399597167969,
-          711.4956665039062
-        ]
-      },
-      {
-        "text": "without examples or reasoning cues like \"think step-by-step\" [",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          107.64099884033203,
-          712.3692626953125,
-          360.3663330078125,
-          722.4310302734375
-        ]
-      },
-      {
-        "text": "31",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.962599754333496,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          360.3630065917969,
-          712.4444580078125,
-          370.3255920410156,
-          722.4070434570312
-        ]
-      },
-      {
-        "text": "]. This setup isolates the model’s",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          370.32501220703125,
-          712.3692626953125,
-          504.0042724609375,
-          722.4310302734375
-        ]
-      }
-    ]
-  },
-  {
-    "type": "text",
-    "bbox": [
-      303.5090026855469,
-      742.3324584960938,
-      308.49029541015625,
-      752.2950439453125
+      303.5090637207031,
+      733.3323364257812,
+      308.4903564453125,
+      743.294921875
     ],
     "content": "4",
     "spans": [
@@ -518,23 +2384,12 @@
         "font_flags": 4,
         "color": 0,
         "bbox": [
-          303.5090026855469,
-          742.3324584960938,
-          308.49029541015625,
-          752.2950439453125
+          303.5090637207031,
+          733.3323364257812,
+          308.4903564453125,
+          743.294921875
         ]
       }
     ]
-  },
-  {
-    "type": "image",
-    "bbox": [
-      108.0,
-      71.99896240234375,
-      504.021240234375,
-      437.5570068359375
-    ],
-    "xref": null,
-    "ext": "png"
   }
 ]

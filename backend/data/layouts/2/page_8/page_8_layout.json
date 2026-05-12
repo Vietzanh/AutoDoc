@@ -2,50 +2,24 @@
   {
     "type": "text",
     "bbox": [
-      108.0,
-      210.0224151611328,
-      504.00146484375,
-      241.702880859375
+      269.5569763183594,
+      208.6005859375,
+      342.4436340332031,
+      216.5706787109375
     ],
-    "content": "Figure 6: Termination breakdown of each LLM when using the external move validator. Each stackedbar represents 100% of trials for a given model. The colored segments illustrate the percentage oftrials that terminated due to each failure type. The color scheme is the same as the one used in Fig. 4",
+    "content": "(a) Paper Visualization",
     "spans": [
       {
-        "text": "Figure 6: Termination breakdown of each LLM when using the external move validator. Each stacked",
+        "text": "(a) Paper Visualization",
         "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.862470626831055,
+        "font_size": 7.970099925994873,
         "font_flags": 4,
         "color": 0,
         "bbox": [
-          108.0,
-          210.0224151611328,
-          504.0013732910156,
-          219.8848876953125
-        ]
-      },
-      {
-        "text": "bar represents 100% of trials for a given model. The colored segments illustrate the percentage of",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          220.78030395507812,
-          503.9974365234375,
-          230.842041015625
-        ]
-      },
-      {
-        "text": "trials that terminated due to each failure type. The color scheme is the same as the one used in Fig. 4",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.862470626831055,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          231.8404083251953,
-          504.00146484375,
-          241.702880859375
+          269.5569763183594,
+          208.6005859375,
+          342.4436340332031,
+          216.5706787109375
         ]
       }
     ]
@@ -53,128 +27,24 @@
   {
     "type": "text",
     "bbox": [
-      107.69100189208984,
-      262.4382629394531,
-      505.2473449707031,
-      337.9310607910156
+      237.0829315185547,
+      358.93157958984375,
+      374.91790771484375,
+      366.90167236328125
     ],
-    "content": "The effects of prompting extended beyond success rates, causing significant shifts in terminationmodes (Fig. 4). For instance, Llama 3.1 8B-Instruct under the CoT condition exhibited an increase inparse errors, indicating a failure to adhere to the specified output format. Concurrently, GPT-5-minishowed a dramatic increase in graceful failure with both CoT and AoT, in which the modelrefuses to provide a solution or requests clarification. These outcomes suggest that, for some models,introducing complex prompts creates confusion, hindering their ability to follow instructions ratherthan aiding their reasoning.",
+    "content": "(b) Magazine and Newspaper Visualization",
     "spans": [
       {
-        "text": "The effects of prompting extended beyond success rates, causing significant shifts in termination",
+        "text": "(b) Magazine and Newspaper Visualization",
         "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
+        "font_size": 7.970099925994873,
         "font_flags": 4,
         "color": 0,
         "bbox": [
-          107.69100189208984,
-          262.4382629394531,
-          504.0033874511719,
-          272.5
-        ]
-      },
-      {
-        "text": "modes (Fig. 4). For instance, Llama 3.1 8B-Instruct under the CoT condition exhibited an increase in",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.862470626831055,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          273.4994201660156,
-          504.0014953613281,
-          283.36187744140625
-        ]
-      },
-      {
-        "text": "parse errors, indicating a failure to adhere to the specified output format. Concurrently, GPT-5-mini",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.95761775970459,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          284.33624267578125,
-          503.9957275390625,
-          294.2938537597656
-        ]
-      },
-      {
-        "text": "showed a dramatic increase in",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          295.1662902832031,
-          231.5985870361328,
-          305.22802734375
-        ]
-      },
-      {
-        "text": " graceful failure",
-        "font_name": "SFTT1000",
-        "font_size": 9.962599754333496,
-        "font_flags": 12,
-        "color": 0,
-        "bbox": [
-          231.5985870361328,
-          295.489501953125,
-          318.1749572753906,
-          305.45208740234375
-        ]
-      },
-      {
-        "text": " with both CoT and AoT, in which the model",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          318.1749572753906,
-          295.1662902832031,
-          503.9949035644531,
-          305.22802734375
-        ]
-      },
-      {
-        "text": "refuses to provide a solution or requests clarification. These outcomes suggest that, for some models,",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.89261531829834,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          306.20355224609375,
-          505.2473449707031,
-          316.0961608886719
-        ]
-      },
-      {
-        "text": "introducing complex prompts creates confusion, hindering their ability to follow instructions rather",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.982504844665527,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          317.04437255859375,
-          504.1668395996094,
-          327.0268859863281
-        ]
-      },
-      {
-        "text": "than aiding their reasoning.",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.962599754333496,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          327.96844482421875,
-          217.02072143554688,
-          337.9310607910156
+          237.0829315185547,
+          358.93157958984375,
+          374.91790771484375,
+          366.90167236328125
         ]
       }
     ]
@@ -182,37 +52,24 @@
   {
     "type": "text",
     "bbox": [
-      108.0,
-      352.04449462890625,
-      222.86874389648438,
-      362.007080078125
+      252.12290954589844,
+      505.4595642089844,
+      359.8787841796875,
+      513.4296875
     ],
-    "content": "5.3The Cost of Feedback",
+    "content": "(c) Research Report Visualization",
     "spans": [
       {
-        "text": "5.3",
-        "font_name": "NimbusRomNo9L-Medi",
-        "font_size": 9.962599754333496,
-        "font_flags": 20,
+        "text": "(c) Research Report Visualization",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 7.970099925994873,
+        "font_flags": 4,
         "color": 0,
         "bbox": [
-          108.0,
-          352.04449462890625,
-          120.4532470703125,
-          362.007080078125
-        ]
-      },
-      {
-        "text": "The Cost of Feedback",
-        "font_name": "NimbusRomNo9L-Medi",
-        "font_size": 9.962599754333496,
-        "font_flags": 20,
-        "color": 0,
-        "bbox": [
-          130.4158477783203,
-          352.04449462890625,
-          222.86874389648438,
-          362.007080078125
+          252.12290954589844,
+          505.4595642089844,
+          359.8787841796875,
+          513.4296875
         ]
       }
     ]
@@ -220,141 +77,24 @@
   {
     "type": "text",
     "bbox": [
-      107.53199768066406,
-      372.0352783203125,
-      505.7451477050781,
-      480.25506591796875
+      215.26487731933594,
+      660.8975219726562,
+      396.7362060546875,
+      668.8676147460938
     ],
-    "content": "GPT-5-Thinking saw the most significant performance increase with the addition of feedback andsaved progress between calls. Its success rate increased from 30% to 68%, but this comes at asubstantial cost. As Table 1 shows, the model needs, on average, two attempts, 24 minutes, over twiceas many moves and 75,000 tokens to solve a puzzle. These averages are all higher when we includethe puzzles that the models failed to solve. Furthermore, we obtain these results under carefullyengineered prompts designed to be as helpful as possible for this task. Thus, while performancemay increase, the compute and human resources required to provide these gains are substantial andproblem-dependent. Gemini-2.5-Pro and GPT-5-mini both have similar issues with resource usage.While their average time, tokens and moves needed are lower overall, they require more attempts andhave a substantially lower success rate of 18%.",
+    "content": "(d) Books, Notes, Test Paper and Contracts Visualization",
     "spans": [
       {
-        "text": "GPT-5-Thinking saw the most significant performance increase with the addition of feedback and",
+        "text": "(d) Books, Notes, Test Paper and Contracts Visualization",
         "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
+        "font_size": 7.970099925994873,
         "font_flags": 4,
         "color": 0,
         "bbox": [
-          108.0,
-          372.0352783203125,
-          503.9975280761719,
-          382.0970153808594
-        ]
-      },
-      {
-        "text": "saved progress between calls. Its success rate increased from 30% to 68%, but this comes at a",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          382.9443054199219,
-          503.99749755859375,
-          393.00604248046875
-        ]
-      },
-      {
-        "text": "substantial cost. As Table 1 shows, the model needs, on average, two attempts, 24 minutes, over twice",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.862470626831055,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          394.0044250488281,
-          504.0014343261719,
-          403.86688232421875
-        ]
-      },
-      {
-        "text": "as many moves and 75,000 tokens to solve a puzzle. These averages are all higher when we include",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.952631950378418,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          404.84503173828125,
-          503.9971618652344,
-          414.79766845703125
-        ]
-      },
-      {
-        "text": "the puzzles that the models failed to solve. Furthermore, we obtain these results under carefully",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          415.6712951660156,
-          504.3428955078125,
-          425.7330322265625
-        ]
-      },
-      {
-        "text": "engineered prompts designed to be as helpful as possible for this task. Thus, while performance",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          426.5802917480469,
-          503.9974060058594,
-          436.64202880859375
-        ]
-      },
-      {
-        "text": "may increase, the compute and human resources required to provide these gains are substantial and",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.982504844665527,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          437.54937744140625,
-          503.9969787597656,
-          447.5318908691406
-        ]
-      },
-      {
-        "text": "problem-dependent. Gemini-2.5-Pro and GPT-5-mini both have similar issues with resource usage.",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.002370834350586,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          448.4443054199219,
-          505.7451477050781,
-          458.4466857910156
-        ]
-      },
-      {
-        "text": "While their average time, tokens and moves needed are lower overall, they require more attempts and",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.867501258850098,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          107.53199768066406,
-          459.4555969238281,
-          503.9961853027344,
-          469.3230895996094
-        ]
-      },
-      {
-        "text": "have a substantially lower success rate of 18%.",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.962599754333496,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          470.2924499511719,
-          294.9881286621094,
-          480.25506591796875
+          215.26487731933594,
+          660.8975219726562,
+          396.7362060546875,
+          668.8676147460938
         ]
       }
     ]
@@ -362,63 +102,24 @@
   {
     "type": "text",
     "bbox": [
-      111.00543975830078,
-      495.21844482421875,
-      501.01611328125,
-      504.2341613769531
+      119.18287658691406,
+      680.6159057617188,
+      492.82171630859375,
+      689.5823364257812
     ],
-    "content": "ModelApproachFeedbackSolved N Time (min) Tokens Attempts Moves Optimal",
+    "content": "Figure 4. Different visualizations by PP-DocLayout-L for various document types and layout structures.",
     "spans": [
       {
-        "text": "Model",
+        "text": "Figure 4. Different visualizations by PP-DocLayout-L for various document types and layout structures.",
         "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.015714645385742,
+        "font_size": 8.966400146484375,
         "font_flags": 4,
         "color": 0,
         "bbox": [
-          111.00543975830078,
-          495.21844482421875,
-          134.5454559326172,
-          504.2341613769531
-        ]
-      },
-      {
-        "text": "Approach",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.015714645385742,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          196.89816284179688,
-          495.21844482421875,
-          232.44711303710938,
-          504.2341613769531
-        ]
-      },
-      {
-        "text": "Feedback",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.015714645385742,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          240.78665161132812,
-          495.21844482421875,
-          275.3348388671875,
-          504.2341613769531
-        ]
-      },
-      {
-        "text": "Solved N Time (min) Tokens Attempts Moves Optimal",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.015714645385742,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          283.67437744140625,
-          495.21844482421875,
-          501.01611328125,
-          504.2341613769531
+          119.18287658691406,
+          680.6159057617188,
+          492.82171630859375,
+          689.5823364257812
         ]
       }
     ]
@@ -426,695 +127,10 @@
   {
     "type": "text",
     "bbox": [
-      111.00543975830078,
-      510.4698181152344,
-      496.3822326660156,
-      549.5379638671875
-    ],
-    "content": "GPT-5-ThinkingAoTSuggestive3423.92752841.9748.9121.03Gemini-2.5-ProBaseRepeat96.74586512.6730.5619.67Llama 3.1 8B-InstructBaseRepeat000000GPT-5-miniCoTRepeat99.91442722.6728.4419.11",
-    "spans": [
-      {
-        "text": "GPT-5-Thinking",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.015714645385742,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          111.00543975830078,
-          510.4698181152344,
-          170.77963256835938,
-          519.4855346679688
-        ]
-      },
-      {
-        "text": "AoT",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.015714645385742,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          206.40972900390625,
-          510.4698181152344,
-          222.935546875,
-          519.4855346679688
-        ]
-      },
-      {
-        "text": "Suggestive",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.015714645385742,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          238.45159912109375,
-          510.4698181152344,
-          277.6609191894531,
-          519.4855346679688
-        ]
-      },
-      {
-        "text": "34",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.015714645385742,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          295.9988708496094,
-          510.4698181152344,
-          305.0145568847656,
-          519.4855346679688
-        ]
-      },
-      {
-        "text": "23.92",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.015714645385742,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          333.71160888671875,
-          510.4698181152344,
-          353.9969787597656,
-          519.4855346679688
-        ]
-      },
-      {
-        "text": "75284",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.015714645385742,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          371.9653015136719,
-          510.4698181152344,
-          394.5046081542969,
-          519.4855346679688
-        ]
-      },
-      {
-        "text": "1.97",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.015714645385742,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          410.7509460449219,
-          510.4698181152344,
-          426.5284118652344,
-          519.4855346679688
-        ]
-      },
-      {
-        "text": "48.91",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.015714645385742,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          443.17144775390625,
-          510.4698181152344,
-          463.456787109375,
-          519.4855346679688
-        ]
-      },
-      {
-        "text": "21.03",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.015714645385742,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          476.09686279296875,
-          510.4698181152344,
-          496.3821716308594,
-          519.4855346679688
-        ]
-      },
-      {
-        "text": "Gemini-2.5-Pro",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.015714645385742,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          111.00543975830078,
-          520.4866943359375,
-          167.8495330810547,
-          529.5023803710938
-        ]
-      },
-      {
-        "text": "Base",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.015714645385742,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          205.9048614501953,
-          520.4866943359375,
-          223.43141174316406,
-          529.5023803710938
-        ]
-      },
-      {
-        "text": "Repeat",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.015714645385742,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          245.53794860839844,
-          520.4866943359375,
-          270.5745849609375,
-          529.5023803710938
-        ]
-      },
-      {
-        "text": "9",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.015714645385742,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          298.2528076171875,
-          520.4866943359375,
-          302.7606506347656,
-          529.5023803710938
-        ]
-      },
-      {
-        "text": "6.74",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.015714645385742,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          335.965576171875,
-          520.4866943359375,
-          351.7430725097656,
-          529.5023803710938
-        ]
-      },
-      {
-        "text": "58651",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.015714645385742,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          371.96533203125,
-          520.4866943359375,
-          394.5046691894531,
-          529.5023803710938
-        ]
-      },
-      {
-        "text": "2.67",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.015714645385742,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          410.7510070800781,
-          520.4866943359375,
-          426.5284729003906,
-          529.5023803710938
-        ]
-      },
-      {
-        "text": "30.56",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.015714645385742,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          443.1715087890625,
-          520.4866943359375,
-          463.45684814453125,
-          529.5023803710938
-        ]
-      },
-      {
-        "text": "19.67",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.015714645385742,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          476.096923828125,
-          520.4866943359375,
-          496.3822326660156,
-          529.5023803710938
-        ]
-      },
-      {
-        "text": "Llama 3.1 8B-Instruct",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.015714645385742,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          111.00543975830078,
-          530.5045166015625,
-          190.8846893310547,
-          539.5202026367188
-        ]
-      },
-      {
-        "text": "Base",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.015714645385742,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          205.9048614501953,
-          530.5045166015625,
-          223.43141174316406,
-          539.5202026367188
-        ]
-      },
-      {
-        "text": "Repeat",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.015714645385742,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          245.53794860839844,
-          530.5045166015625,
-          270.5745849609375,
-          539.5202026367188
-        ]
-      },
-      {
-        "text": "0",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.015714645385742,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          298.2528076171875,
-          530.5045166015625,
-          302.7606506347656,
-          539.5202026367188
-        ]
-      },
-      {
-        "text": "0",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.015714645385742,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          341.60040283203125,
-          530.5045166015625,
-          346.1082458496094,
-          539.5202026367188
-        ]
-      },
-      {
-        "text": "0",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.015714645385742,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          380.9810485839844,
-          530.5045166015625,
-          385.4888916015625,
-          539.5202026367188
-        ]
-      },
-      {
-        "text": "0",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.015714645385742,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          416.3857421875,
-          530.5045166015625,
-          420.8935852050781,
-          539.5202026367188
-        ]
-      },
-      {
-        "text": "0",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.015714645385742,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          451.0602111816406,
-          530.5045166015625,
-          455.56805419921875,
-          539.5202026367188
-        ]
-      },
-      {
-        "text": "0",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.015714645385742,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          483.9856262207031,
-          530.5045166015625,
-          488.49346923828125,
-          539.5202026367188
-        ]
-      },
-      {
-        "text": "GPT-5-mini",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.015714645385742,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          111.00543975830078,
-          540.5222778320312,
-          154.25381469726562,
-          549.5379638671875
-        ]
-      },
-      {
-        "text": "CoT",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.015714645385742,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          206.65316772460938,
-          540.5222778320312,
-          222.68310546875,
-          549.5379638671875
-        ]
-      },
-      {
-        "text": "Repeat",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.015714645385742,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          245.53794860839844,
-          540.5222778320312,
-          270.5745849609375,
-          549.5379638671875
-        ]
-      },
-      {
-        "text": "9",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.015714645385742,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          298.2528076171875,
-          540.5222778320312,
-          302.7606506347656,
-          549.5379638671875
-        ]
-      },
-      {
-        "text": "9.91",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.015714645385742,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          335.965576171875,
-          540.5222778320312,
-          351.7430725097656,
-          549.5379638671875
-        ]
-      },
-      {
-        "text": "44272",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.015714645385742,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          371.96533203125,
-          540.5222778320312,
-          394.5046691894531,
-          549.5379638671875
-        ]
-      },
-      {
-        "text": "2.67",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.015714645385742,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          410.7510070800781,
-          540.5222778320312,
-          426.5284729003906,
-          549.5379638671875
-        ]
-      },
-      {
-        "text": "28.44",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.015714645385742,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          443.1715087890625,
-          540.5222778320312,
-          463.45684814453125,
-          549.5379638671875
-        ]
-      },
-      {
-        "text": "19.11",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.015714645385742,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          476.096923828125,
-          540.5222778320312,
-          496.3822326660156,
-          549.5379638671875
-        ]
-      }
-    ]
-  },
-  {
-    "type": "text",
-    "bbox": [
-      107.69100189208984,
-      557.3563842773438,
-      505.65118408203125,
-      589.0990600585938
-    ],
-    "content": "Table 1: Solved count and average time (minutes), tokens used, attempts, moves, and optimal movesfor each model under its best-performing condition. We broke ties for GPT-5-mini and Gemini-2.5-Pro by choosing the approach that required the fewest tokens.",
-    "spans": [
-      {
-        "text": "Table 1: Solved count and average time (minutes), tokens used, attempts, moves, and optimal moves",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.9126615524292,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          107.69100189208984,
-          557.3563842773438,
-          503.9950866699219,
-          567.26904296875
-        ]
-      },
-      {
-        "text": "for each model under its best-performing condition. We broke ties for GPT-5-mini and Gemini-2.5-",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.977532386779785,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          568.2161865234375,
-          505.65118408203125,
-          578.1937255859375
-        ]
-      },
-      {
-        "text": "Pro by choosing the approach that required the fewest tokens.",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.962599754333496,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          579.136474609375,
-          353.3489074707031,
-          589.0990600585938
-        ]
-      }
-    ]
-  },
-  {
-    "type": "text",
-    "bbox": [
-      108.0,
-      616.0145263671875,
-      310.9778747558594,
-      625.9771118164062
-    ],
-    "content": "5.4Planning with an External Move Validator",
-    "spans": [
-      {
-        "text": "5.4",
-        "font_name": "NimbusRomNo9L-Medi",
-        "font_size": 9.962599754333496,
-        "font_flags": 20,
-        "color": 0,
-        "bbox": [
-          108.0,
-          616.0145263671875,
-          120.4532470703125,
-          625.9771118164062
-        ]
-      },
-      {
-        "text": "Planning with an External Move Validator",
-        "font_name": "NimbusRomNo9L-Medi",
-        "font_size": 9.962599754333496,
-        "font_flags": 20,
-        "color": 0,
-        "bbox": [
-          130.4158477783203,
-          616.0145263671875,
-          310.9778747558594,
-          625.9771118164062
-        ]
-      }
-    ]
-  },
-  {
-    "type": "text",
-    "bbox": [
-      108.0,
-      636.1183471679688,
-      505.7460632324219,
-      722.4286499023438
-    ],
-    "content": "In our final experiment with the external move validator, no model solved a single puzzle. As shownin Fig. 6, this intervention hurt performance, lowering the success rates of all models and shiftingthe dominant failure mode to looping in most models and early termination in GPT-5-mini. Fig. 7further illustrates the planning deficit, showing that the models made minimal progress toward thegoal state despite making numerous valid moves. For instance, GPT-5-mini made, on average, nearlyforty-seven valid moves to achieve only about six moves of progress based on a Manhattan-distanceheuristic. GPT-5-Thinking and Gemini were more efficient in that they made better progress in fewermoves, but this matters little, as they often began to repeat moves, completely stagnating progress.",
-    "spans": [
-      {
-        "text": "In our final experiment with the external move validator, no model solved a single puzzle. As shown",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.9126615524292,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          636.1183471679688,
-          503.9983825683594,
-          646.031005859375
-        ]
-      },
-      {
-        "text": "in Fig. 6, this intervention hurt performance, lowering the success rates of all models and shifting",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          646.9142456054688,
-          503.99755859375,
-          656.9760131835938
-        ]
-      },
-      {
-        "text": "the dominant failure mode to looping in most models and early termination in GPT-5-mini. Fig. 7",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          657.8242797851562,
-          504.4952697753906,
-          667.8860473632812
-        ]
-      },
-      {
-        "text": "further illustrates the planning deficit, showing that the models made minimal progress toward the",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.041984558105469,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          668.748291015625,
-          504.00299072265625,
-          678.790283203125
-        ]
-      },
-      {
-        "text": "goal state despite making numerous valid moves. For instance, GPT-5-mini made, on average, nearly",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.882577896118164,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          679.7781982421875,
-          504.35345458984375,
-          689.6607666015625
-        ]
-      },
-      {
-        "text": "forty-seven valid moves to achieve only about six moves of progress based on a Manhattan-distance",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.937662124633789,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          690.6453857421875,
-          503.99603271484375,
-          700.5830688476562
-        ]
-      },
-      {
-        "text": "heuristic. GPT-5-Thinking and Gemini were more efficient in that they made better progress in fewer",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.872529029846191,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          701.603759765625,
-          504.1738586425781,
-          711.476318359375
-        ]
-      },
-      {
-        "text": "moves, but this matters little, as they often began to repeat moves, completely stagnating progress.",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.051863670349121,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          712.3767700195312,
-          505.7460632324219,
-          722.4286499023438
-        ]
-      }
-    ]
-  },
-  {
-    "type": "text",
-    "bbox": [
-      303.5090026855469,
-      742.3324584960938,
-      308.49029541015625,
-      752.2950439453125
+      303.5088806152344,
+      733.3323974609375,
+      308.49017333984375,
+      743.2949829101562
     ],
     "content": "9",
     "spans": [
@@ -1125,10 +141,10 @@
         "font_flags": 4,
         "color": 0,
         "bbox": [
-          303.5090026855469,
-          742.3324584960938,
-          308.49029541015625,
-          752.2950439453125
+          303.5088806152344,
+          733.3323974609375,
+          308.49017333984375,
+          743.2949829101562
         ]
       }
     ]
@@ -1136,10 +152,219 @@
   {
     "type": "image",
     "bbox": [
-      193.875,
-      71.99996185302734,
-      415.6302795410156,
-      199.6190185546875
+      65.89099884033203,
+      77.68365478515625,
+      159.93260192871094,
+      199.3499755859375
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      162.43299865722656,
+      76.97776794433594,
+      256.475830078125,
+      200.05397033691406
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      258.9739990234375,
+      73.56901550292969,
+      353.0155944824219,
+      203.46397399902344
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      355.5159912109375,
+      74.6950912475586,
+      449.5575866699219,
+      202.33697509765625
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      452.0579833984375,
+      72.00129699707031,
+      546.099609375,
+      205.03097534179688
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      65.8909683227539,
+      225.06051635742188,
+      159.9325714111328,
+      348.78399658203125
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      162.43296813964844,
+      220.40733337402344,
+      256.4745788574219,
+      353.43701171875
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      258.9739685058594,
+      224.22784423828125,
+      353.0166015625,
+      349.6180114746094
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      355.5159606933594,
+      219.67291259765625,
+      449.55755615234375,
+      354.1719970703125
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      452.0579528808594,
+      218.48648071289062,
+      546.0989379882812,
+      355.36199951171875
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      65.89093780517578,
+      368.8034973144531,
+      159.9366455078125,
+      501.8900146484375
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      162.4329376220703,
+      368.869384765625,
+      256.47430419921875,
+      501.8380126953125
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      258.97393798828125,
+      371.5301513671875,
+      353.0155334472656,
+      499.1720275878906
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      355.51593017578125,
+      408.901611328125,
+      449.5575256347656,
+      461.8000183105469
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      452.05792236328125,
+      368.869384765625,
+      546.0993041992188,
+      501.8380126953125
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      65.89090728759766,
+      519.8533935546875,
+      159.93226623535156,
+      652.822021484375
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      162.4329071044922,
+      523.6337890625,
+      256.47930908203125,
+      649.0289916992188
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      258.9739074707031,
+      515.3430786132812,
+      353.01226806640625,
+      657.3280029296875
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      355.5158996582031,
+      519.8964233398438,
+      449.56207275390625,
+      652.7639770507812
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      452.0578918457031,
+      519.8533325195312,
+      546.0992431640625,
+      652.8219604492188
     ],
     "xref": null,
     "ext": "png"

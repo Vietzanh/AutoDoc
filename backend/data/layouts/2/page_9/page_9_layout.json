@@ -2,88 +2,37 @@
   {
     "type": "text",
     "bbox": [
-      108.0,
-      236.1903839111328,
-      504.00140380859375,
-      256.9860534667969
+      108.29900360107422,
+      82.75727844238281,
+      175.25979614257812,
+      94.71247863769531
     ],
-    "content": "Figure 7: The average number of valid moves a model made with each puzzle vs the average distancegain from the solution based on the initial and final state using Manhattan distance.",
+    "content": "REFERENCES",
     "spans": [
       {
-        "text": "Figure 7: The average number of valid moves a model made with each puzzle vs the average distance",
+        "text": "R",
         "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.862470626831055,
+        "font_size": 11.9552001953125,
         "font_flags": 4,
         "color": 0,
         "bbox": [
-          108.0,
-          236.1903839111328,
-          504.00140380859375,
-          246.0528564453125
+          108.29900360107422,
+          82.75727844238281,
+          116.27312469482422,
+          94.71247863769531
         ]
       },
       {
-        "text": "gain from the solution based on the initial and final state using Manhattan distance.",
+        "text": "EFERENCES",
         "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.962599754333496,
+        "font_size": 9.56410026550293,
         "font_flags": 4,
         "color": 0,
         "bbox": [
-          108.0,
-          247.02345275878906,
-          438.9076843261719,
-          256.9860534667969
-        ]
-      }
-    ]
-  },
-  {
-    "type": "text",
-    "bbox": [
-      107.64099884033203,
-      279.67626953125,
-      504.0006408691406,
-      311.5020751953125
-    ],
-    "content": "This finding highlights that, even when given only valid moves, models either rely on heuristics soweak that solving a typical puzzle could require well over 100 moves, or they begin repeating movesand cycling through already visited states.",
-    "spans": [
-      {
-        "text": "This finding highlights that, even when given only valid moves, models either rely on heuristics so",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.022196769714355,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          107.69100189208984,
-          279.67626953125,
-          504.0000305175781,
-          289.698486328125
-        ]
-      },
-      {
-        "text": "weak that solving a typical puzzle could require well over 100 moves, or they begin repeating moves",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.902643203735352,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          107.64099884033203,
-          290.6759338378906,
-          504.0006408691406,
-          300.5785827636719
-        ]
-      },
-      {
-        "text": "and cycling through already visited states.",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.962599754333496,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          301.5394592285156,
-          275.53106689453125,
-          311.5020751953125
+          116.87100219726562,
+          84.57066345214844,
+          175.25979614257812,
+          94.134765625
         ]
       }
     ]
@@ -92,36 +41,62 @@
     "type": "text",
     "bbox": [
       108.0,
-      326.6415100097656,
-      183.55636596679688,
-      336.6040954589844
+      102.16743469238281,
+      504.0032043457031,
+      123.08901977539062
     ],
-    "content": "5.5Implications",
+    "content": "Apostolos Antonacopoulos, David Bridson, Christos Papadopoulos, and Stefan Pletschacher. Arealistic dataset for performance evaluation of document layout analysis. In ICDAR, 2009.",
     "spans": [
       {
-        "text": "5.5",
-        "font_name": "NimbusRomNo9L-Medi",
+        "text": "Apostolos Antonacopoulos, David Bridson, Christos Papadopoulos, and Stefan Pletschacher. A",
+        "font_name": "NimbusRomNo9L-Regu",
         "font_size": 9.962599754333496,
-        "font_flags": 20,
+        "font_flags": 4,
         "color": 0,
         "bbox": [
           108.0,
-          326.6415100097656,
-          120.4532470703125,
-          336.6040954589844
+          102.16743469238281,
+          504.0032043457031,
+          112.13003540039062
         ]
       },
       {
-        "text": "Implications",
-        "font_name": "NimbusRomNo9L-Medi",
+        "text": "realistic dataset for performance evaluation of document layout analysis. In",
+        "font_name": "NimbusRomNo9L-Regu",
         "font_size": 9.962599754333496,
-        "font_flags": 20,
+        "font_flags": 4,
         "color": 0,
         "bbox": [
-          130.4158477783203,
-          326.6415100097656,
-          183.55636596679688,
-          336.6040954589844
+          117.96299743652344,
+          113.12641906738281,
+          419.03277587890625,
+          123.08901977539062
+        ]
+      },
+      {
+        "text": " ICDAR",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          419.03277587890625,
+          112.949951171875,
+          450.502197265625,
+          122.91255187988281
+        ]
+      },
+      {
+        "text": ", 2009.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          450.5019836425781,
+          113.12641906738281,
+          477.8991394042969,
+          123.08901977539062
         ]
       }
     ]
@@ -129,141 +104,63 @@
   {
     "type": "text",
     "bbox": [
-      108.0,
-      346.96002197265625,
-      505.6499938964844,
-      455.1460876464844
+      107.99996948242188,
+      132.69142150878906,
+      504.0032043457031,
+      153.61203002929688
     ],
-    "content": "Our findings, though derived from a single domain, carry significant implications for LLM deploy-ment. We observe that all models struggle with this simple task, and while engineered prompts withfeedback and saved-state progression show improvement, they are costly. These interventions alsofail to make any model reliable, as none achieves a success rate over 70%. The nature of these failuresis also concerning, with the primary deficits not just weak heuristic planning that leads to loops,but also a persistent difficulty in maintaining an accurate representation of the board state, leadingto \"hallucinated\" or invalid moves. These errors lead to a critical issue: models frequently outputsolutions as if they have correctly solved the puzzle, without detecting the mistakes made earlier inthe sequence. This kind of false confidence undermines trust, because a model’s final output may reston undetected errors earlier in the sequence.",
+    "content": "Nicolas Carion, Francisco Massa, Gabriel Synnaeve, Nicolas Usunier, Alexander Kirillov, andSergey Zagoruyko. End-to-end object detection with transformers. In ECCV, 2020.",
     "spans": [
       {
-        "text": "Our findings, though derived from a single domain, carry significant implications for LLM deploy-",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.017244338989258,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          346.96002197265625,
-          505.6499938964844,
-          356.977294921875
-        ]
-      },
-      {
-        "text": "ment. We observe that all models struggle with this simple task, and while engineered prompts with",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.937662124633789,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          357.9303894042969,
-          503.99609375,
-          367.8680419921875
-        ]
-      },
-      {
-        "text": "feedback and saved-state progression show improvement, they are costly. These interventions also",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.02714729309082,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          368.7715148925781,
-          504.00439453125,
-          378.7986755371094
-        ]
-      },
-      {
-        "text": "fail to make any model reliable, as none achieves a success rate over 70%. The nature of these failures",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.862470626831055,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          379.805419921875,
-          504.0016174316406,
-          389.6678771972656
-        ]
-      },
-      {
-        "text": "is also concerning, with the primary deficits not just weak heuristic planning that leads to loops,",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          390.56329345703125,
-          505.2472229003906,
-          400.6250305175781
-        ]
-      },
-      {
-        "text": "but also a persistent difficulty in maintaining an accurate representation of the board state, leading",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.046924591064453,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          401.4835205078125,
-          503.99755859375,
-          411.53045654296875
-        ]
-      },
-      {
-        "text": "to \"hallucinated\" or invalid moves. These errors lead to a critical issue: models frequently output",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          412.38128662109375,
-          503.9974670410156,
-          422.4430236816406
-        ]
-      },
-      {
-        "text": "solutions as if they have correctly solved the puzzle, without detecting the mistakes made earlier in",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.992443084716797,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          423.34283447265625,
-          504.004150390625,
-          433.33526611328125
-        ]
-      },
-      {
-        "text": "the sequence. This kind of false confidence undermines trust, because a model’s final output may rest",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.862470626831055,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          434.35040283203125,
-          504.00146484375,
-          444.2128601074219
-        ]
-      },
-      {
-        "text": "on undetected errors earlier in the sequence.",
+        "text": "Nicolas Carion, Francisco Massa, Gabriel Synnaeve, Nicolas Usunier, Alexander Kirillov, and",
         "font_name": "NimbusRomNo9L-Regu",
         "font_size": 9.962599754333496,
         "font_flags": 4,
         "color": 0,
         "bbox": [
-          108.0,
-          445.1834716796875,
-          283.6706237792969,
-          455.1460876464844
+          107.99996948242188,
+          132.69142150878906,
+          504.0032043457031,
+          142.65402221679688
+        ]
+      },
+      {
+        "text": "Sergey Zagoruyko. End-to-end object detection with transformers. In",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.96296691894531,
+          143.64942932128906,
+          395.58062744140625,
+          153.61203002929688
+        ]
+      },
+      {
+        "text": " ECCV",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          395.58062744140625,
+          143.47296142578125,
+          423.53436279296875,
+          153.43556213378906
+        ]
+      },
+      {
+        "text": ", 2020.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          423.533935546875,
+          143.64942932128906,
+          450.93109130859375,
+          153.61203002929688
         ]
       }
     ]
@@ -271,89 +168,63 @@
   {
     "type": "text",
     "bbox": [
-      107.69100189208984,
-      461.6484069824219,
-      505.2492370605469,
-      526.0800170898438
+      107.99993896484375,
+      163.2144317626953,
+      504.0031433105469,
+      184.13601684570312
     ],
-    "content": "These findings challenge the vision of deploying LLMs as autonomous agents in complex, real-worldapplications. If an LLM cannot reliably track its own state in a simple, deterministic puzzle, it mayhave similar issues in high-stakes, dynamic environments. In domains such as autonomous robotics,financial trading, or logistics management, an agent that proceeds with high confidence after aninternal error can be unreliable and potentially dangerous. It risks costly or harmful outcomes byacting on a flawed premise.",
+    "content": "Jian Chen, Ruiyi Zhang, Yufan Zhou, and Changyou Chen. Towards aligned layout generation viadiffusion model with aesthetic constraints. arXiv preprint arXiv:2402.04754, 2024.",
     "spans": [
       {
-        "text": "These findings challenge the vision of deploying LLMs as autonomous agents in complex, real-world",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.862470626831055,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          107.69100189208984,
-          461.6484069824219,
-          503.9951477050781,
-          471.5108642578125
-        ]
-      },
-      {
-        "text": "applications. If an LLM cannot reliably track its own state in a simple, deterministic puzzle, it may",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.992443084716797,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          472.4588317871094,
-          504.34490966796875,
-          482.4512634277344
-        ]
-      },
-      {
-        "text": "have similar issues in high-stakes, dynamic environments. In domains such as autonomous robotics,",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.947644233703613,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          483.4018249511719,
-          505.2492370605469,
-          493.3494873046875
-        ]
-      },
-      {
-        "text": "financial trading, or logistics management, an agent that proceeds with high confidence after an",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          494.22430419921875,
-          503.99749755859375,
-          504.2860412597656
-        ]
-      },
-      {
-        "text": "internal error can be unreliable and potentially dangerous. It risks costly or harmful outcomes by",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          505.1333312988281,
-          504.3429870605469,
-          515.195068359375
-        ]
-      },
-      {
-        "text": "acting on a flawed premise.",
+        "text": "Jian Chen, Ruiyi Zhang, Yufan Zhou, and Changyou Chen. Towards aligned layout generation via",
         "font_name": "NimbusRomNo9L-Regu",
         "font_size": 9.962599754333496,
         "font_flags": 4,
         "color": 0,
         "bbox": [
-          108.0,
-          516.117431640625,
-          217.1402587890625,
-          526.0800170898438
+          107.99993896484375,
+          163.2144317626953,
+          504.0031433105469,
+          173.17703247070312
+        ]
+      },
+      {
+        "text": "diffusion model with aesthetic constraints.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.96293640136719,
+          174.1734161376953,
+          286.78912353515625,
+          184.13601684570312
+        ]
+      },
+      {
+        "text": " arXiv preprint arXiv:2402.04754",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          286.78912353515625,
+          173.9969482421875,
+          422.5576477050781,
+          183.9595489501953
+        ]
+      },
+      {
+        "text": ", 2024.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          422.55694580078125,
+          174.1734161376953,
+          449.9541015625,
+          184.13601684570312
         ]
       }
     ]
@@ -361,37 +232,102 @@
   {
     "type": "text",
     "bbox": [
-      108.0,
-      541.219482421875,
-      234.9434051513672,
-      551.1820678710938
+      107.99993896484375,
+      193.73841857910156,
+      504.0036315917969,
+      247.53695678710938
     ],
-    "content": "5.6Absence of Coding Tools",
+    "content": "Kai Chen, Jiaqi Wang, Jiangmiao Pang, Yuhang Cao, Yu Xiong, Xiaoxiao Li, Shuyang Sun, WansenFeng, Ziwei Liu, Jiarui Xu, Zheng Zhang, Dazhi Cheng, Chenchen Zhu, Tianheng Cheng, QijieZhao, Buyu Li, Xin Lu, Rui Zhu, Yue Wu, Jifeng Dai, Jingdong Wang, Jianping Shi, WanliOuyang, Chen Change Loy, and Dahua Lin. MMDetection: Open mmlab detection toolbox andbenchmark. arXiv, 2019.",
     "spans": [
       {
-        "text": "5.6",
-        "font_name": "NimbusRomNo9L-Medi",
+        "text": "Kai Chen, Jiaqi Wang, Jiangmiao Pang, Yuhang Cao, Yu Xiong, Xiaoxiao Li, Shuyang Sun, Wansen",
+        "font_name": "NimbusRomNo9L-Regu",
         "font_size": 9.962599754333496,
-        "font_flags": 20,
+        "font_flags": 4,
         "color": 0,
         "bbox": [
-          108.0,
-          541.219482421875,
-          120.4532470703125,
-          551.1820678710938
+          107.99993896484375,
+          193.73841857910156,
+          504.0032958984375,
+          203.70101928710938
         ]
       },
       {
-        "text": "Absence of Coding Tools",
-        "font_name": "NimbusRomNo9L-Medi",
+        "text": "Feng, Ziwei Liu, Jiarui Xu, Zheng Zhang, Dazhi Cheng, Chenchen Zhu, Tianheng Cheng, Qijie",
+        "font_name": "NimbusRomNo9L-Regu",
         "font_size": 9.962599754333496,
-        "font_flags": 20,
+        "font_flags": 4,
         "color": 0,
         "bbox": [
-          130.4158477783203,
-          541.219482421875,
-          234.9434051513672,
-          551.1820678710938
+          117.96293640136719,
+          204.69740295410156,
+          504.0036315917969,
+          214.66000366210938
+        ]
+      },
+      {
+        "text": "Zhao, Buyu Li, Xin Lu, Rui Zhu, Yue Wu, Jifeng Dai, Jingdong Wang, Jianping Shi, Wanli",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.96293640136719,
+          215.65638732910156,
+          504.0035400390625,
+          225.61898803710938
+        ]
+      },
+      {
+        "text": "Ouyang, Chen Change Loy, and Dahua Lin. MMDetection: Open mmlab detection toolbox and",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.96293640136719,
+          226.61537170410156,
+          504.0035400390625,
+          236.57797241210938
+        ]
+      },
+      {
+        "text": "benchmark.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.96293640136719,
+          237.57435607910156,
+          164.7174072265625,
+          247.53695678710938
+        ]
+      },
+      {
+        "text": " arXiv",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          164.7174072265625,
+          237.39788818359375,
+          190.4408416748047,
+          247.36048889160156
+        ]
+      },
+      {
+        "text": ", 2019.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          190.43994140625,
+          237.57435607910156,
+          217.83705139160156,
+          247.53695678710938
         ]
       }
     ]
@@ -399,140 +335,115 @@
   {
     "type": "text",
     "bbox": [
-      107.7509994506836,
-      561.5390014648438,
-      504.16937255859375,
-      636.9970092773438
+      107.99993896484375,
+      257.13934326171875,
+      504.0033264160156,
+      302.5819396972656
     ],
-    "content": "One might ask why we do not simply allow the models to use code interpreters for this task—afterall, using tools is itself a form of reasoning. However, allowing the model to write and execute codechanges the nature of the problem: the evaluation then focuses on whether the model can producevalid code, a capability already well studied by existing benchmarks. Moreover, code-based searchlargely masks planning and state tracking, since an external algorithm can solve the puzzle withoutthe model needing to devise or maintain a long-term strategy. Therefore, in our experiments, weexclude code interpreters because they would mask the abilities we seek to examine.",
+    "content": "Hiuyi Cheng, Peirong Zhang, Sihang Wu, Jiaxin Zhang, Qiyuan Zhu, Zecheng Xie, Jing Li, KaiDing, and Lianwen Jin. M6doc: A large-scale multi-format, multi-type, multi-layout, multi-language, multi-annotation category dataset for modern document layout analysis. In CVPR,2023.",
     "spans": [
       {
-        "text": "One might ask why we do not simply allow the models to use code interpreters for this task—after",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.017244338989258,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          561.5390014648438,
-          504.16937255859375,
-          571.5562744140625
-        ]
-      },
-      {
-        "text": "all, using tools is itself a form of reasoning. However, allowing the model to write and execute code",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.942654609680176,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          572.5045776367188,
-          503.996826171875,
-          582.447265625
-        ]
-      },
-      {
-        "text": "changes the nature of the problem: the evaluation then focuses on whether the model can produce",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          583.3232421875,
-          503.9974670410156,
-          593.385009765625
-        ]
-      },
-      {
-        "text": "valid code, a capability already well studied by existing benchmarks. Moreover, code-based search",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.997407913208008,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          107.7509994506836,
-          594.2811279296875,
-          503.99822998046875,
-          604.2785034179688
-        ]
-      },
-      {
-        "text": "largely masks planning and state tracking, since an external algorithm can solve the puzzle without",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.992443084716797,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          605.1937866210938,
-          504.0042419433594,
-          615.186279296875
-        ]
-      },
-      {
-        "text": "the model needing to devise or maintain a long-term strategy. Therefore, in our experiments, we",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          616.05029296875,
-          503.9974060058594,
-          626.112060546875
-        ]
-      },
-      {
-        "text": "exclude code interpreters because they would mask the abilities we seek to examine.",
+        "text": "Hiuyi Cheng, Peirong Zhang, Sihang Wu, Jiaxin Zhang, Qiyuan Zhu, Zecheng Xie, Jing Li, Kai",
         "font_name": "NimbusRomNo9L-Regu",
         "font_size": 9.962599754333496,
         "font_flags": 4,
         "color": 0,
         "bbox": [
-          108.0,
-          627.034423828125,
-          444.1680603027344,
-          636.9970092773438
+          107.99993896484375,
+          257.13934326171875,
+          504.0033264160156,
+          267.1019592285156
         ]
-      }
-    ]
-  },
-  {
-    "type": "text",
-    "bbox": [
-      108.0,
-      654.5421752929688,
-      183.06671142578125,
-      666.4973754882812
-    ],
-    "content": "6Conclusion",
-    "spans": [
+      },
+      {
+        "text": "Ding, and Lianwen Jin. M",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.96293640136719,
+          270.70233154296875,
+          232.05458068847656,
+          280.6649475097656
+        ]
+      },
       {
         "text": "6",
-        "font_name": "NimbusRomNo9L-Medi",
-        "font_size": 11.9552001953125,
-        "font_flags": 20,
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 5,
         "color": 0,
         "bbox": [
-          108.0,
-          654.5421752929688,
-          113.97760009765625,
-          666.4973754882812
+          232.0499267578125,
+          267.0863037109375,
+          237.03121948242188,
+          277.0489196777344
         ]
       },
       {
-        "text": "Conclusion",
-        "font_name": "NimbusRomNo9L-Medi",
-        "font_size": 11.9552001953125,
-        "font_flags": 20,
+        "text": "doc: A large-scale multi-format, multi-type, multi-layout, multi-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
         "color": 0,
         "bbox": [
-          125.93280029296875,
-          654.5421752929688,
-          183.06671142578125,
-          666.4973754882812
+          237.52992248535156,
+          270.70233154296875,
+          503.9994201660156,
+          280.6649475097656
+        ]
+      },
+      {
+        "text": "language, multi-annotation category dataset for modern document layout analysis. In",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.96292114257812,
+          281.66033935546875,
+          472.76080322265625,
+          291.6229553222656
+        ]
+      },
+      {
+        "text": " CVPR",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          472.76080322265625,
+          281.48388671875,
+          501.50946044921875,
+          291.44647216796875
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          501.5089416503906,
+          281.66033935546875,
+          503.9996032714844,
+          291.6229553222656
+        ]
+      },
+      {
+        "text": "2023.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.96295166015625,
+          292.61932373046875,
+          140.3787841796875,
+          302.5819396972656
         ]
       }
     ]
@@ -540,63 +451,63 @@
   {
     "type": "text",
     "bbox": [
-      107.64099884033203,
-      679.6873168945312,
-      504.35302734375,
-      722.3828735351562
+      107.99995422363281,
+      312.184326171875,
+      504.00311279296875,
+      333.1059265136719
     ],
-    "content": "In this work, we examined a range of LLMs using the 8-puzzle to probe their planning and statefulreasoning capabilities. Our findings show that both SOTA and small models still struggle significantlywith this seemingly simple task, with failures indicating critical deficits in state tracking and heuristicplanning. While feedback and prompt engineering offer some help, they are costly and do not provide",
+    "content": "Cheng Da, Chuwei Luo, Qi Zheng, and Cong Yao. Vision grid transformer for document layoutanalysis. In ICCV, 2023.",
     "spans": [
       {
-        "text": "In this work, we examined a range of LLMs using the 8-puzzle to probe their planning and stateful",
+        "text": "Cheng Da, Chuwei Luo, Qi Zheng, and Cong Yao. Vision grid transformer for document layout",
         "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.002370834350586,
+        "font_size": 9.962599754333496,
         "font_flags": 4,
         "color": 0,
         "bbox": [
-          108.0,
-          679.6873168945312,
-          503.9977111816406,
-          689.689697265625
+          107.99995422363281,
+          312.184326171875,
+          504.00311279296875,
+          322.1469421386719
         ]
       },
       {
-        "text": "reasoning capabilities. Our findings show that both SOTA and small models still struggle significantly",
+        "text": "analysis. In",
         "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.862470626831055,
+        "font_size": 9.962599754333496,
         "font_flags": 4,
         "color": 0,
         "bbox": [
-          108.0,
-          690.702392578125,
-          504.35302734375,
-          700.5648803710938
+          117.96295166015625,
+          323.143310546875,
+          164.43849182128906,
+          333.1059265136719
         ]
       },
       {
-        "text": "with this seemingly simple task, with failures indicating critical deficits in state tracking and heuristic",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.862470626831055,
-        "font_flags": 4,
+        "text": " ICCV",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
         "color": 0,
         "bbox": [
-          107.64099884033203,
-          701.6113891601562,
-          504.0036926269531,
-          711.473876953125
+          164.43849182128906,
+          322.96685791015625,
+          189.62274169921875,
+          332.929443359375
         ]
       },
       {
-        "text": "planning. While feedback and prompt engineering offer some help, they are costly and do not provide",
+        "text": ", 2023.",
         "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.862470626831055,
+        "font_size": 9.962599754333496,
         "font_flags": 4,
         "color": 0,
         "bbox": [
-          108.0,
-          712.5203857421875,
-          504.00146484375,
-          722.3828735351562
+          189.62295532226562,
+          323.143310546875,
+          217.0200653076172,
+          333.1059265136719
         ]
       }
     ]
@@ -604,10 +515,817 @@
   {
     "type": "text",
     "bbox": [
-      301.0190124511719,
-      742.3324584960938,
-      310.9815979003906,
-      752.2950439453125
+      107.99995422363281,
+      342.70831298828125,
+      504.0035705566406,
+      374.5888977050781
+    ],
+    "content": "Darren Edge, Ha Trinh, Newman Cheng, Joshua Bradley, Alex Chao, Apurva Mody, Steven Truitt,and Jonathan Larson. From local to global: A graph rag approach to query-focused summariza-tion. arXiv preprint arXiv:2404.16130, 2024.",
+    "spans": [
+      {
+        "text": "Darren Edge, Ha Trinh, Newman Cheng, Joshua Bradley, Alex Chao, Apurva Mody, Steven Truitt,",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.99995422363281,
+          342.70831298828125,
+          504.00311279296875,
+          352.6709289550781
+        ]
+      },
+      {
+        "text": "and Jonathan Larson. From local to global: A graph rag approach to query-focused summariza-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.96295166015625,
+          353.66729736328125,
+          504.0035705566406,
+          363.6299133300781
+        ]
+      },
+      {
+        "text": "tion.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.96295166015625,
+          364.62628173828125,
+          135.95538330078125,
+          374.5888977050781
+        ]
+      },
+      {
+        "text": " arXiv preprint arXiv:2404.16130",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          135.95538330078125,
+          364.4498291015625,
+          271.7256774902344,
+          374.41241455078125
+        ]
+      },
+      {
+        "text": ", 2024.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          271.7249450683594,
+          364.62628173828125,
+          299.1221008300781,
+          374.5888977050781
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      107.99993896484375,
+      384.1912841796875,
+      504.0032653808594,
+      405.1128845214844
+    ],
+    "content": "Jiuxiang Gu, Xiangxi Shi, Jason Kuen, Lu Qi, Ruiyi Zhang, Anqi Liu, Ani Nenkova, and Tong Sun.ADoPD: A large-scale document page decomposition dataset. In ICLR, 2024.",
+    "spans": [
+      {
+        "text": "Jiuxiang Gu, Xiangxi Shi, Jason Kuen, Lu Qi, Ruiyi Zhang, Anqi Liu, Ani Nenkova, and Tong Sun.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.99993896484375,
+          384.1912841796875,
+          504.0032653808594,
+          394.1539001464844
+        ]
+      },
+      {
+        "text": "ADoPD: A large-scale document page decomposition dataset. In",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.96293640136719,
+          395.1502685546875,
+          376.7514343261719,
+          405.1128845214844
+        ]
+      },
+      {
+        "text": " ICLR",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          376.7514343261719,
+          394.97381591796875,
+          400.8288879394531,
+          404.9364013671875
+        ]
+      },
+      {
+        "text": ", 2024.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          400.82891845703125,
+          395.1502685546875,
+          428.22607421875,
+          405.1128845214844
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      107.99990844726562,
+      414.71527099609375,
+      504.00323486328125,
+      446.5948791503906
+    ],
+    "content": "Kamal Gupta, Justin Lazarow, Alessandro Achille, Larry Davis, Vijay Mahadevan, and AbhinavShrivastava. Layouttransformer: Layout generation and completion with self-attention. In ICCV,2021.",
+    "spans": [
+      {
+        "text": "Kamal Gupta, Justin Lazarow, Alessandro Achille, Larry Davis, Vijay Mahadevan, and Abhinav",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.99990844726562,
+          414.71527099609375,
+          504.00323486328125,
+          424.6778869628906
+        ]
+      },
+      {
+        "text": "Shrivastava. Layouttransformer: Layout generation and completion with self-attention. In",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.96290588378906,
+          425.67327880859375,
+          476.3672790527344,
+          435.6358947753906
+        ]
+      },
+      {
+        "text": " ICCV",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          476.3672790527344,
+          425.496826171875,
+          501.5096740722656,
+          435.45941162109375
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          501.5088806152344,
+          425.67327880859375,
+          503.9995422363281,
+          435.6358947753906
+        ]
+      },
+      {
+        "text": "2021.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.962890625,
+          436.63226318359375,
+          140.37872314453125,
+          446.5948791503906
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      107.99989318847656,
+      456.197265625,
+      504.0031433105469,
+      477.1188659667969
+    ],
+    "content": "Adam W. Harley, Alex Ufkes, and Konstantinos G. Derpanis. Evaluation of deep convolutional netsfor document image classification and retrieval. In ICDAR, 2015.",
+    "spans": [
+      {
+        "text": "Adam W. Harley, Alex Ufkes, and Konstantinos G. Derpanis. Evaluation of deep convolutional nets",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.99989318847656,
+          456.197265625,
+          504.0031433105469,
+          466.1598815917969
+        ]
+      },
+      {
+        "text": "for document image classification and retrieval. In",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.962890625,
+          467.15625,
+          319.1575927734375,
+          477.1188659667969
+        ]
+      },
+      {
+        "text": " ICDAR",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          319.1575927734375,
+          466.97979736328125,
+          350.6270751953125,
+          476.9423828125
+        ]
+      },
+      {
+        "text": ", 2015.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          350.62786865234375,
+          467.15625,
+          378.0250244140625,
+          477.1188659667969
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      107.99986267089844,
+      486.72125244140625,
+      504.0030517578125,
+      507.6428527832031
+    ],
+    "content": "Yupan Huang, Tengchao Lv, Lei Cui, Yutong Lu, and Furu Wei. Layoutlmv3: Pre-training fordocument AI with unified text and image masking. In ACM Multimedia, 2022.",
+    "spans": [
+      {
+        "text": "Yupan Huang, Tengchao Lv, Lei Cui, Yutong Lu, and Furu Wei. Layoutlmv3: Pre-training for",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.99986267089844,
+          486.72125244140625,
+          504.0030517578125,
+          496.6838684082031
+        ]
+      },
+      {
+        "text": "document AI with unified text and image masking. In",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.96286010742188,
+          497.68023681640625,
+          332.25836181640625,
+          507.6428527832031
+        ]
+      },
+      {
+        "text": " ACM Multimedia",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          332.25836181640625,
+          497.5037841796875,
+          403.908203125,
+          507.46636962890625
+        ]
+      },
+      {
+        "text": ", 2022.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          403.9078674316406,
+          497.68023681640625,
+          431.3050231933594,
+          507.6428527832031
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      107.9998779296875,
+      517.2452392578125,
+      504.0031433105469,
+      538.1668090820312
+    ],
+    "content": "Mude Hui, Zhizheng Zhang, Xiaoyi Zhang, Wenxuan Xie, Yuwang Wang, and Yan Lu. Unifyinglayout generation with a decoupled diffusion model. In CVPR, 2023.",
+    "spans": [
+      {
+        "text": "Mude Hui, Zhizheng Zhang, Xiaoyi Zhang, Wenxuan Xie, Yuwang Wang, and Yan Lu. Unifying",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.9998779296875,
+          517.2452392578125,
+          504.0031433105469,
+          527.2078247070312
+        ]
+      },
+      {
+        "text": "layout generation with a decoupled diffusion model. In",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.96287536621094,
+          528.2042236328125,
+          337.9569396972656,
+          538.1668090820312
+        ]
+      },
+      {
+        "text": " CVPR",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          337.9569396972656,
+          528.0277709960938,
+          365.3523864746094,
+          537.9903564453125
+        ]
+      },
+      {
+        "text": ", 2023.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          365.3528747558594,
+          528.2042236328125,
+          392.7500305175781,
+          538.1668090820312
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      107.9998779296875,
+      547.7692260742188,
+      504.0031433105469,
+      568.6907958984375
+    ],
+    "content": "Naoto Inoue, Kotaro Kikuchi, Edgar Simo-Serra, Mayu Otani, and Kota Yamaguchi. Layoutdm:Discrete diffusion model for controllable layout generation. In CVPR, 2023.",
+    "spans": [
+      {
+        "text": "Naoto Inoue, Kotaro Kikuchi, Edgar Simo-Serra, Mayu Otani, and Kota Yamaguchi. Layoutdm:",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.9998779296875,
+          547.7692260742188,
+          504.0031433105469,
+          557.7318115234375
+        ]
+      },
+      {
+        "text": "Discrete diffusion model for controllable layout generation. In",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.96287536621094,
+          558.7282104492188,
+          367.2768859863281,
+          568.6907958984375
+        ]
+      },
+      {
+        "text": " CVPR",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          367.2768859863281,
+          558.5517578125,
+          394.6723937988281,
+          568.5143432617188
+        ]
+      },
+      {
+        "text": ", 2023.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          394.671875,
+          558.7282104492188,
+          422.06903076171875,
+          568.6907958984375
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      107.9998779296875,
+      578.293212890625,
+      504.00335693359375,
+      610.1727905273438
+    ],
+    "content": "Zhaoyun Jiang, Jiaqi Guo, Shizhao Sun, Huayu Deng, Zhongkai Wu, Vuksan Mijovic, Zijiang JamesYang, Jian-Guang Lou, and Dongmei Zhang. Layoutformer++: Conditional graphic layout gen-eration via constraint serialization and decoding space restriction. In CVPR, 2023.",
+    "spans": [
+      {
+        "text": "Zhaoyun Jiang, Jiaqi Guo, Shizhao Sun, Huayu Deng, Zhongkai Wu, Vuksan Mijovic, Zijiang James",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.9998779296875,
+          578.293212890625,
+          504.0032043457031,
+          588.2557983398438
+        ]
+      },
+      {
+        "text": "Yang, Jian-Guang Lou, and Dongmei Zhang. Layoutformer++: Conditional graphic layout gen-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.96287536621094,
+          589.251220703125,
+          504.00335693359375,
+          599.2138061523438
+        ]
+      },
+      {
+        "text": "eration via constraint serialization and decoding space restriction. In",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.96287536621094,
+          600.210205078125,
+          391.0377502441406,
+          610.1727905273438
+        ]
+      },
+      {
+        "text": " CVPR",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          391.0377502441406,
+          600.0337524414062,
+          418.4324035644531,
+          609.996337890625
+        ]
+      },
+      {
+        "text": ", 2023.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          418.431884765625,
+          600.210205078125,
+          445.82904052734375,
+          610.1727905273438
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      107.9998779296875,
+      619.2651977539062,
+      503.9994201660156,
+      640.6968383789062
+    ],
+    "content": "Glenn Jocher, Ayush Chaurasia, and Jing Qiu. Ultralytics YOLO, 2023. URL https://github.com/ultralytics/ultralytics.",
+    "spans": [
+      {
+        "text": "Glenn Jocher, Ayush Chaurasia, and Jing Qiu. Ultralytics YOLO, 2023. URL",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.9998779296875,
+          619.7752075195312,
+          412.2974548339844,
+          629.73779296875
+        ]
+      },
+      {
+        "text": " https://github.",
+        "font_name": "NimbusMonL-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          412.2974548339844,
+          619.2651977539062,
+          503.9994201660156,
+          629.227783203125
+        ]
+      },
+      {
+        "text": "com/ultralytics/ultralytics",
+        "font_name": "NimbusMonL-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.962890625,
+          630.2242431640625,
+          279.35693359375,
+          640.1868286132812
+        ]
+      },
+      {
+        "text": ".",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          279.35687255859375,
+          630.7342529296875,
+          281.8475341796875,
+          640.6968383789062
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      107.9998779296875,
+      650.2991943359375,
+      504.0030822753906,
+      671.2208251953125
+    ],
+    "content": "Kotaro Kikuchi, Edgar Simo-Serra, Mayu Otani, and Kota Yamaguchi. Constrained graphic layoutgeneration via latent optimization. In ACM Multimedia, 2021.",
+    "spans": [
+      {
+        "text": "Kotaro Kikuchi, Edgar Simo-Serra, Mayu Otani, and Kota Yamaguchi. Constrained graphic layout",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.9998779296875,
+          650.2991943359375,
+          504.0030822753906,
+          660.2617797851562
+        ]
+      },
+      {
+        "text": "generation via latent optimization. In",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.96287536621094,
+          661.2582397460938,
+          266.54510498046875,
+          671.2208251953125
+        ]
+      },
+      {
+        "text": " ACM Multimedia",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          266.54510498046875,
+          661.081787109375,
+          338.1942138671875,
+          671.0443725585938
+        ]
+      },
+      {
+        "text": ", 2021.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          338.1938781738281,
+          661.2582397460938,
+          365.5910339355469,
+          671.2208251953125
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      107.9998779296875,
+      680.8232421875,
+      504.00311279296875,
+      701.7448120117188
+    ],
+    "content": "Xiang Kong, Lu Jiang, Huiwen Chang, Han Zhang, Yuan Hao, Haifeng Gong, and Irfan Essa. BLT:bidirectional layout transformer for controllable layout generation. In ECCV, 2022.",
+    "spans": [
+      {
+        "text": "Xiang Kong, Lu Jiang, Huiwen Chang, Han Zhang, Yuan Hao, Haifeng Gong, and Irfan Essa. BLT:",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.9998779296875,
+          680.8232421875,
+          504.00311279296875,
+          690.7858276367188
+        ]
+      },
+      {
+        "text": "bidirectional layout transformer for controllable layout generation. In",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.96287536621094,
+          691.7822265625,
+          395.19207763671875,
+          701.7448120117188
+        ]
+      },
+      {
+        "text": " ECCV",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          395.19207763671875,
+          691.6057739257812,
+          423.145263671875,
+          701.568359375
+        ]
+      },
+      {
+        "text": ", 2022.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          423.14483642578125,
+          691.7822265625,
+          450.5419921875,
+          701.7448120117188
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      107.99984741210938,
+      711.3472290039062,
+      504.0031433105469,
+      732.268798828125
+    ],
+    "content": "David D. Lewis, Gady Agam, Shlomo Argamon, Ophir Frieder, David A. Grossman, and JeffersonHeard. Building a test collection for complex document information processing. In SIGIR, 2006.",
+    "spans": [
+      {
+        "text": "David D. Lewis, Gady Agam, Shlomo Argamon, Ophir Frieder, David A. Grossman, and Jefferson",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.99984741210938,
+          711.3472290039062,
+          504.0031433105469,
+          721.309814453125
+        ]
+      },
+      {
+        "text": "Heard. Building a test collection for complex document information processing. In",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          117.96284484863281,
+          722.3062133789062,
+          449.2989196777344,
+          732.268798828125
+        ]
+      },
+      {
+        "text": " SIGIR",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          449.2989196777344,
+          722.1297607421875,
+          476.6453552246094,
+          732.0923461914062
+        ]
+      },
+      {
+        "text": ", 2006.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          476.6458435058594,
+          722.3062133789062,
+          504.0031433105469,
+          732.268798828125
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      301.01885986328125,
+      752.1942138671875,
+      310.9814453125,
+      762.1567993164062
     ],
     "content": "10",
     "spans": [
@@ -618,23 +1336,12 @@
         "font_flags": 4,
         "color": 0,
         "bbox": [
-          301.0190124511719,
-          742.3324584960938,
-          310.9815979003906,
-          752.2950439453125
+          301.01885986328125,
+          752.1942138671875,
+          310.9814453125,
+          762.1567993164062
         ]
       }
     ]
-  },
-  {
-    "type": "image",
-    "bbox": [
-      195.85400390625,
-      71.9974365234375,
-      413.6593933105469,
-      225.7869873046875
-    ],
-    "xref": null,
-    "ext": "png"
   }
 ]

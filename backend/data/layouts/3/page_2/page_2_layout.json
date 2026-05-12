@@ -2,696 +2,284 @@
   {
     "type": "text",
     "bbox": [
-      108.0,
-      74.33230590820312,
-      503.9975280761719,
-      95.27908325195312
+      58.5,
+      74.40748596191406,
+      294.7531433105469,
+      347.44024658203125
     ],
-    "content": "as self-critique. Notably, even with guidance on how models should approach the problem, thesemethods still rely on the models’ own capabilities to complete the task.",
+    "content": "tent limitation: black-box methods struggle with semanticwatermarks or quality preservation, while effective removalpresumes impractical attacker capabilities.Diffusion Models in Vision.Diffusion models haveemerged as powerful generative frameworks for image syn-thesis and editing [20, 39].Recent advances in con-ditioning mechanisms and latent space manipulation en-able semantic-preserving transformations while modifyinglow-level features.Diffusion models also excel at viewsynthesis and appearance editing through controlled latentmodulation.However, these NVS approaches generallyrequire dedicated training on task-specific datasets withmulti-view supervision [6, 42]. Recent zero-shot image-to-video frameworks demonstrate that pretrained diffusionmodels can maintain semantic and structural consistencyacross transformed latent representations, even without re-training or paired data [22]. Motivated by this observation,we investigate whether similar latent viewpoint transforma-tions can be leveraged for watermark removal, aiming todecorrelate embedded watermark signals while preservingperceptual identity. To the best of our knowledge, we arethe first to explore diffusion-based novel-view synthesis forinvisible watermark removal.",
     "spans": [
       {
-        "text": "as self-critique. Notably, even with guidance on how models should approach the problem, these",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          74.33230590820312,
-          503.9975280761719,
-          84.39403533935547
-        ]
-      },
-      {
-        "text": "methods still rely on the models’ own capabilities to complete the task.",
+        "text": "tent limitation: black-box methods struggle with semantic",
         "font_name": "NimbusRomNo9L-Regu",
         "font_size": 9.962599754333496,
         "font_flags": 4,
         "color": 0,
         "bbox": [
-          108.0,
-          85.31648254394531,
-          391.1171569824219,
-          95.27908325195312
-        ]
-      }
-    ]
-  },
-  {
-    "type": "text",
-    "bbox": [
-      108.0,
-      101.75375366210938,
-      504.1725158691406,
-      177.12210083007812
-    ],
-    "content": "However, other work has offloaded some of the burden from the models when solving problems. Forexample, some works improve LLM performance by using tools such as code interpreters, whichoffload part of the computation to a separate program [17, 18]. Additional work improves modelperformance by enabling models to access the internet and consult resources such as Wikipedia[19, 20]. With these extra tools, the models often outperform prompt-only methods. However, theirperformance can no longer be attributed solely to the models themselves, as it now depends onexternal information and computation.",
-    "spans": [
-      {
-        "text": "However, other work has offloaded some of the burden from the models when solving problems. For",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.89763069152832,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          101.75375366210938,
-          504.16510009765625,
-          111.65138244628906
+          58.5,
+          74.40748596191406,
+          294.7530517578125,
+          84.37008666992188
         ]
       },
       {
-        "text": "example, some works improve LLM performance by using tools such as code interpreters, which",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          112.53829956054688,
-          503.9975280761719,
-          122.60002899169922
-        ]
-      },
-      {
-        "text": "offload part of the computation to a separate program [",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          123.44729614257812,
-          333.0038757324219,
-          133.509033203125
-        ]
-      },
-      {
-        "text": "17",
+        "text": "watermarks or quality preservation, while effective removal",
         "font_name": "NimbusRomNo9L-Regu",
         "font_size": 9.962599754333496,
         "font_flags": 4,
         "color": 0,
         "bbox": [
-          333.00799560546875,
-          123.52247619628906,
-          342.9705810546875,
-          133.48507690429688
+          58.5,
+          86.36250305175781,
+          294.75311279296875,
+          96.32510375976562
         ]
       },
       {
-        "text": ",",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          342.9700012207031,
-          123.44729614257812,
-          345.5104675292969,
-          133.509033203125
-        ]
-      },
-      {
-        "text": " 18",
+        "text": "presumes impractical attacker capabilities.",
         "font_name": "NimbusRomNo9L-Regu",
         "font_size": 9.962599754333496,
         "font_flags": 4,
         "color": 0,
         "bbox": [
-          345.5104675292969,
-          123.52247619628906,
-          358.3025817871094,
-          133.48507690429688
+          58.5,
+          98.31752014160156,
+          227.72479248046875,
+          108.28012084960938
         ]
       },
       {
-        "text": "]. Additional work improves model",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          358.302001953125,
-          123.44729614257812,
-          504.00262451171875,
-          133.509033203125
-        ]
-      },
-      {
-        "text": "performance by enabling models to access the internet and consult resources such as Wikipedia",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          134.35726928710938,
-          503.9975280761719,
-          144.41900634765625
-        ]
-      },
-      {
-        "text": "[",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.977532386779785,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          145.3301239013672,
-          111.32749938964844,
-          155.30764770507812
-        ]
-      },
-      {
-        "text": "19",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.962599754333496,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          111.3270034790039,
-          145.34144592285156,
-          121.28960418701172,
-          155.30404663085938
-        ]
-      },
-      {
-        "text": ",",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.977532386779785,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          121.29000091552734,
-          145.3301239013672,
-          123.78812408447266,
-          155.30764770507812
-        ]
-      },
-      {
-        "text": " 20",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.962599754333496,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          123.78812408447266,
-          145.34144592285156,
-          136.2285919189453,
-          155.30404663085938
-        ]
-      },
-      {
-        "text": "]. With these extra tools, the models often outperform prompt-only methods. However, their",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.977532386779785,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          136.22900390625,
-          145.3301239013672,
-          504.1725158691406,
-          155.30764770507812
-        ]
-      },
-      {
-        "text": "performance can no longer be attributed solely to the models themselves, as it now depends on",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          156.17532348632812,
-          503.99737548828125,
-          166.237060546875
-        ]
-      },
-      {
-        "text": "external information and computation.",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.962599754333496,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          167.1595001220703,
-          261.14508056640625,
-          177.12210083007812
-        ]
-      }
-    ]
-  },
-  {
-    "type": "text",
-    "bbox": [
-      108.0,
-      192.16552734375,
-      216.39305114746094,
-      202.1281280517578
-    ],
-    "content": "2.2Evaluation Methods",
-    "spans": [
-      {
-        "text": "2.2",
+        "text": "Diffusion Models in Vision.",
         "font_name": "NimbusRomNo9L-Medi",
         "font_size": 9.962599754333496,
         "font_flags": 20,
         "color": 0,
         "bbox": [
-          108.0,
-          192.16552734375,
-          120.4532470703125,
-          202.1281280517578
+          58.5,
+          110.23857879638672,
+          184.20809936523438,
+          120.20117950439453
         ]
       },
       {
-        "text": "Evaluation Methods",
-        "font_name": "NimbusRomNo9L-Medi",
-        "font_size": 9.962599754333496,
-        "font_flags": 20,
-        "color": 0,
-        "bbox": [
-          130.4158477783203,
-          192.16552734375,
-          216.39305114746094,
-          202.1281280517578
-        ]
-      }
-    ]
-  },
-  {
-    "type": "text",
-    "bbox": [
-      108.0,
-      212.41232299804688,
-      505.7444763183594,
-      298.8140869140625
-    ],
-    "content": "LLM progress is often measured based on benchmark performance, such as AIME [21, 4], SWE-bench [5], or others [22–24], highlighting their proficiency in mathematics, writing code, or othercomplex tasks. These benchmarks often rely on arithmetic or knowledge-based questions, wheresuccess is determined by recalling facts or using similar examples from the training data to solve theproblems presented. However, many studies have examined the possibility of data contamination[4, 25, 26], raising concerns about the validity of the improvements we observe across models.Furthermore, these tasks offer less insight into the models’ planning abilities because they rarelyrequire a long-term strategy.",
-    "spans": [
-      {
-        "text": "LLM progress is often measured based on benchmark performance, such as AIME [",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          212.41232299804688,
-          451.9180603027344,
-          222.47406005859375
-        ]
-      },
-      {
-        "text": "21",
+        "text": "Diffusion models have",
         "font_name": "NimbusRomNo9L-Regu",
         "font_size": 9.962599754333496,
         "font_flags": 4,
         "color": 0,
         "bbox": [
-          451.91900634765625,
-          212.4875030517578,
-          461.881591796875,
-          222.45010375976562
+          197.66757202148438,
+          110.32954406738281,
+          294.75311279296875,
+          120.29214477539062
+        ]
+      },
+      {
+        "text": "emerged as powerful generative frameworks for image syn-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          122.28456115722656,
+          294.75311279296875,
+          132.24716186523438
+        ]
+      },
+      {
+        "text": "thesis and editing [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          134.2395782470703,
+          143.06253051757812,
+          144.20217895507812
+        ]
+      },
+      {
+        "text": "20",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 6592255,
+        "bbox": [
+          143.06253051757812,
+          134.2395782470703,
+          153.02511596679688,
+          144.20217895507812
         ]
       },
       {
         "text": ",",
         "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
+        "font_size": 9.962599754333496,
         "font_flags": 4,
         "color": 0,
         "bbox": [
-          461.8810119628906,
-          212.41232299804688,
-          464.4214782714844,
-          222.47406005859375
+          153.02511596679688,
+          134.2395782470703,
+          155.51576232910156,
+          144.20217895507812
         ]
       },
       {
-        "text": " 4",
+        "text": " 39",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 6592255,
+        "bbox": [
+          155.51576232910156,
+          134.2395782470703,
+          170.96774291992188,
+          144.20217895507812
+        ]
+      },
+      {
+        "text": "].",
         "font_name": "NimbusRomNo9L-Regu",
         "font_size": 9.962599754333496,
         "font_flags": 4,
         "color": 0,
         "bbox": [
-          464.4214782714844,
-          212.4875030517578,
-          472.12030029296875,
-          222.45010375976562
+          170.96774291992188,
+          134.2395782470703,
+          176.77593994140625,
+          144.20217895507812
         ]
       },
       {
-        "text": "], SWE-",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          472.1199951171875,
-          212.41232299804688,
-          505.6541442871094,
-          222.47406005859375
-        ]
-      },
-      {
-        "text": "bench [",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          223.32131958007812,
-          138.25184631347656,
-          233.383056640625
-        ]
-      },
-      {
-        "text": "5",
+        "text": "Recent advances in con-",
         "font_name": "NimbusRomNo9L-Regu",
         "font_size": 9.962599754333496,
         "font_flags": 4,
         "color": 0,
         "bbox": [
-          138.2469940185547,
-          223.39649963378906,
-          143.22828674316406,
-          233.35910034179688
+          188.8804931640625,
+          134.2395782470703,
+          294.7530212402344,
+          144.20217895507812
         ]
       },
       {
-        "text": "], or others [",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          143.22900390625,
-          223.32131958007812,
-          193.6521453857422,
-          233.383056640625
-        ]
-      },
-      {
-        "text": "22",
+        "text": "ditioning mechanisms and latent space manipulation en-",
         "font_name": "NimbusRomNo9L-Regu",
         "font_size": 9.962599754333496,
         "font_flags": 4,
         "color": 0,
         "bbox": [
-          193.65499877929688,
-          223.39649963378906,
-          203.61758422851562,
-          233.35910034179688
+          58.5,
+          146.19459533691406,
+          294.7530822753906,
+          156.15719604492188
         ]
       },
       {
-        "text": "–",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          203.61700439453125,
-          223.32131958007812,
-          208.69793701171875,
-          233.383056640625
-        ]
-      },
-      {
-        "text": "24",
+        "text": "able semantic-preserving transformations while modifying",
         "font_name": "NimbusRomNo9L-Regu",
         "font_size": 9.962599754333496,
         "font_flags": 4,
         "color": 0,
         "bbox": [
-          208.697998046875,
-          223.39649963378906,
-          218.66058349609375,
-          233.35910034179688
+          58.5,
+          158.1496124267578,
+          294.7530517578125,
+          168.11221313476562
         ]
       },
       {
-        "text": "], highlighting their proficiency in mathematics, writing code, or other",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          218.66099548339844,
-          223.32131958007812,
-          504.1685791015625,
-          233.383056640625
-        ]
-      },
-      {
-        "text": "complex tasks. These benchmarks often rely on arithmetic or knowledge-based questions, where",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          234.23031616210938,
-          503.9974365234375,
-          244.29205322265625
-        ]
-      },
-      {
-        "text": "success is determined by recalling facts or using similar examples from the training data to solve the",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.9126615524292,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          245.2523651123047,
-          503.99853515625,
-          255.16502380371094
-        ]
-      },
-      {
-        "text": "problems presented. However, many studies have examined the possibility of data contamination",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          256.0492858886719,
-          503.997314453125,
-          266.11102294921875
-        ]
-      },
-      {
-        "text": "[",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          266.9582824707031,
-          111.38389587402344,
-          277.02001953125
-        ]
-      },
-      {
-        "text": "4",
+        "text": "low-level features.",
         "font_name": "NimbusRomNo9L-Regu",
         "font_size": 9.962599754333496,
         "font_flags": 4,
         "color": 0,
         "bbox": [
-          111.38400268554688,
-          267.033447265625,
-          116.36530303955078,
-          276.9960632324219
+          58.5,
+          170.10462951660156,
+          133.9069061279297,
+          180.06723022460938
         ]
       },
       {
-        "text": ",",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          116.36499786376953,
-          266.9582824707031,
-          118.90546417236328,
-          277.02001953125
-        ]
-      },
-      {
-        "text": " 25",
+        "text": "Diffusion models also excel at view",
         "font_name": "NimbusRomNo9L-Regu",
         "font_size": 9.962599754333496,
         "font_flags": 4,
         "color": 0,
         "bbox": [
-          118.90546417236328,
-          267.033447265625,
-          132.3885955810547,
-          276.9960632324219
+          142.75369262695312,
+          170.10462951660156,
+          294.7530822753906,
+          180.06723022460938
         ]
       },
       {
-        "text": ",",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          132.38900756835938,
-          266.9582824707031,
-          134.92947387695312,
-          277.02001953125
-        ]
-      },
-      {
-        "text": " 26",
+        "text": "synthesis and appearance editing through controlled latent",
         "font_name": "NimbusRomNo9L-Regu",
         "font_size": 9.962599754333496,
         "font_flags": 4,
         "color": 0,
         "bbox": [
-          134.92947387695312,
-          267.033447265625,
-          148.41258239746094,
-          276.9960632324219
+          58.5,
+          182.0606231689453,
+          294.7530517578125,
+          192.02322387695312
         ]
       },
       {
-        "text": "], raising concerns about the validity of the improvements we observe across models.",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          148.41299438476562,
-          266.9582824707031,
-          505.7444763183594,
-          277.02001953125
-        ]
-      },
-      {
-        "text": "Furthermore, these tasks offer less insight into the models’ planning abilities because they rarely",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          277.8672790527344,
-          504.3528747558594,
-          287.92901611328125
-        ]
-      },
-      {
-        "text": "require a long-term strategy.",
+        "text": "modulation.",
         "font_name": "NimbusRomNo9L-Regu",
         "font_size": 9.962599754333496,
         "font_flags": 4,
         "color": 0,
         "bbox": [
-          108.0,
-          288.8514709472656,
-          220.63717651367188,
-          298.8140869140625
-        ]
-      }
-    ]
-  },
-  {
-    "type": "text",
-    "bbox": [
-      107.53199768066406,
-      305.28875732421875,
-      504.0035400390625,
-      391.5660705566406
-    ],
-    "content": "Work that focuses on LLM planning often reports low success rates and provides high-level analysesof why models fail—for example, prompt-sensitive pattern-matching and the need for planner-basedrepair [27]. Other recent evaluations include cost/efficiency comparisons with some failure-modebreakdowns [6, 28], but they do not typically emphasize fine-grained analyses of how failuresunfold. Furthermore, few studies examine variable levels of feedback, and we are aware of nonethat systematically combine modern prompting techniques with feedback on a planning task like the8-puzzle to analyze how these factors modulate performance and failure types, leaving the effects ofprompting and feedback on such tasks under-examined.",
-    "spans": [
-      {
-        "text": "Work that focuses on LLM planning often reports low success rates and provides high-level analyses",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.89763069152832,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          107.53199768066406,
-          305.28875732421875,
-          504.00201416015625,
-          315.1864013671875
+          58.5,
+          194.01564025878906,
+          106.38024139404297,
+          203.97824096679688
         ]
       },
       {
-        "text": "of why models fail—for example, prompt-sensitive pattern-matching and the need for planner-based",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.9126615524292,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          316.18634033203125,
-          503.99835205078125,
-          326.0990295410156
-        ]
-      },
-      {
-        "text": "repair [",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          326.9833068847656,
-          137.71324157714844,
-          337.0450439453125
-        ]
-      },
-      {
-        "text": "27",
+        "text": "However, these NVS approaches generally",
         "font_name": "NimbusRomNo9L-Regu",
         "font_size": 9.962599754333496,
         "font_flags": 4,
         "color": 0,
         "bbox": [
-          137.71600341796875,
-          327.0584716796875,
-          147.6785888671875,
-          337.0210876464844
+          115.70523071289062,
+          194.01564025878906,
+          294.7530517578125,
+          203.97824096679688
         ]
       },
       {
-        "text": "]. Other recent evaluations include cost/efficiency comparisons with some failure-mode",
+        "text": "require dedicated training on task-specific datasets with",
         "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
+        "font_size": 9.962599754333496,
         "font_flags": 4,
         "color": 0,
         "bbox": [
-          147.67799377441406,
-          326.9833068847656,
-          504.0035400390625,
-          337.0450439453125
+          58.5,
+          205.9706573486328,
+          294.7530822753906,
+          215.93325805664062
         ]
       },
       {
-        "text": "breakdowns [",
+        "text": "multi-view supervision [",
         "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
+        "font_size": 9.962599754333496,
         "font_flags": 4,
         "color": 0,
         "bbox": [
-          108.0,
-          337.8923034667969,
-          163.98165893554688,
-          347.95404052734375
+          58.5,
+          217.92567443847656,
+          159.29161071777344,
+          227.88827514648438
         ]
       },
       {
@@ -699,103 +287,233 @@
         "font_name": "NimbusRomNo9L-Regu",
         "font_size": 9.962599754333496,
         "font_flags": 4,
-        "color": 0,
+        "color": 6592255,
         "bbox": [
-          163.9810028076172,
-          337.96746826171875,
-          168.96229553222656,
-          347.9300842285156
+          159.29161071777344,
+          217.92567443847656,
+          164.2729034423828,
+          227.88827514648438
         ]
       },
       {
         "text": ",",
         "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
+        "font_size": 9.962599754333496,
         "font_flags": 4,
         "color": 0,
         "bbox": [
-          168.96200561523438,
-          337.8923034667969,
-          171.50247192382812,
-          347.95404052734375
+          164.2729034423828,
+          217.92567443847656,
+          166.7635498046875,
+          227.88827514648438
         ]
       },
       {
-        "text": " 28",
+        "text": " 42",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 6592255,
+        "bbox": [
+          166.7635498046875,
+          217.92567443847656,
+          180.760986328125,
+          227.88827514648438
+        ]
+      },
+      {
+        "text": "]. Recent zero-shot image-",
         "font_name": "NimbusRomNo9L-Regu",
         "font_size": 9.962599754333496,
         "font_flags": 4,
         "color": 0,
         "bbox": [
-          171.50247192382812,
-          337.96746826171875,
-          185.20957946777344,
-          347.9300842285156
+          180.760986328125,
+          217.92567443847656,
+          294.7530822753906,
+          227.88827514648438
         ]
       },
       {
-        "text": "], but they do not typically emphasize fine-grained analyses of how failures",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          185.2100067138672,
-          337.8923034667969,
-          503.9977111816406,
-          347.95404052734375
-        ]
-      },
-      {
-        "text": "unfold. Furthermore, few studies examine variable levels of feedback, and we are aware of none",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          348.8013000488281,
-          503.997314453125,
-          358.863037109375
-        ]
-      },
-      {
-        "text": "that systematically combine modern prompting techniques with feedback on a planning task like the",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.9176664352417,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          359.8195495605469,
-          504.00347900390625,
-          369.7372131347656
-        ]
-      },
-      {
-        "text": "8-puzzle to analyze how these factors modulate performance and failure types, leaving the effects of",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.92266845703125,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          370.7247619628906,
-          503.99749755859375,
-          380.6474304199219
-        ]
-      },
-      {
-        "text": "prompting and feedback on such tasks under-examined.",
+        "text": "to-video frameworks demonstrate that pretrained diffusion",
         "font_name": "NimbusRomNo9L-Regu",
         "font_size": 9.962599754333496,
         "font_flags": 4,
         "color": 0,
         "bbox": [
-          108.0,
-          381.60345458984375,
-          329.82720947265625,
-          391.5660705566406
+          58.5,
+          229.8806915283203,
+          294.7530822753906,
+          239.84329223632812
+        ]
+      },
+      {
+        "text": "models can maintain semantic and structural consistency",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          241.83570861816406,
+          294.75311279296875,
+          251.79830932617188
+        ]
+      },
+      {
+        "text": "across transformed latent representations, even without re-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          253.7917022705078,
+          294.7530517578125,
+          263.7543029785156
+        ]
+      },
+      {
+        "text": "training or paired data [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          265.7467041015625,
+          153.49337768554688,
+          275.7093200683594
+        ]
+      },
+      {
+        "text": "22",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 6592255,
+        "bbox": [
+          153.49337768554688,
+          265.7467041015625,
+          163.45596313476562,
+          275.7093200683594
+        ]
+      },
+      {
+        "text": "]. Motivated by this observation,",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          163.45596313476562,
+          265.7467041015625,
+          294.7530212402344,
+          275.7093200683594
+        ]
+      },
+      {
+        "text": "we investigate whether similar latent viewpoint transforma-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          277.7016906738281,
+          294.7531433105469,
+          287.664306640625
+        ]
+      },
+      {
+        "text": "tions can be leveraged for watermark removal, aiming to",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          289.65667724609375,
+          294.7530822753906,
+          299.6192932128906
+        ]
+      },
+      {
+        "text": "decorrelate embedded watermark signals while preserving",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          301.6116638183594,
+          294.7530517578125,
+          311.57427978515625
+        ]
+      },
+      {
+        "text": "perceptual identity.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          313.5676574707031,
+          135.7599334716797,
+          323.5302734375
+        ]
+      },
+      {
+        "text": " To the best of our knowledge, we are",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          135.7599334716797,
+          313.3912048339844,
+          294.7530212402344,
+          323.3537902832031
+        ]
+      },
+      {
+        "text": "the first to explore diffusion-based novel-view synthesis for",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          58.5,
+          325.34619140625,
+          294.75311279296875,
+          335.30877685546875
+        ]
+      },
+      {
+        "text": "invisible watermark removal",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          58.5,
+          337.3011779785156,
+          172.19317626953125,
+          347.2637634277344
+        ]
+      },
+      {
+        "text": ".",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          172.19317626953125,
+          337.4776306152344,
+          174.68382263183594,
+          347.44024658203125
         ]
       }
     ]
@@ -803,37 +521,710 @@
   {
     "type": "text",
     "bbox": [
-      108.0,
-      409.0161437988281,
-      170.4300537109375,
-      420.9713439941406
+      58.5,
+      359.93634033203125,
+      140.9669647216797,
+      371.89154052734375
     ],
-    "content": "3Methods",
+    "content": "3. Threat Model",
     "spans": [
       {
-        "text": "3",
+        "text": "3. Threat Model",
         "font_name": "NimbusRomNo9L-Medi",
         "font_size": 11.9552001953125,
         "font_flags": 20,
         "color": 0,
         "bbox": [
-          108.0,
-          409.0161437988281,
-          113.97760009765625,
-          420.9713439941406
+          58.5,
+          359.93634033203125,
+          140.9669647216797,
+          371.89154052734375
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      58.5,
+      380.5426330566406,
+      294.7532043457031,
+      713.4070434570312
+    ],
+    "content": "We formulate the watermark removal problem within a re-alistic threat model involving two key entities: a providerwho operates a watermark-protected image generation ser-vice, and an attacker attempting to erase watermark evi-dence while retaining the semantic utility of the image.Provider’s Goals and Capabilities: The provider water-marks the generated images to establish provenance andprevent misuse of generated content. They may adopt ei-ther post-hoc or in-generation watermarking schemes andpossess full control over the deployed generator and wa-termark detector. Detection requires only a single image.We assume that the provider has sufficient computationalresources and data to train a robust watermarking system.Attacker’s Goals and Capabilities: The attacker aims toremove watermarks while preserving semantic content, pro-ducing alternative observations of the same scene ratherthan exact pixel reconstructions. The attacker operates un-der realistic constraints across four dimensions: (i) Access:no knowledge of model parameters, watermarking schemes,or detector internals; no access to detection APIs for iter-ative queries; (ii) Data: no paired clean-watermarked ex-amples, no proprietary datasets for surrogate training, andaccess to only a single input image; (iii) Compute: lim-ited resources for multi-GPU training or fine-tuning, lim-ited to lightweight inference on consumer hardware; (iv)Time: per-image processing must complete within seconds,precluding minutes-long optimization. The attacker mayuse publicly available pretrained image-to-image diffusion",
+    "spans": [
+      {
+        "text": "We formulate the watermark removal problem within a re-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          380.5426330566406,
+          294.7530517578125,
+          390.5052490234375
         ]
       },
       {
-        "text": "Methods",
+        "text": "alistic threat model involving two key entities: a",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          392.49761962890625,
+          254.9026641845703,
+          402.4602355957031
+        ]
+      },
+      {
+        "text": " provider",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          254.9026641845703,
+          392.40667724609375,
+          294.7530822753906,
+          402.3692626953125
+        ]
+      },
+      {
+        "text": "who operates a watermark-protected image generation ser-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          404.4526062011719,
+          294.75311279296875,
+          414.41522216796875
+        ]
+      },
+      {
+        "text": "vice, and an",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          416.4075927734375,
+          108.97052001953125,
+          426.3702087402344
+        ]
+      },
+      {
+        "text": " attacker",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          108.97052001953125,
+          416.316650390625,
+          147.92428588867188,
+          426.27923583984375
+        ]
+      },
+      {
+        "text": " attempting to erase watermark evi-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          147.92428588867188,
+          416.4075927734375,
+          294.7531433105469,
+          426.3702087402344
+        ]
+      },
+      {
+        "text": "dence while retaining the semantic utility of the image.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          428.36358642578125,
+          277.92626953125,
+          438.3262023925781
+        ]
+      },
+      {
+        "text": "Provider’s Goals and Capabilities",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          58.5,
+          440.28363037109375,
+          205.00001525878906,
+          450.2462158203125
+        ]
+      },
+      {
+        "text": ": The provider water-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          205.00001525878906,
+          440.37457275390625,
+          294.7530212402344,
+          450.3371887207031
+        ]
+      },
+      {
+        "text": "marks the generated images to establish provenance and",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          452.3295593261719,
+          294.7531433105469,
+          462.29217529296875
+        ]
+      },
+      {
+        "text": "prevent misuse of generated content. They may adopt ei-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          464.2845458984375,
+          294.7530517578125,
+          474.2471618652344
+        ]
+      },
+      {
+        "text": "ther post-hoc or in-generation watermarking schemes and",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          476.24053955078125,
+          294.7531433105469,
+          486.2031555175781
+        ]
+      },
+      {
+        "text": "possess full control over the deployed generator and wa-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          488.1955261230469,
+          294.7530517578125,
+          498.15814208984375
+        ]
+      },
+      {
+        "text": "termark detector. Detection requires only a single image.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          500.1505126953125,
+          294.75311279296875,
+          510.1131286621094
+        ]
+      },
+      {
+        "text": "We assume that the provider has sufficient computational",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          512.10546875,
+          294.7530212402344,
+          522.0680541992188
+        ]
+      },
+      {
+        "text": "resources and data to train a robust watermarking system.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          524.0604858398438,
+          287.5700988769531,
+          534.0230712890625
+        ]
+      },
+      {
+        "text": "Attacker’s Goals and Capabilities",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          58.5,
+          535.9815673828125,
+          204.0137176513672,
+          545.9441528320312
+        ]
+      },
+      {
+        "text": ": The attacker aims to",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          204.0137176513672,
+          536.072509765625,
+          294.7530822753906,
+          546.0350952148438
+        ]
+      },
+      {
+        "text": "remove watermarks while preserving semantic content, pro-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          548.0274658203125,
+          294.7530822753906,
+          557.9900512695312
+        ]
+      },
+      {
+        "text": "ducing alternative observations of the same scene rather",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          559.9824829101562,
+          294.75311279296875,
+          569.945068359375
+        ]
+      },
+      {
+        "text": "than exact pixel reconstructions. The attacker operates un-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          571.9375,
+          294.7530822753906,
+          581.9000854492188
+        ]
+      },
+      {
+        "text": "der realistic constraints across four dimensions:",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          583.8934936523438,
+          248.84547424316406,
+          593.8560791015625
+        ]
+      },
+      {
+        "text": " (i)",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          248.84547424316406,
+          583.717041015625,
+          261.6673278808594,
+          593.6796264648438
+        ]
+      },
+      {
+        "text": " Access",
+        "font_name": "NimbusRomNo9L-MediItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 22,
+        "color": 0,
+        "bbox": [
+          261.6673278808594,
+          583.8077392578125,
+          291.9835510253906,
+          593.7703247070312
+        ]
+      },
+      {
+        "text": ":",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          291.9835510253906,
+          583.8934936523438,
+          294.7531433105469,
+          593.8560791015625
+        ]
+      },
+      {
+        "text": "no knowledge of model parameters, watermarking schemes,",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          595.8485107421875,
+          294.7532043457031,
+          605.8110961914062
+        ]
+      },
+      {
+        "text": "or detector internals; no access to detection APIs for iter-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          607.803466796875,
+          294.7530822753906,
+          617.7660522460938
+        ]
+      },
+      {
+        "text": "ative queries;",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          619.7584838867188,
+          112.58694458007812,
+          629.7210693359375
+        ]
+      },
+      {
+        "text": " (ii)",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          112.58694458007812,
+          619.58203125,
+          128.88575744628906,
+          629.5446166992188
+        ]
+      },
+      {
+        "text": " Data",
+        "font_name": "NimbusRomNo9L-MediItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 22,
+        "color": 0,
+        "bbox": [
+          128.88575744628906,
+          619.6727294921875,
+          152.39747619628906,
+          629.6353149414062
+        ]
+      },
+      {
+        "text": ": no paired clean-watermarked ex-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          152.39747619628906,
+          619.7584838867188,
+          294.7530822753906,
+          629.7210693359375
+        ]
+      },
+      {
+        "text": "amples, no proprietary datasets for surrogate training, and",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          631.7135009765625,
+          294.75311279296875,
+          641.6760864257812
+        ]
+      },
+      {
+        "text": "access to only a single input image;",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          643.66845703125,
+          208.8057403564453,
+          653.6310424804688
+        ]
+      },
+      {
+        "text": " (iii)",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          208.8057403564453,
+          643.4920043945312,
+          228.39224243164062,
+          653.45458984375
+        ]
+      },
+      {
+        "text": " Compute",
+        "font_name": "NimbusRomNo9L-MediItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 22,
+        "color": 0,
+        "bbox": [
+          228.39224243164062,
+          643.5827026367188,
+          269.40826416015625,
+          653.5452880859375
+        ]
+      },
+      {
+        "text": ": lim-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          269.40826416015625,
+          643.66845703125,
+          294.7530822753906,
+          653.6310424804688
+        ]
+      },
+      {
+        "text": "ited resources for multi-GPU training or fine-tuning, lim-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          655.62451171875,
+          294.7530822753906,
+          665.5870971679688
+        ]
+      },
+      {
+        "text": "ited to lightweight inference on consumer hardware;",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          667.5794677734375,
+          276.15289306640625,
+          677.5420532226562
+        ]
+      },
+      {
+        "text": " (iv)",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          276.15289306640625,
+          667.4030151367188,
+          294.7530517578125,
+          677.3656005859375
+        ]
+      },
+      {
+        "text": "Time",
+        "font_name": "NimbusRomNo9L-MediItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 22,
+        "color": 0,
+        "bbox": [
+          58.5,
+          679.44873046875,
+          79.16242980957031,
+          689.4113159179688
+        ]
+      },
+      {
+        "text": ": per-image processing must complete within seconds,",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          79.16242980957031,
+          679.5344848632812,
+          294.75311279296875,
+          689.4970703125
+        ]
+      },
+      {
+        "text": "precluding minutes-long optimization. The attacker may",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          691.489501953125,
+          294.7530822753906,
+          701.4520874023438
+        ]
+      },
+      {
+        "text": "use publicly available pretrained image-to-image diffusion",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          58.5,
+          703.4444580078125,
+          294.7530822753906,
+          713.4070434570312
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      317.25,
+      74.40748596191406,
+      553.503173828125,
+      132.19113159179688
+    ],
+    "content": "models in a zero-shot manner, but lacks the compute ordata to fine-tune or retrain them for removal or surrogate-detector training. This setting reflects practical scenarioswhere adversaries must succeed without privileged access,extensive datasets, or prolonged computation.",
+    "spans": [
+      {
+        "text": "models in a zero-shot manner, but lacks the compute or",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          74.40748596191406,
+          553.503173828125,
+          84.37008666992188
+        ]
+      },
+      {
+        "text": "data to fine-tune or retrain them for removal or surrogate-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          86.36250305175781,
+          553.5030517578125,
+          96.32510375976562
+        ]
+      },
+      {
+        "text": "detector training. This setting reflects practical scenarios",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          98.31752014160156,
+          553.5030517578125,
+          108.28012084960938
+        ]
+      },
+      {
+        "text": "where adversaries must succeed without privileged access,",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          110.27253723144531,
+          553.5029907226562,
+          120.23513793945312
+        ]
+      },
+      {
+        "text": "extensive datasets, or prolonged computation.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          122.22853088378906,
+          499.326416015625,
+          132.19113159179688
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      317.25,
+      152.80023193359375,
+      430.4299011230469,
+      164.75543212890625
+    ],
+    "content": "4. Proposed Approach",
+    "spans": [
+      {
+        "text": "4. Proposed Approach",
         "font_name": "NimbusRomNo9L-Medi",
         "font_size": 11.9552001953125,
         "font_flags": 20,
         "color": 0,
         "bbox": [
-          125.93280029296875,
-          409.0161437988281,
-          170.4300537109375,
-          420.9713439941406
+          317.25,
+          152.80023193359375,
+          430.4299011230469,
+          164.75543212890625
         ]
       }
     ]
@@ -841,37 +1232,24 @@
   {
     "type": "text",
     "bbox": [
-      108.0,
-      434.0425109863281,
-      165.83290100097656,
-      444.0050964355469
+      317.25,
+      175.25393676757812,
+      507.4197692871094,
+      186.21282958984375
     ],
-    "content": "3.18-puzzle",
+    "content": "4.1. Background and Problem Statement",
     "spans": [
       {
-        "text": "3.1",
+        "text": "4.1. Background and Problem Statement",
         "font_name": "NimbusRomNo9L-Medi",
-        "font_size": 9.962599754333496,
+        "font_size": 10.958900451660156,
         "font_flags": 20,
         "color": 0,
         "bbox": [
-          108.0,
-          434.0425109863281,
-          120.4532470703125,
-          444.0050964355469
-        ]
-      },
-      {
-        "text": "8-puzzle",
-        "font_name": "NimbusRomNo9L-Medi",
-        "font_size": 9.962599754333496,
-        "font_flags": 20,
-        "color": 0,
-        "bbox": [
-          130.4158477783203,
-          434.0425109863281,
-          165.83290100097656,
-          444.0050964355469
+          317.25,
+          175.25393676757812,
+          507.4197692871094,
+          186.21282958984375
         ]
       }
     ]
@@ -879,476 +1257,3313 @@
   {
     "type": "text",
     "bbox": [
-      107.69100189208984,
-      454.2882995605469,
-      504.35345458984375,
-      562.508056640625
+      317.2452697753906,
+      195.71563720703125,
+      553.5130615234375,
+      713.4067993164062
     ],
-    "content": "The 8-puzzle is a simple and widely used search problem in AI [29, 30]. The puzzle consists of a3-by-3 grid with eight numbered, sliding tiles (1–8) and a single blank space (represented as 0). Tilesdirectly adjacent to the space can slide into it to change the board configuration. From a randomstarting configuration, the goal is to slide tiles until the board reads 1–8 from left to right, top tobottom, with the blank in the bottom-right corner. The 8-puzzle is particularly well-suited to ourinvestigation because it is a well-studied problem in AI [29], it provides a controllable and predictableenvironment in which the model must track the board state and obey strict rules, and it demandsnon-trivial long-term planning because solutions are unlikely to be found through local or randomactions alone. Thus, it combines state tracking and planning in a single, compact domain, with easilyverifiable solutions and unambiguous instructions.",
+    "content": "Image-to-Image Diffusion Models: We build our methodon latent image-to-image diffusion models, instantiatedwith Stable Diffusion [31], which operate in the latent spaceof a pre-trained autoencoder (E, D). Let x ∈X be an im-age sampled from the image space X, z0 = E(x) ∈Zbe the corresponding latent from the latent space Z andx′ = D(z0) ≈x. The forward process adds noise to latentz0 via q(zt|z0) = N(zt; √¯αtz0, (1−¯αt)I), while a learneddenoiser ϵθ(zt, t) reverses this process to recover z0. Un-like text-to-image generation from random noise, image-to-image diffusion inverts a real image into noisy latent zτ viaDDIM inversion - optionally in a partial timestep τ < Tto preserve the semantic structure - then applies transfor-mations T : Z →Z in latent space before reconstructingx′ = D(DDIM-Sample(z′τ)). This latent-space control en-ables image-to-image transformations that maintain seman-tic content while altering representational factors, makingsuch models well suited for watermark removal attacks.Watermarking System: We model a watermarking systemas W = (Uζ, Vη), where encoder Uζ : X ×K →X embedswatermark key κ ∈K into image x to produce watermarkedimage xw = Uζ(x, κ), and detector Vη : X →K ∪{⊥}extracts the embedded key ˆκ = Vη(xw) or returns ⊥ifno watermark is detected. Modern watermarks operate attwo levels: pixel-level schemes embed signals in spatialor frequency domains (e.g., DwtDct, StegaStamp), whilesemantic-level schemes couple signals with latent structurein generative models (e.g., Tree-Ring, StableSignature) forstronger robustness. An effective watermark satisfies im-perceptibility (xw ≈x perceptually) and robustness (inval-idating κ requires noticeable degradation). In realistic de-ployments, both Uζ and Vη are proprietary, exposed onlythrough black-box APIs.Problem Formulation. Given a watermarked image xw =Uζ(x, κ) returned by a provider’s generative API, our goalis to design a transformation A : X →X producing˜x = A(xw) that removes the watermark (i.e., Vη(˜x) = ⊥with high probability) while preserving the content (i.e.,˜x ≈xw). The attacker operates under strict no-box con-straints (Sec. 3): no access to (Uζ, Vη, ζ, η, κ), no detectorqueries, no clean-watermark paired image supervision, butmay use publicly available image-to-image diffusion mod-els. Let d : K × K →R be an unknown distance metric in",
     "spans": [
       {
-        "text": "The 8-puzzle is a simple and widely used search problem in AI [",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
-        "font_flags": 4,
+        "text": "Image-to-Image Diffusion Models",
+        "font_name": "NimbusRomNo9L-Medi",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
         "color": 0,
         "bbox": [
-          107.69100189208984,
-          454.2882995605469,
-          371.3708801269531,
-          464.35003662109375
+          317.25,
+          195.71563720703125,
+          461.46856689453125,
+          205.67823791503906
         ]
       },
       {
-        "text": "29",
+        "text": ": We build our method",
         "font_name": "NimbusRomNo9L-Regu",
         "font_size": 9.962599754333496,
         "font_flags": 4,
         "color": 0,
         "bbox": [
-          371.37200927734375,
-          454.36346435546875,
-          381.3345947265625,
-          464.3260803222656
+          461.46856689453125,
+          195.8065948486328,
+          553.503173828125,
+          205.76919555664062
+        ]
+      },
+      {
+        "text": "on latent image-to-image diffusion models, instantiated",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          207.76161193847656,
+          553.5029907226562,
+          217.72421264648438
+        ]
+      },
+      {
+        "text": "with Stable Diffusion [",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          219.7166290283203,
+          407.34173583984375,
+          229.67922973632812
+        ]
+      },
+      {
+        "text": "31",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 6592255,
+        "bbox": [
+          407.34173583984375,
+          219.7166290283203,
+          417.3043212890625,
+          229.67922973632812
+        ]
+      },
+      {
+        "text": "], which operate in the latent space",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          417.3043212890625,
+          219.7166290283203,
+          553.5029907226562,
+          229.67922973632812
+        ]
+      },
+      {
+        "text": "of a pre-trained autoencoder",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          231.67262268066406,
+          431.2618713378906,
+          241.63522338867188
+        ]
+      },
+      {
+        "text": " (",
+        "font_name": "CMR10",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          431.2618713378906,
+          231.4420623779297,
+          438.1061706542969,
+          241.4046630859375
+        ]
+      },
+      {
+        "text": "E",
+        "font_name": "CMSY10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          438.1061706542969,
+          231.3129425048828,
+          443.3664245605469,
+          241.27554321289062
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "CMMI10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          444.2530822753906,
+          231.4420623779297,
+          447.0226745605469,
+          241.4046630859375
+        ]
+      },
+      {
+        "text": " D",
+        "font_name": "CMSY10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          447.0226745605469,
+          231.3129425048828,
+          456.3675842285156,
+          241.27554321289062
+        ]
+      },
+      {
+        "text": ")",
+        "font_name": "CMR10",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          456.6365661621094,
+          231.4420623779297,
+          460.51202392578125,
+          241.4046630859375
+        ]
+      },
+      {
+        "text": ". Let",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          460.51202392578125,
+          231.67262268066406,
+          480.7958984375,
+          241.63522338867188
+        ]
+      },
+      {
+        "text": " x",
+        "font_name": "CMMI10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          480.7958984375,
+          231.4420623779297,
+          489.4633483886719,
+          241.4046630859375
+        ]
+      },
+      {
+        "text": " ∈X",
+        "font_name": "CMSY10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          489.4633483886719,
+          231.3129425048828,
+          510.50433349609375,
+          241.27554321289062
+        ]
+      },
+      {
+        "text": " be an im-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          510.50433349609375,
+          231.67262268066406,
+          553.5029907226562,
+          241.63522338867188
+        ]
+      },
+      {
+        "text": "age sampled from the image space",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.25,
+          243.6276397705078,
+          461.7575378417969,
+          253.59024047851562
+        ]
+      },
+      {
+        "text": " X",
+        "font_name": "CMSY10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          461.7575378417969,
+          243.26795959472656,
+          472.7562561035156,
+          253.23056030273438
         ]
       },
       {
         "text": ",",
         "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
+        "font_size": 9.962599754333496,
         "font_flags": 4,
         "color": 0,
         "bbox": [
-          381.3349914550781,
-          454.2882995605469,
-          383.8754577636719,
-          464.35003662109375
+          474.2107849121094,
+          243.6276397705078,
+          476.7014465332031,
+          253.59024047851562
         ]
       },
       {
-        "text": " 30",
+        "text": " z",
+        "font_name": "CMMI10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          476.7014465332031,
+          243.39707946777344,
+          485.578125,
+          253.35968017578125
+        ]
+      },
+      {
+        "text": "0",
+        "font_name": "CMR7",
+        "font_size": 6.973800182342529,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          485.58502197265625,
+          247.22694396972656,
+          489.5600891113281,
+          254.20074462890625
+        ]
+      },
+      {
+        "text": " =",
+        "font_name": "CMR10",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          489.5600891113281,
+          243.39707946777344,
+          503.1679382324219,
+          254.85369873046875
+        ]
+      },
+      {
+        "text": " E",
+        "font_name": "CMSY10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          503.1679382324219,
+          243.26795959472656,
+          513.7880859375,
+          253.23056030273438
+        ]
+      },
+      {
+        "text": "(",
+        "font_name": "CMR10",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          514.6846923828125,
+          243.39707946777344,
+          518.5601196289062,
+          253.35968017578125
+        ]
+      },
+      {
+        "text": "x",
+        "font_name": "CMMI10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          518.5601196289062,
+          243.39707946777344,
+          524.2587280273438,
+          253.35968017578125
+        ]
+      },
+      {
+        "text": ")",
+        "font_name": "CMR10",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          524.2587280273438,
+          243.39707946777344,
+          528.1341552734375,
+          253.35968017578125
+        ]
+      },
+      {
+        "text": " ∈Z",
+        "font_name": "CMSY10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          528.1341552734375,
+          243.26795959472656,
+          552.7218627929688,
+          253.23056030273438
+        ]
+      },
+      {
+        "text": "be the corresponding latent from the latent space",
         "font_name": "NimbusRomNo9L-Regu",
         "font_size": 9.962599754333496,
         "font_flags": 4,
         "color": 0,
         "bbox": [
-          383.8754577636719,
-          454.36346435546875,
-          396.4805908203125,
-          464.3260803222656
+          317.25,
+          255.58265686035156,
+          522.8082275390625,
+          265.5452575683594
         ]
       },
       {
-        "text": "]. The puzzle consists of a",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
-        "font_flags": 4,
+        "text": " Z",
+        "font_name": "CMSY10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
         "color": 0,
         "bbox": [
-          396.4800109863281,
-          454.2882995605469,
-          504.0027160644531,
-          464.35003662109375
+          522.8082275390625,
+          255.2229766845703,
+          534.1755981445312,
+          265.1855773925781
         ]
       },
       {
-        "text": "3-by-3 grid with eight numbered, sliding tiles (1–8) and a single blank space (represented as 0). Tiles",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.862470626831055,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          465.34942626953125,
-          504.00152587890625,
-          475.2118835449219
-        ]
-      },
-      {
-        "text": "directly adjacent to the space can slide into it to change the board configuration. From a random",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          476.1072998046875,
-          503.9972839355469,
-          486.1690368652344
-        ]
-      },
-      {
-        "text": "starting configuration, the goal is to slide tiles until the board reads 1–8 from left to right, top to",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          487.01629638671875,
-          503.99725341796875,
-          497.0780334472656
-        ]
-      },
-      {
-        "text": "bottom, with the blank in the bottom-right corner. The 8-puzzle is particularly well-suited to our",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          497.92529296875,
-          504.1701354980469,
-          507.9870300292969
-        ]
-      },
-      {
-        "text": "investigation because it is a well-studied problem in AI [",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.862470626831055,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          508.9853820800781,
-          327.3630065917969,
-          518.8478393554688
-        ]
-      },
-      {
-        "text": "29",
+        "text": " and",
         "font_name": "NimbusRomNo9L-Regu",
         "font_size": 9.962599754333496,
         "font_flags": 4,
         "color": 0,
         "bbox": [
-          327.3609924316406,
-          508.909423828125,
-          337.3235778808594,
-          518.8720092773438
+          534.1755981445312,
+          255.58265686035156,
+          553.5031127929688,
+          265.5452575683594
         ]
       },
       {
-        "text": "], it provides a controllable and predictable",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.862470626831055,
+        "text": "x",
+        "font_name": "CMMI10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          317.25,
+          267.30712890625,
+          322.9486083984375,
+          277.26971435546875
+        ]
+      },
+      {
+        "text": "′",
+        "font_name": "CMSY7",
+        "font_size": 6.973800182342529,
+        "font_flags": 7,
+        "color": 0,
+        "bbox": [
+          322.9440002441406,
+          265.9375915527344,
+          325.2383728027344,
+          272.911376953125
+        ]
+      },
+      {
+        "text": " ",
+        "font_name": "CMR10",
+        "font_size": 9.962599754333496,
+        "font_flags": 5,
+        "color": 0,
+        "bbox": [
+          325.2383728027344,
+          263.692138671875,
+          328.9779968261719,
+          273.65472412109375
+        ]
+      },
+      {
+        "text": "=",
+        "font_name": "CMR10",
+        "font_size": 9.962599754333496,
         "font_flags": 4,
         "color": 0,
         "bbox": [
-          337.322998046875,
-          508.9853820800781,
-          504.0029602050781,
-          518.8478393554688
+          328.9779968261719,
+          267.30712890625,
+          336.7289123535156,
+          277.26971435546875
         ]
       },
       {
-        "text": "environment in which the model must track the board state and obey strict rules, and it demands",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
+        "text": " D",
+        "font_name": "CMSY10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          336.7289123535156,
+          267.1780090332031,
+          347.6479187011719,
+          277.1405944824219
+        ]
+      },
+      {
+        "text": "(",
+        "font_name": "CMR10",
+        "font_size": 9.962599754333496,
         "font_flags": 4,
         "color": 0,
         "bbox": [
-          108.0,
-          519.7432861328125,
-          503.99737548828125,
-          529.8050537109375
+          347.9268798828125,
+          267.30712890625,
+          351.8023376464844,
+          277.26971435546875
         ]
       },
       {
-        "text": "non-trivial long-term planning because solutions are unlikely to be found through local or random",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.046924591064453,
+        "text": "z",
+        "font_name": "CMMI10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          351.8023376464844,
+          267.30712890625,
+          356.4349365234375,
+          277.26971435546875
+        ]
+      },
+      {
+        "text": "0",
+        "font_name": "CMR7",
+        "font_size": 6.973800182342529,
         "font_flags": 4,
         "color": 0,
         "bbox": [
-          108.0,
-          530.6635131835938,
-          503.9975280761719,
-          540.71044921875
+          356.4360046386719,
+          271.137939453125,
+          360.41107177734375,
+          278.11175537109375
         ]
       },
       {
-        "text": "actions alone. Thus, it combines state tracking and planning in a single, compact domain, with easily",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.882577896118164,
+        "text": ")",
+        "font_name": "CMR10",
+        "font_size": 9.962599754333496,
         "font_flags": 4,
         "color": 0,
         "bbox": [
-          108.0,
-          541.6972045898438,
-          504.35345458984375,
-          551.5797729492188
+          360.9049987792969,
+          267.30712890625,
+          364.78045654296875,
+          277.26971435546875
         ]
       },
       {
-        "text": "verifiable solutions and unambiguous instructions.",
+        "text": " ≈",
+        "font_name": "CMSY10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          364.78045654296875,
+          267.1780090332031,
+          375.76922607421875,
+          277.1405944824219
+        ]
+      },
+      {
+        "text": "x",
+        "font_name": "CMMI10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          379.007080078125,
+          267.30712890625,
+          384.7056884765625,
+          277.26971435546875
+        ]
+      },
+      {
+        "text": ". The forward process adds noise to latent",
         "font_name": "NimbusRomNo9L-Regu",
         "font_size": 9.962599754333496,
         "font_flags": 4,
         "color": 0,
         "bbox": [
-          107.7509994506836,
-          552.5454711914062,
-          308.2382507324219,
-          562.508056640625
-        ]
-      }
-    ]
-  },
-  {
-    "type": "text",
-    "bbox": [
-      107.25299835205078,
-      568.8592529296875,
-      504.3529357910156,
-      666.1700439453125
-    ],
-    "content": "The problem space consists of 181,440 unique solvable configurations, with the shortest optimalsolution requiring zero moves and the longest optimal solution requiring 31 moves [30]. To ensurefair representation of puzzles with varying difficulty, we divided them into difficulty bins based ontheir optimal solution lengths. Each bin represents roughly 20% of the solvable puzzles and contains10 sampled puzzles (see Fig. 3 for the bin definition). We generated the puzzles for each bin bycreating a flattened list of integers from 0 to 8, shuffling them with Python’s random.shuffle, andreshaping them into 3-by-3 arrays. For each bin, we repeatedly sampled random boards and used onlythose that were solvable according to the standard parity test. Given the large number of possiblepuzzles and their random generation, we minimize the likelihood of data contamination.",
-    "spans": [
-      {
-        "text": "The problem space consists of 181,440 unique solvable configurations, with the shortest optimal",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          107.69100189208984,
-          568.8592529296875,
-          504.0033264160156,
-          578.9210205078125
+          384.7056884765625,
+          267.53765869140625,
+          553.511962890625,
+          277.5002746582031
         ]
       },
       {
-        "text": "solution requiring zero moves and the longest optimal solution requiring 31 moves [",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.012289047241211,
-        "font_flags": 4,
+        "text": "z",
+        "font_name": "CMMI10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
         "color": 0,
         "bbox": [
-          108.0,
-          579.8057861328125,
-          445.9197998046875,
-          589.8180541992188
+          317.25,
+          279.2621154785156,
+          321.8825988769531,
+          289.2247009277344
         ]
       },
       {
-        "text": "30",
+        "text": "0",
+        "font_name": "CMR7",
+        "font_size": 6.973800182342529,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          321.88299560546875,
+          283.0929260253906,
+          325.8580627441406,
+          290.0667419433594
+        ]
+      },
+      {
+        "text": " via",
         "font_name": "NimbusRomNo9L-Regu",
         "font_size": 9.962599754333496,
         "font_flags": 4,
         "color": 0,
         "bbox": [
-          445.9219970703125,
-          579.8434448242188,
-          455.88458251953125,
-          589.8060302734375
+          325.8580627441406,
+          279.4926452636719,
+          340.8122863769531,
+          290.95025634765625
         ]
       },
       {
-        "text": "]. To ensure",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.012289047241211,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          455.885009765625,
-          579.8057861328125,
-          504.0024719238281,
-          589.8180541992188
-        ]
-      },
-      {
-        "text": "fair representation of puzzles with varying difficulty, we divided them into difficulty bins based on",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.02714729309082,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          590.7034912109375,
-          504.0042419433594,
-          600.7306518554688
-        ]
-      },
-      {
-        "text": "their optimal solution lengths. Each bin represents roughly 20% of the solvable puzzles and contains",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.89763069152832,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          601.710693359375,
-          503.9979248046875,
-          611.6083374023438
-        ]
-      },
-      {
-        "text": "10 sampled puzzles (see Fig. 3 for the bin definition). We generated the puzzles for each bin by",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          107.25299835205078,
-          612.4952392578125,
-          504.3478698730469,
-          622.5570068359375
-        ]
-      },
-      {
-        "text": "creating a flattened list of integers from 0 to 8, shuffling them with Python’s",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.937662124633789,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          623.4984130859375,
-          409.0116882324219,
-          633.4360961914062
-        ]
-      },
-      {
-        "text": " random.shuffle",
-        "font_name": "SFTT1000",
+        "text": " q",
+        "font_name": "CMMI10",
         "font_size": 9.962599754333496,
-        "font_flags": 12,
+        "font_flags": 6,
         "color": 0,
         "bbox": [
-          409.0116882324219,
-          623.7275390625,
-          484.7322692871094,
-          633.6901245117188
+          340.8122863769531,
+          279.2621154785156,
+          347.53704833984375,
+          289.2247009277344
         ]
       },
       {
-        "text": ", and",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.937662124633789,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          484.7149963378906,
-          623.4984130859375,
-          503.995361328125,
-          633.4360961914062
-        ]
-      },
-      {
-        "text": "reshaping them into 3-by-3 arrays. For each bin, we repeatedly sampled random boards and used only",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.862470626831055,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          634.46435546875,
-          504.3529357910156,
-          644.3268432617188
-        ]
-      },
-      {
-        "text": "those that were solvable according to the standard parity test. Given the large number of possible",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          108.0,
-          645.2222900390625,
-          503.9974060058594,
-          655.2840576171875
-        ]
-      },
-      {
-        "text": "puzzles and their random generation, we minimize the likelihood of data contamination.",
-        "font_name": "NimbusRomNo9L-Regu",
+        "text": "(",
+        "font_name": "CMR10",
         "font_size": 9.962599754333496,
         "font_flags": 4,
         "color": 0,
         "bbox": [
-          108.0,
-          656.2074584960938,
-          459.0321350097656,
-          666.1700439453125
+          347.89569091796875,
+          279.2621154785156,
+          351.7711486816406,
+          289.2247009277344
         ]
-      }
-    ]
-  },
-  {
-    "type": "text",
-    "bbox": [
-      108.0,
-      681.2135009765625,
-      161.4095001220703,
-      691.1760864257812
-    ],
-    "content": "3.2Models",
-    "spans": [
+      },
       {
-        "text": "3.2",
+        "text": "z",
+        "font_name": "CMMI10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          351.7711486816406,
+          279.2621154785156,
+          356.40374755859375,
+          289.2247009277344
+        ]
+      },
+      {
+        "text": "t",
+        "font_name": "CMMI7",
+        "font_size": 6.973800182342529,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          356.4100036621094,
+          283.0929260253906,
+          359.4226989746094,
+          290.0667419433594
+        ]
+      },
+      {
+        "text": "|",
+        "font_name": "CMSY10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          359.9179992675781,
+          279.13299560546875,
+          362.6875915527344,
+          289.0955810546875
+        ]
+      },
+      {
+        "text": "z",
+        "font_name": "CMMI10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          362.6875915527344,
+          279.2621154785156,
+          367.3201904296875,
+          289.2247009277344
+        ]
+      },
+      {
+        "text": "0",
+        "font_name": "CMR7",
+        "font_size": 6.973800182342529,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          367.3179931640625,
+          283.0929260253906,
+          371.2930603027344,
+          290.0667419433594
+        ]
+      },
+      {
+        "text": ") =",
+        "font_name": "CMR10",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          371.7879943847656,
+          279.2621154785156,
+          386.1839599609375,
+          289.2247009277344
+        ]
+      },
+      {
+        "text": " N",
+        "font_name": "CMSY10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          386.1839599609375,
+          279.13299560546875,
+          397.1328430175781,
+          289.0955810546875
+        ]
+      },
+      {
+        "text": "(",
+        "font_name": "CMR10",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          398.59735107421875,
+          279.2621154785156,
+          402.4728088378906,
+          289.2247009277344
+        ]
+      },
+      {
+        "text": "z",
+        "font_name": "CMMI10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          402.4728088378906,
+          279.2621154785156,
+          407.10540771484375,
+          289.2247009277344
+        ]
+      },
+      {
+        "text": "t",
+        "font_name": "CMMI7",
+        "font_size": 6.973800182342529,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          407.0950012207031,
+          283.0929260253906,
+          410.1076965332031,
+          290.0667419433594
+        ]
+      },
+      {
+        "text": ";",
+        "font_name": "CMR10",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          410.6029968261719,
+          279.2621154785156,
+          413.3725891113281,
+          289.2247009277344
+        ]
+      },
+      {
+        "text": " ",
+        "font_name": "CMSY10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          413.3725891113281,
+          279.13299560546875,
+          415.031005859375,
+          289.0955810546875
+        ]
+      },
+      {
+        "text": "√",
+        "font_name": "CMSY10",
+        "font_size": 9.962599754333496,
+        "font_flags": 7,
+        "color": 0,
+        "bbox": [
+          415.031005859375,
+          272.0209655761719,
+          423.3298645019531,
+          281.9835510253906
+        ]
+      },
+      {
+        "text": "¯",
+        "font_name": "CMR10",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          424.3240051269531,
+          279.2619323730469,
+          429.3052978515625,
+          289.2245178222656
+        ]
+      },
+      {
+        "text": "α",
+        "font_name": "CMMI10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          423.33770751953125,
+          279.2619323730469,
+          429.7137756347656,
+          289.2245178222656
+        ]
+      },
+      {
+        "text": "t",
+        "font_name": "CMMI7",
+        "font_size": 6.973800182342529,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          429.70599365234375,
+          283.09173583984375,
+          432.71868896484375,
+          290.0655517578125
+        ]
+      },
+      {
+        "text": "z",
+        "font_name": "CMMI10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          433.2139892578125,
+          279.2619323730469,
+          437.8465881347656,
+          289.2245178222656
+        ]
+      },
+      {
+        "text": "0",
+        "font_name": "CMR7",
+        "font_size": 6.973800182342529,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          437.84698486328125,
+          283.09173583984375,
+          441.8220520019531,
+          290.0655517578125
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "CMMI10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          442.31597900390625,
+          279.2619323730469,
+          445.0855712890625,
+          289.2245178222656
+        ]
+      },
+      {
+        "text": " (1",
+        "font_name": "CMR10",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          445.0855712890625,
+          279.2619323730469,
+          455.6060791015625,
+          289.2245178222656
+        ]
+      },
+      {
+        "text": "−",
+        "font_name": "CMSY10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          457.06060791015625,
+          279.1328125,
+          464.8115234375,
+          289.09539794921875
+        ]
+      },
+      {
+        "text": "¯",
+        "font_name": "CMR10",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          467.2523498535156,
+          279.2619323730469,
+          472.233642578125,
+          289.2245178222656
+        ]
+      },
+      {
+        "text": "α",
+        "font_name": "CMMI10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          466.26605224609375,
+          279.2619323730469,
+          472.6421203613281,
+          289.2245178222656
+        ]
+      },
+      {
+        "text": "t",
+        "font_name": "CMMI7",
+        "font_size": 6.973800182342529,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          472.6309814453125,
+          283.09173583984375,
+          475.6436767578125,
+          290.0655517578125
+        ]
+      },
+      {
+        "text": ")",
+        "font_name": "CMR10",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          476.1379699707031,
+          279.2619323730469,
+          480.013427734375,
+          289.2245178222656
+        ]
+      },
+      {
+        "text": "I",
+        "font_name": "CMBX10",
+        "font_size": 9.962599754333496,
+        "font_flags": 20,
+        "color": 0,
+        "bbox": [
+          480.013427734375,
+          279.2619323730469,
+          484.35711669921875,
+          289.2245178222656
+        ]
+      },
+      {
+        "text": ")",
+        "font_name": "CMR10",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          484.35711669921875,
+          279.2619323730469,
+          488.2325744628906,
+          289.2245178222656
+        ]
+      },
+      {
+        "text": ", while a learned",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          488.2325744628906,
+          279.4924621582031,
+          553.4976196289062,
+          289.455078125
+        ]
+      },
+      {
+        "text": "denoiser",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.2499694824219,
+          291.44744873046875,
+          351.00323486328125,
+          301.4100646972656
+        ]
+      },
+      {
+        "text": " ϵ",
+        "font_name": "CMMI10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          351.00323486328125,
+          291.2169189453125,
+          358.3955078125,
+          301.17950439453125
+        ]
+      },
+      {
+        "text": "θ",
+        "font_name": "CMMI7",
+        "font_size": 6.973800182342529,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          358.39697265625,
+          295.0477294921875,
+          362.19073486328125,
+          302.02154541015625
+        ]
+      },
+      {
+        "text": "(",
+        "font_name": "CMR10",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          362.9039611816406,
+          291.2169189453125,
+          366.7794189453125,
+          301.17950439453125
+        ]
+      },
+      {
+        "text": "z",
+        "font_name": "CMMI10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          366.7794189453125,
+          291.2169189453125,
+          371.4120178222656,
+          301.17950439453125
+        ]
+      },
+      {
+        "text": "t",
+        "font_name": "CMMI7",
+        "font_size": 6.973800182342529,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          371.4119567871094,
+          295.0477294921875,
+          374.4246520996094,
+          302.02154541015625
+        ]
+      },
+      {
+        "text": ", t",
+        "font_name": "CMMI10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          374.9189453125,
+          291.2169189453125,
+          382.94879150390625,
+          301.17950439453125
+        ]
+      },
+      {
+        "text": ")",
+        "font_name": "CMR10",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          382.94879150390625,
+          291.2169189453125,
+          386.8242492675781,
+          301.17950439453125
+        ]
+      },
+      {
+        "text": " reverses this process to recover",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          386.8242492675781,
+          291.44744873046875,
+          517.404052734375,
+          301.4100646972656
+        ]
+      },
+      {
+        "text": " z",
+        "font_name": "CMMI10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          517.404052734375,
+          291.2169189453125,
+          525.3840942382812,
+          301.17950439453125
+        ]
+      },
+      {
+        "text": "0",
+        "font_name": "CMR7",
+        "font_size": 6.973800182342529,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          525.3819580078125,
+          295.0477294921875,
+          529.3569946289062,
+          302.02154541015625
+        ]
+      },
+      {
+        "text": ". Un-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          529.8519287109375,
+          291.44744873046875,
+          553.503173828125,
+          301.4100646972656
+        ]
+      },
+      {
+        "text": "like text-to-image generation from random noise, image-to-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.24993896484375,
+          303.4024353027344,
+          553.5029907226562,
+          313.36505126953125
+        ]
+      },
+      {
+        "text": "image diffusion inverts a real image into noisy latent",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.24993896484375,
+          315.3584289550781,
+          526.7334594726562,
+          325.321044921875
+        ]
+      },
+      {
+        "text": " z",
+        "font_name": "CMMI10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          526.7334594726562,
+          315.1278991699219,
+          533.8567504882812,
+          325.0904846191406
+        ]
+      },
+      {
+        "text": "τ",
+        "font_name": "CMMI7",
+        "font_size": 6.973800182342529,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          533.8589477539062,
+          318.95770263671875,
+          537.5341186523438,
+          325.9315185546875
+        ]
+      },
+      {
+        "text": " via",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          537.5341186523438,
+          315.3584289550781,
+          553.500244140625,
+          326.8150329589844
+        ]
+      },
+      {
+        "text": "DDIM inversion - optionally in a partial timestep",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.24993896484375,
+          327.31341552734375,
+          520.1580200195312,
+          337.2760314941406
+        ]
+      },
+      {
+        "text": " τ < T",
+        "font_name": "CMMI10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          520.1580200195312,
+          327.0828857421875,
+          552.1080932617188,
+          337.04547119140625
+        ]
+      },
+      {
+        "text": "to preserve the semantic structure - then applies transfor-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.24993896484375,
+          339.2684020996094,
+          553.5029907226562,
+          349.23101806640625
+        ]
+      },
+      {
+        "text": "mations",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.24993896484375,
+          351.223388671875,
+          348.8014831542969,
+          361.1860046386719
+        ]
+      },
+      {
+        "text": " T",
+        "font_name": "CMSY10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          348.8014831542969,
+          350.8637390136719,
+          357.2796630859375,
+          360.8263244628906
+        ]
+      },
+      {
+        "text": " :",
+        "font_name": "CMR10",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          357.2796630859375,
+          350.99285888671875,
+          366.39544677734375,
+          360.9554443359375
+        ]
+      },
+      {
+        "text": " Z →Z",
+        "font_name": "CMSY10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          366.39544677734375,
+          350.8637390136719,
+          403.008056640625,
+          360.8263244628906
+        ]
+      },
+      {
+        "text": " in latent space before reconstructing",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          403.008056640625,
+          351.223388671875,
+          553.5130615234375,
+          361.1860046386719
+        ]
+      },
+      {
+        "text": "x",
+        "font_name": "CMMI10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          317.24993896484375,
+          362.9478454589844,
+          322.94854736328125,
+          372.9104309082031
+        ]
+      },
+      {
+        "text": "′",
+        "font_name": "CMSY7",
+        "font_size": 6.973800182342529,
+        "font_flags": 7,
+        "color": 0,
+        "bbox": [
+          322.9439392089844,
+          361.57830810546875,
+          325.2383117675781,
+          368.5520935058594
+        ]
+      },
+      {
+        "text": " ",
+        "font_name": "CMR10",
+        "font_size": 9.962599754333496,
+        "font_flags": 5,
+        "color": 0,
+        "bbox": [
+          325.2383117675781,
+          359.3328552246094,
+          328.9549255371094,
+          369.2954406738281
+        ]
+      },
+      {
+        "text": "=",
+        "font_name": "CMR10",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          328.9549255371094,
+          362.9478454589844,
+          336.7058410644531,
+          372.9104309082031
+        ]
+      },
+      {
+        "text": " D",
+        "font_name": "CMSY10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          336.7058410644531,
+          362.8187255859375,
+          347.60491943359375,
+          372.78131103515625
+        ]
+      },
+      {
+        "text": "(",
+        "font_name": "CMR10",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          347.8838806152344,
+          362.9478454589844,
+          351.75933837890625,
+          372.9104309082031
+        ]
+      },
+      {
+        "text": "DDIM-Sample",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          351.75933837890625,
+          363.1783752441406,
+          411.5150146484375,
+          373.1409912109375
+        ]
+      },
+      {
+        "text": "(",
+        "font_name": "CMR10",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          411.5150146484375,
+          362.9478454589844,
+          415.3904724121094,
+          372.9104309082031
+        ]
+      },
+      {
+        "text": "z",
+        "font_name": "CMMI10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          415.3904724121094,
+          362.9478454589844,
+          420.0230712890625,
+          372.9104309082031
+        ]
+      },
+      {
+        "text": "′",
+        "font_name": "CMSY7",
+        "font_size": 6.973800182342529,
+        "font_flags": 7,
+        "color": 0,
+        "bbox": [
+          420.4669189453125,
+          361.57830810546875,
+          422.76129150390625,
+          368.5520935058594
+        ]
+      },
+      {
+        "text": "τ",
+        "font_name": "CMMI7",
+        "font_size": 6.973800182342529,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          420.0279235839844,
+          367.7466735839844,
+          423.703125,
+          374.7204895019531
+        ]
+      },
+      {
+        "text": "))",
+        "font_name": "CMR10",
+        "font_size": 9.962599754333496,
+        "font_flags": 5,
+        "color": 0,
+        "bbox": [
+          425.0069274902344,
+          362.9478454589844,
+          432.7578430175781,
+          372.9104309082031
+        ]
+      },
+      {
+        "text": ". This latent-space control en-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 5,
+        "color": 0,
+        "bbox": [
+          432.7578430175781,
+          363.1783752441406,
+          553.504638671875,
+          373.1409912109375
+        ]
+      },
+      {
+        "text": "ables image-to-image transformations that maintain seman-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.24993896484375,
+          375.13336181640625,
+          553.5029296875,
+          385.0959777832031
+        ]
+      },
+      {
+        "text": "tic content while altering representational factors, making",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.24993896484375,
+          387.08935546875,
+          553.5028686523438,
+          397.0519714355469
+        ]
+      },
+      {
+        "text": "such models well suited for watermark removal attacks.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.24993896484375,
+          399.0443420410156,
+          539.2066650390625,
+          409.0069580078125
+        ]
+      },
+      {
+        "text": "Watermarking System",
         "font_name": "NimbusRomNo9L-Medi",
         "font_size": 9.962599754333496,
         "font_flags": 20,
         "color": 0,
         "bbox": [
-          108.0,
-          681.2135009765625,
-          120.4532470703125,
-          691.1760864257812
+          317.24993896484375,
+          413.66839599609375,
+          413.0303649902344,
+          423.6309814453125
         ]
       },
       {
-        "text": "Models",
+        "text": ": We model a watermarking system",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          413.0303649902344,
+          413.75933837890625,
+          553.5030517578125,
+          423.7219543457031
+        ]
+      },
+      {
+        "text": "as",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.24993896484375,
+          425.71533203125,
+          325.5487976074219,
+          435.6779479980469
+        ]
+      },
+      {
+        "text": " W",
+        "font_name": "CMSY10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          325.5487976074219,
+          425.3556823730469,
+          337.6533508300781,
+          435.3182678222656
+        ]
+      },
+      {
+        "text": " = (",
+        "font_name": "CMR10",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          337.6533508300781,
+          425.48480224609375,
+          355.62591552734375,
+          435.4473876953125
+        ]
+      },
+      {
+        "text": "U",
+        "font_name": "CMSY10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          355.62591552734375,
+          425.3556823730469,
+          361.8625183105469,
+          435.3182678222656
+        ]
+      },
+      {
+        "text": "ζ",
+        "font_name": "CMMI7",
+        "font_size": 6.973800182342529,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          361.85992431640625,
+          429.3146057128906,
+          365.4862976074219,
+          436.2884216308594
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "CMMI10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          366.4349365234375,
+          425.48480224609375,
+          369.20452880859375,
+          435.4473876953125
+        ]
+      },
+      {
+        "text": " V",
+        "font_name": "CMSY10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          369.20452880859375,
+          425.3556823730469,
+          376.9753723144531,
+          435.3182678222656
+        ]
+      },
+      {
+        "text": "η",
+        "font_name": "CMMI7",
+        "font_size": 6.973800182342529,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          376.9679260253906,
+          429.3146057128906,
+          381.07550048828125,
+          436.2884216308594
+        ]
+      },
+      {
+        "text": ")",
+        "font_name": "CMR10",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          381.8209228515625,
+          425.48480224609375,
+          385.6963806152344,
+          435.4473876953125
+        ]
+      },
+      {
+        "text": ", where encoder",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          385.6963806152344,
+          425.71533203125,
+          448.6201477050781,
+          435.6779479980469
+        ]
+      },
+      {
+        "text": " U",
+        "font_name": "CMSY10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          448.6201477050781,
+          425.3556823730469,
+          457.1182556152344,
+          435.3182678222656
+        ]
+      },
+      {
+        "text": "ζ",
+        "font_name": "CMMI7",
+        "font_size": 6.973800182342529,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          457.1119384765625,
+          429.3146057128906,
+          460.7383117675781,
+          436.2884216308594
+        ]
+      },
+      {
+        "text": " :",
+        "font_name": "CMR10",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          460.7383117675781,
+          425.48480224609375,
+          467.2245178222656,
+          436.9413757324219
+        ]
+      },
+      {
+        "text": " X ×K →X",
+        "font_name": "CMSY10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          467.2245178222656,
+          425.3556823730469,
+          519.3488159179688,
+          435.3182678222656
+        ]
+      },
+      {
+        "text": " embeds",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          519.3488159179688,
+          425.71533203125,
+          553.5006713867188,
+          435.6779479980469
+        ]
+      },
+      {
+        "text": "watermark key",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.24993896484375,
+          437.6703186035156,
+          375.9794006347656,
+          447.6329345703125
+        ]
+      },
+      {
+        "text": " κ",
+        "font_name": "CMMI10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          375.9794006347656,
+          437.4397888183594,
+          383.8199768066406,
+          447.4023742675781
+        ]
+      },
+      {
+        "text": " ∈K",
+        "font_name": "CMSY10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          383.8199768066406,
+          437.3106689453125,
+          403.58575439453125,
+          447.27325439453125
+        ]
+      },
+      {
+        "text": " into image",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          403.58575439453125,
+          437.6703186035156,
+          447.7798156738281,
+          447.6329345703125
+        ]
+      },
+      {
+        "text": " x",
+        "font_name": "CMMI10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          447.7798156738281,
+          437.4397888183594,
+          455.570556640625,
+          447.4023742675781
+        ]
+      },
+      {
+        "text": " to produce watermarked",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          455.570556640625,
+          437.6703186035156,
+          553.5029296875,
+          447.6329345703125
+        ]
+      },
+      {
+        "text": "image",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.24993896484375,
+          449.62530517578125,
+          341.5985412597656,
+          459.5879211425781
+        ]
+      },
+      {
+        "text": " x",
+        "font_name": "CMMI10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          341.5985412597656,
+          449.394775390625,
+          350.5748596191406,
+          459.35736083984375
+        ]
+      },
+      {
+        "text": "w",
+        "font_name": "CMMI7",
+        "font_size": 6.973800182342529,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          350.5719299316406,
+          453.2245788574219,
+          356.332275390625,
+          460.1983947753906
+        ]
+      },
+      {
+        "text": " =",
+        "font_name": "CMR10",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          356.332275390625,
+          449.394775390625,
+          368.9998474121094,
+          460.8513488769531
+        ]
+      },
+      {
+        "text": " U",
+        "font_name": "CMSY10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          368.9998474121094,
+          449.2656555175781,
+          379.4606018066406,
+          459.2282409667969
+        ]
+      },
+      {
+        "text": "ζ",
+        "font_name": "CMMI7",
+        "font_size": 6.973800182342529,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          379.4609375,
+          453.2245788574219,
+          383.0873107910156,
+          460.1983947753906
+        ]
+      },
+      {
+        "text": "(",
+        "font_name": "CMR10",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          384.03692626953125,
+          449.394775390625,
+          387.9123840332031,
+          459.35736083984375
+        ]
+      },
+      {
+        "text": "x, κ",
+        "font_name": "CMMI10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          387.9123840332031,
+          449.394775390625,
+          403.7828063964844,
+          459.35736083984375
+        ]
+      },
+      {
+        "text": ")",
+        "font_name": "CMR10",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          403.7828063964844,
+          449.394775390625,
+          407.65826416015625,
+          459.35736083984375
+        ]
+      },
+      {
+        "text": ", and detector",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          407.65826416015625,
+          449.62530517578125,
+          463.37908935546875,
+          459.5879211425781
+        ]
+      },
+      {
+        "text": " V",
+        "font_name": "CMSY10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          463.37908935546875,
+          449.2656555175781,
+          472.7638854980469,
+          459.2282409667969
+        ]
+      },
+      {
+        "text": "η",
+        "font_name": "CMMI7",
+        "font_size": 6.973800182342529,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          472.7539367675781,
+          453.2245788574219,
+          476.86151123046875,
+          460.1983947753906
+        ]
+      },
+      {
+        "text": " :",
+        "font_name": "CMR10",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          476.86151123046875,
+          449.394775390625,
+          484.60552978515625,
+          460.8513488769531
+        ]
+      },
+      {
+        "text": " X →K ∪{⊥}",
+        "font_name": "CMSY10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          484.60552978515625,
+          449.2656555175781,
+          553.5069580078125,
+          459.2282409667969
+        ]
+      },
+      {
+        "text": "extracts the embedded key",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.24993896484375,
+          461.5802917480469,
+          427.5657653808594,
+          471.54290771484375
+        ]
+      },
+      {
+        "text": " ˆ",
+        "font_name": "CMR10",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          427.5657653808594,
+          461.3497619628906,
+          437.01031494140625,
+          471.3123474121094
+        ]
+      },
+      {
+        "text": "κ",
+        "font_name": "CMMI10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          431.6504211425781,
+          461.3497619628906,
+          437.3888854980469,
+          471.3123474121094
+        ]
+      },
+      {
+        "text": " =",
+        "font_name": "CMR10",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          437.3888854980469,
+          461.3497619628906,
+          450.8384094238281,
+          471.3123474121094
+        ]
+      },
+      {
+        "text": " V",
+        "font_name": "CMSY10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          450.8384094238281,
+          461.22064208984375,
+          462.654052734375,
+          471.1832275390625
+        ]
+      },
+      {
+        "text": "η",
+        "font_name": "CMMI7",
+        "font_size": 6.973800182342529,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          462.64892578125,
+          465.1805725097656,
+          466.7565002441406,
+          472.1543884277344
+        ]
+      },
+      {
+        "text": "(",
+        "font_name": "CMR10",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          467.5019226074219,
+          461.3497619628906,
+          471.37738037109375,
+          471.3123474121094
+        ]
+      },
+      {
+        "text": "x",
+        "font_name": "CMMI10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          471.37738037109375,
+          461.3497619628906,
+          477.07598876953125,
+          471.3123474121094
+        ]
+      },
+      {
+        "text": "w",
+        "font_name": "CMMI7",
+        "font_size": 6.973800182342529,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          477.0699157714844,
+          465.1805725097656,
+          482.83026123046875,
+          472.1543884277344
+        ]
+      },
+      {
+        "text": ")",
+        "font_name": "CMR10",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          483.5189208984375,
+          461.3497619628906,
+          487.3943786621094,
+          471.3123474121094
+        ]
+      },
+      {
+        "text": " or returns",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          487.3943786621094,
+          461.5802917480469,
+          531.5087890625,
+          471.54290771484375
+        ]
+      },
+      {
+        "text": " ⊥",
+        "font_name": "CMSY10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          531.5087890625,
+          461.22064208984375,
+          543.3443603515625,
+          471.1832275390625
+        ]
+      },
+      {
+        "text": "if",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          547.4190673828125,
+          461.5802917480469,
+          553.5062255859375,
+          471.54290771484375
+        ]
+      },
+      {
+        "text": "no watermark is detected. Modern watermarks operate at",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.24993896484375,
+          473.5352783203125,
+          553.5030517578125,
+          483.4978942871094
+        ]
+      },
+      {
+        "text": "two levels:",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.24993896484375,
+          485.49127197265625,
+          362.0317687988281,
+          495.4538879394531
+        ]
+      },
+      {
+        "text": " pixel-level",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          362.0317687988281,
+          485.3148193359375,
+          410.13116455078125,
+          495.27740478515625
+        ]
+      },
+      {
+        "text": " schemes embed signals in spatial",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          410.13116455078125,
+          485.49127197265625,
+          553.5029907226562,
+          495.4538879394531
+        ]
+      },
+      {
+        "text": "or frequency domains (e.g., DwtDct, StegaStamp), while",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.24993896484375,
+          497.4462585449219,
+          553.5030517578125,
+          507.40887451171875
+        ]
+      },
+      {
+        "text": "semantic-level",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          317.24993896484375,
+          509.22479248046875,
+          374.6444396972656,
+          519.1873779296875
+        ]
+      },
+      {
+        "text": " schemes couple signals with latent structure",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          374.6444396972656,
+          509.4012451171875,
+          553.5029907226562,
+          519.3638305664062
+        ]
+      },
+      {
+        "text": "in generative models (e.g., Tree-Ring, StableSignature) for",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.24993896484375,
+          521.356201171875,
+          553.5031127929688,
+          531.3187866210938
+        ]
+      },
+      {
+        "text": "stronger robustness. An effective watermark satisfies",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.24993896484375,
+          533.3112182617188,
+          536.4767456054688,
+          543.2738037109375
+        ]
+      },
+      {
+        "text": " im-",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          536.4767456054688,
+          533.134765625,
+          553.5028076171875,
+          543.0973510742188
+        ]
+      },
+      {
+        "text": "perceptibility",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          317.24993896484375,
+          545.0897827148438,
+          370.0118103027344,
+          555.0523681640625
+        ]
+      },
+      {
+        "text": " (",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          370.0118103027344,
+          545.2662353515625,
+          376.0192565917969,
+          555.2288208007812
+        ]
+      },
+      {
+        "text": "x",
+        "font_name": "CMMI10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          376.0192565917969,
+          545.0357055664062,
+          381.7178649902344,
+          554.998291015625
+        ]
+      },
+      {
+        "text": "w",
+        "font_name": "CMMI7",
+        "font_size": 6.973800182342529,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          381.7159423828125,
+          548.8665161132812,
+          387.4762878417969,
+          555.84033203125
+        ]
+      },
+      {
+        "text": " ≈",
+        "font_name": "CMSY10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          387.4762878417969,
+          544.9065551757812,
+          399.0588684082031,
+          556.3641967773438
+        ]
+      },
+      {
+        "text": "x",
+        "font_name": "CMMI10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          402.19708251953125,
+          545.0357055664062,
+          407.89569091796875,
+          554.998291015625
+        ]
+      },
+      {
+        "text": " perceptually) and",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          407.89569091796875,
+          545.2662353515625,
+          480.23406982421875,
+          555.2288208007812
+        ]
+      },
+      {
+        "text": " robustness",
+        "font_name": "NimbusRomNo9L-ReguItal",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          480.23406982421875,
+          545.0897827148438,
+          524.8963623046875,
+          555.0523681640625
+        ]
+      },
+      {
+        "text": " (inval-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          524.8963623046875,
+          545.2662353515625,
+          553.509033203125,
+          555.2288208007812
+        ]
+      },
+      {
+        "text": "idating",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.24993896484375,
+          557.2222290039062,
+          344.9259948730469,
+          567.184814453125
+        ]
+      },
+      {
+        "text": " κ",
+        "font_name": "CMMI10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          344.9259948730469,
+          556.99169921875,
+          353.88238525390625,
+          566.9542846679688
+        ]
+      },
+      {
+        "text": " requires noticeable degradation). In realistic de-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          353.88238525390625,
+          557.2222290039062,
+          553.5028076171875,
+          567.184814453125
+        ]
+      },
+      {
+        "text": "ployments, both",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.24993896484375,
+          569.17724609375,
+          382.8436279296875,
+          579.1398315429688
+        ]
+      },
+      {
+        "text": " U",
+        "font_name": "CMSY10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          382.8436279296875,
+          568.8175659179688,
+          392.7564392089844,
+          578.7802124023438
+        ]
+      },
+      {
+        "text": "ζ",
+        "font_name": "CMMI7",
+        "font_size": 6.973800182342529,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          392.74993896484375,
+          572.7765502929688,
+          396.3763122558594,
+          579.7503662109375
+        ]
+      },
+      {
+        "text": " and",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          396.3763122558594,
+          569.17724609375,
+          415.3869323730469,
+          580.6338500976562
+        ]
+      },
+      {
+        "text": " V",
+        "font_name": "CMSY10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          415.3869323730469,
+          568.8175659179688,
+          425.17022705078125,
+          578.7802124023438
+        ]
+      },
+      {
+        "text": "η",
+        "font_name": "CMMI7",
+        "font_size": 6.973800182342529,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          425.16693115234375,
+          572.7765502929688,
+          429.2745056152344,
+          579.7503662109375
+        ]
+      },
+      {
+        "text": " are proprietary, exposed only",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          429.2745056152344,
+          569.17724609375,
+          553.4962158203125,
+          580.6338500976562
+        ]
+      },
+      {
+        "text": "through black-box APIs.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.24993896484375,
+          581.1322021484375,
+          415.4811096191406,
+          591.0947875976562
+        ]
+      },
+      {
+        "text": "Problem Formulation.",
         "font_name": "NimbusRomNo9L-Medi",
         "font_size": 9.962599754333496,
         "font_flags": 20,
         "color": 0,
         "bbox": [
-          130.4158477783203,
-          681.2135009765625,
-          161.4095001220703,
-          691.1760864257812
-        ]
-      }
-    ]
-  },
-  {
-    "type": "text",
-    "bbox": [
-      107.53199768066406,
-      701.6076049804688,
-      503.99755859375,
-      722.4310302734375
-    ],
-    "content": "We tested four models in our experiments: GPT-5-Thinking, Gemini-2.5-Pro, GPT-5-mini and Llama3.1 8B-Instruct. To ensure uniformity and fairness between models, we used the same parameters",
-    "spans": [
-      {
-        "text": "We tested four models in our experiments: GPT-5-Thinking, Gemini-2.5-Pro, GPT-5-mini and Llama",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.867501258850098,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          107.53199768066406,
-          701.6076049804688,
-          503.9962463378906,
-          711.47509765625
+          317.24993896484375,
+          595.75732421875,
+          412.1437683105469,
+          605.7199096679688
         ]
       },
       {
-        "text": "3.1 8B-Instruct. To ensure uniformity and fairness between models, we used the same parameters",
+        "text": " Given a watermarked image",
         "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
+        "font_size": 9.962599754333496,
         "font_flags": 4,
         "color": 0,
         "bbox": [
-          108.0,
-          712.3692626953125,
-          503.99755859375,
-          722.4310302734375
+          412.1437683105469,
+          595.8482666015625,
+          527.9888916015625,
+          605.8108520507812
+        ]
+      },
+      {
+        "text": " x",
+        "font_name": "CMMI10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          527.9888916015625,
+          595.6177368164062,
+          536.3076782226562,
+          605.580322265625
+        ]
+      },
+      {
+        "text": "w",
+        "font_name": "CMMI7",
+        "font_size": 6.973800182342529,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          536.2999267578125,
+          599.447509765625,
+          542.060302734375,
+          606.4213256835938
+        ]
+      },
+      {
+        "text": " =",
+        "font_name": "CMR10",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          542.060302734375,
+          595.6177368164062,
+          553.5018310546875,
+          607.0742797851562
+        ]
+      },
+      {
+        "text": "U",
+        "font_name": "CMSY10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          317.2499084472656,
+          607.4435424804688,
+          323.48651123046875,
+          617.4061889648438
+        ]
+      },
+      {
+        "text": "ζ",
+        "font_name": "CMMI7",
+        "font_size": 6.973800182342529,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          323.4848937988281,
+          611.4025268554688,
+          327.11126708984375,
+          618.3763427734375
+        ]
+      },
+      {
+        "text": "(",
+        "font_name": "CMR10",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          328.0608825683594,
+          607.5726928710938,
+          331.93634033203125,
+          617.5352783203125
+        ]
+      },
+      {
+        "text": "x, κ",
+        "font_name": "CMMI10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          331.93634033203125,
+          607.5726928710938,
+          347.8067626953125,
+          617.5352783203125
+        ]
+      },
+      {
+        "text": ")",
+        "font_name": "CMR10",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          347.8067626953125,
+          607.5726928710938,
+          351.6822204589844,
+          617.5352783203125
+        ]
+      },
+      {
+        "text": " returned by a provider’s generative API, our goal",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          351.6822204589844,
+          607.80322265625,
+          553.5045166015625,
+          617.7658081054688
+        ]
+      },
+      {
+        "text": "is to design a transformation",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.2498779296875,
+          619.7582397460938,
+          440.20819091796875,
+          629.7208251953125
+        ]
+      },
+      {
+        "text": " A",
+        "font_name": "CMSY10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          440.20819091796875,
+          619.3985595703125,
+          453.0300598144531,
+          629.3612060546875
+        ]
+      },
+      {
+        "text": " :",
+        "font_name": "CMR10",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          453.0300598144531,
+          619.5277099609375,
+          462.97271728515625,
+          629.4902954101562
+        ]
+      },
+      {
+        "text": " X →X",
+        "font_name": "CMSY10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          462.97271728515625,
+          619.3985595703125,
+          506.77825927734375,
+          629.3612060546875
+        ]
+      },
+      {
+        "text": " producing",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          506.77825927734375,
+          619.7582397460938,
+          553.5029907226562,
+          629.7208251953125
+        ]
+      },
+      {
+        "text": "˜",
+        "font_name": "CMR10",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.88287353515625,
+          631.4827270507812,
+          322.8641662597656,
+          641.4453125
+        ]
+      },
+      {
+        "text": "x",
+        "font_name": "CMMI10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          317.2452697753906,
+          631.4827270507812,
+          322.9438781738281,
+          641.4453125
+        ]
+      },
+      {
+        "text": " =",
+        "font_name": "CMR10",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          322.9438781738281,
+          631.4827270507812,
+          334.5503234863281,
+          641.4453125
+        ]
+      },
+      {
+        "text": " A",
+        "font_name": "CMSY10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          334.5503234863281,
+          631.3535766601562,
+          346.365966796875,
+          641.3162231445312
+        ]
+      },
+      {
+        "text": "(",
+        "font_name": "CMR10",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          346.365966796875,
+          631.4827270507812,
+          350.2414245605469,
+          641.4453125
+        ]
+      },
+      {
+        "text": "x",
+        "font_name": "CMMI10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          350.2414245605469,
+          631.4827270507812,
+          355.9400329589844,
+          641.4453125
+        ]
+      },
+      {
+        "text": "w",
+        "font_name": "CMMI7",
+        "font_size": 6.973800182342529,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          355.9178771972656,
+          635.3135375976562,
+          361.67822265625,
+          642.287353515625
+        ]
+      },
+      {
+        "text": ")",
+        "font_name": "CMR10",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          362.3678894042969,
+          631.4827270507812,
+          366.24334716796875,
+          641.4453125
+        ]
+      },
+      {
+        "text": " that removes the watermark (i.e.,",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          366.24334716796875,
+          631.7132568359375,
+          502.6810607910156,
+          641.6758422851562
+        ]
+      },
+      {
+        "text": " V",
+        "font_name": "CMSY10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          502.6810607910156,
+          631.3535766601562,
+          512.0060424804688,
+          641.3162231445312
+        ]
+      },
+      {
+        "text": "η",
+        "font_name": "CMMI7",
+        "font_size": 6.973800182342529,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          512.00390625,
+          635.3135375976562,
+          516.1114501953125,
+          642.287353515625
+        ]
+      },
+      {
+        "text": "(˜",
+        "font_name": "CMR10",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          516.85693359375,
+          631.4827270507812,
+          526.351318359375,
+          641.4453125
+        ]
+      },
+      {
+        "text": "x",
+        "font_name": "CMMI10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          520.732421875,
+          631.4827270507812,
+          526.4310302734375,
+          641.4453125
+        ]
+      },
+      {
+        "text": ") =",
+        "font_name": "CMR10",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          526.4310302734375,
+          631.4827270507812,
+          541.9129028320312,
+          641.4453125
+        ]
+      },
+      {
+        "text": " ⊥",
+        "font_name": "CMSY10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          541.9129028320312,
+          631.3535766601562,
+          553.5093994140625,
+          641.3162231445312
+        ]
+      },
+      {
+        "text": "with high probability) while preserving the content (i.e.,",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.24993896484375,
+          643.668212890625,
+          553.5028076171875,
+          653.6307983398438
+        ]
+      },
+      {
+        "text": "˜",
+        "font_name": "CMR10",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.8829345703125,
+          655.3937377929688,
+          322.8642272949219,
+          665.3563232421875
+        ]
+      },
+      {
+        "text": "x",
+        "font_name": "CMMI10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          317.2453308105469,
+          655.3937377929688,
+          322.9439392089844,
+          665.3563232421875
+        ]
+      },
+      {
+        "text": " ≈",
+        "font_name": "CMSY10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          322.9439392089844,
+          655.2645874023438,
+          335.3075256347656,
+          665.2272338867188
+        ]
+      },
+      {
+        "text": "x",
+        "font_name": "CMMI10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          339.9201965332031,
+          655.3937377929688,
+          345.6188049316406,
+          665.3563232421875
+        ]
+      },
+      {
+        "text": "w",
+        "font_name": "CMMI7",
+        "font_size": 6.973800182342529,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          345.60394287109375,
+          659.2235107421875,
+          351.3642883300781,
+          666.1973266601562
+        ]
+      },
+      {
+        "text": "). The attacker operates under strict no-box con-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          352.053955078125,
+          655.624267578125,
+          553.4978637695312,
+          665.5868530273438
+        ]
+      },
+      {
+        "text": "straints (Sec.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.24993896484375,
+          667.5792236328125,
+          369.07537841796875,
+          677.5418090820312
+        ]
+      },
+      {
+        "text": " 3",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 16711680,
+        "bbox": [
+          369.07537841796875,
+          667.5792236328125,
+          378.2110900878906,
+          677.5418090820312
+        ]
+      },
+      {
+        "text": "): no access to",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          378.2110900878906,
+          667.5792236328125,
+          436.9605407714844,
+          677.5418090820312
+        ]
+      },
+      {
+        "text": " (",
+        "font_name": "CMR10",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          436.9605407714844,
+          667.3486938476562,
+          443.685302734375,
+          677.311279296875
+        ]
+      },
+      {
+        "text": "U",
+        "font_name": "CMSY10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          443.685302734375,
+          667.2195434570312,
+          449.9219055175781,
+          677.1821899414062
+        ]
+      },
+      {
+        "text": "ζ",
+        "font_name": "CMMI7",
+        "font_size": 6.973800182342529,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          449.9149169921875,
+          671.1785278320312,
+          453.5412902832031,
+          678.15234375
+        ]
+      },
+      {
+        "text": ",",
+        "font_name": "CMMI10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          454.49090576171875,
+          667.3486938476562,
+          457.260498046875,
+          677.311279296875
+        ]
+      },
+      {
+        "text": " V",
+        "font_name": "CMSY10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          457.260498046875,
+          667.2195434570312,
+          465.0313415527344,
+          677.1821899414062
+        ]
+      },
+      {
+        "text": "η",
+        "font_name": "CMMI7",
+        "font_size": 6.973800182342529,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          465.0229187011719,
+          671.1785278320312,
+          469.1304931640625,
+          678.15234375
+        ]
+      },
+      {
+        "text": ", ζ, η, κ",
+        "font_name": "CMMI10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          469.8769226074219,
+          667.3486938476562,
+          499.3163757324219,
+          677.311279296875
+        ]
+      },
+      {
+        "text": ")",
+        "font_name": "CMR10",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          499.3163757324219,
+          667.3486938476562,
+          503.19183349609375,
+          677.311279296875
+        ]
+      },
+      {
+        "text": ", no detector",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          503.19183349609375,
+          667.5792236328125,
+          553.5130615234375,
+          677.5418090820312
+        ]
+      },
+      {
+        "text": "queries, no clean-watermark paired image supervision, but",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.24993896484375,
+          679.5342407226562,
+          553.5029907226562,
+          689.496826171875
+        ]
+      },
+      {
+        "text": "may use publicly available image-to-image diffusion mod-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.24993896484375,
+          691.4892578125,
+          553.5029907226562,
+          701.4518432617188
+        ]
+      },
+      {
+        "text": "els. Let",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          317.24993896484375,
+          703.4442138671875,
+          347.7454833984375,
+          713.4067993164062
+        ]
+      },
+      {
+        "text": " d",
+        "font_name": "CMMI10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          347.7454833984375,
+          703.2136840820312,
+          355.6159362792969,
+          713.17626953125
+        ]
+      },
+      {
+        "text": " :",
+        "font_name": "CMR10",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          355.6159362792969,
+          703.2136840820312,
+          361.5038146972656,
+          713.17626953125
+        ]
+      },
+      {
+        "text": " K × K →",
+        "font_name": "CMSY10",
+        "font_size": 9.962599754333496,
+        "font_flags": 6,
+        "color": 0,
+        "bbox": [
+          361.5038146972656,
+          703.0845336914062,
+          405.6281433105469,
+          713.0471801757812
+        ]
+      },
+      {
+        "text": "R",
+        "font_name": "MSBM10",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          408.7464294433594,
+          701.0371704101562,
+          415.9394226074219,
+          710.999755859375
+        ]
+      },
+      {
+        "text": " be an unknown distance metric in",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          415.9394226074219,
+          703.4442138671875,
+          553.5029296875,
+          713.4067993164062
         ]
       }
     ]
@@ -1356,10 +4571,10 @@
   {
     "type": "text",
     "bbox": [
-      303.5090026855469,
-      742.3324584960938,
-      308.49029541015625,
-      752.2950439453125
+      303.5089416503906,
+      733.332275390625,
+      308.490234375,
+      743.2948608398438
     ],
     "content": "3",
     "spans": [
@@ -1370,10 +4585,10 @@
         "font_flags": 4,
         "color": 0,
         "bbox": [
-          303.5090026855469,
-          742.3324584960938,
-          308.49029541015625,
-          752.2950439453125
+          303.5089416503906,
+          733.332275390625,
+          308.490234375,
+          743.2948608398438
         ]
       }
     ]

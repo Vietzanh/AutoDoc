@@ -20,7 +20,9 @@ from src.utils import (
     is_same_line,
     horizontally_separated,
 )
+from src.utils.xml_utils import sanitize_text_for_xml
 from src.yolo.iou_matching import TextElement, LayoutBlock
+import pymupdf
 
 
 def should_merge_with_previous_block(prev_block, curr_block):
@@ -46,7 +48,7 @@ def should_merge_with_previous_block(prev_block, curr_block):
     return prev_no_sentence_end and curr_starts_lowercase
 
 
-def process_figure_block(docx_doc, block, page_image, scale_x, scale_y, max_image_width, page_idx):
+def process_figure_block(docx_doc, block, pymupdf_page, max_image_width, page_idx):
     """
     Process a figure block by extracting and inserting the image.
     """
@@ -59,21 +61,16 @@ def process_figure_block(docx_doc, block, page_image, scale_x, scale_y, max_imag
         run.add_picture(image_path, width=max_image_width)
         return True
 
-    if page_image is None:
+    if pymupdf_page is None:
         return False
 
     x0_pdf, y0_pdf, x1_pdf, y1_pdf = block.bbox
-    x0 = int(max(0, x0_pdf * scale_x))
-    y0 = int(max(0, y0_pdf * scale_y))
-    x1 = int(min(page_image.shape[1], x1_pdf * scale_x))
-    y1 = int(min(page_image.shape[0], y1_pdf * scale_y))
-
-    crop_img = page_image[y0:y1, x0:x1]
-    if crop_img.size == 0:
-        return False
-
+    rect = pymupdf.Rect(x0_pdf, y0_pdf, x1_pdf, y1_pdf)
+    
     temp_image_path = f"temp_crop_page{page_idx}.png"
-    cv2.imwrite(temp_image_path, cv2.cvtColor(crop_img, cv2.COLOR_RGB2BGR))
+    pix = pymupdf_page.get_pixmap(clip=rect, dpi=300)
+    pix.save(temp_image_path)
+
     p = docx_doc.add_paragraph()
     p.alignment = WD_ALIGN_PARAGRAPH.CENTER
     run = p.add_run()
@@ -85,25 +82,19 @@ def process_figure_block(docx_doc, block, page_image, scale_x, scale_y, max_imag
     return True
 
 
-def process_table_block(docx_doc, block, page_image, scale_x, scale_y, max_image_width, page_idx):
+def process_table_block(docx_doc, block, pymupdf_page, max_image_width, page_idx):
     """
     Process a table block by cropping and inserting the table as an image.
     """
-    if page_image is None:
+    if pymupdf_page is None:
         return False
 
     x0_pdf, y0_pdf, x1_pdf, y1_pdf = block.bbox
-    x0 = int(max(0, x0_pdf * scale_x))
-    y0 = int(max(0, y0_pdf * scale_y))
-    x1 = int(min(page_image.shape[1], x1_pdf * scale_x))
-    y1 = int(min(page_image.shape[0], y1_pdf * scale_y))
-
-    crop_img = page_image[y0:y1, x0:x1]
-    if crop_img.size == 0:
-        return False
+    rect = pymupdf.Rect(x0_pdf, y0_pdf, x1_pdf, y1_pdf)
 
     temp_image_path = f"temp_table_page{page_idx}.png"
-    cv2.imwrite(temp_image_path, cv2.cvtColor(crop_img, cv2.COLOR_RGB2BGR))
+    pix = pymupdf_page.get_pixmap(clip=rect, dpi=300)
+    pix.save(temp_image_path)
 
     p = docx_doc.add_paragraph()
     p.alignment = WD_ALIGN_PARAGRAPH.CENTER
@@ -218,7 +209,7 @@ def process_table_row(docx_doc, row, section, page_width_pts):
                 if not text_content.endswith(" "):
                     text_content += " "
 
-                run = p.add_run(text_content)
+                run = p.add_run(sanitize_text_for_xml(text_content))
                 run.font.name = "Times New Roman"
 
                 if elem.font_size is not None:
@@ -278,7 +269,8 @@ def process_text_block(
                 heading_level = get_section_heading_level(heading_text, default_level=base_level)
             else:
                 heading_level = base_level
-            p = docx_doc.add_heading(level=heading_level)
+                heading_text = getattr(block, "text", "") or ""
+            p = docx_doc.add_heading(sanitize_text_for_xml(heading_text), level=heading_level)
         else:
             p = docx_doc.add_paragraph(style=style_name)
 
@@ -344,7 +336,7 @@ def process_text_block(
                 text_content = elem.text
                 if not text_content.endswith(" "):
                     text_content += " "
-                run = p.add_run(text_content)
+                run = p.add_run(sanitize_text_for_xml(text_content))
                 run.font.name = "Times New Roman"
                 if elem.font_size is not None:
                     rounded_size = round_font_size(elem.font_size)
@@ -392,7 +384,7 @@ def process_text_block(
                 text_content = elem.text
                 if not text_content.endswith(" "):
                     text_content += " "
-                run = p.add_run(text_content)
+                run = p.add_run(sanitize_text_for_xml(text_content))
                 run.font.name = "Times New Roman"
                 if elem.font_size is not None:
                     rounded_size = round_font_size(elem.font_size)

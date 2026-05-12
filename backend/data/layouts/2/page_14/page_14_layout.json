@@ -2,50 +2,128 @@
   {
     "type": "text",
     "bbox": [
-      117.06099700927734,
-      80.57928466796875,
-      495.8363342285156,
-      112.39004516601562
+      360.94378662109375,
+      149.3897705078125,
+      501.1571960449219,
+      160.18606567382812
     ],
-    "content": "4. Now, I can slide the ’6’ tile up into the empty space. The board becomes [[1, 2, 3], [4, 5, 6],[7, 8, 0]]. This is the goal state.5. My sequence of moves is [8, 5, 6].",
+    "content": "030k50k100k200k300k400k500kPre-training data volume",
     "spans": [
       {
-        "text": "4. Now, I can slide the ’6’ tile up into the empty space. The board becomes [[1, 2, 3], [4, 5, 6],",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.002370834350586,
-        "font_flags": 4,
+        "text": "0",
+        "font_name": "DejaVuSerif",
+        "font_size": 4.141499996185303,
+        "font_flags": 0,
         "color": 0,
         "bbox": [
-          117.06099700927734,
-          80.57928466796875,
-          495.8363342285156,
-          90.58165740966797
+          360.94378662109375,
+          149.3897705078125,
+          363.5777893066406,
+          155.42393493652344
         ]
       },
       {
-        "text": "[7, 8, 0]]. This is the goal state.",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.962599754333496,
-        "font_flags": 4,
+        "text": "30k",
+        "font_name": "DejaVuSerif",
+        "font_size": 4.141499996185303,
+        "font_flags": 0,
         "color": 0,
         "bbox": [
-          117.41000366210938,
-          91.51844787597656,
-          242.2513427734375,
-          101.48104858398438
+          377.4703369140625,
+          149.3897705078125,
+          385.248046875,
+          155.42393493652344
         ]
       },
       {
-        "text": "5. My sequence of moves is [8, 5, 6].",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.962599754333496,
-        "font_flags": 4,
+        "text": "50k",
+        "font_name": "DejaVuSerif",
+        "font_size": 4.141499996185303,
+        "font_flags": 0,
         "color": 0,
         "bbox": [
-          117.41000366210938,
-          102.42744445800781,
-          265.46417236328125,
-          112.39004516601562
+          396.56915283203125,
+          149.3897705078125,
+          404.34686279296875,
+          155.42393493652344
+        ]
+      },
+      {
+        "text": "100k",
+        "font_name": "DejaVuSerif",
+        "font_size": 4.141499996185303,
+        "font_flags": 0,
+        "color": 0,
+        "bbox": [
+          414.3502197265625,
+          149.3897705078125,
+          424.7619323730469,
+          155.42393493652344
+        ]
+      },
+      {
+        "text": "200k",
+        "font_name": "DejaVuSerif",
+        "font_size": 4.141499996185303,
+        "font_flags": 0,
+        "color": 0,
+        "bbox": [
+          433.44903564453125,
+          149.3897705078125,
+          443.8607482910156,
+          155.42393493652344
+        ]
+      },
+      {
+        "text": "300k",
+        "font_name": "DejaVuSerif",
+        "font_size": 4.141499996185303,
+        "font_flags": 0,
+        "color": 0,
+        "bbox": [
+          452.5478515625,
+          149.3897705078125,
+          462.9595642089844,
+          155.42393493652344
+        ]
+      },
+      {
+        "text": "400k",
+        "font_name": "DejaVuSerif",
+        "font_size": 4.141499996185303,
+        "font_flags": 0,
+        "color": 0,
+        "bbox": [
+          471.64666748046875,
+          149.3897705078125,
+          482.0583801269531,
+          155.42393493652344
+        ]
+      },
+      {
+        "text": "500k",
+        "font_name": "DejaVuSerif",
+        "font_size": 4.141499996185303,
+        "font_flags": 0,
+        "color": 0,
+        "bbox": [
+          490.7454833984375,
+          149.3897705078125,
+          501.1571960449219,
+          155.42393493652344
+        ]
+      },
+      {
+        "text": "Pre-training data volume",
+        "font_name": "DejaVuSerif",
+        "font_size": 4.141499996185303,
+        "font_flags": 0,
+        "color": 0,
+        "bbox": [
+          402.8774108886719,
+          154.1519012451172,
+          455.33367919921875,
+          160.18606567382812
         ]
       }
     ]
@@ -53,37 +131,24 @@
   {
     "type": "text",
     "bbox": [
-      117.41000366210938,
-      124.24543762207031,
-      208.76702880859375,
-      145.11703491210938
+      351.7195129394531,
+      143.6520233154297,
+      360.9385070800781,
+      149.68618774414062
     ],
-    "content": "Output:Final Answer: [8, 5, 6]",
+    "content": "68.6",
     "spans": [
       {
-        "text": "Output:",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.962599754333496,
-        "font_flags": 4,
+        "text": "68.6",
+        "font_name": "DejaVuSerif",
+        "font_size": 4.141499996185303,
+        "font_flags": 0,
         "color": 0,
         "bbox": [
-          117.41000366210938,
-          124.24543762207031,
-          147.855712890625,
-          134.20803833007812
-        ]
-      },
-      {
-        "text": "Final Answer: [8, 5, 6]",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.962599754333496,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          117.41000366210938,
-          135.15443420410156,
-          208.76702880859375,
-          145.11703491210938
+          351.7195129394531,
+          143.6520233154297,
+          360.9385070800781,
+          149.68618774414062
         ]
       }
     ]
@@ -91,24 +156,24 @@
   {
     "type": "text",
     "bbox": [
-      117.41000366210938,
-      156.97242736816406,
-      163.068603515625,
-      166.93502807617188
+      351.7195129394531,
+      134.1642303466797,
+      360.9385070800781,
+      140.19839477539062
     ],
-    "content": "Example 2:",
+    "content": "68.8",
     "spans": [
       {
-        "text": "Example 2:",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.962599754333496,
-        "font_flags": 4,
+        "text": "68.8",
+        "font_name": "DejaVuSerif",
+        "font_size": 4.141499996185303,
+        "font_flags": 0,
         "color": 0,
         "bbox": [
-          117.41000366210938,
-          156.97242736816406,
-          163.068603515625,
-          166.93502807617188
+          351.7195129394531,
+          134.1642303466797,
+          360.9385070800781,
+          140.19839477539062
         ]
       }
     ]
@@ -116,37 +181,24 @@
   {
     "type": "text",
     "bbox": [
-      117.41000366210938,
-      178.79042053222656,
-      261.0506896972656,
-      199.66201782226562
+      351.7195129394531,
+      124.67642211914062,
+      360.9385070800781,
+      130.71058654785156
     ],
-    "content": "User:Puzzle: [[1, 0, 3], [5, 2, 6], [4, 7, 8]]",
+    "content": "69.0",
     "spans": [
       {
-        "text": "User:",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.962599754333496,
-        "font_flags": 4,
+        "text": "69.0",
+        "font_name": "DejaVuSerif",
+        "font_size": 4.141499996185303,
+        "font_flags": 0,
         "color": 0,
         "bbox": [
-          117.41000366210938,
-          178.79042053222656,
-          138.989013671875,
-          188.75302124023438
-        ]
-      },
-      {
-        "text": "Puzzle: [[1, 0, 3], [5, 2, 6], [4, 7, 8]]",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.962599754333496,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          117.41000366210938,
-          189.6994171142578,
-          261.0506896972656,
-          199.66201782226562
+          351.7195129394531,
+          124.67642211914062,
+          360.9385070800781,
+          130.71058654785156
         ]
       }
     ]
@@ -154,180 +206,24 @@
   {
     "type": "text",
     "bbox": [
-      116.66300201416016,
-      211.51844787597656,
-      496.3360595703125,
-      352.39007568359375
+      351.7195129394531,
+      115.18861389160156,
+      360.9385070800781,
+      121.22278594970703
     ],
-    "content": "Assistant:1. My goal is to get the board to the goal state. I will plan a sequence of moves.2. I see that I can get ’2’ into its correct position. I will slide 2 up into the empty space. Theboard is now [[1, 2, 3], [5, 0, 6], [4, 7, 8]].3. Now I can slide tile ’5’ right into its correct position. The board is now [[1, 2, 3], [0, 5, 6], [4,7, 8]].4. Next, I need to get the ’4’ into its correct position. I will slide tile 4 up into the empty space.The board is now [[1, 2, 3], [4, 5, 6], [0, 7, 8]].5. Now I can slide the ’7’ tile left into its correct position. The board is now [[1, 2, 3], [4, 5, 6],[7, 0, 8]].6. I can now slide the ’8’ tile left into its correct position. The board is now [[1, 2, 3], [4, 5, 6],[7, 8, 0]]. This is the goal state.7. My sequence of moves is [2, 5, 4, 7, 8].",
+    "content": "69.2",
     "spans": [
       {
-        "text": "Assistant:",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.962599754333496,
-        "font_flags": 4,
+        "text": "69.2",
+        "font_name": "DejaVuSerif",
+        "font_size": 4.141499996185303,
+        "font_flags": 0,
         "color": 0,
         "bbox": [
-          117.0510025024414,
-          211.51844787597656,
-          156.35350036621094,
-          221.48104858398438
-        ]
-      },
-      {
-        "text": "1. My goal is to get the board to the goal state. I will plan a sequence of moves.",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.962599754333496,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          116.66300201416016,
-          222.4274444580078,
-          433.83233642578125,
-          232.39004516601562
-        ]
-      },
-      {
-        "text": "2. I see that I can get ’2’ into its correct position. I will slide 2 up into the empty space. The",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          117.41000366210938,
-          233.26132202148438,
-          494.5876159667969,
-          243.32305908203125
-        ]
-      },
-      {
-        "text": "board is now [[1, 2, 3], [5, 0, 6], [4, 7, 8]].",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.962599754333496,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          117.41000366210938,
-          244.24549865722656,
-          284.8314208984375,
-          254.20809936523438
-        ]
-      },
-      {
-        "text": "3. Now I can slide tile ’5’ right into its correct position. The board is now [[1, 2, 3], [0, 5, 6], [4,",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.89763069152832,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          117.41000366210938,
-          255.20376586914062,
-          495.8363037109375,
-          265.1014099121094
-        ]
-      },
-      {
-        "text": "7, 8]].",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.962599754333496,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          117.16100311279297,
-          266.0634765625,
-          141.2306365966797,
-          276.0260925292969
-        ]
-      },
-      {
-        "text": "4. Next, I need to get the ’4’ into its correct position. I will slide tile 4 up into the empty space.",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.977532386779785,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          117.06099700927734,
-          276.9611511230469,
-          496.3360595703125,
-          286.9386901855469
-        ]
-      },
-      {
-        "text": "The board is now [[1, 2, 3], [4, 5, 6], [0, 7, 8]].",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.962599754333496,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          117.10099792480469,
-          287.8814697265625,
-          302.5049133300781,
-          297.8440856933594
-        ]
-      },
-      {
-        "text": "5. Now I can slide the ’7’ tile left into its correct position. The board is now [[1, 2, 3], [4, 5, 6],",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.95761775970459,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          117.41000366210938,
-          298.79425048828125,
-          495.83929443359375,
-          308.7518615722656
-        ]
-      },
-      {
-        "text": "[7, 0, 8]].",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.962599754333496,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          117.41000366210938,
-          309.699462890625,
-          154.759765625,
-          319.6620788574219
-        ]
-      },
-      {
-        "text": "6. I can now slide the ’8’ tile left into its correct position. The board is now [[1, 2, 3], [4, 5, 6],",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.992443084716797,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          117.41000366210938,
-          320.5858459472656,
-          495.8351135253906,
-          330.5782775878906
-        ]
-      },
-      {
-        "text": "[7, 8, 0]]. This is the goal state.",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.962599754333496,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          117.41000366210938,
-          331.5184631347656,
-          242.2513427734375,
-          341.4810791015625
-        ]
-      },
-      {
-        "text": "7. My sequence of moves is [2, 5, 4, 7, 8].",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.962599754333496,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          117.16100311279297,
-          342.4274597167969,
-          285.140380859375,
-          352.39007568359375
+          351.7195129394531,
+          115.18861389160156,
+          360.9385070800781,
+          121.22278594970703
         ]
       }
     ]
@@ -335,37 +231,24 @@
   {
     "type": "text",
     "bbox": [
-      117.41000366210938,
-      364.2454528808594,
-      228.69219970703125,
-      385.1170654296875
+      351.7195129394531,
+      105.70082092285156,
+      360.9385070800781,
+      111.7349853515625
     ],
-    "content": "Output:Final Answer: [2, 5, 4, 7, 8]",
+    "content": "69.4",
     "spans": [
       {
-        "text": "Output:",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.962599754333496,
-        "font_flags": 4,
+        "text": "69.4",
+        "font_name": "DejaVuSerif",
+        "font_size": 4.141499996185303,
+        "font_flags": 0,
         "color": 0,
         "bbox": [
-          117.41000366210938,
-          364.2454528808594,
-          147.855712890625,
-          374.20806884765625
-        ]
-      },
-      {
-        "text": "Final Answer: [2, 5, 4, 7, 8]",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.962599754333496,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          117.41000366210938,
-          375.1544494628906,
-          228.69219970703125,
-          385.1170654296875
+          351.7195129394531,
+          105.70082092285156,
+          360.9385070800781,
+          111.7349853515625
         ]
       }
     ]
@@ -373,24 +256,24 @@
   {
     "type": "text",
     "bbox": [
-      117.41000366210938,
-      396.9724426269531,
-      163.068603515625,
-      406.93505859375
+      351.7195129394531,
+      96.2130126953125,
+      360.9385070800781,
+      102.24718475341797
     ],
-    "content": "Example 3:",
+    "content": "69.6",
     "spans": [
       {
-        "text": "Example 3:",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.962599754333496,
-        "font_flags": 4,
+        "text": "69.6",
+        "font_name": "DejaVuSerif",
+        "font_size": 4.141499996185303,
+        "font_flags": 0,
         "color": 0,
         "bbox": [
-          117.41000366210938,
-          396.9724426269531,
-          163.068603515625,
-          406.93505859375
+          351.7195129394531,
+          96.2130126953125,
+          360.9385070800781,
+          102.24718475341797
         ]
       }
     ]
@@ -398,37 +281,24 @@
   {
     "type": "text",
     "bbox": [
-      117.41000366210938,
-      418.7904357910156,
-      261.0506896972656,
-      439.66204833984375
+      351.7195129394531,
+      86.7252197265625,
+      360.9385070800781,
+      92.75938415527344
     ],
-    "content": "User:Puzzle: [[1, 3, 6], [4, 0, 2], [7, 5, 8]]",
+    "content": "69.8",
     "spans": [
       {
-        "text": "User:",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.962599754333496,
-        "font_flags": 4,
+        "text": "69.8",
+        "font_name": "DejaVuSerif",
+        "font_size": 4.141499996185303,
+        "font_flags": 0,
         "color": 0,
         "bbox": [
-          117.41000366210938,
-          418.7904357910156,
-          138.989013671875,
-          428.7530517578125
-        ]
-      },
-      {
-        "text": "Puzzle: [[1, 3, 6], [4, 0, 2], [7, 5, 8]]",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.962599754333496,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          117.41000366210938,
-          429.6994323730469,
-          261.0506896972656,
-          439.66204833984375
+          351.7195129394531,
+          86.7252197265625,
+          360.9385070800781,
+          92.75938415527344
         ]
       }
     ]
@@ -436,206 +306,24 @@
   {
     "type": "text",
     "bbox": [
-      116.66300201416016,
-      451.5184326171875,
-      496.3352355957031,
-      614.2080688476562
+      345.50762939453125,
+      113.36034393310547,
+      351.54180908203125,
+      123.06388092041016
     ],
-    "content": "Assistant:1. My goal is to get the board to the goal state. I will plan a sequence of moves.2. Reviewing the board configuration I see that if I move ’2’ left I can then move ’6’ into itscorrect location.3. Therefore, first I will slide tile ’2’ left into the empty space. The board is now [[1, 3, 6], [4, 2,0], [7, 5, 8]].4. Now I can slide tile ’6’ down into its correct position. The board is now [[1, 3, 0], [4, 2, 6], [7,5, 8]].5. Next, I can slide ’3’ right into its correct position. The board is now [[1, 0, 3], [4, 2, 6], [7, 5,8]].6. Now I can slide ’2’ up into its correct position. The board is now [[1, 2, 3], [4, 0, 6], [7, 5, 8]].7. Now I will slide ’5’ up into its correct position. The board is now [[1, 2, 3], [4, 5, 6], [7, 0, 8]].8. I can now slide ’8’ left into its correct position. The board is now [[1, 2, 3], [4, 5, 6], [7, 8, 0]].This is the goal state.9. My sequence of moves is [2, 6, 3, 2, 5, 8].",
+    "content": "mAP",
     "spans": [
       {
-        "text": "Assistant:",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.962599754333496,
-        "font_flags": 4,
+        "text": "mAP",
+        "font_name": "DejaVuSerif",
+        "font_size": 4.141499996185303,
+        "font_flags": 0,
         "color": 0,
         "bbox": [
-          117.0510025024414,
-          451.5184326171875,
-          156.35350036621094,
-          461.4810485839844
-        ]
-      },
-      {
-        "text": "1. My goal is to get the board to the goal state. I will plan a sequence of moves.",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.962599754333496,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          116.66300201416016,
-          462.42742919921875,
-          433.83233642578125,
-          472.3900451660156
-        ]
-      },
-      {
-        "text": "2. Reviewing the board configuration I see that if I move ’2’ left I can then move ’6’ into its",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 10.061732292175293,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          117.41000366210938,
-          473.26129150390625,
-          494.58782958984375,
-          483.3230285644531
-        ]
-      },
-      {
-        "text": "correct location.",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.962599754333496,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          117.41000366210938,
-          484.2454528808594,
-          182.14700317382812,
-          494.20806884765625
-        ]
-      },
-      {
-        "text": "3. Therefore, first I will slide tile ’2’ left into the empty space. The board is now [[1, 3, 6], [4, 2,",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.89261531829834,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          117.41000366210938,
-          495.2075500488281,
-          495.8362121582031,
-          505.10015869140625
-        ]
-      },
-      {
-        "text": "0], [7, 5, 8]].",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.962599754333496,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          117.41000366210938,
-          506.0634765625,
-          168.03990173339844,
-          516.0260620117188
-        ]
-      },
-      {
-        "text": "4. Now I can slide tile ’6’ down into its correct position. The board is now [[1, 3, 0], [4, 2, 6], [7,",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.862470626831055,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          117.06099700927734,
-          517.0484008789062,
-          495.8397521972656,
-          526.910888671875
-        ]
-      },
-      {
-        "text": "5, 8]].",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.962599754333496,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          117.41000366210938,
-          527.8814697265625,
-          141.47964477539062,
-          537.8440551757812
-        ]
-      },
-      {
-        "text": "5. Next, I can slide ’3’ right into its correct position. The board is now [[1, 0, 3], [4, 2, 6], [7, 5,",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.937662124633789,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          117.41000366210938,
-          538.8093872070312,
-          495.83074951171875,
-          548.7470703125
-        ]
-      },
-      {
-        "text": "8]].",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.962599754333496,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          117.41000366210938,
-          549.699462890625,
-          131.5170440673828,
-          559.6620483398438
-        ]
-      },
-      {
-        "text": "6. Now I can slide ’2’ up into its correct position. The board is now [[1, 2, 3], [4, 0, 6], [7, 5, 8]].",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.862470626831055,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          117.41000366210938,
-          560.6843872070312,
-          494.5876770019531,
-          570.546875
-        ]
-      },
-      {
-        "text": "7. Now I will slide ’5’ up into its correct position. The board is now [[1, 2, 3], [4, 5, 6], [7, 0, 8]].",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.862470626831055,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          117.16100311279297,
-          571.5933837890625,
-          494.5924987792969,
-          581.4558715820312
-        ]
-      },
-      {
-        "text": "8. I can now slide ’8’ left into its correct position. The board is now [[1, 2, 3], [4, 5, 6], [7, 8, 0]].",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.862470626831055,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          117.41000366210938,
-          582.50341796875,
-          496.3352355957031,
-          592.3659057617188
-        ]
-      },
-      {
-        "text": "This is the goal state.",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.962599754333496,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          117.10099792480469,
-          593.33642578125,
-          201.50418090820312,
-          603.2990112304688
-        ]
-      },
-      {
-        "text": "9. My sequence of moves is [2, 6, 3, 2, 5, 8].",
-        "font_name": "NimbusRomNo9L-Regu",
-        "font_size": 9.962599754333496,
-        "font_flags": 4,
-        "color": 0,
-        "bbox": [
-          117.40999603271484,
-          604.2454833984375,
-          295.35198974609375,
-          614.2080688476562
+          345.50762939453125,
+          113.36034393310547,
+          351.54180908203125,
+          123.06388092041016
         ]
       }
     ]
@@ -643,37 +331,37 @@
   {
     "type": "text",
     "bbox": [
-      117.40999603271484,
-      626.0634765625,
-      238.65478515625,
-      646.9349975585938
+      345.60198974609375,
+      167.1184844970703,
+      503.9971923828125,
+      188.04006958007812
     ],
-    "content": "Output:Final Answer: [2, 6, 3, 2, 5, 8]",
+    "content": "Figure 9: Ablations on pre-training datavolume.",
     "spans": [
       {
-        "text": "Output:",
+        "text": "Figure 9: Ablations on pre-training data",
         "font_name": "NimbusRomNo9L-Regu",
         "font_size": 9.962599754333496,
         "font_flags": 4,
         "color": 0,
         "bbox": [
-          117.40999603271484,
-          626.0634765625,
-          147.85569763183594,
-          636.0260620117188
+          345.60198974609375,
+          167.1184844970703,
+          503.9971923828125,
+          177.08108520507812
         ]
       },
       {
-        "text": "Final Answer: [2, 6, 3, 2, 5, 8]",
+        "text": "volume.",
         "font_name": "NimbusRomNo9L-Regu",
         "font_size": 9.962599754333496,
         "font_flags": 4,
         "color": 0,
         "bbox": [
-          117.40999603271484,
-          636.972412109375,
-          238.65478515625,
-          646.9349975585938
+          345.60198974609375,
+          178.0774688720703,
+          377.78118896484375,
+          188.04006958007812
         ]
       }
     ]
@@ -681,24 +369,406 @@
   {
     "type": "text",
     "bbox": [
-      117.40999603271484,
-      658.7904663085938,
-      269.94732666015625,
-      668.7530517578125
+      107.99998474121094,
+      84.26844787597656,
+      335.6354675292969,
+      159.98495483398438
     ],
-    "content": "Begin your step-by-step thinking now.",
+    "content": "een pre-training data volume and model performance.Specifically, for data less than 100K, there is a consis-tent improvement in model performance correlating withan increase in data volume.However, model perfor-mance shows noticeable fluctuations when the data vol-ume reaches 200K. Notably, model performance reachesits top when the data volume increases to 300K.",
     "spans": [
       {
-        "text": "Begin your step-by-step thinking now.",
+        "text": "een pre-training data volume and model performance.",
         "font_name": "NimbusRomNo9L-Regu",
         "font_size": 9.962599754333496,
         "font_flags": 4,
         "color": 0,
         "bbox": [
-          117.40999603271484,
-          658.7904663085938,
-          269.94732666015625,
-          668.7530517578125
+          107.99998474121094,
+          84.26844787597656,
+          335.6354064941406,
+          94.23104858398438
+        ]
+      },
+      {
+        "text": "Specifically, for data less than 100K, there is a consis-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.99998474121094,
+          95.22743225097656,
+          335.6354675292969,
+          105.19003295898438
+        ]
+      },
+      {
+        "text": "tent improvement in model performance correlating with",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.99998474121094,
+          106.18641662597656,
+          335.6353454589844,
+          116.14901733398438
+        ]
+      },
+      {
+        "text": "an increase in data volume.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.99998474121094,
+          117.14540100097656,
+          225.4889678955078,
+          127.10800170898438
+        ]
+      },
+      {
+        "text": "However, model perfor-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          235.3021240234375,
+          117.14540100097656,
+          335.6353759765625,
+          127.10800170898438
+        ]
+      },
+      {
+        "text": "mance shows noticeable fluctuations when the data vol-",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.99998474121094,
+          128.10438537597656,
+          335.6353759765625,
+          138.06698608398438
+        ]
+      },
+      {
+        "text": "ume reaches 200K. Notably, model performance reaches",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.99998474121094,
+          139.06336975097656,
+          335.6354064941406,
+          149.02597045898438
+        ]
+      },
+      {
+        "text": "its top when the data volume increases to 300K.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.99998474121094,
+          150.02235412597656,
+          299.0029296875,
+          159.98495483398438
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      108.24898529052734,
+      174.8883819580078,
+      234.17137145996094,
+      184.85098266601562
+    ],
+    "content": "A.4DETECTION EXAMPLES",
+    "spans": [
+      {
+        "text": "A.4",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          108.24898529052734,
+          174.8883819580078,
+          123.91019439697266,
+          184.85098266601562
+        ]
+      },
+      {
+        "text": "D",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          134.3709259033203,
+          174.8883819580078,
+          141.5639190673828,
+          184.85098266601562
+        ]
+      },
+      {
+        "text": "ETECTION",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 7.970099925994873,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          142.06198120117188,
+          176.39947509765625,
+          184.45492553710938,
+          184.36956787109375
+        ]
+      },
+      {
+        "text": " E",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          184.45492553710938,
+          174.8883819580078,
+          193.5281219482422,
+          184.85098266601562
+        ]
+      },
+      {
+        "text": "XAMPLES",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 7.970099925994873,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          194.02598571777344,
+          176.39947509765625,
+          234.17137145996094,
+          184.36956787109375
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      107.99998474121094,
+      195.41139221191406,
+      504.0033874511719,
+      238.24996948242188
+    ],
+    "content": "In Figures 10 and Figure 11, we demonstrate the detection examples of DocLayout-YOLO afterfine-tuning with the DocStructBench dataset on various types of downstream documents. Examplesshow that the model, fine-tuned using the DocStructBench dataset, effectively adapts to multipledocument types, showcasing considerable practicality and coverage.",
+    "spans": [
+      {
+        "text": "In Figures 10 and Figure 11, we demonstrate the detection examples of DocLayout-YOLO after",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.99998474121094,
+          195.41139221191406,
+          504.003173828125,
+          205.37399291992188
+        ]
+      },
+      {
+        "text": "fine-tuning with the DocStructBench dataset on various types of downstream documents. Examples",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.99998474121094,
+          206.36940002441406,
+          504.0033874511719,
+          216.33200073242188
+        ]
+      },
+      {
+        "text": "show that the model, fine-tuned using the DocStructBench dataset, effectively adapts to multiple",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.99998474121094,
+          217.32838439941406,
+          504.0032653808594,
+          227.29098510742188
+        ]
+      },
+      {
+        "text": "document types, showcasing considerable practicality and coverage.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          107.99998474121094,
+          228.28736877441406,
+          379.699951171875,
+          238.24996948242188
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      147.61988830566406,
+      249.42630004882812,
+      165.5327606201172,
+      255.17709350585938
+    ],
+    "content": "Academic",
+    "spans": [
+      {
+        "text": "Academic",
+        "font_name": "ChalkboardSE-Bold",
+        "font_size": 4.067039966583252,
+        "font_flags": 20,
+        "color": 16777215,
+        "bbox": [
+          147.61988830566406,
+          249.42630004882812,
+          165.5327606201172,
+          255.17709350585938
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      147.95330810546875,
+      354.4779357910156,
+      165.19390869140625,
+      360.2287292480469
+    ],
+    "content": "TextBook",
+    "spans": [
+      {
+        "text": "TextBook",
+        "font_name": "ChalkboardSE-Bold",
+        "font_size": 4.067039966583252,
+        "font_flags": 20,
+        "color": 16777215,
+        "bbox": [
+          147.95330810546875,
+          354.4779357910156,
+          165.19390869140625,
+          360.2287292480469
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      132.9250030517578,
+      468.5004577636719,
+      479.0755310058594,
+      478.46307373046875
+    ],
+    "content": "Figure 10: Detection results of DocLayout-YOLO on Academic and Textbook subsets.",
+    "spans": [
+      {
+        "text": "Figure 10: Detection results of DocLayout-YOLO on Academic and Textbook subsets.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          132.9250030517578,
+          468.5004577636719,
+          479.0755310058594,
+          478.46307373046875
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      141.4032440185547,
+      496.4363098144531,
+      171.7515106201172,
+      502.1871032714844
+    ],
+    "content": "Market Analysis",
+    "spans": [
+      {
+        "text": "Market Analysis",
+        "font_name": "ChalkboardSE-Bold",
+        "font_size": 4.067039966583252,
+        "font_flags": 20,
+        "color": 16777215,
+        "bbox": [
+          141.4032440185547,
+          496.4363098144531,
+          171.7515106201172,
+          502.1871032714844
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      148.34475708007812,
+      601.4879760742188,
+      164.8097686767578,
+      607.23876953125
+    ],
+    "content": "Financial",
+    "spans": [
+      {
+        "text": "Financial",
+        "font_name": "ChalkboardSE-Bold",
+        "font_size": 4.067039966583252,
+        "font_flags": 20,
+        "color": 16777215,
+        "bbox": [
+          148.34475708007812,
+          601.4879760742188,
+          164.8097686767578,
+          607.23876953125
+        ]
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "bbox": [
+      120.23400115966797,
+      715.5094604492188,
+      491.76922607421875,
+      725.4720458984375
+    ],
+    "content": "Figure 11: Detection results of DocLayout-YOLO on Market Analysis and Financial subsets.",
+    "spans": [
+      {
+        "text": "Figure 11: Detection results of DocLayout-YOLO on Market Analysis and Financial subsets.",
+        "font_name": "NimbusRomNo9L-Regu",
+        "font_size": 9.962599754333496,
+        "font_flags": 4,
+        "color": 0,
+        "bbox": [
+          120.23400115966797,
+          715.5094604492188,
+          491.76922607421875,
+          725.4720458984375
         ]
       }
     ]
@@ -707,9 +777,9 @@
     "type": "text",
     "bbox": [
       301.0190124511719,
-      742.3324584960938,
+      752.1944580078125,
       310.9815979003906,
-      752.2950439453125
+      762.1570434570312
     ],
     "content": "15",
     "spans": [
@@ -721,11 +791,209 @@
         "color": 0,
         "bbox": [
           301.0190124511719,
-          742.3324584960938,
+          752.1944580078125,
           310.9815979003906,
-          752.2950439453125
+          762.1570434570312
         ]
       }
     ]
+  },
+  {
+    "type": "image",
+    "bbox": [
+      136.8278350830078,
+      256.7882080078125,
+      202.88345336914062,
+      350.16064453125
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      204.94561767578125,
+      256.7786560058594,
+      270.9949951171875,
+      350.16046142578125
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      273.05712890625,
+      256.7786560058594,
+      339.10650634765625,
+      350.16046142578125
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      341.168701171875,
+      256.7786560058594,
+      407.21807861328125,
+      350.16046142578125
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      409.2802429199219,
+      256.77880859375,
+      475.3296203613281,
+      350.1492919921875
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      136.8278350830078,
+      362.7262268066406,
+      270.4189453125,
+      456.1080322265625
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      273.0151672363281,
+      362.7262268066406,
+      339.1064758300781,
+      456.1080322265625
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      341.168701171875,
+      362.7262268066406,
+      407.26611328125,
+      456.1080322265625
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      409.2561950683594,
+      362.73529052734375,
+      475.35357666015625,
+      456.1080322265625
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      136.8278350830078,
+      504.8259582519531,
+      270.4156799316406,
+      598.207763671875
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      272.9854736328125,
+      504.8259582519531,
+      339.0828857421875,
+      598.207763671875
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      341.0775146484375,
+      504.8259582519531,
+      407.1749267578125,
+      598.207763671875
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      409.74456787109375,
+      504.8441467285156,
+      475.84197998046875,
+      598.207763671875
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      136.8278350830078,
+      609.7362670898438,
+      202.92523193359375,
+      703.1180419921875
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      409.74456787109375,
+      609.7362670898438,
+      475.84197998046875,
+      703.1180419921875
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      341.0775146484375,
+      609.7362670898438,
+      407.1749267578125,
+      703.1180419921875
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      272.98541259765625,
+      609.7362670898438,
+      339.08282470703125,
+      703.1180419921875
+    ],
+    "xref": null,
+    "ext": "png"
+  },
+  {
+    "type": "image",
+    "bbox": [
+      204.8933868408203,
+      609.7362670898438,
+      270.99078369140625,
+      703.1180419921875
+    ],
+    "xref": null,
+    "ext": "png"
   }
 ]

@@ -4,7 +4,9 @@ Main pipeline for PDF to DOCX reconstruction.
 
 import json
 import os
-from typing import Dict, List, Optional, Tuple
+import math
+import concurrent.futures
+from typing import Callable, Dict, List, Optional, Tuple
 
 import numpy as np
 import pymupdf
@@ -74,6 +76,7 @@ class PDFToDocxPipeline:
         json_base_path: Optional[str] = None,
         start_page: int = 0,
         end_page: Optional[int] = None,
+        progress_callback: Optional[Callable[[int], None]] = None,
     ):
         pdf_doc = pymupdf.open(pdf_path)
         total_pages = len(pdf_doc)
@@ -104,7 +107,64 @@ class PDFToDocxPipeline:
         prev_page_height = None
         prev_page_last_content_y1 = None
 
+        if progress_callback:
+            progress_callback(35)
+            
+        print("Rendering pages for YOLO inference...")
+        page_images = []
+        page_scales = []
+        
+        def _render_page(p_idx):
+            res = render_page_to_image(pdf_doc[p_idx], dpi=self.dpi)
+            return p_idx, np.array(res.image), res.scale_x, res.scale_y
+
+        with concurrent.futures.ThreadPoolExecutor(max_workers=os.cpu_count() or 4) as executor:
+            futures = [executor.submit(_render_page, i) for i in range(start_page, end_page + 1)]
+            results = [f.result() for f in concurrent.futures.as_completed(futures)]
+        
+        results.sort(key=lambda x: x[0])
+        page_images = [r[1] for r in results]
+        page_scales = [(r[2], r[3]) for r in results]
+        
+        print("Running YOLO inference...")
+        batch_size = 8
+        all_det_dicts = []
+        for i in range(0, len(page_images), batch_size):
+            batch = page_images[i:i+batch_size]
+            yolo_results = self.model.predict(
+                batch,
+                imgsz=ModelConfig.INPUT_SIZE,
+                conf=ModelConfig.CONFIDENCE_THRESHOLD,
+                device=ModelConfig.DEVICE,
+                verbose=False
+            )
+            for j, r in enumerate(yolo_results):
+                idx = i + j
+                scale_x, scale_y = page_scales[idx]
+                boxes = r.boxes.xyxy.cpu().numpy()
+                scores = r.boxes.conf.cpu().numpy()
+                class_ids = r.boxes.cls.cpu().numpy().astype(int)
+                names = r.names or self.model.names
+                
+                det_dicts = []
+                for (x0, y0, x1, y1), score, cid in zip(boxes, scores, class_ids):
+                    pdf_bbox = image_bbox_to_pdf_bbox((float(x0), float(y0), float(x1), float(y1)), scale_x, scale_y)
+                    det_dicts.append({
+                        "bbox": pdf_bbox,
+                        "score": float(score),
+                        "class_id": int(cid),
+                        "class_name": str(names.get(int(cid), f"class_{cid}")),
+                    })
+                all_det_dicts.append(det_dicts)
+
+        if progress_callback:
+            progress_callback(45)
+
         for page_idx in range(start_page, end_page + 1):
+            if progress_callback:
+                pct = 45 + int(50 * (page_idx - start_page) / max(1, end_page - start_page + 1))
+                progress_callback(pct)
+
             print(f"\nProcessing page {page_idx + 1}/{end_page + 1}...")
 
             if json_base_path is None:
@@ -122,9 +182,12 @@ class PDFToDocxPipeline:
             page = pdf_doc[page_idx]
             page_height = page.rect.height
 
+            det_dicts = all_det_dicts[page_idx - start_page]
+
             result = self._process_page(
                 page=page,
                 pdf_elements=pdf_elements,
+                det_dicts=det_dicts,
                 page_idx=page_idx,
                 page_folder=page_folder,
                 docx_doc=docx_doc,
@@ -187,6 +250,7 @@ class PDFToDocxPipeline:
         self,
         page,
         pdf_elements: List[Dict],
+        det_dicts: List[Dict],
         page_idx: int,
         page_folder: str,
         docx_doc: Document,
@@ -200,40 +264,6 @@ class PDFToDocxPipeline:
         prev_page_last_content_y1: Optional[float] = None,
     ) -> Dict:
         page_height = page.rect.height
-
-        # Render page to image
-        render_result = render_page_to_image(page, dpi=self.dpi)
-        page_image_pil = render_result.image
-        scale_x, scale_y = render_result.scale_x, render_result.scale_y
-        page_image = np.array(page_image_pil)
-
-        # Run YOLO detection
-        results = self.model.predict(
-            page_image,
-            imgsz=ModelConfig.INPUT_SIZE,
-            conf=ModelConfig.CONFIDENCE_THRESHOLD,
-            device=ModelConfig.DEVICE,
-        )
-
-        r = results[0]
-        boxes = r.boxes.xyxy.cpu().numpy()
-        scores = r.boxes.conf.cpu().numpy()
-        class_ids = r.boxes.cls.cpu().numpy().astype(int)
-        names = r.names or self.model.names
-
-        det_dicts = []
-        for (x0, y0, x1, y1), score, cid in zip(boxes, scores, class_ids):
-            det_dicts.append({
-                "bbox": (float(x0), float(y0), float(x1), float(y1)),
-                "score": float(score),
-                "class_id": int(cid),
-                "class_name": str(names.get(int(cid), f"class_{cid}")),
-            })
-
-        for det in det_dicts:
-            x0, y0, x1, y1 = det["bbox"]
-            pdf_bbox = image_bbox_to_pdf_bbox((x0, y0, x1, y1), scale_x, scale_y)
-            det["bbox"] = pdf_bbox
 
         print(f"  Detected {len(det_dicts)} layout regions")
 
@@ -443,7 +473,7 @@ class PDFToDocxPipeline:
 
                 if block_type == "figure":
                     process_figure_block(
-                        docx_doc, block, page_image, scale_x, scale_y,
+                        docx_doc, block, page,
                         self.max_image_width, page_idx
                     )
                     last_text_paragraph = None
@@ -452,7 +482,7 @@ class PDFToDocxPipeline:
 
                 if block_type == "table":
                     process_table_block(
-                        docx_doc, block, page_image, scale_x, scale_y,
+                        docx_doc, block, page,
                         self.max_image_width, page_idx
                     )
                     last_text_paragraph = None
