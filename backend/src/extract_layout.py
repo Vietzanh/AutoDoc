@@ -11,7 +11,11 @@ from __future__ import annotations
 
 import json
 import os
+import time
+import logging
 from typing import Any, Dict, List, Optional
+
+logger = logging.getLogger(__name__)
 
 import pymupdf
 
@@ -126,17 +130,24 @@ def extract_pdf_layout(
     else:
         end_page = min(end_page, total_pages - 1)
 
+    start_time = time.time()
     for page_index in range(start_page, end_page + 1):
+        page_start = time.time()
         page = doc[page_index]
         layout_data: List[Dict[str, Any]] = []
 
         # Save page image (keeps parity with existing workflow)
+        t_img = time.time()
         _save_page_as_pixmap(output_dir, page, page_index, dpi=page_image_dpi)
+        logger.info(f"[Timing] Page {page_index} _save_page_as_pixmap took: {time.time() - t_img:.4f}s")
 
         # Text blocks + spans
+        t_spans = time.time()
         layout_data.extend(_get_spans(page))
+        logger.info(f"[Timing] Page {page_index} _get_spans took: {time.time() - t_spans:.4f}s")
 
         # Image blocks (embedded + inline)
+        t_images = time.time()
         image_blocks = page.get_image_info()
         for image_index, image_block in enumerate(image_blocks):
             bbox = image_block.get("bbox")
@@ -162,6 +173,12 @@ def extract_pdf_layout(
                 }
             )
 
-        _save_metadata(output_dir, page_index, layout_data)
+        logger.info(f"[Timing] Page {page_index} image extraction took: {time.time() - t_images:.4f}s")
 
+        t_meta = time.time()
+        _save_metadata(output_dir, page_index, layout_data)
+        logger.info(f"[Timing] Page {page_index} _save_metadata took: {time.time() - t_meta:.4f}s")
+        logger.info(f"[Timing] Page {page_index} TOTAL took: {time.time() - page_start:.4f}s")
+
+    logger.info(f"[Timing] Total extract_pdf_layout took: {time.time() - start_time:.4f}s")
     return output_dir

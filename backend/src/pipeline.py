@@ -5,7 +5,12 @@ Main pipeline for PDF to DOCX reconstruction.
 import json
 import os
 import math
+import time
 import concurrent.futures
+import logging
+
+logging.basicConfig(filename='pipeline_timing.log', level=logging.INFO, format='%(asctime)s - %(message)s')
+logger = logging.getLogger(__name__)
 from typing import Callable, Dict, List, Optional, Tuple
 
 import numpy as np
@@ -78,6 +83,7 @@ class PDFToDocxPipeline:
         end_page: Optional[int] = None,
         progress_callback: Optional[Callable[[int], None]] = None,
     ):
+        t_process_pdf_start = time.time()
         pdf_doc = pymupdf.open(pdf_path)
         total_pages = len(pdf_doc)
 
@@ -111,6 +117,7 @@ class PDFToDocxPipeline:
             progress_callback(35)
             
         print("Rendering pages for YOLO inference...")
+        t_render_start = time.time()
         page_images = []
         page_scales = []
         
@@ -125,8 +132,10 @@ class PDFToDocxPipeline:
         results.sort(key=lambda x: x[0])
         page_images = [r[1] for r in results]
         page_scales = [(r[2], r[3]) for r in results]
+        logger.info(f"[Timing] Rendering pages took: {time.time() - t_render_start:.4f}s")
         
-        print("Running YOLO inference...")
+        logger.info("Running YOLO inference...")
+        t_yolo_start = time.time()
         batch_size = 8
         all_det_dicts = []
         for i in range(0, len(page_images), batch_size):
@@ -157,15 +166,19 @@ class PDFToDocxPipeline:
                     })
                 all_det_dicts.append(det_dicts)
 
+        logger.info(f"[Timing] YOLO inference (all batches) took: {time.time() - t_yolo_start:.4f}s")
+
         if progress_callback:
             progress_callback(45)
 
+        t_pages_start = time.time()
         for page_idx in range(start_page, end_page + 1):
             if progress_callback:
                 pct = 45 + int(50 * (page_idx - start_page) / max(1, end_page - start_page + 1))
                 progress_callback(pct)
 
-            print(f"\nProcessing page {page_idx + 1}/{end_page + 1}...")
+            logger.info(f"\nProcessing page {page_idx + 1}/{end_page + 1}...")
+            t_page_start = time.time()
 
             if json_base_path is None:
                 json_base_path = "../data_layout"
@@ -173,7 +186,7 @@ class PDFToDocxPipeline:
             json_path = os.path.join(page_folder, f"page_{page_idx}_layout.json")
 
             if not os.path.exists(json_path):
-                print(f"Warning: JSON file not found for page {page_idx}, skipping...")
+                logger.info(f"Warning: JSON file not found for page {page_idx}, skipping...")
                 continue
 
             with open(json_path, "r", encoding="utf-8") as f:
@@ -207,11 +220,16 @@ class PDFToDocxPipeline:
             prev_text_block = result["prev_text_block"]
             prev_page_height = result["prev_page_height"]
             prev_page_last_content_y1 = result["prev_page_last_content_y1"]
+            logger.info(f"[Timing] Page {page_idx} _process_page + setup took: {time.time() - t_page_start:.4f}s")
 
-        print("\nAll pages processed!")
-        print(f"\nSaving DOCX to: {output_path}")
+        logger.info(f"[Timing] Total page processing loop took: {time.time() - t_pages_start:.4f}s")
+        logger.info("\nAll pages processed!")
+        logger.info(f"\nSaving DOCX to: {output_path}")
+        t_save_start = time.time()
         docx_doc.save(output_path)
-        print("Done!")
+        logger.info(f"[Timing] Saving DOCX took: {time.time() - t_save_start:.4f}s")
+        logger.info(f"[Timing] Total process_pdf took: {time.time() - t_process_pdf_start:.4f}s")
+        logger.info("Done!")
 
     def _setup_docx_document(self, docx_doc: Document):
         """Setup DOCX document with footer."""

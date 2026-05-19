@@ -366,10 +366,18 @@ export default function OrganizePage() {
     );
   }, [allVisibleSelected]);
 
-  const rotateAllSelected = useCallback(() => {
+  const rotateAllSelectedCW = useCallback(() => {
     setPages((prev) =>
       prev.map((p) =>
         p.selected && !p.deleted ? { ...p, rotation: ROTATE_CW(p.rotation) } : p
+      )
+    );
+  }, []);
+
+  const rotateAllSelectedCCW = useCallback(() => {
+    setPages((prev) =>
+      prev.map((p) =>
+        p.selected && !p.deleted ? { ...p, rotation: ROTATE_CCW(p.rotation) } : p
       )
     );
   }, []);
@@ -697,7 +705,7 @@ export default function OrganizePage() {
 
                     {/* Rotate Left */}
                     <button
-                      onClick={rotateAllSelected}
+                      onClick={rotateAllSelectedCCW}
                       disabled={selectedCount === 0 && mode === "extract"}
                       className="w-9 h-9 rounded-lg bg-white border border-gray-200
                                  text-gray-600 hover:bg-gray-50 flex items-center justify-center
@@ -709,7 +717,7 @@ export default function OrganizePage() {
 
                     {/* Rotate Right */}
                     <button
-                      onClick={rotateAllSelected}
+                      onClick={rotateAllSelectedCW}
                       disabled={selectedCount === 0 && mode === "extract"}
                       className="w-9 h-9 rounded-lg bg-white border border-gray-200
                                  text-gray-600 hover:bg-gray-50 flex items-center justify-center

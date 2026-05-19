@@ -203,6 +203,10 @@ frontend/
 - API methods for Crop (`api.ts` update)
 - Routing entries for Crop (`App.tsx` update)
 
+### 🔧 Backend — Fixed / Improved (2026-05-19)
+
+- `src/pipeline.py` & `src/extract_layout.py` — Replaced standard `print` statements with Python's built-in `logging` module to profile performance. Timing logs for PyMuPDF layout extraction, YOLO rendering, YOLO batch inference, and per-page DOCX processing are now written to `backend/pipeline_timing.log` instead of the console, enabling detailed bottleneck analysis.
+
 ### 🔧 Backend — Fixed / Improved (2026-04-25)
 
 - `src/pdf_operations/page_numbers.py` — Refactored text placement to use dynamic, per-page coordinate computation (replacing the old fixed-width `_get_rect` helper). Right-aligned positions (`top-right`, `bottom-right`) now compute `x0 = w - margin - text_length` to expand leftward, preventing any text from bleeding off the right edge. Bottom-aligned positions use `font_size` instead of the hardcoded `25`px offset, so the text baseline is always exactly at the page margin regardless of the configured font size.
@@ -404,6 +408,16 @@ npm run dev
 ### Test Organize, Reconstruct
 
 All other tools work independently. See their respective pages under the nav bar.
+
+---
+
+## Current Challenges & Insights
+
+**Challenge:** The PDF → DOCX Reconstruction pipeline is currently too slow. Processing a 33-page document takes nearly a minute (around 58 seconds on CPU), which needs to be scaled down to seconds for a better user experience.
+
+**Insights found via profiling (`pipeline_timing.log`):**
+1. **YOLO Inference Bottleneck (~67% of total time):** The `DocLayout-YOLO` model executes natively via PyTorch on the CPU. It handles layout structural detection (bounding boxes for titles, text, tables, figures) but does *not* do OCR. Matrix multiplications on the CPU cause inference to take ~39 seconds for 33 pages.
+2. **Redundant Rendering & Disk I/O (~27% of total time):** PyMuPDF layout extraction (`extract_layout.py`) takes ~13 seconds, predominantly wasted on saving high-resolution (300/600 DPI) debug page images to disk. Furthermore, the pipeline loads the PDF and re-renders the pages a second time in memory for the YOLO inference, causing redundant processing overhead.
 
 ---
 

@@ -14,10 +14,10 @@ export default function CombinePage() {
   const navigate = useNavigate();
 
   // ── State ─────────────────────────────────────────────────────────────────
-  // `allDocs`     — full document list fetched from the API
+  // `sessionDocs`     — full document list fetched from the API
   // `selectedIds` — IDs of the docs currently checked for combining
   // Splitting these two means "Refresh" can reload the list without wiping selections.
-  const [allDocs, setAllDocs] = useState<Document[]>([]);
+  const [sessionDocs, setSessionDocs] = useState<Document[]>([]);
   const [selectedIds, setSelectedIds] = useState<Set<number>>(new Set());
   const [loadingDocs, setLoadingDocs] = useState(false);
   const [uploading, setUploading] = useState(false);
@@ -30,23 +30,6 @@ export default function CombinePage() {
     if (job) setCreatedJob(job);
   }, [job]);
 
-  // ── Load documents from API ───────────────────────────────────────────────
-  // Refresh button calls this — it replaces `allDocs` but preserves `selectedIds`.
-  const loadDocuments = useCallback(async () => {
-    setLoadingDocs(true);
-    try {
-      const res = await api.listDocuments(0, 100);
-      setAllDocs(res.documents);
-    } catch {
-      toast.error("Failed to load documents");
-    } finally {
-      setLoadingDocs(false);
-    }
-  }, []);
-
-  useEffect(() => {
-    loadDocuments();
-  }, [loadDocuments]);
 
   // ── File drop — upload then append to selection ───────────────────────────
   // Files are added to the END so: upload order = UI order = output order.
@@ -57,7 +40,7 @@ export default function CombinePage() {
     setUploading(true);
     try {
       const doc = await api.uploadDocument(file);
-      setAllDocs((prev) => [...prev, doc]);
+      setSessionDocs((prev) => [...prev, doc]);
       setSelectedIds((prev) => new Set([...prev, doc.id]));
       toast.success(`Uploaded: ${doc.original_filename}`);
     } catch {
@@ -87,8 +70,8 @@ export default function CombinePage() {
     });
   };
 
-  // Derived: docs in the order they appear in `allDocs`, filtered to selectedIds
-  const selectedDocs = allDocs.filter((d) => selectedIds.has(d.id));
+  // Derived: docs in the order they appear in `sessionDocs`, filtered to selectedIds
+  const selectedDocs = sessionDocs.filter((d) => selectedIds.has(d.id));
 
   // ── Job actions ───────────────────────────────────────────────────────────
   const handleStartJob = async () => {
@@ -136,17 +119,16 @@ export default function CombinePage() {
 
   // ── Delete helpers ─────────────────────────────────────────────────────────
   const handleDeleteAll = async () => {
-    if (allDocs.length === 0) return;
-    if (!window.confirm(`Delete all ${allDocs.length} documents? This cannot be undone.`)) return;
+    if (sessionDocs.length === 0) return;
+    if (!window.confirm(`Delete all ${sessionDocs.length} documents? This cannot be undone.`)) return;
     setLoadingDocs(true);
     try {
-      await Promise.all(allDocs.map((doc) => api.deleteDocument(doc.id)));
-      setAllDocs([]);
+      await Promise.all(sessionDocs.map((doc) => api.deleteDocument(doc.id)));
+      setSessionDocs([]);
       setSelectedIds(new Set());
       toast.success("All documents deleted");
     } catch {
       toast.error("Failed to delete some documents");
-      loadDocuments();
     } finally {
       setLoadingDocs(false);
     }
@@ -165,12 +147,11 @@ export default function CombinePage() {
     setLoadingDocs(true);
     try {
       await Promise.all(ids.map((id) => api.deleteDocument(id)));
-      setAllDocs((prev) => prev.filter((d) => !selectedIds.has(d.id)));
+      setSessionDocs((prev) => prev.filter((d) => !selectedIds.has(d.id)));
       setSelectedIds(new Set());
       toast.success(`${count} document${count > 1 ? "s" : ""} deleted`);
     } catch {
       toast.error("Failed to delete some documents");
-      loadDocuments();
     } finally {
       setLoadingDocs(false);
     }
@@ -274,7 +255,7 @@ export default function CombinePage() {
                   <Button variant="ghost" size="sm" onClick={handleDeleteSelected} disabled={selectedIds.size === 0}>
                     Delete ({selectedIds.size})
                   </Button>
-                  <Button variant="danger" size="sm" onClick={handleDeleteAll} disabled={allDocs.length === 0 || loadingDocs}>
+                  <Button variant="danger" size="sm" onClick={handleDeleteAll} disabled={sessionDocs.length === 0 || loadingDocs}>
                     Delete All
                   </Button>
                 </div>
@@ -285,14 +266,14 @@ export default function CombinePage() {
                 <div className="flex justify-center py-10">
                   <Spinner />
                 </div>
-              ) : allDocs.length === 0 ? (
+              ) : sessionDocs.length === 0 ? (
                 <div className="flex flex-col items-center py-10 text-gray-500">
                   <p className="text-sm">No documents available</p>
                   <p className="text-xs text-gray-400 mt-1">Upload a PDF to get started</p>
                 </div>
               ) : (
                 <ul className="divide-y divide-gray-50">
-                  {allDocs.map((doc, idx) => (
+                  {sessionDocs.map((doc, idx) => (
                     <li
                       key={doc.id}
                       className="flex items-center gap-4 px-6 py-3 hover:bg-gray-50 transition-colors cursor-pointer"
