@@ -38,6 +38,31 @@ def iou(b1: BBox, b2: BBox) -> float:
     return inter_area / union
 
 
+# Compute what fraction of b1 is contained within b2
+def containment_ratio(b1: BBox, b2: BBox) -> float:
+    """
+    Returns the ratio of intersection area to the area of b1.
+    1.0 means b1 is fully inside b2.
+    """
+    x0_1, y0_1, x1_1, y1_1 = b1
+    x0_2, y0_2, x1_2, y1_2 = b2
+
+    inter_x0 = max(x0_1, x0_2)
+    inter_y0 = max(y0_1, y0_2)
+    inter_x1 = min(x1_1, x1_2)
+    inter_y1 = min(y1_1, y1_2)
+
+    inter_w = max(0.0, inter_x1 - inter_x0)
+    inter_h = max(0.0, inter_y1 - inter_y0)
+    inter_area = inter_w * inter_h
+
+    area1 = max(0.0, x1_1 - x0_1) * max(0.0, y1_1 - y0_1)
+    if area1 <= 0.0:
+        return 0.0
+
+    return inter_area / area1
+
+
 # Represents a layout region predicted by YOLO
 @dataclass
 class LayoutRegion:
@@ -215,11 +240,11 @@ def match_elements_to_layout(
 
 
 # Match PyMuPDF text blocks to layout regions using IoU
-# This is more efficient than matching individual spans, as blocks have better IoU with layout regions
 def match_blocks_to_layout(
     text_blocks: Sequence[TextBlock],
     layout_regions: Sequence[LayoutRegion],
     iou_threshold: float = 0.1,
+    containment_threshold: float = 0.5,
 ) -> List[LayoutBlock]:
     """
     Match PyMuPDF text blocks to YOLO layout regions using IoU.
@@ -230,6 +255,7 @@ def match_blocks_to_layout(
         text_blocks: List of TextBlock objects from PyMuPDF
         layout_regions: List of LayoutRegion objects from YOLO
         iou_threshold: Minimum IoU to consider a match
+        containment_threshold: Minimum containment ratio to consider a match if IoU is too low
         
     Returns:
         List of LayoutBlock objects with matched text elements
@@ -253,6 +279,10 @@ def match_blocks_to_layout(
                 best_idx = idx
         if best_idx is not None and best_iou >= iou_threshold:
             region_assignments[best_idx].append(block)
+        elif best_idx is not None:
+            cr = containment_ratio(block.bbox, layout_regions[best_idx].bbox)
+            if cr >= containment_threshold:
+                region_assignments[best_idx].append(block)
 
     # Build LayoutBlocks from matched regions
     layout_blocks: List[LayoutBlock] = []

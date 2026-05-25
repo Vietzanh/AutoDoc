@@ -348,21 +348,8 @@ class JobService:
             self._fail_job(job_id, _session, "PDF file not found on disk")
             return
 
-        # Extract layout metadata
+        # Extract layout metadata is now done in-memory within the pipeline
         self._update(job_repo, job_id, JobStatus.PROCESSING.value, progress=30)
-        layout_dir = self.settings.DATA_DIR / "layouts" / str(job_id)
-        layout_dir.mkdir(parents=True, exist_ok=True)
-
-        try:
-            extract_pdf_layout(
-                pdf_path=str(pdf_path),
-                output_dir=str(layout_dir),
-                page_image_dpi=render_dpi,
-                inline_image_dpi=600,
-            )
-        except Exception as exc:
-            self._fail_job(job_id, _session, f"Layout extraction failed: {exc}")
-            return
 
         # Run pipeline
         # Determine output filename — use given name, or derive from original PDF filename
@@ -391,7 +378,6 @@ class JobService:
             pipeline.process_pdf(
                 pdf_path=str(pdf_path),
                 output_path=str(output_path),
-                json_base_path=str(layout_dir),
                 progress_callback=_progress_cb
             )
         except Exception as exc:

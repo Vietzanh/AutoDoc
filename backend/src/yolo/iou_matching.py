@@ -38,6 +38,31 @@ def iou(b1: BBox, b2: BBox) -> float:
     return inter_area / union
 
 
+# Compute what fraction of b1 is contained within b2
+def containment_ratio(b1: BBox, b2: BBox) -> float:
+    """
+    Returns the ratio of intersection area to the area of b1.
+    1.0 means b1 is fully inside b2.
+    """
+    x0_1, y0_1, x1_1, y1_1 = b1
+    x0_2, y0_2, x1_2, y1_2 = b2
+
+    inter_x0 = max(x0_1, x0_2)
+    inter_y0 = max(y0_1, y0_2)
+    inter_x1 = min(x1_1, x1_2)
+    inter_y1 = min(y1_1, y1_2)
+
+    inter_w = max(0.0, inter_x1 - inter_x0)
+    inter_h = max(0.0, inter_y1 - inter_y0)
+    inter_area = inter_w * inter_h
+
+    area1 = max(0.0, x1_1 - x0_1) * max(0.0, y1_1 - y0_1)
+    if area1 <= 0.0:
+        return 0.0
+
+    return inter_area / area1
+
+
 # Represents a layout region predicted by YOLO
 @dataclass
 class LayoutRegion:
@@ -140,6 +165,54 @@ def text_blocks_from_pdf_elements(pdf_elements: Iterable[Dict[str, Any]]) -> Lis
     return blocks
 
 
+def _tight_bbox_for_spans(spans: Sequence[TextElement], fallback_bbox: BBox) -> BBox:
+    if not spans:
+        return fallback_bbox
+
+    x0 = min(span.bbox[0] for span in spans)
+    y0 = min(span.bbox[1] for span in spans)
+    x1 = max(span.bbox[2] for span in spans)
+    y1 = max(span.bbox[3] for span in spans)
+    return float(x0), float(y0), float(x1), float(y1)
+
+
+def _layout_block_from_text_block(
+    block: TextBlock,
+    block_type: str,
+    score: float,
+    raw_region: Optional[Dict[str, Any]] = None,
+) -> LayoutBlock:
+    spans_with_order = sorted(
+        enumerate(block.spans),
+        key=lambda x: (x[1].bbox[1], x[1].bbox[0]),
+    )
+    spans_sorted = [span for _, span in spans_with_order]
+    span_to_block_idx = {idx: 0 for idx in range(len(spans_sorted))}
+    span_to_original_order = {
+        idx: (0, original_idx)
+        for idx, (original_idx, _) in enumerate(spans_with_order)
+    }
+
+    joined_text = " ".join(span.text.strip() for span in spans_sorted if span.text.strip())
+    if not joined_text:
+        joined_text = block.text
+
+    return LayoutBlock(
+        block_type=block_type,
+        bbox=_tight_bbox_for_spans(spans_sorted, block.bbox),
+        text=joined_text,
+        score=score,
+        elements=spans_sorted,
+        extra={
+            "raw_region": raw_region or {},
+            "matched_blocks": 1,
+            "text_block_bboxes": [block.bbox],
+            "span_to_block_idx": span_to_block_idx,
+            "span_to_original_order": span_to_original_order,
+        },
+    )
+
+
 # Convert YOLO detections into LayoutRegion objects
 def layout_regions_from_detections(
     detections: Sequence[Dict[str, Any]],
@@ -165,6 +238,7 @@ def match_blocks_to_layout(
     text_blocks: Sequence[TextBlock],
     layout_regions: Sequence[LayoutRegion],
     iou_threshold: float = 0.1,
+    containment_threshold: float = 0.5,
 ) -> List[LayoutBlock]:
     """
     Match PyMuPDF text blocks to YOLO layout regions using IoU.
@@ -173,11 +247,12 @@ def match_blocks_to_layout(
     if not layout_regions:
         return []
 
-    region_assignments: Dict[int, List[TextBlock]] = {
+    region_assignments: Dict[int, List[Tuple[int, TextBlock]]] = {
         i: [] for i in range(len(layout_regions))
     }
+    assigned_block_indices = set()
 
-    for block in text_blocks:
+    for text_block_idx, block in enumerate(text_blocks):
         best_idx = None
         best_iou = 0.0
         for idx, region in enumerate(layout_regions):
@@ -186,12 +261,37 @@ def match_blocks_to_layout(
                 best_iou = overlap
                 best_idx = idx
         if best_idx is not None and best_iou >= iou_threshold:
-            region_assignments[best_idx].append(block)
+            region_assignments[best_idx].append((text_block_idx, block))
+            assigned_block_indices.add(text_block_idx)
+        elif best_idx is not None:
+            cr = containment_ratio(block.bbox, layout_regions[best_idx].bbox)
+            if cr >= containment_threshold:
+                region_assignments[best_idx].append((text_block_idx, block))
+                assigned_block_indices.add(text_block_idx)
 
     layout_blocks: List[LayoutBlock] = []
     for idx, region in enumerate(layout_regions):
-        matched_blocks = region_assignments[idx]
-        if not matched_blocks:
+        matched_block_items = region_assignments[idx]
+        if not matched_block_items:
+            continue
+
+        matched_block_items = sorted(
+            matched_block_items,
+            key=lambda item: (item[1].bbox[1], item[1].bbox[0], item[0]),
+        )
+        matched_blocks = [block for _, block in matched_block_items]
+
+        if region.class_name not in {"table", "figure"}:
+            for _, block in matched_block_items:
+                if block.text.strip() or block.spans:
+                    layout_blocks.append(
+                        _layout_block_from_text_block(
+                            block=block,
+                            block_type=region.class_name,
+                            score=region.score,
+                            raw_region=region.raw,
+                        )
+                    )
             continue
 
         all_spans_with_block_idx: List[Tuple[TextElement, int, int]] = []
@@ -215,12 +315,13 @@ def match_blocks_to_layout(
         }
 
         text_block_bboxes = [block.bbox for block in matched_blocks]
+        tight_bbox = _tight_bbox_for_spans(all_spans_sorted, region.bbox)
 
         joined_text = " ".join(span.text.strip() for span in all_spans_sorted if span.text.strip())
 
         layout_block = LayoutBlock(
             block_type=region.class_name,
-            bbox=region.bbox,
+            bbox=tight_bbox,
             text=joined_text,
             score=region.score,
             elements=all_spans_sorted,
@@ -233,5 +334,18 @@ def match_blocks_to_layout(
             },
         )
         layout_blocks.append(layout_block)
+
+    for text_block_idx, block in enumerate(text_blocks):
+        if text_block_idx in assigned_block_indices:
+            continue
+        if not block.text.strip() and not block.spans:
+            continue
+        layout_blocks.append(
+            _layout_block_from_text_block(
+                block=block,
+                block_type="plain text",
+                score=0.0,
+            )
+        )
 
     return layout_blocks

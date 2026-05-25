@@ -1,0 +1,23 @@
+description: Ultralytics YOLOv10m-doclayout model trained on /mnt/petrelfs/zhaozhiyuan/layout/yolov10/ultralytics/cfg/datasets/0830_mixed.yaml
+author: Ultralytics
+date: '2026-05-24T16:29:15.905639'
+version: 0.0.4
+license: AGPL-3.0 License (https://doclayout_yolo.com/license)
+docs: https://docs.doclayout_yolo.com
+stride: 32
+task: detect
+batch: 1
+imgsz:
+- 640
+- 640
+names:
+  0: title
+  1: plain text
+  2: abandon
+  3: figure
+  4: figure_caption
+  5: table
+  6: table_caption
+  7: table_footnote
+  8: isolate_formula
+  9: formula_caption

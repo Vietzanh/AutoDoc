@@ -4,11 +4,13 @@
 
 Before generating the full solution, you MUST ask me at least 3 clarifying questions about any ambiguous requirements. Do not assume my tech stack versions, deployment environment, business logic, or user behavior. Ask first, then wait for my answers.
 
+Always show all code changes as reviewable diffs/patches. Never auto-apply modifications directly to files. Before changing any code, present the modification in an approval box and wait for my explicit Accept confirmation. Do not overwrite existing code silently, regardless of the current permission mode or access level. Treat all edits as suggestions until approved by me.
+
 This rule applies to every solution request, without exception.
 
 ## Solution Format
 
-*(Applies after clarifying questions above have been answered)*
+_(Applies after clarifying questions above have been answered)_
 
 Whenever I ask for a solution, ALWAYS provide 3 options:
 

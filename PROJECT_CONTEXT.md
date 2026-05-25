@@ -419,6 +419,16 @@ All other tools work independently. See their respective pages under the nav bar
 1. **YOLO Inference Bottleneck (~67% of total time):** The `DocLayout-YOLO` model executes natively via PyTorch on the CPU. It handles layout structural detection (bounding boxes for titles, text, tables, figures) but does *not* do OCR. Matrix multiplications on the CPU cause inference to take ~39 seconds for 33 pages.
 2. **Redundant Rendering & Disk I/O (~27% of total time):** PyMuPDF layout extraction (`extract_layout.py`) takes ~13 seconds, predominantly wasted on saving high-resolution (300/600 DPI) debug page images to disk. Furthermore, the pipeline loads the PDF and re-renders the pages a second time in memory for the YOLO inference, causing redundant processing overhead.
 
+**Current Challenge (2026-05-24):** The PDF → DOCX Reconstruction pipeline still exhibits several edge-case inaccuracies following the DPI and layout matching improvements:
+1. **Ordering issues:** References (e.g., Reference 1 and Reference 19) appear out of order or misplaced. This occurs because when text blocks match to a giant YOLO layout region, the `LayoutBlock` inherits the giant bounding box instead of a tight bounding box, breaking the pipeline's row-grouping/sorting logic.
+2. **Missing specific text blocks:** Some content (e.g., the text under "Call Number: 2") is completely swallowed. This is caused by an overly aggressive heuristic in the row-grouping logic (`pipeline.py`) that mistakenly detects horizontally aligned text snippets (like `Output:` and `1`) as an undetected table, diverting them to a table image extractor that fails on plain text.
+3. **Image Scaling:** Images and icons are being blown up to full page width (6 inches). The `process_figure_block` function indiscriminately forces `width=max_image_width` on every image instead of respecting the original dimensions from the PDF.
+
+**Proposed Solutions:**
+1. **Ordering Fix:** Update `iou_matching.py` so that a `LayoutBlock` computes a "tight" bounding box based exactly on the `TextElements` it contains, rather than blindly inheriting the YOLO region's sloppy bounding box.
+2. **Table Heuristic Fix:** Update `pipeline.py` to bypass the implicit `use_table` heuristic if the blocks are classified as `plain text` or `title`, ensuring text isn't accidentally swallowed.
+3. **Image Scaling Fix:** Update `processors.py` to calculate the physical width of the image from its PDF coordinates (`(x1 - x0) / 72.0` inches) and pass that calculated width (capped at 6 inches) to `add_picture`.
+
 ---
 
 ## 8. Implementation Plan

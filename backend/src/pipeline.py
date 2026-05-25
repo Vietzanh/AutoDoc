@@ -39,6 +39,25 @@ from src.yolo.iou_matching import LayoutBlock, LayoutRegion, iou, match_blocks_t
 from src.yolo.iou_matching import layout_regions_from_detections, text_blocks_from_pdf_elements
 from src.yolo.pdf_utils import image_bbox_to_pdf_bbox, render_page_to_image
 
+IMPLICIT_TABLE_EXCLUDED_TYPES = {"plain text", "title"}
+
+
+def _should_use_implicit_table_row(row: List[LayoutBlock]) -> bool:
+    if len(row) < 2:
+        return False
+
+    if any(block.block_type in IMPLICIT_TABLE_EXCLUDED_TYPES for block in row):
+        return False
+
+    for i in range(len(row) - 1):
+        if not (
+            is_same_line(row[i], row[i + 1])
+            and horizontally_separated(row[i], row[i + 1], min_gap=20)
+        ):
+            return False
+
+    return True
+
 
 class PDFToDocxPipeline:
     """Main pipeline for converting PDF to DOCX."""
@@ -136,7 +155,7 @@ class PDFToDocxPipeline:
         
         logger.info("Running YOLO inference...")
         t_yolo_start = time.time()
-        batch_size = 8
+        batch_size = 1
         all_det_dicts = []
         for i in range(0, len(page_images), batch_size):
             batch = page_images[i:i+batch_size]
@@ -180,20 +199,37 @@ class PDFToDocxPipeline:
             logger.info(f"\nProcessing page {page_idx + 1}/{end_page + 1}...")
             t_page_start = time.time()
 
-            if json_base_path is None:
-                json_base_path = "../data_layout"
-            page_folder = os.path.join(json_base_path, f"page_{page_idx}")
-            json_path = os.path.join(page_folder, f"page_{page_idx}_layout.json")
-
-            if not os.path.exists(json_path):
-                logger.info(f"Warning: JSON file not found for page {page_idx}, skipping...")
-                continue
-
-            with open(json_path, "r", encoding="utf-8") as f:
-                pdf_elements = json.load(f)
-
             page = pdf_doc[page_idx]
             page_height = page.rect.height
+
+            from src.extract_layout import _get_spans
+            t_spans = time.time()
+            pdf_elements = _get_spans(page)
+            logger.info(f"[Timing] Page {page_idx} _get_spans took: {time.time() - t_spans:.4f}s")
+            
+            t_images = time.time()
+            image_blocks = page.get_image_info()
+            for image_index, image_block in enumerate(image_blocks):
+                bbox = image_block.get("bbox")
+                xref = image_block.get("xref", image_block.get("image"))
+
+                if xref:
+                    base_image = pdf_doc.extract_image(xref)
+                    image_bytes = base_image["image"]
+                    ext = base_image["ext"]
+                else:
+                    pix = page.get_pixmap(clip=pymupdf.Rect(bbox), dpi=150)
+                    image_bytes = pix.tobytes("png")
+                    ext = "png"
+                
+                pdf_elements.append({
+                    "type": "image",
+                    "bbox": bbox,
+                    "xref": xref,
+                    "ext": ext,
+                    "image_bytes": image_bytes
+                })
+            logger.info(f"[Timing] Page {page_idx} image extraction took: {time.time() - t_images:.4f}s")
 
             det_dicts = all_det_dicts[page_idx - start_page]
 
@@ -202,7 +238,7 @@ class PDFToDocxPipeline:
                 pdf_elements=pdf_elements,
                 det_dicts=det_dicts,
                 page_idx=page_idx,
-                page_folder=page_folder,
+                page_folder="",
                 docx_doc=docx_doc,
                 doc_left_margin_in=doc_left_margin_in,
                 page_width_pts=page_width_pts,
@@ -295,10 +331,9 @@ class PDFToDocxPipeline:
                 bbox = tuple(elem.get("bbox", []))
                 if len(bbox) == 4:
                     ext = elem.get("ext", "png") or "png"
-                    image_path = os.path.join(page_folder, "images", f"img_{len(pdf_images)}.{ext}")
                     pdf_images.append({
                         "bbox": bbox,
-                        "path": image_path,
+                        "image_bytes": elem.get("image_bytes"),
                         "index": len(pdf_images),
                         "ext": ext,
                     })
@@ -339,13 +374,14 @@ class PDFToDocxPipeline:
                 matched_region = layout_regions[region_idx]
                 layout_block = LayoutBlock(
                     block_type="figure",
-                    bbox=matched_region.bbox,
+                    bbox=img_data["bbox"],
                     text="",
                     score=matched_region.score,
                     elements=[],
                     extra={
-                        "image_path": img_data["path"],
+                        "image_bytes": img_data.get("image_bytes"),
                         "image_index": img_idx,
+                        "matched_region_bbox": matched_region.bbox,
                         "raw_region": matched_region.raw,
                         "matched_blocks": 0,
                     },
@@ -358,7 +394,7 @@ class PDFToDocxPipeline:
                     score=1.0,
                     elements=[],
                     extra={
-                        "image_path": img_data["path"],
+                        "image_bytes": img_data.get("image_bytes"),
                         "image_index": img_idx,
                         "matched_blocks": 0,
                     },
@@ -470,18 +506,14 @@ class PDFToDocxPipeline:
         for row in rows:
             row.sort(key=lambda b: b.bbox[0])
 
-            use_table = False
-            if len(row) >= 2:
-                all_pairs_ok = True
-                for i in range(len(row) - 1):
-                    if not (is_same_line(row[i], row[i+1]) and horizontally_separated(row[i], row[i+1], min_gap=20)):
-                        all_pairs_ok = False
-                        break
-                use_table = all_pairs_ok
+            use_table = _should_use_implicit_table_row(row)
 
             if use_table and len(row) >= 2:
-                prev_row_y1 = process_table_row(docx_doc, row, section, page_width_pts)
-                continue
+                try:
+                    prev_row_y1 = process_table_row(docx_doc, row, section, page_width_pts)
+                    continue
+                except Exception:
+                    logger.exception("Implicit table row processing failed; falling back to text blocks")
 
             for block in row:
                 block_type = block.block_type

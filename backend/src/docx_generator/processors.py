@@ -3,6 +3,7 @@ Processors for different block types in DOCX generation.
 """
 
 import os
+import io
 from typing import Dict, List, Optional, Tuple
 
 import cv2
@@ -23,6 +24,33 @@ from src.utils import (
 from src.utils.xml_utils import sanitize_text_for_xml
 from src.yolo.iou_matching import TextElement, LayoutBlock
 import pymupdf
+
+
+def _block_image_size(block, _max_image_width):
+    """Return the block's physical PDF size as DOCX dimensions."""
+    x0_pdf, y0_pdf, x1_pdf, y1_pdf = block.bbox
+    width_in = max((x1_pdf - x0_pdf) / 72.0, 0.01)
+    height_in = max((y1_pdf - y0_pdf) / 72.0, 0.01)
+
+    return Inches(width_in), Inches(height_in)
+
+
+def _block_has_text(block) -> bool:
+    if getattr(block, "text", "") and block.text.strip():
+        return True
+
+    for elem in getattr(block, "elements", []) or []:
+        if getattr(elem, "text", "") and elem.text.strip():
+            return True
+
+    return False
+
+
+def _remove_table(table) -> None:
+    table_element = table._element
+    parent = table_element.getparent()
+    if parent is not None:
+        parent.remove(table_element)
 
 
 def should_merge_with_previous_block(prev_block, curr_block):
@@ -53,12 +81,20 @@ def process_figure_block(docx_doc, block, pymupdf_page, max_image_width, page_id
     Process a figure block by extracting and inserting the image.
     """
     image_path = block.extra.get("image_path") if hasattr(block, "extra") else None
+    image_bytes = block.extra.get("image_bytes") if hasattr(block, "extra") else None
+    image_width, image_height = _block_image_size(block, max_image_width)
 
-    if image_path and os.path.exists(image_path):
+    if image_bytes:
         p = docx_doc.add_paragraph()
         p.alignment = WD_ALIGN_PARAGRAPH.CENTER
         run = p.add_run()
-        run.add_picture(image_path, width=max_image_width)
+        run.add_picture(io.BytesIO(image_bytes), width=image_width, height=image_height)
+        return True
+    elif image_path and os.path.exists(image_path):
+        p = docx_doc.add_paragraph()
+        p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        run = p.add_run()
+        run.add_picture(image_path, width=image_width, height=image_height)
         return True
 
     if pymupdf_page is None:
@@ -67,17 +103,13 @@ def process_figure_block(docx_doc, block, pymupdf_page, max_image_width, page_id
     x0_pdf, y0_pdf, x1_pdf, y1_pdf = block.bbox
     rect = pymupdf.Rect(x0_pdf, y0_pdf, x1_pdf, y1_pdf)
     
-    temp_image_path = f"temp_crop_page{page_idx}.png"
-    pix = pymupdf_page.get_pixmap(clip=rect, dpi=300)
-    pix.save(temp_image_path)
+    pix = pymupdf_page.get_pixmap(clip=rect, dpi=150)
+    img_bytes = pix.tobytes("png")
 
     p = docx_doc.add_paragraph()
     p.alignment = WD_ALIGN_PARAGRAPH.CENTER
     run = p.add_run()
-    run.add_picture(temp_image_path, width=max_image_width)
-
-    if os.path.exists(temp_image_path):
-        os.remove(temp_image_path)
+    run.add_picture(io.BytesIO(img_bytes), width=image_width, height=image_height)
 
     return True
 
@@ -91,18 +123,15 @@ def process_table_block(docx_doc, block, pymupdf_page, max_image_width, page_idx
 
     x0_pdf, y0_pdf, x1_pdf, y1_pdf = block.bbox
     rect = pymupdf.Rect(x0_pdf, y0_pdf, x1_pdf, y1_pdf)
+    image_width, image_height = _block_image_size(block, max_image_width)
 
-    temp_image_path = f"temp_table_page{page_idx}.png"
-    pix = pymupdf_page.get_pixmap(clip=rect, dpi=300)
-    pix.save(temp_image_path)
+    pix = pymupdf_page.get_pixmap(clip=rect, dpi=150)
+    img_bytes = pix.tobytes("png")
 
     p = docx_doc.add_paragraph()
     p.alignment = WD_ALIGN_PARAGRAPH.CENTER
     run = p.add_run()
-    run.add_picture(temp_image_path, width=max_image_width)
-
-    if os.path.exists(temp_image_path):
-        os.remove(temp_image_path)
+    run.add_picture(io.BytesIO(img_bytes), width=image_width, height=image_height)
 
     return True
 
@@ -111,6 +140,9 @@ def process_table_row(docx_doc, row, section, page_width_pts):
     """
     Process a row of blocks as a table.
     """
+    if not any(_block_has_text(block) for block in row):
+        raise ValueError("Implicit table row has no extractable text")
+
     min_x_pt = min(b.bbox[0] for b in row)
     max_x_pt = max(b.bbox[2] for b in row)
     doc_left_margin_pt = section.left_margin.pt
@@ -172,11 +204,21 @@ def process_table_row(docx_doc, row, section, page_width_pts):
 
     set_table_col_widths(table, col_widths_pt)
 
+    inserted_text = False
+
     for col_idx, block in enumerate(row):
         cell = table.rows[0].cells[col_idx]
         cell.text = ""
 
         if not block.elements:
+            fallback_text = getattr(block, "text", "") or ""
+            if fallback_text.strip():
+                p = cell.add_paragraph()
+                p.paragraph_format.space_after = Pt(0)
+                p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+                run = p.add_run(sanitize_text_for_xml(fallback_text.strip()))
+                run.font.name = "Times New Roman"
+                inserted_text = True
             continue
 
         elems = block.elements
@@ -210,6 +252,8 @@ def process_table_row(docx_doc, row, section, page_width_pts):
                     text_content += " "
 
                 run = p.add_run(sanitize_text_for_xml(text_content))
+                if text_content.strip():
+                    inserted_text = True
                 run.font.name = "Times New Roman"
 
                 if elem.font_size is not None:
@@ -219,6 +263,10 @@ def process_table_row(docx_doc, row, section, page_width_pts):
                 if elem.font_flags is not None:
                     run.bold = (elem.font_flags & 16) != 0
                     run.italic = (elem.font_flags & 8) != 0
+
+    if not inserted_text:
+        _remove_table(table)
+        raise ValueError("Implicit table row produced no DOCX text")
 
     return max(b.bbox[3] for b in row)
 
@@ -269,8 +317,7 @@ def process_text_block(
                 heading_level = get_section_heading_level(heading_text, default_level=base_level)
             else:
                 heading_level = base_level
-                heading_text = getattr(block, "text", "") or ""
-            p = docx_doc.add_heading(sanitize_text_for_xml(heading_text), level=heading_level)
+            p = docx_doc.add_heading(level=heading_level)
         else:
             p = docx_doc.add_paragraph(style=style_name)
 
