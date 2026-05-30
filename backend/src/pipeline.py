@@ -23,6 +23,7 @@ from docx.shared import Inches, Pt, RGBColor
 
 from src.docx_generator.processors import (
     process_figure_block,
+    process_spaced_metadata_row,
     process_table_block,
     process_table_row,
     process_text_block,
@@ -40,13 +41,48 @@ from src.yolo.iou_matching import layout_regions_from_detections, text_blocks_fr
 from src.yolo.pdf_utils import image_bbox_to_pdf_bbox, render_page_to_image
 
 IMPLICIT_TABLE_EXCLUDED_TYPES = {"plain text", "title"}
+METADATA_ROW_TYPES = {"plain text", "title", "section_header"}
+PAGE_NUMBER_BLOCK_TYPES = {
+    "footer",
+    "page_footer",
+    "page footer",
+    "page_number",
+    "page number",
+    "page-number",
+    "pagination",
+}
 
 
-def _should_use_implicit_table_row(row: List[LayoutBlock]) -> bool:
+def _block_text(block: LayoutBlock) -> str:
+    text = getattr(block, "text", "") or ""
+    if text.strip():
+        return " ".join(text.split())
+
+    parts = [
+        elem.text.strip()
+        for elem in getattr(block, "elements", []) or []
+        if getattr(elem, "text", "").strip()
+    ]
+    return " ".join(" ".join(parts).split())
+
+
+def _block_line_count(block: LayoutBlock, y_tolerance_pt: float = 2.0) -> int:
+    elements = getattr(block, "elements", []) or []
+    if not elements:
+        text = getattr(block, "text", "") or ""
+        return max(1, len([line for line in text.splitlines() if line.strip()]))
+
+    line_tops = []
+    for elem in sorted(elements, key=lambda e: (e.bbox[1], e.bbox[0])):
+        y0 = elem.bbox[1]
+        if not line_tops or abs(y0 - line_tops[-1]) > y_tolerance_pt:
+            line_tops.append(y0)
+
+    return max(1, len(line_tops))
+
+
+def _row_blocks_are_same_line_and_separated(row: List[LayoutBlock]) -> bool:
     if len(row) < 2:
-        return False
-
-    if any(block.block_type in IMPLICIT_TABLE_EXCLUDED_TYPES for block in row):
         return False
 
     for i in range(len(row) - 1):
@@ -57,6 +93,64 @@ def _should_use_implicit_table_row(row: List[LayoutBlock]) -> bool:
             return False
 
     return True
+
+
+def _is_short_metadata_row(row: List[LayoutBlock]) -> bool:
+    if not _row_blocks_are_same_line_and_separated(row):
+        return False
+
+    if len(row) > 4:
+        return False
+
+    texts = [_block_text(block) for block in row]
+    if not all(texts):
+        return False
+
+    if not all(block.block_type in METADATA_ROW_TYPES for block in row):
+        return False
+
+    if any(len(text) > 120 for text in texts):
+        return False
+
+    return any("@" in text for text in texts) or any(
+        _block_line_count(block) >= 2 for block in row
+    )
+
+
+def _should_use_implicit_table_row(row: List[LayoutBlock]) -> bool:
+    if not _row_blocks_are_same_line_and_separated(row):
+        return False
+
+    if any(block.block_type in IMPLICIT_TABLE_EXCLUDED_TYPES for block in row):
+        return False
+
+    return True
+
+
+def _is_original_page_number_block(
+    block: LayoutBlock,
+    page_width: float,
+    page_height: float,
+) -> bool:
+    text = _block_text(block)
+    if not text.isdigit():
+        return False
+
+    block_type = (getattr(block, "block_type", "") or "").lower().strip()
+    if block_type in PAGE_NUMBER_BLOCK_TYPES:
+        return True
+
+    x0, y0, x1, y1 = block.bbox
+    block_width = x1 - x0
+    block_height = y1 - y0
+    block_mid_x = (x0 + x1) / 2.0
+    page_mid_x = page_width / 2.0
+
+    centered = abs(block_mid_x - page_mid_x) <= max(18.0, page_width * 0.04)
+    near_bottom = y0 >= page_height * 0.88
+    footer_sized = block_width <= 40.0 and block_height <= 24.0
+
+    return centered and near_bottom and footer_sized
 
 
 class PDFToDocxPipeline:
@@ -448,6 +542,12 @@ class PDFToDocxPipeline:
                 layout_blocks_cleaned.append(block)
         layout_blocks = layout_blocks_cleaned
 
+        layout_blocks = [
+            block
+            for block in layout_blocks
+            if not _is_original_page_number_block(block, page.rect.width, page_height)
+        ]
+
         layout_blocks = sorted(layout_blocks, key=lambda b: (b.bbox[1], b.bbox[0]))
 
         content_blocks_for_y1 = [b for b in layout_blocks if b.block_type != "abandon"]
@@ -505,6 +605,16 @@ class PDFToDocxPipeline:
         section = docx_doc.sections[0]
         for row in rows:
             row.sort(key=lambda b: b.bbox[0])
+
+            is_metadata_row = _is_short_metadata_row(row)
+            if is_metadata_row:
+                try:
+                    prev_row_y1 = process_spaced_metadata_row(docx_doc, row, section, page_width_pts)
+                    last_text_paragraph = None
+                    prev_text_block = None
+                    continue
+                except Exception:
+                    logger.exception("Metadata row processing failed; falling back to text blocks")
 
             use_table = _should_use_implicit_table_row(row)
 

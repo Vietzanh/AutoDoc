@@ -53,6 +53,70 @@ def _remove_table(table) -> None:
         parent.remove(table_element)
 
 
+def _line_groups_from_elements(elements, y_tolerance_pt=2.0):
+    spans = [
+        {"bbox": elem.bbox, "text": elem.text, "element": elem}
+        for elem in elements
+        if getattr(elem, "text", "").strip()
+    ]
+    if not spans:
+        return []
+
+    spans = sorted(spans, key=lambda s: (s["bbox"][1], s["bbox"][0]))
+    lines = []
+    current_line = [spans[0]]
+
+    for span in spans[1:]:
+        prev = current_line[-1]
+        if abs(span["bbox"][1] - prev["bbox"][1]) > y_tolerance_pt:
+            lines.append(current_line)
+            current_line = [span]
+        else:
+            current_line.append(span)
+
+    lines.append(current_line)
+    return lines
+
+
+def _metadata_lines_from_block(block):
+    if getattr(block, "elements", None):
+        return _line_groups_from_elements(block.elements)
+
+    text = getattr(block, "text", "") or ""
+    return [
+        [
+            {
+                "bbox": block.bbox,
+                "text": line.strip(),
+                "element": None,
+            }
+        ]
+        for line in text.splitlines()
+        if line.strip()
+    ]
+
+
+def _metadata_line_x0(line, fallback_x0):
+    if not line:
+        return fallback_x0
+    return min(span["bbox"][0] for span in line)
+
+
+def _add_metadata_span_run(paragraph, span):
+    elem = span["element"]
+    run = paragraph.add_run(sanitize_text_for_xml(span["text"]))
+    run.font.name = "Times New Roman"
+
+    if elem is not None and elem.font_size is not None:
+        run.font.size = Pt(round_font_size(elem.font_size))
+
+    if elem is not None and elem.font_flags is not None:
+        run.bold = (elem.font_flags & 16) != 0
+        run.italic = (elem.font_flags & 8) != 0
+
+    return run
+
+
 def should_merge_with_previous_block(prev_block, curr_block):
     """
     Check if current text block should be merged with previous block into same paragraph.
@@ -136,6 +200,54 @@ def process_table_block(docx_doc, block, pymupdf_page, max_image_width, page_idx
     return True
 
 
+def process_spaced_metadata_row(docx_doc, row, section, page_width_pts):
+    """
+    Process short same-line metadata blocks as spaced paragraphs, not as a table.
+    """
+    if not any(_block_has_text(block) for block in row):
+        raise ValueError("Metadata row has no extractable text")
+
+    row = sorted(row, key=lambda block: block.bbox[0])
+    row_y1 = max(block.bbox[3] for block in row)
+    doc_left_margin_pt = section.left_margin.pt
+    doc_right_margin_pt = section.right_margin.pt
+    available_width_pt = page_width_pts - doc_left_margin_pt - doc_right_margin_pt
+
+    block_lines = [_metadata_lines_from_block(block) for block in row]
+    max_lines = max((len(lines) for lines in block_lines), default=0)
+    if max_lines == 0:
+        raise ValueError("Metadata row produced no DOCX text")
+
+    for line_idx in range(max_lines):
+        p = docx_doc.add_paragraph(style="Normal")
+        p.paragraph_format.left_indent = Pt(0)
+        p.paragraph_format.space_after = Pt(0)
+        p.paragraph_format.space_before = Pt(0)
+
+        current_line_tab_positions = []
+        for block_idx, block in enumerate(row):
+            lines = block_lines[block_idx]
+            line = lines[line_idx] if line_idx < len(lines) else []
+            line_x0 = _metadata_line_x0(line, block.bbox[0])
+            tab_pos_pt = max(1.0, line_x0 - doc_left_margin_pt)
+            tab_pos_pt = min(tab_pos_pt, max(1.0, available_width_pt - 1.0))
+            current_line_tab_positions.append(tab_pos_pt)
+
+        for tab_pos_pt in current_line_tab_positions:
+            p.paragraph_format.tab_stops.add_tab_stop(Pt(tab_pos_pt))
+
+        for block_idx, lines in enumerate(block_lines):
+            p.add_run("\t")
+
+            if line_idx >= len(lines):
+                continue
+
+            for span in lines[line_idx]:
+                _add_metadata_span_run(p, span)
+
+    return row_y1
+
+
 def process_table_row(docx_doc, row, section, page_width_pts):
     """
     Process a row of blocks as a table.
@@ -213,12 +325,15 @@ def process_table_row(docx_doc, row, section, page_width_pts):
         if not block.elements:
             fallback_text = getattr(block, "text", "") or ""
             if fallback_text.strip():
-                p = cell.add_paragraph()
-                p.paragraph_format.space_after = Pt(0)
-                p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-                run = p.add_run(sanitize_text_for_xml(fallback_text.strip()))
-                run.font.name = "Times New Roman"
-                inserted_text = True
+                for line in fallback_text.splitlines():
+                    if not line.strip():
+                        continue
+                    p = cell.add_paragraph()
+                    p.paragraph_format.space_after = Pt(0)
+                    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+                    run = p.add_run(sanitize_text_for_xml(line.strip()))
+                    run.font.name = "Times New Roman"
+                    inserted_text = True
             continue
 
         elems = block.elements
