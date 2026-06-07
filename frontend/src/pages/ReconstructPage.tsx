@@ -18,7 +18,7 @@ export default function ReconstructPage() {
   const [createdJob, setCreatedJob] = useState<Job | null>(null);
 
   // Once a job is created, start polling
-  const { job, error: pollError } = useJobPoll(createdJob?.id ?? 0);
+  const { job } = useJobPoll(createdJob?.id ?? 0);
 
   // Update created job state when polling returns fresh data
   useEffect(() => {
@@ -217,7 +217,7 @@ export default function ReconstructPage() {
           <CardFooter>
             <div className="flex gap-3">
               <Button variant="danger" onClick={handleReset}>Try Again</Button>
-              <Button variant="ghost" onClick={() => navigate("/")}>Back to Dashboard</Button>
+              <Button variant="ghost" onClick={() => navigate("/")}>Back to Home</Button>
             </div>
           </CardFooter>
         </Card>

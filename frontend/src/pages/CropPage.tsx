@@ -4,7 +4,7 @@ import { toast } from "sonner";
 import { useDropzone } from "react-dropzone";
 import { api, Document, Job } from "@/services/api";
 import { useJobPoll } from "@/hooks/useJobPoll";
-import { toPoints, fromPoints, convertUnit, UNIT_OPTIONS } from "@/hooks/useUnitConversion";
+import { toPoints, convertUnit, UNIT_OPTIONS } from "@/hooks/useUnitConversion";
 import type { MeasurementUnit } from "@/hooks/useUnitConversion";
 import { Card, CardHeader, CardBody, CardFooter } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
@@ -247,7 +247,7 @@ export default function CropPage() {
           <CardFooter>
             <div className="flex gap-3">
               <Button variant="danger" onClick={handleCropAnother}>Try Again</Button>
-              <Button variant="ghost" onClick={() => navigate("/")}>Dashboard</Button>
+              <Button variant="ghost" onClick={() => navigate("/")}>Home</Button>
             </div>
           </CardFooter>
         </Card>

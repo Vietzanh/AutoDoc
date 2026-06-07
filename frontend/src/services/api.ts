@@ -211,11 +211,11 @@ class ApiClient {
     return res.data;
   }
 
-  async createCombineJob(
+  async createMergeJob(
     documentIds: number[],
-    outputFilename = "combined.pdf"
+    outputFilename = "merged.pdf"
   ): Promise<Job> {
-    const res = await this.client.post<Job>("/jobs/combine", {
+    const res = await this.client.post<Job>("/jobs/merge", {
       document_ids: documentIds,
       output_filename: outputFilename,
     });

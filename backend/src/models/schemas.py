@@ -111,9 +111,9 @@ class ReconstructRequest(BaseModel):
     render_dpi: int = Field(default=300, ge=72, le=600)
 
 
-class CombineRequest(BaseModel):
-    document_ids: list[int] = Field(min_length=2, description="Ordered list of document IDs to combine")
-    output_filename: str = Field(default="combined.pdf", max_length=255)
+class MergeRequest(BaseModel):
+    document_ids: list[int] = Field(min_length=2, description="Ordered list of document IDs to merge")
+    output_filename: str = Field(default="merged.pdf", max_length=255)
 
 
 # ── Split ─────────────────────────────────────────────────────────────────────

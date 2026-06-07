@@ -4,9 +4,9 @@ import { Layout } from "./components/ui/Layout";
 import { Spinner } from "./components/ui/Spinner";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
-import DashboardPage from "./pages/DashboardPage";
+import HomePage from "./pages/HomePage";
 import ReconstructPage from "./pages/ReconstructPage";
-import CombinePage from "./pages/CombinePage";
+import MergePage from "./pages/MergePage";
 import SplitPage from "./pages/SplitPage";
 import OrganizePage from "./pages/OrganizePage";
 import ReorderPage from "./pages/ReorderPage";
@@ -72,7 +72,7 @@ export default function App() {
         path="/"
         element={
           <ProtectedRoute>
-            <DashboardPage />
+            <HomePage />
           </ProtectedRoute>
         }
       />
@@ -85,13 +85,14 @@ export default function App() {
         }
       />
       <Route
-        path="/combine"
+        path="/merge"
         element={
           <ProtectedRoute>
-            <CombinePage />
+            <MergePage />
           </ProtectedRoute>
         }
       />
+      <Route path="/combine" element={<Navigate to="/merge" replace />} />
       <Route
         path="/split"
         element={

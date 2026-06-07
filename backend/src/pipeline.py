@@ -153,6 +153,36 @@ def _is_original_page_number_block(
     return centered and near_bottom and footer_sized
 
 
+def _horizontal_overlap_width(bbox_a, bbox_b) -> float:
+    return max(0.0, min(bbox_a[2], bbox_b[2]) - max(bbox_a[0], bbox_b[0]))
+
+
+def _trim_table_blocks_against_captions(layout_blocks: List[LayoutBlock]) -> None:
+    table_blocks = [block for block in layout_blocks if block.block_type == "table"]
+    caption_blocks = [block for block in layout_blocks if block.block_type == "table_caption"]
+
+    for table_block in table_blocks:
+        tx0, ty0, tx1, ty1 = table_block.bbox
+        table_width = max(1.0, tx1 - tx0)
+
+        for caption_block in caption_blocks:
+            cx0, cy0, cx1, _ = caption_block.bbox
+            caption_width = max(1.0, cx1 - cx0)
+            overlap_width = _horizontal_overlap_width(table_block.bbox, caption_block.bbox)
+            enough_horizontal_overlap = overlap_width >= min(table_width, caption_width) * 0.3
+            caption_starts_inside_table = ty0 < cy0 < ty1
+
+            if not (caption_starts_inside_table and enough_horizontal_overlap):
+                continue
+
+            trimmed_y1 = max(ty0 + 8.0, cy0 - 2.0)
+            if trimmed_y1 < ty1:
+                table_block.extra["original_yolo_bbox"] = table_block.bbox
+                table_block.extra["caption_trimmed"] = True
+                table_block.bbox = (tx0, ty0, tx1, trimmed_y1)
+                break
+
+
 class PDFToDocxPipeline:
     """Main pipeline for converting PDF to DOCX."""
 
@@ -495,26 +525,30 @@ class PDFToDocxPipeline:
                 )
             layout_blocks.append(layout_block)
 
-        for region in layout_regions:
-            if region.class_name == "table":
-                already_exists = False
-                for existing_block in layout_blocks:
-                    if existing_block.block_type == "table":
-                        iou_score = iou(existing_block.bbox, region.bbox)
-                        if iou_score > 0.9:
-                            already_exists = True
-                            break
+        existing_table_region_indices = {
+            block.extra.get("layout_region_index")
+            for block in layout_blocks
+            if block.block_type == "table" and getattr(block, "extra", None)
+        }
 
-                if not already_exists:
+        for region_idx, region in enumerate(layout_regions):
+            if region.class_name == "table":
+                if region_idx not in existing_table_region_indices:
                     layout_block = LayoutBlock(
                         block_type="table",
                         bbox=region.bbox,
                         text="",
                         score=region.score,
                         elements=[],
-                        extra={"raw_region": region.raw, "matched_blocks": 0},
+                        extra={
+                            "raw_region": region.raw,
+                            "layout_region_index": region_idx,
+                            "matched_blocks": 0,
+                        },
                     )
                     layout_blocks.append(layout_block)
+
+        _trim_table_blocks_against_captions(layout_blocks)
 
         # Filter out text blocks contained in image/table blocks
         image_blocks = [b for b in layout_blocks if b.block_type == "figure"]

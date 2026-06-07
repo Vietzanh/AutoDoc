@@ -14,12 +14,10 @@ class ModelConfig:
 
     REPO_ID = "juliozhao/DocLayout-YOLO-DocStructBench"
     FILENAME = "doclayout_yolo_docstructbench_imgsz1024.pt"
-    INPUT_SIZE = 640
+    INPUT_SIZE = 896
     CONFIDENCE_THRESHOLD = 0.2
     DEVICE = "cpu"  # Can be changed to "cuda" if GPU is available
-import os
 import shutil
-from pathlib import Path
 
 # Monkey patch openvino for doclayout-yolo compatibility
 try:
@@ -47,7 +45,7 @@ def load_doclayout_model(
     models_dir = Path("data/models")
     models_dir.mkdir(parents=True, exist_ok=True)
     
-    ov_dirname = filename.replace(".pt", "_openvino_model")
+    ov_dirname = filename.replace(".pt", f"_imgsz{ModelConfig.INPUT_SIZE}_openvino_model")
     ov_path = models_dir / ov_dirname
     
     if not ov_path.exists():
@@ -55,9 +53,17 @@ def load_doclayout_model(
         local_pt_path = models_dir / filename
         if not local_pt_path.exists():
             shutil.copy2(model_path, local_pt_path)
-            
+
+        default_ov_path = models_dir / filename.replace(".pt", "_openvino_model")
+        if default_ov_path.exists():
+            shutil.rmtree(default_ov_path)
+
         model = YOLOv10(str(local_pt_path))
-        model.export(format="openvino", imgsz=ModelConfig.INPUT_SIZE)
+        exported_path = Path(model.export(format="openvino", imgsz=ModelConfig.INPUT_SIZE))
+        if exported_path != ov_path:
+            if ov_path.exists():
+                shutil.rmtree(ov_path)
+            shutil.move(str(exported_path), str(ov_path))
         
     print(f"Loading OpenVINO model from {ov_path}")
     model = YOLOv10(str(ov_path))

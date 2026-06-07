@@ -503,7 +503,7 @@ export default function ReorderPage() {
           <CardFooter>
             <div className="flex gap-3">
               <Button variant="danger" onClick={handleReset}>Try Again</Button>
-              <Button variant="ghost" onClick={() => navigate("/")}>Dashboard</Button>
+              <Button variant="ghost" onClick={() => navigate("/")}>Home</Button>
             </div>
           </CardFooter>
         </Card>

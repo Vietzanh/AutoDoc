@@ -2,7 +2,7 @@
 PDF operations module — pure pymupdf transformations (no ML).
 """
 
-from .combine import combine_pdfs
+from .merge import merge_pdfs
 from .organize import (
     delete_pages,
     extract_pages,
@@ -13,7 +13,7 @@ from .organize import (
 from .split import split_by_points
 
 __all__ = [
-    "combine_pdfs",
+    "merge_pdfs",
     "delete_pages",
     "extract_pages",
     "insert_pages",

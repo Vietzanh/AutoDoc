@@ -181,6 +181,7 @@ def _layout_block_from_text_block(
     block_type: str,
     score: float,
     raw_region: Optional[Dict[str, Any]] = None,
+    layout_region_index: Optional[int] = None,
 ) -> LayoutBlock:
     spans_with_order = sorted(
         enumerate(block.spans),
@@ -205,6 +206,7 @@ def _layout_block_from_text_block(
         elements=spans_sorted,
         extra={
             "raw_region": raw_region or {},
+            "layout_region_index": layout_region_index,
             "matched_blocks": 1,
             "text_block_bboxes": [block.bbox],
             "span_to_block_idx": span_to_block_idx,
@@ -290,6 +292,7 @@ def match_blocks_to_layout(
                             block_type=region.class_name,
                             score=region.score,
                             raw_region=region.raw,
+                            layout_region_index=idx,
                         )
                     )
             continue
@@ -321,12 +324,14 @@ def match_blocks_to_layout(
 
         layout_block = LayoutBlock(
             block_type=region.class_name,
-            bbox=tight_bbox,
+            bbox=region.bbox,
             text=joined_text,
             score=region.score,
             elements=all_spans_sorted,
             extra={
                 "raw_region": region.raw,
+                "layout_region_index": idx,
+                "tight_text_bbox": tight_bbox,
                 "matched_blocks": len(matched_blocks),
                 "text_block_bboxes": text_block_bboxes,
                 "span_to_block_idx": sorted_span_to_block_idx,

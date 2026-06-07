@@ -61,7 +61,7 @@ class JobService:
         )
         return job
 
-    def create_combine_job(
+    def create_merge_job(
         self,
         user_id: int,
         document_ids: List[int],
@@ -69,7 +69,7 @@ class JobService:
     ) -> Job:
         job = self.repo.create(
             user_id=user_id,
-            tool=JobTool.COMBINE.value,
+            tool=JobTool.MERGE.value,
             status=JobStatus.PENDING.value,
             input_document_ids=json.dumps(document_ids),
             output_filename=output_filename,
@@ -77,7 +77,7 @@ class JobService:
         )
         self._start_background(
             job,
-            target=self._run_combine,
+            target=self._run_merge,
             kwargs=dict(
                 job_id=job.id,
                 document_ids=document_ids,
@@ -393,9 +393,9 @@ class JobService:
             output_filename=out_name,
         )
 
-    # ── Combine pipeline ─────────────────────────────────────────────────────
+    # ── Merge pipeline ───────────────────────────────────────────────────────
 
-    def _run_combine(
+    def _run_merge(
         self,
         job_id: int,
         document_ids: List[int],
@@ -403,9 +403,7 @@ class JobService:
         _session,
     ) -> None:
         from src.models.database_models import JobStatus
-        from src.pdf_operations.combine import (
-            combine_pdfs,
-        )  # backend/src/pdf_operations/ — canonical
+        from src.pdf_operations.merge import merge_pdfs
 
         job_repo = JobRepository(_session)
         doc_repo = DocumentRepository(_session)
@@ -426,13 +424,13 @@ class JobService:
         output_path.parent.mkdir(parents=True, exist_ok=True)
 
         try:
-            combine_pdfs(
+            merge_pdfs(
                 [str(p) for p in pdf_paths],
                 str(output_path),
                 verbose=False,
             )
         except Exception as exc:
-            self._fail_job(job_id, _session, f"Combine failed: {exc}")
+            self._fail_job(job_id, _session, f"Merge failed: {exc}")
             return
 
         self._update(

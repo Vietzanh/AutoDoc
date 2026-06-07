@@ -1,7 +1,7 @@
 # AutoDoc — Project Context
 
-> **Last updated:** 2026-04-25
-> **Status:** Combine + Organize + Split + Reorder + Page Numbers done · Crop backend/frontend remaining · DevOps pending
+> **Last updated:** 2026-06-07
+> **Status:** Combine + Organize + Split + Reorder + Page Numbers done · Organize split-screen workspace in progress/verified on dev server · Reconstruction edge-case fixes verified · Crop backend/frontend remaining · DevOps pending
 
 ---
 
@@ -112,7 +112,7 @@ frontend/
         ├── DashboardPage.tsx # Document table + Recent Jobs table
         ├── ReconstructPage.tsx # 4-state wizard: upload → ready → processing → done/failed
         ├── CombinePage.tsx    # Multi-doc upload + select/delete controls + job + download ✅
-        ├── OrganizePage.tsx   # Single-PDF upload, CSS grid 5-col, gap-8, Insert/Extract/RotateL/RotateR/Delete icons, blue + centered in gaps in insert mode, Extract mode toggle ✅
+        ├── OrganizePage.tsx   # Full-screen split workspace: left PDF preview, right 4-col thumbnails, insert-source strip, checkbox-only selection ✅
         ├── SplitPage.tsx     # Single-PDF upload + blue-to-red scissor split lines + ZIP download ✅
         ├── CropPage.tsx       # ⬜ TODO — crop by margins or custom rect
         └── PageNumbersPage.tsx # two-panel layout: thumbnails (left) + options (right); single/facing-page modes; 2×2 PositionGrid; page range; text format; job + download ✅
@@ -189,7 +189,7 @@ frontend/
 | `frontend/src/pages/DashboardPage.tsx` | ✅ Written — document table + recent jobs table |
 | `frontend/src/pages/ReconstructPage.tsx` | ✅ Written — 4-state wizard: upload → ready → processing → done/failed |
 | `frontend/src/pages/CombinePage.tsx` | ✅ Written — upload + select/delete controls + job + download |
-| `frontend/src/pages/OrganizePage.tsx` | ✅ Redesigned — single-PDF upload, CSS grid 5-col with gap-8, Insert/Extract/RotateL/RotateR/Delete icons, blue + centered in gaps in insert mode (position:absolute child of tile, left:calc(100%+2px)), Extract mode toggle, Save/Extract button, multi-PDF insert support, before-first/after-last insert points removed |
+| `frontend/src/pages/OrganizePage.tsx` | ✅ Redesigned — full-screen fixed workspace for Organize: left vertical PDF preview, right original-PDF thumbnail grid with 4 thumbnails per row, insert-source strip at bottom, checkbox-only selection, click-to-preview thumbnails, drag one inserted page between original pages |
 | `frontend/src/pages/SplitPage.tsx` | ✅ Written — single-PDF upload + blue-to-red scissor split lines + ZIP download |
 | `frontend/src/pages/ReorderPage.tsx` | ✅ Written — @dnd-kit sortable 5-col grid, drag ghost overlay, Save/Revert, job + download |
 | `frontend/src/pages/PageNumbersPage.tsx` | ✅ Written — two-panel layout, single/facing modes, 2×2 PositionGrid, page range, format options, text style, job + download |
@@ -228,6 +228,16 @@ frontend/
 - `SplitPage.tsx` — redesigned: single upload-drop zone, split lines turn blue (idle/hover) → red (active); scissor icon color matches line state.
 - `frontend/src/services/api.ts` — replaced axios blob downloads with native `fetch()` for `downloadJobResult` and `downloadDocument`.
 
+### 🔧 Frontend — Fixed / Improved (2026-06-07)
+
+- `frontend/src/pages/OrganizePage.tsx` — redesigned Organize into a full-screen split workspace. The left side shows a readable vertical continuous PDF preview. The right side shows original-PDF thumbnails in exactly 4 columns.
+- `frontend/src/pages/OrganizePage.tsx` — changed thumbnail behavior: clicking a thumbnail previews that PDF/page on the left; selecting pages is done only through the small checkbox in the thumbnail's top-left corner.
+- `frontend/src/pages/OrganizePage.tsx` — replaced the old insert-mode plus-icon/gap-click logic. The Insert icon now imports a second PDF, shows its thumbnails in a single horizontal strip at the bottom of the right panel, and supports dragging one inserted page into a gap between original pages.
+- `frontend/src/pages/OrganizePage.tsx` — fixed Organize import failure by using `PREVIEW_WIDTH = 800`, matching the backend `/documents/{id}/thumbnails` validation limit (`width <= 800`). The previous `900` request caused upload to succeed but thumbnail loading to fail.
+- `frontend/src/components/ui/Layout.tsx` — Organize route now bypasses the shared centered `max-w-7xl` page wrapper and hides the footer so the workspace can use the full screen.
+- `frontend/src/pages/OrganizePage.tsx` + `frontend/src/components/ui/Layout.tsx` — Organize is fixed-height with `overflow-hidden` at the page level. Only the left PDF preview pane and right thumbnail pane scroll vertically.
+- Verification: `http://localhost:5175/` returned HTTP 200, and `npx tsc --noEmit --noUnusedLocals false --noUnusedParameters false` passed.
+
 ---
 
 ## 4. Backend — API Reference
@@ -249,7 +259,7 @@ frontend/
 | `GET` | `/api/documents/{id}` | Get a single document |
 | `DELETE` | `/api/documents/{id}` | Delete a document |
 | `GET` | `/api/documents/{id}/download` | Download the original PDF |
-| `GET` | `/api/documents/{id}/thumbnails` | Get page thumbnails (base64 PNG) for Split UI |
+| `GET` | `/api/documents/{id}/thumbnails` | Get page thumbnails/previews (base64 PNG) for tool UIs; `width` query is validated from 50 to 800 px |
 
 ### Jobs
 
@@ -428,6 +438,40 @@ All other tools work independently. See their respective pages under the nav bar
 1. **Ordering Fix:** Update `iou_matching.py` so that a `LayoutBlock` computes a "tight" bounding box based exactly on the `TextElements` it contains, rather than blindly inheriting the YOLO region's sloppy bounding box.
 2. **Table Heuristic Fix:** Update `pipeline.py` to bypass the implicit `use_table` heuristic if the blocks are classified as `plain text` or `title`, ensuring text isn't accidentally swallowed.
 3. **Image Scaling Fix:** Update `processors.py` to calculate the physical width of the image from its PDF coordinates (`(x1 - x0) / 72.0` inches) and pass that calculated width (capped at 6 inches) to `add_picture`.
+
+**Current Status (2026-06-01):** The PDF -> DOCX reconstruction edge-case fixes above have been implemented and verified against `Test.pdf`.
+
+Resolved:
+1. **Reference ordering:** `backend/src/yolo/iou_matching.py` now computes tight bounding boxes from matched text spans and avoids sorting text blocks by giant YOLO regions. Verification confirmed references `[1]` through `[19]` appear in order.
+2. **Dropped text near "Call Number: 2":** `backend/src/pipeline.py` now blocks implicit table-row detection for ordinary `plain text` / `title` rows, and `backend/src/docx_generator/processors.py` raises/falls back instead of silently producing empty table output. Verification confirmed `Call Number: 2` and `System: External Move Validator system prompt` are present.
+3. **Image/table scaling:** `backend/src/docx_generator/processors.py` now inserts figures/tables using the physical size implied by the PDF bbox width and height, rather than forcing every image to `max_image_width`.
+4. **Original PDF page numbers:** `backend/src/pipeline.py` filters standalone centered numeric footer blocks on every page, preventing artifacts such as `2 as self-critique...` and standalone `3` before the Figure 2 caption.
+5. **Author/metadata rows:** short same-line metadata rows are no longer reconstructed as borderless tables. `process_spaced_metadata_row()` renders them as tab-spaced paragraphs, preserving internal line breaks and using per-line minimum span `x0` coordinates from PyMuPDF. Verification output showed author name/university/email rows use different tab positions based on their extracted coordinates.
+
+Verification artifacts:
+- `backend/data/outputs/verification/Test_verify_backend.docx`
+- `backend/data/outputs/verification/Test_spaced_authors.docx`
+- `backend/data/outputs/verification/Test_author_tabs_absolute.docx`
+- `backend/data/outputs/verification/Test_author_line_coords.docx`
+
+**Current Status (2026-06-07):** Additional PDF -> DOCX reconstruction fixes were implemented and verified.
+
+Resolved:
+1. **Caption/text colors:** `backend/src/docx_generator/processors.py` now strictly applies PyMuPDF span colors per run; when no color is available, default text color is black.
+2. **Duplicate table images:** `backend/src/yolo/iou_matching.py` tracks `layout_region_index` in `LayoutBlock.extra`, and `backend/src/pipeline.py` uses it to avoid adding the same YOLO table region twice. Table/figure image crops continue to use the raw YOLO bbox, while tight text bbox is kept separately for text-ordering logic.
+3. **Table caption overlap trimming:** `backend/src/pipeline.py` trims obvious caption overlap from table image crops using nearby text/caption geometry, avoiding the duplicated Table 1 crop artifact seen in the verification document.
+4. **OpenVINO model export workflow:** `backend/src/model_loader.py` now uses the default `yolov10_openvino_model` export folder as a temporary location and moves the result to a size-specific model folder. Old default-folder backups are no longer needed.
+5. **YOLO input size:** `backend/src/model_loader.py` currently uses `INPUT_SIZE = 896`, selected as the practical quality/speed balance after testing larger sizes.
+
+Verification artifacts:
+- `backend/data/outputs/verification/Test_option2_896.docx`
+- `backend/data/outputs/verification/Test_option2_896_trimmed.docx`
+- `backend/data/outputs/verification/Test_option2_960.docx` (tested but not preferred; 960 was worse/slower than 896)
+
+Remaining reconstruction concerns:
+1. DOCX pagination still differs from PDF pagination because Word layout metrics do not exactly match PDF layout.
+2. The pipeline still relies on heuristics for metadata rows, footer filtering, implicit table detection, and paragraph merging.
+3. Performance remains a separate concern; OpenVINO inference improved practical runtime, but reconstruction still needs profiling before production polish.
 
 ---
 

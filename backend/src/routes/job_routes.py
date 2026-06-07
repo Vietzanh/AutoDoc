@@ -14,7 +14,7 @@ from src.models.database import get_session
 from src.models.database_models import User, JobStatus
 from src.models.schemas import (
     JobRead, JobListResponse,
-    ReconstructRequest, CombineRequest,
+    ReconstructRequest, MergeRequest,
     SplitRequest, SplitPartsResponse,
     OrganizeRequest, ExtractRequest,
     ReorderRequest,
@@ -69,15 +69,16 @@ def create_reconstruct_job(
     return _job_to_read(job)
 
 
-# ── Combine ───────────────────────────────────────────────────────────────────
+# ── Merge ─────────────────────────────────────────────────────────────────────
 
-@router.post("/combine", response_model=JobRead, status_code=status.HTTP_202_ACCEPTED)
-def create_combine_job(
-    request: CombineRequest,
+@router.post("/merge", response_model=JobRead, status_code=status.HTTP_202_ACCEPTED)
+@router.post("/combine", response_model=JobRead, status_code=status.HTTP_202_ACCEPTED, include_in_schema=False)
+def create_merge_job(
+    request: MergeRequest,
     session: Session = Depends(get_session),
     current_user: User = Depends(get_current_user),
 ):
-    """Start a combine PDFs job. Pass ordered list of document IDs."""
+    """Start a merge PDFs job. Pass ordered list of document IDs."""
     doc_service = DocumentService(session)
     for doc_id in request.document_ids:
         doc = doc_service.get(doc_id)
@@ -88,7 +89,7 @@ def create_combine_job(
             )
 
     service = JobService(session)
-    job = service.create_combine_job(
+    job = service.create_merge_job(
         user_id=current_user.id,
         document_ids=request.document_ids,
         output_filename=request.output_filename,

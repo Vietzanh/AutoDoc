@@ -10,7 +10,7 @@ import cv2
 import numpy as np
 from docx import Document
 from docx.enum.text import WD_ALIGN_PARAGRAPH
-from docx.shared import Inches, Pt
+from docx.shared import Inches, Pt, RGBColor
 
 from src.utils import (
     clean_font_name,
@@ -102,10 +102,25 @@ def _metadata_line_x0(line, fallback_x0):
     return min(span["bbox"][0] for span in line)
 
 
-def _add_metadata_span_run(paragraph, span):
-    elem = span["element"]
-    run = paragraph.add_run(sanitize_text_for_xml(span["text"]))
+def _rgb_from_pdf_color(color):
+    if color is None:
+        return RGBColor(0, 0, 0)
+
+    try:
+        color_int = int(color)
+    except (TypeError, ValueError):
+        return RGBColor(0, 0, 0)
+
+    return RGBColor(
+        (color_int >> 16) & 0xFF,
+        (color_int >> 8) & 0xFF,
+        color_int & 0xFF,
+    )
+
+
+def _apply_span_style(run, elem=None):
     run.font.name = "Times New Roman"
+    run.font.color.rgb = _rgb_from_pdf_color(getattr(elem, "color", None))
 
     if elem is not None and elem.font_size is not None:
         run.font.size = Pt(round_font_size(elem.font_size))
@@ -115,6 +130,11 @@ def _add_metadata_span_run(paragraph, span):
         run.italic = (elem.font_flags & 8) != 0
 
     return run
+
+
+def _add_metadata_span_run(paragraph, span):
+    run = paragraph.add_run(sanitize_text_for_xml(span["text"]))
+    return _apply_span_style(run, span["element"])
 
 
 def should_merge_with_previous_block(prev_block, curr_block):
@@ -332,7 +352,7 @@ def process_table_row(docx_doc, row, section, page_width_pts):
                     p.paragraph_format.space_after = Pt(0)
                     p.alignment = WD_ALIGN_PARAGRAPH.CENTER
                     run = p.add_run(sanitize_text_for_xml(line.strip()))
-                    run.font.name = "Times New Roman"
+                    _apply_span_style(run)
                     inserted_text = True
             continue
 
@@ -369,15 +389,7 @@ def process_table_row(docx_doc, row, section, page_width_pts):
                 run = p.add_run(sanitize_text_for_xml(text_content))
                 if text_content.strip():
                     inserted_text = True
-                run.font.name = "Times New Roman"
-
-                if elem.font_size is not None:
-                    rounded_size = round_font_size(elem.font_size)
-                    run.font.size = Pt(rounded_size)
-
-                if elem.font_flags is not None:
-                    run.bold = (elem.font_flags & 16) != 0
-                    run.italic = (elem.font_flags & 8) != 0
+                _apply_span_style(run, elem)
 
     if not inserted_text:
         _remove_table(table)
@@ -499,13 +511,7 @@ def process_text_block(
                 if not text_content.endswith(" "):
                     text_content += " "
                 run = p.add_run(sanitize_text_for_xml(text_content))
-                run.font.name = "Times New Roman"
-                if elem.font_size is not None:
-                    rounded_size = round_font_size(elem.font_size)
-                    run.font.size = Pt(rounded_size)
-                if elem.font_flags is not None:
-                    run.bold = (elem.font_flags & 16) != 0
-                    run.italic = (elem.font_flags & 8) != 0
+                _apply_span_style(run, elem)
     else:
         font_sizes = [e.font_size for e in block.elements if e.font_size is not None]
         avg_font_size = sum(font_sizes) / len(font_sizes) if font_sizes else 12.0
@@ -547,12 +553,6 @@ def process_text_block(
                 if not text_content.endswith(" "):
                     text_content += " "
                 run = p.add_run(sanitize_text_for_xml(text_content))
-                run.font.name = "Times New Roman"
-                if elem.font_size is not None:
-                    rounded_size = round_font_size(elem.font_size)
-                    run.font.size = Pt(rounded_size)
-                if elem.font_flags is not None:
-                    run.bold = (elem.font_flags & 16) != 0
-                    run.italic = (elem.font_flags & 8) != 0
+                _apply_span_style(run, elem)
 
     return p, block_type, first_title_processed, y1_pdf, should_merge

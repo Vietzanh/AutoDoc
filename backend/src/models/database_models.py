@@ -21,7 +21,7 @@ class JobStatus(str, Enum):
 
 class JobTool(str, Enum):
     RECONSTRUCT = "reconstruct"       # PDF → DOCX
-    COMBINE = "combine"               # Combine PDFs
+    MERGE = "merge"                   # Merge PDFs
     SPLIT = "split"                   # Split PDF
     ORGANIZE = "organize"             # Organize pages
     EXTRACT = "extract"               # Extract pages
@@ -58,7 +58,7 @@ class Document(SQLModel, table=True):
 
 
 class Job(SQLModel, table=True):
-    """An async processing job (PDF→DOCX, combine, split, etc.)."""
+    """An async processing job (PDF→DOCX, merge, split, etc.)."""
     __tablename__ = "jobs"
 
     id: int | None = Field(default=None, primary_key=True)
@@ -66,7 +66,7 @@ class Job(SQLModel, table=True):
     document_id: int | None = Field(default=None, foreign_key="documents.id", index=True)
     tool: str = Field(max_length=50)                # JobTool enum value
     status: str = Field(default=JobStatus.PENDING.value, max_length=20)
-    input_document_ids: str = Field(default="[]")   # JSON list of doc IDs (for combine)
+    input_document_ids: str = Field(default="[]")   # JSON list of doc IDs or tool config
     output_filename: str | None = Field(default=None, max_length=255)
     output_path: str | None = Field(default=None, max_length=512)
     error_message: str | None = Field(default=None, max_length=1000)
