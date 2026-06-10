@@ -125,8 +125,8 @@ export default function HomePage() {
 
   return (
     <div className="bg-gray-50">
-      <section className="bg-white">
-        <div className="flex min-h-[430px] flex-col items-center justify-center px-6 pt-16 text-center">
+      <section className="bg-blue-700">
+        <div className="flex min-h-[540px] flex-col items-center justify-center bg-gradient-to-b from-white from-[54%] via-blue-100 via-[74%] to-blue-700 px-6 pb-28 pt-16 text-center">
           <div className="flex items-center gap-6">
             <AppLogo className="h-20 w-20" />
             <h1 className="text-5xl font-bold text-gray-950">AutoDoc</h1>
@@ -134,7 +134,6 @@ export default function HomePage() {
           <p className="mt-10 text-5xl font-bold text-gray-950">Explore all AutoDoc features</p>
           <p className="mt-6 text-xl font-medium text-gray-700">All are 100% FREE and easy to use!</p>
         </div>
-        <div className="h-28 bg-gradient-to-b from-blue-100 via-blue-400 to-blue-700" />
       </section>
 
       <section className="border-b border-gray-200 bg-white">

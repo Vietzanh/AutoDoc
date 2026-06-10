@@ -1,7 +1,7 @@
 # AutoDoc — Project Context
 
-> **Last updated:** 2026-06-07
-> **Status:** Combine + Organize + Split + Reorder + Page Numbers done · Organize split-screen workspace in progress/verified on dev server · Reconstruction edge-case fixes verified · Crop backend/frontend remaining · DevOps pending
+> **Last updated:** 2026-06-08
+> **Status:** Combine + Organize + Split + Reorder + Page Numbers done · Organize full-screen split workspace fixed and verified on `5175` · Reconstruction edge-case fixes verified · Crop backend/frontend remaining · DevOps pending
 
 ---
 
