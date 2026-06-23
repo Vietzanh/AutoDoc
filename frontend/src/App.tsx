@@ -12,6 +12,7 @@ import OrganizePage from "./pages/OrganizePage";
 import ReorderPage from "./pages/ReorderPage";
 import PageNumbersPage from "./pages/PageNumbersPage";
 import CropPage from "./pages/CropPage";
+import InsertPage from "./pages/InsertPage";
 import DashboardPage from "./pages/DashboardPage";
 
 function ProtectedRoute({ children }: { children: React.ReactNode }) {
@@ -115,6 +116,14 @@ export default function App() {
         element={
           <ProtectedRoute>
             <OrganizePage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/insert"
+        element={
+          <ProtectedRoute>
+            <InsertPage />
           </ProtectedRoute>
         }
       />

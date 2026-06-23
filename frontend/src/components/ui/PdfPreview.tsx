@@ -102,7 +102,7 @@ export function PdfPreview({ fileUrl }: PdfPreviewProps) {
             renderTextLayer={false}
             renderAnnotationLayer={false}
             className="shadow-md [&>canvas]:!max-w-full [&>canvas]:!h-auto"
-            width={1200}
+            scale={2.0}
           />
         </Document>
       </div>

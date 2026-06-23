@@ -883,3 +883,180 @@ Saving DOCX to: D:\GR2\AutoDoc\backend\data\outputs\5\Test.docx
 2026-06-20 21:44:31,516 - [Timing] Saving DOCX took: 0.0978s
 2026-06-20 21:44:31,516 - [Timing] Total process_pdf took: 28.1641s
 2026-06-20 21:44:31,516 - Done!
+2026-06-23 22:44:13,347 - HTTP Request: HEAD https://huggingface.co/juliozhao/DocLayout-YOLO-DocStructBench/resolve/main/doclayout_yolo_docstructbench_imgsz1024.pt "HTTP/1.1 302 Found"
+2026-06-23 22:44:17,322 - [Timing] Rendering pages took: 3.8310s
+2026-06-23 22:44:17,322 - Running YOLO inference...
+2026-06-23 22:44:36,167 - [Timing] YOLO inference (all batches) took: 18.8452s
+2026-06-23 22:44:36,180 - 
+Processing page 1/33...
+2026-06-23 22:44:36,188 - [Timing] Page 0 _get_spans took: 0.0075s
+2026-06-23 22:44:36,192 - [Timing] Page 0 image extraction took: 0.0036s
+2026-06-23 22:44:36,297 - [Timing] Page 0 _process_page + setup took: 0.1174s
+2026-06-23 22:44:36,305 - 
+Processing page 2/33...
+2026-06-23 22:44:36,310 - [Timing] Page 1 _get_spans took: 0.0044s
+2026-06-23 22:44:36,363 - [Timing] Page 1 image extraction took: 0.0523s
+2026-06-23 22:44:36,458 - [Timing] Page 1 _process_page + setup took: 0.1528s
+2026-06-23 22:44:36,465 - 
+Processing page 3/33...
+2026-06-23 22:44:36,471 - [Timing] Page 2 _get_spans took: 0.0057s
+2026-06-23 22:44:36,474 - [Timing] Page 2 image extraction took: 0.0022s
+2026-06-23 22:44:36,602 - [Timing] Page 2 _process_page + setup took: 0.1366s
+2026-06-23 22:44:36,611 - 
+Processing page 4/33...
+2026-06-23 22:44:36,614 - [Timing] Page 3 _get_spans took: 0.0026s
+2026-06-23 22:44:36,716 - [Timing] Page 3 image extraction took: 0.1013s
+2026-06-23 22:44:36,770 - [Timing] Page 3 _process_page + setup took: 0.1581s
+2026-06-23 22:44:36,778 - 
+Processing page 5/33...
+2026-06-23 22:44:36,812 - [Timing] Page 4 _get_spans took: 0.0332s
+2026-06-23 22:44:36,836 - [Timing] Page 4 image extraction took: 0.0236s
+2026-06-23 22:44:36,946 - [Timing] Page 4 _process_page + setup took: 0.1674s
+2026-06-23 22:44:36,954 - 
+Processing page 6/33...
+2026-06-23 22:44:36,959 - [Timing] Page 5 _get_spans took: 0.0052s
+2026-06-23 22:44:36,962 - [Timing] Page 5 image extraction took: 0.0023s
+2026-06-23 22:44:37,054 - [Timing] Page 5 _process_page + setup took: 0.1002s
+2026-06-23 22:44:37,062 - 
+Processing page 7/33...
+2026-06-23 22:44:37,095 - [Timing] Page 6 _get_spans took: 0.0328s
+2026-06-23 22:44:37,118 - [Timing] Page 6 image extraction took: 0.0235s
+2026-06-23 22:44:37,151 - [Timing] Page 6 _process_page + setup took: 0.0889s
+2026-06-23 22:44:37,164 - 
+Processing page 8/33...
+2026-06-23 22:44:37,216 - [Timing] Page 7 _get_spans took: 0.0519s
+2026-06-23 22:44:37,236 - [Timing] Page 7 image extraction took: 0.0203s
+2026-06-23 22:44:37,315 - [Timing] Page 7 _process_page + setup took: 0.1516s
+2026-06-23 22:44:37,323 - 
+Processing page 9/33...
+2026-06-23 22:44:37,343 - [Timing] Page 8 _get_spans took: 0.0201s
+2026-06-23 22:44:37,356 - [Timing] Page 8 image extraction took: 0.0133s
+2026-06-23 22:44:37,449 - [Timing] Page 8 _process_page + setup took: 0.1261s
+2026-06-23 22:44:37,459 - 
+Processing page 10/33...
+2026-06-23 22:44:37,477 - [Timing] Page 9 _get_spans took: 0.0184s
+2026-06-23 22:44:37,495 - [Timing] Page 9 image extraction took: 0.0178s
+2026-06-23 22:44:37,567 - [Timing] Page 9 _process_page + setup took: 0.1080s
+2026-06-23 22:44:37,575 - 
+Processing page 11/33...
+2026-06-23 22:44:37,581 - [Timing] Page 10 _get_spans took: 0.0059s
+2026-06-23 22:44:37,584 - [Timing] Page 10 image extraction took: 0.0023s
+2026-06-23 22:44:37,729 - [Timing] Page 10 _process_page + setup took: 0.1542s
+2026-06-23 22:44:37,739 - 
+Processing page 12/33...
+2026-06-23 22:44:37,747 - [Timing] Page 11 _get_spans took: 0.0074s
+2026-06-23 22:44:37,750 - [Timing] Page 11 image extraction took: 0.0025s
+2026-06-23 22:44:37,914 - [Timing] Page 11 _process_page + setup took: 0.1747s
+2026-06-23 22:44:37,923 - 
+Processing page 13/33...
+2026-06-23 22:44:37,927 - [Timing] Page 12 _get_spans took: 0.0031s
+2026-06-23 22:44:37,929 - [Timing] Page 12 image extraction took: 0.0015s
+2026-06-23 22:44:38,015 - [Timing] Page 12 _process_page + setup took: 0.0915s
+2026-06-23 22:44:38,023 - 
+Processing page 14/33...
+2026-06-23 22:44:38,027 - [Timing] Page 13 _get_spans took: 0.0032s
+2026-06-23 22:44:38,029 - [Timing] Page 13 image extraction took: 0.0015s
+2026-06-23 22:44:38,113 - [Timing] Page 13 _process_page + setup took: 0.0894s
+2026-06-23 22:44:38,120 - 
+Processing page 15/33...
+2026-06-23 22:44:38,123 - [Timing] Page 14 _get_spans took: 0.0027s
+2026-06-23 22:44:38,124 - [Timing] Page 14 image extraction took: 0.0012s
+2026-06-23 22:44:38,195 - [Timing] Page 14 _process_page + setup took: 0.0747s
+2026-06-23 22:44:38,202 - 
+Processing page 16/33...
+2026-06-23 22:44:38,206 - [Timing] Page 15 _get_spans took: 0.0028s
+2026-06-23 22:44:38,207 - [Timing] Page 15 image extraction took: 0.0013s
+2026-06-23 22:44:38,301 - [Timing] Page 15 _process_page + setup took: 0.0979s
+2026-06-23 22:44:38,307 - 
+Processing page 17/33...
+2026-06-23 22:44:38,309 - [Timing] Page 16 _get_spans took: 0.0018s
+2026-06-23 22:44:38,310 - [Timing] Page 16 image extraction took: 0.0009s
+2026-06-23 22:44:38,390 - [Timing] Page 16 _process_page + setup took: 0.0827s
+2026-06-23 22:44:38,397 - 
+Processing page 18/33...
+2026-06-23 22:44:38,399 - [Timing] Page 17 _get_spans took: 0.0017s
+2026-06-23 22:44:38,399 - [Timing] Page 17 image extraction took: 0.0007s
+2026-06-23 22:44:38,506 - [Timing] Page 17 _process_page + setup took: 0.1092s
+2026-06-23 22:44:38,514 - 
+Processing page 19/33...
+2026-06-23 22:44:38,518 - [Timing] Page 18 _get_spans took: 0.0039s
+2026-06-23 22:44:38,520 - [Timing] Page 18 image extraction took: 0.0019s
+2026-06-23 22:44:38,625 - [Timing] Page 18 _process_page + setup took: 0.1114s
+2026-06-23 22:44:38,634 - 
+Processing page 20/33...
+2026-06-23 22:44:38,639 - [Timing] Page 19 _get_spans took: 0.0047s
+2026-06-23 22:44:38,641 - [Timing] Page 19 image extraction took: 0.0017s
+2026-06-23 22:44:38,751 - [Timing] Page 19 _process_page + setup took: 0.1169s
+2026-06-23 22:44:38,760 - 
+Processing page 21/33...
+2026-06-23 22:44:38,763 - [Timing] Page 20 _get_spans took: 0.0028s
+2026-06-23 22:44:38,765 - [Timing] Page 20 image extraction took: 0.0014s
+2026-06-23 22:44:38,857 - [Timing] Page 20 _process_page + setup took: 0.0963s
+2026-06-23 22:44:38,864 - 
+Processing page 22/33...
+2026-06-23 22:44:38,867 - [Timing] Page 21 _get_spans took: 0.0027s
+2026-06-23 22:44:38,868 - [Timing] Page 21 image extraction took: 0.0012s
+2026-06-23 22:44:38,975 - [Timing] Page 21 _process_page + setup took: 0.1109s
+2026-06-23 22:44:38,984 - 
+Processing page 23/33...
+2026-06-23 22:44:38,987 - [Timing] Page 22 _get_spans took: 0.0034s
+2026-06-23 22:44:38,989 - [Timing] Page 22 image extraction took: 0.0015s
+2026-06-23 22:44:39,083 - [Timing] Page 22 _process_page + setup took: 0.0995s
+2026-06-23 22:44:39,091 - 
+Processing page 24/33...
+2026-06-23 22:44:39,096 - [Timing] Page 23 _get_spans took: 0.0051s
+2026-06-23 22:44:39,098 - [Timing] Page 23 image extraction took: 0.0021s
+2026-06-23 22:44:39,193 - [Timing] Page 23 _process_page + setup took: 0.1024s
+2026-06-23 22:44:39,201 - 
+Processing page 25/33...
+2026-06-23 22:44:39,207 - [Timing] Page 24 _get_spans took: 0.0054s
+2026-06-23 22:44:39,209 - [Timing] Page 24 image extraction took: 0.0021s
+2026-06-23 22:44:39,274 - [Timing] Page 24 _process_page + setup took: 0.0733s
+2026-06-23 22:44:39,282 - 
+Processing page 26/33...
+2026-06-23 22:44:39,286 - [Timing] Page 25 _get_spans took: 0.0032s
+2026-06-23 22:44:39,287 - [Timing] Page 25 image extraction took: 0.0014s
+2026-06-23 22:44:39,346 - [Timing] Page 25 _process_page + setup took: 0.0641s
+2026-06-23 22:44:39,354 - 
+Processing page 27/33...
+2026-06-23 22:44:39,359 - [Timing] Page 26 _get_spans took: 0.0041s
+2026-06-23 22:44:39,361 - [Timing] Page 26 image extraction took: 0.0027s
+2026-06-23 22:44:39,456 - [Timing] Page 26 _process_page + setup took: 0.1021s
+2026-06-23 22:44:39,464 - 
+Processing page 28/33...
+2026-06-23 22:44:39,466 - [Timing] Page 27 _get_spans took: 0.0018s
+2026-06-23 22:44:39,468 - [Timing] Page 27 image extraction took: 0.0017s
+2026-06-23 22:44:39,577 - [Timing] Page 27 _process_page + setup took: 0.1137s
+2026-06-23 22:44:39,585 - 
+Processing page 29/33...
+2026-06-23 22:44:39,588 - [Timing] Page 28 _get_spans took: 0.0026s
+2026-06-23 22:44:39,589 - [Timing] Page 28 image extraction took: 0.0010s
+2026-06-23 22:44:39,683 - [Timing] Page 28 _process_page + setup took: 0.0977s
+2026-06-23 22:44:39,690 - 
+Processing page 30/33...
+2026-06-23 22:44:39,693 - [Timing] Page 29 _get_spans took: 0.0026s
+2026-06-23 22:44:39,695 - [Timing] Page 29 image extraction took: 0.0013s
+2026-06-23 22:44:39,803 - [Timing] Page 29 _process_page + setup took: 0.1125s
+2026-06-23 22:44:39,816 - 
+Processing page 31/33...
+2026-06-23 22:44:39,821 - [Timing] Page 30 _get_spans took: 0.0053s
+2026-06-23 22:44:39,825 - [Timing] Page 30 image extraction took: 0.0015s
+2026-06-23 22:44:39,936 - [Timing] Page 30 _process_page + setup took: 0.1199s
+2026-06-23 22:44:39,943 - 
+Processing page 32/33...
+2026-06-23 22:44:39,946 - [Timing] Page 31 _get_spans took: 0.0021s
+2026-06-23 22:44:39,947 - [Timing] Page 31 image extraction took: 0.0011s
+2026-06-23 22:44:40,028 - [Timing] Page 31 _process_page + setup took: 0.0841s
+2026-06-23 22:44:40,037 - 
+Processing page 33/33...
+2026-06-23 22:44:40,039 - [Timing] Page 32 _get_spans took: 0.0019s
+2026-06-23 22:44:40,040 - [Timing] Page 32 image extraction took: 0.0010s
+2026-06-23 22:44:40,108 - [Timing] Page 32 _process_page + setup took: 0.0714s
+2026-06-23 22:44:40,109 - [Timing] Total page processing loop took: 3.9359s
+2026-06-23 22:44:40,109 - 
+All pages processed!
+2026-06-23 22:44:40,109 - 
+Saving DOCX to: D:\GR2\AutoDoc\backend\data\outputs\15\Test.docx
+2026-06-23 22:44:40,204 - [Timing] Saving DOCX took: 0.0947s
+2026-06-23 22:44:40,204 - [Timing] Total process_pdf took: 26.8283s
+2026-06-23 22:44:40,204 - Done!

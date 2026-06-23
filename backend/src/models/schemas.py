@@ -177,6 +177,23 @@ class OrganizeRequest(BaseModel):
     )
 
 
+# ── Insert ────────────────────────────────────────────────────────────────────
+
+class InsertPageDef(BaseModel):
+    original_index: int = Field(description="0-based index of this page in its source PDF")
+    source_document_id: int = Field(description="ID of the PDF document this page comes from")
+
+class InsertRequest(BaseModel):
+    primary_document_id: int = Field(description="ID of the main PDF document")
+    secondary_document_id: int = Field(description="ID of the PDF document to insert from")
+    pages: list[InsertPageDef] = Field(description="Complete list of pages for the final PDF in order.")
+    output_filename: str = Field(
+        default="inserted.pdf",
+        max_length=255,
+        description="Name of the output PDF file"
+    )
+
+
 # ── Extract ────────────────────────────────────────────────────────────────────
 
 class ExtractRequest(BaseModel):

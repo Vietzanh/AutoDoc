@@ -32,14 +32,8 @@ interface PageState {
   deleted: boolean;
 }
 
-interface InsertSource {
-  docId: number;
-  name: string;
-  pages: PageState[];
-}
 
-type AppMode = "normal" | "insert" | "extract";
-type PreviewSource = "primary" | "insert";
+type AppMode = "normal" | "extract";
 
 const ROTATE_CW = (rotation: number) => rotation + 90;
 const ROTATE_CCW = (rotation: number) => rotation - 90;
@@ -70,28 +64,6 @@ function buildPages(
     };
   });
 }
-
-function cloneInsertedPage(page: PageState, copyId: number): PageState {
-  return {
-    ...page,
-    id: `inserted-${page.sourceDocId}-${page.originalIndex}-${copyId}`,
-    selected: false,
-    deleted: false,
-  };
-}
-
-function IconInsert() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}
-         strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
-      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-      <polyline points="14 2 14 8 20 8" />
-      <line x1="15" y1="17" x2="15" y2="21" />
-      <line x1="13" y1="19" x2="17" y2="19" />
-    </svg>
-  );
-}
-
 function IconExtract() {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}
@@ -147,6 +119,8 @@ function PreviewPane({
 }) {
   const scrollerRef = useRef<HTMLDivElement>(null);
   const pageRefs = useRef<Record<string, HTMLDivElement | null>>({});
+  const isScrollingProgrammatically = useRef(false);
+  const scrollTimeout = useRef<number | null>(null);
 
   useEffect(() => {
     const scroller = scrollerRef.current;
@@ -154,6 +128,8 @@ function PreviewPane({
 
     const observer = new IntersectionObserver(
       (entries) => {
+        if (isScrollingProgrammatically.current) return;
+
         const visibleEntry = entries
           .filter((entry) => entry.isIntersecting)
           .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
@@ -179,7 +155,14 @@ function PreviewPane({
 
   useEffect(() => {
     if (!activePageId) return;
+    
+    isScrollingProgrammatically.current = true;
     pageRefs.current[activePageId]?.scrollIntoView({ block: "start", behavior: "smooth" });
+    
+    if (scrollTimeout.current !== null) window.clearTimeout(scrollTimeout.current);
+    scrollTimeout.current = window.setTimeout(() => {
+      isScrollingProgrammatically.current = false;
+    }, 800);
   }, [activePageId]);
 
   return (
@@ -337,37 +320,6 @@ function PageTile({
   );
 }
 
-function DropSlot({
-  index,
-  onDropPage,
-}: {
-  index: number;
-  onDropPage: (pageId: string, index: number) => void;
-}) {
-  const [isOver, setIsOver] = useState(false);
-
-  return (
-    <div
-      onDragOver={(event) => {
-        event.preventDefault();
-        setIsOver(true);
-      }}
-      onDragLeave={() => setIsOver(false)}
-      onDrop={(event) => {
-        event.preventDefault();
-        setIsOver(false);
-        const pageId = event.dataTransfer.getData("application/autodoc-page-id");
-        if (pageId) {
-          onDropPage(pageId, index);
-        }
-      }}
-      className={`pointer-events-auto absolute -left-2 top-0 z-10 h-40 w-4 rounded transition-colors ${
-        isOver ? "bg-blue-500" : "bg-transparent hover:bg-blue-200"
-      }`}
-      title="Drop inserted page here"
-    />
-  );
-}
 
 function OriginalThumbnailGrid({
   pages,
@@ -378,7 +330,6 @@ function OriginalThumbnailGrid({
   onRotateCW,
   onRotateCCW,
   onDelete,
-  onDropInsertedPage,
 }: {
   pages: PageState[];
   activePageId: string | null;
@@ -388,24 +339,23 @@ function OriginalThumbnailGrid({
   onRotateCW: (pageId: string) => void;
   onRotateCCW: (pageId: string) => void;
   onDelete: (pageId: string) => void;
-  onDropInsertedPage: (pageId: string, index: number) => void;
-}) {
+  }) {
   const thumbnailRefs = useRef<Record<string, HTMLDivElement | null>>({});
 
   useEffect(() => {
     if (!activePageId) return;
-    thumbnailRefs.current[activePageId]?.scrollIntoView({ block: "nearest", behavior: "smooth" });
+    // Use nearest and auto to prevent conflict with PreviewPane's smooth scroll
+    thumbnailRefs.current[activePageId]?.scrollIntoView({ block: "nearest", behavior: "auto" });
   }, [activePageId]);
 
   return (
     <div className="grid grid-cols-4 gap-x-4 gap-y-5 pr-1">
-      {pages.map((page, index) => (
+      {pages.map((page) => (
         <div
           key={page.id}
           ref={(node) => { thumbnailRefs.current[page.id] = node; }}
           className="relative flex justify-center"
         >
-          <DropSlot index={index} onDropPage={onDropInsertedPage} />
           <PageTile
             page={page}
             isActive={page.id === activePageId}
@@ -416,84 +366,26 @@ function OriginalThumbnailGrid({
             onRotateCCW={() => onRotateCCW(page.id)}
             onDelete={() => onDelete(page.id)}
           />
-          {index === pages.length - 1 && (
-            <div className="absolute -right-2 top-0">
-              <DropSlot index={pages.length} onDropPage={onDropInsertedPage} />
-            </div>
-          )}
+          
         </div>
       ))}
     </div>
   );
 }
 
-function InsertSourceStrip({
-  source,
-  activePageId,
-  onPreview,
-}: {
-  source: InsertSource;
-  activePageId: string | null;
-  onPreview: (pageId: string) => void;
-}) {
-  return (
-    <div className="border-t border-gray-200 bg-gray-50">
-      <div className="flex h-9 items-center justify-between px-3">
-        <p className="truncate text-xs font-medium text-gray-600" title={source.name}>
-          Insert source: {source.name}
-        </p>
-        <span className="text-xs text-gray-400">{source.pages.length} pages</span>
-      </div>
-      <div className="flex gap-3 overflow-x-auto px-3 pb-3">
-        {source.pages.map((page) => (
-          <button
-            key={page.id}
-            type="button"
-            draggable
-            onDragStart={(event) => {
-              event.dataTransfer.setData("application/autodoc-page-id", page.id);
-              event.dataTransfer.effectAllowed = "copy";
-            }}
-            onClick={() => onPreview(page.id)}
-            className="relative flex-shrink-0"
-            title={`Show or drag page ${page.originalIndex + 1}`}
-          >
-            <img
-              src={page.thumbnail}
-              alt={`Insert page ${page.originalIndex + 1}`}
-              className={`h-24 w-16 rounded border-2 object-cover transition-all ${
-                activePageId === page.id
-                  ? "border-blue-500 ring-2 ring-blue-200"
-                  : "border-gray-200 hover:border-gray-400"
-              }`}
-            />
-            <span className="pointer-events-none absolute bottom-1 left-1/2 -translate-x-1/2 rounded bg-black/60 px-1 py-0.5 text-[10px] text-white">
-              {page.originalIndex + 1}
-            </span>
-          </button>
-        ))}
-      </div>
-    </div>
-  );
-}
 
 export default function OrganizePage() {
   const navigate = useNavigate();
   const [primaryDocId, setPrimaryDocId] = useState<number | null>(null);
   const [primaryDocName, setPrimaryDocName] = useState("");
   const [pages, setPages] = useState<PageState[]>([]);
-  const [insertSource, setInsertSource] = useState<InsertSource | null>(null);
   const [mode, setMode] = useState<AppMode>("normal");
   const [outputFilename, setOutputFilename] = useState("organized.pdf");
   const [createdJob, setCreatedJob] = useState<Job | null>(null);
   const [outputBlobUrl, setOutputBlobUrl] = useState<string | null>(null);
   const [uploading, setUploading] = useState(false);
-  const [previewSource, setPreviewSource] = useState<PreviewSource>("primary");
   const [activePrimaryPageId, setActivePrimaryPageId] = useState<string | null>(null);
-  const [activeInsertPageId, setActiveInsertPageId] = useState<string | null>(null);
-  const insertInputRef = useRef<HTMLInputElement>(null);
-  const insertedCopyCounter = useRef(0);
-
+  
   const { job: polledJob } = useJobPoll(createdJob?.id ?? 0);
 
   const visiblePages = useMemo(() => pages.filter((page) => !page.deleted), [pages]);
@@ -513,12 +405,8 @@ export default function OrganizePage() {
     }
   }, [jobToShow, outputBlobUrl]);
 
-  const previewPages = previewSource === "insert" && insertSource
-    ? insertSource.pages
-    : visiblePages;
-  const activePreviewPageId = previewSource === "insert"
-    ? activeInsertPageId
-    : activePrimaryPageId;
+  const previewPages = visiblePages;
+  const activePreviewPageId = activePrimaryPageId;
 
   const loadDocumentPages = useCallback(async (docId: number, idPrefix: string) => {
     const [thumbnails, previews] = await Promise.all([
@@ -539,17 +427,14 @@ export default function OrganizePage() {
       setPrimaryDocId(doc.id);
       setPrimaryDocName(doc.original_filename);
       setPages(loadedPages);
-      setInsertSource(null);
-      setCreatedJob(null);
+        setCreatedJob(null);
       if (outputBlobUrl) {
         URL.revokeObjectURL(outputBlobUrl);
         setOutputBlobUrl(null);
       }
       setMode("normal");
-      setPreviewSource("primary");
-      setActivePrimaryPageId(loadedPages[0]?.id ?? null);
-      setActiveInsertPageId(null);
-      setOutputFilename(doc.original_filename.replace(/\.pdf$/i, "") + "_organized.pdf");
+        setActivePrimaryPageId(loadedPages[0]?.id ?? null);
+        setOutputFilename(doc.original_filename.replace(/\.pdf$/i, "") + "_organized.pdf");
       toast.success(`Uploaded: ${doc.original_filename}`);
     } catch {
       toast.error("Upload failed");
@@ -566,22 +451,13 @@ export default function OrganizePage() {
   });
 
   const showPrimaryPage = useCallback((pageId: string) => {
-    setPreviewSource("primary");
     setActivePrimaryPageId(pageId);
   }, []);
 
-  const showInsertPage = useCallback((pageId: string) => {
-    setPreviewSource("insert");
-    setActiveInsertPageId(pageId);
-  }, []);
-
+  
   const handleVisiblePreviewChange = useCallback((pageId: string) => {
-    if (previewSource === "insert") {
-      setActiveInsertPageId(pageId);
-    } else {
-      setActivePrimaryPageId(pageId);
-    }
-  }, [previewSource]);
+    setActivePrimaryPageId(pageId);
+  }, []);
 
   const toggleSelect = useCallback((id: string) => {
     setPages((prev) =>
@@ -637,63 +513,9 @@ export default function OrganizePage() {
     );
   }, []);
 
-  const handleInsertClick = useCallback(() => {
-    setMode("insert");
-    insertInputRef.current?.click();
-  }, []);
-
-  const handleInsertFile = useCallback(async (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
-    event.target.value = "";
-    if (!file || primaryDocId === null) return;
-
-    setUploading(true);
-    try {
-      const doc = await api.uploadDocument(file);
-      const loadedPages = await loadDocumentPages(doc.id, "insert-source");
-      setInsertSource({ docId: doc.id, name: doc.original_filename, pages: loadedPages });
-      setMode("insert");
-      setPreviewSource("insert");
-      setActiveInsertPageId(loadedPages[0]?.id ?? null);
-      toast.success(`Loaded insert source: ${doc.original_filename}`);
-    } catch {
-      toast.error("Failed to load insert PDF");
-    } finally {
-      setUploading(false);
-    }
-  }, [loadDocumentPages, primaryDocId]);
-
-  const handleDropInsertedPage = useCallback((sourcePageId: string, insertIndex: number) => {
-    if (!insertSource) return;
-    const sourcePage = insertSource.pages.find((page) => page.id === sourcePageId);
-    if (!sourcePage) return;
-
-    insertedCopyCounter.current += 1;
-    const insertedPage = cloneInsertedPage(sourcePage, insertedCopyCounter.current);
-
-    setPages((prev) => {
-      const visibleBeforeTarget = visiblePages.slice(0, insertIndex);
-      const previousVisibleId = visibleBeforeTarget[visibleBeforeTarget.length - 1]?.id;
-      const nextVisibleId = visiblePages[insertIndex]?.id;
-      let spliceIndex = prev.length;
-
-      if (nextVisibleId) {
-        spliceIndex = prev.findIndex((page) => page.id === nextVisibleId);
-      } else if (previousVisibleId) {
-        const previousIndex = prev.findIndex((page) => page.id === previousVisibleId);
-        spliceIndex = previousIndex >= 0 ? previousIndex + 1 : prev.length;
-      }
-
-      const next = [...prev];
-      next.splice(spliceIndex, 0, insertedPage);
-      return next;
-    });
-
-    setPreviewSource("primary");
-    setActivePrimaryPageId(insertedPage.id);
-    toast.success(`Inserted page ${sourcePage.originalIndex + 1}`);
-  }, [insertSource, visiblePages]);
-
+  
+  
+  
   const enterExtractMode = useCallback(() => setMode((prev) => prev === "extract" ? "normal" : "extract"), []);
 
   const handleSave = async () => {
@@ -760,7 +582,6 @@ export default function OrganizePage() {
     setPrimaryDocId(null);
     setPrimaryDocName("");
     setPages([]);
-    setInsertSource(null);
     setCreatedJob(null);
     if (outputBlobUrl) {
       URL.revokeObjectURL(outputBlobUrl);
@@ -768,9 +589,7 @@ export default function OrganizePage() {
     }
     setMode("normal");
     setOutputFilename("organized.pdf");
-    setPreviewSource("primary");
     setActivePrimaryPageId(null);
-    setActiveInsertPageId(null);
   };
 
   const handleDownload = async (jobId: number, filename: string) => {
@@ -832,13 +651,7 @@ export default function OrganizePage() {
             </div>
           )}
 
-          <input
-            ref={insertInputRef}
-            type="file"
-            accept="application/pdf"
-            className="hidden"
-            onChange={handleInsertFile}
-          />
+          
         </div>
       </div>
 
@@ -970,18 +783,7 @@ export default function OrganizePage() {
                         </button>
 
                         <div className="flex items-center gap-1">
-                          <button
-                            type="button"
-                            onClick={handleInsertClick}
-                            className={`flex h-9 w-9 items-center justify-center rounded-lg transition-colors ${
-                              mode === "insert"
-                                ? "bg-blue-500 text-white shadow-sm"
-                                : "border border-gray-200 bg-white text-gray-600 hover:bg-gray-50"
-                            }`}
-                            title="Load insert PDF"
-                          >
-                            <IconInsert />
-                          </button>
+                          
 
                           <button
                             type="button"
@@ -1036,24 +838,17 @@ export default function OrganizePage() {
                       )}
                       <OriginalThumbnailGrid
                         pages={visiblePages}
-                        activePageId={previewSource === "primary" ? activePrimaryPageId : null}
+                        activePageId={activePrimaryPageId}
                         allSelected={allVisibleSelected}
                         onPreview={showPrimaryPage}
                         onToggleSelect={toggleSelect}
                         onRotateCW={rotateCW}
                         onRotateCCW={rotateCCW}
                         onDelete={deletePage}
-                        onDropInsertedPage={handleDropInsertedPage}
                       />
                     </div>
 
-                    {insertSource && (
-                      <InsertSourceStrip
-                        source={insertSource}
-                        activePageId={previewSource === "insert" ? activeInsertPageId : null}
-                        onPreview={showInsertPage}
-                      />
-                    )}
+                    
                   </aside>
                 </div>
               </div>

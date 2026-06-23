@@ -6,7 +6,7 @@ export interface ToolDefinition {
   description: string;
   route: string;
   category: ToolCategory;
-  icon: "docx" | "merge" | "split" | "organize" | "reorder" | "numbers" | "crop";
+  icon: "docx" | "merge" | "split" | "organize" | "reorder" | "numbers" | "crop" | "insert";
 }
 
 export const convertTools: ToolDefinition[] = [
@@ -40,10 +40,18 @@ export const editTools: ToolDefinition[] = [
   {
     id: "organize-pdfs",
     name: "Organize PDFs",
-    description: "Preview, select, rotate, delete, and insert pages across PDF documents.",
+    description: "Preview, select, rotate, delete, and extract pages across PDF documents.",
     route: "/organize",
     category: "edit",
     icon: "organize",
+  },
+  {
+    id: "insert-pages",
+    name: "Insert pages",
+    description: "Insert pages from one PDF into another by dragging and dropping.",
+    route: "/insert",
+    category: "edit",
+    icon: "insert",
   },
   {
     id: "reorder-pages",

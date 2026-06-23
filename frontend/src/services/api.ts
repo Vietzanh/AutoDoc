@@ -268,6 +268,21 @@ class ApiClient {
     return res.data;
   }
 
+  async createInsertJob(
+    primaryDocumentId: number,
+    secondaryDocumentId: number,
+    pages: Array<{ original_index: number; source_document_id: number }>,
+    outputFilename = "inserted.pdf"
+  ): Promise<Job> {
+    const res = await this.client.post<Job>("/jobs/insert", {
+      primary_document_id: primaryDocumentId,
+      secondary_document_id: secondaryDocumentId,
+      pages,
+      output_filename: outputFilename,
+    });
+    return res.data;
+  }
+
   async createReorderJob(
     documentId: number,
     newOrder: number[],

@@ -721,3 +721,4 @@ Axios's `responseType: "blob"` through Vite's dev proxy causes `net::ERR_FAILED`
 | `tailwindcss` + `autoprefixer` + `postcss` | ^3.3.6 / ^10.4.16 / ^8.4.32 | CSS utility framework |
 | `typescript` | ^5.3.0 | Type safety |
 | `vite` | ^5.0.0 | Build tool |
+

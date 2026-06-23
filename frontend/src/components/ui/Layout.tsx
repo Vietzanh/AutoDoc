@@ -65,7 +65,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
   const { user, logout } = useAuth();
   const location = useLocation();
   const navigate = useNavigate();
-  const isWorkspacePage = location.pathname === "/organize";
+  const isWorkspacePage = location.pathname === "/organize" || location.pathname === "/insert";
   const isHomePage = location.pathname === "/";
 
   const handleLogout = () => {
@@ -130,7 +130,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <main
         className={
           isWorkspacePage
-            ? "flex-1 w-full min-h-0 overflow-hidden"
+            ? "flex-1 w-full min-h-0"
             : isHomePage
               ? "flex-1 w-full"
               : "flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-8"

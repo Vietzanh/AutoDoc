@@ -171,6 +171,39 @@ class JobService:
         )
         return job
 
+    def create_insert_job(
+        self,
+        user_id: int,
+        primary_document_id: int,
+        secondary_document_id: int,
+        pages: List[dict],
+        output_filename: str,
+    ) -> Job:
+        job = self.repo.create(
+            user_id=user_id,
+            document_id=primary_document_id,
+            tool=JobTool.INSERT.value,
+            status=JobStatus.PENDING.value,
+            input_document_ids=json.dumps({
+                "secondary_document_id": secondary_document_id,
+                "pages": pages
+            }),
+            output_filename=output_filename,
+            progress=0,
+        )
+        self._start_background(
+            job,
+            target=self._run_insert,
+            kwargs=dict(
+                job_id=job.id,
+                primary_document_id=primary_document_id,
+                secondary_document_id=secondary_document_id,
+                pages=pages,
+                output_filename=output_filename,
+            ),
+        )
+        return job
+
     def create_reorder_job(
         self,
         user_id: int,
@@ -700,6 +733,66 @@ class JobService:
         extract_pages(str(src), str(output_path), extract_indices)
 
         # ── Done ───────────────────────────────────────────────────────────────
+        self._update(
+            job_repo,
+            job_id,
+            JobStatus.DONE.value,
+            progress=100,
+            output_path=str(output_path),
+            output_filename=output_filename,
+        )
+
+    # ── Insert runner ─────────────────────────────────────────────────────────
+
+    def _run_insert(
+        self,
+        job_id: int,
+        primary_document_id: int,
+        secondary_document_id: int,
+        pages: List[dict],
+        output_filename: str,
+        _session,
+    ) -> None:
+        from src.models.database_models import JobStatus
+        from src.pdf_operations.insert import insert_pages_custom
+
+        job_repo = JobRepository(_session)
+        doc_repo = DocumentRepository(_session)
+
+        self._update(job_repo, job_id, JobStatus.PROCESSING.value, progress=10)
+
+        doc_primary = doc_repo.get(primary_document_id)
+        doc_secondary = doc_repo.get(secondary_document_id)
+        if not doc_primary or not doc_secondary:
+            self._fail_job(job_id, _session, "One or both source documents not found")
+            return
+
+        pdf_path_primary = Path(doc_primary.file_path)
+        pdf_path_secondary = Path(doc_secondary.file_path)
+        if not pdf_path_primary.exists() or not pdf_path_secondary.exists():
+            self._fail_job(job_id, _session, "One or both PDF files not found on disk")
+            return
+
+        self._update(job_repo, job_id, JobStatus.PROCESSING.value, progress=40)
+
+        work_dir = self.settings.OUTPUT_DIR / str(job_id)
+        work_dir.mkdir(parents=True, exist_ok=True)
+
+        output_path = work_dir / output_filename
+
+        try:
+            insert_pages_custom(
+                primary_doc_path=str(pdf_path_primary),
+                secondary_doc_path=str(pdf_path_secondary),
+                dest_path=str(output_path),
+                pages=pages,
+                primary_doc_id=primary_document_id,
+                secondary_doc_id=secondary_document_id,
+            )
+        except Exception as exc:
+            self._fail_job(job_id, _session, f"Insert failed: {exc}")
+            return
+
         self._update(
             job_repo,
             job_id,

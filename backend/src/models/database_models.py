@@ -28,6 +28,7 @@ class JobTool(str, Enum):
     CROP = "crop"                     # Crop pages
     PAGE_NUMBERS = "page_numbers"    # Number pages
     REORDER = "reorder"               # Reorder pages
+    INSERT = "insert"                 # Insert pages
 
 
 class User(SQLModel, table=True):

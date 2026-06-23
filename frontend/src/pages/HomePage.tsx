@@ -76,6 +76,19 @@ function ToolIcon({ tool }: { tool: ToolDefinition }) {
     );
   }
 
+  if (tool.icon === "insert") {
+    return (
+      <div className={`${baseClass} bg-amber-50 text-amber-700`}>
+        <svg className="h-9 w-9" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} />
+          <polyline points="14 2 14 8 20 8" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} />
+          <line x1="15" y1="17" x2="15" y2="21" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} />
+          <line x1="13" y1="19" x2="17" y2="19" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} />
+        </svg>
+      </div>
+    );
+  }
+
   if (tool.icon === "numbers") {
     return (
       <div className={`${baseClass} bg-blue-50 text-blue-700`}>

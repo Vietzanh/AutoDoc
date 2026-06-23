@@ -19,6 +19,7 @@ from src.models.schemas import (
     OrganizeRequest, ExtractRequest,
     ReorderRequest,
     PageNumberRequest,
+    InsertRequest,
 )
 from src.services.job_service import JobService
 from src.services.document_service import DocumentService
@@ -170,6 +171,38 @@ def create_organize_job(
     job = service.create_organize_job(
         user_id=current_user.id,
         document_id=request.document_id,
+        pages=[p.model_dump() for p in request.pages],
+        output_filename=request.output_filename,
+    )
+    return _job_to_read(job)
+
+
+# ── Insert ─────────────────────────────────────────────────────────────────────
+
+@router.post("/insert", response_model=JobRead, status_code=status.HTTP_202_ACCEPTED)
+def create_insert_job_route(
+    request: InsertRequest,
+    session: Session = Depends(get_session),
+    current_user: User = Depends(get_current_user),
+):
+    """Insert pages from a secondary PDF into a primary PDF."""
+    doc_service = DocumentService(session)
+    primary_doc = doc_service.get(request.primary_document_id)
+    secondary_doc = doc_service.get(request.secondary_document_id)
+
+    if not primary_doc or primary_doc.user_id != current_user.id:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Primary document not found")
+    if not secondary_doc or secondary_doc.user_id != current_user.id:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Secondary document not found")
+
+    if not request.pages:
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="No pages provided")
+
+    service = JobService(session)
+    job = service.create_insert_job(
+        user_id=current_user.id,
+        primary_document_id=request.primary_document_id,
+        secondary_document_id=request.secondary_document_id,
         pages=[p.model_dump() for p in request.pages],
         output_filename=request.output_filename,
     )
