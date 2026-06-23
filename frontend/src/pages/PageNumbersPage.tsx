@@ -12,6 +12,8 @@ import { ProgressBar } from "@/components/ui/ProgressBar";
 import { Spinner } from "@/components/ui/Spinner";
 import { Thumbnail } from "@/components/ui/Thumbnail";
 import { PositionGrid } from "@/components/ui/PositionGrid";
+import { validatePdfOutputFilename } from "@/utils/pdfFilename";
+import { PdfPreview } from "@/components/ui/PdfPreview";
 
 interface PageThumbnail {
   page_number: number;
@@ -54,14 +56,24 @@ export default function PageNumbersPage() {
 
   // ── Job State ─────────────────────────────────────────────────────────────
   const [createdJob, setCreatedJob] = useState<Job | null>(null);
+  const [outputBlobUrl, setOutputBlobUrl] = useState<string | null>(null);
   const { job } = useJobPoll(createdJob?.id ?? 0);
 
   useEffect(() => {
     if (job) setCreatedJob(job);
   }, [job]);
 
+  useEffect(() => {
+    if (createdJob?.status === "done" && !outputBlobUrl) {
+      api.downloadJobResult(createdJob.id)
+        .then(blob => setOutputBlobUrl(URL.createObjectURL(blob)))
+        .catch(() => toast.error("Failed to load PDF preview"));
+    }
+  }, [createdJob, outputBlobUrl]);
+
   // Hook for mirrored position
   const { getPositionForPage } = useFacingPages(mode, position);
+  const outputFilenameError = validatePdfOutputFilename(outputFilename);
 
   // ── Handlers ──────────────────────────────────────────────────────────────
   const onDrop = useCallback(async (acceptedFiles: File[]) => {
@@ -71,6 +83,10 @@ export default function PageNumbersPage() {
     setSelectedDoc(null);
     setThumbnails([]);
     setCreatedJob(null);
+    if (outputBlobUrl) {
+      URL.revokeObjectURL(outputBlobUrl);
+      setOutputBlobUrl(null);
+    }
     setUploading(true);
 
     try {
@@ -106,6 +122,10 @@ export default function PageNumbersPage() {
 
   const handleStartJob = async () => {
     if (!selectedDoc) return;
+    if (outputFilenameError) {
+      toast.error(outputFilenameError);
+      return;
+    }
     try {
       const paramArgs = {
         document_id: selectedDoc.id,
@@ -154,6 +174,10 @@ export default function PageNumbersPage() {
     setSelectedDoc(null);
     setThumbnails([]);
     setCreatedJob(null);
+    if (outputBlobUrl) {
+      URL.revokeObjectURL(outputBlobUrl);
+      setOutputBlobUrl(null);
+    }
   };
 
   const isProcessing = createdJob?.status === "pending" || createdJob?.status === "processing";
@@ -187,12 +211,13 @@ export default function PageNumbersPage() {
             <h2 className="font-semibold text-green-700">Finished!</h2>
           </CardHeader>
           <CardBody>
-            <p className="text-sm text-gray-600">The document has been numbered successfully.</p>
+            <p className="text-sm text-gray-600 mb-2">The document has been numbered successfully.</p>
+            {outputBlobUrl && <PdfPreview fileUrl={outputBlobUrl} />}
           </CardBody>
           <CardFooter>
-            <div className="flex gap-3">
-              <Button onClick={handleDownload} className="bg-blue-600 hover:bg-blue-700 text-white">Download Numbered PDF</Button>
+            <div className="flex gap-3 w-full justify-end">
               <Button variant="ghost" onClick={handleReset}>Start Another</Button>
+              <Button onClick={handleDownload} className="bg-blue-600 hover:bg-blue-700 text-white">Download Numbered PDF</Button>
             </div>
           </CardFooter>
         </Card>
@@ -434,7 +459,16 @@ export default function PageNumbersPage() {
               </div>
 
               <div className="pt-2 border-t border-gray-100">
-                <Button className="w-full" onClick={handleStartJob}>Add page numbers</Button>
+                <Input
+                  label="Output filename"
+                  value={outputFilename}
+                  onChange={(event) => setOutputFilename(event.target.value)}
+                  placeholder="numbered.pdf"
+                  error={outputFilenameError ?? undefined}
+                />
+                <Button className="mt-3 w-full" onClick={handleStartJob} disabled={Boolean(outputFilenameError)}>
+                  Add page numbers
+                </Button>
               </div>
 
             </div>

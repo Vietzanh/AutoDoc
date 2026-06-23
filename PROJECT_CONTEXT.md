@@ -150,6 +150,7 @@ frontend/
 
 - `POST /jobs/crop` — by margins or custom rect
 - `src/services/pdf_ops_service.py` — optional consolidation layer
+- Link extraction/preservation in PDF → DOCX reconstruction — extract hyperlink annotations from source PDF and re-insert them as clickable links in the output DOCX
 
 ### 🔧 Backend — Fixed / Improved (2026-04-10)
 
@@ -202,6 +203,7 @@ frontend/
 - `frontend/src/pages/CropPage.tsx` — crop by margins or custom rect
 - API methods for Crop (`api.ts` update)
 - Routing entries for Crop (`App.tsx` update)
+- Visual link indicators in ReconstructPage (show preserved links in preview/output)
 
 ### 🔧 Backend — Fixed / Improved (2026-05-19)
 
@@ -238,6 +240,14 @@ frontend/
 - `frontend/src/pages/OrganizePage.tsx` + `frontend/src/components/ui/Layout.tsx` — Organize is fixed-height with `overflow-hidden` at the page level. Only the left PDF preview pane and right thumbnail pane scroll vertically.
 - Verification: `http://localhost:5175/` returned HTTP 200, and `npx tsc --noEmit --noUnusedLocals false --noUnusedParameters false` passed.
 
+### 🔧 Frontend — Fixed / Improved (2026-06-23)
+
+- `frontend/src/components/ui/PdfPreview.tsx` — created a new global PDF preview component using `react-pdf` to allow users to visually inspect processed outputs before downloading. Used a high-resolution canvas scaled via CSS (`width={1200}`, `[&>canvas]:!max-w-full [&>canvas]:!h-auto`) to ensure crisp text while eliminating horizontal scrolling.
+- `OrganizePage.tsx`, `ReorderPage.tsx`, `CropPage.tsx`, `PageNumbersPage.tsx` — integrated the `PdfPreview` component into their respective success states.
+- `frontend/src/pages/DashboardPage.tsx` — enhanced the Dashboard to display separate tables for uploaded files and successfully processed outputs. Added bulk-selection checkboxes next to Delete buttons to easily clear storage space. Mapped internal job names to user-friendly titles (e.g., `reconstruct` -> `CONVERT`).
+- `frontend/src/pages/CropPage.tsx` — optimized the layout by moving the output filename input above the action buttons to span full width, and implemented inline validation errors to prevent UI shifting.
+- `OrganizePage.tsx` — fixed layout bug where the full-screen grid view's strict `overflow-hidden` constraint caused triple scrollbars in the success view; conditionally applied constraints so the result view flows naturally.
+- State Syncing — fixed dual-rendering of progress bars and success views across tools by consolidating status checks to use the latest polled job state (`jobToShow`).
 ---
 
 ## 4. Backend — API Reference
@@ -480,6 +490,7 @@ Remaining reconstruction concerns:
 ### Priority 1 — Backend: Remaining PDF Operations
 - [ ] `POST /jobs/crop` — by margins or custom rect
 - [ ] `src/services/pdf_ops_service.py` — optional consolidation layer
+- [ ] Link extraction/preservation — extract `/Link` annotations from source PDF pages and map them to the corresponding text spans in the output DOCX as clickable hyperlinks
 
 ### Priority 2 — Frontend: Remaining Tool Pages
 - [ ] Write `frontend/src/pages/CropPage.tsx` — crop by margins or custom rect

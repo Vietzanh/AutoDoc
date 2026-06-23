@@ -12,6 +12,7 @@ import OrganizePage from "./pages/OrganizePage";
 import ReorderPage from "./pages/ReorderPage";
 import PageNumbersPage from "./pages/PageNumbersPage";
 import CropPage from "./pages/CropPage";
+import DashboardPage from "./pages/DashboardPage";
 
 function ProtectedRoute({ children }: { children: React.ReactNode }) {
   const { user, loading } = useAuth();
@@ -73,6 +74,14 @@ export default function App() {
         element={
           <ProtectedRoute>
             <HomePage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/dashboard"
+        element={
+          <ProtectedRoute>
+            <DashboardPage />
           </ProtectedRoute>
         }
       />

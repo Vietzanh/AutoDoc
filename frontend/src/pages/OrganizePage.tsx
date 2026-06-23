@@ -9,6 +9,8 @@ import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 import { ProgressBar } from "@/components/ui/ProgressBar";
 import { Spinner } from "@/components/ui/Spinner";
+import { validatePdfOutputFilename } from "@/utils/pdfFilename";
+import { PdfPreview } from "@/components/ui/PdfPreview";
 
 interface PageImage {
   page_number: number;
@@ -135,12 +137,10 @@ function IconDelete() {
 }
 
 function PreviewPane({
-  title,
   pages,
   activePageId,
   onVisiblePageChange,
 }: {
-  title: string;
   pages: PageState[];
   activePageId: string | null;
   onVisiblePageChange: (pageId: string) => void;
@@ -184,10 +184,6 @@ function PreviewPane({
 
   return (
     <section className="flex min-h-0 flex-1 flex-col border-r border-gray-200 bg-gray-100">
-      <div className="flex h-12 items-center border-b border-gray-200 bg-white px-4">
-        <p className="truncate text-sm font-medium text-gray-700" title={title}>{title}</p>
-      </div>
-
       <div ref={scrollerRef} className="min-h-0 flex-1 overflow-y-auto px-5 py-5">
         <div className="mx-auto flex max-w-3xl flex-col gap-5">
           {pages.map((page) => {
@@ -490,6 +486,7 @@ export default function OrganizePage() {
   const [mode, setMode] = useState<AppMode>("normal");
   const [outputFilename, setOutputFilename] = useState("organized.pdf");
   const [createdJob, setCreatedJob] = useState<Job | null>(null);
+  const [outputBlobUrl, setOutputBlobUrl] = useState<string | null>(null);
   const [uploading, setUploading] = useState(false);
   const [previewSource, setPreviewSource] = useState<PreviewSource>("primary");
   const [activePrimaryPageId, setActivePrimaryPageId] = useState<string | null>(null);
@@ -503,16 +500,22 @@ export default function OrganizePage() {
   const selectedCount = visiblePages.filter((page) => page.selected).length;
   const allVisibleSelected = visiblePages.length > 0 && visiblePages.every((page) => page.selected);
   const jobToShow = polledJob ?? createdJob;
-  const isProcessing = createdJob?.status === "pending" || createdJob?.status === "processing";
-  const isDone = polledJob?.status === "done" || createdJob?.status === "done";
-  const isFailed = polledJob?.status === "failed" || createdJob?.status === "failed";
+  const isProcessing = jobToShow?.status === "pending" || jobToShow?.status === "processing";
+  const isDone = jobToShow?.status === "done";
+  const isFailed = jobToShow?.status === "failed";
+  const outputFilenameError = validatePdfOutputFilename(outputFilename);
+
+  useEffect(() => {
+    if (jobToShow?.status === "done" && !outputBlobUrl) {
+      api.downloadJobResult(jobToShow.id)
+        .then(blob => setOutputBlobUrl(URL.createObjectURL(blob)))
+        .catch(() => toast.error("Failed to load PDF preview"));
+    }
+  }, [jobToShow, outputBlobUrl]);
 
   const previewPages = previewSource === "insert" && insertSource
     ? insertSource.pages
     : visiblePages;
-  const previewTitle = previewSource === "insert" && insertSource
-    ? insertSource.name
-    : primaryDocName;
   const activePreviewPageId = previewSource === "insert"
     ? activeInsertPageId
     : activePrimaryPageId;
@@ -538,6 +541,10 @@ export default function OrganizePage() {
       setPages(loadedPages);
       setInsertSource(null);
       setCreatedJob(null);
+      if (outputBlobUrl) {
+        URL.revokeObjectURL(outputBlobUrl);
+        setOutputBlobUrl(null);
+      }
       setMode("normal");
       setPreviewSource("primary");
       setActivePrimaryPageId(loadedPages[0]?.id ?? null);
@@ -696,6 +703,10 @@ export default function OrganizePage() {
       toast.error("No pages left in the document");
       return;
     }
+    if (outputFilenameError) {
+      toast.error(outputFilenameError);
+      return;
+    }
 
     try {
       const job = await api.createOrganizeJob(
@@ -720,6 +731,10 @@ export default function OrganizePage() {
     const selected = visiblePages.filter((page) => page.selected);
     if (selected.length === 0) {
       toast.error("Select pages to extract");
+      return;
+    }
+    if (outputFilenameError) {
+      toast.error(outputFilenameError);
       return;
     }
 
@@ -747,6 +762,10 @@ export default function OrganizePage() {
     setPages([]);
     setInsertSource(null);
     setCreatedJob(null);
+    if (outputBlobUrl) {
+      URL.revokeObjectURL(outputBlobUrl);
+      setOutputBlobUrl(null);
+    }
     setMode("normal");
     setOutputFilename("organized.pdf");
     setPreviewSource("primary");
@@ -768,13 +787,59 @@ export default function OrganizePage() {
     }
   };
 
+  const isWorkspace = !jobToShow || (!isProcessing && !isDone && !isFailed);
+
   return (
-    <div className="flex h-[calc(100vh-4rem)] flex-col overflow-hidden bg-gray-50">
+    <div className={`flex flex-col bg-gray-50 ${isWorkspace ? "h-[calc(100vh-4rem)] overflow-hidden" : "min-h-[calc(100vh-4rem)] pb-8"}`}>
       <div className="px-6 py-4">
-        <h1 className="text-2xl font-bold text-gray-900">Organize Pages</h1>
-        <p className="mt-0.5 text-sm text-gray-500">
-          Reorder, rotate, delete, insert, or extract pages
-        </p>
+        <div className="flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <h1 className="text-2xl font-bold text-gray-900">Organize Pages</h1>
+            <p className="mt-0.5 text-sm text-gray-500">
+              Reorder, rotate, delete, insert, or extract pages
+            </p>
+          </div>
+
+          {pages.length > 0 && !jobToShow && (
+            <div className="relative flex flex-wrap items-end justify-end gap-3 pb-5">
+              <Input
+                label="Output filename"
+                value={outputFilename}
+                onChange={(event) => setOutputFilename(event.target.value)}
+                placeholder="output.pdf"
+                className="w-72"
+              />
+              {mode === "extract" ? (
+                <Button
+                  onClick={handleExtract}
+                  disabled={selectedCount === 0 || isProcessing || Boolean(outputFilenameError)}
+                >
+                  Extract ({selectedCount} selected)
+                </Button>
+              ) : (
+                <Button
+                  onClick={handleSave}
+                  disabled={visiblePages.length === 0 || isProcessing || Boolean(outputFilenameError)}
+                >
+                  Save ({visiblePages.length} pages)
+                </Button>
+              )}
+              {outputFilenameError && (
+                <p className="absolute bottom-0 right-0 text-xs text-red-500">
+                  {outputFilenameError}
+                </p>
+              )}
+            </div>
+          )}
+
+          <input
+            ref={insertInputRef}
+            type="file"
+            accept="application/pdf"
+            className="hidden"
+            onChange={handleInsertFile}
+          />
+        </div>
       </div>
 
       {jobToShow && isProcessing && (
@@ -799,17 +864,18 @@ export default function OrganizePage() {
             </h2>
           </CardHeader>
           <CardBody>
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-gray-600 mb-2">
               Your {mode === "extract" ? "extracted pages" : "organized PDF"} is ready.
             </p>
+            {outputBlobUrl && <PdfPreview fileUrl={outputBlobUrl} />}
           </CardBody>
           <CardFooter>
-            <div className="flex gap-3">
-              <Button onClick={() => handleDownload(jobToShow.id, jobToShow.output_filename ?? outputFilename)}>
-                Download {outputFilename}
-              </Button>
+            <div className="flex gap-3 w-full justify-end">
               <Button variant="ghost" onClick={handleReset}>
                 {mode === "extract" ? "Extract Another" : "Organize Another"}
+              </Button>
+              <Button onClick={() => handleDownload(jobToShow.id, jobToShow.output_filename ?? outputFilename)} className="bg-blue-600 hover:bg-blue-700 text-white">
+                Download {outputFilename}
               </Button>
             </div>
           </CardFooter>
@@ -868,113 +934,100 @@ export default function OrganizePage() {
 
           {pages.length > 0 && (
             <section className="flex min-h-0 flex-1 flex-col border-t border-gray-200 bg-white">
-              <div className="border-b border-gray-100 px-6 py-4">
-                <div className="flex flex-wrap items-center justify-between gap-3">
-                  <div className="flex min-w-0 items-center gap-3">
-                    <p className="max-w-xs truncate text-sm font-medium text-gray-700" title={primaryDocName}>
-                      {primaryDocName}
-                    </p>
-                    <button
-                      type="button"
-                      onClick={selectAll}
-                      className={`flex h-5 w-5 flex-shrink-0 items-center justify-center rounded border-2 transition-colors ${
-                        allVisibleSelected
-                          ? "border-blue-500 bg-blue-500 text-white"
-                          : "border-gray-300 bg-white hover:border-blue-400"
-                      }`}
-                      title="Select / deselect all"
-                    >
-                      {allVisibleSelected && (
-                        <svg className="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                        </svg>
-                      )}
-                    </button>
-                    <span className="text-sm text-gray-500">
-                      {mode === "extract"
-                        ? selectedCount > 0 ? `${selectedCount} selected` : "Select pages"
-                        : `${visiblePages.length} pages`}
-                    </span>
-                  </div>
-
-                  <div className="flex items-center gap-1">
-                    <button
-                      type="button"
-                      onClick={handleInsertClick}
-                      className={`flex h-9 w-9 items-center justify-center rounded-lg transition-colors ${
-                        mode === "insert"
-                          ? "bg-blue-500 text-white shadow-sm"
-                          : "border border-gray-200 bg-white text-gray-600 hover:bg-gray-50"
-                      }`}
-                      title="Load insert PDF"
-                    >
-                      <IconInsert />
-                    </button>
-
-                    <button
-                      type="button"
-                      onClick={enterExtractMode}
-                      className={`flex h-9 w-9 items-center justify-center rounded-lg transition-colors ${
-                        mode === "extract"
-                          ? "bg-blue-500 text-white shadow-sm"
-                          : "border border-gray-200 bg-white text-gray-600 hover:bg-gray-50"
-                      }`}
-                      title={mode === "extract" ? "Exit extract mode" : "Enter extract mode"}
-                    >
-                      <IconExtract />
-                    </button>
-
-                    <div className="mx-1 h-6 w-px bg-gray-200" />
-
-                    <button
-                      type="button"
-                      onClick={rotateAllSelectedCCW}
-                      disabled={selectedCount === 0}
-                      className="flex h-9 w-9 items-center justify-center rounded-lg border border-gray-200 bg-white text-gray-600 transition-colors hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-40"
-                      title="Rotate all selected pages left"
-                    >
-                      <IconRotateLeft />
-                    </button>
-                    <button
-                      type="button"
-                      onClick={rotateAllSelectedCW}
-                      disabled={selectedCount === 0}
-                      className="flex h-9 w-9 items-center justify-center rounded-lg border border-gray-200 bg-white text-gray-600 transition-colors hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-40"
-                      title="Rotate all selected pages right"
-                    >
-                      <IconRotateRight />
-                    </button>
-                    <button
-                      type="button"
-                      onClick={deleteAllSelected}
-                      disabled={selectedCount === 0}
-                      className="flex h-9 w-9 items-center justify-center rounded-lg border border-gray-200 bg-white text-red-500 transition-colors hover:bg-red-50 disabled:cursor-not-allowed disabled:opacity-40"
-                      title="Delete all selected pages"
-                    >
-                      <IconDelete />
-                    </button>
-                  </div>
-
-                  <input
-                    ref={insertInputRef}
-                    type="file"
-                    accept="application/pdf"
-                    className="hidden"
-                    onChange={handleInsertFile}
-                  />
-                </div>
-              </div>
-
               <div className="min-h-0 flex-1 p-0">
                 <div className="flex h-full min-h-0 overflow-hidden">
                   <PreviewPane
-                    title={previewTitle}
                     pages={previewPages}
                     activePageId={activePreviewPageId}
                     onVisiblePageChange={handleVisiblePreviewChange}
                   />
 
                   <aside className="flex w-[610px] min-w-[610px] flex-col bg-white">
+                    <div className="border-b border-gray-200 bg-gray-50">
+                      <div className="flex h-9 items-center justify-between px-3">
+                        <p className="truncate text-xs font-medium text-gray-600" title={primaryDocName}>
+                          Original source: {primaryDocName}
+                        </p>
+                        <span className="text-xs text-gray-400">{visiblePages.length} pages</span>
+                      </div>
+                      <div className="flex flex-wrap items-center justify-end gap-3 px-3 pb-3">
+                        <span className="text-sm text-gray-500">Select all pages</span>
+                        <button
+                          type="button"
+                          onClick={selectAll}
+                          className={`flex h-5 w-5 flex-shrink-0 items-center justify-center rounded border-2 transition-colors ${
+                            allVisibleSelected
+                              ? "border-blue-500 bg-blue-500 text-white"
+                              : "border-gray-300 bg-white hover:border-blue-400"
+                          }`}
+                          title="Select / deselect all"
+                        >
+                          {allVisibleSelected && (
+                            <svg className="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                            </svg>
+                          )}
+                        </button>
+
+                        <div className="flex items-center gap-1">
+                          <button
+                            type="button"
+                            onClick={handleInsertClick}
+                            className={`flex h-9 w-9 items-center justify-center rounded-lg transition-colors ${
+                              mode === "insert"
+                                ? "bg-blue-500 text-white shadow-sm"
+                                : "border border-gray-200 bg-white text-gray-600 hover:bg-gray-50"
+                            }`}
+                            title="Load insert PDF"
+                          >
+                            <IconInsert />
+                          </button>
+
+                          <button
+                            type="button"
+                            onClick={enterExtractMode}
+                            className={`flex h-9 w-9 items-center justify-center rounded-lg transition-colors ${
+                              mode === "extract"
+                                ? "bg-blue-500 text-white shadow-sm"
+                                : "border border-gray-200 bg-white text-gray-600 hover:bg-gray-50"
+                            }`}
+                            title={mode === "extract" ? "Exit extract mode" : "Enter extract mode"}
+                          >
+                            <IconExtract />
+                          </button>
+
+                          <div className="mx-1 h-6 w-px bg-gray-200" />
+
+                          <button
+                            type="button"
+                            onClick={rotateAllSelectedCCW}
+                            disabled={selectedCount === 0}
+                            className="flex h-9 w-9 items-center justify-center rounded-lg border border-gray-200 bg-white text-gray-600 transition-colors hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-40"
+                            title="Rotate all selected pages left"
+                          >
+                            <IconRotateLeft />
+                          </button>
+                          <button
+                            type="button"
+                            onClick={rotateAllSelectedCW}
+                            disabled={selectedCount === 0}
+                            className="flex h-9 w-9 items-center justify-center rounded-lg border border-gray-200 bg-white text-gray-600 transition-colors hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-40"
+                            title="Rotate all selected pages right"
+                          >
+                            <IconRotateRight />
+                          </button>
+                          <button
+                            type="button"
+                            onClick={deleteAllSelected}
+                            disabled={selectedCount === 0}
+                            className="flex h-9 w-9 items-center justify-center rounded-lg border border-gray-200 bg-white text-red-500 transition-colors hover:bg-red-50 disabled:cursor-not-allowed disabled:opacity-40"
+                            title="Delete all selected pages"
+                          >
+                            <IconDelete />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
                     <div className="min-h-0 flex-1 overflow-y-auto px-4 py-4">
                       {uploading && (
                         <div className="flex justify-center py-8">
@@ -1002,27 +1055,6 @@ export default function OrganizePage() {
                       />
                     )}
                   </aside>
-                </div>
-              </div>
-
-              <div className="flex-col items-stretch gap-4 border-t border-gray-100 bg-gray-50 px-6 py-3">
-                <div className="flex items-end gap-3">
-                  <Input
-                    label="Output filename"
-                    value={outputFilename}
-                    onChange={(event) => setOutputFilename(event.target.value)}
-                    placeholder="output.pdf"
-                  />
-                  {mode === "extract" ? (
-                    <Button onClick={handleExtract} disabled={selectedCount === 0 || isProcessing}>
-                      Extract ({selectedCount} selected)
-                    </Button>
-                  ) : (
-                    <Button onClick={handleSave} disabled={visiblePages.length === 0 || isProcessing}>
-                      Save ({visiblePages.length} pages)
-                    </Button>
-                  )}
-                  <Button variant="ghost" onClick={handleReset}>Cancel</Button>
                 </div>
               </div>
             </section>

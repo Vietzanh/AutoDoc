@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 import { ProgressBar } from "@/components/ui/ProgressBar";
 import { Spinner } from "@/components/ui/Spinner";
+import { validatePdfOutputFilename } from "@/utils/pdfFilename";
 
 export default function MergePage() {
   const navigate = useNavigate();
@@ -63,14 +64,15 @@ export default function MergePage() {
   };
 
   const selectedDocs = sessionDocs.filter((doc) => selectedIds.has(doc.id));
+  const outputFilenameError = validatePdfOutputFilename(outputFilename);
 
   const handleStartJob = async () => {
     if (selectedIds.size < 2) {
       toast.error("Select at least 2 documents to merge");
       return;
     }
-    if (!outputFilename.trim()) {
-      toast.error("Enter an output filename");
+    if (outputFilenameError) {
+      toast.error(outputFilenameError);
       return;
     }
 
@@ -295,13 +297,14 @@ export default function MergePage() {
                   value={outputFilename}
                   onChange={(event) => setOutputFilename(event.target.value)}
                   placeholder="merged.pdf"
+                  error={outputFilenameError ?? undefined}
                 />
                 <p className="text-xs text-gray-400">
                   {selectedIds.size} documents selected - they will be merged in the order shown above
                 </p>
               </CardBody>
               <CardFooter>
-                <Button onClick={handleStartJob}>
+                <Button onClick={handleStartJob} disabled={Boolean(outputFilenameError)}>
                   Merge ({selectedIds.size} files)
                 </Button>
               </CardFooter>

@@ -10,7 +10,7 @@
  *  6. Click Save → backend job runs → download button appears
  */
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import { useDropzone } from "react-dropzone";
@@ -34,6 +34,8 @@ import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 import { ProgressBar } from "@/components/ui/ProgressBar";
 import { Spinner } from "@/components/ui/Spinner";
+import { validatePdfOutputFilename } from "@/utils/pdfFilename";
+import { PdfPreview } from "@/components/ui/PdfPreview";
 
 // ── Types ──────────────────────────────────────────────────────────────────────
 
@@ -136,6 +138,7 @@ function ReorderContent({
   pages,
   docName,
   outputFilename,
+  outputFilenameError,
   onOutputChange,
   onSave,
   onCancel,
@@ -146,6 +149,7 @@ function ReorderContent({
   pages: PageState[];
   docName: string;
   outputFilename: string;
+  outputFilenameError: string | null;
   onOutputChange: (v: string) => void;
   onSave: () => void;
   onCancel: () => void;
@@ -211,8 +215,9 @@ function ReorderContent({
             value={outputFilename}
             onChange={(e) => onOutputChange(e.target.value)}
             placeholder="reordered.pdf"
+            error={outputFilenameError ?? undefined}
           />
-          <Button onClick={onSave} disabled={!isDirty}>
+          <Button onClick={onSave} disabled={!isDirty || Boolean(outputFilenameError)}>
             Save Order
           </Button>
           <Button variant="ghost" onClick={onCancel}>
@@ -271,6 +276,7 @@ export default function ReorderPage() {
   const [originalIds, setOriginalIds] = useState<string[]>([]);
   const [outputFilename, setOutputFilename] = useState("reordered.pdf");
   const [createdJob, setCreatedJob] = useState<Job | null>(null);
+  const [outputBlobUrl, setOutputBlobUrl] = useState<string | null>(null);
   const [uploading, setUploading] = useState(false);
 
   // dnd-kit state
@@ -282,10 +288,19 @@ export default function ReorderPage() {
   // Derived
   const activePage = activeId ? pages.find((p) => p.id === activeId) ?? null : null;
   const isDirty = JSON.stringify(pages.map((p) => p.id)) !== JSON.stringify(originalIds);
-  const isProcessing = createdJob?.status === "pending" || createdJob?.status === "processing";
-  const isDone = polledJob?.status === "done" || createdJob?.status === "done";
-  const isFailed = polledJob?.status === "failed" || createdJob?.status === "failed";
   const jobToShow = polledJob ?? createdJob;
+  const isProcessing = jobToShow?.status === "pending" || jobToShow?.status === "processing";
+  const isDone = jobToShow?.status === "done";
+  const isFailed = jobToShow?.status === "failed";
+  const outputFilenameError = validatePdfOutputFilename(outputFilename);
+
+  useEffect(() => {
+    if (jobToShow?.status === "done" && !outputBlobUrl) {
+      api.downloadJobResult(jobToShow.id)
+        .then(blob => setOutputBlobUrl(URL.createObjectURL(blob)))
+        .catch(() => toast.error("Failed to load PDF preview"));
+    }
+  }, [jobToShow, outputBlobUrl]);
 
   // ── DnD sensors ───────────────────────────────────────────────────────────
   const sensors = useSensors(
@@ -313,6 +328,10 @@ export default function ReorderPage() {
       setOriginalIds(newPages.map((p) => p.id));
       setActiveId(null);
       setOverIndex(null);
+      if (outputBlobUrl) {
+        URL.revokeObjectURL(outputBlobUrl);
+        setOutputBlobUrl(null);
+      }
       toast.success(`Uploaded: ${doc.original_filename}`);
     } catch {
       toast.error("Upload failed");
@@ -407,6 +426,10 @@ export default function ReorderPage() {
     setOutputFilename("reordered.pdf");
     setActiveId(null);
     setOverIndex(null);
+    if (outputBlobUrl) {
+      URL.revokeObjectURL(outputBlobUrl);
+      setOutputBlobUrl(null);
+    }
   };
 
   // ── Revert to original ───────────────────────────────────────────────────
@@ -418,6 +441,10 @@ export default function ReorderPage() {
   // ── Save ─────────────────────────────────────────────────────────────────
   const handleSave = async () => {
     if (!primaryDocId || !isDirty) return;
+    if (outputFilenameError) {
+      toast.error(outputFilenameError);
+      return;
+    }
 
     const newOrder = pages.map((p) => p.pageNumber - 1); // 0-based indices
     try {
@@ -483,12 +510,13 @@ export default function ReorderPage() {
         <Card>
           <CardHeader><h2 className="font-semibold text-green-700">PDF reordered!</h2></CardHeader>
           <CardBody>
-            <p className="text-sm text-gray-600">Your reordered PDF is ready.</p>
+            <p className="text-sm text-gray-600 mb-2">Your reordered PDF is ready.</p>
+            {outputBlobUrl && <PdfPreview fileUrl={outputBlobUrl} />}
           </CardBody>
           <CardFooter>
-            <div className="flex gap-3">
-              <Button onClick={handleDownload}>Download {outputFilename}</Button>
+            <div className="flex gap-3 w-full justify-end">
               <Button variant="ghost" onClick={handleReset}>Reorder Another</Button>
+              <Button onClick={handleDownload} className="bg-blue-600 hover:bg-blue-700 text-white">Download {outputFilename}</Button>
             </div>
           </CardFooter>
         </Card>
@@ -561,6 +589,7 @@ export default function ReorderPage() {
                   pages={pages}
                   docName={primaryDocName}
                   outputFilename={outputFilename}
+                  outputFilenameError={outputFilenameError}
                   onOutputChange={setOutputFilename}
                   onSave={handleSave}
                   onCancel={handleRevert}

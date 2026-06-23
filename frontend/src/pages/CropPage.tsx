@@ -8,9 +8,12 @@ import { toPoints, convertUnit, UNIT_OPTIONS } from "@/hooks/useUnitConversion";
 import type { MeasurementUnit } from "@/hooks/useUnitConversion";
 import { Card, CardHeader, CardBody, CardFooter } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
+import { Input } from "@/components/ui/Input";
 import { ProgressBar } from "@/components/ui/ProgressBar";
 import { Spinner } from "@/components/ui/Spinner";
 import { CropOverlayThumbnail } from "@/components/ui/CropOverlayThumbnail";
+import { validatePdfOutputFilename } from "@/utils/pdfFilename";
+import { PdfPreview } from "@/components/ui/PdfPreview";
 
 interface PageThumbnail {
   page_number: number;
@@ -46,11 +49,20 @@ export default function CropPage() {
 
   // ── Job State ───────────────────────────────────────────────────────────────
   const [createdJob, setCreatedJob] = useState<Job | null>(null);
+  const [outputBlobUrl, setOutputBlobUrl] = useState<string | null>(null);
   const { job } = useJobPoll(createdJob?.id ?? 0);
 
   useEffect(() => {
     if (job) setCreatedJob(job);
   }, [job]);
+
+  useEffect(() => {
+    if (createdJob?.status === "done" && !outputBlobUrl) {
+      api.downloadJobResult(createdJob.id)
+        .then(blob => setOutputBlobUrl(URL.createObjectURL(blob)))
+        .catch(() => toast.error("Failed to load PDF preview"));
+    }
+  }, [createdJob, outputBlobUrl]);
 
   // ── Computed: margins in points (for overlay + API) ─────────────────────────
   const marginsPts = useMemo(() => ({
@@ -69,6 +81,10 @@ export default function CropPage() {
     setSelectedDoc(null);
     setThumbnails([]);
     setCreatedJob(null);
+    if (outputBlobUrl) {
+      URL.revokeObjectURL(outputBlobUrl);
+      setOutputBlobUrl(null);
+    }
     setUploading(true);
 
     try {
@@ -102,6 +118,7 @@ export default function CropPage() {
     multiple: false,
     disabled: uploading || loadingThumbs,
   });
+  const outputFilenameError = validatePdfOutputFilename(outputFilename);
 
   /** Switch unit and convert existing margin values. */
   const handleUnitChange = useCallback((newUnit: MeasurementUnit) => {
@@ -129,10 +146,18 @@ export default function CropPage() {
     setFromPage(1);
     setToPage(thumbnails.length || 1);
     setUnit("pt");
-  }, [thumbnails.length]);
+    if (outputBlobUrl) {
+      URL.revokeObjectURL(outputBlobUrl);
+      setOutputBlobUrl(null);
+    }
+  }, [thumbnails.length, outputBlobUrl]);
 
   const handleStartJob = useCallback(async () => {
     if (!selectedDoc) return;
+    if (outputFilenameError) {
+      toast.error(outputFilenameError);
+      return;
+    }
 
     try {
       const j = await api.createCropJob({
@@ -152,7 +177,7 @@ export default function CropPage() {
     } catch {
       toast.error("Failed to start crop job");
     }
-  }, [selectedDoc, marginsPts, pageRangeMode, fromPage, toPage, thumbnails.length, outputFilename]);
+  }, [selectedDoc, marginsPts, pageRangeMode, fromPage, toPage, thumbnails.length, outputFilename, outputFilenameError]);
 
   const handleDownload = useCallback(async () => {
     if (!createdJob) return;
@@ -172,6 +197,10 @@ export default function CropPage() {
   const handleCropAnother = useCallback(() => {
     setSelectedDoc(null);
     setThumbnails([]);
+    if (outputBlobUrl) {
+      URL.revokeObjectURL(outputBlobUrl);
+      setOutputBlobUrl(null);
+    }
     setCreatedJob(null);
     handleReset();
   }, [handleReset]);
@@ -182,6 +211,14 @@ export default function CropPage() {
   const isFailed = createdJob?.status === "failed";
 
   const hasAnyMargin = marginsPts.top > 0 || marginsPts.bottom > 0 || marginsPts.left > 0 || marginsPts.right > 0;
+
+  const isCustomRange = pageRangeMode === "custom";
+  const isValidFrom = fromPage !== "" && fromPage >= 1 && fromPage <= thumbnails.length;
+  const isValidTo = toPage !== "" && toPage >= 1 && toPage <= thumbnails.length && toPage >= (fromPage !== "" ? fromPage : 1);
+  const isPageRangeValid = !isCustomRange || (isValidFrom && isValidTo);
+  const pageRangeError = isCustomRange && !isPageRangeValid 
+    ? `Please enter a valid range (1 - ${thumbnails.length}) where start <= end.` 
+    : null;
 
   // Helper: is this page in the crop range?
   const isPageInRange = useCallback((pageNum: number): boolean => {
@@ -222,14 +259,15 @@ export default function CropPage() {
             <h2 className="font-semibold text-green-700">Finished!</h2>
           </CardHeader>
           <CardBody>
-            <p className="text-sm text-gray-600">Your PDF has been cropped successfully.</p>
+            <p className="text-sm text-gray-600 mb-2">Your PDF has been cropped successfully.</p>
+            {outputBlobUrl && <PdfPreview fileUrl={outputBlobUrl} />}
           </CardBody>
           <CardFooter>
-            <div className="flex gap-3">
+            <div className="flex gap-3 w-full justify-end">
+              <Button variant="ghost" onClick={handleCropAnother}>Crop Another</Button>
               <Button onClick={handleDownload} className="bg-blue-600 hover:bg-blue-700 text-white">
                 Download Cropped PDF
               </Button>
-              <Button variant="ghost" onClick={handleCropAnother}>Crop Another</Button>
             </div>
           </CardFooter>
         </Card>
@@ -352,9 +390,9 @@ export default function CropPage() {
               </div>
 
               {/* Page Range */}
-              <div className="space-y-3">
+              <div className="space-y-3 pb-6">
                 <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wide">Page Range</label>
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-2 relative">
                   <label className="flex items-center gap-2 cursor-pointer">
                     <input
                       type="radio"
@@ -392,25 +430,39 @@ export default function CropPage() {
                       className="w-16 h-8 rounded-md border border-gray-300 px-2 text-sm text-center focus:outline-none focus:ring-1 focus:ring-blue-500 disabled:opacity-40 disabled:cursor-not-allowed"
                     />
                   </label>
+                  {pageRangeError && (
+                    <div className="absolute -bottom-6 left-0 text-xs text-red-500">{pageRangeError}</div>
+                  )}
                 </div>
               </div>
 
               {/* Action Buttons */}
-              <div className="pt-2 border-t border-gray-100 flex gap-3">
-                <Button
-                  variant="ghost"
-                  onClick={handleReset}
-                  className="flex-1"
-                >
-                  Reset
-                </Button>
-                <Button
-                  onClick={handleStartJob}
-                  className="flex-1 bg-blue-600 hover:bg-blue-700 text-white"
-                  disabled={!hasAnyMargin}
-                >
-                  Crop
-                </Button>
+              <div className="pt-2 border-t border-gray-100 flex flex-col gap-4">
+                <div className="w-full">
+                  <Input
+                    label="Output filename"
+                    value={outputFilename}
+                    onChange={(event) => setOutputFilename(event.target.value)}
+                    placeholder="cropped.pdf"
+                    error={outputFilenameError ?? undefined}
+                  />
+                </div>
+                <div className="flex gap-3">
+                  <Button
+                    variant="ghost"
+                    onClick={handleReset}
+                    className="flex-1"
+                  >
+                    Reset
+                  </Button>
+                  <Button
+                    onClick={handleStartJob}
+                    className="flex-1 bg-blue-600 hover:bg-blue-700 text-white"
+                    disabled={!hasAnyMargin || Boolean(outputFilenameError) || !isPageRangeValid}
+                  >
+                    Crop
+                  </Button>
+                </div>
               </div>
             </div>
           </div>

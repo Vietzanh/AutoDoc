@@ -89,6 +89,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
               {user && (
                 <nav className="hidden items-center gap-1 lg:flex">
+                  <Link
+                    to="/dashboard"
+                    className="flex h-16 items-center border-b-2 border-transparent px-3 text-sm font-semibold text-gray-800 transition hover:border-blue-600 hover:text-blue-700"
+                  >
+                    Dashboard
+                  </Link>
                   <NavDropdown label="Convert tools" tools={convertTools} />
                   <NavDropdown label="Edit PDF tools" tools={editTools} />
                   <NavDropdown label="All tools" tools={allTools} />
