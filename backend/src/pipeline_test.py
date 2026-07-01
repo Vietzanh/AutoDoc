@@ -34,6 +34,7 @@ from src.model_loader import ModelConfig, load_doclayout_model
 from src.utils import (
     get_section_heading_level,
     is_bbox_contained,
+    get_containment_ratio,
     is_same_line,
     horizontally_separated,
 )
@@ -773,21 +774,30 @@ class PDFToDocxPipeline:
 
         _trim_table_blocks_against_captions(layout_blocks)
 
-        # Filter out text blocks contained in image/table blocks
-        image_blocks = [b for b in layout_blocks if b.block_type == "figure"]
-        table_blocks = [b for b in layout_blocks if b.block_type == "table"]
+        # Filter out blocks completely contained inside larger image/table blocks
+        # This prevents both text and smaller sub-figures from being appended redundantly.
         layout_blocks_filtered = []
-        for block in layout_blocks:
-            if block.block_type in ["figure", "table"]:
-                layout_blocks_filtered.append(block)
-            else:
-                is_contained = False
-                for img_block in image_blocks + table_blocks:
-                    if is_bbox_contained(block.bbox, img_block.bbox):
+        for i, block in enumerate(layout_blocks):
+            is_contained = False
+            for j, img_block in enumerate(layout_blocks):
+                if i == j or img_block.block_type not in ["figure", "table"]:
+                    continue
+                
+                # Check containment using containment ratio > 0.9
+                # This handles YOLO bbox noise robustly.
+                if get_containment_ratio(block.bbox, img_block.bbox) > 0.90:
+                    # If they mutually contain each other (>90% both ways),
+                    # only drop the one that appears later in the list to avoid dropping both.
+                    if get_containment_ratio(img_block.bbox, block.bbox) > 0.90:
+                        if i > j:
+                            is_contained = True
+                            break
+                    else:
                         is_contained = True
                         break
-                if not is_contained:
-                    layout_blocks_filtered.append(block)
+
+            if not is_contained:
+                layout_blocks_filtered.append(block)
         layout_blocks = layout_blocks_filtered
 
         # Remove empty text blocks

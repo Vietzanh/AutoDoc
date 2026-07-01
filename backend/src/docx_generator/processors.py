@@ -564,7 +564,7 @@ def process_text_block(
                     p.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY if is_justified else WD_ALIGN_PARAGRAPH.LEFT
 
             prev_elem = None
-            for elem in group:
+            for elem_i, elem in enumerate(group):
                 if prev_elem is not None:
                     is_new_line = elem.bbox[1] > prev_elem.bbox[1] + (prev_elem.bbox[3] - prev_elem.bbox[1]) * 0.5
                     if is_new_line:
@@ -574,7 +574,19 @@ def process_text_block(
                             p.add_run().add_break()
                 
                 text_content = elem.text
-                if not text_content.endswith(" "):
+                # Only add trailing space if the next span is NOT horizontally
+                # adjacent (i.e. part of the same word split by font-size change).
+                needs_space = True
+                if not text_content.endswith(" ") and elem_i + 1 < len(group):
+                    next_elem = group[elem_i + 1]
+                    next_on_same_line = not (next_elem.bbox[1] > elem.bbox[1] + (elem.bbox[3] - elem.bbox[1]) * 0.5)
+                    if next_on_same_line:
+                        gap = next_elem.bbox[0] - elem.bbox[2]
+                        font_size = elem.font_size or 12.0
+                        # If gap is less than ~40% of font size, spans are part of the same word
+                        if gap < font_size * 0.4:
+                            needs_space = False
+                if needs_space and not text_content.endswith(" "):
                     text_content += " "
                 run = p.add_run(sanitize_text_for_xml(text_content))
                 _apply_span_style(run, elem)
@@ -617,7 +629,7 @@ def process_text_block(
                     p.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY if is_justified else WD_ALIGN_PARAGRAPH.LEFT
 
             prev_elem = None
-            for elem in group:
+            for elem_i, elem in enumerate(group):
                 if prev_elem is not None:
                     is_new_line = elem.bbox[1] > prev_elem.bbox[1] + (prev_elem.bbox[3] - prev_elem.bbox[1]) * 0.5
                     if is_new_line:
@@ -627,7 +639,18 @@ def process_text_block(
                             p.add_run().add_break()
 
                 text_content = elem.text
-                if not text_content.endswith(" "):
+                # Only add trailing space if the next span is NOT horizontally
+                # adjacent (i.e. part of the same word split by font-size change).
+                needs_space = True
+                if not text_content.endswith(" ") and elem_i + 1 < len(group):
+                    next_elem = group[elem_i + 1]
+                    next_on_same_line = not (next_elem.bbox[1] > elem.bbox[1] + (elem.bbox[3] - elem.bbox[1]) * 0.5)
+                    if next_on_same_line:
+                        gap = next_elem.bbox[0] - elem.bbox[2]
+                        font_size = elem.font_size or 12.0
+                        if gap < font_size * 0.4:
+                            needs_space = False
+                if needs_space and not text_content.endswith(" "):
                     text_content += " "
                 run = p.add_run(sanitize_text_for_xml(text_content))
                 _apply_span_style(run, elem)

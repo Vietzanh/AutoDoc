@@ -196,9 +196,9 @@ def _layout_block_from_text_block(
         for idx, (original_idx, _) in enumerate(spans_with_order)
     }
 
-    joined_text = " ".join(span.text.strip() for span in spans_sorted if span.text.strip())
+    joined_text = block.text.strip()
     if not joined_text:
-        joined_text = block.text
+        joined_text = " ".join(span.text.strip() for span in spans_sorted if span.text.strip())
 
     return LayoutBlock(
         block_type=block_type,
@@ -322,7 +322,9 @@ def match_blocks_to_layout(
         text_block_bboxes = [block.bbox for block in matched_blocks]
         tight_bbox = _tight_bbox_for_spans(all_spans_sorted, region.bbox)
 
-        joined_text = " ".join(span.text.strip() for span in all_spans_sorted if span.text.strip())
+        joined_text = "\n".join(block.text.strip() for block in matched_blocks if block.text.strip())
+        if not joined_text:
+            joined_text = " ".join(span.text.strip() for span in all_spans_sorted if span.text.strip())
 
         layout_block = LayoutBlock(
             block_type=region.class_name,

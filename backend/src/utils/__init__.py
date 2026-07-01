@@ -11,6 +11,7 @@ from .table_utils import (
     set_table_col_widths,
     extract_lines_from_block,
     is_bbox_contained,
+    get_containment_ratio,
 )
 
 __all__ = [
@@ -23,4 +24,5 @@ __all__ = [
     "set_table_col_widths",
     "extract_lines_from_block",
     "is_bbox_contained",
+    "get_containment_ratio",
 ]

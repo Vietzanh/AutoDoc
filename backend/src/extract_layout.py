@@ -38,11 +38,12 @@ def _get_spans(page) -> List[Dict[str, Any]]:
         if block.get("type") != 0:
             continue
 
-        block_text = ""
+        lines_text = []
         spans_data: List[Dict[str, Any]] = []
         for line in block.get("lines", []):
+            line_text = ""
             for span in line.get("spans", []):
-                block_text += span.get("text", "")
+                line_text += span.get("text", "")
                 spans_data.append(
                     {
                         "text": span.get("text", ""),
@@ -53,6 +54,9 @@ def _get_spans(page) -> List[Dict[str, Any]]:
                         "bbox": span.get("bbox"),
                     }
                 )
+            lines_text.append(line_text)
+            
+        block_text = "\n".join(lines_text)
 
         layout_data.append(
             {

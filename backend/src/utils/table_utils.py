@@ -120,18 +120,46 @@ def extract_lines_from_block(block, y_tolerance_pt=2.0):
     return text_lines
 
 
-def is_bbox_contained(inner_bbox, outer_bbox):
+def is_bbox_contained(inner_bbox, outer_bbox, tol: float = 0.0):
     """
     Check if inner_bbox is completely contained within outer_bbox.
 
     Args:
         inner_bbox: Inner bounding box (x0, y0, x1, y1)
         outer_bbox: Outer bounding box (x0, y0, x1, y1)
+        tol: Tolerance for bounding box boundaries
 
     Returns:
         bool: True if inner_bbox is contained in outer_bbox
     """
     x0_inner, y0_inner, x1_inner, y1_inner = inner_bbox
     x0_outer, y0_outer, x1_outer, y1_outer = outer_bbox
-    return (x0_inner >= x0_outer and y0_inner >= y0_outer and
-            x1_inner <= x1_outer and y1_inner <= y1_outer)
+    return (x0_inner >= x0_outer - tol and y0_inner >= y0_outer - tol and
+            x1_inner <= x1_outer + tol and y1_inner <= y1_outer + tol)
+
+
+def get_containment_ratio(inner_bbox, outer_bbox) -> float:
+    """
+    Calculate what fraction of the inner_bbox's area is contained within outer_bbox.
+    Useful for checking containment robustly despite YOLO bounding box noise.
+    """
+    x0_inner, y0_inner, x1_inner, y1_inner = inner_bbox
+    x0_outer, y0_outer, x1_outer, y1_outer = outer_bbox
+
+    inter_x0 = max(x0_inner, x0_outer)
+    inter_y0 = max(y0_inner, y0_outer)
+    inter_x1 = min(x1_inner, x1_outer)
+    inter_y1 = min(y1_inner, y1_outer)
+
+    inter_w = max(0.0, inter_x1 - inter_x0)
+    inter_h = max(0.0, inter_y1 - inter_y0)
+    inter_area = inter_w * inter_h
+    
+    if inter_area <= 0.0:
+        return 0.0
+
+    inner_area = max(0.0, x1_inner - x0_inner) * max(0.0, y1_inner - y0_inner)
+    if inner_area <= 0.0:
+        return 0.0
+
+    return inter_area / inner_area

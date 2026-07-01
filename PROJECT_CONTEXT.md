@@ -515,7 +515,10 @@ Resolved:
 4. **Vertical Line gaps:** Line spacing rule is currently set to `SINGLE` to maintain text reflow stability, though exact bounding-box based spacing can be re-applied if further vertical tightness is desired.
 5. **Section Hierarchy & Artifacts:** Heading inference now correctly maps lowercase prefixes (e.g. `a)`, `b.`) to subordinate Word outline levels, and intelligently nests unnumbered textual headers inside the last known numbered section. Additionally, invisible ghost text layers (e.g. pure white text) from the PDF are aggressively forced to black text so they appear correctly as visible section headers in the output DOCX.
 
-Verification: PDF and DOCX visual appearance is now extremely identical. The restored right margin and justification constraints currently cause a minor page count shift (33 original pages -> 35 DOCX pages) due to the slight accumulation of layout differences over a long document, which is a massive improvement from the initial 41-page inflation.
+6. **Image Duplication Prevention**: To prevent smaller YOLO thumbnail predictions from appending sequentially after a larger parent image/table containing them, an Intersection-over-Area (IoA) containment ratio check (>0.90) was added to `backend/src/pipeline.py`. If a block is >90% contained inside a larger figure/table, it is aggressively filtered out.
+7. **Small Caps Span Gap Prevention**: A bug causing artificial spaces inside "Small Caps" words (e.g. "D OC L AYOUT" instead of "DOC LAYOUT") was fixed in `backend/src/docx_generator/processors.py`. PyMuPDF separates these characters into separate spans due to font-size differences. The layout rendering loop was unconditionally injecting a trailing space after every span. It now calculates horizontal adjacency to the next span on the same line, and only injects a space if the horizontal gap is ≥ 40% of the font size.
+
+Verification: PDF and DOCX visual appearance is now extremely identical. The restored right margin and justification constraints currently cause a minor page count shift (33 original pages -> 35 DOCX pages) due to the slight accumulation of layout differences over a long document, which is a massive improvement from the initial 41-page inflation. The output no longer has "exploded" composite images nor artificially broken Small Caps words.
 
 ---
 

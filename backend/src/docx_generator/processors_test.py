@@ -588,15 +588,25 @@ def process_text_block(
                     elif block_type not in ["formula_caption"] and not style_name.startswith("Heading"):
                         p.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
                 
-                for elem in sg:
+                for elem_i, elem in enumerate(sg):
                     text_content = elem.text
                     # In multi-column: strip trailing hyphen used for word-wrapping in PDF
                     if is_multicolumn and text_content.rstrip().endswith("-"):
                         text_content = text_content.rstrip()
                         text_content = text_content[:-1]  # Remove the hyphen
                         # Don't add trailing space — next element continues the word
-                    elif not text_content.endswith(" "):
-                        text_content += " "
+                    else:
+                        needs_space = True
+                        if not text_content.endswith(" ") and elem_i + 1 < len(sg):
+                            next_elem = sg[elem_i + 1]
+                            next_on_same_line = not (next_elem.bbox[1] > elem.bbox[1] + (elem.bbox[3] - elem.bbox[1]) * 0.5)
+                            if next_on_same_line:
+                                gap = next_elem.bbox[0] - elem.bbox[2]
+                                font_size = elem.font_size or 12.0
+                                if gap < font_size * 0.4:
+                                    needs_space = False
+                        if needs_space and not text_content.endswith(" "):
+                            text_content += " "
                     run = p.add_run(sanitize_text_for_xml(text_content))
                     _apply_span_style(run, elem)
 
@@ -608,13 +618,23 @@ def process_text_block(
             p_overflow.paragraph_format.space_after = Pt(2)
             if is_multicolumn:
                 p_overflow.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
-            for elem in overflow_elements:
+            for elem_i, elem in enumerate(overflow_elements):
                 text_content = elem.text
                 if is_multicolumn and text_content.rstrip().endswith("-"):
                     text_content = text_content.rstrip()
                     text_content = text_content[:-1]
-                elif not text_content.endswith(" "):
-                    text_content += " "
+                else:
+                    needs_space = True
+                    if not text_content.endswith(" ") and elem_i + 1 < len(overflow_elements):
+                        next_elem = overflow_elements[elem_i + 1]
+                        next_on_same_line = not (next_elem.bbox[1] > elem.bbox[1] + (elem.bbox[3] - elem.bbox[1]) * 0.5)
+                        if next_on_same_line:
+                            gap = next_elem.bbox[0] - elem.bbox[2]
+                            font_size = elem.font_size or 12.0
+                            if gap < font_size * 0.4:
+                                needs_space = False
+                    if needs_space and not text_content.endswith(" "):
+                        text_content += " "
                 run = p_overflow.add_run(sanitize_text_for_xml(text_content))
                 _apply_span_style(run, elem)
             p = p_overflow  # Return the last paragraph
@@ -654,9 +674,18 @@ def process_text_block(
                 elif block_type not in ["formula_caption"] and not style_name.startswith("Heading"):
                     p.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
 
-            for elem in group:
+            for elem_i, elem in enumerate(group):
                 text_content = elem.text
-                if not text_content.endswith(" "):
+                needs_space = True
+                if not text_content.endswith(" ") and elem_i + 1 < len(group):
+                    next_elem = group[elem_i + 1]
+                    next_on_same_line = not (next_elem.bbox[1] > elem.bbox[1] + (elem.bbox[3] - elem.bbox[1]) * 0.5)
+                    if next_on_same_line:
+                        gap = next_elem.bbox[0] - elem.bbox[2]
+                        font_size = elem.font_size or 12.0
+                        if gap < font_size * 0.4:
+                            needs_space = False
+                if needs_space and not text_content.endswith(" "):
                     text_content += " "
                 run = p.add_run(sanitize_text_for_xml(text_content))
                 _apply_span_style(run, elem)
