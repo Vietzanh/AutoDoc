@@ -137,12 +137,14 @@ function DropSlot({
 
 function PageTile({
   page,
+  displayIndex,
   isActive,
   onPreview,
   onDelete,
   isDraggable,
 }: {
   page: PageState;
+  displayIndex: number;
   isActive: boolean;
   onPreview: () => void;
   onDelete?: () => void;
@@ -170,7 +172,7 @@ function PageTile({
         } : undefined}
       >
         {onDelete && (
-          <div className="absolute right-1.5 top-1.5 z-20 flex flex-col gap-1 transition-opacity opacity-0 group-hover:opacity-100">
+          <div className="absolute right-1.5 top-1.5 z-20 flex flex-col gap-1">
             <button
               type="button"
               onClick={(event) => { event.stopPropagation(); onDelete(); }}
@@ -192,11 +194,11 @@ function PageTile({
           } ${isDraggable ? "cursor-grab active:cursor-grabbing" : ""}`}
         />
 
-        <span className="pointer-events-none absolute top-1 left-1 rounded bg-black/60 px-1 py-0 text-xs text-white">
+        <span className={`pointer-events-none absolute top-1 left-2 text-lg font-bold drop-shadow-md ${page.docNumber === 2 ? "text-red-600" : "text-blue-700"}`}>
           {page.docNumber}
         </span>
         <span className="pointer-events-none absolute bottom-1 left-1/2 -translate-x-1/2 rounded bg-black/60 px-1.5 py-0.5 text-xs text-white">
-          {page.originalIndex + 1}
+          {displayIndex + 1}
         </span>
       </div>
     </div>
@@ -295,54 +297,53 @@ export default function InsertPage() {
   });
 
   const handleDropInsertedPage = useCallback((sourcePageId: string, insertIndex: number) => {
-    setSecondaryPages((prevSecondary) => {
-      const sourcePage = prevSecondary.find((p) => p.id === sourcePageId);
-      if (!sourcePage) return prevSecondary; // Not found in secondary pages
+    const sourcePage = secondaryPages.find((p) => p.id === sourcePageId);
+    if (!sourcePage) return; // Not found in secondary pages
 
-      insertedCopyCounter.current += 1;
-      const newInsertedPage = cloneInsertedPage(sourcePage, insertedCopyCounter.current);
+    insertedCopyCounter.current += 1;
+    const newInsertedPage = cloneInsertedPage(sourcePage, insertedCopyCounter.current);
 
-      setPrimaryPages((prevPrimary) => {
-        const next = [...prevPrimary];
-        next.splice(insertIndex, 0, newInsertedPage);
-        return next;
-      });
-
-      setActivePageId(newInsertedPage.id);
-      setTimeout(() => {
-          primaryThumbnailRefs.current[newInsertedPage.id]?.scrollIntoView({ block: "nearest", behavior: "smooth" });
-      }, 50);
-      
-      return prevSecondary.filter(p => p.id !== sourcePageId);
+    setPrimaryPages((prevPrimary) => {
+      const next = [...prevPrimary];
+      next.splice(insertIndex, 0, newInsertedPage);
+      return next;
     });
-  }, []);
+
+    setSecondaryPages((prevSecondary) => prevSecondary.filter(p => p.id !== sourcePageId));
+
+    setActivePageId(newInsertedPage.id);
+    setTimeout(() => {
+        primaryThumbnailRefs.current[newInsertedPage.id]?.scrollIntoView({ block: "nearest", behavior: "smooth" });
+    }, 50);
+  }, [secondaryPages]);
 
   const handleDeleteInsertedPage = useCallback((pageId: string) => {
-    setPrimaryPages((prevPrimary) => {
-      const pageToDelete = prevPrimary.find(p => p.id === pageId);
-      if (!pageToDelete || pageToDelete.docNumber !== 2) return prevPrimary;
+    const pageToDelete = primaryPages.find(p => p.id === pageId);
+    if (!pageToDelete || pageToDelete.docNumber !== 2) return;
 
-      setSecondaryPages((prevSecondary) => {
-        const next = [...prevSecondary];
-        // Reconstruct original page object
-        const originalPage: PageState = {
-          id: `secondary-${pageToDelete.sourceDocId}-${pageToDelete.originalIndex}`,
-          sourceDocId: pageToDelete.sourceDocId,
-          originalIndex: pageToDelete.originalIndex,
-          thumbnail: pageToDelete.thumbnail,
-          preview: pageToDelete.preview,
-          widthPts: pageToDelete.widthPts,
-          heightPts: pageToDelete.heightPts,
-          docNumber: 2,
-        };
+    setPrimaryPages((prevPrimary) => prevPrimary.filter(p => p.id !== pageId));
+
+    setSecondaryPages((prevSecondary) => {
+      const next = [...prevSecondary];
+      // Reconstruct original page object
+      const originalPage: PageState = {
+        id: `secondary-${pageToDelete.sourceDocId}-${pageToDelete.originalIndex}`,
+        sourceDocId: pageToDelete.sourceDocId,
+        originalIndex: pageToDelete.originalIndex,
+        thumbnail: pageToDelete.thumbnail,
+        preview: pageToDelete.preview,
+        widthPts: pageToDelete.widthPts,
+        heightPts: pageToDelete.heightPts,
+        docNumber: 2,
+      };
+      
+      if (!next.some(p => p.id === originalPage.id)) {
         next.push(originalPage);
         next.sort((a, b) => a.originalIndex - b.originalIndex);
-        return next;
-      });
-
-      return prevPrimary.filter(p => p.id !== pageId);
+      }
+      return next;
     });
-  }, []);
+  }, [primaryPages]);
 
   const handleSave = async () => {
     if (!primaryDocId || !secondaryDocId) return;
@@ -567,6 +568,7 @@ export default function InsertPage() {
                           <DropSlot index={index} onDropPage={handleDropInsertedPage} />
                           <PageTile
                             page={page}
+                            displayIndex={index}
                             isActive={page.id === activePageId}
                             onPreview={() => setActivePageId(page.id)}
                             onDelete={page.docNumber === 2 ? () => handleDeleteInsertedPage(page.id) : undefined}
@@ -595,10 +597,11 @@ export default function InsertPage() {
                   </div>
                   <div className="flex-1 overflow-y-auto p-4 bg-white">
                     <div className="grid grid-cols-4 gap-x-4 gap-y-5 pr-1">
-                      {secondaryPages.map((page) => (
+                      {secondaryPages.map((page, index) => (
                         <div key={page.id} className="relative flex justify-center">
                           <PageTile
                             page={page}
+                            displayIndex={index}
                             isActive={page.id === activePageId}
                             onPreview={() => setActivePageId(page.id)}
                             isDraggable={true}

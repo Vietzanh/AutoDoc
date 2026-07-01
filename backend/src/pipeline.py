@@ -255,8 +255,9 @@ class PDFToDocxPipeline:
         prev_text_block = None
         prev_page_height = None
         prev_page_last_content_y1 = None
+        context = {"last_heading_level": 0}
 
-        if progress_callback:
+        for page_idx in range(start_page, end_page):
             progress_callback(35)
             
         print("Rendering pages for YOLO inference...")
@@ -372,6 +373,7 @@ class PDFToDocxPipeline:
                 prev_text_block=prev_text_block,
                 prev_page_height=prev_page_height,
                 prev_page_last_content_y1=prev_page_last_content_y1,
+                context=context
             )
 
             first_title_processed = result["first_title_processed"]
@@ -440,6 +442,7 @@ class PDFToDocxPipeline:
         prev_text_block,
         prev_page_height: Optional[float] = None,
         prev_page_last_content_y1: Optional[float] = None,
+        context: Optional[Dict] = None,
     ) -> Dict:
         page_height = page.rect.height
 
@@ -626,7 +629,7 @@ class PDFToDocxPipeline:
                 first_content_block.block_type == "section_header"
                 or (first_content_block.block_type == "title" and first_title_processed)
             )
-            heading_level = get_section_heading_level(heading_text, default_level=1)
+            heading_level, _ = get_section_heading_level(heading_text, default_level=1)
             is_top_level_section = starts_section and (heading_level == 1)
 
             prev_page_gap_to_bottom = float(prev_page_height) - float(prev_page_last_content_y1)
@@ -689,8 +692,9 @@ class PDFToDocxPipeline:
 
                 result = process_text_block(
                     docx_doc, block, block_type, first_title_processed,
-                    self.style_map, doc_left_margin_in, row, prev_row_y1,
-                    last_text_paragraph if should_merge else None
+                    self.style_map, doc_left_margin_in, row, prev_row_y1, 
+                    (last_text_paragraph if should_merge else None),
+                    context=context
                 )
 
                 if result[0] is None:

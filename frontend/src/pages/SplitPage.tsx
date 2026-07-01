@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 import { ProgressBar } from "@/components/ui/ProgressBar";
 import { Spinner } from "@/components/ui/Spinner";
+import { PdfPreview } from "@/components/ui/PdfPreview";
 
 // ── SplitLine — blue scissor click target between two page thumbnails ─────────
 interface SplitLineProps {
@@ -85,6 +86,8 @@ export default function SplitPage() {
   const [outputFilename, setOutputFilename] = useState("split_part");
   const [createdJob, setCreatedJob] = useState<Job | null>(null);
   const [splitParts, setSplitParts] = useState<{ filename: string; pages: string }[]>([]);
+  const [currentPartIndex, setCurrentPartIndex] = useState(0);
+  const [partPdfUrl, setPartPdfUrl] = useState<string | null>(null);
 
   const { job } = useJobPoll(createdJob?.id ?? 0);
 
@@ -170,6 +173,24 @@ export default function SplitPage() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [job?.status]);
 
+  // Fetch specific part blob when index changes
+  useEffect(() => {
+    let active = true;
+    if (createdJob?.status === "done" && splitParts.length > 0) {
+      api.downloadJobResult(createdJob.id, currentPartIndex)
+        .then(blob => {
+          if (active && blob.size > 0) {
+            setPartPdfUrl(prev => {
+              if (prev) URL.revokeObjectURL(prev);
+              return URL.createObjectURL(blob);
+            });
+          }
+        })
+        .catch(() => toast.error("Failed to load part preview"));
+    }
+    return () => { active = false; };
+  }, [createdJob?.status, createdJob?.id, currentPartIndex, splitParts.length]);
+
   const handleDownload = async () => {
     if (!createdJob) return;
     try {
@@ -193,6 +214,11 @@ export default function SplitPage() {
     setCreatedJob(null);
     setSplitParts([]);
     setOutputFilename("split_part");
+    setCurrentPartIndex(0);
+    setPartPdfUrl(prev => {
+      if (prev) URL.revokeObjectURL(prev);
+      return null;
+    });
   };
 
   const isProcessing = createdJob?.status === "pending" || createdJob?.status === "processing";
@@ -202,12 +228,14 @@ export default function SplitPage() {
   // ── Render ─────────────────────────────────────────────────────────────────
   return (
     <div className="max-w-6xl mx-auto space-y-5">
-      <div>
-        <h1 className="text-2xl font-bold text-gray-900">Split PDF</h1>
-        <p className="text-sm text-gray-500 mt-1">
-          Upload a PDF, click the blue split lines between pages, then split into separate files
-        </p>
-      </div>
+      {!selectedDoc && (
+        <div>
+          <h1 className="text-2xl font-bold text-gray-900">Split PDF</h1>
+          <p className="text-sm text-gray-500 mt-1">
+            Upload a PDF, click the blue split lines between pages, then split into separate files
+          </p>
+        </div>
+      )}
 
       {/* ── Processing / Done / Failed states ── */}
       {createdJob && isProcessing && (
@@ -229,26 +257,75 @@ export default function SplitPage() {
           </CardHeader>
           <CardBody className="space-y-3">
             {splitParts.length > 0 && (
-              <div className="rounded-lg border border-gray-200 overflow-hidden">
-                <table className="w-full text-sm">
-                  <thead className="bg-gray-50">
-                    <tr>
-                      <th className="px-4 py-2 text-left font-medium text-gray-600">Part</th>
-                      <th className="px-4 py-2 text-left font-medium text-gray-600">Pages</th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-gray-100">
-                    {splitParts.map((part, i) => (
-                      <tr key={i} className="hover:bg-gray-50">
-                        <td className="px-4 py-2 text-gray-900">{part.filename}</td>
-                        <td className="px-4 py-2 text-gray-500">{part.pages}</td>
+              <div className="flex flex-col gap-4">
+                <div className="flex items-center justify-center gap-2 bg-gray-50 px-4 py-2 rounded-lg border border-gray-200">
+                  <span className="text-sm font-medium text-gray-700 mr-2">Segment</span>
+                  <button
+                    onClick={() => setCurrentPartIndex(p => Math.max(0, p - 1))}
+                    disabled={currentPartIndex === 0}
+                    className="p-1 rounded hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                    title="Previous Segment"
+                  >
+                    <svg className="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                    </svg>
+                  </button>
+                  <div className="flex items-center gap-2 text-sm text-gray-700">
+                    <input
+                      type="number"
+                      min={1}
+                      max={splitParts.length}
+                      value={currentPartIndex + 1}
+                      onChange={(e) => {
+                        let val = parseInt(e.target.value, 10);
+                        if (isNaN(val)) return;
+                        if (val < 1) val = 1;
+                        if (val > splitParts.length) val = splitParts.length;
+                        setCurrentPartIndex(val - 1);
+                      }}
+                      className="w-16 text-center border border-gray-300 rounded-md py-1 px-2 focus:ring-blue-500 focus:border-blue-500 bg-white"
+                    />
+                    <span>/ {splitParts.length}</span>
+                  </div>
+                  <button
+                    onClick={() => setCurrentPartIndex(p => Math.min(splitParts.length - 1, p + 1))}
+                    disabled={currentPartIndex === splitParts.length - 1}
+                    className="p-1 rounded hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                    title="Next Segment"
+                  >
+                    <svg className="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                </div>
+
+                {partPdfUrl && (
+                  <div className="border border-gray-200 rounded-xl overflow-hidden bg-gray-200 shadow-inner">
+                    <PdfPreview fileUrl={partPdfUrl} />
+                  </div>
+                )}
+
+                <div className="rounded-lg border border-gray-200 overflow-hidden mt-4">
+                  <table className="w-full text-sm">
+                    <thead className="bg-gray-50">
+                      <tr>
+                        <th className="px-4 py-2 text-left font-medium text-gray-600">Part</th>
+                        <th className="px-4 py-2 text-left font-medium text-gray-600">Pages</th>
                       </tr>
-                    ))}
-                  </tbody>
-                </table>
+                    </thead>
+                    <tbody className="divide-y divide-gray-100">
+                      {splitParts.map((part, i) => (
+                        <tr key={i} className={`hover:bg-gray-50 ${i === currentPartIndex ? "bg-blue-50/50" : ""}`}>
+                          <td className="px-4 py-2 text-gray-900">{part.filename}</td>
+                          <td className="px-4 py-2 text-gray-500">{part.pages}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
               </div>
             )}
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-gray-600 mt-4">
               {splitParts.length} part{splitParts.length !== 1 ? "s" : ""} generated — download as ZIP below.
             </p>
           </CardBody>
@@ -278,8 +355,8 @@ export default function SplitPage() {
         </Card>
       )}
 
-      {/* ── Upload drop zone — always shown when no job exists ── */}
-      {!createdJob && (
+      {/* ── Upload drop zone — always shown when no job exists and no doc selected ── */}
+      {!createdJob && !selectedDoc && (
         <Card>
           <CardBody>
             <div
@@ -328,9 +405,6 @@ export default function SplitPage() {
                     Clear all
                   </Button>
                 )}
-                <Button variant="ghost" size="sm" onClick={handleReset}>
-                  Split Another
-                </Button>
               </div>
             </div>
             <p className="text-xs text-gray-400 mt-1">

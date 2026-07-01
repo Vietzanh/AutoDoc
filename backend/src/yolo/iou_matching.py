@@ -81,6 +81,7 @@ class TextElement:
     font_size: Optional[float] = None
     font_flags: Optional[int] = None
     color: Optional[int] = None
+    url: Optional[str] = None
     raw: Dict[str, Any] = field(default_factory=dict)
 
 
@@ -126,6 +127,7 @@ def text_elements_from_spans(spans: Iterable[Dict[str, Any]]) -> List[TextElemen
                 font_size=span.get("font_size"),
                 font_flags=span.get("font_flags"),
                 color=span.get("color"),
+                url=span.get("url"),
                 raw=span,
             )
         )

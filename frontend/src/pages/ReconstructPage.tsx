@@ -8,6 +8,7 @@ import { Card, CardHeader, CardBody, CardFooter } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { ProgressBar } from "@/components/ui/ProgressBar";
 import { Spinner } from "@/components/ui/Spinner";
+import { PdfPreview } from "@/components/ui/PdfPreview";
 
 export default function ReconstructPage() {
   const navigate = useNavigate();
@@ -16,6 +17,7 @@ export default function ReconstructPage() {
   const [uploading, setUploading] = useState(false);
   const [uploadError, setUploadError] = useState<string | null>(null);
   const [createdJob, setCreatedJob] = useState<Job | null>(null);
+  const [originalFileUrl, setOriginalFileUrl] = useState<string | null>(null);
 
   // Once a job is created, start polling
   const { job } = useJobPoll(createdJob?.id ?? 0);
@@ -34,6 +36,10 @@ export default function ReconstructPage() {
     setUploadError(null);
     setUploadedDoc(null);
     setCreatedJob(null);
+    if (originalFileUrl) {
+      URL.revokeObjectURL(originalFileUrl);
+    }
+    setOriginalFileUrl(URL.createObjectURL(file));
 
     try {
       const doc = await api.uploadDocument(file);
@@ -85,6 +91,10 @@ export default function ReconstructPage() {
     setUploadedDoc(null);
     setCreatedJob(null);
     setUploadError(null);
+    if (originalFileUrl) {
+      URL.revokeObjectURL(originalFileUrl);
+      setOriginalFileUrl(null);
+    }
   };
 
   const isProcessing =
@@ -93,9 +103,9 @@ export default function ReconstructPage() {
   const isFailed = createdJob?.status === "failed";
 
   return (
-    <div className="max-w-2xl mx-auto space-y-6">
+    <div className="max-w-3xl mx-auto space-y-6">
       <div>
-        <h1 className="text-2xl font-bold text-gray-900">PDF → DOCX Reconstruction</h1>
+        <h1 className="text-2xl font-bold text-gray-900">PDF-to-DOCX Conversion</h1>
         <p className="text-sm text-gray-500 mt-1">
           Upload a PDF and convert it to an editable DOCX file
         </p>
@@ -138,29 +148,21 @@ export default function ReconstructPage() {
       {uploadedDoc && !createdJob && (
         <Card>
           <CardHeader>
-            <h2 className="font-semibold text-gray-900">Ready to reconstruct</h2>
+            <div className="flex items-center justify-between">
+              <h2 className="font-semibold text-gray-900">Ready to convert</h2>
+              <div className="flex gap-2">
+                <Button onClick={handleStartJob}>Start Conversion</Button>
+                <Button variant="ghost" onClick={handleReset}>Cancel</Button>
+              </div>
+            </div>
           </CardHeader>
-          <CardBody>
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-red-50 rounded-lg flex items-center justify-center flex-shrink-0">
-                <svg className="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                </svg>
+          <CardBody className="p-0">
+            {originalFileUrl && (
+              <div className="bg-gray-200 shadow-inner custom-scrollbar rounded-b-xl border-t border-gray-200">
+                <PdfPreview fileUrl={originalFileUrl} />
               </div>
-              <div>
-                <p className="font-medium text-gray-900">{uploadedDoc.original_filename}</p>
-                <p className="text-sm text-gray-500">
-                  {uploadedDoc.page_count ?? "?"} pages
-                </p>
-              </div>
-            </div>
+            )}
           </CardBody>
-          <CardFooter>
-            <div className="flex gap-3">
-              <Button onClick={handleStartJob}>Start Reconstruction</Button>
-              <Button variant="ghost" onClick={handleReset}>Cancel</Button>
-            </div>
-          </CardFooter>
         </Card>
       )}
 
@@ -172,12 +174,13 @@ export default function ReconstructPage() {
           </CardHeader>
           <CardBody className="space-y-4">
             <p className="text-sm text-gray-600">
-              Please wait while your PDF is being reconstructed.
+              Please wait while your PDF is being converted.
             </p>
             <ProgressBar value={createdJob.progress} />
             <p className="text-xs text-gray-400 text-right">
               {createdJob.progress}% complete
             </p>
+            {originalFileUrl && <PdfPreview fileUrl={originalFileUrl} />}
           </CardBody>
         </Card>
       )}
@@ -186,7 +189,7 @@ export default function ReconstructPage() {
       {createdJob && isDone && (
         <Card>
           <CardHeader>
-            <h2 className="font-semibold text-green-700">Reconstruction complete!</h2>
+            <h2 className="font-semibold text-green-700">Conversion complete!</h2>
           </CardHeader>
           <CardBody className="space-y-4">
             <p className="text-sm text-gray-600">

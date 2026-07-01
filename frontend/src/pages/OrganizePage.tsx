@@ -157,12 +157,12 @@ function PreviewPane({
     if (!activePageId) return;
     
     isScrollingProgrammatically.current = true;
-    pageRefs.current[activePageId]?.scrollIntoView({ block: "start", behavior: "smooth" });
+    pageRefs.current[activePageId]?.scrollIntoView({ block: "start" });
     
     if (scrollTimeout.current !== null) window.clearTimeout(scrollTimeout.current);
     scrollTimeout.current = window.setTimeout(() => {
       isScrollingProgrammatically.current = false;
-    }, 800);
+    }, 100);
   }, [activePageId]);
 
   return (

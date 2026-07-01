@@ -5,34 +5,43 @@ Heading-related utility functions.
 import re
 
 
-def get_section_heading_level(text: str, default_level: int = 1) -> int:
+from typing import Tuple
+
+def get_section_heading_level(text: str, default_level: int = 1) -> Tuple[int, bool]:
     """
     Infer heading level for section headers based on numbering pattern.
 
     Examples:
-        "1 Introduction"      -> level 1
-        "1.1 Overview"         -> level 2
-        "1.2.3 Details"        -> level 3
-        "A Section"            -> level 1
-        "A.1 Subsection"       -> level 2
-
-    Args:
-        text: Text content of the heading
-        default_level: Default level if pattern not found
+        "1 Introduction"      -> (1, True)
+        "1.1 Overview"         -> (2, True)
+        "a) Subsection"        -> (2, True)
+        "Unnumbered Header"    -> (default_level, False)
 
     Returns:
-        int: Heading level (1-9)
+        Tuple[int, bool]: (Heading level 1-9, is_numbered flag)
     """
     if not text:
-        return default_level
+        return default_level, False
     s = text.strip()
-    # Match leading numbering like "1", "1.1", "1.2.3", "A", "A.1", "B.2.1", etc.
-    m = re.match(r"^([A-Z]|\d+)(?:((?:\.[A-Z\d]+)+))?\b", s)
-    if not m:
-        return default_level
-    full_prefix = m.group(0)
-    parts = full_prefix.split(".")
-    level = len(parts)
-    # Clamp to Word's heading range 1-9
-    level = max(1, min(9, level))
-    return level
+    
+    first_word = s.split()[0] if s else ""
+    
+    # Match prefixes: numbers, uppercase letters, lowercase letters
+    # followed by optional dots and numbers/letters
+    # ending with optional ., ), or ,
+    m = re.match(r"^([A-Za-z]|\d+)((?:\.[A-Za-z\d]+)*)[\.\,\)]?$", first_word)
+    if m:
+        base = m.group(1)
+        rest = m.group(2)
+        
+        parts = 1 + (rest.count(".") if rest else 0)
+        
+        # If it's a single lowercase letter, it's typically a list/sub-section
+        # Assign it a minimum level of 2
+        if parts == 1 and base.isalpha() and base.islower():
+            parts = 2
+            
+        level = max(1, min(9, parts))
+        return level, True
+
+    return default_level, False

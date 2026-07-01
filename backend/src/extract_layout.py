@@ -63,7 +63,82 @@ def _get_spans(page) -> List[Dict[str, Any]]:
             }
         )
 
+    # Tag spans that overlap with external hyperlinks
+    _tag_spans_with_links(page, layout_data)
+
     return layout_data
+
+
+def _span_link_overlap_ratio(span_bbox, link_bbox) -> float:
+    """
+    Compute what fraction of the span's area is contained within the link
+    rectangle.  Returns a value in [0.0, 1.0].
+
+    We use containment ratio rather than IoU because a small text span can
+    be fully inside a much larger link rectangle — IoU would be very low
+    in that case even though the span clearly belongs to the link.
+    """
+    x0_1, y0_1, x1_1, y1_1 = span_bbox
+    x0_2, y0_2, x1_2, y1_2 = link_bbox
+
+    inter_x0 = max(x0_1, x0_2)
+    inter_y0 = max(y0_1, y0_2)
+    inter_x1 = min(x1_1, x1_2)
+    inter_y1 = min(y1_1, y1_2)
+
+    inter_w = max(0.0, inter_x1 - inter_x0)
+    inter_h = max(0.0, inter_y1 - inter_y0)
+    inter_area = inter_w * inter_h
+
+    span_area = max(0.0, x1_1 - x0_1) * max(0.0, y1_1 - y0_1)
+    if span_area <= 0.0:
+        return 0.0
+
+    return inter_area / span_area
+
+
+# Minimum fraction of the span that must be inside the link rect to tag it.
+_LINK_CONTAINMENT_THRESHOLD = 0.3
+
+
+def _tag_spans_with_links(page, layout_data: List[Dict[str, Any]]) -> None:
+    """
+    Extract external hyperlinks from a PDF page and tag overlapping spans.
+
+    For each external link (kind == LINK_URI), we find every text span whose
+    bounding box is at least 30% contained within the link rectangle and set
+    span["url"] to the URI.  This is the "span-level tagging"
+    approach — if a span overlaps enough, the entire span gets the link.
+    """
+    try:
+        links = page.get_links()
+    except Exception:
+        return
+
+    # Filter to external URI links only
+    import pymupdf as fitz
+    external_links = [
+        link for link in links
+        if link.get("kind") == fitz.LINK_URI and link.get("uri")
+    ]
+
+    if not external_links:
+        return
+
+    for link in external_links:
+        link_rect = link["from"]  # fitz.Rect object
+        link_bbox = (link_rect.x0, link_rect.y0, link_rect.x1, link_rect.y1)
+        uri = link["uri"]
+
+        for block in layout_data:
+            if block.get("type") != "text":
+                continue
+            for span in block.get("spans", []):
+                span_bbox = span.get("bbox")
+                if span_bbox is None:
+                    continue
+                if _span_link_overlap_ratio(span_bbox, link_bbox) >= _LINK_CONTAINMENT_THRESHOLD:
+                    span["url"] = uri
 
 
 def _save_metadata(output_dir: str, page_index: int, layout_data: List[Dict[str, Any]]) -> str:

@@ -10,6 +10,7 @@ import { Input } from "@/components/ui/Input";
 import { ProgressBar } from "@/components/ui/ProgressBar";
 import { Spinner } from "@/components/ui/Spinner";
 import { validatePdfOutputFilename } from "@/utils/pdfFilename";
+import { PdfPreview } from "@/components/ui/PdfPreview";
 
 export default function MergePage() {
   const navigate = useNavigate();
@@ -20,12 +21,25 @@ export default function MergePage() {
   const [uploading, setUploading] = useState(false);
   const [outputFilename, setOutputFilename] = useState("merged.pdf");
   const [createdJob, setCreatedJob] = useState<Job | null>(null);
+  const [resultPdfUrl, setResultPdfUrl] = useState<string | null>(null);
 
   const { job } = useJobPoll(createdJob?.id ?? 0);
 
   useEffect(() => {
     if (job) setCreatedJob(job);
   }, [job]);
+
+  useEffect(() => {
+    if (createdJob?.status === "done" && !resultPdfUrl) {
+      api.downloadJobResult(createdJob.id)
+        .then((blob) => {
+          if (blob.size > 0) {
+            setResultPdfUrl(URL.createObjectURL(blob));
+          }
+        })
+        .catch(() => toast.error("Failed to load PDF preview"));
+    }
+  }, [createdJob?.status, createdJob?.id, resultPdfUrl]);
 
   const onDrop = useCallback(async (acceptedFiles: File[]) => {
     const file = acceptedFiles[0];
@@ -157,6 +171,10 @@ export default function MergePage() {
     setCreatedJob(null);
     setSelectedIds(new Set());
     setOutputFilename("merged.pdf");
+    if (resultPdfUrl) {
+      URL.revokeObjectURL(resultPdfUrl);
+      setResultPdfUrl(null);
+    }
   };
 
   const isProcessing =
@@ -176,16 +194,23 @@ export default function MergePage() {
       {createdJob && (
         <Card>
           <CardHeader>
-            <h2 className="font-semibold text-gray-900 capitalize">
-              {isProcessing ? "Processing..." : isDone ? "Done" : isFailed ? "Failed" : ""}
+            <h2 className={`font-semibold capitalize ${isDone ? "text-green-700" : isFailed ? "text-red-700" : "text-gray-900"}`}>
+              {isProcessing ? "Processing..." : isDone ? "Merge complete!" : isFailed ? "Failed" : ""}
             </h2>
           </CardHeader>
           <CardBody className="space-y-4">
-            <ProgressBar value={createdJob.progress} />
+            {!isDone && <ProgressBar value={createdJob.progress} />}
             {isDone && (
-              <div className="mt-4 flex gap-3">
-                <Button onClick={handleDownload}>Download Merged PDF</Button>
-                <Button variant="ghost" onClick={handleReset}>Start Over</Button>
+              <div className="mt-4 flex flex-col gap-4">
+                <div className="flex gap-3">
+                  <Button onClick={handleDownload}>Download Merged PDF</Button>
+                  <Button variant="ghost" onClick={handleReset}>Start Over</Button>
+                </div>
+                {resultPdfUrl && (
+                  <div className="border border-gray-200 rounded-xl overflow-hidden bg-gray-200 shadow-inner">
+                    <PdfPreview fileUrl={resultPdfUrl} />
+                  </div>
+                )}
               </div>
             )}
             {isFailed && (

@@ -325,10 +325,15 @@ class ApiClient {
   /**
    * Download a job result as a Blob.
    * Uses native fetch to avoid Vite proxy truncating large binary responses.
+   * Supports fetching a specific part for split jobs via partIndex.
    */
-  async downloadJobResult(jobId: number): Promise<Blob> {
+  async downloadJobResult(jobId: number, partIndex?: number): Promise<Blob> {
     const token = localStorage.getItem("access_token");
-    const res = await fetch(`/api/jobs/${jobId}/download`, {
+    const url = partIndex !== undefined 
+      ? `/api/jobs/${jobId}/download?part_index=${partIndex}` 
+      : `/api/jobs/${jobId}/download`;
+
+    const res = await fetch(url, {
       headers: {
         ...(token ? { Authorization: `Bearer ${token}` } : {}),
       },

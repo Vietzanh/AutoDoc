@@ -185,9 +185,9 @@ function ReorderContent({
         {/* Grid rows — 5 columns, SortableContext wraps ALL items at once */}
         <div className="space-y-8">
           {rows.map((row, rowIdx) => (
-            <div key={rowIdx} className="flex flex-wrap items-start gap-8">
+            <div key={rowIdx} className="flex items-start">
               {row.map((page, colIdx) => (
-                <div key={page.id} className="relative flex flex-col items-center">
+                <div key={page.id} className="relative flex items-center">
                   <SortableThumbnail page={page} />
                   {/* Drop zone after every item except the last in the row */}
                   {colIdx < row.length - 1 && (

@@ -9,7 +9,7 @@ from typing import Dict, List, Optional, Tuple
 import cv2
 import numpy as np
 from docx import Document
-from docx.enum.text import WD_ALIGN_PARAGRAPH
+from docx.enum.text import WD_ALIGN_PARAGRAPH, WD_LINE_SPACING
 from docx.shared import Inches, Pt, RGBColor
 
 from src.utils import (
@@ -108,6 +108,8 @@ def _rgb_from_pdf_color(color):
 
     try:
         color_int = int(color)
+        if color_int == 16777215:  # 0xFFFFFF (White)
+            return RGBColor(0, 0, 0)
     except (TypeError, ValueError):
         return RGBColor(0, 0, 0)
 
@@ -400,7 +402,8 @@ def process_table_row(docx_doc, row, section, page_width_pts):
 
 def process_text_block(
     docx_doc, block, block_type, first_title_processed,
-    style_map, doc_left_margin_in, row, prev_row_y1, last_paragraph=None
+    style_map, doc_left_margin_in, row, prev_row_y1, last_paragraph=None,
+    context=None
 ):
     """
     Process a text block (title, plain text, captions, etc.).
@@ -427,8 +430,50 @@ def process_text_block(
     x0_in = x0_pdf / 72
     x1_in = x1_pdf / 72
     indent_from_margin_in = max(0.0, x0_in - doc_left_margin_in - (5.0 / 72.0))
+    # Re-enable right indent with a small tolerance buffer (0.1 inch extra)
+    # to account for DOCX font rendering requiring slightly more width than PDF.
     right_edge_in = page_width_in - doc_right_margin_in
-    right_indent_from_margin_in = max(0.0, right_edge_in - x1_in - (5.0 / 72.0))
+    raw_right_indent = right_edge_in - x1_in - (5.0 / 72.0)
+    right_indent_from_margin_in = max(0.0, raw_right_indent - 0.1)
+
+    # --- Justify detection ---
+    # Group elements into visual lines, then check if most lines share the
+    # same right-edge x-coordinate (within tolerance). If so, the PDF author
+    # used justified alignment.
+    is_justified = False
+    if block.elements and block_type not in ["title", "figure_caption", "table_caption", "formula_caption"]:
+        lines: Dict[float, List] = {}
+        line_height = 0.0
+        for elem in block.elements:
+            eh = elem.bbox[3] - elem.bbox[1]
+            if eh > line_height:
+                line_height = eh
+        half_h = max(line_height * 0.5, 3.0)
+        for elem in block.elements:
+            cy = (elem.bbox[1] + elem.bbox[3]) / 2.0
+            matched = False
+            for key in lines:
+                if abs(cy - key) < half_h:
+                    lines[key].append(elem)
+                    matched = True
+                    break
+            if not matched:
+                lines[cy] = [elem]
+        if len(lines) >= 3:
+            # For each line, find the rightmost span end
+            right_edges = []
+            for key in sorted(lines.keys()):
+                line_elems = lines[key]
+                max_x1 = max(e.bbox[2] for e in line_elems)
+                right_edges.append(max_x1)
+            # Exclude the last line (typically shorter in justified text)
+            edges_to_check = right_edges[:-1]
+            if len(edges_to_check) >= 2:
+                # Check if most lines end at the same x (within 5pt tolerance)
+                ref_edge = edges_to_check[0]
+                same_count = sum(1 for e in edges_to_check if abs(e - ref_edge) < 5.0)
+                if same_count / len(edges_to_check) >= 0.6:
+                    is_justified = True
 
     should_merge = (last_paragraph is not None)
 
@@ -441,7 +486,17 @@ def process_text_block(
             base_level = int(style_name.split()[-1])
             if block_type == "section_header":
                 heading_text = getattr(block, "text", "") or ""
-                heading_level = get_section_heading_level(heading_text, default_level=base_level)
+                heading_level, is_numbered = get_section_heading_level(heading_text, default_level=base_level)
+                
+                if context is not None:
+                    if is_numbered:
+                        context["last_heading_level"] = heading_level
+                    else:
+                        last_level = context.get("last_heading_level", 0)
+                        # If unnumbered, make it a sub-header of the last numbered section
+                        heading_level = last_level + 1 if last_level > 0 else 1
+                        # We don't update last_heading_level for unnumbered sub-headers
+                        # so subsequent unnumbered headers stay at the same level
             else:
                 heading_level = base_level
             p = docx_doc.add_heading(level=heading_level)
@@ -457,14 +512,15 @@ def process_text_block(
         else:
             p.paragraph_format.space_before = Pt(0)
 
-        p.paragraph_format.space_after = Pt(2)
+        p.paragraph_format.space_after = Pt(0)
+        p.paragraph_format.line_spacing_rule = WD_LINE_SPACING.SINGLE
 
         if block_type == "title":
             p.alignment = WD_ALIGN_PARAGRAPH.CENTER
         elif block_type in ["figure_caption", "table_caption"]:
             p.alignment = WD_ALIGN_PARAGRAPH.LEFT
         elif block_type not in ["formula_caption"] and not style_name.startswith("Heading"):
-            p.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
+            p.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY if is_justified else WD_ALIGN_PARAGRAPH.LEFT
 
     if not block.elements:
         return p, block_type, first_title_processed, y1_pdf, should_merge
@@ -498,20 +554,31 @@ def process_text_block(
                 p = docx_doc.add_paragraph(style=style_name)
                 p.paragraph_format.left_indent = Inches(indent_from_margin_in)
                 p.paragraph_format.right_indent = Inches(right_indent_from_margin_in)
-                p.paragraph_format.space_after = Pt(2)
+                p.paragraph_format.space_after = Pt(0)
+                p.paragraph_format.line_spacing_rule = WD_LINE_SPACING.SINGLE
                 if block_type == "title":
                     p.alignment = WD_ALIGN_PARAGRAPH.CENTER
                 elif block_type in ["figure_caption", "table_caption"]:
                     p.alignment = WD_ALIGN_PARAGRAPH.LEFT
                 elif block_type not in ["formula_caption"] and not style_name.startswith("Heading"):
-                    p.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
+                    p.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY if is_justified else WD_ALIGN_PARAGRAPH.LEFT
 
+            prev_elem = None
             for elem in group:
+                if prev_elem is not None:
+                    is_new_line = elem.bbox[1] > prev_elem.bbox[1] + (prev_elem.bbox[3] - prev_elem.bbox[1]) * 0.5
+                    if is_new_line:
+                        prev_ended_early = (x1_pdf - prev_elem.bbox[2]) > 15.0
+                        curr_indented = (elem.bbox[0] - x0_pdf) > 15.0
+                        if prev_ended_early or curr_indented:
+                            p.add_run().add_break()
+                
                 text_content = elem.text
                 if not text_content.endswith(" "):
                     text_content += " "
                 run = p.add_run(sanitize_text_for_xml(text_content))
                 _apply_span_style(run, elem)
+                prev_elem = elem
     else:
         font_sizes = [e.font_size for e in block.elements if e.font_size is not None]
         avg_font_size = sum(font_sizes) / len(font_sizes) if font_sizes else 12.0
@@ -540,19 +607,30 @@ def process_text_block(
                 p = docx_doc.add_paragraph(style=style_name)
                 p.paragraph_format.left_indent = Inches(indent_from_margin_in)
                 p.paragraph_format.right_indent = Inches(right_indent_from_margin_in)
-                p.paragraph_format.space_after = Pt(2)
+                p.paragraph_format.space_after = Pt(0)
+                p.paragraph_format.line_spacing_rule = WD_LINE_SPACING.SINGLE
                 if block_type == "title":
                     p.alignment = WD_ALIGN_PARAGRAPH.CENTER
                 elif block_type in ["figure_caption", "table_caption"]:
                     p.alignment = WD_ALIGN_PARAGRAPH.LEFT
                 elif block_type not in ["formula_caption"] and not style_name.startswith("Heading"):
-                    p.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
+                    p.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY if is_justified else WD_ALIGN_PARAGRAPH.LEFT
 
+            prev_elem = None
             for elem in group:
+                if prev_elem is not None:
+                    is_new_line = elem.bbox[1] > prev_elem.bbox[1] + (prev_elem.bbox[3] - prev_elem.bbox[1]) * 0.5
+                    if is_new_line:
+                        prev_ended_early = (x1_pdf - prev_elem.bbox[2]) > 15.0
+                        curr_indented = (elem.bbox[0] - x0_pdf) > 15.0
+                        if prev_ended_early or curr_indented:
+                            p.add_run().add_break()
+
                 text_content = elem.text
                 if not text_content.endswith(" "):
                     text_content += " "
                 run = p.add_run(sanitize_text_for_xml(text_content))
                 _apply_span_style(run, elem)
+                prev_elem = elem
 
     return p, block_type, first_title_processed, y1_pdf, should_merge

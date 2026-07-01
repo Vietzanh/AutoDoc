@@ -14,7 +14,7 @@ class ModelConfig:
 
     REPO_ID = "juliozhao/DocLayout-YOLO-DocStructBench"
     FILENAME = "doclayout_yolo_docstructbench_imgsz1024.pt"
-    INPUT_SIZE = 896
+    INPUT_SIZE = 1280
     CONFIDENCE_THRESHOLD = 0.2
     DEVICE = "cpu"  # Can be changed to "cuda" if GPU is available
 import shutil

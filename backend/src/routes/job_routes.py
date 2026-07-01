@@ -388,6 +388,7 @@ def delete_job(
 @router.get("/{job_id}/download")
 def download_job_result(
     job_id: int,
+    part_index: Optional[int] = Query(None),
     session: Session = Depends(get_session),
     current_user: User = Depends(get_current_user),
 ):
@@ -410,15 +411,36 @@ def download_job_result(
 
     path = Path(job.output_path)
 
-    # Split jobs: output_path is a directory of PDF parts — zip them up
+    # Split jobs: output_path is a directory of PDF parts — zip them up or return specific part
     if job.tool == "split":
         if not path.is_dir():
             raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Split output directory not found")
+
+        pdf_files = sorted(path.glob("*.pdf"))
+
+        if part_index is not None:
+            if part_index < 0 or part_index >= len(pdf_files):
+                raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Split part index out of range")
+            
+            part_path = pdf_files[part_index]
+            file_bytes = part_path.read_bytes()
+            def iter_part():
+                yield file_bytes
+            return StreamingResponse(
+                iter_part(),
+                media_type="application/pdf",
+                headers={
+                    "Content-Disposition": f'attachment; filename="{part_path.name}"',
+                    "Content-Length": str(len(file_bytes)),
+                    "Accept-Ranges": "none",
+                },
+            )
+
         # Use source doc name as zip name, falling back to job id
         zip_name = f"split_parts_{job_id}.zip"
         buffer = io.BytesIO()
         with zipfile.ZipFile(buffer, "w", zipfile.ZIP_DEFLATED) as zf:
-            for pdf_file in sorted(path.glob("*.pdf")):
+            for pdf_file in pdf_files:
                 zf.write(pdf_file, pdf_file.name)
         buffer.seek(0)
         buffer_bytes = buffer.getvalue()
