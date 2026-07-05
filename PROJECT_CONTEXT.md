@@ -520,6 +520,15 @@ Resolved:
 
 Verification: PDF and DOCX visual appearance is now extremely identical. The restored right margin and justification constraints currently cause a minor page count shift (33 original pages -> 35 DOCX pages) due to the slight accumulation of layout differences over a long document, which is a massive improvement from the initial 41-page inflation. The output no longer has "exploded" composite images nor artificially broken Small Caps words.
 
+**Current Status (2026-07-05):** Additional PDF -> DOCX reconstruction edge cases implemented, with some specific spacing anomalies accepted.
+
+Resolved:
+1. **Title Border/Underlines:** Fixed the double-underline artifact on multi-line non-justified titles. Instead of generating a separate paragraph for each title line (which triggered Word's bottom-border style on every line), the code now inserts an explicit manual line break (`WD_BREAK.LINE`) between lines of the same title block. This perfectly preserves the multi-line visual structure while ensuring only a single bottom border underline is drawn for the entire title.
+2. **Indentation Buffering:** Fixed an issue where text slightly shifted off the left margin in single-column sections (e.g. Section 5.3) was generating large artificial indents. The 12-point tolerance buffer used for detecting genuine indents was updated to correctly apply across all paragraph elements, allowing minor PDF rendering misalignments to sit flush with the margin.
+
+Accepted Unresolved Edge Cases:
+- **Collapsed Gaps:** The vertical gap between the Author block and the Abstract block, as well as the gap between the Title and Author block in specific PDFs (e.g., those containing invisible drawing lines / abandon blocks), remains artificially collapsed (appearing like a standard line break). Attempting to force these gaps by filtering abandon blocks caused severe page-count shrinkage (collapsing from 33 to 28 pages) across other documents because those blocks naturally preserve document rhythm. We accept these specific spacing anomalies to preserve overall document structure and pagination stability.
+
 ---
 
 ## 8. Implementation Plan

@@ -593,11 +593,18 @@ def process_text_block(
         p.paragraph_format.left_indent = Inches(indent_from_margin_in)
         p.paragraph_format.right_indent = Inches(right_indent_from_margin_in)
 
-        if block == row[0] and prev_row_y1 > 0:
+        if not should_merge and block == row[0] and prev_row_y1 > 0:
             vertical_gap = max(0, (y0_pdf - prev_row_y1))
-            p.paragraph_format.space_before = Pt(vertical_gap)
-        else:
-            p.paragraph_format.space_before = Pt(0)
+            if vertical_gap > 5.0:
+                spacer = p.insert_paragraph_before()
+                spacer.paragraph_format.space_before = Pt(0)
+                spacer.paragraph_format.space_after = Pt(0)
+                spacer.paragraph_format.line_spacing_rule = WD_LINE_SPACING.EXACTLY
+                spacer.paragraph_format.line_spacing = Pt(vertical_gap)
+                run = spacer.add_run(" ")
+                run.font.size = Pt(1)
+        
+        p.paragraph_format.space_before = Pt(0)
 
         p.paragraph_format.space_after = Pt(0)
         p.paragraph_format.line_spacing_rule = WD_LINE_SPACING.SINGLE
