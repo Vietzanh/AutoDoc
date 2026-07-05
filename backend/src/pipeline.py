@@ -157,6 +157,129 @@ def _is_original_page_number_block(
 def _horizontal_overlap_width(bbox_a, bbox_b) -> float:
     return max(0.0, min(bbox_a[2], bbox_b[2]) - max(bbox_a[0], bbox_b[0]))
 
+def _classify_block_column(block: LayoutBlock, page_width: float) -> str:
+    """
+    Classify a single block as '1col', 'left', or 'right' based on its
+    horizontal center's distance from the page center.
+
+    - If the block's center is close to the page center → single-column
+    - If the block's center is far to the left → left column
+    - If the block's center is far to the right → right column
+
+    The threshold is page_width * 0.15: if the block center is within
+    this distance of the page center, it's single-column.
+    """
+    page_center = page_width / 2.0
+    cx = (block.bbox[0] + block.bbox[2]) / 2.0
+    deviation = abs(cx - page_center)
+    threshold = page_width * 0.25
+
+    if deviation <= threshold:
+        return "1col"
+    elif cx < page_center:
+        return "left"
+    else:
+        return "right"
+
+
+def _segment_page_into_bands(layout_blocks: List[LayoutBlock], page_width: float) -> List[Dict]:
+    """
+    Groups layout blocks into bands of either '1col' or '2col'.
+
+    Detection logic:
+      - For each block, compute its horizontal center.
+      - If the center is close to the page's horizontal center → single-column.
+      - If the center is far left or far right → part of a multi-column section.
+      - Consecutive multi-column blocks are grouped into a single '2col' band.
+      - Inside a 2col band, blocks are split into left/right columns, then
+        paired vertically: each pair shares equivalent vertical starting points.
+    """
+    if not layout_blocks:
+        return []
+
+    sorted_blocks = sorted(layout_blocks, key=lambda b: (b.bbox[1], b.bbox[0]))
+
+    # Step 1: Classify every block
+    classified = []  # list of (block, label) where label is '1col', 'left', 'right'
+    for b in sorted_blocks:
+        label = _classify_block_column(b, page_width)
+        classified.append((b, label))
+
+    # Step 2: Group consecutive blocks into runs of same mode
+    # A '1col' block always starts/continues a 1col run.
+    # A 'left' or 'right' block starts/continues a 2col run.
+    bands = []
+    current_mode = None  # "1col" or "2col"
+    current_1col_blocks = []
+    current_left_blocks = []
+    current_right_blocks = []
+
+    def _flush_1col():
+        nonlocal current_1col_blocks
+        if current_1col_blocks:
+            bands.append({"mode": "1col", "blocks": list(current_1col_blocks)})
+            current_1col_blocks = []
+
+    def _flush_2col():
+        nonlocal current_left_blocks, current_right_blocks
+        if current_left_blocks or current_right_blocks:
+            bands.append({
+                "mode": "2col",
+                "left_blocks": list(current_left_blocks),
+                "right_blocks": list(current_right_blocks),
+            })
+            current_left_blocks = []
+            current_right_blocks = []
+
+    for block, label in classified:
+        if label == "1col":
+            if current_mode == "2col":
+                _flush_2col()
+            current_mode = "1col"
+            current_1col_blocks.append(block)
+        else:  # 'left' or 'right'
+            if current_mode == "1col":
+                _flush_1col()
+            current_mode = "2col"
+            if label == "left":
+                current_left_blocks.append(block)
+            else:
+                current_right_blocks.append(block)
+
+    # Flush the last run
+    if current_mode == "1col":
+        _flush_1col()
+    elif current_mode == "2col":
+        _flush_2col()
+
+    # Step 3: Post-process 2col bands that have only one side populated.
+    # If a band has left blocks but no right blocks (or vice versa), it's
+    # really a single-column section that happens to be offset.
+    final_bands = []
+    for band in bands:
+        if band["mode"] == "2col":
+            has_left = len(band.get("left_blocks", [])) > 0
+            has_right = len(band.get("right_blocks", [])) > 0
+            if has_left and has_right:
+                final_bands.append(band)
+            else:
+                # Demote to 1col
+                all_blocks = band.get("left_blocks", []) + band.get("right_blocks", [])
+                all_blocks.sort(key=lambda b: (b.bbox[1], b.bbox[0]))
+                # Merge into adjacent 1col band if possible
+                if final_bands and final_bands[-1]["mode"] == "1col":
+                    final_bands[-1]["blocks"].extend(all_blocks)
+                else:
+                    final_bands.append({"mode": "1col", "blocks": all_blocks})
+        else:
+            # Merge consecutive 1col bands
+            if final_bands and final_bands[-1]["mode"] == "1col":
+                final_bands[-1]["blocks"].extend(band["blocks"])
+            else:
+                final_bands.append(band)
+
+    return final_bands
+
 
 def _trim_table_blocks_against_captions(layout_blocks: List[LayoutBlock]) -> None:
     table_blocks = [block for block in layout_blocks if block.block_type == "table"]
@@ -595,6 +718,23 @@ class PDFToDocxPipeline:
             if not _is_original_page_number_block(block, page.rect.width, page_height)
         ]
 
+        # Margin annotations filter to avoid messing up column detection
+        left_strict, right_strict = page.rect.width * 0.05, page.rect.width * 0.95
+        left_relaxed, right_relaxed = page.rect.width * 0.10, page.rect.width * 0.90
+        filtered_layout_blocks = []
+        for b in layout_blocks:
+            if b.block_type in ("figure", "table"):
+                filtered_layout_blocks.append(b)
+                continue
+            x0, y0, x1, y1 = b.bbox
+            width = x1 - x0
+            if x1 < left_strict or x0 > right_strict:
+                continue
+            if width < 15.0 and (x1 < left_relaxed or x0 > right_relaxed):
+                continue
+            filtered_layout_blocks.append(b)
+        layout_blocks = filtered_layout_blocks
+
         layout_blocks = sorted(layout_blocks, key=lambda b: (b.bbox[1], b.bbox[0]))
 
         content_blocks_for_y1 = [b for b in layout_blocks if b.block_type != "abandon"]
@@ -606,26 +746,8 @@ class PDFToDocxPipeline:
             block.extra['page_idx'] = page_idx
             block.extra['page_height'] = page_height
 
-        # Group blocks into rows
-        rows = []
-        current_row = []
-        row_threshold = 10
-        for b in layout_blocks:
-            top_y = b.bbox[1]
-            if not current_row:
-                current_row = [b]
-                current_top = top_y
-            else:
-                if abs(top_y - current_top) <= row_threshold:
-                    current_row.append(b)
-                else:
-                    rows.append(sorted(current_row, key=lambda x: x.bbox[0]))
-                    current_row = [b]
-                    current_top = top_y
-        if current_row:
-            rows.append(sorted(current_row, key=lambda x: x.bbox[0]))
-
-        print(f"  Grouped into {len(rows)} rows")
+        bands = _segment_page_into_bands(layout_blocks, page.rect.width)
+        print(f"  Segmented into {len(bands)} vertical bands (1col/2col mixed)")
 
         # Detect intentional page breaks
         first_content_block = next((b for b in layout_blocks if b.block_type != "abandon"), None)
@@ -649,74 +771,329 @@ class PDFToDocxPipeline:
                 if len(docx_doc.paragraphs) > 0 or len(docx_doc.tables) > 0:
                     docx_doc.add_page_break()
 
-        section = docx_doc.sections[0]
-        for row in rows:
-            row.sort(key=lambda b: b.bbox[0])
+        section = docx_doc.sections[-1]
+        from docx.enum.section import WD_SECTION
 
-            is_metadata_row = _is_short_metadata_row(row)
-            if is_metadata_row:
+        for band_idx, band in enumerate(bands):
+            mode = band["mode"]
+            
+            # Switch Word section mode if needed
+            current_sect = docx_doc.sections[-1]
+            sectPr = current_sect._sectPr
+            cols = sectPr.find(qn('w:cols'))
+            current_is_2col = (cols is not None and cols.get(qn('w:num')) == '2')
+
+            band_top_y = None
+            if mode == "1col":
+                valid_blocks = [b for b in band["blocks"] if b.block_type != "abandon"]
+                if valid_blocks:
+                    band_top_y = valid_blocks[0].bbox[1]
+            elif mode == "2col":
+                valid_l = [b for b in band.get("left_blocks", []) if b.block_type != "abandon"]
+                valid_r = [b for b in band.get("right_blocks", []) if b.block_type != "abandon"]
+                l_y = valid_l[0].bbox[1] if valid_l else float('inf')
+                r_y = valid_r[0].bbox[1] if valid_r else float('inf')
+                if l_y != float('inf') or r_y != float('inf'):
+                    band_top_y = min(l_y, r_y)
+            
+            mode_changed = (mode == "2col" and not current_is_2col) or (mode == "1col" and current_is_2col)
+            
+            if prev_row_y1 > 0 and band_top_y is not None and mode_changed:
+                gap = band_top_y - prev_row_y1
+                if gap > 5.0:
+                    spacer = docx_doc.add_paragraph()
+                    spacer.paragraph_format.space_before = Pt(0)
+                    spacer.paragraph_format.space_after = Pt(0)
+                    spacer.paragraph_format.line_spacing_rule = WD_LINE_SPACING.EXACTLY
+                    spacer.paragraph_format.line_spacing = Pt(gap)
+                    run = spacer.add_run(".")
+                    run.font.size = Pt(1)
+                    from docx.shared import RGBColor
+                    run.font.color.rgb = RGBColor(255, 255, 255)
+                    prev_row_y1 = band_top_y
+
+            if mode == "2col" and not current_is_2col:
+                new_section = docx_doc.add_section(WD_SECTION.CONTINUOUS)
+                new_section.left_margin = Inches(doc_left_margin_in)
                 try:
-                    prev_row_y1 = process_spaced_metadata_row(docx_doc, row, section, page_width_pts)
-                    last_text_paragraph = None
-                    prev_text_block = None
-                    continue
-                except Exception:
-                    logger.exception("Metadata row processing failed; falling back to text blocks")
-
-            use_table = _should_use_implicit_table_row(row)
-
-            if use_table and len(row) >= 2:
+                    new_section.right_margin = current_sect.right_margin
+                except:
+                    new_section.right_margin = Inches(1.0)
+                sectPr = new_section._sectPr
+                cols = OxmlElement('w:cols')
+                cols.set(qn('w:num'), '2')
+                cols.set(qn('w:space'), '360') # 0.25 inch gap
+                sectPr.append(cols)
+                section = new_section
+                last_text_paragraph = None
+                prev_text_block = None
+            elif mode == "1col" and current_is_2col:
+                new_section = docx_doc.add_section(WD_SECTION.CONTINUOUS)
+                new_section.left_margin = Inches(doc_left_margin_in)
                 try:
-                    prev_row_y1 = process_table_row(docx_doc, row, section, page_width_pts)
-                    continue
-                except Exception:
-                    logger.exception("Implicit table row processing failed; falling back to text blocks")
+                    new_section.right_margin = current_sect.right_margin
+                except:
+                    new_section.right_margin = Inches(1.0)
+                sectPr = new_section._sectPr
+                cols = OxmlElement('w:cols')
+                cols.set(qn('w:num'), '1')
+                sectPr.append(cols)
+                section = new_section
+                last_text_paragraph = None
+                prev_text_block = None
 
-            for block in row:
-                block_type = block.block_type
+            # Flatten blocks into processing sequence
+            blocks_to_process = []
+            if mode == "1col":
+                for b in band["blocks"]:
+                    blocks_to_process.append(b)
 
-                if block_type == "abandon":
-                    continue
+                # Group the linear sequence of blocks into rows for processing
+                rows = []
+                current_row = []
+                row_threshold = 10
+                for b in blocks_to_process:
+                    top_y = b.bbox[1]
+                    if not current_row:
+                        current_row = [b]
+                        current_top = top_y
+                    else:
+                        if abs(top_y - current_top) <= row_threshold:
+                            current_row.append(b)
+                        else:
+                            rows.append(sorted(current_row, key=lambda x: x.bbox[0]))
+                            current_row = [b]
+                            current_top = top_y
+                if current_row:
+                    rows.append(sorted(current_row, key=lambda x: x.bbox[0]))
 
-                if block_type == "figure":
-                    process_figure_block(
-                        docx_doc, block, page,
-                        self.max_image_width, page_idx
+                for row in rows:
+                    row.sort(key=lambda b: b.bbox[0])
+
+                    is_metadata_row = _is_short_metadata_row(row)
+                    if is_metadata_row:
+                        try:
+                            prev_row_y1 = process_spaced_metadata_row(docx_doc, row, section, page_width_pts)
+                            last_text_paragraph = None
+                            prev_text_block = None
+                            continue
+                        except Exception:
+                            logger.exception("Metadata row processing failed; falling back to text blocks")
+
+                    use_table = _should_use_implicit_table_row(row)
+
+                    if use_table and len(row) >= 2:
+                        try:
+                            prev_row_y1 = process_table_row(docx_doc, row, section, page_width_pts)
+                            continue
+                        except Exception:
+                            logger.exception("Implicit table row processing failed; falling back to text blocks")
+
+                    for block in row:
+                        block_type = block.block_type
+
+                        if block_type == "abandon":
+                            continue
+
+                        if block_type == "figure":
+                            process_figure_block(
+                                docx_doc, block, page,
+                                self.max_image_width, page_idx
+                            )
+                            last_text_paragraph = None
+                            prev_text_block = None
+                            continue
+
+                        if block_type == "table":
+                            process_table_block(
+                                docx_doc, block, page,
+                                self.max_image_width, page_idx
+                            )
+                            last_text_paragraph = None
+                            prev_text_block = None
+                            continue
+
+                        should_merge = False
+                        if prev_text_block is not None and last_text_paragraph is not None:
+                            should_merge = should_merge_with_previous_block(prev_text_block, block)
+
+                        result = process_text_block(
+                            docx_doc, block, block_type, first_title_processed,
+                            self.style_map, doc_left_margin_in, row, prev_row_y1,
+                            (last_text_paragraph if should_merge else None),
+                            context=context
+                        )
+
+                        if result[0] is None:
+                            continue
+
+                        p, block_type, first_title_processed, y1_pdf, should_merge = result
+
+                        last_text_paragraph = p
+                        prev_text_block = block
+                        prev_row_y1 = max(prev_row_y1, y1_pdf)
+
+                    valid_bboxes = [b.bbox[3] for b in row if b.block_type != "abandon"]
+                    if valid_bboxes:
+                        prev_row_y1 = max(valid_bboxes)
+
+            else:
+                # 2col band: append left blocks sequentially, then right blocks.
+                # Word's 2-column layout will fill the left column first, then
+                # flow into the right column automatically.
+                from docx.enum.text import WD_BREAK
+
+                left_blocks = sorted(band["left_blocks"], key=lambda b: (b.bbox[1], b.bbox[0]))
+                right_blocks = sorted(band["right_blocks"], key=lambda b: (b.bbox[1], b.bbox[0]))
+
+                valid_left = [b for b in left_blocks if b.block_type != "abandon"]
+                valid_right = [b for b in right_blocks if b.block_type != "abandon"]
+                left_start_y = valid_left[0].bbox[1] if valid_left else float('inf')
+                right_start_y = valid_right[0].bbox[1] if valid_right else float('inf')
+
+                left_col_x0 = min((b.bbox[0] for b in valid_left), default=0)
+                right_col_x0 = min((b.bbox[0] for b in valid_right), default=0)
+
+                for b in left_blocks:
+                    b.extra["in_column"] = True
+                    b.extra["col_left_x0_pt"] = left_col_x0
+                for b in right_blocks:
+                    b.extra["in_column"] = True
+                    b.extra["col_left_x0_pt"] = right_col_x0
+
+                # Process left column blocks
+                last_text_paragraph = None
+                prev_text_block = None
+                
+                if left_blocks and right_blocks and left_start_y > right_start_y + 5.0:
+                    gap = left_start_y - right_start_y
+                    spacer = docx_doc.add_paragraph()
+                    spacer.paragraph_format.space_before = Pt(gap)
+                    spacer.paragraph_format.space_after = Pt(0)
+                    spacer.paragraph_format.line_spacing_rule = WD_LINE_SPACING.EXACTLY
+                    spacer.paragraph_format.line_spacing = Pt(1)
+                    run = spacer.add_run()
+                    run.font.size = Pt(1)
+
+                for block in left_blocks:
+                    block_type = block.block_type
+
+                    if block_type == "abandon":
+                        continue
+
+                    if block_type == "figure":
+                        process_figure_block(
+                            docx_doc, block, page,
+                            self.max_image_width, page_idx
+                        )
+                        last_text_paragraph = None
+                        prev_text_block = None
+                        continue
+
+                    if block_type == "table":
+                        process_table_block(
+                            docx_doc, block, page,
+                            self.max_image_width, page_idx
+                        )
+                        last_text_paragraph = None
+                        prev_text_block = None
+                        continue
+
+                    should_merge = False
+                    if prev_text_block is not None and last_text_paragraph is not None:
+                        should_merge = should_merge_with_previous_block(prev_text_block, block)
+
+                    result = process_text_block(
+                        docx_doc, block, block_type, first_title_processed,
+                        self.style_map, doc_left_margin_in, [block], prev_row_y1,
+                        (last_text_paragraph if should_merge else None),
+                        context=context
                     )
+
+                    if result[0] is None:
+                        continue
+
+                    p, block_type, first_title_processed, y1_pdf, should_merge = result
+
+                    last_text_paragraph = p
+                    prev_text_block = block
+                    prev_row_y1 = max(prev_row_y1, y1_pdf)
+
+                # Insert a column break to start the right column.
+                # Reset prev_row_y1 to match the vertical starting position of the
+                # right column (which should be equivalent to the left column start).
+                if right_blocks:
+                    p = docx_doc.add_paragraph()
+                    run = p.add_run()
+                    run.add_break(WD_BREAK.COLUMN)
+
+                    if left_blocks and right_start_y > left_start_y + 5.0:
+                        gap = right_start_y - left_start_y
+                        spacer = docx_doc.add_paragraph()
+                        spacer.paragraph_format.space_before = Pt(gap)
+                        spacer.paragraph_format.space_after = Pt(0)
+                        spacer.paragraph_format.line_spacing_rule = WD_LINE_SPACING.EXACTLY
+                        spacer.paragraph_format.line_spacing = Pt(1)
+                        run = spacer.add_run(".")
+                        run.font.size = Pt(1)
+                        from docx.shared import RGBColor
+                        run.font.color.rgb = RGBColor(255, 255, 255)
+
+                    # Ensure vertical starting points are equivalent
+                    prev_row_y1 = max(left_start_y, right_start_y)
                     last_text_paragraph = None
                     prev_text_block = None
-                    continue
 
-                if block_type == "table":
-                    process_table_block(
-                        docx_doc, block, page,
-                        self.max_image_width, page_idx
+                # Process right column blocks
+                for block in right_blocks:
+                    block_type = block.block_type
+
+                    if block_type == "abandon":
+                        continue
+
+                    if block_type == "figure":
+                        process_figure_block(
+                            docx_doc, block, page,
+                            self.max_image_width, page_idx
+                        )
+                        last_text_paragraph = None
+                        prev_text_block = None
+                        continue
+
+                    if block_type == "table":
+                        process_table_block(
+                            docx_doc, block, page,
+                            self.max_image_width, page_idx
+                        )
+                        last_text_paragraph = None
+                        prev_text_block = None
+                        continue
+
+                    should_merge = False
+                    if prev_text_block is not None and last_text_paragraph is not None:
+                        should_merge = should_merge_with_previous_block(prev_text_block, block)
+
+                    result = process_text_block(
+                        docx_doc, block, block_type, first_title_processed,
+                        self.style_map, doc_left_margin_in, [block], prev_row_y1,
+                        (last_text_paragraph if should_merge else None),
+                        context=context
                     )
-                    last_text_paragraph = None
-                    prev_text_block = None
-                    continue
 
-                should_merge = False
-                if prev_text_block is not None and last_text_paragraph is not None:
-                    should_merge = should_merge_with_previous_block(prev_text_block, block)
+                    if result[0] is None:
+                        continue
 
-                result = process_text_block(
-                    docx_doc, block, block_type, first_title_processed,
-                    self.style_map, doc_left_margin_in, row, prev_row_y1, 
-                    (last_text_paragraph if should_merge else None),
-                    context=context
-                )
+                    p, block_type, first_title_processed, y1_pdf, should_merge = result
 
-                if result[0] is None:
-                    continue
+                    last_text_paragraph = p
+                    prev_text_block = block
+                    prev_row_y1 = max(prev_row_y1, y1_pdf)
 
-                p, block_type, first_title_processed, y1_pdf, should_merge = result
-
-                last_text_paragraph = p
-                prev_text_block = block
-                prev_row_y1 = max(prev_row_y1, y1_pdf)
-
-            prev_row_y1 = max(b.bbox[3] for b in row)
+                # Update prev_row_y1 to the bottom of the entire 2col band
+                all_band_blocks = left_blocks + right_blocks
+                valid_band_bboxes = [b.bbox[3] for b in all_band_blocks if b.block_type != "abandon"]
+                if valid_band_bboxes:
+                    prev_row_y1 = max(valid_band_bboxes)
 
         return {
             "first_title_processed": first_title_processed,

@@ -11,6 +11,9 @@ import numpy as np
 from docx import Document
 from docx.enum.text import WD_ALIGN_PARAGRAPH, WD_LINE_SPACING
 from docx.shared import Inches, Pt, RGBColor
+from docx.oxml.shared import OxmlElement
+from docx.oxml.ns import qn
+from docx.opc.constants import RELATIONSHIP_TYPE
 
 from src.utils import (
     clean_font_name,
@@ -132,6 +135,71 @@ def _apply_span_style(run, elem=None):
         run.italic = (elem.font_flags & 8) != 0
 
     return run
+
+
+def _add_hyperlink(paragraph, url, text, elem=None):
+    """
+    Add a hyperlink to a paragraph.
+    """
+    part = paragraph.part
+    r_id = part.relate_to(url, RELATIONSHIP_TYPE.HYPERLINK, is_external=True)
+
+    hyperlink = OxmlElement('w:hyperlink')
+    hyperlink.set(qn('r:id'), r_id)
+
+    new_run = OxmlElement('w:r')
+    rPr = OxmlElement('w:rPr')
+
+    c = OxmlElement('w:color')
+    if elem and getattr(elem, "color", None) is not None:
+        color_rgb = _rgb_from_pdf_color(elem.color)
+        c.set(qn('w:val'), f"{color_rgb[0]:02X}{color_rgb[1]:02X}{color_rgb[2]:02X}")
+    else:
+        c.set(qn('w:val'), "0563C1")
+    rPr.append(c)
+
+    u = OxmlElement('w:u')
+    u.set(qn('w:val'), 'single')
+    rPr.append(u)
+
+    if elem is not None:
+        if elem.font_size is not None:
+            sz = OxmlElement('w:sz')
+            sz.set(qn('w:val'), str(int(round_font_size(elem.font_size) * 2)))
+            rPr.append(sz)
+            szCs = OxmlElement('w:szCs')
+            szCs.set(qn('w:val'), str(int(round_font_size(elem.font_size) * 2)))
+            rPr.append(szCs)
+            
+        if elem.font_flags is not None:
+            if (elem.font_flags & 16) != 0:
+                b = OxmlElement('w:b')
+                rPr.append(b)
+            if (elem.font_flags & 8) != 0:
+                i = OxmlElement('w:i')
+                rPr.append(i)
+
+    new_run.append(rPr)
+    
+    t = OxmlElement('w:t')
+    t.text = text
+    t.set(qn('xml:space'), 'preserve')
+    new_run.append(t)
+    
+    hyperlink.append(new_run)
+    paragraph._p.append(hyperlink)
+    
+    return hyperlink
+
+
+def _add_text_or_hyperlink(paragraph, text, elem):
+    url = getattr(elem, "url", None)
+    if url:
+        return _add_hyperlink(paragraph, url, text, elem)
+    else:
+        run = paragraph.add_run(sanitize_text_for_xml(text))
+        _apply_span_style(run, elem)
+        return run
 
 
 def _add_metadata_span_run(paragraph, span):
@@ -429,12 +497,28 @@ def process_text_block(
 
     x0_in = x0_pdf / 72
     x1_in = x1_pdf / 72
-    indent_from_margin_in = max(0.0, x0_in - doc_left_margin_in - (5.0 / 72.0))
-    # Re-enable right indent with a small tolerance buffer (0.1 inch extra)
-    # to account for DOCX font rendering requiring slightly more width than PDF.
-    right_edge_in = page_width_in - doc_right_margin_in
-    raw_right_indent = right_edge_in - x1_in - (5.0 / 72.0)
-    right_indent_from_margin_in = max(0.0, raw_right_indent - 0.1)
+    
+    in_column = hasattr(block, 'extra') and block.extra.get("in_column", False)
+    
+    is_centered = False
+    
+    if in_column:
+        if "col_left_x0_pt" in block.extra:
+            col_left_x0_in = block.extra["col_left_x0_pt"] / 72.0
+            indent_from_margin_in = max(0.0, x0_in - col_left_x0_in - (12.0 / 72.0))
+        else:
+            indent_from_margin_in = 0.0
+    else:
+        indent_from_margin_in = max(0.0, x0_in - doc_left_margin_in - (12.0 / 72.0))
+        
+    if in_column:
+        right_indent_from_margin_in = 0.0
+    else:
+        # Re-enable right indent with a small tolerance buffer (0.1 inch extra)
+        # to account for DOCX font rendering requiring slightly more width than PDF.
+        right_edge_in = page_width_in - doc_right_margin_in
+        raw_right_indent = right_edge_in - x1_in - (5.0 / 72.0)
+        right_indent_from_margin_in = max(0.0, raw_right_indent - 0.1)
 
     # --- Justify detection ---
     # Group elements into visual lines, then check if most lines share the
@@ -472,6 +556,9 @@ def process_text_block(
                 # Check if most lines end at the same x (within 5pt tolerance)
                 ref_edge = edges_to_check[0]
                 same_count = sum(1 for e in edges_to_check if abs(e - ref_edge) < 5.0)
+                if same_count / len(edges_to_check) >= 0.6:
+                    is_justified = True
+                    
                 if same_count / len(edges_to_check) >= 0.6:
                     is_justified = True
 
@@ -563,15 +650,57 @@ def process_text_block(
                 elif block_type not in ["formula_caption"] and not style_name.startswith("Heading"):
                     p.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY if is_justified else WD_ALIGN_PARAGRAPH.LEFT
 
+            current_indent_in = indent_from_margin_in
             prev_elem = None
+            
+            base_margin_in = doc_left_margin_in
+            if in_column and "col_left_x0_pt" in block.extra:
+                base_margin_in = block.extra["col_left_x0_pt"] / 72.0
+                
             for elem_i, elem in enumerate(group):
-                if prev_elem is not None:
+                if prev_elem is None:
+                    if not is_justified and block_type not in ["title", "figure_caption", "table_caption", "formula_caption"]:
+                        line_indent = max(0.0, elem.bbox[0] / 72.0 - base_margin_in - (12.0 / 72.0))
+                        p.paragraph_format.left_indent = Inches(line_indent)
+                        current_indent_in = line_indent
+                else:
                     is_new_line = elem.bbox[1] > prev_elem.bbox[1] + (prev_elem.bbox[3] - prev_elem.bbox[1]) * 0.5
                     if is_new_line:
                         prev_ended_early = (x1_pdf - prev_elem.bbox[2]) > 15.0
                         curr_indented = (elem.bbox[0] - x0_pdf) > 15.0
-                        if prev_ended_early or curr_indented:
-                            p.add_run().add_break()
+                        
+                        if not is_justified and block_type not in ["title", "figure_caption", "table_caption", "formula_caption"]:
+                            line_indent = max(0.0, elem.bbox[0] / 72.0 - base_margin_in - (12.0 / 72.0))
+                            if abs(line_indent - current_indent_in) > (10.0 / 72.0):
+                                p = docx_doc.add_paragraph(style=style_name)
+                                p.paragraph_format.left_indent = Inches(line_indent)
+                                p.paragraph_format.right_indent = Inches(right_indent_from_margin_in)
+                                p.paragraph_format.space_before = Pt(0)
+                                p.paragraph_format.space_after = Pt(0)
+                                p.paragraph_format.line_spacing_rule = WD_LINE_SPACING.SINGLE
+                                p.alignment = WD_ALIGN_PARAGRAPH.LEFT
+                                current_indent_in = line_indent
+                            elif prev_ended_early or curr_indented:
+                                p = docx_doc.add_paragraph(style=style_name)
+                                p.paragraph_format.left_indent = Inches(current_indent_in)
+                                p.paragraph_format.right_indent = Inches(right_indent_from_margin_in)
+                                p.paragraph_format.space_before = Pt(0)
+                                p.paragraph_format.space_after = Pt(0)
+                                p.paragraph_format.line_spacing_rule = WD_LINE_SPACING.SINGLE
+                                p.alignment = WD_ALIGN_PARAGRAPH.LEFT
+                        elif prev_ended_early or curr_indented:
+                            p = docx_doc.add_paragraph(style=style_name)
+                            p.paragraph_format.left_indent = Inches(current_indent_in)
+                            p.paragraph_format.right_indent = Inches(right_indent_from_margin_in)
+                            p.paragraph_format.space_before = Pt(0)
+                            p.paragraph_format.space_after = Pt(0)
+                            p.paragraph_format.line_spacing_rule = WD_LINE_SPACING.SINGLE
+                            if block_type == "title":
+                                p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+                            elif block_type in ["figure_caption", "table_caption"]:
+                                p.alignment = WD_ALIGN_PARAGRAPH.LEFT
+                            elif block_type not in ["formula_caption"] and not style_name.startswith("Heading"):
+                                p.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY if is_justified else WD_ALIGN_PARAGRAPH.LEFT
                 
                 text_content = elem.text
                 # Only add trailing space if the next span is NOT horizontally
@@ -588,8 +717,7 @@ def process_text_block(
                             needs_space = False
                 if needs_space and not text_content.endswith(" "):
                     text_content += " "
-                run = p.add_run(sanitize_text_for_xml(text_content))
-                _apply_span_style(run, elem)
+                run = _add_text_or_hyperlink(p, text_content, elem)
                 prev_elem = elem
     else:
         font_sizes = [e.font_size for e in block.elements if e.font_size is not None]
@@ -628,15 +756,57 @@ def process_text_block(
                 elif block_type not in ["formula_caption"] and not style_name.startswith("Heading"):
                     p.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY if is_justified else WD_ALIGN_PARAGRAPH.LEFT
 
+            current_indent_in = indent_from_margin_in
             prev_elem = None
+            
+            base_margin_in = doc_left_margin_in
+            if in_column and "col_left_x0_pt" in block.extra:
+                base_margin_in = block.extra["col_left_x0_pt"] / 72.0
+                
             for elem_i, elem in enumerate(group):
-                if prev_elem is not None:
+                if prev_elem is None:
+                    if not is_justified and block_type not in ["title", "figure_caption", "table_caption", "formula_caption"]:
+                        line_indent = max(0.0, elem.bbox[0] / 72.0 - base_margin_in - (12.0 / 72.0))
+                        p.paragraph_format.left_indent = Inches(line_indent)
+                        current_indent_in = line_indent
+                else:
                     is_new_line = elem.bbox[1] > prev_elem.bbox[1] + (prev_elem.bbox[3] - prev_elem.bbox[1]) * 0.5
                     if is_new_line:
                         prev_ended_early = (x1_pdf - prev_elem.bbox[2]) > 15.0
                         curr_indented = (elem.bbox[0] - x0_pdf) > 15.0
-                        if prev_ended_early or curr_indented:
-                            p.add_run().add_break()
+                        
+                        if not is_justified and block_type not in ["title", "figure_caption", "table_caption", "formula_caption"]:
+                            line_indent = max(0.0, elem.bbox[0] / 72.0 - base_margin_in - (12.0 / 72.0))
+                            if abs(line_indent - current_indent_in) > (10.0 / 72.0):
+                                p = docx_doc.add_paragraph(style=style_name)
+                                p.paragraph_format.left_indent = Inches(line_indent)
+                                p.paragraph_format.right_indent = Inches(right_indent_from_margin_in)
+                                p.paragraph_format.space_before = Pt(0)
+                                p.paragraph_format.space_after = Pt(0)
+                                p.paragraph_format.line_spacing_rule = WD_LINE_SPACING.SINGLE
+                                p.alignment = WD_ALIGN_PARAGRAPH.LEFT
+                                current_indent_in = line_indent
+                            elif prev_ended_early or curr_indented:
+                                p = docx_doc.add_paragraph(style=style_name)
+                                p.paragraph_format.left_indent = Inches(current_indent_in)
+                                p.paragraph_format.right_indent = Inches(right_indent_from_margin_in)
+                                p.paragraph_format.space_before = Pt(0)
+                                p.paragraph_format.space_after = Pt(0)
+                                p.paragraph_format.line_spacing_rule = WD_LINE_SPACING.SINGLE
+                                p.alignment = WD_ALIGN_PARAGRAPH.LEFT
+                        elif prev_ended_early or curr_indented:
+                            p = docx_doc.add_paragraph(style=style_name)
+                            p.paragraph_format.left_indent = Inches(current_indent_in)
+                            p.paragraph_format.right_indent = Inches(right_indent_from_margin_in)
+                            p.paragraph_format.space_before = Pt(0)
+                            p.paragraph_format.space_after = Pt(0)
+                            p.paragraph_format.line_spacing_rule = WD_LINE_SPACING.SINGLE
+                            if block_type == "title":
+                                p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+                            elif block_type in ["figure_caption", "table_caption"]:
+                                p.alignment = WD_ALIGN_PARAGRAPH.LEFT
+                            elif block_type not in ["formula_caption"] and not style_name.startswith("Heading"):
+                                p.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY if is_justified else WD_ALIGN_PARAGRAPH.LEFT
 
                 text_content = elem.text
                 # Only add trailing space if the next span is NOT horizontally
@@ -652,8 +822,7 @@ def process_text_block(
                             needs_space = False
                 if needs_space and not text_content.endswith(" "):
                     text_content += " "
-                run = p.add_run(sanitize_text_for_xml(text_content))
-                _apply_span_style(run, elem)
+                run = _add_text_or_hyperlink(p, text_content, elem)
                 prev_elem = elem
 
     return p, block_type, first_title_processed, y1_pdf, should_merge
