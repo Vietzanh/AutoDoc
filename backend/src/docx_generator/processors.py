@@ -29,11 +29,11 @@ from src.yolo.iou_matching import TextElement, LayoutBlock
 import pymupdf
 
 
-def _block_image_size(block, _max_image_width):
+def _block_image_size(block, _max_image_width, scale_x=1.0):
     """Return the block's physical PDF size as DOCX dimensions."""
     x0_pdf, y0_pdf, x1_pdf, y1_pdf = block.bbox
-    width_in = max((x1_pdf - x0_pdf) / 72.0, 0.01)
-    height_in = max((y1_pdf - y0_pdf) / 72.0, 0.01)
+    width_in = max((x1_pdf - x0_pdf) / 72.0, 0.01) * scale_x
+    height_in = max((y1_pdf - y0_pdf) / 72.0, 0.01) * scale_x
 
     return Inches(width_in), Inches(height_in)
 
@@ -230,23 +230,35 @@ def should_merge_with_previous_block(prev_block, curr_block):
     return prev_no_sentence_end and curr_starts_lowercase
 
 
-def process_figure_block(docx_doc, block, pymupdf_page, max_image_width, page_idx):
+def process_figure_block(docx_doc, block, pymupdf_page, max_image_width, page_idx, scale_x=1.0, doc_left_margin_in=0.0):
     """
     Process a figure block by extracting and inserting the image.
     """
+    base_margin_in = doc_left_margin_in
+    if hasattr(block, "extra") and block.extra.get("in_column", False) and "col_left_x0_pt" in block.extra:
+        base_margin_in = block.extra["col_left_x0_pt"] / 72.0
+    x0_pdf = block.bbox[0] if hasattr(block, "bbox") else 0.0
+    left_indent_in = max(0.0, (x0_pdf / 72.0) * scale_x - base_margin_in - (12.0 / 72.0))
+
     image_path = block.extra.get("image_path") if hasattr(block, "extra") else None
     image_bytes = block.extra.get("image_bytes") if hasattr(block, "extra") else None
-    image_width, image_height = _block_image_size(block, max_image_width)
+    image_width, image_height = _block_image_size(block, max_image_width, scale_x=scale_x)
 
     if image_bytes:
         p = docx_doc.add_paragraph()
-        p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        p.alignment = WD_ALIGN_PARAGRAPH.LEFT
+        p.paragraph_format.left_indent = Inches(left_indent_in)
+        p.paragraph_format.space_before = Pt(0)
+        p.paragraph_format.space_after = Pt(0)
         run = p.add_run()
         run.add_picture(io.BytesIO(image_bytes), width=image_width, height=image_height)
         return True
     elif image_path and os.path.exists(image_path):
         p = docx_doc.add_paragraph()
-        p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        p.alignment = WD_ALIGN_PARAGRAPH.LEFT
+        p.paragraph_format.left_indent = Inches(left_indent_in)
+        p.paragraph_format.space_before = Pt(0)
+        p.paragraph_format.space_after = Pt(0)
         run = p.add_run()
         run.add_picture(image_path, width=image_width, height=image_height)
         return True
@@ -261,36 +273,48 @@ def process_figure_block(docx_doc, block, pymupdf_page, max_image_width, page_id
     img_bytes = pix.tobytes("png")
 
     p = docx_doc.add_paragraph()
-    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    p.alignment = WD_ALIGN_PARAGRAPH.LEFT
+    p.paragraph_format.left_indent = Inches(left_indent_in)
+    p.paragraph_format.space_before = Pt(0)
+    p.paragraph_format.space_after = Pt(0)
     run = p.add_run()
     run.add_picture(io.BytesIO(img_bytes), width=image_width, height=image_height)
 
     return True
 
 
-def process_table_block(docx_doc, block, pymupdf_page, max_image_width, page_idx):
+def process_table_block(docx_doc, block, pymupdf_page, max_image_width, page_idx, scale_x=1.0, doc_left_margin_in=0.0):
     """
     Process a table block by cropping and inserting the table as an image.
     """
     if pymupdf_page is None:
         return False
 
+    base_margin_in = doc_left_margin_in
+    if hasattr(block, "extra") and block.extra.get("in_column", False) and "col_left_x0_pt" in block.extra:
+        base_margin_in = block.extra["col_left_x0_pt"] / 72.0
+    x0_pdf = block.bbox[0] if hasattr(block, "bbox") else 0.0
+    left_indent_in = max(0.0, (x0_pdf / 72.0) * scale_x - base_margin_in - (12.0 / 72.0))
+
     x0_pdf, y0_pdf, x1_pdf, y1_pdf = block.bbox
     rect = pymupdf.Rect(x0_pdf, y0_pdf, x1_pdf, y1_pdf)
-    image_width, image_height = _block_image_size(block, max_image_width)
+    image_width, image_height = _block_image_size(block, max_image_width, scale_x=scale_x)
 
     pix = pymupdf_page.get_pixmap(clip=rect, dpi=150)
     img_bytes = pix.tobytes("png")
 
     p = docx_doc.add_paragraph()
-    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    p.alignment = WD_ALIGN_PARAGRAPH.LEFT
+    p.paragraph_format.left_indent = Inches(left_indent_in)
+    p.paragraph_format.space_before = Pt(0)
+    p.paragraph_format.space_after = Pt(0)
     run = p.add_run()
     run.add_picture(io.BytesIO(img_bytes), width=image_width, height=image_height)
 
     return True
 
 
-def process_spaced_metadata_row(docx_doc, row, section, page_width_pts):
+def process_spaced_metadata_row(docx_doc, row, section, page_width_pts, scale_x=1.0):
     """
     Process short same-line metadata blocks as spaced paragraphs, not as a table.
     """
@@ -318,7 +342,7 @@ def process_spaced_metadata_row(docx_doc, row, section, page_width_pts):
         for block_idx, block in enumerate(row):
             lines = block_lines[block_idx]
             line = lines[line_idx] if line_idx < len(lines) else []
-            line_x0 = _metadata_line_x0(line, block.bbox[0])
+            line_x0 = _metadata_line_x0(line, block.bbox[0]) * scale_x
             tab_pos_pt = max(1.0, line_x0 - doc_left_margin_pt)
             tab_pos_pt = min(tab_pos_pt, max(1.0, available_width_pt - 1.0))
             current_line_tab_positions.append(tab_pos_pt)
@@ -338,7 +362,7 @@ def process_spaced_metadata_row(docx_doc, row, section, page_width_pts):
     return row_y1
 
 
-def process_table_row(docx_doc, row, section, page_width_pts):
+def process_table_row(docx_doc, row, section, page_width_pts, scale_x=1.0):
     """
     Process a row of blocks as a table.
     """
@@ -495,71 +519,97 @@ def process_text_block(
         doc_right_margin_in = section.right_margin.pt / 72.0
     page_width_in = section.page_width.pt / 72.0
 
-    x0_in = x0_pdf / 72
-    x1_in = x1_pdf / 72
+    scale_x = context.get("scale_x", 1.0) if context else 1.0
+    x0_in = (x0_pdf / 72) * scale_x
+    x1_in = (x1_pdf / 72) * scale_x
     
     in_column = hasattr(block, 'extra') and block.extra.get("in_column", False)
-    
     is_centered = False
-    
+
+    # --- Pre-calculate lines for indent and justify logic ---
+    line_edges = []
+    if block.elements:
+        lines_dict: Dict[float, List] = {}
+        line_height = max((e.bbox[3] - e.bbox[1] for e in block.elements), default=0.0)
+        half_h = max(line_height * 0.5, 3.0)
+        for elem in block.elements:
+            cy = (elem.bbox[1] + elem.bbox[3]) / 2.0
+            matched = False
+            for key in lines_dict:
+                if abs(cy - key) < half_h:
+                    lines_dict[key].append(elem)
+                    matched = True
+                    break
+            if not matched:
+                lines_dict[cy] = [elem]
+
+        for key in sorted(lines_dict.keys()):
+            line_elems = lines_dict[key]
+            min_x0 = min(e.bbox[0] for e in line_elems)
+            max_x1 = max(e.bbox[2] for e in line_elems)
+            line_edges.append((min_x0, max_x1))
+
+    # --- Detect visually centered text ---
+    # Lines with different widths but similar horizontal centers indicate centered text.
+    # This commonly occurs in author/affiliation blocks.
+    is_visually_centered = False
+    if len(line_edges) >= 2:
+        centers = [(lx + rx) / 2.0 for lx, rx in line_edges]
+        avg_center = sum(centers) / len(centers)
+        is_visually_centered = all(abs(c - avg_center) < 15.0 for c in centers)
+
+    # --- Hanging Indent Logic ---
+    # Skip for titles and visually centered text
+    first_line_indent_in = 0.0
+    if len(line_edges) >= 2 and block_type != "title" and not is_visually_centered:
+        first_x0 = line_edges[0][0]
+        body_x0s = [lx for lx, rx in line_edges[1:]]
+        body_x0 = min(body_x0s)
+        
+        if abs(first_x0 - body_x0) > 3.0:
+            x0_in = (body_x0 / 72.0) * scale_x
+            first_line_indent_in = ((first_x0 - body_x0) / 72.0) * scale_x
+
+    # --- Recalculate margins with (potentially modified) x0_in ---
     if in_column:
         if "col_left_x0_pt" in block.extra:
             col_left_x0_in = block.extra["col_left_x0_pt"] / 72.0
             indent_from_margin_in = max(0.0, x0_in - col_left_x0_in - (12.0 / 72.0))
         else:
             indent_from_margin_in = 0.0
-    else:
-        indent_from_margin_in = max(0.0, x0_in - doc_left_margin_in - (12.0 / 72.0))
-        
-    if in_column:
         right_indent_from_margin_in = 0.0
     else:
-        # Re-enable right indent with a small tolerance buffer (0.1 inch extra)
-        # to account for DOCX font rendering requiring slightly more width than PDF.
+        indent_from_margin_in = max(0.0, x0_in - doc_left_margin_in - (12.0 / 72.0))
         right_edge_in = page_width_in - doc_right_margin_in
         raw_right_indent = right_edge_in - x1_in - (5.0 / 72.0)
         right_indent_from_margin_in = max(0.0, raw_right_indent - 0.1)
+        # Centered text needs extra breathing room to prevent word wrapping
+        if is_visually_centered:
+            right_indent_from_margin_in = max(0.0, raw_right_indent - 0.25)
 
     # --- Justify detection ---
-    # Group elements into visual lines, then check if most lines share the
-    # same right-edge x-coordinate (within tolerance). If so, the PDF author
-    # used justified alignment.
     is_justified = False
     if block.elements and block_type not in ["title", "figure_caption", "table_caption", "formula_caption"]:
-        lines: Dict[float, List] = {}
-        line_height = 0.0
-        for elem in block.elements:
-            eh = elem.bbox[3] - elem.bbox[1]
-            if eh > line_height:
-                line_height = eh
-        half_h = max(line_height * 0.5, 3.0)
-        for elem in block.elements:
-            cy = (elem.bbox[1] + elem.bbox[3]) / 2.0
-            matched = False
-            for key in lines:
-                if abs(cy - key) < half_h:
-                    lines[key].append(elem)
-                    matched = True
-                    break
-            if not matched:
-                lines[cy] = [elem]
-        if len(lines) >= 3:
-            # For each line, find the rightmost span end
-            right_edges = []
-            for key in sorted(lines.keys()):
-                line_elems = lines[key]
-                max_x1 = max(e.bbox[2] for e in line_elems)
-                right_edges.append(max_x1)
-            # Exclude the last line (typically shorter in justified text)
-            edges_to_check = right_edges[:-1]
-            if len(edges_to_check) >= 2:
-                # Check if most lines end at the same x (within 5pt tolerance)
-                ref_edge = edges_to_check[0]
-                same_count = sum(1 for e in edges_to_check if abs(e - ref_edge) < 5.0)
-                if same_count / len(edges_to_check) >= 0.6:
-                    is_justified = True
+        if len(line_edges) >= 2:
+            ref_left = min([lx for lx, rx in line_edges[1:]])
+            ref_right = max([rx for lx, rx in line_edges])
+            
+            match_count = 0
+            for i, (lx, rx) in enumerate(line_edges):
+                left_match = (i == 0) or (abs(lx - ref_left) < 5.0)
+                right_match = (i == len(line_edges) - 1) or (abs(rx - ref_right) < 10.0)
+                
+                if left_match and right_match:
+                    match_count += 1
                     
-                if same_count / len(edges_to_check) >= 0.6:
+            left_touches = sum(1 for i, (lx, rx) in enumerate(line_edges) if i != 0 and abs(lx - ref_left) < 5.0)
+            right_touches = sum(1 for i, (lx, rx) in enumerate(line_edges) if i != len(line_edges)-1 and abs(rx - ref_right) < 10.0)
+                    
+            if len(line_edges) == 2:
+                if match_count == 2 and left_touches >= 1 and right_touches >= 1:
+                    is_justified = True
+            else:
+                if match_count / len(line_edges) >= 0.6 and left_touches >= 2 and right_touches >= 2:
                     is_justified = True
 
     should_merge = (last_paragraph is not None)
@@ -592,6 +642,8 @@ def process_text_block(
 
         p.paragraph_format.left_indent = Inches(indent_from_margin_in)
         p.paragraph_format.right_indent = Inches(right_indent_from_margin_in)
+        if first_line_indent_in != 0.0:
+            p.paragraph_format.first_line_indent = Inches(first_line_indent_in)
 
         if not should_merge and block == row[0] and prev_row_y1 > 0:
             vertical_gap = max(0, (y0_pdf - prev_row_y1))

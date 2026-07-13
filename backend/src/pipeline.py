@@ -16,7 +16,7 @@ from typing import Callable, Dict, List, Optional, Tuple
 import numpy as np
 import pymupdf
 from docx import Document
-from docx.enum.text import WD_ALIGN_PARAGRAPH
+from docx.enum.text import WD_ALIGN_PARAGRAPH, WD_LINE_SPACING
 from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
 from docx.shared import Inches, Pt, RGBColor
@@ -157,26 +157,53 @@ def _is_original_page_number_block(
 def _horizontal_overlap_width(bbox_a, bbox_b) -> float:
     return max(0.0, min(bbox_a[2], bbox_b[2]) - max(bbox_a[0], bbox_b[0]))
 
+def _count_text_lines(blocks: List[LayoutBlock]) -> int:
+    """Count approximate number of distinct visual text lines across blocks."""
+    y_positions: List[float] = []
+    for b in blocks:
+        if b.block_type in ("abandon", "figure", "table"):
+            continue
+        if not hasattr(b, 'elements') or not b.elements:
+            continue
+        for elem in b.elements:
+            cy = (elem.bbox[1] + elem.bbox[3]) / 2.0
+            is_new = True
+            for ey in y_positions:
+                if abs(cy - ey) < 5.0:
+                    is_new = False
+                    break
+            if is_new:
+                y_positions.append(cy)
+    return len(y_positions)
+
+
 def _classify_block_column(block: LayoutBlock, page_width: float) -> str:
     """
-    Classify a single block as '1col', 'left', or 'right' based on its
-    horizontal center's distance from the page center.
+    Classify a single block as '1col', 'left', or 'right' based on whether
+    it physically spans across the center gap of the page.
 
-    - If the block's center is close to the page center → single-column
-    - If the block's center is far to the left → left column
-    - If the block's center is far to the right → right column
-
-    The threshold is page_width * 0.15: if the block center is within
-    this distance of the page center, it's single-column.
+    - If the block spans more than 55% of the page width → single-column
+    - If the block's bounding box crosses both sides of the center gap → single-column
+    - Otherwise → left or right column based on center position
     """
-    page_center = page_width / 2.0
-    cx = (block.bbox[0] + block.bbox[2]) / 2.0
-    deviation = abs(cx - page_center)
-    threshold = page_width * 0.25
-
-    if deviation <= threshold:
+    x0 = block.bbox[0]
+    x1 = block.bbox[2]
+    block_width = x1 - x0
+    if block_width > page_width * 0.55:
         return "1col"
-    elif cx < page_center:
+
+    page_center = page_width / 2.0
+    # A block is 1-column only if it physically spans across the center gap.
+    # The gap tolerance (3% of page width, ~18pt on letter) accounts for the
+    # physical gutter between columns.
+    gap_tolerance = page_width * 0.03
+    spans_center = (x0 < page_center - gap_tolerance) and (x1 > page_center + gap_tolerance)
+
+    if spans_center:
+        return "1col"
+
+    cx = (x0 + x1) / 2.0
+    if cx < page_center:
         return "left"
     else:
         return "right"
@@ -260,12 +287,22 @@ def _segment_page_into_bands(layout_blocks: List[LayoutBlock], page_width: float
         if band["mode"] == "2col":
             has_left = len(band.get("left_blocks", [])) > 0
             has_right = len(band.get("right_blocks", [])) > 0
-            if has_left and has_right:
+            
+            left_lines = _count_text_lines(band.get("left_blocks", []))
+            right_lines = _count_text_lines(band.get("right_blocks", []))
+            is_short = (left_lines <= 5 and right_lines <= 5)
+
+            if has_left and has_right and not is_short:
                 final_bands.append(band)
             else:
                 # Demote to 1col
-                all_blocks = band.get("left_blocks", []) + band.get("right_blocks", [])
-                all_blocks.sort(key=lambda b: (b.bbox[1], b.bbox[0]))
+                # For short 2col blocks (like author blocks), we don't sort by y-coord
+                # because we want to preserve the logical grouping (all left blocks, then all right blocks)
+                if is_short:
+                    all_blocks = band.get("left_blocks", []) + band.get("right_blocks", [])
+                else:
+                    all_blocks = band.get("left_blocks", []) + band.get("right_blocks", [])
+                    all_blocks.sort(key=lambda b: (b.bbox[1], b.bbox[0]))
                 # Merge into adjacent 1col band if possible
                 if final_bands and final_bands[-1]["mode"] == "1col":
                     final_bands[-1]["blocks"].extend(all_blocks)
@@ -366,6 +403,34 @@ class PDFToDocxPipeline:
         self._setup_docx_document(docx_doc)
 
         section = docx_doc.sections[0]
+        first_page = pdf_doc[start_page]
+        section.page_width = Pt(first_page.rect.width)
+        section.page_height = Pt(first_page.rect.height)
+
+        # Compute actual margins from PDF text spans on first page
+        from src.extract_layout import _get_spans
+        first_page_spans = _get_spans(first_page)
+        text_x0s = []
+        text_x1s = []
+        for elem in first_page_spans:
+            if elem.get("type") == "text":
+                bbox = elem.get("bbox")
+                if bbox and len(bbox) == 4:
+                    # Ignore elements on the extreme edges of the page (watermarks)
+                    if bbox[0] < 25.0 or (first_page.rect.width - bbox[2]) < 25.0:
+                        continue
+                    text_x0s.append(bbox[0])
+                    text_x1s.append(bbox[2])
+        if text_x0s and text_x1s:
+            pdf_left_margin_pt = min(text_x0s) - 12.0
+            pdf_right_margin_pt = first_page.rect.width - max(text_x1s) - 12.0
+            
+            # Clamp to reasonable range (at least 18pt / 0.25in, at most 108pt / 1.5in)
+            pdf_left_margin_pt = max(18.0, min(108.0, pdf_left_margin_pt))
+            pdf_right_margin_pt = max(18.0, min(108.0, pdf_right_margin_pt))
+            section.left_margin = Pt(pdf_left_margin_pt)
+            section.right_margin = Pt(pdf_right_margin_pt)
+
         try:
             doc_left_margin_in = section.left_margin.inches
         except Exception:
@@ -570,6 +635,11 @@ class PDFToDocxPipeline:
     ) -> Dict:
         page_height = page.rect.height
 
+        if context is None:
+            context = {}
+        context["scale_x"] = page_width_pts / page.rect.width
+        scale_x = context["scale_x"]
+
         print(f"  Detected {len(det_dicts)} layout regions")
 
         text_blocks = text_blocks_from_pdf_elements(pdf_elements)
@@ -625,7 +695,7 @@ class PDFToDocxPipeline:
                 matched_region = layout_regions[region_idx]
                 layout_block = LayoutBlock(
                     block_type="figure",
-                    bbox=img_data["bbox"],
+                    bbox=matched_region.bbox,
                     text="",
                     score=matched_region.score,
                     elements=[],
@@ -703,9 +773,11 @@ class PDFToDocxPipeline:
                 layout_blocks_filtered.append(block)
         layout_blocks = layout_blocks_filtered
 
-        # Remove empty text blocks
+        # Remove empty text blocks and abandon blocks
         layout_blocks_cleaned = []
         for block in layout_blocks:
+            if block.block_type == "abandon":
+                continue
             if block.block_type in ["figure", "table"]:
                 layout_blocks_cleaned.append(block)
             elif hasattr(block, "elements") and len(block.elements) > 0:
@@ -820,10 +892,15 @@ class PDFToDocxPipeline:
                 except:
                     new_section.right_margin = Inches(1.0)
                 sectPr = new_section._sectPr
-                cols = OxmlElement('w:cols')
-                cols.set(qn('w:num'), '2')
-                cols.set(qn('w:space'), '360') # 0.25 inch gap
-                sectPr.append(cols)
+                cols = sectPr.find(qn('w:cols'))
+                if cols is not None:
+                    cols.set(qn('w:num'), '2')
+                    cols.set(qn('w:space'), '360')
+                else:
+                    cols = OxmlElement('w:cols')
+                    cols.set(qn('w:num'), '2')
+                    cols.set(qn('w:space'), '360')
+                    sectPr.append(cols)
                 section = new_section
                 last_text_paragraph = None
                 prev_text_block = None
@@ -835,9 +912,15 @@ class PDFToDocxPipeline:
                 except:
                     new_section.right_margin = Inches(1.0)
                 sectPr = new_section._sectPr
-                cols = OxmlElement('w:cols')
-                cols.set(qn('w:num'), '1')
-                sectPr.append(cols)
+                cols = sectPr.find(qn('w:cols'))
+                if cols is not None:
+                    cols.set(qn('w:num'), '1')
+                    if qn('w:space') in cols.attrib:
+                        del cols.attrib[qn('w:space')]
+                else:
+                    cols = OxmlElement('w:cols')
+                    cols.set(qn('w:num'), '1')
+                    sectPr.append(cols)
                 section = new_section
                 last_text_paragraph = None
                 prev_text_block = None
@@ -873,7 +956,7 @@ class PDFToDocxPipeline:
                     is_metadata_row = _is_short_metadata_row(row)
                     if is_metadata_row:
                         try:
-                            prev_row_y1 = process_spaced_metadata_row(docx_doc, row, section, page_width_pts)
+                            prev_row_y1 = process_spaced_metadata_row(docx_doc, row, section, page_width_pts, scale_x=scale_x)
                             last_text_paragraph = None
                             prev_text_block = None
                             continue
@@ -884,7 +967,7 @@ class PDFToDocxPipeline:
 
                     if use_table and len(row) >= 2:
                         try:
-                            prev_row_y1 = process_table_row(docx_doc, row, section, page_width_pts)
+                            prev_row_y1 = process_table_row(docx_doc, row, section, page_width_pts, scale_x=scale_x)
                             continue
                         except Exception:
                             logger.exception("Implicit table row processing failed; falling back to text blocks")
@@ -898,19 +981,25 @@ class PDFToDocxPipeline:
                         if block_type == "figure":
                             process_figure_block(
                                 docx_doc, block, page,
-                                self.max_image_width, page_idx
+                                self.max_image_width, page_idx,
+                                scale_x=scale_x, doc_left_margin_in=doc_left_margin_in
                             )
                             last_text_paragraph = None
                             prev_text_block = None
+                            if hasattr(block, 'bbox'):
+                                prev_row_y1 = max(prev_row_y1, block.bbox[3])
                             continue
 
                         if block_type == "table":
                             process_table_block(
                                 docx_doc, block, page,
-                                self.max_image_width, page_idx
+                                self.max_image_width, page_idx,
+                                scale_x=scale_x, doc_left_margin_in=doc_left_margin_in
                             )
                             last_text_paragraph = None
                             prev_text_block = None
+                            if hasattr(block, 'bbox'):
+                                prev_row_y1 = max(prev_row_y1, block.bbox[3])
                             continue
 
                         should_merge = False
@@ -946,8 +1035,8 @@ class PDFToDocxPipeline:
                 left_blocks = sorted(band["left_blocks"], key=lambda b: (b.bbox[1], b.bbox[0]))
                 right_blocks = sorted(band["right_blocks"], key=lambda b: (b.bbox[1], b.bbox[0]))
 
-                valid_left = [b for b in left_blocks if b.block_type != "abandon"]
-                valid_right = [b for b in right_blocks if b.block_type != "abandon"]
+                valid_left = [b for b in left_blocks if b.block_type != "abandon" and getattr(b, "elements", None)]
+                valid_right = [b for b in right_blocks if b.block_type != "abandon" and getattr(b, "elements", None)]
                 left_start_y = valid_left[0].bbox[1] if valid_left else float('inf')
                 right_start_y = valid_right[0].bbox[1] if valid_right else float('inf')
 
@@ -965,7 +1054,7 @@ class PDFToDocxPipeline:
                 last_text_paragraph = None
                 prev_text_block = None
                 
-                if left_blocks and right_blocks and left_start_y > right_start_y + 5.0:
+                if valid_left and valid_right and left_start_y > right_start_y + 5.0:
                     gap = left_start_y - right_start_y
                     spacer = docx_doc.add_paragraph()
                     spacer.paragraph_format.space_before = Pt(gap)
@@ -984,19 +1073,25 @@ class PDFToDocxPipeline:
                     if block_type == "figure":
                         process_figure_block(
                             docx_doc, block, page,
-                            self.max_image_width, page_idx
+                            self.max_image_width, page_idx,
+                            scale_x=scale_x, doc_left_margin_in=doc_left_margin_in
                         )
                         last_text_paragraph = None
                         prev_text_block = None
+                        if hasattr(block, 'bbox'):
+                            prev_row_y1 = max(prev_row_y1, block.bbox[3])
                         continue
 
                     if block_type == "table":
                         process_table_block(
                             docx_doc, block, page,
-                            self.max_image_width, page_idx
+                            self.max_image_width, page_idx,
+                            scale_x=scale_x, doc_left_margin_in=doc_left_margin_in
                         )
                         last_text_paragraph = None
                         prev_text_block = None
+                        if hasattr(block, 'bbox'):
+                            prev_row_y1 = max(prev_row_y1, block.bbox[3])
                         continue
 
                     should_merge = False
@@ -1019,28 +1114,10 @@ class PDFToDocxPipeline:
                     prev_text_block = block
                     prev_row_y1 = max(prev_row_y1, y1_pdf)
 
-                # Insert a column break to start the right column.
-                # Reset prev_row_y1 to match the vertical starting position of the
-                # right column (which should be equivalent to the left column start).
                 if right_blocks:
-                    p = docx_doc.add_paragraph()
-                    run = p.add_run()
-                    run.add_break(WD_BREAK.COLUMN)
-
-                    if left_blocks and right_start_y > left_start_y + 5.0:
-                        gap = right_start_y - left_start_y
-                        spacer = docx_doc.add_paragraph()
-                        spacer.paragraph_format.space_before = Pt(gap)
-                        spacer.paragraph_format.space_after = Pt(0)
-                        spacer.paragraph_format.line_spacing_rule = WD_LINE_SPACING.EXACTLY
-                        spacer.paragraph_format.line_spacing = Pt(1)
-                        run = spacer.add_run(".")
-                        run.font.size = Pt(1)
-                        from docx.shared import RGBColor
-                        run.font.color.rgb = RGBColor(255, 255, 255)
-
-                    # Ensure vertical starting points are equivalent
-                    prev_row_y1 = max(left_start_y, right_start_y)
+                    valid_starts = [y for y in (left_start_y, right_start_y) if y != float('inf')]
+                    if valid_starts:
+                        prev_row_y1 = max(valid_starts)
                     last_text_paragraph = None
                     prev_text_block = None
 
@@ -1054,19 +1131,25 @@ class PDFToDocxPipeline:
                     if block_type == "figure":
                         process_figure_block(
                             docx_doc, block, page,
-                            self.max_image_width, page_idx
+                            self.max_image_width, page_idx,
+                            scale_x=scale_x, doc_left_margin_in=doc_left_margin_in
                         )
                         last_text_paragraph = None
                         prev_text_block = None
+                        if hasattr(block, 'bbox'):
+                            prev_row_y1 = max(prev_row_y1, block.bbox[3])
                         continue
 
                     if block_type == "table":
                         process_table_block(
                             docx_doc, block, page,
-                            self.max_image_width, page_idx
+                            self.max_image_width, page_idx,
+                            scale_x=scale_x, doc_left_margin_in=doc_left_margin_in
                         )
                         last_text_paragraph = None
                         prev_text_block = None
+                        if hasattr(block, 'bbox'):
+                            prev_row_y1 = max(prev_row_y1, block.bbox[3])
                         continue
 
                     should_merge = False

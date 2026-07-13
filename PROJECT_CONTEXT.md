@@ -1,6 +1,6 @@
 # AutoDoc — Project Context
 
-> **Last updated:** 2026-06-25
+> **Last updated:** 2026-07-08
 > **Status:** Combine + Organize + Insert + Split + Reorder + Page Numbers done · External hyperlink preservation in PDF → DOCX done · Organize full-screen split workspace fixed and verified· Reconstruction edge-case fixes verified · Crop backend/frontend remaining · DevOps pending
 
 ---
@@ -528,6 +528,22 @@ Resolved:
 
 Accepted Unresolved Edge Cases:
 - **Collapsed Gaps:** The vertical gap between the Author block and the Abstract block, as well as the gap between the Title and Author block in specific PDFs (e.g., those containing invisible drawing lines / abandon blocks), remains artificially collapsed (appearing like a standard line break). Attempting to force these gaps by filtering abandon blocks caused severe page-count shrinkage (collapsing from 33 to 28 pages) across other documents because those blocks naturally preserve document rhythm. We accept these specific spacing anomalies to preserve overall document structure and pagination stability.
+
+**Current Status (2026-07-06):** Additional PDF -> DOCX reconstruction edge cases implemented.
+
+Resolved:
+1. **Hanging Indent Support:** Added logic in `backend/src/docx_generator/processors.py` to group bounding boxes into visual lines and independently calculate `first_line_indent`. If the first line of a paragraph starts to the left or right of the subsequent body lines, a proper hanging/standard indent is accurately recreated instead of uniformly shifting the entire paragraph's left margin.
+2. **References Justification (2-Line Paragraphs):** The justification detection heuristic (`is_justified`) was upgraded to support 2-line paragraphs, which are common in Academic Reference sections. It enforces strict bounding-box checks to prevent false positives while absorbing floating-space bounding box noise by relaxing the right-margin tolerance to 10.0pt.
+3. **Centered Title Bug Fix:** Explicitly disabled hanging indent generation for centered text (`block_type == "title"`) to prevent Word's native `WD_ALIGN_PARAGRAPH.CENTER` layout engine from shifting the text far to the right in response to the modified left indentation.
+
+**Current Status (2026-07-07):** Additional PDF -> DOCX reconstruction column and margin stability fixes implemented.
+
+Resolved:
+1. **Vertical Watermark Interference:** PyMuPDF often extracts vertical margin watermarks (e.g. arXiv timestamps) as valid text blocks, which were aggressively skewing the `min()` bounds used to define document and column margins. Added a spatial filter to explicitly ignore any elements within the extreme 25pt edges of the page, ensuring the margin locks strictly onto the main document body regardless of edge artifacts.
+2. **Empty Block Interference:** The left boundary of a 2-column section was being incorrectly pulled to the page edge by empty text regions (where YOLO detected a block but PyMuPDF extracted no text). The pipeline now strips out empty blocks (`b.elements == []`) before determining column boundaries.
+3. **12-Point Margin Symmetry:** Fixed a fundamental bug where single-column documents inexplicably shifted from a 2.5cm indent to a 3.0cm indent depending on whether a watermark was present or absent. The code relied on an unwritten assumption that the document margin was roughly 12pt wider than the body text in order for a hardcoded 12pt visual padding rule to work properly. The pipeline now explicitly sets the document margins to be exactly 12.0pt wider than the main text bounds. This guarantees the 12pt padding rule is symmetrically applied, delivering a stable 2.5cm indent for all single-column layouts and flawless alignment for 2-column layouts.
+4. **Short 2-Column Author/Metadata Blocks:** Multi-column author blocks (where each column is very short, e.g. ≤5 lines) are now gracefully demoted to sequential single-column layouts during band generation. This ensures their logical reading order (all left-author lines, then all right-author lines) is preserved without breaking Word's continuous column auto-balancing logic or requiring hardcoded column breaks.
+5. **Table/Figure Image Vertical Spacing:** Fixed a bug where massive blank vertical spacers were inserted below cropped tables and figures. The pipeline now correctly updates the running `prev_row_y1` vertical tracker after inserting media, and media paragraphs are explicitly styled with `space_before` and `space_after` set to 0pt to prevent Word from applying default paragraph margins.
 
 ---
 
